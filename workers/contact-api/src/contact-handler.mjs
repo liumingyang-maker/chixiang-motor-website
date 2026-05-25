@@ -1,5 +1,6 @@
 const SALES_INBOX = 'chixiangmotor@163.com';
 const SENDER = 'inquiry@chixiangmotor.com';
+const TURNSTILE_SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 const ALLOWED_ORIGINS = new Set([
   'https://www.chixiangmotor.com',
   'https://chixiangmotor.com',
@@ -49,6 +50,10 @@ export function normalizeInquiry(fields) {
     site_language: pick(fields, ['site_language']),
     website: pick(fields, ['website'])
   };
+}
+
+function getTurnstileToken(fields) {
+  return pick(fields, ['cf-turnstile-response', 'turnstile_token']);
 }
 
 export function validateInquiry(fields) {
@@ -178,7 +183,44 @@ async function sendInquiryEmail(email, env) {
   await env.EMAIL.send(email);
 }
 
-export async function handleContactRequest(request, env = {}) {
+async function verifyTurnstile(fields, request, env, fetcher = fetch) {
+  const token = getTurnstileToken(fields);
+
+  if (!token) {
+    return { ok: false, status: 400, error: 'Please complete the anti-spam check.' };
+  }
+
+  if (!env || !env.TURNSTILE_SECRET_KEY) {
+    return { ok: false, status: 502, error: 'Anti-spam check is not configured.' };
+  }
+
+  const body = new FormData();
+  body.set('secret', env.TURNSTILE_SECRET_KEY);
+  body.set('response', token);
+
+  const remoteIp = request.headers.get('CF-Connecting-IP');
+  if (remoteIp) {
+    body.set('remoteip', remoteIp);
+  }
+
+  try {
+    const response = await fetcher(TURNSTILE_SITEVERIFY_URL, {
+      method: 'POST',
+      body
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      return { ok: false, status: 400, error: 'Anti-spam check failed. Please try again.' };
+    }
+  } catch {
+    return { ok: false, status: 502, error: 'Anti-spam check is temporarily unavailable.' };
+  }
+
+  return { ok: true };
+}
+
+export async function handleContactRequest(request, env = {}, options = {}) {
   const origin = request.headers.get('origin') || '';
 
   if (request.method === 'OPTIONS') {
@@ -199,6 +241,11 @@ export async function handleContactRequest(request, env = {}) {
   const validation = validateInquiry(fields);
   if (!validation.ok) {
     return jsonResponse({ ok: false, error: validation.error }, 400, origin);
+  }
+
+  const turnstile = await verifyTurnstile(fields, request, env, options.fetch || fetch);
+  if (!turnstile.ok) {
+    return jsonResponse({ ok: false, error: turnstile.error }, turnstile.status, origin);
   }
 
   try {

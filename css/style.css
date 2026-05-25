@@ -1336,6 +1336,17 @@ h4 { font-size: 1.1rem; }
   gap: 1rem;
 }
 
+.turnstile-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1.25rem;
+  min-height: 65px;
+}
+
+.turnstile-wrap .cf-turnstile {
+  width: 100%;
+}
+
 .form-status {
   margin-top: 1rem;
   font-size: 0.9rem;

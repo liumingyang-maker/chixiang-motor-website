@@ -262,9 +262,52 @@
     // --- Lead form submission ---
     const leadFormEndpoint = '/api/contact';
     const whatsappNumber = '8619008225410';
+    const turnstileSiteKey = 'PASTE_CLOUDFLARE_TURNSTILE_SITE_KEY';
 
     function isRealEndpoint(endpoint) {
       return endpoint && endpoint.indexOf('YOUR_FORM_ID') === -1;
+    }
+
+    function isTurnstileConfigured() {
+      return turnstileSiteKey && turnstileSiteKey.indexOf('PASTE_') !== 0;
+    }
+
+    function loadTurnstileScript() {
+      if (!isTurnstileConfigured() || document.querySelector('script[data-turnstile-script]')) {
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      script.setAttribute('data-turnstile-script', 'true');
+      document.head.appendChild(script);
+    }
+
+    function addTurnstileWidget(form) {
+      if (!isTurnstileConfigured() || form.querySelector('.cf-turnstile')) {
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'turnstile-wrap';
+
+      const widget = document.createElement('div');
+      widget.className = 'cf-turnstile';
+      widget.setAttribute('data-sitekey', turnstileSiteKey);
+      widget.setAttribute('data-theme', 'light');
+      widget.setAttribute('data-size', 'flexible');
+      wrapper.appendChild(widget);
+
+      if (submitBtn && submitBtn.parentNode) {
+        submitBtn.parentNode.insertBefore(wrapper, submitBtn);
+      } else {
+        form.appendChild(wrapper);
+      }
+
+      loadTurnstileScript();
     }
 
     function getFieldValue(form, selectors) {
@@ -327,6 +370,7 @@
       addHiddenField(contactForm, '_subject', 'New Chixiang Motor website inquiry');
       addHiddenField(contactForm, 'page_url', window.location.href);
       addHiddenField(contactForm, 'site_language', (document.documentElement.lang || 'en'));
+      addTurnstileWidget(contactForm);
 
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -336,6 +380,7 @@
         const product = contactForm.querySelector('[name="product_interest"], [name="product"]');
         const message = contactForm.querySelector('[name="message"]');
         const honeypot = contactForm.querySelector('[name="website"]');
+        const turnstileToken = contactForm.querySelector('[name="cf-turnstile-response"]');
         let valid = true;
 
         if (honeypot && honeypot.value.trim()) {
@@ -367,6 +412,11 @@
               break;
             }
           }
+        }
+
+        if (isTurnstileConfigured() && (!turnstileToken || !turnstileToken.value.trim())) {
+          setFormStatus(contactForm, 'Please complete the anti-spam check before sending.', 'error');
+          valid = false;
         }
 
         if (valid) {
@@ -404,6 +454,9 @@
             }
             setFormStatus(contactForm, 'Thank you. Your inquiry has been sent successfully.', 'success');
             contactForm.reset();
+            if (window.turnstile && typeof window.turnstile.reset === 'function') {
+              window.turnstile.reset();
+            }
           }).catch(function() {
             window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(contactForm)), '_blank', 'noopener');
             setFormStatus(contactForm, 'The form could not be sent by email. We opened WhatsApp with your inquiry details.', 'error');
