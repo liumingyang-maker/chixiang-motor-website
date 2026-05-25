@@ -1,0 +1,11 @@
+﻿GitHub upload steps:
+1. Create a GitHub repository, for example: chixiangmotor-website.
+2. Extract these packages into the SAME repository folder:
+   - 01-core.zip
+   - 02-images.zip
+   - 03-pdf.zip
+3. After extraction, the repository root should contain: ar, css, en, es, images, js, pdf, pt, ru, index.html, robots.txt, sitemap.xml, _headers, _redirects.
+4. Upload/push the extracted files to GitHub.
+5. In Cloudflare Pages: Framework = None, Build command = empty, Output directory = /.
+
+Do not upload node_modules, _deploy, _github_upload, _github_upload_packages, or 文档.
