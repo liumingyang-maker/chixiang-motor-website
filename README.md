@@ -9,10 +9,11 @@ Static multilingual website for Chixiang Motor.
 - Build output directory: `/`
 - Root directory: repository root
 
-## Important
+## Contact form
 
-The contact form is ready for Formspree, but the endpoint still needs to be replaced:
+Contact forms submit to the Cloudflare Worker API:
 
-`https://formspree.io/f/YOUR_FORM_ID`
+`/api/contact`
 
-Replace it in `js/main.js` and the contact pages after creating a Formspree form.
+The Worker source lives in `workers/contact-api` and sends inquiries to
+`chixiangmotor@163.com` after the Cloudflare `EMAIL` binding is configured.

@@ -260,7 +260,7 @@
     });
 
     // --- Lead form submission ---
-    const leadFormEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
+    const leadFormEndpoint = '/api/contact';
     const whatsappNumber = '8619008225410';
 
     function isRealEndpoint(endpoint) {
@@ -291,13 +291,16 @@
     }
 
     function addHiddenField(form, name, value) {
-      if (!form.querySelector('[name="' + name + '"]')) {
+      let input = form.querySelector('[name="' + name + '"]');
+      if (!input) {
         const input = document.createElement('input');
         input.type = 'hidden';
         input.name = name;
-        input.value = value;
         form.appendChild(input);
       }
+      input = form.querySelector('[name="' + name + '"]');
+      input.value = value;
+      input.defaultValue = value;
     }
 
     function buildWhatsAppText(form) {
@@ -370,6 +373,8 @@
           const submitBtn = contactForm.querySelector('button[type="submit"]');
           const originalText = submitBtn ? submitBtn.textContent : '';
           let endpoint = contactForm.getAttribute('action') || leadFormEndpoint;
+          addHiddenField(contactForm, 'page_url', window.location.href);
+          addHiddenField(contactForm, 'site_language', (document.documentElement.lang || 'en'));
           if (!isRealEndpoint(endpoint) && isRealEndpoint(leadFormEndpoint)) {
             endpoint = leadFormEndpoint;
           }
@@ -400,7 +405,8 @@
             setFormStatus(contactForm, 'Thank you. Your inquiry has been sent successfully.', 'success');
             contactForm.reset();
           }).catch(function() {
-            setFormStatus(contactForm, 'The form could not be sent. Please contact us by WhatsApp or email.', 'error');
+            window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(contactForm)), '_blank', 'noopener');
+            setFormStatus(contactForm, 'The form could not be sent by email. We opened WhatsApp with your inquiry details.', 'error');
           }).finally(function() {
             if (submitBtn) {
               submitBtn.textContent = originalText;

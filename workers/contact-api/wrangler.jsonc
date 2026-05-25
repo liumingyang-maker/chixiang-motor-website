@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "chixiang-contact-api",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-05-25",
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "chixiangmotor@163.com"
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "www.chixiangmotor.com/api/contact*",
+      "zone_name": "chixiangmotor.com"
+    },
+    {
+      "pattern": "chixiangmotor.com/api/contact*",
+      "zone_name": "chixiangmotor.com"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
