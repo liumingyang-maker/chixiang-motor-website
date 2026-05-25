@@ -1,0 +1,1029 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Chixiang Motors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Full-Screen Mobile Navigation Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+      <div class="mobile-nav-brand">
+        <div class="mobile-nav-logo">CHIXIANG MOTOR</div>
+        <div class="mobile-nav-tagline">Professional Motorcycle Engine Manufacturer</div>
+      </div>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html">Home<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="products.html">Products<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="product-detail.html?series=cg-air">CG Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="product-detail.html?series=cb-offroad">CB Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="product-detail.html?series=horizontal">Horizontal Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="product-detail.html?series=tricycles">Tricycle Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="product-detail.html?series=parts">Engine Parts Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="about.html">About Us<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="news.html">News<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="contact.html">Contact Us<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="contact.html" class="mnav-accent">Get a Quote<span class="mnav-arrow">&rsaquo;</span></a></li>
+    </ul>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo"><span class="logo-icon"><img src="../images/logo.webp" alt="CHIXIANG MOTOR"></span><span class="logo-text">CHIXIANG MOTOR</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button class="lang-current"><span>EN</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          <div class="lang-dropdown">
+            <a href="../en/index.html" class="active">English</a>
+            <a href="../ru/index.html">Русский</a>
+            <a href="../es/index.html">Español</a>
+            <a href="../pt/index.html">Português</a>
+            <a href="../ar/index.html">العربية</a>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-accent btn-sm">Get a Quote</a>
+        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="product-detail section">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / <span id="series-name">CG Air-Cooled Series</span></p>
+
+      <div class="product-detail-layout" style="margin-top: 2rem;">
+
+        <!-- Gallery -->
+        <div class="product-gallery">
+          <div class="main-img" aria-label="Product main image" id="main-img" style="background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#1a1a1a;">ENGINE</div>
+          <div class="thumb-list" id="thumb-list"></div>
+        </div>
+
+        <!-- Specs Container -->
+        <div id="specs-container">
+          <h1 id="product-title">CG Air-Cooled Engine Series</h1>
+          <p style="color: var(--text-secondary); margin: 1rem 0; line-height: 1.6;" id="product-desc">
+            Classic pushrod OHV engine design, proven across millions of motorcycles worldwide.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;" id="product-tags">
+            <span style="padding:0.3rem 0.85rem; background:rgba(43,123,214,0.15); border-radius:100px; font-size:0.8rem; color:var(--accent-blue);">Air-Cooled</span>
+            <span style="padding:0.3rem 0.85rem; background:rgba(43,123,214,0.1); border-radius:100px; font-size:0.8rem; color:var(--text-secondary);">125–250cc</span>
+            <span style="padding:0.3rem 0.85rem; background:rgba(43,123,214,0.1); border-radius:100px; font-size:0.8rem; color:var(--text-secondary);">5-Speed</span>
+          </div>
+
+          <!-- Balance Shaft Type Selector -->
+          <div class="variant-selector" id="variant-selector" style="display:none;">
+            <h4>Balance Shaft Type</h4>
+            <div class="variant-options" id="variant-options"></div>
+          </div>
+
+          <!-- Color Variant Selector -->
+          <div class="color-selector" id="color-selector" style="display:none;">
+            <h4>Available Colors</h4>
+            <div class="color-options" id="color-options"></div>
+            <p class="color-name-display">Selected: <strong id="color-name">—</strong></p>
+          </div>
+
+          <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Technical Specifications</h3>
+          <div style="overflow-x: auto;" id="specs-table-container">
+            <table class="specs-table" id="specs-table"></table>
+          </div>
+
+          <h3 style="margin-top: 2rem; margin-bottom: 0.5rem;">Key Advantages</h3>
+          <ul style="color: var(--text-secondary); line-height: 2; list-style: disc; padding-left: 1.25rem;" id="advantages-list"></ul>
+
+          <h3 style="margin-bottom: 0.75rem; margin-top: 2rem;">Applications</h3>
+          <p style="color: var(--text-secondary); line-height: 1.6;" id="applications"></p>
+
+          <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-accent btn-lg">Request a Quote for This Product</a>
+            <a href="#" class="btn btn-outline btn-lg" onclick="alert('PDF download will be available soon.'); return false;">Download PDF Spec Sheet</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div style="margin-top: 5rem;">
+        <h2 class="section-title">Related Products</h2>
+        <div class="products-grid" style="margin-top: 2rem;" id="related-products"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col"><h4>Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.</h4><p>Professional motorcycle engine manufacturer since 2003.</p></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="products.html">Products</a><br><a href="about.html">About Us</a><br><a href="news.html">News</a><br><a href="contact.html">Contact</a></div>
+        <div class="footer-col"><h4>Product Series</h4><a href="products.html?filter=horizontal">Horizontal Engines</a><br><a href="products.html?filter=cg">CG Series</a><br><a href="products.html?filter=water-cooled">Water-Cooled Engines</a><br><a href="products.html?filter=offroad">CB Off-Road</a></div>
+        <div class="footer-col"><h4>Contact</h4><p>Tel: +86 19008225410<br>WhatsApp: +86 19008225410</p><p style="margin-top:0.5rem;">Email: chixiangmotor@163.com</p><div style="display: flex; gap: 1rem; margin-top: 0.75rem;"><div style="text-align: center;"><img src="../images/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/wechat.webp" alt="WeChat QR Code" style="width: 90px; height: 90px; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; padding: 3px;"><p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.2rem;">WeChat</p></div><div style="text-align: center;"><img src="../images/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/wx.webp" alt="WhatsApp QR Code" style="width: 90px; height: 90px; border-radius: 8px; border: 1px solid var(--border-color); background: #fff; padding: 3px;"><p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.2rem;">WhatsApp</p></div></div></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2024 Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.</span><span>Chongqing, China</span></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/8619008225410" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+  </a>
+
+  <script src="../js/main.js"></script>
+  <script>
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const series = params.get('series') || 'cg-air';
+
+    const data = {
+      'horizontal': {
+        name: 'Horizontal Air-Cooled Engine Series',
+        desc: '卧机系列 — Compact design with low center of gravity for improved stability. Air-cooled system provides effective heat dissipation. Simple structure means low maintenance requirements and easy operation. Available in Electric/Kick Start and Kick Start variants. Ideal for small-displacement commuter and utility motorcycles.',
+        tags: ['Air-Cooled', '100–125cc', '4-Speed', 'Auto Clutch', 'Electric/Kick Start'],
+        specs: [
+          ['Model', 'CX152FMH-5B', 'CX152FMH-6', 'CX152FMH-5B'],
+          ['Type', 'Single-cyl, 4-stroke, air-cooled, inclined horizontal 10°, OHC', 'Same', 'Same'],
+          ['Displacement (ml)', '106.7', '107', '123.67'],
+          ['Bore x Stroke (mm)', '52.4 x 49.5', '52.4 x 49.5', '54 x 54'],
+          ['Max Power (kW/r/min)', '4.7 / 8000', '4.9 / 8000', '6.3 / 7500'],
+          ['Max Horsepower (PS)', '6', '7', '8.5'],
+          ['Max Torque (N·m/r/min)', '6.7 / 6000', '6.9 / 6000', '8.8 / 5500'],
+          ['Compression Ratio', '9.7:1', '9.7:1', '9.0:1'],
+          ['Net Weight (kg)', '19', '19', '23'],
+          ['Dimensions (mm)', '477 x 395 x 280', '477 x 395 x 280', '450 x 280 x 277'],
+          ['Fuel Consumption (g/kW)', '≤ 367', '≤ 367', '≤ 367'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Kick Only'],
+          ['Clutch Type', 'Auto wet multi-plate', 'Auto wet multi-plate', 'Auto wet multi-plate'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Ignition', 'CDI AC', 'CDI AC', 'CDI AC'],
+          ['Transmission', 'Constant mesh 2-stage, 4-speed', 'Same', 'Same']
+        ],
+        advantages: [
+          'Low center of gravity improves working stability',
+          'Air-cooled system for effective heat dissipation',
+          'Compact structure saves space',
+          'Low maintenance requirements, easy to operate and repair',
+          'Fuel-efficient with low operating cost',
+          'Two starting options: Electric/Kick Start and Kick Start only',
+          'Supports OEM/ODM customization'
+        ],
+        applications: 'Small commuter motorcycles, scooters, utility motorcycles, and light-duty three-wheelers. Suitable for urban and rural transportation in developing markets.',
+        related: ['horizontal-dualclutch','horizontal-under','cg-air','auto-clutch'],
+        variantLabel: 'Starting System',
+        variants: [
+          { name: 'Electric / Kick Start', desc: '电脚启动 — Electric + kick start, convenient and reliable. Ideal for daily commuting and frequent start-stop use.', thumb: '../images/%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/3504ab0b-70d8-42bd-ab24-cddc34045a26.png', images: [
+            '../images/%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/3504ab0b-70d8-42bd-ab24-cddc34045a26.png',
+            '../images/%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/7068e821-c806-4b72-a7ab-90cd1154bacf.png',
+            '../images/%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/3.png'
+          ] },
+          { name: 'Kick Start Only', desc: '脚启动 — Pure kick start, simpler mechanism, lower cost. Ideal for budget-conscious markets and minimal electrical dependency.', thumb: '../images/%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%8D%A7%E5%BC%8F/1.webp', images: [
+            '../images/%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%8D%A7%E5%BC%8F/1.webp',
+            '../images/%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%8D%A7%E5%BC%8F/6b228c09-95be-4b9d-ad31-1c44d94d7574.webp',
+            '../images/%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%8D%A7%E5%BC%8F/e2ebccd9-012e-4404-9057-f10f4bc505c4.webp',
+            '../images/%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%8D%A7%E5%BC%8F/e5c28f34-ac1b-4599-9b2f-074d13f042aa.webp'
+          ] }
+        ]
+      },
+      'horizontal-dualclutch': {
+        name: 'Horizontal Dual-Clutch Engine (Honda Compatible)',
+        desc: '卧式双离合发动机 — Purpose-built dual-clutch horizontal engine adapted for Honda-style underbone motorcycles. Smooth gear engagement with zero stalling at startup. Same reliable horizontal engine platform with enhanced dual-clutch system for superior riding experience. Fully compatible with Honda underbone frame mounting points.',
+        tags: ['Dual Clutch', 'Honda Compatible', '100–125cc', '4-Speed', 'Air-Cooled', 'OEM/ODM'],
+        images: [
+          '../images/%E5%8F%8C%E7%A6%BB%E5%90%88%E5%8F%91%E5%8A%A8%E6%9C%BA/product_main_image_1.webp',
+          '../images/%E5%8F%8C%E7%A6%BB%E5%90%88%E5%8F%91%E5%8A%A8%E6%9C%BA/product_main_image_2.webp',
+          '../images/%E5%8F%8C%E7%A6%BB%E5%90%88%E5%8F%91%E5%8A%A8%E6%9C%BA/product_main_image_3.webp',
+          '../images/%E5%8F%8C%E7%A6%BB%E5%90%88%E5%8F%91%E5%8A%A8%E6%9C%BA/534d88eb-15a1-48b0-b87f-cb3367ae15a3.webp'
+        ],
+        specs: [
+          ['Model', 'CX152FMH-5B', 'CX152FMH-6', 'CX152FMH-5B'],
+          ['Type', 'Single-cyl, 4-stroke, air-cooled, inclined horizontal 10°, OHC', 'Same', 'Same'],
+          ['Displacement (ml)', '106.7', '107', '123.67'],
+          ['Bore x Stroke (mm)', '52.4 x 49.5', '52.4 x 49.5', '54 x 54'],
+          ['Max Power (kW/r/min)', '4.7 / 8000', '4.9 / 8000', '6.3 / 7500'],
+          ['Max Horsepower (PS)', '6', '7', '8.5'],
+          ['Max Torque (N·m/r/min)', '6.7 / 6000', '6.9 / 6000', '8.8 / 5500'],
+          ['Compression Ratio', '9.7:1', '9.7:1', '9.0:1'],
+          ['Net Weight (kg)', '19', '19', '23'],
+          ['Dimensions (mm)', '477 x 395 x 280', '477 x 395 x 280', '450 x 280 x 277'],
+          ['Fuel Consumption (g/kW)', '≤ 367', '≤ 367', '≤ 367'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Dual wet multi-plate (Honda-compatible)', 'Same', 'Same'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Ignition', 'CDI AC', 'CDI AC', 'CDI AC'],
+          ['Transmission', 'Constant mesh 2-stage, 4-speed', 'Same', 'Same'],
+          ['Compatibility', 'Honda underbone frame pattern', 'Same', 'Same']
+        ],
+        advantages: [
+          'Dual-clutch system — smooth gear engagement, zero stalling at startup',
+          'Honda-compatible mounting pattern — direct fit for Honda underbone motorcycles',
+          'Low center of gravity improves riding stability',
+          'Air-cooled system for effective heat dissipation',
+          'Compact structure saves installation space',
+          'Low maintenance requirements, easy to operate and repair',
+          'Fuel-efficient with low operating cost',
+          'Supports OEM/ODM customization'
+        ],
+        applications: 'Honda-style underbone motorcycles (Cub/CT/Wave type), small commuter motorcycles, delivery bikes, and light-duty three-wheelers. Ideal for Southeast Asian, African, and Latin American markets where Honda underbone compatibility is essential.',
+        related: ['horizontal','horizontal-under','auto-clutch']
+      },
+      'horizontal-water': {
+        name: 'Horizontal Water-Cooled Engine',
+        desc: '卧式水冷发动机 — Horizontal engine with water-cooling for superior thermal management under sustained operation. Compact design with low center of gravity for improved stability. Water-cooled system ensures consistent performance in high-temperature environments. Ideal for demanding commercial applications.',
+        tags: ['Water-Cooled', '100–125cc', '4-Speed', 'Auto Clutch', 'Commercial Grade'],
+        images: [
+          '../images/%E5%8D%A7%E5%BC%8F%E6%B0%B4%E5%86%B7/1.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E6%B0%B4%E5%86%B7/2.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E6%B0%B4%E5%86%B7/3.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E6%B0%B4%E5%86%B7/4.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E6%B0%B4%E5%86%B7/5.webp'
+        ],
+        specs: [
+          ['Model', 'CX152FMH-5B', 'CX152FMH-6', 'CX152FMH-5B'],
+          ['Type', 'Single-cyl, 4-stroke, water-cooled, inclined horizontal 10°, OHC', 'Same', 'Same'],
+          ['Displacement (ml)', '106.7', '107', '123.67'],
+          ['Bore x Stroke (mm)', '52.4 x 49.5', '52.4 x 49.5', '54 x 54'],
+          ['Max Power (kW/r/min)', '4.7 / 8000', '4.9 / 8000', '6.3 / 7500'],
+          ['Max Horsepower (PS)', '6', '7', '8.5'],
+          ['Max Torque (N·m/r/min)', '6.7 / 6000', '6.9 / 6000', '8.8 / 5500'],
+          ['Compression Ratio', '9.7:1', '9.7:1', '9.0:1'],
+          ['Net Weight (kg)', '19', '19', '23'],
+          ['Dimensions (mm)', '477 x 395 x 280', '477 x 395 x 280', '450 x 280 x 277'],
+          ['Fuel Consumption (g/kW)', '≤ 367', '≤ 367', '≤ 367'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Auto wet multi-plate', 'Auto wet multi-plate', 'Auto wet multi-plate'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Ignition', 'CDI AC', 'CDI AC', 'CDI AC'],
+          ['Transmission', 'Constant mesh 2-stage, 4-speed', 'Same', 'Same']
+        ],
+        advantages: [
+          'Water-cooled system — consistent thermal performance under sustained load',
+          'Low center of gravity improves working stability',
+          'Compact structure saves installation space',
+          'Low maintenance requirements, easy to operate and repair',
+          'Fuel-efficient with low operating cost',
+          'Ideal for high-temperature environments',
+          'Supports OEM/ODM customization'
+        ],
+        applications: 'Small commuter motorcycles, delivery bikes, and light-duty three-wheelers operating in high-temperature or tropical climates. Suitable for commercial applications requiring sustained operation.',
+        related: ['horizontal','horizontal-dualclutch','horizontal-under']
+      },
+      'cg-air': {
+        name: 'CG Series Air-Cooled Engine',
+        desc: 'CG风冷系列 — Optimized combustion technology for fuel efficiency. Available in 125cc–250cc displacements. All shift modes supported: sequential, cyclic, and built-in reverse gear. Two versions available for motorcycles and cargo tricycles. High-speed 6-speed version available. Full OEM/ODM support with multiple casing colors and designs.',
+        tags: ['Air-Cooled', '125–250cc', '5-Speed', 'Manual Clutch', 'Reverse Gear Optional'],
+        specs: [
+          ['Model', 'CG125 (CX156FMI)', 'CG150 (CX162FMI)', 'CG175 (CX162FMI)', 'CG200 (CX163FMI)', 'CG250 (CX167FMI)'],
+          ['Type', 'Single-cyl, 4-stroke, air-cooled, vertical', 'Same', 'Same', 'Same', 'Same'],
+          ['Displacement (ml)', '124', '149', '174', '197', '229.5'],
+          ['Bore x Stroke (mm)', '56.5 x 49.5', '62 x 49.5', '62 x 57.5', '63.5 x 62.2', '67.0 x 65.0'],
+          ['Max Power (kW/r/min)', '7.5 / 8000', '8.5 / 8000', '9.5 / 8000', '10 / 7500', '10.5 / 7000'],
+          ['Max Horsepower (PS)', '9.5', '11', '13', '14', '14'],
+          ['Max Torque (N·m/r/min)', '8.6 / 7000', '10 / 7500', '11.5 / 6500', '13.5 / 6500', '16.5 / 5000'],
+          ['Compression Ratio', '9.2:1', '9.2:1', '8.6:1–9.3:1', '8.5:1–9.3:1', '8.7:1'],
+          ['Net Weight (kg)', '31', '31.05', '31', '31.3', '32'],
+          ['Dimensions (mm)', '380 x 355 x 500', '380 x 355 x 500', '380 x 355 x 500', '380 x 355 x 500', '380 x 355 x 500'],
+          ['Fuel Consumption (g/kW)', '≤ 354', '≤ 354', '≤ 354', '≤ 354', '≤ 354'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Ignition', 'CDI', 'CDI', 'CDI', 'CDI', 'CDI'],
+          ['Transmission', 'Constant mesh 5-speed', 'Same', 'Same', 'Same', 'Same']
+        ],
+        advantages: [
+          'Optimized combustion technology for better fuel economy',
+          'All shift modes: sequential, cyclic, and built-in reverse gear',
+          'Two versions available: motorcycle and cargo tricycle configurations',
+          'High-speed 6-speed version available for performance applications',
+          'Easy maintenance with widely available universal parts',
+          'Full OEM/ODM support — multiple casing colors and designs',
+          'Applicable for all types of motorcycles'
+        ],
+        applications: 'Commuter motorcycles, delivery bikes, three-wheeled cargo vehicles, agricultural utility vehicles, and general-purpose two/three-wheelers. The 250cc variant is ideal for heavier loads and highway cruising.',
+        related: ['cg-balancer','cg-water','tsunami'],
+        images: [
+          '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/2ab91360-2a6d-4822-a069-eea01094e5c7.webp',
+          '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/7c5b357c-9cf8-471c-bdf6-cbb11a356910.webp',
+          '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/c19530c2-9f43-4b5c-9ad6-308369eee74f.webp',
+          '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/d9d89cb7-bf8d-4aa2-98f6-6d056b686995.webp',
+          '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/da033b5d-8af4-4bc3-a816-2720c9058a69.webp',
+          '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/fed36c08-9b45-4af8-bbc5-413a60eb5800.webp'
+        ],
+        colors: [
+          { name: 'Silver White', hex: '#d4d4d6', thumb: '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp', images: [
+            '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp',
+            '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/2.webp',
+            '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/3.webp',
+            '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/4.webp',
+            '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/5.webp'
+          ] },
+          { name: 'Gold/Black Two-Tone', hex: 'linear-gradient(135deg, #c8963e 0%, #c8963e 50%, #1a1a1a 50%, #1a1a1a 100%)', thumb: '../images/cg%E9%87%91%E8%89%B2%E9%BB%91%E8%89%B2%E5%8F%8C%E6%8B%BC/2ab91360-2a6d-4822-a069-eea01094e5c7.webp' }
+        ]
+      },
+      'cg150-goldblack': {
+        name: 'CG150 Gold/Black Two-Tone Engine',
+        desc: 'CG150金色黑色双拼 — Premium custom two-tone finish combining luxurious gold with stealth black. Same legendary CG150 reliability and performance (8.5 kW, 10 N·m torque) with exclusive premium aesthetics. Available in multiple color variants to match your brand identity. Full OEM/ODM color customization supported for bulk orders.',
+        tags: ['Custom Color', '150cc', 'Two-Tone', 'Gold/Black', 'Air-Cooled', '5-Speed', 'OEM Colors'],
+        images: [
+          '../images/cg150金色黑色双拼/1.webp',
+          '../images/cg150金色黑色双拼/2.webp',
+          '../images/cg150金色黑色双拼/3.webp',
+          '../images/cg150金色黑色双拼/4.webp',
+          '../images/cg150金色黑色双拼/5.webp',
+          '../images/cg150金色黑色双拼/6.webp'
+        ],
+        colors: [
+          { name: 'Gold/Black Two-Tone', hex: 'linear-gradient(135deg, #c8963e 0%, #c8963e 50%, #1a1a1a 50%, #1a1a1a 100%)', thumb: '../images/cg150金色黑色双拼/1.webp' },
+          { name: 'Red/Black Two-Tone', hex: 'linear-gradient(135deg, #c0392b 0%, #c0392b 50%, #1a1a1a 50%, #1a1a1a 100%)', thumb: null },
+          { name: 'Full Black', hex: '#1a1a1a', thumb: null },
+          { name: 'Silver', hex: '#b0b0b0', thumb: null },
+          { name: 'Custom OEM Color', hex: 'linear-gradient(135deg, #2b7bd6 0%, #555 50%, #2b7bd6 100%)', thumb: null }
+        ],
+        specs: [
+          ['Model', 'CG150 Gold/Black'],
+          ['Type', 'Single-cyl, 4-stroke, air-cooled, vertical'],
+          ['Displacement (ml)', '149'],
+          ['Bore x Stroke (mm)', '62 x 49.5'],
+          ['Max Power (kW/r/min)', '8.5 / 8000'],
+          ['Max Horsepower (PS)', '11'],
+          ['Max Torque (N·m/r/min)', '10 / 7500'],
+          ['Compression Ratio', '9.2:1'],
+          ['Net Weight (kg)', '31.05'],
+          ['Dimensions (mm)', '380 x 355 x 500'],
+          ['Fuel Consumption (g/kW)', '≤ 354'],
+          ['Starting System', 'Electric / Kick'],
+          ['Clutch Type', 'Manual wet multi-plate'],
+          ['Lubrication', 'Pressure splash'],
+          ['Ignition', 'CDI'],
+          ['Transmission', 'Constant mesh 5-speed'],
+          ['Finish', 'Premium two-tone baked enamel, corrosion-resistant'],
+          ['Color Options', 'Gold/Black, Red/Black, Full Black, Silver + OEM custom colors']
+        ],
+        advantages: [
+          'Exclusive gold/black two-tone premium finish — stands out in any showroom',
+          'Same proven CG150 performance: 8.5 kW, 10 N·m torque',
+          'Corrosion-resistant baked enamel for long-lasting appearance',
+          'Multiple color variants available to match your brand identity',
+          'Full OEM/ODM color customization for bulk orders (MOQ applies)',
+          'Universal CG parts compatibility — easy service and maintenance',
+          '5-speed transmission with electric + kick start'
+        ],
+        applications: 'Premium commuter motorcycles, brand-differentiated product lines, markets where visual differentiation drives sales, and dealers seeking exclusive color options for competitive advantage.',
+        related: ['cg-air','cg-balancer','cg-water']
+      },
+      'cg-balancer': {
+        name: 'CG Series Balance Shaft Engine',
+        desc: 'CG平衡轴系列 — Built on the proven CG platform with an integrated balance shaft for dramatically reduced vibration and smoother operation. 2x longer engine lifespan due to reduced internal wear. Same universal parts compatibility as all CG engines.',
+        tags: ['Air-Cooled', 'Balancer Shaft', '125–250cc', 'Low Vibration', 'OEM/ODM'],
+        images: [
+          '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E8%BD%A6%E5%BC%95%E6%93%8E%E7%89%B9%E5%86%99.webp',
+          '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E6%9C%BA%E6%A2%B0%E5%BC%95%E6%93%8E%E4%BA%A7%E5%93%81%E7%85%A7.webp',
+          '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E5%BC%95%E6%93%8E%E7%89%B9%E5%86%99.webp',
+          '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E5%BC%95%E6%93%8E%E7%BB%86%E8%8A%82%E5%B1%95%E7%A4%BA.webp',
+          '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E6%91%A9%E6%89%98%E8%BD%A6%E5%BC%95%E6%93%8E%E9%83%A8%E4%BB%B6%E7%89%B9%E5%86%99.webp'
+        ],
+        specs: [
+          ['Model', 'CG125-B', 'CG150-B', 'CG175-B', 'CG200-B', 'CG250-B'],
+          ['Type', 'Single-cyl, 4-stroke, air-cooled, vertical w/ balancer shaft', 'Same', 'Same', 'Same', 'Same'],
+          ['Displacement (ml)', '124', '149', '174', '197', '229.5'],
+          ['Bore x Stroke (mm)', '56.5 x 49.5', '62 x 49.5', '62 x 57.5', '63.5 x 62.2', '67.0 x 65.0'],
+          ['Max Power (kW/r/min)', '7.5 / 8000', '8.5 / 8000', '9.5 / 8000', '10 / 7500', '10.5 / 7000'],
+          ['Max Torque (N·m/r/min)', '8.6 / 7000', '10 / 7500', '11.5 / 6500', '13.5 / 6500', '16.5 / 5000'],
+          ['Compression Ratio', '9.2:1', '9.2:1', '8.6:1–9.3:1', '8.5:1–9.3:1', '8.7:1'],
+          ['Net Weight (kg)', '32', '32.1', '32', '32.3', '33'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate'],
+          ['Ignition', 'CDI', 'CDI', 'CDI', 'CDI', 'CDI'],
+          ['Transmission', 'Constant mesh 5-speed', 'Same', 'Same', 'Same', 'Same']
+        ],
+        advantages: [
+          'Balance shaft — dramatically reduced vibration for smooth riding',
+          'CG classic design — universal parts, easy and affordable maintenance',
+          'All shift modes: sequential / cyclic / built-in reverse',
+          '2x extended engine lifespan with reduced internal wear',
+          'Fuel-efficient with low operating cost',
+          'Full OEM/ODM support'
+        ],
+        applications: 'Mid-to-premium commuter motorcycles where riding comfort matters. Ideal for long-distance riding and markets where reduced vibration is a key selling point.',
+        related: ['cg-air','cg-water','tsunami'],
+        variantLabel: 'Balance Shaft Type',
+        variants: [
+          { name: 'Internal Balance Shaft', desc: '内置平衡轴 — Integrated balancer inside crankcase. Compact design, proven reliability.', thumb: '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E8%BD%A6%E5%BC%95%E6%93%8E%E7%89%B9%E5%86%99.webp', images: [
+            '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E8%BD%A6%E5%BC%95%E6%93%8E%E7%89%B9%E5%86%99.webp',
+            '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E6%9C%BA%E6%A2%B0%E5%BC%95%E6%93%8E%E4%BA%A7%E5%93%81%E7%85%A7.webp',
+            '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E5%BC%95%E6%93%8E%E7%89%B9%E5%86%99.webp',
+            '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E5%BC%95%E6%93%8E%E7%BB%86%E8%8A%82%E5%B1%95%E7%A4%BA.webp',
+            '../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E6%91%A9%E6%89%98%E8%BD%A6%E5%BC%95%E6%93%8E%E9%83%A8%E4%BB%B6%E7%89%B9%E5%86%99.webp'
+          ] },
+          { name: 'External Balance Shaft', desc: '外置平衡轴 — Externally mounted balancer for enhanced vibration damping. Easier maintenance and superior smoothness.', thumb: '../images/%E5%A4%96%E7%BD%AE%E5%B9%B3%E8%A1%A1%E8%BD%B4/black_engine_product_main_image_1.webp', images: [
+            '../images/%E5%A4%96%E7%BD%AE%E5%B9%B3%E8%A1%A1%E8%BD%B4/black_engine_product_main_image_1.webp',
+            '../images/%E5%A4%96%E7%BD%AE%E5%B9%B3%E8%A1%A1%E8%BD%B4/black_engine_product_main_image_2.webp',
+            '../images/%E5%A4%96%E7%BD%AE%E5%B9%B3%E8%A1%A1%E8%BD%B4/black_engine_product_main_image_3.webp',
+            '../images/%E5%A4%96%E7%BD%AE%E5%B9%B3%E8%A1%A1%E8%BD%B4/black_engine_product_main_image_4.webp',
+            '../images/%E5%A4%96%E7%BD%AE%E5%B9%B3%E8%A1%A1%E8%BD%B4/black_engine_product_main_image_5.webp'
+          ] }
+        ]
+      },
+      'cg-water': {
+        name: 'CG Series Water-Cooled Engine',
+        desc: 'CG水冷系列 — Dual cooling system (water + air) eliminates overheating issues. Specifically designed for cargo tricycles with high torque output for easy hill climbing. Reliable, low-wear design for extended service life. All gears plus built-in reverse gear.',
+        tags: ['Water-Cooled', '150–250cc', 'Dual Cooling', 'High Torque', 'Reverse Gear'],
+        specs: [
+          ['Model', 'CG150B', 'CG175SB', 'CG200SB', 'CG250SB'],
+          ['Type', 'Single-cyl, 4-stroke, water+air-cooled, vertical', 'Same', 'Same', 'Same'],
+          ['Displacement (ml)', '149.5', '173.6', '197', '246.3'],
+          ['Dimensions (mm)', '425 x 385 x 530', '425 x 385 x 530', '425 x 385 x 530', '425 x 385 x 530'],
+          ['Gross Weight (kg)', '31.2', '31.6', '33', '32.9'],
+          ['Max Power (kW/rpm)', '8.5 / 8500', '9.5 / 8000', '10.5 / 7500', '11.5 / 7000'],
+          ['Max Torque (N·m/rpm)', '10.0 / 7500', '11.5 / 6500', '15 / 6000', '19.5 / 5000'],
+          ['Compression Ratio', '10.0:1', '8.6:1–9.3:1', '9.2:1', '10.1–10.5:1'],
+          ['Bore x Stroke (mm)', '62 x 49.5', '62 x 57.5', '63.5 x 62.2', '70 x 64'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate']
+        ],
+        advantages: [
+          'Dual cooling (water + air) — no overheating, no failures under load',
+          'Specifically designed for cargo tricycles — high torque for easy hill climbing',
+          'Reliable, low-wear design for extended service life',
+          'Universal parts compatibility for easy repair and maintenance',
+          'All gears plus built-in reverse gear included',
+          'Supports OEM/ODM customization'
+        ],
+        applications: 'Cargo tricycles, commercial delivery three-wheelers, heavy-duty utility vehicles. Especially suited for markets with hilly terrain and sustained high-load operation.',
+        related: ['cg-air','tsunami','hanwei'],
+        images: [
+          '../images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp',
+          '../images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/e8zlq6eb.webp',
+          '../images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/pcdwa12q.webp',
+          '../images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/po85qu0l.webp',
+          '../images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/qog3j40j.webp'
+        ]
+      },
+      'tsunami': {
+        name: 'Tsunami Series Water-Cooled Engine (Dual Cooling)',
+        desc: '海啸系列双冷发动机 — The Tsunami series delivers reliable high-torque output with a dual cooling system (water + air). Designed for demanding commercial applications where sustained power delivery and thermal stability are critical.',
+        tags: ['Dual Cooling', '200–250cc', 'High Torque', '5-Speed', 'Commercial Grade'],
+        specs: [
+          ['Model', 'CG200SB (Tsunami)', 'CG250SB (Tsunami)'],
+          ['Type', 'Single-cyl, 4-stroke, water+air-cooled, vertical', 'Same'],
+          ['Displacement (cc)', '197', '246.3'],
+          ['Dimensions (mm)', '425 x 385 x 530', '425 x 385 x 530'],
+          ['Gross Weight (kg)', '35.5', '36.3'],
+          ['Max Power (kW/rpm)', '10.5 / 7500', '11.5 / 7000'],
+          ['Max Torque (N·m/rpm)', '15 / 6000', '19.5 / 5000'],
+          ['Compression Ratio', '9.2:1', '10.1–10.5:1'],
+          ['Bore x Stroke (mm)', '63.5 x 62.2', '70 x 64'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Manual wet multi-plate', 'Manual wet multi-plate'],
+          ['Transmission', '5-speed', '5-speed']
+        ],
+        advantages: [
+          'Dual cooling (water + air) — stable thermal performance under sustained load',
+          'High torque output across the RPM range',
+          'Robust construction for commercial and cargo applications',
+          '5-speed transmission for versatile gearing',
+          'Proven reliability in demanding markets'
+        ],
+        applications: 'Cargo tricycles, commercial delivery vehicles, and heavy-duty utility motorcycles. Ideal for markets requiring sustained high-load operation.',
+        related: ['cg-water','hanwei','cg-air'],
+        images: [
+          '../images/%E6%B5%B7%E5%95%B8/1.webp',
+          '../images/%E6%B5%B7%E5%95%B8/2.webp',
+          '../images/%E6%B5%B7%E5%95%B8/3.webp',
+          '../images/%E6%B5%B7%E5%95%B8/4.webp',
+          '../images/%E6%B5%B7%E5%95%B8/5.webp',
+          '../images/%E6%B5%B7%E5%95%B8/6.webp'
+        ]
+      },
+      'hanwei': {
+        name: 'Hanwei Series Water-Cooled Engine (Heavy-Duty)',
+        desc: '捍威系列双冷发动机 — Built specifically for high-load applications. Features a 20-roller clutch (no slipping, extended life), 18-pole magneto for stable electrical output, and a 1.5L oil sump for superior cooling. All gears plus built-in reverse gear. Available from 200cc to 350cc.',
+        tags: ['Heavy-Duty', '200–350cc', 'Dual Cooling', '20-Roller Clutch', '18-Pole Magneto', 'Reverse Gear'],
+        specs: [
+          ['Model', 'HW200', 'HW250', 'HW300', 'HW350'],
+          ['Type', 'Single-cyl, 4-stroke, water-cooled, vertical', 'Same', 'Same', 'Same'],
+          ['Displacement (ml)', '197', '249', '300', '300.3'],
+          ['Dimensions (mm)', '425 x 385 x 530', '425 x 385 x 530', '425 x 385 x 530', '425 x 385 x 530'],
+          ['Net Weight (kg)', '38', '38.1', '39', '40.4'],
+          ['Max Power (kW/r/min)', '10.5 / 7500', '11.5 / 7000', '12.5 / 6500', '13 / 6500'],
+          ['Max Torque (N·m/r/min)', '15 / 6000', '19.5 / 5000', '21 / 4500', '22.5 / 4500'],
+          ['Compression Ratio', '9.2:1', '10.1–10.5:1', '10.4:1', '10.4:1'],
+          ['Bore x Stroke (mm)', '63.5 x 62.2', '70 x 64', '74 x 64', '76 x 66.2'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Carburetor Type', 'PZ30', 'PZ30', 'PZ30', 'PZ30'],
+          ['Clutch Type', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate'],
+          ['Ignition', 'CDI', 'CDI', 'CDI', 'CDI']
+        ],
+        advantages: [
+          'Purpose-built for high loads — maximum torque at low RPM',
+          'Dual cooling + 1.5L oil sump — eliminates overheating risk',
+          '20-roller clutch — no slipping, significantly extended service life',
+          '18-pole magneto — stable electrical output for accessories and lighting',
+          'High-quality components — low failure rate',
+          'All gears + built-in reverse gear included',
+          'Supports OEM/ODM customization'
+        ],
+        applications: 'Heavy cargo tricycles, industrial utility vehicles, agricultural machinery. Built for the toughest operating conditions where reliability under load is non-negotiable.',
+        related: ['cg-water','tsunami','efi-water'],
+        images: [
+          '../images/%E6%8D%8D%E5%A8%81/product_main_image_2.webp',
+          '../images/%E6%8D%8D%E5%A8%81/product_main_image_1.webp',
+          '../images/%E6%8D%8D%E5%A8%81/product_main_image_3.webp',
+          '../images/%E6%8D%8D%E5%A8%81/product_main_image_4.webp',
+          '../images/%E6%8D%8D%E5%A8%81/product_main_image_5.webp'
+        ]
+      },
+      'cb-offroad': {
+        name: 'CB Series Off-Road Motorcycle Engine',
+        desc: 'CB越野系列 — Chain-driven off-road engine with low vibration and ultra-quiet operation. Smooth power delivery for easy handling and comfortable long-distance riding. Universal parts keep maintenance simple and affordable.',
+        tags: ['Off-Road', '150–250cc', 'Chain Drive', 'Low Vibration', '5-Speed'],
+        specs: [
+          ['Model', 'CB150', 'CB200-C', 'CB250'],
+          ['Type', 'Single-cyl, 4-stroke, air-cooled, OHC', 'Same', 'Same'],
+          ['Displacement (ml)', '149', '197', '223'],
+          ['Dimensions (mm)', '385 x 355 x 452', '385 x 355 x 452', '385 x 355 x 452'],
+          ['Net Weight (kg)', '29', '31', '31'],
+          ['Max Power (kW/r/min)', '8.2 / 5000', '10.2 / 7000', '12 / 7000'],
+          ['Max Torque (N·m/r/min)', '10.5 / 7000', '13.5 / 6000', '17.5 / 5500'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
+          ['Min Fuel Consumption (g/kW·h)', '≤ 354', '≤ 354', '≤ 354'],
+          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Electric / Kick'],
+          ['Clutch Type', 'Manual wet multi-plate', 'Manual wet multi-plate', 'Manual wet multi-plate'],
+          ['Transmission', 'Constant mesh 5-speed', 'Same', 'Same']
+        ],
+        advantages: [
+          'Chain-driven off-road design — reliable power transfer',
+          'Low vibration, ultra-quiet — comfortable long-duration riding without arm fatigue',
+          'Smooth power delivery — easy shifting and simple handling',
+          'Universal parts — affordable and simple maintenance',
+          'Fuel-efficient — low operating cost',
+          'Suitable for all motorcycle types, supports OEM/ODM'
+        ],
+        applications: 'Off-road motorcycles, dual-sport bikes, dirt bikes, and trail motorcycles. Ideal for recreational off-road riding and light enduro applications.',
+        related: ['cg-air','cg-balancer','motorcycles'],
+        images: [
+          '../images/CB/1.webp',
+          '../images/CB/2.webp',
+          '../images/CB/3.webp',
+          '../images/CB/4.webp',
+          '../images/CB/5.webp'
+        ]
+      },
+      'auto-clutch': {
+        name: 'Automatic Clutch Engine Series',
+        desc: '自动离合器系列 — CVT continuously variable transmission for smooth, stutter-free shifting. Balanced vibration damping for comfortable extended riding. Reinforced gearbox for high reliability and long service life. Coaxial output supports all-wheel drive configurations.',
+        tags: ['CVT Automatic', '4-Speed (L-H-N-R)', 'Coaxial Output', 'OEM/ODM'],
+        specs: [
+          ['Transmission Type', 'CVT — Continuously Variable Transmission'],
+          ['Gear Positions', 'L – H – N – R (4 positions for all terrain)'],
+          ['Clutch Type', 'Automatic centrifugal clutch'],
+          ['Output', 'Coaxial output for all-wheel drive compatibility'],
+          ['Vibration Control', 'Balanced damping design'],
+          ['Gearbox', 'Reinforced for high reliability'],
+          ['Customization', 'Deep OEM/ODM support']
+        ],
+        advantages: [
+          'CVT stepless transmission — smooth shifting, no stalling at start',
+          'Balanced vibration damping — comfortable for extended riding',
+          'Reinforced gearbox — high reliability, long service life',
+          'Coaxial output for all-wheel drive — highly compatible with various vehicles',
+          '4 gear positions (L-H-N-R) — adapts to all road conditions',
+          'Deep OEM/ODM customization supported'
+        ],
+        applications: 'ATVs, utility vehicles, all-terrain vehicles, and specialty applications requiring automatic transmission and all-wheel drive capability.',
+        related: ['horizontal','horizontal-under','tricycles']
+      },
+      'horizontal-under': {
+        name: 'Horizontal Under-Engine Motorcycle Engine',
+        desc: '卧式下置发动机 — Dual clutch design for smooth shifting without stalling at startup. Classic design with universally available parts for the lowest maintenance costs. Fuel-efficient with low operating cost. Full OEM/ODM customization supported.',
+        tags: ['Under-Engine', 'Dual Clutch', 'Fuel-Efficient', 'Low Maintenance', 'OEM/ODM'],
+        specs: [
+          ['Engine Position', 'Horizontal under-frame mounting'],
+          ['Clutch', 'Dual clutch — smooth shifting, no stalling'],
+          ['Design', 'Classic universal design — widely available parts'],
+          ['Cooling', 'Air-cooled'],
+          ['Fuel Efficiency', 'Optimized for low consumption'],
+          ['Maintenance', 'Low cost, easy operation and repair'],
+          ['Customization', 'Full OEM/ODM support']
+        ],
+        advantages: [
+          'Dual clutch — smooth gear changes, no stalling at startup',
+          'Classic proven design with universally available parts',
+          'Low center of gravity for improved stability',
+          'Efficient heat dissipation for extended engine life',
+          'Fuel-efficient with low operating cost',
+          'Supports OEM/ODM customization'
+        ],
+        applications: 'Small commuter motorcycles, under-bone bikes, and light utility vehicles. Popular in Southeast Asian and African markets.',
+        related: ['horizontal','auto-clutch','cg-air'],
+        images: [
+          '../images/%E5%8D%A7%E5%BC%8F%E4%B8%8B%E7%BD%AE%E5%BC%8F/product_main_image_1.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E4%B8%8B%E7%BD%AE%E5%BC%8F/product_main_image_2.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E4%B8%8B%E7%BD%AE%E5%BC%8F/product_main_image_3.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E4%B8%8B%E7%BD%AE%E5%BC%8F/product_main_image_4.webp',
+          '../images/%E5%8D%A7%E5%BC%8F%E4%B8%8B%E7%BD%AE%E5%BC%8F/product_main_image_5.webp'
+        ]
+      },
+      'efi-water': {
+        name: 'Electronic Fuel Injection Water-Cooled Engine',
+        desc: '电喷水冷系列 — Electronic Fuel Injection technology for cleaner, more efficient combustion. Meets tightening global emission standards including Euro 5 requirements. EFI provides optimal fuel-air mixture across all RPM ranges for improved performance and fuel economy.',
+        tags: ['EFI', 'Water-Cooled', 'Euro 5 Ready', 'Fuel Efficient', 'Low Emissions'],
+        specs: [
+          ['Fuel System', 'Electronic Fuel Injection (EFI)'],
+          ['Cooling', 'Water-cooled'],
+          ['Emission Standard', 'Euro 5 compliant (with appropriate calibration)'],
+          ['Fuel Efficiency', 'Improved 15–20% vs. carburetor models'],
+          ['Cold Start', 'Automatic enrichment — no choke needed'],
+          ['Altitude Compensation', 'Automatic fuel mapping adjustment'],
+          ['Diagnostics', 'OBD-compatible ECU']
+        ],
+        advantages: [
+          'EFI precision — optimal fuel-air mixture at all RPMs',
+          'Meets Euro 5 and other global emission standards',
+          'Better cold-start performance without manual choke',
+          'Automatic altitude compensation — no re-jetting needed',
+          'Improved fuel economy vs. carbureted engines',
+          'Cleaner combustion = longer engine life'
+        ],
+        applications: 'All motorcycle and tricycle applications where emission compliance is required. Especially suited for markets with Euro 5 or equivalent emission standards.',
+        related: ['hanwei','tsunami','cg-water'],
+        images: [
+          '../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_1.webp',
+          '../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_2.webp',
+          '../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_3.webp',
+          '../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_4.webp',
+          '../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_5.webp'
+        ]
+      },
+      'parts': {
+        name: 'Engine Parts Series',
+        desc: '发动机零件 — Complete range of genuine Chixiang engine spare parts. From cylinder kits to electrical components, we supply everything needed for engine maintenance, repair, and rebuild. All parts manufactured to OEM specifications.',
+        tags: ['Genuine Parts', 'Full Range', 'OEM Quality', 'Global Shipping'],
+        specs: [
+          ['Category', 'Available Parts'],
+          ['Cylinder Assembly', 'Cylinder kits, pistons, rings, gaskets'],
+          ['Cylinder Head', 'Complete head assemblies, valves, springs, camshafts'],
+          ['Clutch System', 'Clutch plates (friction & steel), springs, baskets'],
+          ['Magneto & Electrical', 'Magneto coils, stators, CDI units, wiring harnesses'],
+          ['Valve Train', 'Intake/exhaust valves, guides, seals, rocker arms'],
+          ['Oil System', 'Oil pumps, filters, seals, gaskets'],
+          ['Reverse Gear', 'Complete reverse gear assemblies and components'],
+          ['Crankshaft', 'Crankshafts, connecting rods, bearings'],
+          ['Transmission', 'Main shafts, countershafts, shift shafts, gears'],
+          ['Starting System', 'Starter motors, kick-start levers, gears'],
+          ['Electrical', 'Spark plugs, ignition coils, regulators/rectifiers']
+        ],
+        advantages: [
+          'Genuine OEM-quality replacement parts',
+          'Full coverage across all engine series',
+          'Competitive wholesale pricing for distributors',
+          'Bulk order and container shipping available',
+          'Technical support for parts identification'
+        ],
+        applications: 'Engine repair shops, motorcycle dealers, spare parts distributors, and fleet maintenance operations.',
+        related: ['cg-air','hanwei','cb-offroad'],
+        images: [
+          '../images/parts.webp'
+        ]
+      },
+      'motorcycles': {
+        name: 'Motorcycles',
+        desc: '摩托车 — Complete motorcycles powered by Chixiang engines. Available with 125–350cc engines in both air-cooled and water-cooled configurations. Multiple models to suit different market segments and price points.',
+        tags: ['Complete Vehicle', '125–350cc', 'Air/Water-Cooled', 'Multiple Models'],
+        specs: [
+          ['Parameter', '125 Model', 'Dream Gen IV'],
+          ['Engine Model', 'Z110 — Electric/Kick Start', 'Z110 — Electric/Kick Start'],
+          ['Engine Type', 'Single-cyl, 4-stroke, air-cooled, dual clutch', 'Single-cyl, 4-stroke, air-cooled, single/dual clutch'],
+          ['Bore x Stroke (mm)', '52.4 x 49.5', '52.4 x 49.5'],
+          ['Displacement (ml)', '106.693', '106.693'],
+          ['Compression Ratio', '9.0:1', '9.0:1'],
+          ['Max Net Power (kW/r/min)', '5.0 / 8000', '5.0 / 8000'],
+          ['Max Torque (N·m/r/min)', '7.5 / 5500', '7.5 / 5500'],
+          ['Min Fuel Consumption (g/kW·h)', '≤ 367', '≤ 367'],
+          ['Lubrication', 'Pressure splash', 'Pressure splash'],
+          ['Transmission', '4-speed non-cyclic', '4-speed non-cyclic'],
+          ['Final Drive Ratio', 'Auto 4.234', 'Auto 4.234'],
+          ['Dimensions (L x W x H) mm', '1910 x 680 x 1200', '1910 x 750 x 1380'],
+          ['Wheelbase (mm)', '1235', '1220'],
+          ['Min Ground Clearance (mm)', '140', '140'],
+          ['Curb Weight (kg)', '88.5', '93.5'],
+          ['Alternative Model Specs', '—', '2020 x 730 x 1050mm · 125kg · 14L tank · 760mm seat · Front disc + Rear drum']
+        ],
+        advantages: [
+          'Proven Chixiang engine reliability in a complete vehicle',
+          'Engine displacements from 125cc to 350cc',
+          'Air-cooled and water-cooled options available',
+          'Competitive pricing for emerging markets',
+          'Multiple models and configurations to choose from'
+        ],
+        applications: 'Personal transportation, delivery services, taxi motorcycles, and fleet operations in developing markets.',
+        related: ['tricycles','cg-air','cb-offroad'],
+        images: [
+          '../images/%E6%91%A9%E6%89%98%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327163851.webp',
+          '../images/%E6%91%A9%E6%89%98%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327163852.webp',
+          '../images/%E6%91%A9%E6%89%98%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327163853.webp',
+          '../images/%E6%91%A9%E6%89%98%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327163854.webp',
+          '../images/%E6%91%A9%E6%89%98%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202403271638541.webp'
+        ]
+      },
+      'tricycles': {
+        name: 'Tricycles',
+        desc: '三轮车 — Cargo and utility three-wheelers powered by Chixiang engines. Designed for heavy-duty transport with reinforced frames and high-torque CG water-cooled engines featuring built-in reverse gear.',
+        tags: ['Cargo', '3-Wheeler', 'Water-Cooled Engine', 'Reverse Gear', 'Heavy-Duty'],
+        specs: [
+          ['Vehicle Type', 'Cargo / Utility Tricycle'],
+          ['Engine Options', 'CG Water-Cooled Series (150–250cc)'],
+          ['Cooling', 'Water + Air dual cooling'],
+          ['Transmission', '5-speed with built-in reverse gear'],
+          ['Load Capacity', 'Designed for heavy-duty commercial transport'],
+          ['Frame', 'Reinforced for cargo operations'],
+          ['Customization', 'Available with various cargo bed configurations']
+        ],
+        advantages: [
+          'Purpose-built for cargo and commercial transport',
+          'High-torque water-cooled engines for sustained heavy loads',
+          'Built-in reverse gear for easy maneuvering',
+          'Reinforced frame and suspension for durability',
+          'Low operating and maintenance costs',
+          'Proven design in developing markets'
+        ],
+        applications: 'Cargo transport, market delivery, construction material hauling, agricultural produce transport, and general commercial logistics in urban and rural areas.',
+        related: ['motorcycles','cg-water','hanwei'],
+        images: [
+          '../images/%E4%B8%89%E8%BD%AE%E8%BD%A6/1.webp',
+          '../images/%E4%B8%89%E8%BD%AE%E8%BD%A6/4.webp',
+          '../images/%E4%B8%89%E8%BD%AE%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327163959.webp',
+          '../images/%E4%B8%89%E8%BD%AE%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327164001.webp'
+        ]
+      },
+      'atv-ac320': {
+        name: 'ATV Off-Road Beach Vehicle Engine (CVT with Reverse)',
+        desc: 'AC320越野沙滩车发动机 — Purpose-built ATV/UTV engine featuring squeeze-flow combustion technology and high-performance ignition for stable output. Integrated camshaft seat, single-axis balancer with suspension damping for superior vibration control. Heavy-duty CVT system with reinforced 5-jaw clutch and premium belt. Patented transmission with centralized drive shaft and coaxial front/rear output. L-H-N-R 4-gear design for all terrain conditions.',
+        tags: ['ATV/UTV', '287cc', '17kW', 'CVT', 'Built-in Reverse', '4-Gear (L-H-N-R)'],
+        images: [
+          '../images/atv/tb_image_share_1773217554909.webp',
+          '../images/atv/tb_image_share_1773217558802.webp',
+          '../images/atv/tb_image_share_1773217584373.webp',
+          '../images/atv/tb_image_share_1773217588029.webp',
+          '../images/atv/tb_image_share_1773218230493.webp'
+        ],
+        specs: [
+          ['Model', 'AC320'],
+          ['Engine Model', '175MN'],
+          ['Type', 'Single-cyl, 4-stroke, liquid-cooled, vertical'],
+          ['Displacement (cc)', '287.2'],
+          ['Max Power (kW/rpm)', '17 / 6800 (±1.5%)'],
+          ['Max Torque (N·m/rpm)', '28 / 5500 (±1.5%)'],
+          ['Compression Ratio', '11:1'],
+          ['Fuel Consumption (g/kW·h)', '≤ 354'],
+          ['Bore × Stroke (mm)', '75 × 65'],
+          ['Ignition', 'C.D.I'],
+          ['Dimension (mm)', '541 × 444 × 471'],
+          ['Net Weight (kg)', '52'],
+          ['Cooling', 'Liquid-cooled'],
+          ['Transmission', 'CVT (L-H-N-R) with built-in reverse'],
+          ['Clutch', 'Reinforced 5-jaw centrifugal clutch'],
+          ['Output', 'Coaxial front & rear, center-mounted drive shaft']
+        ],
+        advantages: [
+          'Squeeze-flow combustion + high-performance ignition — stable, reliable power',
+          'Single-axis balancer + suspension damping — superior vibration comfort',
+          '3-stage oil filtration with automotive-grade fine filter — reduced wear, extended life',
+          'Integrated transmission & thermal system — enhanced CVT reliability',
+          'Reinforced 5-jaw clutch with premium joint-venture belt — improved durability',
+          'Patented transmission: forced main/counter-shaft lubrication, center drive shaft, coaxial front/rear output',
+          'L-H-N-R 4-gear design — adapts to all terrain conditions',
+          'Compact, reliable layout — easy integration into ATV/UTV platforms'
+        ],
+        applications: 'ATVs, UTVs, off-road beach vehicles, all-terrain recreational and utility vehicles. Designed for markets requiring robust CVT performance with built-in reverse capability across sand, mud, trails, and varied terrain.',
+        related: ['cb-offroad','auto-clutch','motorcycles']
+      }
+    };
+
+    const d = data[series] || data['cg-air'];
+
+    // Set page title
+    document.title = d.name + ' - Chixiang Motors';
+
+    // Build image gallery
+    var mainImg = document.getElementById('main-img');
+    var thumbList = document.getElementById('thumb-list');
+    // Determine active images (variants > colors first > default)
+    var activeImages = null;
+    if (d.variants && d.variants.length > 0 && d.variants[0].images) {
+      activeImages = d.variants[0].images;
+    } else if (d.images && d.images.length > 0) {
+      activeImages = d.images;
+      if (d.colors && d.colors.length > 0 && d.colors[0].images) {
+        activeImages = d.colors[0].images;
+      }
+    }
+
+    if (activeImages && activeImages.length > 0) {
+      mainImg.textContent = '';
+      mainImg.style.backgroundImage = 'url(' + activeImages[0] + ')';
+      var thumbHtml = '';
+      activeImages.forEach(function(img, idx) {
+        thumbHtml += '<div class="thumb" style="background-image:url(' + img + ');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#1a1a1a;" onclick="var m=document.getElementById(\'main-img\');m.style.backgroundImage=\'url(' + img + ')\';"></div>';
+      });
+      thumbList.innerHTML = thumbHtml;
+    }
+
+    // Update content
+    document.getElementById('series-name').textContent = d.name;
+    document.getElementById('product-title').textContent = d.name;
+    document.getElementById('product-desc').textContent = d.desc;
+
+    // Tags
+    var tagsHtml = '';
+    d.tags.forEach(function(t, i) {
+      var isPrimary = i === 0;
+      tagsHtml += '<span style="padding:0.3rem 0.85rem; background:' + (isPrimary ? 'rgba(43,123,214,0.15)' : 'rgba(43,123,214,0.1)') + '; border-radius:100px; font-size:0.8rem; color:' + (isPrimary ? 'var(--accent-blue)' : 'var(--text-secondary)') + ';">' + t + '</span>';
+    });
+    document.getElementById('product-tags').innerHTML = tagsHtml;
+
+    // Variant selector (Balance Shaft Type)
+    var variantSelector = document.getElementById('variant-selector');
+    var variantOptions = document.getElementById('variant-options');
+    if (d.variants && d.variants.length > 0) {
+      variantSelector.style.display = 'block';
+      variantSelector.querySelector('h4').textContent = d.variantLabel || 'Select Type';
+      var variantHtml = '';
+      d.variants.forEach(function(v, idx) {
+        var isActive = idx === 0;
+        var thumbStyle = v.thumb ? ' style="background-image:url(' + v.thumb + ');"' : '';
+        var thumbPlaceholder = v.thumb ? '' : '<span style="font-size:1.5rem;font-weight:700;color:#aaa;display:flex;align-items:center;justify-content:center;height:100%;">' + (v.name.indexOf('Electric') >= 0 ? '⚡' : '🦶') + '</span>';
+        variantHtml += '<div class="variant-card' + (isActive ? ' active' : '') + '" data-index="' + idx + '">' +
+          '<div class="variant-thumb"' + thumbStyle + '>' + thumbPlaceholder + '</div>' +
+          '<div class="variant-name">' + v.name + '</div>' +
+          '<div class="variant-desc">' + v.desc + '</div>' +
+          '</div>';
+      });
+      variantOptions.innerHTML = variantHtml;
+
+      // Variant card click handler
+      var cards = variantOptions.querySelectorAll('.variant-card');
+      cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          cards.forEach(function(c) { c.classList.remove('active'); });
+          card.classList.add('active');
+          var idx = parseInt(card.getAttribute('data-index'));
+          var variant = d.variants[idx];
+          if (variant && variant.images && variant.images.length > 0) {
+            document.getElementById('main-img').style.backgroundImage = 'url(' + variant.images[0] + ')';
+            var tHtml = '';
+            variant.images.forEach(function(img) {
+              tHtml += '<div class="thumb" style="background-image:url(' + img + ');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#1a1a1a;" onclick="var m=document.getElementById(\'main-img\');m.style.backgroundImage=\'url(' + img + ')\';"></div>';
+            });
+            document.getElementById('thumb-list').innerHTML = tHtml;
+          } else {
+            // No images for this variant — show placeholder
+            var m = document.getElementById('main-img');
+            m.style.backgroundImage = '';
+            m.textContent = variant.name;
+            document.getElementById('thumb-list').innerHTML = '';
+          }
+        });
+      });
+    } else {
+      variantSelector.style.display = 'none';
+    }
+
+    // Color variant selector
+    var colorSelector = document.getElementById('color-selector');
+    var colorOptions = document.getElementById('color-options');
+    var colorName = document.getElementById('color-name');
+    if (d.colors && d.colors.length > 0) {
+      colorSelector.style.display = 'block';
+      var colorHtml = '';
+      var activeColor = d.colors[0];
+      d.colors.forEach(function(c, idx) {
+        var isActive = idx === 0;
+        var bgStyle = c.thumb ? 'background-image:url(' + c.thumb + ');background-size:cover;background-position:center;' : 'background:' + c.hex;
+        colorHtml += '<div class="color-swatch' + (isActive ? ' active' : '') + '" style="' + bgStyle + '" title="' + c.name + '" data-index="' + idx + '" data-name="' + c.name + '" data-hex="' + c.hex + '" data-thumb="' + (c.thumb || '') + '">' + (c.thumb ? '' : '<span class="swatch-label">' + c.name.split(' ')[0] + '</span>') + '</div>';
+      });
+      colorOptions.innerHTML = colorHtml;
+      colorName.textContent = activeColor.name;
+
+      // Swatch click handler
+      var swatches = colorOptions.querySelectorAll('.color-swatch');
+      swatches.forEach(function(s) {
+        s.addEventListener('click', function() {
+          swatches.forEach(function(ss) { ss.classList.remove('active'); });
+          s.classList.add('active');
+          colorName.textContent = s.getAttribute('data-name');
+          var idx = parseInt(s.getAttribute('data-index'));
+          var color = d.colors[idx];
+          if (color && color.images && color.images.length > 0) {
+            // Rebuild main image and thumbnails for this color variant
+            document.getElementById('main-img').style.backgroundImage = 'url(' + color.images[0] + ')';
+            var thumbHtml = '';
+            color.images.forEach(function(img) {
+              thumbHtml += '<div class="thumb" style="background-image:url(' + img + ');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#1a1a1a;" onclick="var m=document.getElementById(\'main-img\');m.style.backgroundImage=\'url(' + img + ')\';"></div>';
+            });
+            document.getElementById('thumb-list').innerHTML = thumbHtml;
+          } else if (color && color.thumb) {
+            // Update main image only
+            document.getElementById('main-img').style.backgroundImage = 'url(' + color.thumb + ')';
+          }
+        });
+      });
+    } else {
+      colorSelector.style.display = 'none';
+    }
+
+    // Specs table
+    if (d.specs && d.specs.length > 0) {
+      var theadHtml = '<tr><th>' + d.specs[0].slice(1).join('</th><th>') + '</th></tr>';
+      // Handle multi-row specs
+      if (d.specs[0].length > 2) {
+        theadHtml = '<tr><th style="min-width:140px;">Parameter</th>';
+        for (var h = 1; h < d.specs[0].length; h++) {
+          theadHtml += '<th>' + d.specs[0][h] + '</th>';
+        }
+        theadHtml += '</tr>';
+      }
+      var bodyHtml = '';
+      for (var i = 1; i < d.specs.length; i++) {
+        bodyHtml += '<tr>';
+        for (var j = 0; j < d.specs[i].length; j++) {
+          var tag = (j === 0) ? 'th' : 'td';
+          bodyHtml += '<' + tag + '>' + d.specs[i][j] + '</' + tag + '>';
+        }
+        bodyHtml += '</tr>';
+      }
+      document.getElementById('specs-table').innerHTML = theadHtml + bodyHtml;
+    }
+
+    // Advantages
+    var advHtml = '';
+    d.advantages.forEach(function(a) {
+      advHtml += '<li>' + a + '</li>';
+    });
+    document.getElementById('advantages-list').innerHTML = advHtml;
+
+    // Applications
+    document.getElementById('applications').textContent = d.applications;
+
+    // Related products
+    if (d.related) {
+      function getProductCardImage(item) {
+        if (!item) return '';
+        if (item.images && item.images.length > 0) return item.images[0];
+        if (item.colors && item.colors.length > 0) {
+          if (item.colors[0].thumb) return item.colors[0].thumb;
+          if (item.colors[0].images && item.colors[0].images.length > 0) return item.colors[0].images[0];
+        }
+        if (item.variants && item.variants.length > 0) {
+          if (item.variants[0].thumb) return item.variants[0].thumb;
+          if (item.variants[0].images && item.variants[0].images.length > 0) return item.variants[0].images[0];
+        }
+        return '';
+      }
+
+      var relatedHtml = '';
+      d.related.forEach(function(r) {
+        if (data[r]) {
+          var relatedImage = getProductCardImage(data[r]);
+          var imageStyle = relatedImage
+            ? ' style="background-image:url(' + relatedImage + ');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#1a1a1a;"'
+            : '';
+          var fallbackText = relatedImage ? '' : r.substring(0,2).toUpperCase();
+          relatedHtml += '<a href="product-detail.html?series=' + r + '" class="product-card" style="text-decoration:none;color:inherit;">' +
+            '<div class="product-img"' + imageStyle + '><span class="product-badge">' + (data[r].tags ? data[r].tags[0] : '') + '</span>' + fallbackText + '</div>' +
+            '<div class="product-info"><h3>' + data[r].name + '</h3>' +
+            '<p class="specs">' + data[r].tags.slice(0,3).join(' · ') + '</p>' +
+            '<span class="btn btn-primary btn-sm">View Details</span></div></a>';
+        }
+      });
+      document.getElementById('related-products').innerHTML = relatedHtml;
+    }
+  })();
+  </script>
+
+  <!-- Mobile Bottom CTA Bar -->
+  <div class="mobile-cta-bar">
+    <a href="https://wa.me/8619008225410" class="btn btn-wa" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+      WhatsApp
+    </a>
+    <a href="contact.html" class="btn btn-quote">Get a Quote</a>
+  </div>
+
+</body>
+</html>
