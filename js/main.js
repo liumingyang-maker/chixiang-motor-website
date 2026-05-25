@@ -262,7 +262,7 @@
     // --- Lead form submission ---
     const leadFormEndpoint = '/api/contact';
     const whatsappNumber = '8619008225410';
-    const turnstileSiteKey = 'PASTE_CLOUDFLARE_TURNSTILE_SITE_KEY';
+    const turnstileSiteKey = '0x4AAAAAADWB99C8edFaOnai';
 
     function isRealEndpoint(endpoint) {
       return endpoint && endpoint.indexOf('YOUR_FORM_ID') === -1;
