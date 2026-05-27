@@ -134,22 +134,6 @@
       }
     }
 
-    // --- Particle generation for hero ---
-    const particlesContainer = document.querySelector('.particles');
-    if (particlesContainer) {
-      for (let i = 0; i < 60; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 8 + 4) + 's';
-        particle.style.width = (Math.random() * 3 + 1) + 'px';
-        particle.style.height = particle.style.width;
-        particlesContainer.appendChild(particle);
-      }
-    }
-
     // --- Product filter ---
     const filterBtns = document.querySelectorAll('.filter-btn');
     const productCards = document.querySelectorAll('.product-card[data-category]');
@@ -163,7 +147,8 @@
         filterBtns[0].classList.add('active');
       }
       productCards.forEach(function(card) {
-        if (filter === 'all' || !filter || card.getAttribute('data-category') === filter) {
+        var categories = (card.getAttribute('data-category') || '').split(/\s+/);
+        if (filter === 'all' || !filter || categories.indexOf(filter) !== -1) {
           card.style.display = '';
           setTimeout(function() {
             card.style.opacity = '1';
