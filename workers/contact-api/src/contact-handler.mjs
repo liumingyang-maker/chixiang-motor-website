@@ -2,7 +2,7 @@ const SALES_INBOX = 'chixiangmotor@163.com';
 const SENDER = 'inquiry@chixiangmotor.com';
 const TURNSTILE_SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 const ALLOWED_ORIGINS = new Set([
-  'https://www.chixiangmotor.com',
+  'https://chixiangmotor.com',
   'https://chixiangmotor.com',
   'http://localhost:4173',
   'http://127.0.0.1:4173'

@@ -11,11 +11,11 @@ function formRequest(fields) {
   const body = new URLSearchParams();
   Object.entries(fields).forEach(([key, value]) => body.set(key, value));
 
-  return new Request('https://www.chixiangmotor.com/api/contact', {
+  return new Request('https://chixiangmotor.com/api/contact', {
     method: 'POST',
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
-      origin: 'https://www.chixiangmotor.com'
+      origin: 'https://chixiangmotor.com'
     },
     body
   });
@@ -73,7 +73,7 @@ test('buildInquiryEmail includes the sales inbox and source page', () => {
     company: 'Rivera Moto Parts',
     product: 'CG engine',
     message: 'Please quote 100 CG150 engines for Brazil.',
-    page_url: 'https://www.chixiangmotor.com/pt/motor-cg.html',
+    page_url: 'https://chixiangmotor.com/pt/motor-cg.html',
     site_language: 'pt'
   });
 
@@ -96,7 +96,7 @@ test('handleContactRequest sends email and returns json success', async () => {
       company: 'Rivera Moto Parts',
       product: 'CG engine',
       message: 'Please quote 100 CG150 engines for Brazil.',
-      page_url: 'https://www.chixiangmotor.com/pt/motor-cg.html',
+      page_url: 'https://chixiangmotor.com/pt/motor-cg.html',
       site_language: 'pt',
       'cf-turnstile-response': 'valid-token'
     }),
