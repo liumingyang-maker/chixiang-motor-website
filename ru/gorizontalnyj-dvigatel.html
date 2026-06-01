@@ -7,6 +7,7 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/109483511" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css?v=20260527-bg">
     <title>Горизонтальные двигатели оптом с завода | 154FMI 153FMI 1P56FMJ 152FMH | Chixiang Motor</title>
     <meta name="description" content="Горизонтальные двигатели 110-140cc для питбайков и мопедов оптом от завода. FOB от $99 (7 029 ₽). MOQ 50 шт. ISO 9001. Экспорт в Россию с 2003 года.">
     <meta name="keywords" content="горизонтальный двигатель оптом, 154FMI, 153FMI, 1P56FMJ, 152FMH, двигатель питбайк, двигатель мопед Альфа, двигатель в сборе, купить двигатель оптом Китай">
@@ -19,8 +20,10 @@
         h1,h2,h3,h4{font-family:'Montserrat',sans-serif}
 
         /* HERO */
-        .hero{background:linear-gradient(rgba(15,15,26,.82),rgba(26,26,46,.85)),url('/images/about-factory-hero-7.jpg') center/cover no-repeat;color:#fff;padding:50px 20px 45px;text-align:center;position:relative}
-        .hero-content{position:relative;z-index:1;max-width:860px;margin:0 auto}
+        .hero-lp{position:relative;color:#fff;padding:50px 20px 45px;text-align:center;overflow:hidden}
+        .hero-lp .hero-bg-img{position:absolute;inset:0;background:url('../images/factory-showcase/about-factory-hero-7.webp') center/cover no-repeat;z-index:0}
+        .hero-lp .hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(rgba(15,15,26,.60),rgba(26,26,46,.65));z-index:1}
+        .hero-content{position:relative;z-index:2;max-width:860px;margin:0 auto}
         .hero-badge{display:inline-block;background:var(--red);color:#fff;padding:5px 16px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;margin-bottom:18px;text-transform:uppercase}
         .hero h1{font-size:clamp(26px,5vw,44px);font-weight:900;line-height:1.15;margin-bottom:14px}
         .hero h1 span{color:var(--gold)}
@@ -120,8 +123,61 @@
 </head>
 <body>
 
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <div class="mobile-nav-brand">
+      <div class="mobile-nav-logo">CHIXIANG MOTOR</div>
+      <div class="mobile-nav-tagline">Производитель мотоциклетных двигателей в Китае</div>
+    </div>
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="index.html">Главная<span class="mnav-arrow">&rsaquo;</span></a></li>
+    <li><a href="products.html">Продукция<span class="mnav-arrow">&rsaquo;</span></a></li>
+    <li><a href="news.html">Новости<span class="mnav-arrow">&rsaquo;</span></a></li>
+    <li><a href="about.html">О нас<span class="mnav-arrow">&rsaquo;</span></a></li>
+    <li><a href="kontakty.html" class="mnav-accent">Контакты<span class="mnav-arrow">&rsaquo;</span></a></li>
+  </ul>
+</div>
+
+<!-- Main Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon"><img src="../images/logo.webp" alt="CHIXIANG MOTOR" width="36" height="36" decoding="async"></span>
+      <span class="logo-text">CHIXIANG MOTOR</span>
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Main navigation">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="products.html">Продукция</a></li>
+      <li><a href="news.html">Новости</a></li>
+      <li><a href="about.html">О нас</a></li>
+      <li><a href="kontakty.html">Контакты</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-current" aria-label="Select language"><span>RU</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="lang-dropdown">
+          <a href="../en/index.html">English</a>
+          <a href="../ru/index.html" class="active">Русский</a>
+          <a href="../es/index.html">Español</a>
+          <a href="../pt/index.html">Português</a>
+          <a href="../ar/index.html">العربية</a>
+        </div>
+      </div>
+      <a href="kontakty.html" class="btn btn-accent btn-sm">Отправить запрос</a>
+      <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero-lp">
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg-overlay"></div>
     <div class="hero-content">
         <div class="hero-badge">Завод-производитель · Прямые поставки в Россию</div>
         <h1>Горизонтальные двигатели оптом<br><span>от $99 / 7 029 ₽</span> за штуку</h1>
@@ -397,10 +453,22 @@
     </div>
 </section>
 
-<footer>
-    <p>&copy; 2026 Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. | <a href="https://chixiangmotor.com">chixiangmotor.com</a></p>
-    <p style="margin-top:4px">Чунцин, Китай · Завод с 2003 года · ISO 9001</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.</h4><p>Производитель мотоциклетных двигателей в Китае. С 2003 года · ISO 9001 · 8 000 двигателей в месяц.</p></div>
+      <div class="footer-col"><h4>Навигация</h4><a href="index.html">Главная</a><br><a href="dvigatel-cg.html">CG</a><br><a href="kontakty.html">Контакты</a></div>
+      <div class="footer-col"><h4>Продукты</h4><a href="dvigatel-cg.html">CG</a><br><a href="dvigatel-cb.html">CB</a><br><a href="gorizontalnyj-dvigatel.html">Горизонтальные</a><br><a href="zapchasti-dvigatelya.html">Запчасти</a></div>
+      <div class="footer-col"><h4>Контакты</h4><p>WhatsApp: +86 19008225410<br>Email: chixiangmotor@163.com<br>Factory: Chongqing, China</p></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.</span><span>Chongqing, China</span></div>
+  </div>
 </footer>
+<div class="mobile-cta-bar">
+  <a href="https://wa.me/8619008225410" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="kontakty.html" class="btn btn-quote">Отправить запрос</a>
+</div>
+<script src="../js/main.js" defer></script>
 
 <script>
 function switchTab(el, showId, hideId) {
@@ -412,3 +480,4 @@ function switchTab(el, showId, hideId) {
 </script>
 </body>
 </html>
+
