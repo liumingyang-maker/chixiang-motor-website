@@ -6,6 +6,22 @@
   'use strict';
 
   function init() {
+    // --- Google Ads conversion tracking ---
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16777656395/Om_nCMCV4swcEMvwmsA-',
+        'value': 1.0,
+        'currency': 'USD',
+        'event_callback': callback
+      });
+      return false;
+    }
+
     // --- Full-Screen Mobile Nav ---
     var menuToggle = document.querySelector('.menu-toggle');
     var mobileNav = document.getElementById('mobileNav');
@@ -438,6 +454,7 @@
               throw new Error('Submission failed');
             }
             setFormStatus(contactForm, 'Thank you. Your inquiry has been sent successfully.', 'success');
+            gtag_report_conversion();
             contactForm.reset();
             if (window.turnstile && typeof window.turnstile.reset === 'function') {
               window.turnstile.reset();
