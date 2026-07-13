@@ -44,3 +44,15 @@ test('references only existing local product assets', () => {
     assert.ok(fs.existsSync(path.join(root, 'images', source)), source);
   }
 });
+
+test('defines responsive and accessible page-scoped styles', () => {
+  const css = read('css/uzbekistan-landing.css');
+  assert.match(css, /\.uz-product-row/);
+  assert.match(css, /@media\s*\(max-width:\s*680px\)/);
+  assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+  assert.match(css, /min-height:\s*44px/);
+  assert.match(css, /scroll-margin-top/);
+  assert.match(css, /overflow-x:\s*auto/);
+  assert.match(css, /object-fit:\s*contain/);
+  assert.match(css, /background:\s*#fff/);
+});
