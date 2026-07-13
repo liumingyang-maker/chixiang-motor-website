@@ -22,6 +22,26 @@
       return false;
     }
 
+    function reportWhatsAppConversion() {
+      if (typeof window.gtag !== 'function') return;
+
+      try {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-16777656395/bovKCKOx088cEMvwmsA-'
+        });
+      } catch (error) {
+        // Tracking must never prevent the visitor from opening WhatsApp.
+      }
+    }
+
+    document.addEventListener('click', function(event) {
+      var target = event.target;
+      if (!target || typeof target.closest !== 'function') return;
+      if (!target.closest('a[href*="wa.me/"]')) return;
+
+      reportWhatsAppConversion();
+    });
+
     // --- Full-Screen Mobile Nav ---
     var menuToggle = document.querySelector('.menu-toggle');
     var mobileNav = document.getElementById('mobileNav');
