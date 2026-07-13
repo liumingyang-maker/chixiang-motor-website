@@ -496,3 +496,100 @@ Confirm:
 - [ ] **Step 5: Report the production URL and commit**
 
 Include the live URL, final commit hash, test totals, viewport checks, and any remaining Google Ads follow-up such as updating the final URL after the landing page is approved.
+
+## Task 6: Replace the hero and add explicit Russian-site navigation
+
+**Files:**
+- Create: `images/uzbekistan-cg-hero.png`
+- Modify: `ru/dvigateli-dlya-uzbekistana.html`
+- Modify: `css/uzbekistan-landing.css`
+- Modify: `tests/uzbekistan-landing.test.js`
+
+- [ ] **Step 1: Extend the failing page contract**
+
+Add assertions that require the supplied hero image, remove the previous single-engine card and displacement badge, and expose clear links to the Russian site:
+
+```js
+test('uses the approved hero artwork and explicit Russian-site links', () => {
+  const html = fs.readFileSync(pagePath, 'utf8');
+  assert.match(html, /src="\.\.\/images\/uzbekistan-cg-hero\.png"/);
+  assert.doesNotMatch(html, /uz-hero-product/);
+  assert.doesNotMatch(html, /uz-hero-badge/);
+  assert.match(html, />Русский сайт<\/a>/);
+  assert.match(html, /href="products\.html"/);
+  assert.match(html, /href="about\.html"/);
+});
+```
+
+- [ ] **Step 2: Run the test and verify the current hero fails the contract**
+
+Run `node --test tests/uzbekistan-landing.test.js`.
+
+Expected: FAIL because the page still contains `.uz-hero-product` and `.uz-hero-badge`, and does not reference `uzbekistan-cg-hero.png`.
+
+- [ ] **Step 3: Add the approved binary asset without altering its pixels**
+
+Copy:
+
+```powershell
+Copy-Item -LiteralPath 'C:\Users\97020\Downloads\ChatGPT Image 2026年7月13日 21_48_08.png' -Destination 'images\uzbekistan-cg-hero.png'
+```
+
+Expected: `images/uzbekistan-cg-hero.png` exists at 1672×941.
+
+- [ ] **Step 4: Replace the hero markup and add navigation links**
+
+Inside `.uz-hero`, add the approved image before `.uz-hero-grid`:
+
+```html
+<img class="uz-hero-background" src="../images/uzbekistan-cg-hero.png" width="1672" height="941" alt="Линейка двигателей Chixiang Motor: CG, CB и усиленный двигатель">
+```
+
+Remove `.uz-hero-visual`, `.uz-hero-product`, `.uz-hero-badge`, and their single-engine image. Change the secondary hero CTA to:
+
+```html
+<a class="uz-button uz-button-secondary" href="index.html">Русский сайт</a>
+```
+
+Add `Русский сайт` to `.uz-nav-links`, and add footer links for `index.html`, `products.html`, and `about.html`.
+
+- [ ] **Step 5: Implement desktop background and mobile stacked artwork styles**
+
+Desktop contracts:
+
+```css
+.uz-hero { position: relative; min-height: 660px; color: #fff; background: #071a31; }
+.uz-hero-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.uz-hero-grid { position: relative; z-index: 2; grid-template-columns: minmax(0, 500px); }
+.uz-hero-copy { max-width: 500px; }
+```
+
+Mobile contracts inside `@media (max-width: 680px)`:
+
+```css
+.uz-hero { display: flex; min-height: 0; flex-direction: column; }
+.uz-hero-background { position: relative; order: 1; width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: contain; }
+.uz-hero-grid { order: 2; padding-block: 38px 50px; }
+```
+
+Ensure the hero title, lead, trust points, and secondary button remain readable on the dark surface.
+
+- [ ] **Step 6: Run the full test suite and browser viewport checks**
+
+Run:
+
+```powershell
+node --test tests/*.test.js
+git diff --check
+```
+
+Expected: all tests PASS and no whitespace errors.
+
+Inspect 1440×900, 768×1024, and 375×812. Confirm the desktop copy stays in the dark left area, the mobile artwork is uncropped, no page-level horizontal overflow exists, and the Russian-site links are visible.
+
+- [ ] **Step 7: Commit the revised preview**
+
+```powershell
+git add images/uzbekistan-cg-hero.png ru/dvigateli-dlya-uzbekistana.html css/uzbekistan-landing.css tests/uzbekistan-landing.test.js docs/superpowers/plans/2026-07-13-uzbekistan-cg-landing-page.md
+git commit -m "feat: revise Uzbekistan landing hero and site links"
+```
