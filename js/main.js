@@ -354,6 +354,10 @@
       status.classList.toggle('is-success', type === 'success');
     }
 
+    function getFormMessage(form, key, fallback) {
+      return form.getAttribute('data-message-' + key) || fallback;
+    }
+
     function addHiddenField(form, name, value) {
       let input = form.querySelector('[name="' + name + '"]');
       if (!input) {
@@ -371,10 +375,13 @@
       const lines = [
         'New inquiry from Chixiang website',
         'Name: ' + getFieldValue(form, ['[name="name"]']),
-        'Contact: ' + getFieldValue(form, ['[name="email"]', '[name="contact"]']),
+        'Contact: ' + getFieldValue(form, ['[name="contact"]', '[name="email"]']),
+        'Email: ' + getFieldValue(form, ['[name="email"]']),
         'Country: ' + getFieldValue(form, ['[name="country"]']),
         'Company: ' + getFieldValue(form, ['[name="company"]']),
         'Product: ' + getFieldValue(form, ['[name="product_interest"]', '[name="product"]']),
+        'Quantity: ' + getFieldValue(form, ['[name="quantity"]']),
+        'Application: ' + getFieldValue(form, ['[name="application"]']),
         'Message: ' + getFieldValue(form, ['[name="message"]']),
         'Page: ' + window.location.href
       ];
@@ -408,7 +415,7 @@
           return;
         }
 
-        [name, email || contact, product].forEach(function(field) {
+        [name, contact || email, product].forEach(function(field) {
           if (field && !field.value.trim()) {
             field.style.borderColor = 'var(--accent-red)';
             valid = false;
@@ -428,7 +435,7 @@
           for (let i = 0; i < spamPatterns.length; i++) {
             if (messageText.indexOf(spamPatterns[i]) !== -1) {
               message.style.borderColor = 'var(--accent-red)';
-              setFormStatus(contactForm, 'Please remove promotional or spam-like content from your message.', 'error');
+              setFormStatus(contactForm, getFormMessage(contactForm, 'spam', 'Please remove promotional or spam-like content from your message.'), 'error');
               valid = false;
               break;
             }
@@ -436,7 +443,7 @@
         }
 
         if (isTurnstileConfigured() && (!turnstileToken || !turnstileToken.value.trim())) {
-          setFormStatus(contactForm, 'Please complete the anti-spam check before sending.', 'error');
+          setFormStatus(contactForm, getFormMessage(contactForm, 'turnstile', 'Please complete the anti-spam check before sending.'), 'error');
           valid = false;
         }
 
@@ -451,7 +458,7 @@
           }
 
           if (submitBtn) {
-            submitBtn.textContent = 'Sending...';
+            submitBtn.textContent = getFormMessage(contactForm, 'sending', 'Sending...');
             submitBtn.disabled = true;
           }
 
@@ -473,7 +480,7 @@
             if (!response.ok) {
               throw new Error('Submission failed');
             }
-            setFormStatus(contactForm, 'Thank you. Your inquiry has been sent successfully.', 'success');
+            setFormStatus(contactForm, getFormMessage(contactForm, 'success', 'Thank you. Your inquiry has been sent successfully.'), 'success');
             gtag_report_conversion();
             contactForm.reset();
             if (window.turnstile && typeof window.turnstile.reset === 'function') {
@@ -481,7 +488,7 @@
             }
           }).catch(function() {
             window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(contactForm)), '_blank', 'noopener');
-            setFormStatus(contactForm, 'The form could not be sent by email. We opened WhatsApp with your inquiry details.', 'error');
+            setFormStatus(contactForm, getFormMessage(contactForm, 'fallback', 'The form could not be sent by email. We opened WhatsApp with your inquiry details.'), 'error');
           }).finally(function() {
             if (submitBtn) {
               submitBtn.textContent = originalText;

@@ -56,3 +56,15 @@ test('defines responsive and accessible page-scoped styles', () => {
   assert.match(css, /object-fit:\s*contain/);
   assert.match(css, /background:\s*#fff/);
 });
+
+test('uses the approved hero artwork and explicit Russian-site links', () => {
+  const html = fs.readFileSync(pagePath, 'utf8');
+  const css = read('css/uzbekistan-landing.css');
+  assert.match(html, /src="\.\.\/images\/uzbekistan-cg-hero\.png"/);
+  assert.doesNotMatch(html, /uz-hero-product/);
+  assert.doesNotMatch(html, /uz-hero-badge/);
+  assert.match(html, />Русский сайт<\/a>/);
+  assert.match(html, /href="products\.html"/);
+  assert.match(html, /href="about\.html"/);
+  assert.match(css, /@media \(min-width: 781px\)[\s\S]*\.uz-hero-grid[\s\S]*1640px/);
+});
