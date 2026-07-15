@@ -32,6 +32,8 @@ test('publishes independent SEO shells for Peru and Colombia', () => {
     assert.match(html, /\.\.\/\.\.\/js\/latam-cg-products\.js/);
     assert.match(html, /\.\.\/\.\.\/js\/latam-cg-landing\.js/);
     assert.match(html, /<form[^>]+id="latamQuoteForm"[^>]+action="\/api\/contact"/);
+    assert.match(html, /https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=AW-16777656395/);
+    assert.match(read('js/latam-cg-landing.js'), /data-message-success/);
   }
 });
 
@@ -47,6 +49,10 @@ test('keeps market selection and verified product order in data modules', () => 
   assert.equal(colombia.market.defaultCountry, 'Colombia');
   assert.equal(colombia.market.sourceForm, 'es_colombia_cg_landing');
   assert.deepEqual(Array.from(colombia.productOrder), ['cg125', 'cg150', 'replacement']);
+  assert.deepEqual(
+    Array.from(colombia.comparisonFields).map(field => field.key),
+    ['name', 'displacement', 'cooling', 'bestFor', 'reverse']
+  );
 });
 
 test('uses only cc copy and existing local engine and factory assets', () => {
@@ -76,4 +82,6 @@ test('limits the sticky quote CTA to the mobile breakpoint', () => {
   const css = read('css/latam-cg-landing.css');
   assert.match(css, /\.latam-mobile-cta\s*\{[^}]*display:none;/);
   assert.match(css, /@media \(max-width:767px\)[\s\S]*\.latam-mobile-cta\s*\{[^}]*display:inline-flex;/);
+  assert.match(css, /has-latam-mobile-cta/);
+  assert.match(css, /\.latam-product:not\(\.is-open\) \.latam-gallery/);
 });

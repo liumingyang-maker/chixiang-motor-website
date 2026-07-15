@@ -6,16 +6,23 @@
       eyebrow: 'SUMINISTRO DIRECTO DE FÁBRICA PARA PERÚ',
       title: 'Motores CG 150/200 cc para motos y trimotos de carga',
       description: 'Motores para trabajo diario, carga y reemplazo. Refrigeración por aire o agua, reversa según el modelo, repuestos y empaque de exportación.',
-      whatsappMessageTemplate: 'Hola, necesito una cotización mayorista en {market}. Producto: {product}. Uso: {application}. Fuente: {source}.',
+      whatsappMessageTemplate: 'Hola, deseo una cotización mayorista para {market}.\nMotor de interés: {product}.\nAplicación: {application}.',
       replacementMessage: 'Hola, necesito reemplazar un motor para una moto o trimoto en Perú.\nPuedo enviar una foto y el código del motor.\nPor favor, ayúdeme a confirmar el modelo y el precio mayorista.'
     },
     productOrder: ['cg150', 'cg200', 'cargo'],
     applications: [
       { title: 'Motocicletas de trabajo', text: 'Uso diario y reparto.', product: 'cg150' },
       { title: 'Trimotos de carga', text: 'Trabajo de carga según la configuración.', product: 'cg200' },
-      { title: 'Reemplazo y trabajo intensivo', text: 'Selección por foto o código.', product: 'cargo' }
+      { title: 'Carga y trabajo intensivo', text: 'Selección según vehículo y carga.', product: 'cargo' }
     ],
-    comparisonLabels: ['Modelo', 'Cilindrada', 'Refrigeración', 'Reversa', 'Uso recomendado', 'Cotización'],
+    comparisonFields: [
+      { key: 'name', label: 'Modelo' },
+      { key: 'displacement', label: 'Cilindrada' },
+      { key: 'cooling', label: 'Refrigeración' },
+      { key: 'reverse', label: 'Reversa' },
+      { key: 'bestFor', label: 'Uso recomendado' }
+    ],
+    comparisonActionLabel: 'Solicitar precio',
     quoteTitle: 'Solicitar precio mayorista', quoteDescription: 'Indique país, serie y cantidad. Respondemos por WhatsApp o email.',
     heroPoints: ['Suministro mayorista', 'OEM / ODM', 'Repuestos disponibles', 'Soporte de exportación'],
     form: {

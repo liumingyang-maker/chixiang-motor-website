@@ -84,6 +84,31 @@ test('buildInquiryEmail includes the sales inbox and source page', () => {
   assert.match(email.text, /pt\/motor-cg\.html/);
 });
 
+test('buildInquiryEmail preserves detailed procurement and attribution fields', () => {
+  const email = buildInquiryEmail({
+    name: 'Carlos Rivera',
+    contact: '+55 11 99999-0000',
+    country: 'Peru',
+    product_interest: 'CG150',
+    application: 'Motocicleta de trabajo',
+    displacement: '150 cc',
+    quantity: '100',
+    vehicle: 'Trimoto X',
+    engine_code: 'CG150-01',
+    requirements: 'Reversa y repuestos',
+    market: 'Peru',
+    source_form: 'es_peru_cg_landing',
+    utm_campaign: 'cg-peru',
+    gclid: 'test-gclid'
+  });
+
+  assert.match(email.text, /Application: Motocicleta de trabajo/);
+  assert.match(email.text, /Quantity: 100/);
+  assert.match(email.text, /Engine code: CG150-01/);
+  assert.match(email.text, /UTM campaign: cg-peru/);
+  assert.match(email.text, /GCLID: test-gclid/);
+});
+
 test('handleContactRequest sends email and returns json success', async () => {
   const sent = [];
   const verify = turnstileEnv(sent);

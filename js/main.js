@@ -7,18 +7,17 @@
 
   function init() {
     // --- Google Ads conversion tracking ---
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-16777656395/Om_nCMCV4swcEMvwmsA-',
-        'value': 1.0,
-        'currency': 'USD',
-        'event_callback': callback
-      });
+    function gtag_report_conversion() {
+      if (typeof window.gtag !== 'function') return false;
+      try {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-16777656395/Om_nCMCV4swcEMvwmsA-',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      } catch (error) {
+        // Conversion measurement must never change a successful form submission.
+      }
       return false;
     }
 
@@ -372,18 +371,24 @@
     }
 
     function buildWhatsAppText(form) {
+      const isSpanish = (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
+      const labels = isSpanish ? {
+        title: 'Solicitud desde el sitio web de Chixiang', name: 'Nombre', contact: 'Contacto', email: 'Email', country: 'País', company: 'Empresa', product: 'Motor', quantity: 'Cantidad', application: 'Aplicación', message: 'Detalles', page: 'Página'
+      } : {
+        title: 'New inquiry from Chixiang website', name: 'Name', contact: 'Contact', email: 'Email', country: 'Country', company: 'Company', product: 'Product', quantity: 'Quantity', application: 'Application', message: 'Message', page: 'Page'
+      };
       const lines = [
-        'New inquiry from Chixiang website',
-        'Name: ' + getFieldValue(form, ['[name="name"]']),
-        'Contact: ' + getFieldValue(form, ['[name="contact"]', '[name="email"]']),
-        'Email: ' + getFieldValue(form, ['[name="email"]']),
-        'Country: ' + getFieldValue(form, ['[name="country"]']),
-        'Company: ' + getFieldValue(form, ['[name="company"]']),
-        'Product: ' + getFieldValue(form, ['[name="product_interest"]', '[name="product"]']),
-        'Quantity: ' + getFieldValue(form, ['[name="quantity"]']),
-        'Application: ' + getFieldValue(form, ['[name="application"]']),
-        'Message: ' + getFieldValue(form, ['[name="message"]']),
-        'Page: ' + window.location.href
+        labels.title,
+        labels.name + ': ' + getFieldValue(form, ['[name="name"]']),
+        labels.contact + ': ' + getFieldValue(form, ['[name="contact"]', '[name="email"]']),
+        labels.email + ': ' + getFieldValue(form, ['[name="email"]']),
+        labels.country + ': ' + getFieldValue(form, ['[name="country"]']),
+        labels.company + ': ' + getFieldValue(form, ['[name="company"]']),
+        labels.product + ': ' + getFieldValue(form, ['[name="product_interest"]', '[name="product"]']),
+        labels.quantity + ': ' + getFieldValue(form, ['[name="quantity"]']),
+        labels.application + ': ' + getFieldValue(form, ['[name="application"]']),
+        labels.message + ': ' + getFieldValue(form, ['[name="message"]']),
+        labels.page + ': ' + window.location.href
       ];
       return lines.filter(function(line) {
         return line.split(': ').pop();

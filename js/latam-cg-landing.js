@@ -12,17 +12,20 @@
     return new URLSearchParams(window.location.search || '');
   }
   function replaceTokens(template, context) { return String(template || '').replace(/\{(\w+)\}/g, function(_, key) { return context[key] || ''; }); }
+  function productSlug(value) {
+    if (catalog[value]) return value;
+    return Object.keys(catalog).find(function(slug) { return catalog[slug].name === value; }) || value;
+  }
+  function productName(value) { var item = product(productSlug(value)); return item.name || value || ''; }
   function buildWhatsAppUrl(context) {
     context = context || {};
     var market = data.market || {};
     var query = params();
     var content = {
-      market: market.name || market.defaultCountry || '', product: context.product || selectedProduct || '', application: context.application || selectedApplication || 'No especificado', source: context.source || 'landing',
+      market: market.name || market.defaultCountry || '', product: productName(context.product || selectedProduct || ''), application: context.application || selectedApplication || 'No especificado',
       utm_source: context.utm_source || query.get('utm_source') || '', utm_medium: context.utm_medium || query.get('utm_medium') || '', utm_campaign: context.utm_campaign || query.get('utm_campaign') || '', gclid: context.gclid || query.get('gclid') || ''
     };
     var message = context.message || replaceTokens(market.whatsappMessageTemplate, content);
-    var details = ['utm_source', 'utm_medium', 'utm_campaign', 'gclid'].filter(function(key) { return content[key]; }).map(function(key) { return key + ': ' + content[key]; });
-    if (details.length) message += '\n' + details.join(' | ');
     return 'https://wa.me/' + (market.whatsappNumber || '8619008225410') + '?text=' + encodeURIComponent(message);
   }
   function pickActiveSection(sections, headerHeight) {
@@ -31,14 +34,14 @@
     return current.length ? current[current.length - 1].id : (sections.find(function(section) { return section.bottom > point; }) || {}).id || '';
   }
   function getProductDisclosureState(slugs, active) { return slugs.reduce(function(result, slug) { result[slug] = slug === active; return result; }, {}); }
-  function shouldShowMobileCta(state) { return Boolean(state && state.passedHero && !state.quoteVisible && !state.footerVisible && !state.faqOpen && !state.fieldFocused && !state.keyboardOpen && !state.nearPageBottom); }
+  function shouldShowMobileCta(state) { return Boolean(state && state.passedHero && !state.quoteVisible && !state.footerVisible && !state.faqOpen && !state.productActionVisible && !state.fieldFocused && !state.keyboardOpen && !state.nearPageBottom); }
   function product(slug) { return catalog[slug] || {}; }
   function scrollToId(id) { var target = document.getElementById(id); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   function setSelectedProduct(slug, application) {
-    selectedProduct = slug || selectedProduct;
+    selectedProduct = productSlug(slug || selectedProduct);
     selectedApplication = application || selectedApplication;
     var select = document.querySelector('[name="product_interest"]');
-    if (select) select.value = selectedProduct;
+    if (select) select.value = productName(selectedProduct);
     var applicationInput = document.querySelector('[name="application"]');
     if (applicationInput && selectedApplication) applicationInput.value = selectedApplication;
     document.querySelectorAll('[data-product-card]').forEach(function(card) { card.classList.toggle('is-selected', card.dataset.productCard === selectedProduct); });
@@ -60,24 +63,25 @@
     node.innerHTML = data.applications.map(function(item, index) { return '<button class="latam-application" type="button" data-application="' + escapeHtml(item.title) + '" data-product="' + item.product + '"><span>0' + (index + 1) + '</span><strong>' + escapeHtml(item.title) + '</strong><small>' + escapeHtml(item.text) + '</small><em>' + escapeHtml(product(item.product).name) + ' →</em></button>'; }).join('');
     node.querySelectorAll('button').forEach(function(button) { button.addEventListener('click', function() { setSelectedProduct(button.dataset.product, button.dataset.application); scrollToId('products'); }); });
   }
-  function productRows(item, labels) {
-    var values = [item.name, item.displacement, item.cooling, item.reverse, item.bestFor];
-    return values.map(function(value, index) { return '<div><dt>' + escapeHtml(labels[index]) + '</dt><dd>' + escapeHtml(value) + '</dd></div>'; }).join('');
+  function comparisonFields() { return data.comparisonFields || []; }
+  function productRows(item, fields) {
+    return fields.map(function(field) { return '<div><dt>' + escapeHtml(field.label) + '</dt><dd>' + escapeHtml(item[field.key]) + '</dd></div>'; }).join('');
   }
   function renderComparison() {
     var cards = document.querySelector('[data-comparison-cards]'); var table = document.querySelector('[data-comparison-table]');
     if (!cards || !table) return;
-    cards.innerHTML = data.productOrder.map(function(slug) { var item = product(slug); return '<article class="latam-compare-card"><h3>' + escapeHtml(item.name) + '</h3><dl>' + productRows(item, data.comparisonLabels) + '</dl><button type="button" class="latam-text-action" data-product="' + slug + '">' + escapeHtml(data.comparisonLabels[5]) + ' →</button></article>'; }).join('');
-    table.innerHTML = '<table><thead><tr>' + data.comparisonLabels.map(function(label) { return '<th>' + escapeHtml(label) + '</th>'; }).join('') + '</tr></thead><tbody><tr>' + data.productOrder.map(function(slug) { var item = product(slug); return '<td><strong>' + escapeHtml(item.name) + '</strong></td>'; }).join('') + '</tr><tr>' + data.productOrder.map(function(slug) { return '<td>' + escapeHtml(product(slug).displacement) + '</td>'; }).join('') + '</tr><tr>' + data.productOrder.map(function(slug) { return '<td>' + escapeHtml(product(slug).cooling) + '</td>'; }).join('') + '</tr><tr>' + data.productOrder.map(function(slug) { return '<td>' + escapeHtml(product(slug).reverse) + '</td>'; }).join('') + '</tr><tr>' + data.productOrder.map(function(slug) { return '<td>' + escapeHtml(product(slug).bestFor) + '</td>'; }).join('') + '</tr><tr>' + data.productOrder.map(function(slug) { return '<td><button type="button" class="latam-text-action" data-product="' + slug + '">Solicitar precio</button></td>'; }).join('') + '</tr></tbody></table>';
+    var fields = comparisonFields(); var actionLabel = data.comparisonActionLabel || 'Solicitar precio';
+    cards.innerHTML = data.productOrder.map(function(slug) { var item = product(slug); return '<article class="latam-compare-card"><h3>' + escapeHtml(item.name) + '</h3><dl>' + productRows(item, fields) + '</dl><button type="button" class="latam-text-action" data-product="' + slug + '">' + escapeHtml(actionLabel) + ' →</button></article>'; }).join('');
+    table.innerHTML = '<table><thead><tr>' + fields.map(function(field) { return '<th scope="col">' + escapeHtml(field.label) + '</th>'; }).join('') + '<th scope="col">' + escapeHtml(actionLabel) + '</th></tr></thead><tbody>' + data.productOrder.map(function(slug) { var item = product(slug); return '<tr>' + fields.map(function(field) { var value = escapeHtml(item[field.key]); return '<td>' + (field.key === 'name' ? '<strong>' + value + '</strong>' : value) + '</td>'; }).join('') + '<td><button type="button" class="latam-text-action" data-product="' + slug + '">' + escapeHtml(actionLabel) + '</button></td></tr>'; }).join('') + '</tbody></table>';
     document.querySelectorAll('[data-comparison-cards] [data-product], [data-comparison-table] [data-product]').forEach(function(button) { button.addEventListener('click', function() { setSelectedProduct(button.dataset.product); scrollToId('quote'); }); });
   }
   function renderProducts() {
     var node = document.querySelector('[data-products]'); if (!node) return;
     node.innerHTML = data.productOrder.map(function(slug, index) {
       var item = product(slug); var open = index === 0;
-      return '<article id="product-' + slug + '" class="latam-product" data-product-card="' + slug + '"><div class="latam-product-copy"><p>Modelo seleccionado</p><h3>' + escapeHtml(item.name) + '</h3><span class="latam-volume">' + escapeHtml(item.displacement) + '</span><p class="latam-product-use">' + escapeHtml(item.bestFor) + '</p><button class="latam-product-toggle" type="button" aria-expanded="' + open + '" aria-controls="details-' + slug + '">Ver detalles</button><div id="details-' + slug + '" class="latam-product-details"' + (open ? '' : ' hidden') + '><ul>' + item.benefits.map(function(benefit) { return '<li>' + escapeHtml(benefit) + '</li>'; }).join('') + '</ul><a class="latam-button latam-button-primary" data-whatsapp-link data-product="' + escapeHtml(item.name) + '" data-source="product" target="_blank" rel="noopener">Cotizar ' + escapeHtml(item.name) + '</a></div></div><div class="latam-gallery" data-gallery>' + item.gallery.map(function(image, imageIndex) { return '<img src="../../' + image + '" alt="' + escapeHtml(item.name) + '" loading="' + (imageIndex ? 'lazy' : 'eager') + '">'; }).join('') + '<div class="latam-gallery-controls"><button type="button" aria-label="Imagen anterior">‹</button><span>1 / ' + item.gallery.length + '</span><button type="button" aria-label="Imagen siguiente">›</button></div></div></article>';
+      return '<article id="product-' + slug + '" class="latam-product' + (open ? ' is-open' : '') + '" data-product-card="' + slug + '"><div class="latam-product-copy"><p>Modelo seleccionado</p><h3>' + escapeHtml(item.name) + '</h3><span class="latam-volume">' + escapeHtml(item.displacement) + '</span><p class="latam-product-use">' + escapeHtml(item.bestFor) + '</p><button class="latam-product-toggle" type="button" aria-expanded="' + open + '" aria-controls="details-' + slug + '">' + (open ? 'Ocultar detalles' : 'Ver detalles') + '</button><div id="details-' + slug + '" class="latam-product-details"' + (open ? '' : ' hidden') + '><ul>' + item.benefits.map(function(benefit) { return '<li>' + escapeHtml(benefit) + '</li>'; }).join('') + '</ul><a class="latam-button latam-button-primary" data-whatsapp-link data-product="' + escapeHtml(item.name) + '" data-source="product" target="_blank" rel="noopener">Cotizar ' + escapeHtml(item.name) + '</a></div></div><div class="latam-gallery" data-gallery>' + item.gallery.map(function(image, imageIndex) { return '<img src="../../' + image + '" alt="' + escapeHtml(item.name) + '" loading="' + (imageIndex ? 'lazy' : 'eager') + '">'; }).join('') + '<div class="latam-gallery-controls"><button type="button" aria-label="Imagen anterior">‹</button><span>1 / ' + item.gallery.length + '</span><button type="button" aria-label="Imagen siguiente">›</button></div></div></article>';
     }).join('');
-    node.querySelectorAll('.latam-product-toggle').forEach(function(button) { button.addEventListener('click', function() { var card = button.closest('[data-product-card]'); var details = card.querySelector('.latam-product-details'); var willOpen = details.hidden; node.querySelectorAll('.latam-product-details').forEach(function(item) { item.hidden = true; item.closest('[data-product-card]').querySelector('.latam-product-toggle').setAttribute('aria-expanded', 'false'); }); details.hidden = !willOpen; button.setAttribute('aria-expanded', String(willOpen)); }); });
+    node.querySelectorAll('.latam-product-toggle').forEach(function(button) { button.addEventListener('click', function() { var card = button.closest('[data-product-card]'); var details = card.querySelector('.latam-product-details'); var willOpen = details.hidden; node.querySelectorAll('.latam-product-details').forEach(function(item) { item.hidden = true; var otherCard = item.closest('[data-product-card]'); otherCard.classList.remove('is-open'); var toggle = otherCard.querySelector('.latam-product-toggle'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = 'Ver detalles'; }); details.hidden = !willOpen; card.classList.toggle('is-open', willOpen); button.setAttribute('aria-expanded', String(willOpen)); button.textContent = willOpen ? 'Ocultar detalles' : 'Ver detalles'; }); });
     node.querySelectorAll('[data-gallery]').forEach(initGallery);
   }
   function initGallery(gallery) {
@@ -96,9 +100,14 @@
   }
   function populateForm() {
     var form = document.getElementById('latamQuoteForm'); if (!form) return;
+    form.setAttribute('data-message-sending', 'Enviando...');
+    form.setAttribute('data-message-success', 'Gracias. Su solicitud fue enviada correctamente.');
+    form.setAttribute('data-message-turnstile', 'Complete la verificación antes de enviar.');
+    form.setAttribute('data-message-fallback', 'No pudimos enviar el formulario. Abrimos WhatsApp con los datos de su solicitud.');
+    form.setAttribute('data-message-spam', 'Elimine contenido promocional o no solicitado antes de enviar.');
     form.querySelector('[name="country"]').value = data.market.defaultCountry;
     form.querySelector('[name="market"]').value = data.market.key; form.querySelector('[name="source_form"]').value = data.market.sourceForm;
-    form.querySelector('[name="product_interest"]').innerHTML = '<option value="">Seleccione una opción</option>' + data.productOrder.map(function(slug) { return '<option value="' + slug + '">' + escapeHtml(product(slug).name) + '</option>'; }).join('');
+    form.querySelector('[name="product_interest"]').innerHTML = '<option value="">Seleccione una opción</option>' + data.productOrder.map(function(slug) { return '<option value="' + escapeHtml(product(slug).name) + '">' + escapeHtml(product(slug).name) + '</option>'; }).join('');
     form.querySelector('[name="application"]').innerHTML = '<option value="">Seleccione una opción</option>' + data.form.applications.map(function(value) { return '<option>' + escapeHtml(value) + '</option>'; }).join('');
     form.querySelector('[name="displacement"]').innerHTML = '<option value="">Seleccione una opción</option>' + data.form.displacements.map(function(value) { return '<option>' + escapeHtml(value) + '</option>'; }).join('');
     form.addEventListener('submit', function() { setSelectedProduct(form.querySelector('[name="product_interest"]').value, form.querySelector('[name="application"]').value); });
@@ -113,7 +122,13 @@
     ].filter(function(entry) { return entry[1]; });
     form.querySelector('[name="message"]').value = entries.map(function(entry) { return entry[0] + ': ' + entry[1]; }).join('\n');
   }
-  document.addEventListener('submit', function(event) { if (event.target && event.target.id === 'latamQuoteForm') serializeFormMessage(event.target); });
+  function setHiddenValue(form, name, value) { var input = form.querySelector('[name="' + name + '"]'); if (!input) { input = document.createElement('input'); input.type = 'hidden'; input.name = name; form.appendChild(input); } input.value = value; }
+  function enrichFormForSubmission(form) {
+    serializeFormMessage(form);
+    var query = params();
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid'].forEach(function(name) { var value = query.get(name); if (value) setHiddenValue(form, name, value); });
+  }
+  document.addEventListener('submit', function(event) { if (event.target && event.target.id === 'latamQuoteForm') enrichFormForSubmission(event.target); }, true);
   function initNavigation() {
     var links = Array.from(document.querySelectorAll('[data-nav] a[href^="#"]'));
     var sections = links.map(function(link) { return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
@@ -129,12 +144,18 @@
   }
   function initSticky() {
     var cta = document.querySelector('[data-mobile-cta]'); if (!cta || !window.matchMedia('(max-width: 767px)').matches) return; var state = {};
-    function update() { cta.hidden = !shouldShowMobileCta(state); }
+    function update() { cta.hidden = !shouldShowMobileCta(state); document.body.classList.toggle('has-latam-mobile-cta', !cta.hidden); }
     ['top', 'quote', 'footer'].forEach(function(id) { var node = document.getElementById(id); if (node) new IntersectionObserver(function(entries) { state[id === 'top' ? 'passedHero' : id + 'Visible'] = id === 'top' ? !entries[0].isIntersecting : entries[0].isIntersecting; update(); }, { threshold: .05 }).observe(node); });
     var faqNode = document.querySelector('[data-faq]');
     if (faqNode) new IntersectionObserver(function(entries) { state.faqOpen = entries[0].isIntersecting && Array.from(faqNode.querySelectorAll('details')).some(function(detail) { return detail.open; }); update(); }, { threshold: .05 }).observe(faqNode);
     document.addEventListener('focusin', function(event) { state.fieldFocused = /INPUT|SELECT|TEXTAREA/.test(event.target.tagName); update(); }); document.addEventListener('focusout', function() { state.fieldFocused = false; update(); });
     document.querySelectorAll('[data-faq] details').forEach(function(item) { item.addEventListener('toggle', function() { state.faqOpen = Array.from(document.querySelectorAll('[data-faq] details')).some(function(detail) { return detail.open; }); update(); }); });
+    document.querySelectorAll('.latam-product .latam-button-primary').forEach(function(button) { new IntersectionObserver(function(entries) { state.productActionVisible = entries.some(function(entry) { return entry.isIntersecting; }); update(); }, { threshold: .2 }).observe(button); });
+    function updatePageState() { state.nearPageBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 96; update(); }
+    window.addEventListener('scroll', updatePageState, { passive: true });
+    window.addEventListener('resize', updatePageState);
+    if (window.visualViewport) window.visualViewport.addEventListener('resize', function() { state.keyboardOpen = window.visualViewport.height < window.innerHeight * .76; update(); });
+    updatePageState();
   }
   function init() { renderHero(); renderApplications(); renderComparison(); renderProducts(); renderFactoryAndFaq(); populateForm(); initNavigation(); setSelectedProduct(selectedProduct); bindReplacementLink(); initSticky(); }
   window.ChixiangLatam = { init: init, buildWhatsAppUrl: buildWhatsAppUrl, pickActiveSection: pickActiveSection, getProductDisclosureState: getProductDisclosureState, shouldShowMobileCta: shouldShowMobileCta };

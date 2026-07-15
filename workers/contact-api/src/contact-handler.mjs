@@ -48,6 +48,23 @@ export function normalizeInquiry(fields) {
     message: pick(fields, ['message']),
     page_url: pick(fields, ['page_url']),
     site_language: pick(fields, ['site_language']),
+    market: pick(fields, ['market']),
+    source_form: pick(fields, ['source_form']),
+    application: pick(fields, ['application']),
+    displacement: pick(fields, ['displacement']),
+    quantity: pick(fields, ['quantity']),
+    vehicle: pick(fields, ['vehicle']),
+    engine_code: pick(fields, ['engine_code']),
+    requirements: pick(fields, ['requirements']),
+    source_cta: pick(fields, ['source_cta']),
+    utm_source: pick(fields, ['utm_source']),
+    utm_medium: pick(fields, ['utm_medium']),
+    utm_campaign: pick(fields, ['utm_campaign']),
+    utm_content: pick(fields, ['utm_content']),
+    utm_term: pick(fields, ['utm_term']),
+    gclid: pick(fields, ['gclid']),
+    gbraid: pick(fields, ['gbraid']),
+    wbraid: pick(fields, ['wbraid']),
     website: pick(fields, ['website'])
   };
 }
@@ -104,9 +121,26 @@ export function buildInquiryEmail(fields) {
     ['Country', inquiry.country],
     ['Company', inquiry.company],
     ['Product', inquiry.product],
+    ['Market', inquiry.market],
+    ['Source form', inquiry.source_form],
+    ['Application', inquiry.application],
+    ['Displacement', inquiry.displacement],
+    ['Quantity', inquiry.quantity],
+    ['Vehicle', inquiry.vehicle],
+    ['Engine code', inquiry.engine_code],
+    ['Requirements', inquiry.requirements],
+    ['Source CTA', inquiry.source_cta],
     ['Message', inquiry.message],
     ['Page URL', inquiry.page_url],
     ['Language', inquiry.site_language],
+    ['UTM source', inquiry.utm_source],
+    ['UTM medium', inquiry.utm_medium],
+    ['UTM campaign', inquiry.utm_campaign],
+    ['UTM content', inquiry.utm_content],
+    ['UTM term', inquiry.utm_term],
+    ['GCLID', inquiry.gclid],
+    ['GBRAID', inquiry.gbraid],
+    ['WBRAID', inquiry.wbraid],
     ['Submitted At', submittedAt]
   ];
 
@@ -249,7 +283,7 @@ export async function handleContactRequest(request, env = {}, options = {}) {
   }
 
   try {
-    await sendInquiryEmail(buildInquiryEmail(validation.inquiry), env);
+    await sendInquiryEmail(buildInquiryEmail(fields), env);
   } catch {
     return jsonResponse({ ok: false, error: 'Email service unavailable.' }, 502, origin);
   }

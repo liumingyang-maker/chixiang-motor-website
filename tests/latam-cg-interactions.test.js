@@ -5,6 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'latam-cg-landing.js'), 'utf8');
+const styles = fs.readFileSync(path.join(__dirname, '..', 'css', 'latam-cg-landing.css'), 'utf8');
 
 function apiFor(market) {
   const context = {
@@ -28,16 +29,17 @@ test('uses one active section and one open product disclosure', () => {
   assert.deepEqual(JSON.parse(JSON.stringify(api.getProductDisclosureState(['cg125', 'cg150', 'replacement'], 'cg150'))), { cg125: false, cg150: true, replacement: false });
 });
 
-test('builds contextual WhatsApp URLs and hides CTA for blocking states', () => {
-  const api = apiFor({ key: 'colombia', defaultCountry: 'Colombia', whatsappNumber: '8619008225410', whatsappMessageTemplate: 'Mercado: {market}; producto: {product}; uso: {application}; fuente: {source}' });
+test('builds customer-readable WhatsApp URLs and hides CTA for blocking states', () => {
+  const api = apiFor({ key: 'colombia', defaultCountry: 'Colombia', whatsappNumber: '8619008225410', whatsappMessageTemplate: 'Mercado: {market}; producto: {product}; uso: {application}' });
   const url = api.buildWhatsAppUrl({ product: 'CG150', application: 'Reparto', source: 'hero', utm_source: 'google' });
   assert.match(url, /^https:\/\/wa\.me\/8619008225410\?text=/);
   const decoded = decodeURIComponent(url);
   assert.match(decoded, /Colombia/);
   assert.match(decoded, /CG150/);
   assert.match(decoded, /Reparto/);
+  assert.doesNotMatch(decoded, /fuente|utm_source|gclid/i);
   assert.equal(api.shouldShowMobileCta({ passedHero: true }), true);
-  for (const key of ['quoteVisible', 'footerVisible', 'faqOpen', 'fieldFocused', 'keyboardOpen', 'nearPageBottom']) {
+  for (const key of ['quoteVisible', 'footerVisible', 'faqOpen', 'productActionVisible', 'fieldFocused', 'keyboardOpen', 'nearPageBottom']) {
     assert.equal(api.shouldShowMobileCta({ passedHero: true, [key]: true }), false, key);
   }
 });
@@ -53,4 +55,18 @@ test('serializes purchase context into the existing form message before submissi
   assert.match(source, /formValue\(form, 'engine_code'\)/);
   assert.match(source, /serializeFormMessage/);
   assert.match(source, /name="message"/);
+  assert.match(source, /document\.addEventListener\('submit',[\s\S]*true\)/);
+  assert.match(source, /utm_campaign/);
+});
+
+test('updates mobile CTA state for keyboard, page end and visible product actions', () => {
+  assert.match(source, /visualViewport/);
+  assert.match(source, /nearPageBottom/);
+  assert.match(source, /productActionVisible/);
+  assert.match(source, /has-latam-mobile-cta/);
+});
+
+test('keeps inactive product-gallery images hidden so only one slide is visible', () => {
+  assert.match(source, /image\.hidden = current !== index/);
+  assert.match(styles, /\.latam-gallery img\[hidden\]\s*\{\s*display:\s*none!important;/);
 });

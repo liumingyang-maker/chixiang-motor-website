@@ -6,7 +6,7 @@
       eyebrow: 'SUMINISTRO DIRECTO DE FÁBRICA PARA COLOMBIA',
       title: 'Motores CG 125/150 cc para motos de trabajo y reemplazo',
       description: 'Opciones para baja cilindrada, uso diario y posventa. Seleccionamos el motor según el modelo, código o fotografía, con repuestos disponibles para pedidos mayoristas.',
-      whatsappMessageTemplate: 'Hola, necesito una cotización mayorista en {market}. Producto: {product}. Uso: {application}. Fuente: {source}.',
+      whatsappMessageTemplate: 'Hola, deseo una cotización mayorista para {market}.\nMotor de interés: {product}.\nAplicación: {application}.',
       replacementMessage: 'Hola, necesito un motor CG 125/150 cc de reemplazo en Colombia.\nPuedo enviar la foto, placa o código del motor.\nPor favor, ayúdeme a confirmar la opción adecuada.'
     },
     productOrder: ['cg125', 'cg150', 'replacement'],
@@ -15,7 +15,14 @@
       { title: 'Reparto y uso comercial', text: 'Opción CG150 para trabajo diario.', product: 'cg150' },
       { title: 'Reemplazo y posventa', text: 'Selección por foto o código.', product: 'replacement' }
     ],
-    comparisonLabels: ['Solución', 'Cilindrada', 'Uso', 'Refrigeración', 'Selección', 'Cotización'],
+    comparisonFields: [
+      { key: 'name', label: 'Solución' },
+      { key: 'displacement', label: 'Cilindrada' },
+      { key: 'cooling', label: 'Refrigeración' },
+      { key: 'bestFor', label: 'Uso recomendado' },
+      { key: 'reverse', label: 'Cómo se confirma' }
+    ],
+    comparisonActionLabel: 'Solicitar precio',
     quoteTitle: 'Solicitar precio mayorista', quoteDescription: 'Indique país, serie y cantidad. Respondemos por WhatsApp o email.',
     heroPoints: ['Uso diario y trabajo', 'Motores de reemplazo', 'Repuestos para posventa', 'Suministro mayorista'],
     form: {
