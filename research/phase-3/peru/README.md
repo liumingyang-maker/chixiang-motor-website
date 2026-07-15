@@ -1,5 +1,7 @@
 # Peru — Lane A
 
-Public evidence supports a Chinese-brand and service/parts channel signal, but no two independent complete-engine wholesale/replacement proofs were found in this research pass. Candidate buyer development is incomplete; no contact was made.
+Publicly identifiable channel candidates now include Zonsen Peru / Grupo Cayman, Zongshen Peru, Maquirsa, Corporacion Mabel, JP Motorcycles, Repuestos Delivery and Motos Racing. Public business contacts exist for several of these entities. They are candidate B2B routes only: most evidence is service, motorcycle, cargo-motorcycle or parts distribution rather than verified complete-engine purchasing.
 
-Gate direction: complete-engine demand `NOT TESTED`; margin `INPUT REQUIRED`; search, logistics and production tracking require further validation.
+Evidence IDs: `P3-P01`–`P3-P09`. The government source shows historic Zongshen/Lifan vehicle-platform presence, but does not quantify installed base or replacement demand. Parts listings and parts-import claims are recorded as channel evidence only.
+
+Gate direction: `3 named contactable B2B buyers` remains **not yet qualified as engine buyers**; complete-engine demand `NOT TESTED`; margin `INPUT REQUIRED`; country B2B search, logistics and production tracking require further validation. No contact was made.

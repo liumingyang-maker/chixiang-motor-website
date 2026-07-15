@@ -1,3 +1,5 @@
 # Uzbekistan — Lane B
 
-Accelerated validation only. Public retailer and buyer-lead signals are recorded separately from any factory first-party commercial signal. Independent buyer, margin, national-channel and search evidence remain incomplete. No contact was made.
+Accelerated validation only. Bikeland and Hadid Moto provide separately visible public routes; CFMOTO Uzbekistan is retained as a separate-platform channel signal. The Volza record is a low-confidence lead source requiring paid/manual validation.
+
+Evidence IDs: `P3-U01`–`P3-U04`. No source currently verifies an independent complete-engine buyer, a compatible CG/water-cooled/heavy-duty installation, or a landed-price/margin route. No contact was made.
