@@ -82,7 +82,7 @@ git revert <发布提交SHA>
 git push origin main
 ```
 
-如需完整恢复基线，请使用桌面备份中的 Git bundle 或源码 ZIP，具体见备份目录的 `RESTORE.md`。
+如需完整恢复基线，请使用桌面备份中的 Git bundle 或源码 ZIP；操作步骤见 `docs/SPANISH_LANDING_RELEASE_RESTORE.md`。
 
 ## 6. 当前基线
 
