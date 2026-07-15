@@ -27,7 +27,7 @@ test('publishes independent SEO shells for Peru and Colombia', () => {
     assert.equal((html.match(/<h1\b/g) || []).length, 1);
     assert.match(html, new RegExp(`<title>${title.replace(/[|]/g, '\\|')}</title>`));
     assert.match(html, new RegExp(`rel="canonical" href="${canonical.replace(/[/.]/g, '\\$&')}"`));
-    assert.match(html, /<meta name="robots" content="noindex,nofollow">/);
+    assert.match(html, /<meta name="robots" content="index,follow">/);
     assert.match(html, /\.\.\/\.\.\/css\/latam-cg-landing\.css/);
     assert.match(html, /\.\.\/\.\.\/js\/latam-cg-products\.js/);
     assert.match(html, /\.\.\/\.\.\/js\/latam-cg-landing\.js/);
@@ -60,14 +60,16 @@ test('uses only cc copy and existing local engine and factory assets', () => {
   assert.doesNotMatch(JSON.stringify(shared), /cm3|cm³/i);
 });
 
-test('keeps required wholesale fields and deferred sitemap behavior', () => {
+test('keeps required wholesale fields and registers approved production routes', () => {
   for (const market of ['peru', 'colombia']) {
     const html = read(`es/${market}/index.html`);
     for (const field of ['name', 'contact', 'country', 'application', 'displacement', 'quantity', 'vehicle', 'engine_code', 'email', 'requirements', 'market', 'source_form']) {
       assert.match(html, new RegExp(`name="${field}"`), `${market}: ${field}`);
     }
   }
-  assert.doesNotMatch(read('sitemap.xml'), /https:\/\/chixiangmotor\.com\/es\/(peru|colombia)\//);
+  const sitemap = read('sitemap.xml');
+  assert.match(sitemap, /https:\/\/chixiangmotor\.com\/es\/peru\//);
+  assert.match(sitemap, /https:\/\/chixiangmotor\.com\/es\/colombia\//);
 });
 
 test('limits the sticky quote CTA to the mobile breakpoint', () => {
