@@ -3,7 +3,7 @@ const SENDER = 'inquiry@chixiangmotor.com';
 const TURNSTILE_SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 const ALLOWED_ORIGINS = new Set([
   'https://chixiangmotor.com',
-  'https://chixiangmotor.com',
+  'https://www.chixiangmotor.com',
   'http://localhost:4173',
   'http://127.0.0.1:4173'
 ]);
@@ -284,8 +284,18 @@ export async function handleContactRequest(request, env = {}, options = {}) {
 
   try {
     await sendInquiryEmail(buildInquiryEmail(fields), env);
-  } catch {
-    return jsonResponse({ ok: false, error: 'Email service unavailable.' }, 502, origin);
+  } catch (error) {
+    // Log the delivery provider's reason without logging the inquirer's contact data.
+    console.error('Contact email delivery failed.', {
+      name: error instanceof Error ? error.name : 'UnknownError',
+      message: error instanceof Error ? error.message : String(error)
+    });
+
+    return jsonResponse({
+      ok: false,
+      code: 'email_delivery_failed',
+      error: 'Email service unavailable.'
+    }, 502, origin);
   }
 
   return jsonResponse({ ok: true }, 200, origin);

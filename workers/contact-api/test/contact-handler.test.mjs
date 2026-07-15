@@ -177,3 +177,26 @@ test('handleContactRequest rejects failed Turnstile verification', async () => {
   assert.equal(verify.verificationRequests.length, 1);
   assert.match((await response.json()).error, /anti-spam/i);
 });
+
+test('handleContactRequest returns a stable error code when email delivery fails', async () => {
+  const verify = turnstileEnv();
+  verify.env.EMAIL.send = async () => {
+    throw new Error('Sender domain is not enabled.');
+  };
+
+  const response = await handleContactRequest(
+    formRequest({
+      name: 'TEST Central Asia',
+      contact: '+86 10000000000',
+      product: 'CG Water',
+      message: 'Test only.',
+      'cf-turnstile-response': 'valid-token'
+    }),
+    verify.env,
+    { fetch: verify.fetch }
+  );
+
+  assert.equal(response.status, 502);
+  const payload = await response.json();
+  assert.equal(payload.code, 'email_delivery_failed');
+});
