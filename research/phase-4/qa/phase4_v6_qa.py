@@ -31,7 +31,7 @@ co_neg=csvrows(SRC/"colombia_negatives.csv")
 co_ev=csvrows(SRC/"colombia_evidence.csv")
 eids={r["Evidence ID"] for r in ev}
 
-check("01 six countries in matrix",{r["Country"] for r in matrix}==COUNTRIES,str({r["Country"] for r in matrix}))
+check("01 six countries in matrix",{r["Country"] for r in matrix}==COUNTRIES,", ".join(sorted({r["Country"] for r in matrix})))
 check("02 six countries in ranking",{r["Country"] for r in DATA["ranking"]}==COUNTRIES,"six present")
 check("03 three engine ranks per country",all(sum(1 for r in DATA["ranking"] if r["Country"]==c)==3 for c in COUNTRIES),"18 rows")
 check("04 top 3 excludes parts",all("parts" not in r["Product"].lower() for r in DATA["ranking"]),"engine-only")

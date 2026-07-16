@@ -5,7 +5,7 @@ Checks: 56; Passed: 56; Failed: 0
 
 ## Checks
 
-- PASS — 01 six countries in matrix: {'Peru', 'Uzbekistan', 'Ecuador', 'Russia', 'Colombia', 'Tanzania'}
+- PASS — 01 six countries in matrix: Colombia, Ecuador, Peru, Russia, Tanzania, Uzbekistan
 - PASS — 02 six countries in ranking: six present
 - PASS — 03 three engine ranks per country: 18 rows
 - PASS — 04 top 3 excludes parts: engine-only
