@@ -1,0 +1,30 @@
+Domain,Allowed value,Definition
+Record type,Competitor brand,Brand observed in the country; not proof of a distributor or engine sales.
+Record type,Importer / distributor,Named entity with an observed importer or distribution role.
+Record type,Marketplace/channel,Marketplace or channel signal; not a verified importer by itself.
+Demand type,Engine,Complete-engine research direction.
+Demand type,Aftermarket / parts,Parts or spares offer; not comparable to engine demand.
+Research status,Retained,Kept for research and semantic validation only.
+Research status,Rejected,Excluded from the research candidate set.
+Ads eligibility,NOT APPROVED,Not usable for ads.
+Ads eligibility,NATIVE REVIEW REQUIRED,Needs named native reviewer or documented local-source review.
+Ads eligibility,FIT REVIEW REQUIRED,Needs interface and application fit confirmation.
+Ads eligibility,ADS REVIEW CANDIDATE,May be reviewed only; does not authorize upload or launch.
+Confidence,Low,Insufficient or indirect evidence.
+Confidence,Medium,Relevant but incomplete evidence.
+Confidence,High,Multiple relevant sources; still not a launch authorization.
+Confidence,Not applicable,Dimension does not apply to the offer type.
+Compatibility requirement,MODEL-SPECIFIC,Factory model/interface data required.
+Compatibility requirement,PART-NUMBER-SPECIFIC,Part number and application confirmation required.
+Listing status,Observed active,Observed listing available on recorded date.
+Listing status,Observed unavailable,Listing was unavailable when checked.
+Listing status,Unknown,No current status verified.
+Match type,Phrase,Use only after platform and native-language review.
+Match type,Exact,Use only after platform and native-language review.
+Match type,Negative phrase,Platform-specific negative treatment; not an account-wide default.
+Launch gate,RESEARCH ONLY,Insufficient evidence for a validation gate.
+Launch gate,VALIDATE BUYER,Named buyer/channel validation needed.
+Launch gate,VALIDATE FIT,Compatibility/interface validation needed.
+Launch gate,VALIDATE DEMAND,Complete-engine demand validation needed.
+Launch gate,VALIDATE ECONOMICS,Price/freight/duty/payment inputs needed.
+Launch gate,READY FOR ADS REVIEW,All prerequisites documented; does not approve ads launch.
