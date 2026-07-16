@@ -1,0 +1,4 @@
+"Evidence ID","Country","Product scope","Classification","Claim","Parent evidence","Access date","Reviewer","Limitations","Supports score component(s)"
+"P4V-PE-01","Peru","CG150 air-cooled","Derived audit control","Keyword/product mapping reviewed against existing product-scoped v2 evidence","P4-PE-01,P4-PE-02,P4-PE-03,P4-PE-07","2026-07-16","Internal audit record","No new market fact","Keyword mapping / scoring"
+"P4V-PE-02","Peru","CG200 air-cooled","Derived audit control","Keyword/product mapping reviewed against CG200 listing evidence","P4-PE-05,P4-PE-06,P4-PE-08","2026-07-16","Internal audit record","No new market fact","Keyword mapping / scoring"
+"P4V-UZ-01","Uzbekistan","CG150-250 water-cooled cargo","Derived audit control","Vehicle signal retained separately from complete-engine demand and fit","P4-UZ-01,P4-UZ-02,P4-UZ-05","2026-07-16","Internal audit record","No new market fact","Demand/fit gate"
