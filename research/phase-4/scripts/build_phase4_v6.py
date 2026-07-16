@@ -109,7 +109,12 @@ def evidence_rows() -> list[dict]:
 def write_docs(data: dict) -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     top = data["ranking"]
-    top_lines = "\n".join(f"- {c}: " + ", ".join(x["Product"] for x in top if x["Country"] == c) for c in COUNTRIES)
+    top_lines = "\n".join(
+        f"- {c}: " + ", ".join(
+            f'{x["Product"]} ({x["Total"]}/{x["Tier"]}' + (", zero-score placeholder" if x["Total"] == 0 else "") + ")"
+            for x in top if x["Country"] == c
+        ) for c in COUNTRIES
+    )
     conclusion = "Complete-engine demand is not verified from the available public evidence."
     required = "No independently verified complete-engine demand was found after bounded research.\n\nThis does not prove that no demand exists; it means the available public evidence is insufficient."
     (OUT / "Phase_4_Executive_Summary_v6.md").write_text(f"# Phase 4 v6 Executive Summary\n\nSix-country research closeout. Ads Launch remains **NOT APPROVED**.\n\n## Country Top 3 engine directions\n\n{top_lines}\n\n## Colombia\n\n{conclusion}\n\n{required}\n\nPrimary route: **SEO / distributor development**. Paid complete-engine search: **Not recommended**.\n", encoding="utf-8")
