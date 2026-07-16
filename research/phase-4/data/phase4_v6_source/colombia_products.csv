@@ -1,0 +1,15 @@
+Country,Product,Platform,Engine demand,Channel,Search,Profit,Supply,Demand type,Evidence IDs,Rationale,Market confidence,Engine confidence,Compatibility confidence,Application,Launch eligibility
+Colombia,CG125 air-cooled,12,1,10,6,0,0,Engine,"P4-CO-09,P4-CO-10,P4-CO-13","Parts and platform signals only; no independently verified complete-engine demand.",Medium,Low,Low,AKT125/CG125 platform research,VALIDATE DEMAND
+Colombia,CG150 air-cooled,10,1,9,6,0,0,Engine,"P4-CO-09,P4-CO-11,P4-CO-15","Parts and starter/head terminology only; complete-engine demand remains unverified.",Medium,Low,Low,CG150 platform research,VALIDATE DEMAND
+Colombia,CG175 air-cooled,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,CG200 air-cooled,5,0,5,3,0,0,Engine,P4-CO-11,Starter price-list signal only; not complete-engine demand.,Low,Low,Low,CG200 parts/platform research,VALIDATE DEMAND
+Colombia,CG250 air-cooled,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,CG150-250 water-cooled cargo,4,0,4,2,0,0,Engine,P4-CO-12,Tuk-Tuk vehicle context only; cooling architecture and replacement demand not verified.,Low,Low,Low,cargo tricycle qualification,VALIDATE DEMAND
+Colombia,Honda-style 110 horizontal,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,Honda-style 125 horizontal,4,0,5,3,0,0,Engine,"P4-CO-10,P4-CO-13",AKT125 parts/platform evidence only; interface compatibility is unknown.,Low,Low,Low,AKT125 platform qualification,VALIDATE FIT
+Colombia,Honda-style 130/140 horizontal,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,Automatic-clutch CG,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,Automatic-clutch horizontal,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,CB150/200/250 off-road,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,EFI water-cooled,0,0,0,0,0,0,Engine,No product-specific evidence,No Colombia-specific evidence.,Low,Low,Low,NOT TESTED,NOT TESTED
+Colombia,Engine parts / spares pack,18,0,12,8,0,0,Aftermarket / parts,"P4-CO-01,P4-CO-02,P4-CO-03,P4-CO-04,P4-CO-05,P4-CO-06,P4-CO-07",Official and distributor parts ecosystems support a qualification-led aftermarket offer.,High,Not applicable,Part-number-specific,parts/distributor development,VALIDATE ECONOMICS

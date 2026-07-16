@@ -1,0 +1,10 @@
+Country,Record type,Entity,Channel,Observed product,Complete-engine status,Evidence IDs,Confidence
+Colombia,Vehicle brand,AKT,Official parts and manuals,AKT125 / NKD125 / Tuk-Tuk platforms,Vehicle and parts only,"P4-CO-01,P4-CO-02,P4-CO-12,P4-CO-13",High
+Colombia,Vehicle brand,TVS,Official spare enquiry,Brand spare-parts support,Indian platform excluded,P4-CO-03,High
+Colombia,Vehicle brand,Hero,Official parts,Brand spare-parts support,Indian platform excluded,P4-CO-04,High
+Colombia,Distributor,C.E.B,Parts distributor,Motorcycle spare parts,Parts/distribution,P4-CO-05,Medium
+Colombia,Distributor,1000Partes,Multibrand OEM parts,Motorcycle spare parts,Parts/distribution,P4-CO-06,Medium
+Colombia,Importer/distributor,OrgPartes,Parts category/importer,Cylinder products,Parts only,P4-CO-07,Medium
+Colombia,Marketplace,MercadoLibre Colombia,Marketplace,Complete-engine category and CG kits,Single marketplace signal only,"P4-CO-08,P4-CO-09,P4-CO-15",Low
+Colombia,Retailer,Cassarella,Parts retailer,AKT125/CG125 cylinder kit,Parts only,P4-CO-10,Medium
+Colombia,Retailer,MotoFull,Parts price list,CG150/CG200 starter,Parts only,P4-CO-11,Medium
