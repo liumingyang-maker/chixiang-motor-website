@@ -51,9 +51,9 @@ Manual gates: **7 MANUAL AUTHORIZATION REQUIRED**
 | 42 | Peru presents air-cooled, standard water-cooled, HW and spares in order | PASS | true |
 | 43 | Peru uses distinct local standard-water and HW images | PASS | true |
 | 44 | Peru publishes total-order sample, wholesale, mixed and OEM thresholds | PASS | true |
-| 45 | Colombia internal route stays SEO only | PASS | true |
-| 46 | Colombia public copy is customer-facing | PASS | true |
-| 47 | Colombia has no Google Ads tag | PASS | true |
+| 45 | Colombia production page matches origin/main | PASS | true |
+| 46 | Colombia production data matches origin/main | PASS | true |
+| 47 | Spanish market index matches origin/main | PASS | true |
 | 48 | Uzbekistan presents all four approved product groups | PASS | true |
 | 49 | Uzbekistan publishes total-order thresholds | PASS | true |
 | 50 | Uzbekistan legacy route is noindex | PASS | true |

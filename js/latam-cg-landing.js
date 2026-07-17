@@ -57,7 +57,7 @@
     hero.querySelector('[data-hero-points]').innerHTML = data.heroPoints.map(function(point) { return '<li>' + escapeHtml(point) + '</li>'; }).join('');
     hero.querySelector('[data-hero-engines]').innerHTML = data.productOrder.slice(0, 3).map(function(slug) {
       var item = product(slug);
-      return '<figure class="latam-hero-engine"><span class="latam-engine-glow"></span><img src="../../' + item.image + '" alt="' + escapeHtml(item.name) + '" fetchpriority="high"><figcaption><strong>' + escapeHtml(item.name) + '</strong><span>' + escapeHtml(item.displacement) + '</span></figcaption></figure>';
+      return '<figure class="latam-hero-engine"><span class="latam-engine-glow"></span><img src="../../' + item.image + '" alt="' + escapeHtml(item.name) + '" fetchpriority="high"><figcaption><strong>' + escapeHtml(item.heroLabel || item.name) + '</strong></figcaption></figure>';
     }).join('');
   }
   function renderApplications() {

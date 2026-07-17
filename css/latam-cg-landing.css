@@ -40,7 +40,7 @@ html { scroll-padding-top:calc(var(--la-header) + 16px); }
   .latam-comparison-table tbody tr td { width:auto; }
 }
 @media (max-width:767px) {
-  .latam-page.has-latam-mobile-cta { padding-bottom:84px; }
+  .latam-page.has-latam-mobile-cta { padding-bottom:112px; }
   .latam-product:not(.is-open) .latam-gallery { display:none; }
 }
 .latam-buyer-proof { background:#fff; }
@@ -58,6 +58,23 @@ html { scroll-padding-top:calc(var(--la-header) + 16px); }
 .latam-buyer-proof-grid article span { color:#526176; line-height:1.6; }
 @media (min-width:768px) { .latam-buyer-proof-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
 @media (max-width:767px) { .latam-buyer-proof-grid { grid-template-columns:1fr; }.latam-form input,.latam-form select,.latam-form textarea { min-height:44px; } }
+
+@media (min-width:768px) {
+  .latam-hero-stage { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:end; gap:12px; }
+  .latam-hero-engine,.latam-hero-engine:nth-child(1),.latam-hero-engine:nth-child(2),.latam-hero-engine:nth-child(3) { position:relative; right:auto; bottom:auto; left:auto; width:auto; transform:none; }
+  .latam-hero-engine figcaption { display:flex; min-height:48px; align-items:center; justify-content:center; padding:7px 8px; }
+  .latam-hero-engine figcaption strong { font-size:12px; line-height:1.25; }
+}
+
+@media (max-width:767px) {
+  .latam-hero-stage { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:end; gap:4px; min-height:210px; }
+  .latam-hero-engine,.latam-hero-engine:nth-child(1),.latam-hero-engine:nth-child(2),.latam-hero-engine:nth-child(3) { position:relative; right:auto; bottom:auto; left:auto; width:auto; transform:none; }
+  .latam-hero-engine img { height:150px; }
+  .latam-hero-engine figcaption { display:flex; width:100%; min-height:48px; align-items:center; justify-content:center; }
+  .latam-mobile-cta[hidden] { display:none; }
+  .latam-mobile-cta { bottom:calc(16px + env(safe-area-inset-bottom)); }
+  .latam-footer { padding-bottom:calc(112px + env(safe-area-inset-bottom)); }
+}
 .latam-commercial { background:#eef5fb; }
 .latam-commercial-grid { display:grid; gap:16px; }
 .latam-commercial-grid article { padding:24px; border:1px solid #cbd9e7; border-radius:16px; background:#fff; }

@@ -30,9 +30,9 @@ for(const [market,file,canonical] of publicPages){
 check('Peru presents air-cooled, standard water-cooled, HW and spares in order',()=>contains('js/latam-cg-peru-data.js',/productOrder:\s*\['cg-air-range',\s*'standard-water',\s*'hw-water',\s*'engine-spares'/));
 check('Peru uses distinct local standard-water and HW images',()=>contains('js/latam-cg-products.js',/standard-water[\s\S]+images\/普通水冷\/6kjzxqqh\.webp[\s\S]+hw-water[\s\S]+images\/捍威\/product_main_image_1\.webp/));
 check('Peru publishes total-order sample, wholesale, mixed and OEM thresholds',()=>contains('es/peru/index.html',/Muestras desde 2 motores en total[\s\S]+Pedidos mayoristas desde 50 motores en total[\s\S]+Pedidos mixtos desde 100 motores en total[\s\S]+OEM desde 100 motores en total/));
-check('Colombia internal route stays SEO only',()=>contains('es/colombia/index.html',/data-ads-priority="seo-only"/));
-check('Colombia public copy is customer-facing',()=>contains('es/colombia/index.html',/distribuidores|posventa|selección técnica/i)&&requireTrue(!/demanda de motores completos no está verificada|Paid search/i.test(read('es/colombia/index.html')),'internal market decision exposed'));
-check('Colombia has no Google Ads tag',()=>requireTrue(!/googletagmanager/.test(read('es/colombia/index.html')),'unexpected ads tag'));
+check('Colombia production page matches origin/main',()=>requireTrue(!git(['diff','--name-only','origin/main','--','es/colombia/index.html']),'Colombia page differs from main'));
+check('Colombia production data matches origin/main',()=>requireTrue(!git(['diff','--name-only','origin/main','--','js/latam-cg-colombia-data.js']),'Colombia data differs from main'));
+check('Spanish market index matches origin/main',()=>requireTrue(!git(['diff','--name-only','origin/main','--','es/index.html']),'Spanish market index differs from main'));
 check('Uzbekistan presents all four approved product groups',()=>contains('ru/uzbekistan/index.html',/Двигатели CG воздушного охлаждения 150–250 см³[\s\S]+Двигатели водяного охлаждения для работы и грузовой техники[\s\S]+Двигатели HW водяного охлаждения 200–350 см³[\s\S]+Двигатели и комплекты запасных частей/));
 check('Uzbekistan publishes total-order thresholds',()=>contains('ru/uzbekistan/index.html',/Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/));
 check('Uzbekistan legacy route is noindex',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/noindex,follow/));

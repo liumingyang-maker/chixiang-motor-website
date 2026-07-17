@@ -67,11 +67,11 @@ test('Uzbekistan presents air-cooled, standard water-cooled, HW and spares for m
 
 test('Russia market page leads with local CB data, then horizontal engines and the 140 topic', () => {
   const html = read('ru/russia/index.html');
-  assert.match(html, /<h1>Двигатели для внедорожных мотоциклов и горизонтальные двигатели в России<\/h1>/);
+  assert.match(html, /<h1>Двигатели CB для внедорожных мотоциклов и горизонтальные серии в России<\/h1>/);
   ordered(html, ['Двигатели серии CB для внедорожных мотоциклов','Горизонтальные двигатели','Горизонтальные двигатели 140 см³','Двигатели и комплекты запасных частей']);
   assert.match(html, /CB150[\s\S]+CB200-C[\s\S]+CB250/);
   assert.match(html, /\.\.\/\.\.\/images\/CB\/1\.webp/);
-  assert.match(html, /href="\/en\/product-detail\.html\?series=cb-offroad"/);
+  assert.match(html, /href="\/en\/product-detail\?series=cb-offroad"/);
   assert.match(html, /href="\/ru\/dvigatel-140\/"/);
   assertCommercialThresholds(html, 'ru');
   assertInquiryForm(html, 'Russia');
@@ -90,4 +90,46 @@ test('navigation, SEO routes and public copy remain customer-facing', () => {
   assert.match(russianHome, /href="\/ru\/russia\/"/);
   assert.match(sitemap, /https:\/\/chixiangmotor\.com\/ru\/russia\//);
   [peru,uzbekistan,russia].forEach(html => assert.doesNotMatch(html, internalTerms));
+});
+
+test('Peru hero uses short labels and a safe customer-facing mobile CTA', () => {
+  const products = read('js/latam-cg-products.js');
+  const renderer = read('js/latam-cg-landing.js');
+  const html = read('es/peru/index.html');
+  const css = read('css/latam-cg-landing.css');
+  ['CG Air-Cooled 150–250 cc', 'Standard Water-Cooled', 'HW Water-Cooled 200–350 cc']
+    .forEach(label => assert.match(products, new RegExp(label)));
+  assert.match(renderer, /item\.heroLabel \|\| item\.name/);
+  assert.match(html, />Cotizar por WhatsApp<\/a>/);
+  assert.doesNotMatch(html, /Solicitar revisión/);
+  assert.match(css, /has-latam-mobile-cta[^}]+padding-bottom:\s*(?:9[6-9]|[1-9]\d{2,})px/);
+  assert.match(css, /\.latam-mobile-cta\[hidden\]\s*\{[^}]*display:\s*none/);
+});
+
+test('Uzbekistan and Russia hero contracts enforce a desktop two-column layout', () => {
+  const css = read('css/phase5-market-pages.css');
+  for (const file of ['ru/uzbekistan/index.html', 'ru/russia/index.html']) {
+    const html = read(file);
+    assert.equal((html.match(/class="p5-hero-art p5-hero-collage"/g) || []).length, 1);
+    assert.equal((html.match(/class="p5-hero-art p5-hero-collage"[\s\S]*?<\/div><\/div><\/section>/) || [''])[0].match(/<img /g)?.length, 3);
+  }
+  assert.match(css, /@media\(min-width:960px\)[^{]*\{[\s\S]*?\.p5-hero-grid\{[^}]*grid-template-columns:/);
+  assert.match(css, /@media\(min-width:960px\)[\s\S]*?\.p5-hero h1\{[^}]*font-size:[^;}]*60px/);
+  assert.match(css, /@media\(max-width:959px\)[\s\S]*?\.p5-nav\{[^}]*display:none/);
+});
+
+test('Russia uses the approved H1 and canonical CB product route', () => {
+  const html = read('ru/russia/index.html');
+  assert.match(html, /<h1>Двигатели CB для внедорожных мотоциклов и горизонтальные серии в России<\/h1>/);
+  assert.match(html, /href="\/en\/product-detail\?series=cb-offroad"/);
+  assert.doesNotMatch(html, /product-detail\.html\?series=cb-offroad/);
+});
+
+test('Colombia production files are restored to the main-site version', () => {
+  const colombia = read('es/colombia/index.html');
+  const data = read('js/latam-cg-colombia-data.js');
+  const index = read('es/index.html');
+  assert.match(colombia, /Motores CG 125\/150 cc de reemplazo en Colombia/);
+  assert.match(data, /productOrder:\s*\['cg125', 'cg150', 'replacement'\]/);
+  assert.doesNotMatch(index, /\/es\/colombia\/|Colombia: repuestos y calificación/);
 });

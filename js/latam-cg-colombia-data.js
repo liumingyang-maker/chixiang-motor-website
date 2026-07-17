@@ -3,16 +3,17 @@
   window.ChixiangLatamMarket = {
     market: {
       key: 'colombia', name: 'Colombia', defaultCountry: 'Colombia', sourceForm: 'es_colombia_cg_landing', whatsappNumber: '8619008225410',
-      eyebrow: 'MOTORES, REPUESTOS Y SOPORTE B2B PARA COLOMBIA',
-      title: 'Motores y repuestos para distribuidores y canales de posventa en Colombia',
-      description: 'Seleccionamos motores y repuestos según el vehículo, el código del motor, las interfaces y la cantidad solicitada.',
-      whatsappMessageTemplate: 'Hola, deseo información mayorista para {market}.\nProducto de interés: {product}.\nAplicación: {application}.',
-      replacementMessage: 'Hola, necesito seleccionar un motor o repuestos para Colombia.\nEnviaré foto del vehículo, código del motor, cilindrada, montaje, sistema eléctrico y cantidad.\nPor favor, ayúdeme a confirmar la opción adecuada.'
+      eyebrow: 'SUMINISTRO DIRECTO DE FÁBRICA PARA COLOMBIA',
+      title: 'Motores CG 125/150 cc para motos de trabajo y reemplazo',
+      description: 'Opciones para baja cilindrada, uso diario y posventa. Seleccionamos el motor según el modelo, código o fotografía, con repuestos disponibles para pedidos mayoristas.',
+      whatsappMessageTemplate: 'Hola, deseo una cotización mayorista para {market}.\nMotor de interés: {product}.\nAplicación: {application}.',
+      replacementMessage: 'Hola, necesito un motor CG 125/150 cc de reemplazo en Colombia.\nPuedo enviar la foto, placa o código del motor.\nPor favor, ayúdeme a confirmar la opción adecuada.'
     },
-    productOrder: ['spares', 'replacement'],
+    productOrder: ['cg125', 'cg150', 'replacement'],
     applications: [
-      { title: 'Distribución de repuestos', text: 'Listas de piezas y paquetes de posventa preparados según código o muestra.', product: 'spares' },
-      { title: 'Selección de motor', text: 'Revisión por vehículo, código, fotos e interfaces antes de cotizar.', product: 'replacement' }
+      { title: 'Motos urbanas y de trabajo', text: 'Opción CG125 para baja cilindrada.', product: 'cg125' },
+      { title: 'Reparto y uso comercial', text: 'Opción CG150 para trabajo diario.', product: 'cg150' },
+      { title: 'Reemplazo y posventa', text: 'Selección por foto o código.', product: 'replacement' }
     ],
     comparisonFields: [
       { key: 'name', label: 'Solución' },
@@ -21,21 +22,20 @@
       { key: 'bestFor', label: 'Uso recomendado' },
       { key: 'reverse', label: 'Cómo se confirma' }
     ],
-    comparisonActionLabel: 'Solicitar información',
-    quoteTitle: 'Solicitar información mayorista', quoteDescription: 'Comparta vehículo, código, fotos, interfaces y cantidad para preparar una opción adecuada.',
-    heroPoints: ['Cooperación con distribuidores', 'Repuestos y posventa', 'Selección por código e interfaces', 'Opciones B2B según el proyecto'],
+    comparisonActionLabel: 'Solicitar precio',
+    quoteTitle: 'Solicitar precio mayorista', quoteDescription: 'Indique país, serie y cantidad. Respondemos por WhatsApp o email.',
+    heroPoints: ['Uso diario y trabajo', 'Motores de reemplazo', 'Repuestos para posventa', 'Suministro mayorista'],
     form: {
-      applications: ['Distribución de repuestos', 'Selección de motor', 'Posventa', 'Evaluación de motor completo', 'Otro'],
+      applications: ['Moto urbana', 'Moto de trabajo', 'Reparto', 'Motor de reemplazo', 'Repuestos', 'Otro'],
       displacements: ['125 cc', '150 cc', 'Otra', 'No estoy seguro']
     },
     faq: [
-      ['¿Puedo solicitar un motor completo?', 'Sí. Envíe los datos del vehículo y del motor actual para confirmar qué configuración podemos ofrecer.'],
-      ['¿Sirve como motor de reemplazo?', 'La sustitución depende del código, montaje, salida y sistema eléctrico. Confirmamos cada aplicación antes de cotizar.'],
-      ['¿Puedo enviar una foto o el código del motor?', 'Sí. Envíelos por WhatsApp junto con la cantidad necesaria.'],
-      ['¿Hay repuestos para posventa?', 'Podemos preparar repuestos y paquetes de posventa según el motor confirmado.'],
-      ['¿Puedo solicitar cooperación como distribuidor?', 'Sí. Revisamos productos, cantidades, repuestos, empaque y necesidades de su canal.'],
-      ['¿Cómo se confirma la compatibilidad?', 'Se revisan fotos, código, montaje, salida, sistema eléctrico y requisitos del cliente.'],
-      ['¿Es compatible con AKT, Bajaj, TVS o Hero?', 'No ofrecemos una promesa de compatibilidad directa con esas plataformas. Cada aplicación requiere revisión técnica.']
+      ['¿Cómo elegir entre CG125 y CG150?', 'La selección se confirma según el modelo, el uso diario y el código disponible.'],
+      ['¿Sirve como motor de reemplazo?', 'Podemos revisar la opción con una foto, placa o código antes de cotizar.'],
+      ['¿Puedo enviar una foto o el código del motor?', 'Sí. Envíelo por WhatsApp para revisar la configuración adecuada.'],
+      ['¿Hay repuestos para posventa?', 'Podemos revisar repuestos junto con el pedido mayorista.'],
+      ['¿Puedo solicitar OEM/ODM?', 'Las opciones de marca y configuración se revisan para cada solicitud mayorista.'],
+      ['¿Cómo se confirma la compatibilidad?', 'La confirmamos por información del vehículo, foto, código y requisitos del cliente.']
     ]
   };
 })(window);
