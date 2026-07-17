@@ -22,7 +22,7 @@
     var market = data.market || {};
     var query = params();
     var content = {
-      market: market.name || market.defaultCountry || '', product: productName(context.product || selectedProduct || ''), application: context.application || selectedApplication || 'No especificado',
+      market: market.name || market.defaultCountry || '', product: productName(context.product || selectedProduct || ''), application: context.application || selectedApplication || 'Por confirmar', quantity: context.quantity || 'Por confirmar',
       utm_source: context.utm_source || query.get('utm_source') || '', utm_medium: context.utm_medium || query.get('utm_medium') || '', utm_campaign: context.utm_campaign || query.get('utm_campaign') || '', gclid: context.gclid || query.get('gclid') || ''
     };
     var message = context.message || replaceTokens(market.whatsappMessageTemplate, content);
@@ -45,7 +45,9 @@
     var applicationInput = document.querySelector('[name="application"]');
     if (applicationInput && selectedApplication) applicationInput.value = selectedApplication;
     document.querySelectorAll('[data-product-card]').forEach(function(card) { card.classList.toggle('is-selected', card.dataset.productCard === selectedProduct); });
-    document.querySelectorAll('[data-whatsapp-link]').forEach(function(link) { link.href = buildWhatsAppUrl({ product: link.dataset.product || selectedProduct, application: link.dataset.application || selectedApplication, source: link.dataset.source || 'cta' }); });
+    var quantityInput = document.querySelector('[name="quantity"]');
+    var quantity = quantityInput && quantityInput.value ? quantityInput.value : 'Por confirmar';
+    document.querySelectorAll('[data-whatsapp-link]').forEach(function(link) { link.href = buildWhatsAppUrl({ product: link.dataset.product || selectedProduct, application: link.dataset.application || selectedApplication, quantity: quantity, source: link.dataset.source || 'cta' }); });
   }
   function renderHero() {
     var hero = document.querySelector('[data-hero]'); if (!hero) return;
@@ -111,12 +113,17 @@
     form.querySelector('[name="application"]').innerHTML = '<option value="">Seleccione una opción</option>' + data.form.applications.map(function(value) { return '<option>' + escapeHtml(value) + '</option>'; }).join('');
     form.querySelector('[name="displacement"]').innerHTML = '<option value="">Seleccione una opción</option>' + data.form.displacements.map(function(value) { return '<option>' + escapeHtml(value) + '</option>'; }).join('');
     form.addEventListener('submit', function() { setSelectedProduct(form.querySelector('[name="product_interest"]').value, form.querySelector('[name="application"]').value); });
+    ['product_interest', 'application', 'quantity'].forEach(function(name) {
+      form.querySelector('[name="' + name + '"]').addEventListener('input', function() {
+        setSelectedProduct(form.querySelector('[name="product_interest"]').value, form.querySelector('[name="application"]').value);
+      });
+    });
     document.querySelector('[data-quote-title]').textContent = data.quoteTitle; document.querySelector('[data-quote-description]').textContent = data.quoteDescription;
   }
   function formValue(form, name) { var field = form.querySelector('[name="' + name + '"]'); return field && field.value ? field.value.trim() : ''; }
   function serializeFormMessage(form) {
     var entries = [
-      ['Mercado', data.market.name || data.market.defaultCountry], ['Pais', formValue(form, 'country')], ['Aplicacion', formValue(form, 'application')],
+      ['Mercado', data.market.name || data.market.defaultCountry], ['Pais', formValue(form, 'country')], ['Empresa', formValue(form, 'company')], ['Aplicacion', formValue(form, 'application')],
       ['Motor', formValue(form, 'product_interest')], ['Cilindrada', formValue(form, 'displacement')], ['Cantidad', formValue(form, 'quantity')],
       ['Vehiculo', formValue(form, 'vehicle')], ['Codigo de motor', formValue(form, 'engine_code')], ['Requisitos', formValue(form, 'requirements')]
     ].filter(function(entry) { return entry[1]; });

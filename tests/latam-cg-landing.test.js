@@ -9,7 +9,7 @@ function loadMarket(file) { const context = { window: { ChixiangLatamProducts: {
 
 test('publishes independent SEO shells for Peru and Colombia', () => {
   const expectations = [
-    ['peru','es-PE','https://chixiangmotor.com/es/peru/','Motores CG 150 y CG 200 para distribuidores en Perú | Chixiang Motor'],
+    ['peru','es-PE','https://chixiangmotor.com/es/peru/','Motores para motos y trimotos de carga en Perú | Chixiang Motor'],
     ['colombia','es-CO','https://chixiangmotor.com/es/colombia/','Motores y repuestos para distribuidores en Colombia | Chixiang Motor']
   ];
   for (const [market,lang,canonical,title] of expectations) {
@@ -29,7 +29,7 @@ test('publishes independent SEO shells for Peru and Colombia', () => {
 test('keeps corrected country product order in data modules', () => {
   const peru=loadMarket('js/latam-cg-peru-data.js'); const colombia=loadMarket('js/latam-cg-colombia-data.js');
   assert.equal(peru.market.defaultCountry,'Perú');
-  assert.deepEqual(Array.from(peru.productOrder),['cg200','cg150','spares','cargo']);
+  assert.deepEqual(Array.from(peru.productOrder),['cg-air-range','standard-water','hw-water','engine-spares']);
   assert.equal(colombia.market.defaultCountry,'Colombia');
   assert.deepEqual(Array.from(colombia.productOrder),['spares','replacement']);
   assert.deepEqual(Array.from(colombia.comparisonFields).map(f=>f.key),['name','displacement','cooling','bestFor','reverse']);
@@ -44,7 +44,7 @@ test('uses existing local assets and no cm3 copy in shared products', () => {
 });
 
 test('keeps wholesale qualification fields and sitemap routes', () => {
-  for(const market of ['peru','colombia']) { const html=read(`es/${market}/index.html`); for(const field of ['name','contact','country','application','displacement','quantity','vehicle','engine_code','email','requirements','market','source_form']) assert.match(html,new RegExp(`name="${field}"`),`${market}: ${field}`); }
+  for(const market of ['peru','colombia']) { const html=read(`es/${market}/index.html`); const fields=['name','contact','country','application','displacement','quantity','vehicle','engine_code','email','requirements','market','source_form']; if(market==='peru') fields.push('company'); for(const field of fields) assert.match(html,new RegExp(`name="${field}"`),`${market}: ${field}`); }
   const sitemap=read('sitemap.xml'); assert.match(sitemap,/\/es\/peru\//); assert.match(sitemap,/\/es\/colombia\//);
 });
 

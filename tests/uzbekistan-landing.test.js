@@ -5,11 +5,11 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('publishes canonical Phase 5 Uzbekistan page', () => {
+test('publishes canonical customer-facing Uzbekistan page', () => {
   const html=read('ru/uzbekistan/index.html');
   assert.match(html,/<html lang="ru-UZ"/); assert.equal((html.match(/<h1\b/g)||[]).length,1);
-  assert.match(html,/150–250 см³/); assert.match(html,/водяное охлаждение/i); assert.match(html,/Один объём — не одна совместимость/i);
-  assert.match(html,/Ads Launch не разрешён/); assert.match(html,/action="\/api\/contact"/); assert.match(html,/canonical" href="https:\/\/chixiangmotor\.com\/ru\/uzbekistan\//);
+  assert.match(html,/Двигатели для мотоциклов и грузовых трициклов в Узбекистане/); assert.match(html,/CG150–250/); assert.match(html,/HW200–HW350/);
+  assert.doesNotMatch(html,/NOT APPROVED|INPUT REQUIRED|Phase 5|Native review required/i); assert.match(html,/action="\/api\/contact"/); assert.match(html,/canonical" href="https:\/\/chixiangmotor\.com\/ru\/uzbekistan\//);
 });
 
 test('keeps legacy URL as noindex canonical compatibility route', () => {

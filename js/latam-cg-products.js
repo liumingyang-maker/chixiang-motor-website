@@ -2,6 +2,30 @@
   'use strict';
 
   var products = {
+    'cg-air-range': {
+      slug: 'cg-air-range', name: 'Motores CG refrigerados por aire de 150–250 cc', displacement: 'CG150 / CG200 / CG250', cooling: 'Refrigeración por aire', reverse: 'Según la transmisión y la configuración del vehículo',
+      bestFor: 'Motocicletas de calle, motos de trabajo y proyectos de ensamblaje', image: 'images/cg银白色/1.webp',
+      gallery: ['images/cg银白色/1.webp', 'images/cg银白色/4.webp', 'images/cg银白色/5.webp'],
+      benefits: ['CG150, CG200 y CG250 disponibles para selección', 'Modelos combinables dentro de un mismo pedido', 'Confirmación por código, montaje, salida y sistema eléctrico']
+    },
+    'standard-water': {
+      slug: 'standard-water', name: 'Motores refrigerados por agua para trabajo y carga', displacement: 'CG150B / CG175SB / CG200SB / CG250SB', cooling: 'Refrigeración por agua y aire', reverse: 'Según el modelo y la transmisión del vehículo',
+      bestFor: 'Motocicletas de trabajo, trimotos de carga y operación comercial', image: 'images/普通水冷/6kjzxqqh.webp',
+      gallery: ['images/普通水冷/6kjzxqqh.webp', 'images/普通水冷/e8zlq6eb.webp', 'images/普通水冷/pcdwa12q.webp'],
+      benefits: ['Modelos de 150, 175, 200 y 250 cc disponibles en la gama local', 'Sistema de refrigeración para trabajo y carga', 'La aplicación se confirma según vehículo, transmisión y carga']
+    },
+    'hw-water': {
+      slug: 'hw-water', name: 'Motores HW refrigerados por agua de 200–350 cc', displacement: 'HW200 / HW250 / HW300 / HW350', cooling: 'Refrigeración por agua', reverse: 'Según el modelo y la transmisión del vehículo',
+      bestFor: 'Carga pesada, uso continuo y proyectos de ensamblaje', image: 'images/捍威/product_main_image_1.webp',
+      gallery: ['images/捍威/product_main_image_1.webp', 'images/捍威/product_main_image_2.webp', 'images/捍威/product_main_image_3.webp'],
+      benefits: ['Gama HW de 200 a 350 cc', 'Opciones para cargas elevadas y operación prolongada', 'Configuración final confirmada por modelo, aplicación y cantidad']
+    },
+    'engine-spares': {
+      slug: 'engine-spares', name: 'Motores y paquetes de repuestos', displacement: 'Según los motores incluidos en el pedido', cooling: 'Según cada modelo', reverse: 'No es un criterio de selección del paquete',
+      bestFor: 'Distribuidores, mayoristas, ensambladores y servicio posventa', image: 'images/article-parts.webp',
+      gallery: ['images/article-parts.webp', 'images/cg银白色/2.webp', 'images/普通水冷/qog3j40j.webp'],
+      benefits: ['Motores y repuestos pueden combinarse para el canal posventa', 'Lista de repuestos preparada por código y configuración', 'Empaque y composición confirmados para el pedido completo']
+    },
     cg125: {
       slug: 'cg125', name: 'CG125', displacement: '125 cc', cooling: 'Refrigeración por aire', reverse: 'Según configuración',
       bestFor: 'Motos urbanas y de trabajo', image: 'images/central-asia-hero-products/cg-air.png',

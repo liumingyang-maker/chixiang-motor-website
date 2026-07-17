@@ -16,7 +16,7 @@ check('Phase 5 base is latest verified origin/main',()=>requireTrue(git(['merge-
 check('Phase 3 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-3']).trim(),'Phase 3 changed'));
 check('Phase 4 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-4']).trim(),'Phase 4 changed'));
 
-const publicPages=[['Peru','es/peru/index.html','/es/peru/'],['Colombia','es/colombia/index.html','/es/colombia/'],['Uzbekistan','ru/uzbekistan/index.html','/ru/uzbekistan/'],['Russia','ru/dvigatel-140/index.html','/ru/dvigatel-140/']];
+const publicPages=[['Peru','es/peru/index.html','/es/peru/'],['Colombia','es/colombia/index.html','/es/colombia/'],['Uzbekistan','ru/uzbekistan/index.html','/ru/uzbekistan/'],['Russia market','ru/russia/index.html','/ru/russia/'],['Russia 140','ru/dvigatel-140/index.html','/ru/dvigatel-140/']];
 const publicInternalTerms=/NOT APPROVED|INPUT REQUIRED|Phase 5|Native review required|Research only|Confidence:|production form|Paid search[^<]{0,40}(?:no recomendado|not recommended)|demanda de motores completos no está verificada/i;
 for(const [market,file,canonical] of publicPages){
   check(`${market} page exists`,()=>requireTrue(fs.existsSync(path.join(repo,file)),'missing'));
@@ -27,20 +27,22 @@ for(const [market,file,canonical] of publicPages){
   check(`${market} has no invented numeric price/CPC/MOQ`,()=>requireTrue(!/\$\s*\d+|CPC\s*[:=]\s*\d+|MOQ\s*[:=]\s*\d+/i.test(read(file)),'invented commercial metric'));
   check(`${market} public copy has no internal gate language`,()=>requireTrue(!publicInternalTerms.test(read(file)),'internal project language exposed'));
 }
-check('Peru prioritizes CG200 before CG150',()=>contains('js/latam-cg-peru-data.js',/productOrder:\s*\['cg200',\s*'cg150'/));
-check('Peru separates spares from engine ranking',()=>contains('js/latam-cg-peru-data.js',/productOrder:[^\n]+spares/));
-check('Peru excludes unsupported Indian-platform fit claims',()=>contains('es/peru/index.html',/No prometemos adaptación directa a Bajaj, TVS, Hero, Piaggio Ape/i));
+check('Peru presents air-cooled, standard water-cooled, HW and spares in order',()=>contains('js/latam-cg-peru-data.js',/productOrder:\s*\['cg-air-range',\s*'standard-water',\s*'hw-water',\s*'engine-spares'/));
+check('Peru uses distinct local standard-water and HW images',()=>contains('js/latam-cg-products.js',/standard-water[\s\S]+images\/普通水冷\/6kjzxqqh\.webp[\s\S]+hw-water[\s\S]+images\/捍威\/product_main_image_1\.webp/));
+check('Peru publishes total-order sample, wholesale, mixed and OEM thresholds',()=>contains('es/peru/index.html',/Muestras desde 2 motores en total[\s\S]+Pedidos mayoristas desde 50 motores en total[\s\S]+Pedidos mixtos desde 100 motores en total[\s\S]+OEM desde 100 motores en total/));
 check('Colombia internal route stays SEO only',()=>contains('es/colombia/index.html',/data-ads-priority="seo-only"/));
 check('Colombia public copy is customer-facing',()=>contains('es/colombia/index.html',/distribuidores|posventa|selección técnica/i)&&requireTrue(!/demanda de motores completos no está verificada|Paid search/i.test(read('es/colombia/index.html')),'internal market decision exposed'));
 check('Colombia has no Google Ads tag',()=>requireTrue(!/googletagmanager/.test(read('es/colombia/index.html')),'unexpected ads tag'));
-check('Uzbekistan direction is water-cooled 150–250',()=>contains('ru/uzbekistan/index.html',/150–250 см³[\s\S]+водяным охлаждением/i));
-check('Uzbekistan reverse stays a technical configuration topic',()=>contains('ru/uzbekistan/index.html',/внешний реверс|конструкц.+реверс/i));
+check('Uzbekistan presents all four approved product groups',()=>contains('ru/uzbekistan/index.html',/Двигатели CG воздушного охлаждения 150–250 см³[\s\S]+Двигатели водяного охлаждения для работы и грузовой техники[\s\S]+Двигатели HW водяного охлаждения 200–350 см³[\s\S]+Двигатели и комплекты запасных частей/));
+check('Uzbekistan publishes total-order thresholds',()=>contains('ru/uzbekistan/index.html',/Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/));
 check('Uzbekistan legacy route is noindex',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/noindex,follow/));
 check('Uzbekistan legacy route points to canonical',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/\/ru\/uzbekistan\//));
 check('Russia prioritizes horizontal 140',()=>contains('ru/dvigatel-140/index.html',/Горизонтальный двигатель 140 см³/));
 check('Russia keeps pit-bike as technical qualification',()=>contains('ru/dvigatel-140/index.html',/140–150 см³ для pit-bike[\s\S]+проверки конкретной рамы/i));
 check('Russia platform names are not fit claims',()=>contains('ru/dvigatel-140/index.html',/не подтверждает прямую установку/i));
-check('New routes are in sitemap',()=>contains('sitemap.xml',/\/ru\/uzbekistan\//)&&contains('sitemap.xml',/\/ru\/dvigatel-140\//));
+check('Russia market leads with the local CB product series',()=>contains('ru/russia/index.html',/Двигатели серии CB для внедорожных мотоциклов[\s\S]+CB150[\s\S]+CB200-C[\s\S]+CB250/));
+check('Russia market links horizontal 140 and uses total-order thresholds',()=>contains('ru/russia/index.html',/href="\/ru\/dvigatel-140\/"[\s\S]+Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/));
+check('New routes are in sitemap',()=>contains('sitemap.xml',/\/ru\/uzbekistan\//)&&contains('sitemap.xml',/\/ru\/dvigatel-140\//)&&contains('sitemap.xml',/\/ru\/russia\//));
 check('Legacy Uzbekistan route is not in sitemap',()=>requireTrue(!/dvigateli-dlya-uzbekistana\.html/.test(read('sitemap.xml')),'legacy URL indexed'));
 check('Shared Phase 5 CSS is mobile-first and accessible',()=>contains('css/phase5-market-pages.css',/min-height:44px/)&&contains('css/phase5-market-pages.css',/prefers-reduced-motion/)&&contains('css/phase5-market-pages.css',/overflow-x:auto/));
 
