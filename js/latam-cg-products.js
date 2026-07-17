@@ -15,10 +15,10 @@
       benefits: ['Uso diario y comercial', 'Selección por vehículo o código', 'Repuestos disponibles para pedido']
     },
     cg200: {
-      slug: 'cg200', name: 'CG200', displacement: '200 cc', cooling: 'Refrigeración por agua', reverse: 'Según modelo',
-      bestFor: 'Trimotos de carga', image: 'images/central-asia-hero-products/cg-water.png',
-      gallery: ['images/普通水冷/6kjzxqqh.webp', 'images/普通水冷/e8zlq6eb.webp', 'images/普通水冷/pcdwa12q.webp'],
-      benefits: ['Pensado para trabajo y carga', 'Refrigeración por agua', 'Configuración confirmada antes de cotizar']
+      slug: 'cg200', name: 'CG200', displacement: '200 cc', cooling: 'Refrigeración por aire; confirmar modelo', reverse: 'Se confirma en la configuración del vehículo',
+      bestFor: 'Motos de trabajo y aplicaciones de carga', image: 'images/central-asia-hero-products/cg-air.png',
+      gallery: ['images/cg银白色/1.webp', 'images/cg银白色/4.webp', 'images/cg银白色/5.webp'],
+      benefits: ['Primera dirección de investigación para Perú', 'Suministro B2B sujeto a confirmación técnica', 'Código, montaje y sistema eléctrico por validar']
     },
     cargo: {
       slug: 'cargo', name: 'Configuración para carga', displacement: '150–200 cc', cooling: 'Aire o agua según modelo', reverse: 'Según modelo',
@@ -31,6 +31,12 @@
       bestFor: 'Reemplazo y posventa', image: 'images/central-asia-hero-products/cg-air.png',
       gallery: ['images/cg银白色/2.webp', 'images/cg银白色/5.webp', 'images/普通水冷/6kjzxqqh.webp'],
       benefits: ['Selección por foto, placa o código', 'Confirmación antes de cotizar', 'Repuestos para pedidos mayoristas']
+    },
+    spares: {
+      slug: 'spares', name: 'Motor + paquete de repuestos', displacement: 'Según motor confirmado', cooling: 'Según configuración', reverse: 'No es criterio de selección',
+      bestFor: 'Distribuidores, talleres y posventa', image: 'images/central-asia-hero-products/cg-air.png',
+      gallery: ['images/cg银白色/2.webp', 'images/cg银白色/3.webp', 'images/cg银白色/5.webp'],
+      benefits: ['Lista de piezas por código o muestra', 'Carga mixta sujeta a confirmación comercial', 'Paquete de posventa para pedidos B2B']
     }
   };
 

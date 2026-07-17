@@ -1,0 +1,21 @@
+negative_keyword,match_type,language,reason
+gratis,Broad,Spanish,Non-commercial
+manual,Broad,Spanish,DIY information
+reparar,Broad,Spanish,Repair-only
+usado,Broad,Spanish,Used product
+segunda mano,Phrase,Spanish,Used product
+empleo,Broad,Spanish,Jobs
+trabajo fábrica,Phrase,Spanish,Jobs
+pdf,Broad,Spanish,Document-only
+diagrama,Broad,Spanish,Information-only
+video,Broad,Spanish,Information-only
+juguete,Broad,Spanish,Irrelevant
+bicicleta,Broad,Spanish,Irrelevant
+carro,Broad,Spanish,Automotive
+motor eléctrico,Phrase,Spanish,Wrong powertrain
+bajaj pulsar,Phrase,Spanish,Unsupported direct compatibility
+tvs apache,Phrase,Spanish,Unsupported direct compatibility
+hero hunk,Phrase,Spanish,Unsupported direct compatibility
+piaggio ape,Phrase,Spanish,Unsupported Indian platform
+repuesto suelto minorista,Phrase,Spanish,Retail-only
+mercadolibre,Broad,Spanish,Marketplace retail

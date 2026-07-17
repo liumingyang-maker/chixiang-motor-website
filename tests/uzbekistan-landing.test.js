@@ -2,69 +2,23 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-
 const root = path.join(__dirname, '..');
-const pagePath = path.join(root, 'ru', 'dvigateli-dlya-uzbekistana.html');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('publishes the Uzbekistan landing-page contract', () => {
-  assert.ok(fs.existsSync(pagePath), 'the landing page must exist');
-  const html = fs.readFileSync(pagePath, 'utf8');
-
-  assert.match(html, /<html lang="ru"/);
-  assert.equal((html.match(/<h1\b/g) || []).length, 1);
-  assert.match(html, /id="cg-engines"/);
-  assert.match(html, /id="cg-heavy-duty"/);
-  assert.match(html, /CG 150[–-]250/);
-  assert.match(html, /CG 200[–-]350/);
-  assert.match(html, /Опционально со встроенным реверсом/);
-  assert.match(html, /Без встроенного реверса/);
-  assert.doesNotMatch(html, /HW Heavy-Duty/i);
-  assert.match(html, /href="https:\/\/wa\.me\/8619008225410\?text=/);
-  assert.match(html, /<form[^>]+id="contactForm"[^>]+action="\/api\/contact"/);
-  assert.match(html, /\.\.\/js\/main\.js/);
-  assert.match(html, /\.\.\/js\/uzbekistan-landing\.js/);
-  assert.match(html, /\.\.\/css\/uzbekistan-landing\.css/);
-  assert.match(html, /FAQPage/);
-  assert.match(html, /rel="canonical" href="https:\/\/chixiangmotor\.com\/ru\/dvigateli-dlya-uzbekistana\.html"/);
+test('publishes canonical Phase 5 Uzbekistan page', () => {
+  const html=read('ru/uzbekistan/index.html');
+  assert.match(html,/<html lang="ru-UZ"/); assert.equal((html.match(/<h1\b/g)||[]).length,1);
+  assert.match(html,/150–250 см³/); assert.match(html,/водяное охлаждение/i); assert.match(html,/Один объём — не одна совместимость/i);
+  assert.match(html,/Ads Launch не разрешён/); assert.match(html,/action="\/api\/contact"/); assert.match(html,/canonical" href="https:\/\/chixiangmotor\.com\/ru\/uzbekistan\//);
 });
 
-test('registers the production URL in the sitemap', () => {
-  assert.match(read('sitemap.xml'), /https:\/\/chixiangmotor\.com\/ru\/dvigateli-dlya-uzbekistana\.html/);
+test('keeps legacy URL as noindex canonical compatibility route', () => {
+  const html=read('ru/dvigateli-dlya-uzbekistana.html'); assert.match(html,/noindex,follow/); assert.match(html,/canonical" href="https:\/\/chixiangmotor\.com\/ru\/uzbekistan\//); assert.match(html,/url=\/ru\/uzbekistan\//);
 });
 
-test('references only existing local product assets', () => {
-  assert.ok(fs.existsSync(pagePath), 'the landing page must exist');
-  const html = fs.readFileSync(pagePath, 'utf8');
-  const sources = [...html.matchAll(/<img[^>]+src="\.\.\/images\/([^"]+)"/g)]
-    .map(match => decodeURIComponent(match[1]));
+test('registers canonical Uzbekistan URL only', () => { const sitemap=read('sitemap.xml'); assert.match(sitemap,/\/ru\/uzbekistan\//); assert.doesNotMatch(sitemap,/dvigateli-dlya-uzbekistana\.html/); });
 
-  assert.ok(sources.length >= 15, 'all three five-image product galleries are required');
-  for (const source of sources) {
-    assert.ok(fs.existsSync(path.join(root, 'images', source)), source);
-  }
-});
-
-test('defines responsive and accessible page-scoped styles', () => {
-  const css = read('css/uzbekistan-landing.css');
-  assert.match(css, /\.uz-product-row/);
-  assert.match(css, /@media\s*\(max-width:\s*680px\)/);
-  assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
-  assert.match(css, /min-height:\s*44px/);
-  assert.match(css, /scroll-margin-top/);
-  assert.match(css, /overflow-x:\s*auto/);
-  assert.match(css, /object-fit:\s*contain/);
-  assert.match(css, /background:\s*#fff/);
-});
-
-test('uses the approved hero artwork and explicit Russian-site links', () => {
-  const html = fs.readFileSync(pagePath, 'utf8');
-  const css = read('css/uzbekistan-landing.css');
-  assert.match(html, /src="\.\.\/images\/uzbekistan-cg-hero\.png"/);
-  assert.doesNotMatch(html, /uz-hero-product/);
-  assert.doesNotMatch(html, /uz-hero-badge/);
-  assert.match(html, />Русский сайт<\/a>/);
-  assert.match(html, /href="products\.html"/);
-  assert.match(html, /href="about\.html"/);
-  assert.match(css, /@media \(min-width: 781px\)[\s\S]*\.uz-hero-grid[\s\S]*1640px/);
+test('references existing assets and accessible shared styles', () => {
+  const html=read('ru/uzbekistan/index.html'); for(const m of html.matchAll(/(?:src|href)="\.\.\/\.\.\/([^"?#]+)(?:[?#][^"]*)?"/g)) assert.ok(fs.existsSync(path.join(root,m[1])),m[1]);
+  const css=read('css/phase5-market-pages.css'); assert.match(css,/min-height:44px/); assert.match(css,/overflow-x:auto/); assert.match(css,/prefers-reduced-motion/); assert.match(css,/@media\(max-width:759px\)/);
 });
