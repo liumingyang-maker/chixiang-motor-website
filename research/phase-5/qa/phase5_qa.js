@@ -16,27 +16,29 @@ check('Phase 5 base is latest verified origin/main',()=>requireTrue(git(['merge-
 check('Phase 3 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-3']).trim(),'Phase 3 changed'));
 check('Phase 4 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-4']).trim(),'Phase 4 changed'));
 
-for(const [market,file,canonical] of [['Peru','es/peru/index.html','/es/peru/'],['Colombia','es/colombia/index.html','/es/colombia/'],['Uzbekistan','ru/uzbekistan/index.html','/ru/uzbekistan/'],['Russia','ru/dvigatel-140/index.html','/ru/dvigatel-140/']]){
+const publicPages=[['Peru','es/peru/index.html','/es/peru/'],['Colombia','es/colombia/index.html','/es/colombia/'],['Uzbekistan','ru/uzbekistan/index.html','/ru/uzbekistan/'],['Russia','ru/dvigatel-140/index.html','/ru/dvigatel-140/']];
+const publicInternalTerms=/NOT APPROVED|INPUT REQUIRED|Phase 5|Native review required|Research only|Confidence:|production form|Paid search[^<]{0,40}(?:no recomendado|not recommended)|demanda de motores completos no está verificada/i;
+for(const [market,file,canonical] of publicPages){
   check(`${market} page exists`,()=>requireTrue(fs.existsSync(path.join(repo,file)),'missing'));
   check(`${market} has one H1`,()=>requireTrue((read(file).match(/<h1\b/g)||[]).length===1,'H1 count'));
   check(`${market} has canonical`,()=>contains(file,new RegExp(`canonical[^>]+${canonical.replace(/[/-]/g,'\\$&')}`)));
   check(`${market} form targets /api/contact`,()=>contains(file,/action="\/api\/contact"/));
   check(`${market} has market/source attribution`,()=>contains(file,/name="market"/)&&contains(file,/name="source_form"/));
   check(`${market} has no invented numeric price/CPC/MOQ`,()=>requireTrue(!/\$\s*\d+|CPC\s*[:=]\s*\d+|MOQ\s*[:=]\s*\d+/i.test(read(file)),'invented commercial metric'));
+  check(`${market} public copy has no internal gate language`,()=>requireTrue(!publicInternalTerms.test(read(file)),'internal project language exposed'));
 }
 check('Peru prioritizes CG200 before CG150',()=>contains('js/latam-cg-peru-data.js',/productOrder:\s*\['cg200',\s*'cg150'/));
 check('Peru separates spares from engine ranking',()=>contains('js/latam-cg-peru-data.js',/productOrder:[^\n]+spares/));
 check('Peru excludes unsupported Indian-platform fit claims',()=>contains('es/peru/index.html',/No prometemos adaptación directa a Bajaj, TVS, Hero, Piaggio Ape/i));
-check('Colombia is SEO only',()=>contains('es/colombia/index.html',/data-ads-priority="seo-only"/));
-check('Colombia states complete-engine demand is unverified',()=>contains('es/colombia/index.html',/demanda de motores completos no está verificada/i));
-check('Colombia paid complete-engine search is not recommended',()=>contains('es/colombia/index.html',/Paid search<\/strong><span>no recomendado/i));
+check('Colombia internal route stays SEO only',()=>contains('es/colombia/index.html',/data-ads-priority="seo-only"/));
+check('Colombia public copy is customer-facing',()=>contains('es/colombia/index.html',/distribuidores|posventa|selección técnica/i)&&requireTrue(!/demanda de motores completos no está verificada|Paid search/i.test(read('es/colombia/index.html')),'internal market decision exposed'));
 check('Colombia has no Google Ads tag',()=>requireTrue(!/googletagmanager/.test(read('es/colombia/index.html')),'unexpected ads tag'));
-check('Uzbekistan direction is water-cooled 150–250',()=>contains('ru/uzbekistan/index.html',/150–250 см³[\s\S]+водяное охлаждение/i));
-check('Uzbekistan reverse is not a scoring factor',()=>contains('ru/uzbekistan/index.html',/Реверс не участвует в выборе рынка или рейтинге двигателя/i));
+check('Uzbekistan direction is water-cooled 150–250',()=>contains('ru/uzbekistan/index.html',/150–250 см³[\s\S]+водяным охлаждением/i));
+check('Uzbekistan reverse stays a technical configuration topic',()=>contains('ru/uzbekistan/index.html',/внешний реверс|конструкц.+реверс/i));
 check('Uzbekistan legacy route is noindex',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/noindex,follow/));
 check('Uzbekistan legacy route points to canonical',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/\/ru\/uzbekistan\//));
-check('Russia prioritizes horizontal 140',()=>contains('ru/dvigatel-140/index.html',/Основное направление — нижний горизонтальный двигатель 140 см³/));
-check('Russia keeps CB/pit-bike as research only',()=>contains('ru/dvigatel-140/index.html',/CB \/ pit-bike 140–150[\s\S]+Только исследование и квалификация/));
+check('Russia prioritizes horizontal 140',()=>contains('ru/dvigatel-140/index.html',/Горизонтальный двигатель 140 см³/));
+check('Russia keeps pit-bike as technical qualification',()=>contains('ru/dvigatel-140/index.html',/140–150 см³ для pit-bike[\s\S]+проверки конкретной рамы/i));
 check('Russia platform names are not fit claims',()=>contains('ru/dvigatel-140/index.html',/не подтверждает прямую установку/i));
 check('New routes are in sitemap',()=>contains('sitemap.xml',/\/ru\/uzbekistan\//)&&contains('sitemap.xml',/\/ru\/dvigatel-140\//));
 check('Legacy Uzbekistan route is not in sitemap',()=>requireTrue(!/dvigateli-dlya-uzbekistana\.html/.test(read('sitemap.xml')),'legacy URL indexed'));
@@ -58,14 +60,16 @@ check('Every ad group is marked NOT APPROVED',()=>contains('research/phase-5/scr
 const testRun=cp.spawnSync(process.execPath,['--test','tests/*.test.js'],{cwd:repo,encoding:'utf8',shell:true});
 check('Repository automated tests pass',()=>requireTrue(testRun.status===0,(testRun.stderr||testRun.stdout).slice(-500)));
 
+manual.push(['Factory technical and product-claim review','MANUAL AUTHORIZATION REQUIRED','Peru, Colombia, Uzbekistan and Russia']);
 manual.push(['Native Spanish copy review','MANUAL AUTHORIZATION REQUIRED','Peru and Colombia']);
 manual.push(['Native Russian and Uzbek CTA review','MANUAL AUTHORIZATION REQUIRED','Uzbekistan and Russia']);
+manual.push(['Cloudflare Preview human review','MANUAL AUTHORIZATION REQUIRED','Four country pages']);
 manual.push(['Keyword Planner and Wordstat metrics','MANUAL AUTHORIZATION REQUIRED','No tool metrics invented']);
 manual.push(['Factory product and commercial data','MANUAL AUTHORIZATION REQUIRED','Specifications, prices, MOQ, lead time, warranty']);
 manual.push(['Production conversion test','MANUAL AUTHORIZATION REQUIRED','No production submission executed']);
 
 const failed=checks.filter(c=>c.status==='FAIL');
-const report=['# Phase 5 QA Report','',`Automated result: **${checks.length-failed.length}/${checks.length} PASS**`,`Manual gates: **${manual.length} MANUAL AUTHORIZATION REQUIRED**`,'','## Automated checks','', '| # | Check | Status | Detail |','|---:|---|---|---|',...checks.map((c,i)=>`| ${i+1} | ${c.name} | ${c.status} | ${String(c.detail||'').replace(/\|/g,'\\|').replace(/\r?\n/g,' ')} |`),'','## Interactive visual QA','','- In-app browser review covered Peru, Colombia, Uzbekistan and Russia at 390 × 844 and 1440 × 900.','- All four pages had one visible H1, no document or H1 horizontal overflow, a local `/api/contact` form, and no completed broken image.','- Responsive controls were verified at a 44 px minimum after the mobile reliability pass.','- Eight worksheet renders were inspected; headers, wrapping, formulas and status labels were readable.','- No form was submitted during browser QA.','','## Manual gates','','| Gate | Status | Scope |','|---|---|---|',...manual.map(r=>`| ${r[0]} | ${r[1]} | ${r[2]} |`),'','## Safety conclusion','','- Ads Launch remains **NOT APPROVED**.','- No ads launched.','- No buyers contacted.','- No production inquiries submitted.','- No production conversion tests executed.',''];
+const report=['# Phase 5 QA Report','',`Automated result: **${checks.length-failed.length}/${checks.length} PASS**`,`Manual gates: **${manual.length} MANUAL AUTHORIZATION REQUIRED**`,'','## Automated checks','', '| # | Check | Status | Detail |','|---:|---|---|---|',...checks.map((c,i)=>`| ${i+1} | ${c.name} | ${c.status} | ${String(c.detail||'').replace(/\|/g,'\\|').replace(/\r?\n/g,' ')} |`),'','## Interactive visual QA','','- Automated checks verify that public pages contain customer-facing copy rather than internal research or launch-gate language.','- A fresh Cloudflare Preview review is still required after this copy cleanup.','- No form was submitted during automated QA.','','## Manual gates','','| Gate | Status | Scope |','|---|---|---|',...manual.map(r=>`| ${r[0]} | ${r[1]} | ${r[2]} |`),'','## Safety conclusion','','- Ads Launch remains **NOT APPROVED** in internal project assets.','- No ads launched.','- No buyers contacted.','- No production inquiries submitted.','- No production conversion tests executed.',''];
 fs.writeFileSync(path.join(__dirname,'Phase_5_QA_Report.md'),report.join('\n'));
 fs.copyFileSync(path.join(__dirname,'Phase_5_QA_Report.md'),path.join(delivery,'Phase_5_QA_Report.md'));
 const files=fs.readdirSync(delivery).filter(f=>fs.statSync(path.join(delivery,f)).isFile());
