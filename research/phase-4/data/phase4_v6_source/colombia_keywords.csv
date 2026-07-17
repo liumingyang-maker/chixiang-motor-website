@@ -1,0 +1,13 @@
+Country,Language,Seed,Chinese meaning,Product,Intent,Ad group,Landing page,Evidence IDs,Demand level,Status rule
+Colombia,Spanish,motor CG 125,CG125发动机,CG125 air-cooled,Complete-engine research,CO | CG125/150 Replacement Research | Research Only,/es/colombia/,"P4-CO-09,P4-CO-10",Low,Research only
+Colombia,Spanish,motor CG 150,CG150发动机,CG150 air-cooled,Complete-engine research,CO | CG125/150 Replacement Research | Research Only,/es/colombia/,"P4-CO-09,P4-CO-11,P4-CO-15",Low,Research only
+Colombia,Spanish,motor CG 200,CG200发动机,CG200 air-cooled,Complete-engine research,CO | CG125/150 Replacement Research | Research Only,/es/colombia/,P4-CO-11,Low,Research only
+Colombia,Spanish,motor completo para moto,摩托车完整发动机,CG125 air-cooled,Complete-engine research,CO | CG125/150 Replacement Research | Research Only,/es/colombia/,P4-CO-08,Low,Research only
+Colombia,Spanish,repuestos motor CG,CG发动机零件,Engine parts / spares pack,Parts/distributor,CO | Parts / Distributor | SEO,/es/colombia/,"P4-CO-05,P4-CO-06,P4-CO-07",High,Retained
+Colombia,Spanish,repuestos para moto al por mayor,摩托车零件批发,Engine parts / spares pack,Parts/distributor,CO | Parts / Distributor | SEO,/es/colombia/,"P4-CO-05,P4-CO-06",High,Retained
+Colombia,Spanish,distribuidor repuestos moto,摩托车零件经销商,Engine parts / spares pack,Distributor development,CO | Dealer Development | Non-paid,/es/colombia/,"P4-CO-05,P4-CO-06",Medium,Retained
+Colombia,Spanish,proveedor repuestos motor moto,摩托车发动机零件供应商,Engine parts / spares pack,Distributor development,CO | Dealer Development | Non-paid,/es/colombia/,"P4-CO-05,P4-CO-07",Medium,Retained
+Colombia,Spanish,repuestos AKT 125,AKT125零件,Honda-style 125 horizontal,Platform qualification,CO | AKT Platform Qualification | Research Only,/es/colombia/,"P4-CO-01,P4-CO-02,P4-CO-13",Medium,Research only
+Colombia,Spanish,kit cilindro CG 125,CG125气缸套件,Engine parts / spares pack,Parts/platform,CO | Parts / Distributor | SEO,/es/colombia/,"P4-CO-09,P4-CO-10",Medium,Retained
+Colombia,Spanish,kit cilindro CG 150,CG150气缸套件,Engine parts / spares pack,Parts/platform,CO | Parts / Distributor | SEO,/es/colombia/,P4-CO-09,Medium,Retained
+Colombia,Spanish,culata completa CG 150,CG150完整缸头,Engine parts / spares pack,Parts/platform,CO | Parts / Distributor | SEO,/es/colombia/,P4-CO-15,Medium,Retained

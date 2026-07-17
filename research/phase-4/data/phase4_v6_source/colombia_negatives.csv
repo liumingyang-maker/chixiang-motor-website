@@ -1,0 +1,44 @@
+Country,Language,Negative keyword,Match type,Scope,Rule
+Colombia,Spanish,gratis,Phrase,Campaign,Low commercial relevance
+Colombia,Spanish,empleo,Phrase,Campaign,Job intent
+Colombia,Spanish,trabajo,Phrase,Campaign,Job intent
+Colombia,Spanish,salario,Phrase,Campaign,Job intent
+Colombia,Spanish,hoja de vida,Phrase,Campaign,Job intent
+Colombia,Spanish,vacantes,Phrase,Campaign,Job intent
+Colombia,Spanish,juguete,Phrase,Campaign,Toy intent
+Colombia,Spanish,juego,Phrase,Campaign,Game intent
+Colombia,Spanish,juegos de motos,Phrase,Campaign,Game intent
+Colombia,Spanish,manual pdf,Phrase,Campaign,Information only
+Colombia,Spanish,descargar manual,Phrase,Campaign,Information only
+Colombia,Spanish,tutorial,Phrase,Campaign,DIY intent
+Colombia,Spanish,cómo reparar,Phrase,Campaign,DIY intent
+Colombia,Spanish,reparación cerca,Phrase,Campaign,Local service intent
+Colombia,Spanish,mecánico cerca,Phrase,Campaign,Local service intent
+Colombia,Spanish,moto usada,Phrase,Campaign,Vehicle purchase
+Colombia,Spanish,motos usadas,Phrase,Campaign,Vehicle purchase
+Colombia,Spanish,moto nueva,Phrase,Campaign,Vehicle purchase
+Colombia,Spanish,motos baratas,Phrase,Campaign,Vehicle purchase
+Colombia,Spanish,alquiler moto,Phrase,Campaign,Rental intent
+Colombia,Spanish,crédito moto,Phrase,Campaign,Finance intent
+Colombia,Spanish,curso mecánica,Phrase,Campaign,Training intent
+Colombia,Spanish,bicicleta eléctrica,Phrase,Campaign,Unrelated product
+Colombia,Spanish,motor eléctrico,Phrase,Campaign,Unrelated product
+Colombia,Spanish,motor de carro,Phrase,Campaign,Automotive intent
+Colombia,Spanish,motor diesel,Phrase,Campaign,Unrelated engine
+Colombia,Spanish,carro usado,Phrase,Campaign,Automotive intent
+Colombia,Spanish,camión usado,Phrase,Campaign,Automotive intent
+Colombia,Spanish,tractor,Phrase,Campaign,Unrelated equipment
+Colombia,Spanish,podadora,Phrase,Campaign,Unrelated equipment
+Colombia,Spanish,Bajaj,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,TVS,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Hero,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Boxer,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Piaggio,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Mahindra,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Royal Enfield,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Ape,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Dominar,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Pulsar,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,Apache,Phrase,Ad group,Indian-platform exclusion
+Colombia,Spanish,cartelera cine,Phrase,Campaign,Unrelated intent
+Colombia,Spanish,segunda mano,Phrase,Campaign,Used goods

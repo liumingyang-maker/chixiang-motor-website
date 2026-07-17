@@ -1,0 +1,15 @@
+{
+  "version": "Phase 4 v6",
+  "date": "2026-07-16",
+  "countries": ["Peru", "Uzbekistan", "Ecuador", "Tanzania", "Russia", "Colombia"],
+  "frozen_parent_commit": "0a66be29a585f966f8842a23226cc85886e76a09",
+  "colombia_conclusion": "Complete-engine demand is not verified from the available public evidence.",
+  "colombia_primary_route": "SEO / distributor development",
+  "colombia_paid_complete_engine_search": "Not recommended",
+  "ads_launch": "NOT APPROVED",
+  "keyword_expansion_modifiers": ["", " completo", " al por mayor", " proveedor", " distribuidor", " importador", " Colombia", " para trabajo", " para carga", " catálogo"],
+  "minimum_colombia_raw_keywords": 120,
+  "minimum_colombia_negatives": 40,
+  "minimum_qa_checks": 35,
+  "production_changes_allowed": false
+}
