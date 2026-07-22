@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -162,6 +162,22 @@
       </div>
     </section>
 
+    <section id="terms" class="ca-section ca-anchor-section" aria-labelledby="terms-title">
+      <div class="ca-shell">
+        <div class="ca-section-heading">
+          <p class="ca-kicker">Условия заказа</p>
+          <h2 id="terms-title">Количество рассчитывается по общему объёму заказа</h2>
+          <p>Разные модели можно объединять в одном заказе. Порог определяется суммарным количеством всех двигателей в заказе.</p>
+        </div>
+        <div class="ca-terms-grid">
+          <article class="ca-term-card"><strong>2</strong><span>Образцы — от 2 двигателей в одном заказе</span></article>
+          <article class="ca-term-card"><strong>50</strong><span>Оптовые заказы — от 50 двигателей суммарно</span></article>
+          <article class="ca-term-card"><strong>100</strong><span>Смешанные заказы — от 100 двигателей суммарно</span></article>
+          <article class="ca-term-card"><strong>100</strong><span>OEM — от 100 двигателей суммарно</span></article>
+        </div>
+        <p class="ca-terms-note">Пример: CG150 × 1 + CG200 × 1 составляют заказ образцов из двух двигателей. Разные серии и модели считаются вместе.</p>
+      </div>
+    </section>
     <section id="faq" class="ca-section ca-anchor-section ca-faq" aria-labelledby="faq-title">
       <div class="ca-shell ca-faq-grid">
         <div class="ca-faq-intro"><p class="ca-kicker">Ответы до запроса</p><h2 id="faq-title">Частые вопросы</h2><p>Если вашей задачи нет в списке, опишите её в форме — мы уточним подходящую серию.</p></div>
@@ -193,10 +209,12 @@
             data-message-success="Спасибо. Ваш запрос успешно отправлен."
             data-message-fallback="Не удалось отправить форму по email. Мы открыли WhatsApp с данными запроса.">
             <div class="ca-honeypot" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+            <input type="hidden" name="market" value="Central Asia 5">
+            <input type="hidden" name="source_form" value="ca5_central_asia_landing">
             <div class="ca-form-grid">
               <div class="ca-field"><label for="name">Имя <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
               <div class="ca-field"><label for="contact">WhatsApp / Telegram <span aria-hidden="true">*</span></label><input id="contact" name="contact" type="text" autocomplete="tel" required></div>
-              <div class="ca-field ca-field-wide"><label for="country">Страна <span aria-hidden="true">*</span></label><select id="country" name="country" required><option value="">Выберите страну</option><option>Казахстан</option><option>Кыргызстан</option><option>Таджикистан</option><option>Узбекистан</option><option>Другая страна</option></select></div>
+              <div class="ca-field ca-field-wide"><label for="country">Страна <span aria-hidden="true">*</span></label><select id="country" name="country" required><option value="">Выберите страну</option><option>Казахстан</option><option>Кыргызстан</option><option>Таджикистан</option><option>Туркменистан</option><option>Узбекистан</option><option>Другая страна</option></select></div>
               <div class="ca-field"><label for="product_interest">Серия <span aria-hidden="true">*</span></label><select id="product_interest" name="product_interest" required data-product-select><option value="">Выберите серию</option></select></div>
               <div class="ca-field"><label for="quantity">Количество</label><input id="quantity" name="quantity" type="text" inputmode="numeric" placeholder="Например, 50"></div>
               <div class="ca-field ca-field-wide"><label for="application">Транспорт или применение</label><input id="application" name="application" type="text" placeholder="Мотоцикл, трицикл или нагрузка"></div>

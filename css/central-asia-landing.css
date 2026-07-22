@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --ca-navy: #081a35;
   --ca-navy-2: #0d274b;
   --ca-blue: #1769e0;
@@ -536,3 +536,10 @@ body.ca-page {
   html { scroll-behavior: auto; }
   .ca-page *, .ca-page *::before, .ca-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Order terms */
+.ca-terms-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
+.ca-term-card{background:var(--ca-surface,#f8f9fa);border:1px solid var(--ca-border,#e2e8f0);border-radius:12px;padding:20px;text-align:center}
+.ca-term-card strong{display:block;font-size:2rem;font-weight:800;color:var(--ca-accent,#c0392b);margin-bottom:6px}
+.ca-term-card span{font-size:.9rem;line-height:1.4;color:var(--ca-text,#333)}
+.ca-terms-note{margin-top:16px;font-size:.85rem;color:var(--ca-muted,#666);line-height:1.5}
