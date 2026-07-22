@@ -5,18 +5,17 @@ const path = require('node:path');
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
-const publicPages = ['es/peru/index.html','es/colombia/index.html','ru/uzbekistan/index.html','ru/dvigatel-140/index.html'];
+const publicPages = ['es/peru/index.html','es/colombia/index.html','ru/central-asia/index.html','ru/russia/index.html'];
 const internalTerms = /NOT APPROVED|INPUT REQUIRED|Phase 5|Native review required|Research only|Confidence:|production form|paid search[^<]{0,40}not recommended|demanda de motores completos no está verificada/i;
 
-test('publishes Russia 140 page with customer-facing evidence boundaries', () => {
-  const html=read('ru/dvigatel-140/index.html');
-  assert.match(html,/Горизонтальный двигатель 140 см³/);
-  assert.match(html,/нижний горизонтальный 140 см³/i);
-  assert.match(html,/140–150 см³ для pit-bike/i);
-  assert.match(html,/не подтверждает прямую установку/i);
+test('Russia page absorbs the 140 topic with customer-facing evidence boundaries', () => {
+  const html=read('ru/russia/index.html');
+  assert.match(html,/110/);
+  assert.match(html,/140/);
+  assert.match(html,/не является обещанием прямой совместимости/i);
   assert.doesNotMatch(html,internalTerms);
   assert.match(html,/action="\/api\/contact"/);
-  assert.match(read('sitemap.xml'),/\/ru\/dvigatel-140\//);
+  assert.doesNotMatch(read('sitemap.xml'),/\/ru\/dvigatel-140\//);
 });
 
 test('all Phase 5 country pages use customer-facing copy', () => {

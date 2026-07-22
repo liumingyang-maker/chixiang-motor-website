@@ -16,7 +16,7 @@ check('Phase 5 base is latest verified origin/main',()=>{const originMain=git(['
 check('Phase 3 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-3']).trim(),'Phase 3 changed'));
 check('Phase 4 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-4']).trim(),'Phase 4 changed'));
 
-const publicPages=[['Peru','es/peru/index.html','/es/peru/'],['Colombia','es/colombia/index.html','/es/colombia/'],['Uzbekistan','ru/uzbekistan/index.html','/ru/uzbekistan/'],['Russia market','ru/russia/index.html','/ru/russia/'],['Russia 140','ru/dvigatel-140/index.html','/ru/dvigatel-140/']];
+const publicPages=[['Peru','es/peru/index.html','/es/peru/'],['Colombia','es/colombia/index.html','/es/colombia/'],['Central Asia','ru/central-asia/index.html','/ru/central-asia/'],['Russia market','ru/russia/index.html','/ru/russia/']];
 const publicInternalTerms=/NOT APPROVED|INPUT REQUIRED|Phase 5|Native review required|Research only|Confidence:|production form|Paid search[^<]{0,40}(?:no recomendado|not recommended)|demanda de motores completos no está verificada/i;
 for(const [market,file,canonical] of publicPages){
   check(`${market} page exists`,()=>requireTrue(fs.existsSync(path.join(repo,file)),'missing'));
@@ -33,16 +33,16 @@ check('Peru publishes total-order sample, wholesale, mixed and OEM thresholds',(
 check('Colombia production page matches origin/main',()=>requireTrue(!git(['diff','--name-only','origin/main','--','es/colombia/index.html']),'Colombia page differs from main'));
 check('Colombia production data matches origin/main',()=>requireTrue(!git(['diff','--name-only','origin/main','--','js/latam-cg-colombia-data.js']),'Colombia data differs from main'));
 check('Spanish market index matches origin/main',()=>requireTrue(!git(['diff','--name-only','origin/main','--','es/index.html']),'Spanish market index differs from main'));
-check('Uzbekistan presents all four approved product groups',()=>contains('ru/uzbekistan/index.html',/Двигатели CG воздушного охлаждения 150–250 см³[\s\S]+Двигатели водяного охлаждения для работы и грузовой техники[\s\S]+Двигатели HW водяного охлаждения 200–350 см³[\s\S]+Двигатели и комплекты запасных частей/));
-check('Uzbekistan publishes total-order thresholds',()=>contains('ru/uzbekistan/index.html',/Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/));
-check('Uzbekistan legacy route is noindex',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/noindex,follow/));
-check('Uzbekistan legacy route points to canonical',()=>contains('ru/dvigateli-dlya-uzbekistana.html',/\/ru\/uzbekistan\//));
-check('Russia prioritizes horizontal 140',()=>contains('ru/dvigatel-140/index.html',/Горизонтальный двигатель 140 см³/));
-check('Russia keeps pit-bike as technical qualification',()=>contains('ru/dvigatel-140/index.html',/140–150 см³ для pit-bike[\s\S]+проверки конкретной рамы/i));
-check('Russia platform names are not fit claims',()=>contains('ru/dvigatel-140/index.html',/не подтверждает прямую установку/i));
+check('Central Asia consolidates all five markets',()=>{const html=read('ru/central-asia/index.html');return requireTrue(['Казахстан','Узбекистан','Кыргызстан','Таджикистан','Туркменистан'].every(c=>html.includes(c)),'missing a country');});
+check('Central Asia publishes total-order thresholds',()=>contains('ru/central-asia/index.html',/Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/));
+check('Uzbekistan route redirects to Central Asia',()=>contains('_redirects',/\/ru\/uzbekistan\/ \/ru\/central-asia\/ 301/));
+check('Legacy Uzbekistan route redirects to Central Asia',()=>contains('_redirects',/\/ru\/dvigateli-dlya-uzbekistana\.html \/ru\/central-asia\/ 301/));
+check('Russia horizontal series includes 140 within 110-150',()=>contains('ru/russia/index.html',/Горизонтальные двигатели 110–150 см³[\s\S]+110[\s\S]+125[\s\S]+140[\s\S]+150/));
+check('Russia keeps platform names as technical qualification',()=>contains('ru/russia/index.html',/не является обещанием прямой совместимости/i));
+check('Russia horizontal has its own anchor',()=>contains('ru/russia/index.html',/id="horizontal-engines"/));
 check('Russia market leads with the local CB product series',()=>contains('ru/russia/index.html',/Двигатели серии CB для внедорожных мотоциклов[\s\S]+CB150[\s\S]+CB200-C[\s\S]+CB250/));
-check('Russia market links horizontal 140 and uses total-order thresholds',()=>contains('ru/russia/index.html',/href="\/ru\/dvigatel-140\/"[\s\S]+Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/));
-check('New routes are in sitemap',()=>contains('sitemap.xml',/\/ru\/uzbekistan\//)&&contains('sitemap.xml',/\/ru\/dvigatel-140\//)&&contains('sitemap.xml',/\/ru\/russia\//));
+check('Russia market uses total-order thresholds and no longer links a separate 140 page',()=>{const html=read('ru/russia/index.html');return requireTrue(/Образцы — от 2 двигателей[\s\S]+Оптовые заказы — от 50 двигателей[\s\S]+Смешанные заказы — от 100 двигателей[\s\S]+OEM — от 100 двигателей/.test(html)&&!/\/ru\/dvigatel-140\//.test(html),'thresholds missing or 140 link still present');});
+check('Consolidated routes are in sitemap and removed routes are absent',()=>{const s=read('sitemap.xml');return requireTrue(/\/ru\/russia\//.test(s)&&/\/ru\/central-asia\//.test(s)&&!/\/ru\/uzbekistan\//.test(s)&&!/\/ru\/dvigatel-140\//.test(s),'sitemap routes incorrect');});
 check('Legacy Uzbekistan route is not in sitemap',()=>requireTrue(!/dvigateli-dlya-uzbekistana\.html/.test(read('sitemap.xml')),'legacy URL indexed'));
 check('Shared Phase 5 CSS is mobile-first and accessible',()=>contains('css/phase5-market-pages.css',/min-height:44px/)&&contains('css/phase5-market-pages.css',/prefers-reduced-motion/)&&contains('css/phase5-market-pages.css',/overflow-x:auto/));
 
