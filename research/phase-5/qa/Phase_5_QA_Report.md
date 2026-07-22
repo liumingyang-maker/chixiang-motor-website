@@ -1,6 +1,6 @@
 # Phase 5 QA Report
 
-Automated result: **80/80 PASS**
+Automated result: **93/93 PASS**
 Manual gates: **7 MANUAL AUTHORIZATION REQUIRED**
 
 ## Automated checks
@@ -86,7 +86,20 @@ Manual gates: **7 MANUAL AUTHORIZATION REQUIRED**
 | 77 | Ad copy contains at least 12 headlines per group | PASS | true |
 | 78 | Ad copy contains at least 4 descriptions per group | PASS | true |
 | 79 | Every ad group is marked NOT APPROVED | PASS | true |
-| 80 | Repository automated tests pass | PASS | true |
+| 80 | URL manifest exists and is generated from builder | PASS | true |
+| 81 | Manifest: Uzbekistan active URL is /ru/central-asia/ | PASS | true |
+| 82 | Manifest: Russia active URL is /ru/russia/ | PASS | true |
+| 83 | Manifest: Peru active URL is /es/peru/ | PASS | true |
+| 84 | Manifest: no active /ru/uzbekistan/ URL | PASS | true |
+| 85 | Manifest: no active /ru/dvigatel-140/ URL | PASS | true |
+| 86 | Builder source has no /ru/uzbekistan/ Final URL | PASS | true |
+| 87 | Builder source has no /ru/dvigatel-140/ Final URL | PASS | true |
+| 88 | _redirects contains /ru/uzbekistan/ 301 to /ru/central-asia/ | PASS | true |
+| 89 | _redirects contains /ru/dvigatel-140/ 301 to /ru/russia/#horizontal-engines | PASS | true |
+| 90 | Sitemap does not contain /ru/uzbekistan/ | PASS | true |
+| 91 | Sitemap does not contain /ru/dvigatel-140/ | PASS | true |
+| 92 | Retained pages have canonical and form | PASS | true |
+| 93 | Repository automated tests pass | PASS | true |
 
 ## Interactive visual QA
 

@@ -59,6 +59,22 @@ check('Ad copy contains at least 12 headlines per group',()=>{const source=read(
 check('Ad copy contains at least 4 descriptions per group',()=>{const source=read('research/phase-5/scripts/build_phase5_assets.js');const sets=[...source.matchAll(/descriptions:\s*\[([^\]]+)\]/g)];return requireTrue(sets.length>=9&&sets.every(m=>(m[1].match(/'/g)||[]).length>=8),'description count');});
 check('Every ad group is marked NOT APPROVED',()=>contains('research/phase-5/scripts/build_phase5_assets.js',/'NOT APPROVED'/));
 
+// Cross-asset URL alignment checks (manifest-driven)
+const manifestPath=path.join(__dirname,'phase5_active_url_manifest.json');
+check('URL manifest exists and is generated from builder',()=>{try{const m=JSON.parse(read('research/phase-5/qa/phase5_active_url_manifest.json'));return requireTrue(m.source==='build_phase5_assets.js adGroups','wrong source');}catch(e){return requireTrue(false,'manifest missing');}});
+check('Manifest: Uzbekistan active URL is /ru/central-asia/',()=>{const m=JSON.parse(read('research/phase-5/qa/phase5_active_url_manifest.json'));return requireTrue(m.activeUrls.Uzbekistan&&m.activeUrls.Uzbekistan.every(u=>u==='/ru/central-asia/'),'wrong URL: '+JSON.stringify(m.activeUrls.Uzbekistan));});
+check('Manifest: Russia active URL is /ru/russia/',()=>{const m=JSON.parse(read('research/phase-5/qa/phase5_active_url_manifest.json'));return requireTrue(m.activeUrls.Russia&&m.activeUrls.Russia.every(u=>u==='/ru/russia/'),'wrong URL: '+JSON.stringify(m.activeUrls.Russia));});
+check('Manifest: Peru active URL is /es/peru/',()=>{const m=JSON.parse(read('research/phase-5/qa/phase5_active_url_manifest.json'));return requireTrue(m.activeUrls.Peru&&m.activeUrls.Peru.every(u=>u==='/es/peru/'),'wrong URL: '+JSON.stringify(m.activeUrls.Peru));});
+check('Manifest: no active /ru/uzbekistan/ URL',()=>{const m=JSON.parse(read('research/phase-5/qa/phase5_active_url_manifest.json'));const all=Object.values(m.activeUrls).flat();return requireTrue(!all.includes('/ru/uzbekistan/'),'found /ru/uzbekistan/');});
+check('Manifest: no active /ru/dvigatel-140/ URL',()=>{const m=JSON.parse(read('research/phase-5/qa/phase5_active_url_manifest.json'));const all=Object.values(m.activeUrls).flat();return requireTrue(!all.includes('/ru/dvigatel-140/'),'found /ru/dvigatel-140/');});
+check('Builder source has no /ru/uzbekistan/ Final URL',()=>{const s=read('research/phase-5/scripts/build_phase5_assets.js');return requireTrue(!s.includes("url: '/ru/uzbekistan/'"),'found old uzbekistan url');});
+check('Builder source has no /ru/dvigatel-140/ Final URL',()=>{const s=read('research/phase-5/scripts/build_phase5_assets.js');return requireTrue(!s.includes("url: '/ru/dvigatel-140/'"),'found old dvigatel-140 url');});
+check('_redirects contains /ru/uzbekistan/ 301 to /ru/central-asia/',()=>contains('_redirects',/\/ru\/uzbekistan\/ \/ru\/central-asia\/ 301/));
+check('_redirects contains /ru/dvigatel-140/ 301 to /ru/russia/#horizontal-engines',()=>contains('_redirects',/\/ru\/dvigatel-140\/ \/ru\/russia\/#horizontal-engines 301/));
+check('Sitemap does not contain /ru/uzbekistan/',()=>{const s=read('sitemap.xml');return requireTrue(!s.includes('/ru/uzbekistan/'),'found in sitemap');});
+check('Sitemap does not contain /ru/dvigatel-140/',()=>{const s=read('sitemap.xml');return requireTrue(!s.includes('/ru/dvigatel-140/'),'found in sitemap');});
+check('Retained pages have canonical and form',()=>{const pages=['es/peru/index.html','es/colombia/index.html','ru/central-asia/index.html','ru/russia/index.html'];for(const p of pages){const html=read(p);if(!html.includes('rel="canonical"'))return requireTrue(false,p+' missing canonical');if(!html.includes('/api/contact'))return requireTrue(false,p+' missing form');}return true;});
+
 const testRun=cp.spawnSync(process.execPath,['--test','tests/*.test.js'],{cwd:repo,encoding:'utf8',shell:true});
 check('Repository automated tests pass',()=>requireTrue(testRun.status===0,(testRun.stderr||testRun.stdout).slice(-500)));
 

@@ -12,8 +12,8 @@
 
 - Updated `/es/peru/` for CG200 → CG150 B2B technical qualification.
 - Updated `/es/colombia/` for SEO/distributor development and explicit evidence limits.
-- Added canonical `/ru/uzbekistan/`; old `.html` URL is noindex and points to the canonical page.
-- Added `/ru/dvigatel-140/` for the Russia 140 cc direction.
+- Uzbekistan consolidated into `/ru/central-asia/`; old `/ru/uzbekistan/` and `/ru/dvigateli-dlya-uzbekistana.html` redirect 301 to `/ru/central-asia/`.
+- Russia 140 consolidated into `/ru/russia/#horizontal-engines`; old `/ru/dvigatel-140/` redirects 301.
 - Added internal links and sitemap entries.
 
 ## Review required before any later launch decision
