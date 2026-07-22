@@ -3,7 +3,9 @@
 ## Branch lineage
 
 - Branch: `feature/phase-5-priority-market-implementation`
-- Production base: `origin/main` at `aa14bbb525325c4790a1f9947167bf704d7f8e8b`
+- Initial production base: `origin/main` at `aa14bbb525325c4790a1f9947167bf704d7f8e8b`
+- Latest synced production baseline: `origin/main` at `d6fb07bf6113790f5bdbfab471abbcd624acf80e`
+- Main sync merge commit: `e56d244145f4fdd6fff1779a2e216181dfd9ade5`
 - Read-only research source: `phase-4-v6-final-freeze-2026-07-16`
 
 ## Website changes

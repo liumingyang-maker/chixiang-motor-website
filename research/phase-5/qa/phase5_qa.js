@@ -12,7 +12,7 @@ function git(args){return cp.execFileSync('git',args,{cwd:repo,encoding:'utf8'})
 check('Branch is the isolated Phase 5 feature branch',()=>requireTrue(git(['branch','--show-current'])==='feature/phase-5-priority-market-implementation','wrong branch'));
 check('Phase 4 final freeze tag exists',()=>requireTrue(git(['rev-parse','phase-4-v6-final-freeze-2026-07-16^{commit}']).length===40,'tag missing'));
 check('Phase 4 freeze resolves to expected commit',()=>requireTrue(git(['rev-parse','phase-4-v6-final-freeze-2026-07-16^{commit}'])==='bce0ae90b37e3b7d6e16f9cb33cd5b6cce0ff103','tag moved'));
-check('Phase 5 base is latest verified origin/main',()=>requireTrue(git(['merge-base','HEAD','origin/main'])==='aa14bbb525325c4790a1f9947167bf704d7f8e8b','base mismatch'));
+check('Phase 5 base is latest verified origin/main',()=>{const originMain=git(['rev-parse','origin/main']);const mergeBase=git(['merge-base','HEAD','origin/main']);return requireTrue(mergeBase===originMain,`feature branch is not synced with origin/main: merge-base=${mergeBase}, origin/main=${originMain}`);});
 check('Phase 3 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-3']).trim(),'Phase 3 changed'));
 check('Phase 4 research is unchanged',()=>requireTrue(!git(['diff','--name-only','origin/main','--','research/phase-4']).trim(),'Phase 4 changed'));
 
