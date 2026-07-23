@@ -387,7 +387,7 @@
         labels.product + ': ' + getFieldValue(form, ['[name="product_interest"]', '[name="product"]']),
         labels.quantity + ': ' + getFieldValue(form, ['[name="quantity"]']),
         labels.application + ': ' + getFieldValue(form, ['[name="application"]']),
-        labels.message + ': ' + getFieldValue(form, ['[name="message"]']),
+        labels.message + ': ' + getFieldValue(form, ['[name="message"]', '[name="requirements"]']),
         labels.page + ': ' + window.location.href
       ];
       return lines.filter(function(line) {
@@ -395,7 +395,11 @@
       }).join('\n');
     }
 
-    document.querySelectorAll('.contact-form form').forEach(function(contactForm) {
+    document.querySelectorAll('.contact-form form, form.p5-form').forEach(function(contactForm) {
+      if (contactForm.dataset.chixiangFormInitialized === '1') {
+        return;
+      }
+      contactForm.dataset.chixiangFormInitialized = '1';
       contactForm.setAttribute('method', 'POST');
       if (!isRealEndpoint(contactForm.getAttribute('action'))) {
         contactForm.setAttribute('action', leadFormEndpoint);
@@ -411,8 +415,13 @@
         const email = contactForm.querySelector('[name="email"]');
         const contact = contactForm.querySelector('[name="contact"]');
         const product = contactForm.querySelector('[name="product_interest"], [name="product"]');
-        const message = contactForm.querySelector('[name="message"]');
+        const message = contactForm.querySelector('[name="message"], [name="requirements"]');
         const honeypot = contactForm.querySelector('[name="website"]');
+
+        if (contactForm.dataset.submitting === '1') {
+          e.preventDefault();
+          return;
+        }
         const turnstileToken = contactForm.querySelector('[name="cf-turnstile-response"]');
         let valid = true;
 
@@ -453,6 +462,7 @@
         }
 
         if (valid) {
+          contactForm.dataset.submitting = '1';
           const submitBtn = contactForm.querySelector('button[type="submit"]');
           const originalText = submitBtn ? submitBtn.textContent : '';
           let endpoint = contactForm.getAttribute('action') || leadFormEndpoint;
@@ -495,6 +505,7 @@
             window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(contactForm)), '_blank', 'noopener');
             setFormStatus(contactForm, getFormMessage(contactForm, 'fallback', 'The form could not be sent by email. We opened WhatsApp with your inquiry details.'), 'error');
           }).finally(function() {
+            contactForm.dataset.submitting = '';
             if (submitBtn) {
               submitBtn.textContent = originalText;
               submitBtn.disabled = false;
