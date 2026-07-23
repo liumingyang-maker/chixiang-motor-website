@@ -274,6 +274,12 @@ test('requirements content enters FormData', async () => {
   submitHandlers[0]({ preventDefault() {} });
   await new Promise(r => setTimeout(r, 10));
   assert.ok(capturedBody, 'FormData should be passed to fetch');
+  assert.equal(capturedBody.has('requirements'), true);
+  assert.equal(
+    capturedBody.get('requirements'),
+    'Technical specs here',
+    'FormData must contain the exact Russia requirements value'
+  );
 });
 
 test('form works with only requirements and no message field', async () => {
