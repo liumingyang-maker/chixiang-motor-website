@@ -1,0 +1,21 @@
+negative_keyword,match_type,language,reason
+бесплатно,Broad,Russian,Non-commercial
+ремонт,Broad,Russian,Repair-only
+своими руками,Phrase,Russian,DIY
+б у,Broad,Russian,Used product
+авито,Broad,Russian,Marketplace retail
+работа,Broad,Russian,Jobs
+вакансия,Broad,Russian,Jobs
+схема,Broad,Russian,Information-only
+чертеж,Broad,Russian,Information-only
+видео,Broad,Russian,Information-only
+игрушка,Broad,Russian,Irrelevant
+электродвигатель,Broad,Russian,Wrong powertrain
+легковой автомобиль,Phrase,Russian,Automotive
+одна штука,Phrase,Russian,Retail quantity
+индийский bajaj,Phrase,Russian,Unsupported Indian platform
+tvs,Broad,Russian,Unsupported Indian platform
+hero,Broad,Russian,Unsupported Indian platform
+piaggio ape,Phrase,Russian,Unsupported Indian platform
+готовый трицикл,Phrase,Russian,Vehicle not engine
+купить трицикл,Phrase,Russian,Vehicle not engine

@@ -1,0 +1,4 @@
+'use strict';
+const fs=require('node:fs'); const path=require('node:path'); const {SpreadsheetFile}=require('@oai/artifact-tool');
+const delivery=path.resolve(__dirname,'..','deliveries','phase-5-priority-market-implementation'); const out=path.join(__dirname,'renders'); fs.mkdirSync(out,{recursive:true});
+(async()=>{for(const name of fs.readdirSync(delivery).filter(n=>n.endsWith('.xlsx'))){const wb=await SpreadsheetFile.importXlsx(fs.readFileSync(path.join(delivery,name)));for(let i=0;i<wb.worksheets.getSheetCount();i++){const sheet=wb.worksheets.getItemAt(i);const used=sheet.getUsedRange();const blob=await wb.render({sheetName:sheet.name,range:used.address,scale:1});const safe=`${path.basename(name,'.xlsx')}_${sheet.name}`.replace(/[^a-z0-9_-]+/gi,'_');fs.writeFileSync(path.join(out,`${safe}.png`),Buffer.from(await blob.arrayBuffer()));}}console.log(`${fs.readdirSync(out).length} worksheet renders created.`);})().catch(e=>{console.error(e);process.exit(1)});

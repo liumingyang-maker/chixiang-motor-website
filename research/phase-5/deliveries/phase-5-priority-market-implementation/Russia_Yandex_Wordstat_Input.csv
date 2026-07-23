@@ -1,0 +1,26 @@
+keyword,language,region,product_intent,phase4_proxy,wordstat_frequency,status
+двигатель 140 кубов оптом,Russian,Russia,Horizontal 140 B2B,High,,PROXY DATA
+горизонтальный двигатель 140,Russian,Russia,Horizontal 140,High,,PROXY DATA
+нижний двигатель 140 кубов,Russian,Russia,Lower horizontal 140,High,,PROXY DATA
+двигатель 140 см3 купить оптом,Russian,Russia,Horizontal 140 B2B,High,,PROXY DATA
+поставщик двигателей 140 кубов,Russian,Russia,Supplier intent,High,,PROXY DATA
+китайский двигатель 140 оптом,Russian,Russia,Supplier intent,Medium,,PROXY DATA
+двигатель 140 для сборщика,Russian,Russia,Assembler intent,Medium,,PROXY DATA
+двигатель 140 альфа,Russian,Russia,Application qualification,High,,PROXY DATA
+двигатель 140 дельта,Russian,Russia,Application qualification,Medium,,PROXY DATA
+двигатель 140 cub,Russian,Russia,Application qualification,Medium,,PROXY DATA
+двигатель 140 pit bike,Russian,Russia,Application qualification,Medium,,PROXY DATA
+honda style двигатель 140,Russian,Russia,Architecture qualification,Low,,PROXY DATA
+двигатель cb 140,Russian,Russia,Research only,Low,,PROXY DATA
+двигатель cb 150 оптом,Russian,Russia,Research only,Low,,PROXY DATA
+запчасти двигатель 140 оптом,Russian,Russia,Spares,High,,PROXY DATA
+комплект запчастей 140 двигатель,Russian,Russia,Spares,Medium,,PROXY DATA
+образец двигателя 140,Russian,Russia,Sample inquiry,Low,,PROXY DATA
+малая партия двигателей 140,Russian,Russia,Small batch,Low,,PROXY DATA
+oem двигатель 140,Russian,Russia,OEM inquiry,Medium,,PROXY DATA
+цена двигателя 140 оптом,Russian,Russia,Quote intent,High,,PROXY DATA
+двигатель 140 с кикстартером,Russian,Russia,Configuration,Medium,,PROXY DATA
+двигатель 140 сцепление,Russian,Russia,Configuration,Medium,,PROXY DATA
+двигатель 140 коробка передач,Russian,Russia,Configuration,Medium,,PROXY DATA
+маркировка двигателя 140,Russian,Russia,Compatibility research,Low,,PROXY DATA
+код двигателя 140,Russian,Russia,Compatibility research,Low,,PROXY DATA

@@ -1,0 +1,32 @@
+{
+  "generated": "2026-07-22",
+  "source": "build_phase5_assets.js adGroups",
+  "activeUrls": {
+    "Peru": [
+      "/es/peru/"
+    ],
+    "Uzbekistan": [
+      "/ru/central-asia/"
+    ],
+    "Russia": [
+      "/ru/russia/"
+    ]
+  },
+  "redirects": [
+    {
+      "from": "/ru/uzbekistan/",
+      "to": "/ru/central-asia/",
+      "code": 301
+    },
+    {
+      "from": "/ru/dvigateli-dlya-uzbekistana.html",
+      "to": "/ru/central-asia/",
+      "code": 301
+    },
+    {
+      "from": "/ru/dvigatel-140/",
+      "to": "/ru/russia/#horizontal-engines",
+      "code": 301
+    }
+  ]
+}

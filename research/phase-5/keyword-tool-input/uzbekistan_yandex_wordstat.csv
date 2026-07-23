@@ -1,0 +1,21 @@
+keyword,language,region,product_intent,phase4_proxy,wordstat_frequency,status
+двигатель для грузового трицикла,Russian,Uzbekistan,Cargo tricycle engine,High,,PROXY DATA
+двигатель 200 кубов водяное охлаждение,Russian,Uzbekistan,Water-cooled engine,High,,PROXY DATA
+двигатель 250 кубов водяное охлаждение,Russian,Uzbekistan,Water-cooled engine,High,,PROXY DATA
+двигатель для трицикла оптом,Russian,Uzbekistan,B2B engine,High,,PROXY DATA
+поставщик двигателей трицикл,Russian,Uzbekistan,Supplier intent,Medium,,PROXY DATA
+двигатель cg водяной,Russian,Uzbekistan,CG water-cooled,Medium,,PROXY DATA
+двигатель 150 кубов трицикл,Russian,Uzbekistan,Cargo engine,Medium,,PROXY DATA
+двигатель 200 кубов трицикл,Russian,Uzbekistan,Cargo engine,High,,PROXY DATA
+двигатель 250 кубов трицикл,Russian,Uzbekistan,Cargo engine,High,,PROXY DATA
+запчасти двигателя трицикла,Russian,Uzbekistan,Spares,High,,PROXY DATA
+комплект запчастей cg,Russian,Uzbekistan,Spares,Medium,,PROXY DATA
+китайские двигатели оптом,Russian,Uzbekistan,B2B general,Medium,,PROXY DATA
+двигатель мототехника оптом,Russian,Uzbekistan,B2B general,Medium,,PROXY DATA
+импорт двигателя трицикл,Russian,Uzbekistan,Importer intent,Low,,PROXY DATA
+цена двигателя для трицикла,Russian,Uzbekistan,Quote intent,High,,PROXY DATA
+купить двигатель 200 кубов оптом,Russian,Uzbekistan,Quote intent,High,,PROXY DATA
+двигатель коммерческий трицикл,Russian,Uzbekistan,Application,Medium,,PROXY DATA
+двигатель для постоянной нагрузки,Russian,Uzbekistan,Application,Low,,PROXY DATA
+образец двигателя китай,Russian,Uzbekistan,Sample,Low,,PROXY DATA
+малая партия двигателей,Russian,Uzbekistan,Small batch,Low,,PROXY DATA

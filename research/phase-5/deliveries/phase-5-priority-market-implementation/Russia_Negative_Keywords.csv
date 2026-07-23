@@ -1,0 +1,21 @@
+negative_keyword,match_type,language,reason
+бесплатно,Broad,Russian,Non-commercial
+ремонт,Broad,Russian,Repair-only
+своими руками,Phrase,Russian,DIY
+б у,Broad,Russian,Used product
+авито,Broad,Russian,Marketplace retail
+озон,Broad,Russian,Marketplace retail
+работа,Broad,Russian,Jobs
+вакансия,Broad,Russian,Jobs
+схема,Broad,Russian,Information-only
+чертеж,Broad,Russian,Information-only
+видео,Broad,Russian,Information-only
+игрушка,Broad,Russian,Irrelevant
+электродвигатель,Broad,Russian,Wrong powertrain
+автомобильный,Broad,Russian,Automotive
+одна штука,Phrase,Russian,Retail quantity
+разборка,Broad,Russian,Used parts
+скачать,Broad,Russian,Document-only
+форум,Broad,Russian,Information-only
+ремкомплект розница,Phrase,Russian,Retail-only
+универсальный для всех,Phrase,Russian,Unsupported fit claim
