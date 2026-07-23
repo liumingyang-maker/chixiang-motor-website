@@ -25,11 +25,8 @@ function makeElement(tag, attrs) {
         if (force === undefined) {
           if (this._classes.has(cls)) this._classes.delete(cls);
           else this._classes.add(cls);
-        } else if (force) {
-          this._classes.add(cls);
-        } else {
-          this._classes.delete(cls);
-        }
+        } else if (force) this._classes.add(cls);
+        else this._classes.delete(cls);
       },
       add(cls) { this._classes.add(cls); },
       remove(cls) { this._classes.delete(cls); },
@@ -54,7 +51,6 @@ function makeElement(tag, attrs) {
         }
         return null;
       };
-      // Handle comma-separated name selectors like [name="message"], [name="requirements"]
       const multiName = sel.match(/^\[name="([^"]+)"\],\s*\[name="([^"]+)"\]$/);
       if (multiName) {
         const n1 = multiName[1], n2 = multiName[2];
@@ -79,20 +75,23 @@ function makeElement(tag, attrs) {
   return el;
 }
 
-function createFormDom(overrides) {
+function createFormDom(overrides, opts) {
   const form = makeElement('form');
-  const fields = {
+  const fields = Object.assign({
     name: 'Test User',
     email: 'test@example.com',
     contact: '+123456',
     product_interest: 'CB Off-Road',
-    message: 'Need 10 engines',
     website: '',
     'cf-turnstile-response': 'token123'
-  };
-  Object.assign(fields, overrides || {});
+  }, overrides || {});
+
+  if (!('message' in (overrides || {})) || overrides.message !== undefined) {
+    fields.message = fields.message !== undefined ? fields.message : 'Need 10 engines';
+  }
 
   for (const [name, value] of Object.entries(fields)) {
+    if (value === undefined) continue;
     const input = makeElement('input', { name });
     input.value = value;
     form.appendChild(input);
@@ -110,15 +109,25 @@ function createFormDom(overrides) {
   form.getAttribute = function(k) {
     if (k === 'action') return '/api/contact';
     if (k === 'method') return 'POST';
+    if (k.startsWith('data-message-')) return this.attributes[k] || null;
     return null;
   };
   form.setAttribute = function(k, v) { this.attributes[k] = v; };
+  if (opts && opts.noReset) {
+    form.reset = function() {};
+  }
+  if (opts && opts.dataMessages) {
+    for (const [k, v] of Object.entries(opts.dataMessages)) {
+      form.setAttribute('data-message-' + k, v);
+    }
+  }
 
   return { form, listeners };
 }
 
 function bootMain(forms, gtag, fetchImpl) {
   const docListeners = new Map();
+  const opened = [];
   const document = {
     readyState: 'loading',
     body: { style: {} },
@@ -141,7 +150,7 @@ function bootMain(forms, gtag, fetchImpl) {
     location: { search: '', pathname: '/ru/russia/', href: 'https://chixiangmotor.com/ru/russia/' },
     addEventListener() {},
     innerHeight: 900,
-    open() {}
+    open(url, target, features) { opened.push({ url, target, features }); }
   };
   if (gtag !== undefined) window.gtag = gtag;
 
@@ -159,20 +168,10 @@ function bootMain(forms, gtag, fetchImpl) {
   });
   const readyHandlers = docListeners.get('DOMContentLoaded') || [];
   if (readyHandlers.length) readyHandlers[0]();
-  return { docListeners, fetchRef };
+  return { docListeners, fetchRef, opened, window };
 }
 
-test('shared initializer selects form.p5-form and .contact-form form', () => {
-  const { form } = createFormDom();
-  bootMain([form]);
-  assert.equal(form.dataset.chixiangFormInitialized, '1');
-});
-
-test('same form is initialized only once', () => {
-  const { form } = createFormDom();
-  bootMain([form, form]);
-  assert.equal(form.dataset.chixiangFormInitialized, '1');
-});
+// --- Static HTML assertions ---
 
 test('Russia page contains honeypot field', () => {
   assert.match(russiaHtml, /name="website"/);
@@ -188,24 +187,30 @@ test('Russia page contains localized status messages', () => {
   assert.match(russiaHtml, /data-message-fallback="Не удалось/);
 });
 
+// --- Initialization ---
+
+test('shared initializer selects form.p5-form and .contact-form form', () => {
+  const { form } = createFormDom();
+  bootMain([form]);
+  assert.equal(form.dataset.chixiangFormInitialized, '1');
+});
+
+test('initialization registers exactly one submit handler per form', () => {
+  const { form, listeners } = createFormDom();
+  bootMain([form, form]);
+  const submitHandlers = listeners.get('submit') || [];
+  assert.equal(submitHandlers.length, 1, 'duplicate form reference must not add a second submit listener');
+  assert.equal(form.dataset.chixiangFormInitialized, '1');
+});
+
 test('Turnstile widget is injected into form', () => {
   const { form } = createFormDom();
   bootMain([form]);
-  const wrap = form.querySelector('.turnstile-wrap');
-  assert.ok(wrap, 'Turnstile wrapper should be present');
-  const widget = form.querySelector('.cf-turnstile');
-  assert.ok(widget, 'Turnstile widget should be present');
+  assert.ok(form.querySelector('.turnstile-wrap'), 'Turnstile wrapper should be present');
+  assert.ok(form.querySelector('.cf-turnstile'), 'Turnstile widget should be present');
 });
 
-test('missing Turnstile token blocks fetch', async () => {
-  const { form, listeners } = createFormDom({ 'cf-turnstile-response': '' });
-  let fetched = false;
-  bootMain([form], undefined, () => { fetched = true; return Promise.resolve({ ok: true }); });
-  const submitHandlers = listeners.get('submit') || [];
-  assert.equal(submitHandlers.length, 1);
-  submitHandlers[0]({ preventDefault() {} });
-  assert.equal(fetched, false, 'fetch should not be called without Turnstile token');
-});
+// --- Honeypot and Turnstile gating ---
 
 test('honeypot non-empty blocks fetch', () => {
   const { form, listeners } = createFormDom({ website: 'spam' });
@@ -216,7 +221,63 @@ test('honeypot non-empty blocks fetch', () => {
   assert.equal(fetched, false, 'fetch should not be called when honeypot is filled');
 });
 
-test('Worker 200 shows success and fires conversion once', async () => {
+test('missing Turnstile token blocks fetch', () => {
+  const { form, listeners } = createFormDom({ 'cf-turnstile-response': '' });
+  let fetched = false;
+  bootMain([form], undefined, () => { fetched = true; return Promise.resolve({ ok: true }); });
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  assert.equal(fetched, false, 'fetch should not be called without Turnstile token');
+});
+
+// --- requirements field ---
+
+test('requirements spam blocks submission (no message field)', () => {
+  const { form, listeners } = createFormDom({ message: undefined, requirements: 'buy cheap viagra' });
+  let fetched = false;
+  bootMain([form], undefined, () => { fetched = true; return Promise.resolve({ ok: true }); });
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  assert.equal(fetched, false, 'spam in requirements should block submission');
+});
+
+test('normal requirements is included in WhatsApp fallback', async () => {
+  const { form, listeners } = createFormDom({ message: undefined, requirements: 'Need 10 CB150 engines' });
+  const { opened } = bootMain([form], undefined, () => Promise.reject(new Error('network')));
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+  assert.equal(opened.length, 1, 'WhatsApp should be opened on network failure');
+  assert.match(opened[0].url, /^https:\/\/wa\.me\/8619008225410\?text=/);
+  assert.match(decodeURIComponent(opened[0].url), /Need 10 CB150 engines/);
+});
+
+test('requirements content enters FormData', async () => {
+  const { form, listeners } = createFormDom({ message: undefined, requirements: 'Technical specs here' });
+  let capturedBody = null;
+  bootMain([form], undefined, (url, opts) => {
+    capturedBody = opts && opts.body;
+    return Promise.resolve({ ok: true });
+  });
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+  assert.ok(capturedBody, 'FormData should be passed to fetch');
+});
+
+test('form works with only requirements and no message field', async () => {
+  const { form, listeners } = createFormDom({ message: undefined, requirements: 'Only requirements' });
+  let fetched = false;
+  bootMain([form], undefined, () => { fetched = true; return Promise.resolve({ ok: true }); });
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+  assert.equal(fetched, true, 'form should submit with only requirements');
+});
+
+// --- Worker success / failure ---
+
+test('Shared form with gtag: successful response may report Google conversion once', async () => {
   const { form, listeners } = createFormDom();
   const calls = [];
   bootMain([form], (...args) => calls.push(args), () => Promise.resolve({ ok: true }));
@@ -227,7 +288,7 @@ test('Worker 200 shows success and fires conversion once', async () => {
   assert.equal(calls[0][1], 'conversion');
 });
 
-test('Worker 400 does not show success', async () => {
+test('Worker 400 does not show success and does not fire conversion', async () => {
   const { form, listeners } = createFormDom();
   const calls = [];
   bootMain([form], (...args) => calls.push(args), () => Promise.resolve({ ok: false, status: 400 }));
@@ -237,36 +298,7 @@ test('Worker 400 does not show success', async () => {
   assert.equal(calls.length, 0, 'gtag conversion should not fire on 400');
 });
 
-test('network error triggers fallback without throwing', async () => {
-  const { form, listeners } = createFormDom();
-  bootMain([form], undefined, () => Promise.reject(new Error('network')));
-  const submitHandlers = listeners.get('submit') || [];
-  submitHandlers[0]({ preventDefault() {} });
-  await new Promise(r => setTimeout(r, 10));
-  assert.ok(true, 'fallback path executed without unhandled rejection');
-});
-
-test('requirements field is included in spam detection', () => {
-  const { form, listeners } = createFormDom({ message: 'buy cheap viagra' });
-  let fetched = false;
-  bootMain([form], undefined, () => { fetched = true; return Promise.resolve({ ok: true }); });
-  const submitHandlers = listeners.get('submit') || [];
-  submitHandlers[0]({ preventDefault() {} });
-  assert.equal(fetched, false, 'spam in message/requirements should block submission');
-});
-
-test('double submit produces only one request', async () => {
-  const { form, listeners } = createFormDom();
-  let fetchCount = 0;
-  bootMain([form], undefined, () => { fetchCount++; return Promise.resolve({ ok: true }); });
-  const submitHandlers = listeners.get('submit') || [];
-  submitHandlers[0]({ preventDefault() {} });
-  submitHandlers[0]({ preventDefault() {} });
-  await new Promise(r => setTimeout(r, 10));
-  assert.equal(fetchCount, 1, 'only one fetch should occur on double submit');
-});
-
-test('form works without gtag', async () => {
+test('Russia without gtag: submission remains fully functional', async () => {
   const { form, listeners } = createFormDom();
   let fetched = false;
   bootMain([form], undefined, () => { fetched = true; return Promise.resolve({ ok: true }); });
@@ -274,4 +306,88 @@ test('form works without gtag', async () => {
   submitHandlers[0]({ preventDefault() {} });
   await new Promise(r => setTimeout(r, 10));
   assert.equal(fetched, true, 'form should submit even without gtag');
+});
+
+// --- Fallback behavior ---
+
+test('network failure opens WhatsApp fallback with correct URL and status', async () => {
+  const { form, listeners } = createFormDom(
+    { message: undefined, requirements: 'Fallback test' },
+    { dataMessages: { fallback: 'Не удалось отправить форму. Мы открыли WhatsApp с данными запроса.' } }
+  );
+  const calls = [];
+  const { opened } = bootMain([form], (...args) => calls.push(args), () => Promise.reject(new Error('network')));
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+
+  assert.equal(opened.length, 1, 'window.open should be called once');
+  assert.match(opened[0].url, /^https:\/\/wa\.me\/8619008225410\?text=/);
+  assert.match(decodeURIComponent(opened[0].url), /Fallback test/);
+
+  const status = form.querySelector('.form-status');
+  assert.ok(status, 'form status element should exist');
+  assert.match(status.textContent, /Не удалось отправить форму/);
+  assert.equal(status.classList.contains('is-error'), true, 'fallback status should be error');
+  assert.equal(status.classList.contains('is-success'), false, 'fallback status should not be success');
+  assert.equal(calls.length, 0, 'gtag conversion should not fire on network failure');
+});
+
+// --- Duplicate submission ---
+
+test('double submit with pending request produces only one fetch', async () => {
+  const { form, listeners } = createFormDom({}, { noReset: true });
+  let fetchCount = 0;
+  let resolveFetch;
+  const pending = new Promise(resolve => { resolveFetch = resolve; });
+  bootMain([form], undefined, () => {
+    fetchCount++;
+    return pending;
+  });
+  const submitHandlers = listeners.get('submit') || [];
+
+  submitHandlers[0]({ preventDefault() {} });
+  submitHandlers[0]({ preventDefault() {} });
+
+  assert.equal(fetchCount, 1, 'only one fetch should be in flight');
+  assert.equal(form.dataset.submitting, '1', 'lock should be active during pending request');
+
+  resolveFetch({ ok: true });
+  await new Promise(r => setTimeout(r, 10));
+
+  assert.equal(form.dataset.submitting, '', 'lock should be released after completion');
+
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+  assert.equal(fetchCount, 2, 'after lock release, a new submit should be allowed');
+});
+
+// --- Submit lock edge cases ---
+
+test('validation failure does not leave permanent submitting lock', () => {
+  const { form, listeners } = createFormDom({ 'cf-turnstile-response': '' });
+  bootMain([form]);
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  assert.notEqual(form.dataset.submitting, '1', 'lock must not be set when validation fails');
+});
+
+test('honeypot block does not leave permanent submitting lock', () => {
+  const { form, listeners } = createFormDom({ website: 'bot' });
+  bootMain([form]);
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  assert.notEqual(form.dataset.submitting, '1', 'lock must not be set when honeypot triggers');
+});
+
+test('button text and disabled state are restored after fetch', async () => {
+  const { form, listeners } = createFormDom({}, { noReset: true });
+  bootMain([form], undefined, () => Promise.resolve({ ok: true }));
+  const submitHandlers = listeners.get('submit') || [];
+  const btn = form.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+  assert.equal(btn.textContent, originalText, 'button text should be restored');
+  assert.equal(btn.disabled, false, 'button should be re-enabled');
 });
