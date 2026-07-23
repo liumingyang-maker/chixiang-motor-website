@@ -97,7 +97,8 @@ export function validateInquiry(fields) {
     inquiry.contact,
     inquiry.company,
     inquiry.product,
-    inquiry.message
+    inquiry.message,
+    inquiry.requirements
   ].join(' ').toLowerCase();
 
   for (const pattern of SPAM_PATTERNS) {
