@@ -200,3 +200,67 @@ test('handleContactRequest returns a stable error code when email delivery fails
   const payload = await response.json();
   assert.equal(payload.code, 'email_delivery_failed');
 });
+
+test('validateInquiry rejects spam in requirements field (buy cheap viagra)', () => {
+  const result = validateInquiry({
+    name: 'Test User',
+    contact: '+7 999 000-00-00',
+    product: 'CB150',
+    requirements: 'buy cheap viagra online'
+  });
+  assert.equal(result.ok, false);
+  assert.match(result.error, /spam/i);
+});
+
+test('validateInquiry rejects spam in requirements field (casino promotion)', () => {
+  const result = validateInquiry({
+    name: 'Test User',
+    contact: '+7 999 000-00-00',
+    product: 'CB150',
+    requirements: 'casino promotion bonus code'
+  });
+  assert.equal(result.ok, false);
+  assert.match(result.error, /spam/i);
+});
+
+test('validateInquiry accepts normal requirements', () => {
+  const result = validateInquiry({
+    name: 'Ivan Petrov',
+    contact: '+7 999 123-45-67',
+    product: 'Horizontal 150',
+    requirements: 'Need electric start, 12V battery, reinforced crankshaft'
+  });
+  assert.equal(result.ok, true);
+});
+
+test('buildInquiryEmail includes requirements in text and html', () => {
+  const email = buildInquiryEmail({
+    name: 'Ivan Petrov',
+    contact: '+7 999 123-45-67',
+    product: 'Horizontal 150',
+    requirements: 'Electric start and reinforced crankshaft'
+  });
+  assert.match(email.text, /Requirements: Electric start and reinforced crankshaft/);
+  assert.match(email.html, /Electric start and reinforced crankshaft/);
+});
+
+test('handleContactRequest rejects requirements spam even with valid Turnstile', async () => {
+  const sent = [];
+  const verify = turnstileEnv(sent);
+
+  const response = await handleContactRequest(
+    formRequest({
+      name: 'Spammer',
+      contact: '+7 999 000-00-00',
+      product: 'CB150',
+      requirements: 'buy cheap viagra',
+      'cf-turnstile-response': 'valid-token'
+    }),
+    verify.env,
+    { fetch: verify.fetch }
+  );
+
+  assert.equal(response.status, 400);
+  assert.equal(sent.length, 0, 'email must not be sent for spam requirements');
+  assert.match((await response.json()).error, /spam/i);
+});

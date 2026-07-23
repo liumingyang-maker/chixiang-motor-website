@@ -160,7 +160,18 @@ function bootMain(forms, gtag, fetchImpl) {
     document,
     window,
     URLSearchParams,
-    FormData: function FormData() { this.append = () => {}; },
+    FormData: function FormData(formEl) {
+      const entries = new Map();
+      if (formEl && formEl.children) {
+        formEl.children.forEach(c => {
+          if (c.name && c.value !== undefined) entries.set(c.name, c.value);
+        });
+      }
+      this.append = (k, v) => entries.set(k, v);
+      this.get = (k) => entries.has(k) ? entries.get(k) : null;
+      this.has = (k) => entries.has(k);
+      this.entries = () => entries.entries();
+    },
     console,
     setTimeout,
     clearTimeout,
@@ -390,4 +401,20 @@ test('button text and disabled state are restored after fetch', async () => {
   await new Promise(r => setTimeout(r, 10));
   assert.equal(btn.textContent, originalText, 'button text should be restored');
   assert.equal(btn.disabled, false, 'button should be re-enabled');
+});
+
+// --- Submit lock positioning ---
+
+test('submit lock is set at fetch time and cleared after completion', async () => {
+  const { form, listeners } = createFormDom({}, { noReset: true });
+  let lockDuringFetch = null;
+  bootMain([form], undefined, () => {
+    lockDuringFetch = form.dataset.submitting;
+    return Promise.resolve({ ok: true });
+  });
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+  assert.equal(lockDuringFetch, '1', 'lock should be set at the moment fetch is called');
+  assert.equal(form.dataset.submitting, '', 'lock should be cleared after fetch completes');
 });

@@ -4,6 +4,9 @@
 
   var COUNTER_ID = 110874170;
 
+  var state = window.__chixiangMetricaState =
+    window.__chixiangMetricaState || {};
+
   if (typeof window.ym !== 'function') {
     window.ym = function () {
       (window.ym.a = window.ym.a || []).push(arguments);
@@ -19,12 +22,15 @@
     document.head.appendChild(script);
   }
 
-  window.ym(COUNTER_ID, 'init', {
-    ssr: true,
-    clickmap: true,
-    accurateTrackBounce: true,
-    trackLinks: true
-  });
+  if (!state.initialized) {
+    window.ym(COUNTER_ID, 'init', {
+      ssr: true,
+      clickmap: true,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+    state.initialized = true;
+  }
 
   function reachGoal(goalId, params) {
     try {
@@ -36,18 +42,21 @@
 
   window.chixiangMetricaGoal = reachGoal;
 
-  document.addEventListener('click', function (event) {
-    var target = event.target;
-    if (!target || typeof target.closest !== 'function') return;
-    var link = target.closest('a[href*="wa.me/"]');
-    if (!link) return;
+  if (!state.chatListenerBound) {
+    document.addEventListener('click', function (event) {
+      var target = event.target;
+      if (!target || typeof target.closest !== 'function') return;
+      var link = target.closest('a[href*="wa.me/"]');
+      if (!link) return;
 
-    reachGoal('ym-open-chat', {
-      channel: 'whatsapp',
-      market: document.body && document.body.getAttribute('data-market') || '',
-      page_url: window.location.href
+      reachGoal('ym-open-chat', {
+        channel: 'whatsapp',
+        market: document.body && document.body.getAttribute('data-market') || '',
+        page_url: window.location.href
+      });
     });
-  });
+    state.chatListenerBound = true;
+  }
 
   if (typeof window.fetch === 'function' && !window.fetch.__chixiangMetricaWrapped) {
     var originalFetch = window.fetch.bind(window);

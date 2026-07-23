@@ -462,7 +462,6 @@
         }
 
         if (valid) {
-          contactForm.dataset.submitting = '1';
           const submitBtn = contactForm.querySelector('button[type="submit"]');
           const originalText = submitBtn ? submitBtn.textContent : '';
           let endpoint = contactForm.getAttribute('action') || leadFormEndpoint;
@@ -487,6 +486,7 @@
             return;
           }
 
+          contactForm.dataset.submitting = '1';
           fetch(endpoint, {
             method: 'POST',
             body: new FormData(contactForm),

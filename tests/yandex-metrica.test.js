@@ -9,7 +9,6 @@ const source = fs.readFileSync(path.join(__dirname, '..', 'js', 'yandex-metrica.
 function bootYandex(fetchImpl) {
   const ymCalls = [];
   const listeners = new Map();
-  let fetchWrapper = null;
 
   const window = {
     ym: function(...args) { ymCalls.push(args); },
@@ -33,7 +32,7 @@ function bootYandex(fetchImpl) {
 
   vm.runInNewContext(source, { window, document, console, Date });
 
-  return { ymCalls, listeners, window };
+  return { ymCalls, listeners, window, document };
 }
 
 test('Yandex counter ID is 110874170', () => {
@@ -113,7 +112,7 @@ test('ym-open-chat fires once on WhatsApp click', () => {
   assert.equal(chatCalls.length, 1, 'ym-open-chat should fire exactly once');
 });
 
-test('rapid double fetch produces only one lead goal', async () => {
+test('rapid double fetch produces one lead goal per successful POST', async () => {
   let resolveFirst;
   const first = new Promise(r => { resolveFirst = r; });
   let count = 0;
@@ -127,27 +126,33 @@ test('rapid double fetch produces only one lead goal', async () => {
   await Promise.all([p1, p2]);
   await new Promise(r => setTimeout(r, 10));
   const leadCalls = ymCalls.filter(c => c[1] === 'reachGoal' && c[2] === 'ym-submit-leadform');
-  assert.equal(leadCalls.length, 2, 'each successful POST should fire once; wrapper does not dedupe fetch calls');
+  assert.equal(leadCalls.length, 2, 'each successful POST fires once');
 });
 
-test('repeated script initialization does not duplicate fetch wrapper', () => {
-  const { window } = bootYandex();
+test('same-document re-initialization is fully idempotent', () => {
+  const { ymCalls, listeners, window, document } = bootYandex();
   const wrappedFetch = window.fetch;
-  assert.equal(wrappedFetch.__chixiangMetricaWrapped, true, 'fetch should be wrapped');
 
-  // Simulate loading the script again in the same context
-  const ymCalls2 = [];
-  window.ym = function(...args) { ymCalls2.push(args); };
-  const document2 = {
-    body: { getAttribute: () => 'Russia' },
-    head: { appendChild() {} },
-    querySelector() { return null; },
-    createElement() { return { async: false, src: '', setAttribute() {} }; },
-    addEventListener() {}
-  };
-  vm.runInNewContext(source, { window, document: document2, console, Date });
+  // Execute the script a second time on the SAME window and document
+  vm.runInNewContext(source, { window, document, console, Date });
 
-  assert.equal(window.fetch, wrappedFetch, 'fetch wrapper should not be replaced on re-init');
-  const initCalls = ymCalls2.filter(c => c[1] === 'init');
-  assert.equal(initCalls.length, 1, 'init may be called again but fetch must not be double-wrapped');
+  // init must still be only 1
+  const initCalls = ymCalls.filter(c => c[1] === 'init');
+  assert.equal(initCalls.length, 1, 'init must not be called again on re-execution');
+
+  // click listener must still be only 1
+  const clickHandlers = listeners.get('click') || [];
+  assert.equal(clickHandlers.length, 1, 'click listener must not be duplicated');
+
+  // fetch wrapper must be the same reference
+  assert.equal(window.fetch, wrappedFetch, 'fetch wrapper must not be replaced');
+
+  // one WhatsApp click produces exactly one ym-open-chat
+  clickHandlers[0]({
+    target: {
+      closest(sel) { return sel === 'a[href*="wa.me/"]' ? {} : null; }
+    }
+  });
+  const chatCalls = ymCalls.filter(c => c[1] === 'reachGoal' && c[2] === 'ym-open-chat');
+  assert.equal(chatCalls.length, 1, 'one WhatsApp click must produce one ym-open-chat');
 });
