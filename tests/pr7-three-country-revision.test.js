@@ -68,8 +68,8 @@ test('Central Asia consolidates the five markets including Uzbekistan', () => {
 
 test('Russia market page leads with CB off-road then horizontal 110-150 and spares', () => {
   const html = read('ru/russia/index.html');
-  assert.match(html, /<h1>Двигатели CB для внедорожных мотоциклов и горизонтальные серии в России<\/h1>/);
-  ordered(html, ['Двигатели серии CB для внедорожных мотоциклов','Горизонтальные двигатели 110–150 см³','Двигатели и комплекты запасных частей']);
+  assert.match(html, /<h1 id="rl-title">Двигатели CB, CG с балансиром и горизонтальные серии в России<\/h1>/);
+  ordered(html, ['Двигатели CB и CG с балансирным валом','Горизонтальные двигатели 110–150 см³','Двигатели и комплекты запасных частей']);
   assert.match(html, /CB150[\s\S]+CB200-C[\s\S]+CB250/);
   ['110','125','140','150'].forEach(cc => assert.ok(html.includes(cc), `displacement ${cc} present`));
   assert.match(html, /id="cb-offroad"/);
@@ -115,18 +115,17 @@ test('Peru hero uses short labels and a safe customer-facing mobile CTA', () => 
 });
 
 test('Russia hero contract enforces a desktop two-column layout', () => {
-  const css = read('css/phase5-market-pages.css');
+  const css = read('css/russia-landing.css');
   const html = read('ru/russia/index.html');
-  assert.equal((html.match(/class="p5-hero-art p5-hero-collage"/g) || []).length, 1);
-  assert.equal((html.match(/class="p5-hero-art p5-hero-collage"[\s\S]*?<\/div><\/div><\/section>/) || [''])[0].match(/<img /g)?.length, 3);
-  assert.match(css, /@media\(min-width:960px\)[^{]*\{[\s\S]*?\.p5-hero-grid\{[^}]*grid-template-columns:/);
-  assert.match(css, /@media\(min-width:960px\)[\s\S]*?\.p5-hero h1\{[^}]*font-size:[^;}]*60px/);
-  assert.match(css, /@media\(max-width:959px\)[\s\S]*?\.p5-nav\{[^}]*display:none/);
+  assert.equal((html.match(/class="rl-hero-stage p5-hero-art p5-hero-collage"/g) || []).length, 1);
+  assert.equal((html.match(/class="rl-hero-stage p5-hero-art p5-hero-collage"[\s\S]*?<\/section>/) || [''])[0].match(/<figure /g)?.length, 3);
+  assert.match(css, /@media \(min-width: 768px\)[\s\S]*?\.rl-hero-grid \{[^}]*grid-template-columns:/);
+  assert.match(css, /@media \(min-width: 1050px\)[\s\S]*?\.rl-nav \{[^}]*display: flex/);
 });
 
 test('Russia uses the approved H1 and canonical CB product route', () => {
   const html = read('ru/russia/index.html');
-  assert.match(html, /<h1>Двигатели CB для внедорожных мотоциклов и горизонтальные серии в России<\/h1>/);
+  assert.match(html, /<h1 id="rl-title">Двигатели CB, CG с балансиром и горизонтальные серии в России<\/h1>/);
   assert.match(html, /href="\/en\/product-detail\.html\?series=cb-offroad"/);
   assert.doesNotMatch(html, /href="\/en\/product-detail\?series=cb-offroad"/);
 });

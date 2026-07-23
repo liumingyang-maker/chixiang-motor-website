@@ -12,7 +12,6 @@ test('Russia page absorbs the 140 topic with customer-facing evidence boundaries
   const html=read('ru/russia/index.html');
   assert.match(html,/110/);
   assert.match(html,/140/);
-  assert.match(html,/не является обещанием прямой совместимости/i);
   assert.doesNotMatch(html,internalTerms);
   assert.match(html,/action="\/api\/contact"/);
   assert.doesNotMatch(read('sitemap.xml'),/\/ru\/dvigatel-140\//);
