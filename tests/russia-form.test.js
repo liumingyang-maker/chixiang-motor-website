@@ -253,7 +253,11 @@ test('requirements spam blocks submission (no message field)', () => {
 });
 
 test('normal requirements is included in WhatsApp fallback', async () => {
-  const { form, listeners } = createFormDom({ message: undefined, requirements: 'Need 10 CB150 engines' });
+  const { form, listeners } = createFormDom({
+    message: undefined,
+    requirements: 'Need 10 CB150 engines',
+    freight_forwarder: 'Да, есть перевозчик в Китае'
+  });
   const { opened } = bootMain([form], undefined, () => Promise.reject(new Error('network')));
   const submitHandlers = listeners.get('submit') || [];
   submitHandlers[0]({ preventDefault() {} });
@@ -261,6 +265,10 @@ test('normal requirements is included in WhatsApp fallback', async () => {
   assert.equal(opened.length, 1, 'WhatsApp should be opened on network failure');
   assert.match(opened[0].url, /^https:\/\/wa\.me\/8619008225410\?text=/);
   assert.match(decodeURIComponent(opened[0].url), /Need 10 CB150 engines/);
+  assert.match(
+    decodeURIComponent(opened[0].url),
+    /Freight forwarder in China: Да, есть перевозчик в Китае/
+  );
 });
 
 test('requirements content enters FormData', async () => {

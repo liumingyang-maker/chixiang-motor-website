@@ -373,9 +373,9 @@
     function buildWhatsAppText(form) {
       const isSpanish = (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
       const labels = isSpanish ? {
-        title: 'Solicitud desde el sitio web de Chixiang', name: 'Nombre', contact: 'Contacto', email: 'Email', country: 'País', company: 'Empresa', product: 'Motor', quantity: 'Cantidad', application: 'Aplicación', message: 'Detalles', page: 'Página'
+        title: 'Solicitud desde el sitio web de Chixiang', name: 'Nombre', contact: 'Contacto', email: 'Email', country: 'País', company: 'Empresa', product: 'Motor', quantity: 'Cantidad', forwarder: 'Transportista en China', application: 'Aplicación', message: 'Detalles', page: 'Página'
       } : {
-        title: 'New inquiry from Chixiang website', name: 'Name', contact: 'Contact', email: 'Email', country: 'Country', company: 'Company', product: 'Product', quantity: 'Quantity', application: 'Application', message: 'Message', page: 'Page'
+        title: 'New inquiry from Chixiang website', name: 'Name', contact: 'Contact', email: 'Email', country: 'Country', company: 'Company', product: 'Product', quantity: 'Quantity', forwarder: 'Freight forwarder in China', application: 'Application', message: 'Message', page: 'Page'
       };
       const lines = [
         labels.title,
@@ -386,6 +386,7 @@
         labels.company + ': ' + getFieldValue(form, ['[name="company"]']),
         labels.product + ': ' + getFieldValue(form, ['[name="product_interest"]', '[name="product"]']),
         labels.quantity + ': ' + getFieldValue(form, ['[name="quantity"]']),
+        labels.forwarder + ': ' + getFieldValue(form, ['[name="freight_forwarder"]']),
         labels.application + ': ' + getFieldValue(form, ['[name="application"]']),
         labels.message + ': ' + getFieldValue(form, ['[name="message"]', '[name="requirements"]']),
         labels.page + ': ' + window.location.href
