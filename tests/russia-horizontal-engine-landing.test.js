@@ -35,6 +35,9 @@ test('uses a minimal landing header and qualified contact actions', () => {
   assert.match(header[0], /wa\.me\/8619008225410/);
   assert.match(header[0], /href="#quote"/);
   assert.doesNotMatch(header[0], /Products|News|About Us|lang-switcher/);
+  assert.match(header[0], /class="rh-brand-mark"/);
+  assert.doesNotMatch(header[0], /images\/logo\.webp/);
+  assert.doesNotMatch(html, /images\/logo\.webp/);
 
   const hero = html.match(/<section class="rh-hero"[\s\S]*?<\/section>/);
   assert.ok(hero, 'missing hero section');
@@ -60,6 +63,11 @@ test('keeps the product range without presenting 99 dollars as every model price
     assert.doesNotMatch(card[0], /\$99/);
     assert.match(card[0], /data-quote-model=/);
   }
+
+  const card154 = cards.find(card => card[0].includes('data-product-card="154FMI"'));
+  assert.ok(card154);
+  assert.match(card154[0], /%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/);
+  assert.doesNotMatch(card154[0], /ChatGPT%20Image%202026%E5%B9%B45%E6%9C%8830%E6%97%A5%2010_02_56/);
 });
 
 test('publishes desktop and mobile comparison formats', () => {
@@ -138,5 +146,7 @@ test('defines page-scoped responsive and accessible presentation', () => {
   assert.match(css, /@media\s*\(max-width:\s*639px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /overflow-x:\s*(?:clip|hidden)/);
+  assert.match(css, /\.rh-hero h1\s*\{[^}]*overflow-wrap:\s*anywhere/);
+  assert.match(css, /\.rh-header\s*\{[^}]*color:\s*var\(--rh-white\)/);
   assert.match(css, /:focus-visible/);
 });
