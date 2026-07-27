@@ -288,6 +288,19 @@
       return endpoint && endpoint.indexOf('YOUR_FORM_ID') === -1;
     }
 
+    function shouldOpenWhatsAppFallback(form) {
+      return form.getAttribute('data-whatsapp-fallback') !== 'false';
+    }
+
+    function openWhatsAppFallback(form) {
+      if (!shouldOpenWhatsAppFallback(form)) {
+        return false;
+      }
+
+      window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(form)), '_blank', 'noopener');
+      return true;
+    }
+
     function isTurnstileConfigured() {
       return turnstileSiteKey && turnstileSiteKey.indexOf('PASTE_') !== 0;
     }
@@ -477,8 +490,11 @@
           }
 
           if (!isRealEndpoint(endpoint)) {
-            window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(contactForm)), '_blank', 'noopener');
-            setFormStatus(contactForm, 'Form email service is not configured yet. We opened WhatsApp with your inquiry details.', 'success');
+            if (openWhatsAppFallback(contactForm)) {
+              setFormStatus(contactForm, 'Form email service is not configured yet. We opened WhatsApp with your inquiry details.', 'success');
+            } else {
+              setFormStatus(contactForm, getFormMessage(contactForm, 'fallback', 'The form could not be sent by email.'), 'error');
+            }
             if (submitBtn) {
               submitBtn.textContent = originalText;
               submitBtn.disabled = false;
@@ -502,8 +518,10 @@
               window.turnstile.reset();
             }
           }).catch(function() {
-            window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(contactForm)), '_blank', 'noopener');
-            setFormStatus(contactForm, getFormMessage(contactForm, 'fallback', 'The form could not be sent by email. We opened WhatsApp with your inquiry details.'), 'error');
+            const whatsappOpened = openWhatsAppFallback(contactForm);
+            setFormStatus(contactForm, getFormMessage(contactForm, 'fallback', whatsappOpened
+              ? 'The form could not be sent by email. We opened WhatsApp with your inquiry details.'
+              : 'The form could not be sent. Please contact us by email.'), 'error');
           }).finally(function() {
             contactForm.dataset.submitting = '';
             if (submitBtn) {
