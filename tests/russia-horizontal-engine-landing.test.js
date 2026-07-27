@@ -110,6 +110,14 @@ test('keeps WeChat supplementary rather than in the header or sticky bar', () =>
   assert.match(sticky[0], /href="#quote"/);
 });
 
+test('qualifies every direct WhatsApp entry point with wholesale context', () => {
+  const links = [...html.matchAll(/<a\b[^>]*href="https:\/\/wa\.me\/8619008225410"[^>]*>/g)];
+  assert.ok(links.length >= 4);
+  for (const link of links) {
+    assert.match(link[0], /data-whatsapp-model="Горизонтальные двигатели"/);
+  }
+});
+
 test('references only existing local assets', () => {
   for (const match of html.matchAll(/(?:src|href)="(\.\.\/(?:images|css|js)\/[^"]+)"/g)) {
     const relative = decodeURIComponent(
