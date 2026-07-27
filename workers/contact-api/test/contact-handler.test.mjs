@@ -93,7 +93,6 @@ test('buildInquiryEmail preserves detailed procurement and attribution fields', 
     application: 'Motocicleta de trabajo',
     displacement: '150 cc',
     quantity: '100',
-    freight_forwarder: 'Да, есть перевозчик в Китае',
     vehicle: 'Trimoto X',
     engine_code: 'CG150-01',
     requirements: 'Reversa y repuestos',
@@ -105,7 +104,6 @@ test('buildInquiryEmail preserves detailed procurement and attribution fields', 
 
   assert.match(email.text, /Application: Motocicleta de trabajo/);
   assert.match(email.text, /Quantity: 100/);
-  assert.match(email.text, /Freight forwarder in China: Да, есть перевозчик в Китае/);
   assert.match(email.text, /Engine code: CG150-01/);
   assert.match(email.text, /UTM campaign: cg-peru/);
   assert.match(email.text, /GCLID: test-gclid/);

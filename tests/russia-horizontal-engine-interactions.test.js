@@ -17,6 +17,9 @@ test('exports deterministic horizontal-engine interaction helpers', () => {
   assert.equal(typeof api.syncModels, 'function');
   assert.equal(typeof api.selectModel, 'function');
   assert.equal(typeof api.buildWhatsAppUrl, 'function');
+  assert.equal(typeof api.syncFreightContext, 'function');
+  assert.equal(typeof api.captureAttribution, 'function');
+  assert.equal(typeof api.setSourceCta, 'function');
   assert.equal(typeof api.init, 'function');
 });
 
@@ -70,11 +73,76 @@ test('selectModel leaves form unchanged for an unknown model', () => {
   assert.equal(hidden.value, '');
 });
 
+test('serializes freight-forwarder context into the existing Worker contract', () => {
+  const { syncFreightContext } = require(scriptPath);
+  const fields = {
+    freight_forwarder: { value: 'Да, есть перевозчик в Китае' },
+    application: { value: '' }
+  };
+  const form = {
+    querySelector: selector => {
+      const match = selector.match(/^\[name="([^"]+)"\]$/);
+      return match ? fields[match[1]] || null : null;
+    }
+  };
+
+  assert.equal(
+    syncFreightContext(form),
+    'Перевозчик в Китае: Да, есть перевозчик в Китае'
+  );
+  assert.equal(
+    fields.application.value,
+    'Перевозчик в Китае: Да, есть перевозчик в Китае'
+  );
+});
+
+test('captures supported advertising parameters without inventing fields', () => {
+  const { captureAttribution } = require(scriptPath);
+  const fields = Object.fromEntries(
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid']
+      .map(name => [name, { value: '' }])
+  );
+  const form = {
+    querySelector: selector => {
+      const match = selector.match(/^\[name="([^"]+)"\]$/);
+      return match ? fields[match[1]] || null : null;
+    }
+  };
+
+  const captured = captureAttribution(
+    form,
+    '?utm_source=yandex&utm_campaign=horizontal-ru&gclid=test-gclid&unknown=ignored'
+  );
+
+  assert.deepEqual(captured, {
+    utm_source: 'yandex',
+    utm_campaign: 'horizontal-ru',
+    gclid: 'test-gclid'
+  });
+  assert.equal(fields.utm_source.value, 'yandex');
+  assert.equal(fields.utm_campaign.value, 'horizontal-ru');
+  assert.equal(fields.gclid.value, 'test-gclid');
+  assert.equal(fields.wbraid.value, '');
+});
+
+test('updates the source CTA without retaining a stale product-card source', () => {
+  const { setSourceCta } = require(scriptPath);
+  const source = { value: 'model_card_154FMI' };
+  const form = {
+    querySelector: selector => selector === '[name="source_cta"]' ? source : null
+  };
+
+  assert.equal(setSourceCta(form, 'sticky_inquiry'), 'sticky_inquiry');
+  assert.equal(source.value, 'sticky_inquiry');
+});
+
 test('page interaction module does not submit or report conversions itself', () => {
   const source = fs.readFileSync(scriptPath, 'utf8');
   assert.doesNotMatch(source, /\bfetch\s*\(/);
   assert.doesNotMatch(source, /\bgtag\s*\(/);
   assert.doesNotMatch(source, /\bym\s*\(/);
+  assert.match(source, /stopImmediatePropagation/);
+  assert.match(source, /prefersReducedMotion/);
 });
 
 test('page loads interaction validation before shared form and analytics handlers', () => {

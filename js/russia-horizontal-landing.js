@@ -24,6 +24,16 @@
   'use strict';
 
   var WHATSAPP_NUMBER = '8619008225410';
+  var ATTRIBUTION_FIELDS = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'utm_content',
+    'utm_term',
+    'gclid',
+    'gbraid',
+    'wbraid'
+  ];
 
   function normalizeModels(values) {
     var unique = [];
@@ -85,6 +95,60 @@
     }
 
     return matched;
+  }
+
+  function syncFreightContext(form) {
+    if (!form || typeof form.querySelector !== 'function') {
+      return '';
+    }
+
+    var freightForwarder = form.querySelector('[name="freight_forwarder"]');
+    var application = form.querySelector('[name="application"]');
+    var value = freightForwarder ? String(freightForwarder.value || '').trim() : '';
+    var context = value ? 'Перевозчик в Китае: ' + value : '';
+
+    if (application) {
+      application.value = context;
+    }
+
+    return context;
+  }
+
+  function captureAttribution(form, search) {
+    var captured = {};
+
+    if (!form || typeof form.querySelector !== 'function') {
+      return captured;
+    }
+
+    var params = new URLSearchParams(String(search || ''));
+
+    ATTRIBUTION_FIELDS.forEach(function (name) {
+      var value = String(params.get(name) || '').trim();
+      var field = form.querySelector('[name="' + name + '"]');
+
+      if (value && field) {
+        field.value = value;
+        captured[name] = value;
+      }
+    });
+
+    return captured;
+  }
+
+  function setSourceCta(form, source) {
+    if (!form || typeof form.querySelector !== 'function') {
+      return '';
+    }
+
+    var field = form.querySelector('[name="source_cta"]');
+    var value = String(source || '').trim();
+
+    if (field && value) {
+      field.value = value;
+    }
+
+    return value;
   }
 
   function buildWhatsAppUrl(model) {
@@ -156,6 +220,11 @@
     }
 
     form.dataset.russiaHorizontalInitialized = '1';
+    captureAttribution(
+      form,
+      win && win.location ? win.location.search : ''
+    );
+    syncFreightContext(form);
 
     Array.prototype.forEach.call(
       doc.querySelectorAll('[data-whatsapp-model]'),
@@ -173,6 +242,42 @@
       });
     });
 
+    var freightForwarder = form.querySelector('[name="freight_forwarder"]');
+    if (freightForwarder) {
+      freightForwarder.addEventListener('change', function () {
+        syncFreightContext(form);
+      });
+    }
+
+    Array.prototype.forEach.call(
+      doc.querySelectorAll('a[href^="#"]'),
+      function (anchor) {
+        anchor.addEventListener('click', function (event) {
+          var href = anchor.getAttribute('href');
+          var target = href && href !== '#' ? doc.querySelector(href) : null;
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+          if (typeof event.stopImmediatePropagation === 'function') {
+            event.stopImmediatePropagation();
+          }
+
+          var sourceCta = anchor.getAttribute('data-source-cta');
+          if (sourceCta) {
+            setSourceCta(form, sourceCta);
+          }
+
+          target.scrollIntoView({
+            behavior: prefersReducedMotion(win) ? 'auto' : 'smooth',
+            block: 'start'
+          });
+        });
+      }
+    );
+
     Array.prototype.forEach.call(
       doc.querySelectorAll('[data-quote-model]'),
       function (button) {
@@ -182,10 +287,7 @@
             return;
           }
 
-          var sourceCta = form.querySelector('[name="source_cta"]');
-          if (sourceCta) {
-            sourceCta.value = 'model_card_' + model;
-          }
+          setSourceCta(form, 'model_card_' + model);
 
           setModelError(form, '');
           scrollToForm(form, win);
@@ -210,6 +312,8 @@
     );
 
     form.addEventListener('submit', function (event) {
+      syncFreightContext(form);
+
       if (syncModels(form)) {
         setModelError(form, '');
         return;
@@ -227,6 +331,7 @@
     form.addEventListener('reset', function () {
       var resetModels = function () {
         syncModels(form);
+        syncFreightContext(form);
         setModelError(form, '');
       };
 
@@ -238,6 +343,7 @@
     });
 
     syncModels(form);
+    syncFreightContext(form);
     return true;
   }
 
@@ -245,6 +351,9 @@
     normalizeModels: normalizeModels,
     syncModels: syncModels,
     selectModel: selectModel,
+    syncFreightContext: syncFreightContext,
+    captureAttribution: captureAttribution,
+    setSourceCta: setSourceCta,
     buildWhatsAppUrl: buildWhatsAppUrl,
     init: init
   };

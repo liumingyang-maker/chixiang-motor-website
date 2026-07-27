@@ -49,6 +49,7 @@ test('keeps Google Ads and the current Yandex Russia tag', () => {
   assert.equal((html.match(/googletagmanager\.com\/gtag\/js\?id=AW-16777656395/g) || []).length, 1);
   assert.match(html, /gtag\('config', 'AW-16777656395'\)/);
   assert.equal((html.match(/\.\.\/js\/yandex-metrica\.js/g) || []).length, 1);
+  assert.match(html, /<body class="rh-page" data-market="Russia">/);
   assert.doesNotMatch(html, /109483511/);
 });
 
@@ -70,6 +71,18 @@ test('keeps the product range without presenting 99 dollars as every model price
   assert.doesNotMatch(card154[0], /ChatGPT%20Image%202026%E5%B9%B45%E6%9C%8830%E6%97%A5%2010_02_56/);
 });
 
+test('retains kick-start, reverse and distinct starter configurations', () => {
+  assert.match(html, /class="rh-variant-grid"/);
+  assert.match(html, /125 cc с кикстартером/);
+  assert.match(html, /140 cc с кикстартером/);
+  assert.match(html, /110 \/ 125 \/ 140 cc с реверсом/);
+  assert.match(html, /Верхний стартер/);
+  assert.match(html, /Нижний стартер/);
+  assert.match(html, /%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA\/125\.webp/);
+  assert.match(html, /%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA\/140\.webp/);
+  assert.match(html, /%E5%86%85%E7%BD%AE%E5%80%92%E6%8C%A1/);
+});
+
 test('publishes desktop and mobile comparison formats', () => {
   assert.match(html, /class="rh-compare-table"/);
   assert.match(html, /class="rh-mobile-compare"/);
@@ -84,6 +97,8 @@ test('uses the approved public factory and delivery facts', () => {
   }
   assert.match(html, /перевозчик|экспедитор/i);
   assert.match(html, /склад|адрес/i);
+  assert.match(html, /factory-showcase\/certification-2\.webp/);
+  assert.doesNotMatch(html, /factory-showcase\/certification\.webp/);
   assert.doesNotMatch(html, /Доставка в Россию 15/i);
   assert.doesNotMatch(html, /Посредник/);
 });
@@ -99,6 +114,13 @@ test('embeds a qualified same-page inquiry form', () => {
   const product = getRequiredElement('product');
   assert.match(product, /type="hidden"/);
   assert.match(html, /name="source_form" value="russia_horizontal_engine_landing"/);
+  assert.match(html, /name="application" value=""/);
+  for (const field of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid']) {
+    assert.match(html, new RegExp(`name="${field}" value=""`));
+  }
+  for (const source of ['header_inquiry', 'hero_inquiry', 'logistics_inquiry', 'sticky_inquiry']) {
+    assert.match(html, new RegExp(`data-source-cta="${source}"`));
+  }
   assert.match(html, /name="website"/);
   assert.match(html, /data-model-checkbox/);
   assert.match(html, /data-model-error/);
@@ -142,11 +164,19 @@ test('defines page-scoped responsive and accessible presentation', () => {
   assert.match(css, /\.rh-page/);
   assert.match(css, /russia-horizontal-hero-desktop\.webp/);
   assert.match(css, /russia-horizontal-hero-mobile\.webp/);
+  assert.match(css, /@media\s*\(orientation:\s*portrait\)/);
+  assert.match(css, /@media\s*\(orientation:\s*landscape\)\s*and\s*\(max-width:\s*899px\)/);
   assert.match(css, /@media\s*\(max-width:\s*899px\)/);
   assert.match(css, /@media\s*\(max-width:\s*639px\)/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /overflow-x:\s*(?:clip|hidden)/);
   assert.match(css, /\.rh-hero h1\s*\{[^}]*overflow-wrap:\s*anywhere/);
   assert.match(css, /\.rh-header\s*\{[^}]*color:\s*var\(--rh-white\)/);
+  assert.match(css, /\.rh-procurement-grid span\s*\{[^}]*color:\s*var\(--rh-white\)/);
+  assert.match(css, /\.rh-logistics \.rh-kicker\s*\{[^}]*color:\s*var\(--rh-white\)/);
+  assert.match(css, /\.rh-logistics p:last-child\s*\{[^}]*color:\s*var\(--rh-white\)/);
+  assert.match(css, /::placeholder\s*\{[^}]*color:\s*var\(--rh-muted\)/);
+  assert.match(css, /padding-bottom:\s*calc\(68px \+ env\(safe-area-inset-bottom\)\)/);
+  assert.match(css, /\.rh-header-whatsapp,\s*\.rh-header-quote\s*\{[^}]*min-height:\s*44px/);
   assert.match(css, /:focus-visible/);
 });
