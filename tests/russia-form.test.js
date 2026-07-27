@@ -109,8 +109,7 @@ function createFormDom(overrides, opts) {
   form.getAttribute = function(k) {
     if (k === 'action') return '/api/contact';
     if (k === 'method') return 'POST';
-    if (k.startsWith('data-message-')) return this.attributes[k] || null;
-    return null;
+    return this.attributes[k] !== undefined ? this.attributes[k] : null;
   };
   form.setAttribute = function(k, v) { this.attributes[k] = v; };
   if (opts && opts.noReset) {
@@ -348,6 +347,83 @@ test('network failure opens WhatsApp fallback with correct URL and status', asyn
   assert.equal(status.classList.contains('is-error'), true, 'fallback status should be error');
   assert.equal(status.classList.contains('is-success'), false, 'fallback status should not be success');
   assert.equal(calls.length, 0, 'gtag conversion should not fire on network failure');
+});
+
+test('network failure respects page-level WhatsApp fallback opt-out', async () => {
+  const retainedFields = {
+    name: 'Иван Петров',
+    company: 'ООО Мотор',
+    contact: '+7 999 123-45-67',
+    quantity: '10',
+    requirements: 'Нужны 10 двигателей CB150'
+  };
+  const fallbackMessage = 'Не удалось отправить форму. Напишите нам: chixiangmotor@163.com.';
+  const { form, listeners } = createFormDom(Object.assign({ message: undefined }, retainedFields));
+  form.setAttribute('data-whatsapp-fallback', 'false');
+  form.setAttribute('data-message-fallback', fallbackMessage);
+
+  const calls = [];
+  const { opened } = bootMain([form], (...args) => calls.push(args), () => Promise.reject(new Error('network')));
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+
+  assert.equal(opened.length, 0, 'window.open should not be called when WhatsApp fallback is disabled');
+
+  const status = form.querySelector('.form-status');
+  assert.ok(status, 'form status element should exist');
+  assert.equal(status.textContent, fallbackMessage, 'fallback status should show the email contact hint');
+  assert.equal(status.classList.contains('is-error'), true, 'fallback status should be error');
+  for (const [name, value] of Object.entries(retainedFields)) {
+    assert.equal(form.querySelector('[name="' + name + '"]').value, value, name + ' must remain available after failure');
+  }
+  assert.equal(calls.length, 0, 'gtag conversion should not fire on network failure');
+});
+
+for (const statusCode of [400, 500]) {
+  test('Worker ' + statusCode + ' respects page-level WhatsApp fallback opt-out', async () => {
+    const fallbackMessage = 'Ошибка отправки. Напишите нам: chixiangmotor@163.com.';
+    const retainedFields = { name: 'Иван Петров', requirements: 'Нужны двигатели CB150' };
+    const { form, listeners } = createFormDom(Object.assign({ message: undefined }, retainedFields));
+    form.setAttribute('data-whatsapp-fallback', 'false');
+    form.setAttribute('data-message-fallback', fallbackMessage);
+
+    const calls = [];
+    const { opened } = bootMain(
+      [form],
+      (...args) => calls.push(args),
+      () => Promise.resolve({ ok: false, status: statusCode })
+    );
+    const submitHandlers = listeners.get('submit') || [];
+    submitHandlers[0]({ preventDefault() {} });
+    await new Promise(r => setTimeout(r, 10));
+
+    assert.equal(opened.length, 0, 'window.open should not be called for Worker ' + statusCode);
+    const status = form.querySelector('.form-status');
+    assert.ok(status, 'form status element should exist');
+    assert.equal(status.textContent, fallbackMessage, 'status should show the custom email hint');
+    assert.equal(status.classList.contains('is-error'), true, 'fallback status should be error');
+    for (const [name, value] of Object.entries(retainedFields)) {
+      assert.equal(form.querySelector('[name="' + name + '"]').value, value, name + ' must remain available after failure');
+    }
+    assert.equal(calls.length, 0, 'gtag conversion should not fire for Worker ' + statusCode);
+  });
+}
+
+test('opt-out network failure default status does not claim WhatsApp was opened', async () => {
+  const { form, listeners } = createFormDom({ message: undefined, requirements: 'Нужны двигатели CB150' });
+  form.setAttribute('data-whatsapp-fallback', 'false');
+
+  const { opened } = bootMain([form], undefined, () => Promise.reject(new Error('network')));
+  const submitHandlers = listeners.get('submit') || [];
+  submitHandlers[0]({ preventDefault() {} });
+  await new Promise(r => setTimeout(r, 10));
+
+  assert.equal(opened.length, 0, 'window.open should not be called when WhatsApp fallback is disabled');
+  const status = form.querySelector('.form-status');
+  assert.ok(status, 'form status element should exist');
+  assert.equal(status.classList.contains('is-error'), true, 'fallback status should be error');
+  assert.doesNotMatch(status.textContent, /opened WhatsApp|открыли WhatsApp/i);
 });
 
 // --- Duplicate submission ---

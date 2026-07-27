@@ -39,7 +39,11 @@ test('builds a qualified Russian wholesale WhatsApp URL', () => {
   const message = decodeURIComponent(url.split('?text=')[1]);
   assert.match(message, /оптов/i);
   assert.match(message, /154FMI/);
-  assert.match(message, /MOQ 50/i);
+  assert.match(message, /MOQ 40/i);
+  assert.match(
+    message,
+    /Образцы: от 3 двигателей, только для компаний и профессиональных закупщиков\./i
+  );
   assert.match(message, /компани/i);
   assert.match(message, /количеств/i);
 });
