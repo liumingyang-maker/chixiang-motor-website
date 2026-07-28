@@ -64,6 +64,7 @@ test('returns the verification file with 200 instead of an HTML canonical redire
   assert.equal(fetchedPath, '/yandex_8a3590afcb928a95');
   assert.equal(response.status, 200);
   assert.equal(response.headers.get('location'), null);
+  assert.match(response.headers.get('cache-control'), /(?:^|,)\s*no-transform(?:,|$)/);
   assert.match(await response.text(), /Verification: 8a3590afcb928a95/);
 });
 
