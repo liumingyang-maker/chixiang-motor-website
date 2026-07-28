@@ -7,7 +7,19 @@ export default {
 
     if (requestUrl.pathname === YANDEX_VERIFICATION_PATH) {
       requestUrl.pathname = YANDEX_VERIFICATION_ASSET_PATH;
-      return env.ASSETS.fetch(new Request(requestUrl, request));
+      const assetResponse = await env.ASSETS.fetch(new Request(requestUrl, request));
+      const responseHeaders = new Headers(assetResponse.headers);
+      const cacheControl = responseHeaders.get('Cache-Control');
+      responseHeaders.set(
+        'Cache-Control',
+        cacheControl ? `${cacheControl}, no-transform` : 'no-transform'
+      );
+
+      return new Response(assetResponse.body, {
+        status: assetResponse.status,
+        statusText: assetResponse.statusText,
+        headers: responseHeaders
+      });
     }
 
     return env.ASSETS.fetch(request);
