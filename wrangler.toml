@@ -1,5 +1,8 @@
 name = "chixiang-motor-website"
 compatibility_date = "2024-01-01"
+main = "workers/site-router.mjs"
 
 [assets]
 directory = "."
+binding = "ASSETS"
+run_worker_first = ["/yandex_8a3590afcb928a95.html"]
