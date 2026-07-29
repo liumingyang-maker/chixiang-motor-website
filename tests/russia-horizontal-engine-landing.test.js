@@ -40,7 +40,7 @@ test('publishes the approved Russian B2B hero and SEO contract', () => {
   assert.match(html, /MOQ 40 шт\./);
   assert.match(html, /Смешанные модели/);
   assert.match(html, /Только оптовые поставки и OEM\/ODM/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/www\.chixiangmotor\.com\/ru\/gorizontalnyj-dvigatel">/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/chixiangmotor\.com\/ru\/gorizontalnyj-dvigatel">/);
   assert.doesNotMatch(html, /MOQ 50 шт\./);
   assert.doesNotMatch(html, /15\s*[–-]\s*25\s*(?:дн|дней)/i);
 });
