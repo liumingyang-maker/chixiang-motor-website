@@ -55,6 +55,12 @@ MOQ、样品政策、混批、OEM/ODM、物流建议、配件支持和销售联�
 5. 责任人填写候选或批准值、允许公开的中英文措辞、审核人和审核日期；
 6. Codex 将决定回写 CSV，运行一致性校验，再生成逐页变更清单。
 
+## 本轮单人审核约定
+
+2026-07-29 的简化确认由网站所有者作为唯一审核人完成，不再要求公司、工厂和销售角色分别签字。CSV 中的 `review_owner_role` 继续保留为事实归属提示，`approved_by` 统一记录为 `Site Owner`。
+
+单人确认不取消公开安全条件。ISO、CCC 等缺少证书编号、主体、范围或有效期的认证声明仍保持 `PENDING_REVIEW`；`FAMILY_INTAKE` 即使完成家族关系确认，也只能标记为 `APPROVED_INTERNAL_ONLY`；用户选择“暂不确定”的记录继续保留冲突和空白值。
+
 当前 CSV 中空白的 `approved_by` 和 `approved_date` 是有意保留的待审核字段，不是遗漏。未解决记录可以继续保留，但必须保持 `CONFLICTING`、`UNKNOWN` 或 `PENDING_REVIEW`，不能静默删除。
 
 ## 公开条件
