@@ -59,7 +59,7 @@ MOQ、样品政策、混批、OEM/ODM、物流建议、配件支持和销售联�
 
 2026-07-29 的简化确认由网站所有者作为唯一审核人完成，不再要求公司、工厂和销售角色分别签字。CSV 中的 `review_owner_role` 继续保留为事实归属提示，`approved_by` 统一记录为 `Site Owner`。
 
-单人确认不取消公开安全条件。ISO、CCC 等缺少证书编号、主体、范围或有效期的认证声明仍保持 `PENDING_REVIEW`；`FAMILY_INTAKE` 即使完成家族关系确认，也只能标记为 `APPROVED_INTERNAL_ONLY`；用户选择“暂不确定”的记录继续保留冲突和空白值。
+单人确认不取消公开安全条件。ISO、CCC 可以使用网站所有者批准的通用存在性声明，但不得补写或推断证书版本、编号、主体、范围、适用型号或有效期；未经所有者确认的 `FAMILY_INTAKE` 仍只能标记为 `APPROVED_INTERNAL_ONLY`；用户选择“暂不确定”的记录继续保留冲突和空白值。
 
 当前 CSV 中空白的 `approved_by` 和 `approved_date` 是有意保留的待审核字段，不是遗漏。未解决记录可以继续保留，但必须保持 `CONFLICTING`、`UNKNOWN` 或 `PENDING_REVIEW`，不能静默删除。
 
@@ -69,7 +69,8 @@ MOQ、样品政策、混批、OEM/ODM、物流建议、配件支持和销售联�
 
 - `APPROVED_PUBLIC` 可以进入网站正文、Schema、广告文案和公开销售资料；
 - `APPROVED_INTERNAL_ONLY` 只能用于内部决策，不得进入公开内容；
-- `FAMILY_INTAKE` 只用于收集家族层级线索，不能发布成型号级规格，也不能标记为 `APPROVED_PUBLIC`；
+- `FAMILY` 可以发布网站所有者已经批准的家族定位、共用配置和明确边界；`model_code` 可以为空，但不得据此补写或推断型号级排量、缸径行程、输出、安装尺寸、性能数值或通用适配；
+- `FAMILY_INTAKE` 只用于收集尚未确认的家族层级线索，不能发布成型号级规格，也不能标记为 `APPROVED_PUBLIC`；
 - 未验证的应用场景只能表述为常见用途或待确认方向，不能写成适配保证；
 - 认证、产能、出口国家数、良率和工厂面积等信任声明，必须具有与措辞对应的有效证据。
 
