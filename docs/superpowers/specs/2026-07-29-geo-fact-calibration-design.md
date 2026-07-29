@@ -135,6 +135,7 @@ notes
 
 ```text
 spec_id
+record_scope
 family
 model_code
 marketing_name
@@ -167,6 +168,12 @@ approved_date
 last_verified
 notes
 ```
+
+`record_scope` 只允许：
+
+- `MODEL`：已有明确型号代码，但尚未细分配置。
+- `CONFIGURATION`：同一型号下可以独立销售和审核的具体配置。
+- `FAMILY_INTAKE`：目前只有产品家族或营销名称，用于收集待确认型号；不能作为具体规格公开。
 
 首轮预填 Phase 6.0 已登记的 CG、CB、Horizontal、water-cooled/heavy-duty、Hanwei/HW 和 AC320 家族及其已出现型号。152FMH、153FMI、154FMI、1P56FMJ、CG150B/CG150SB 等冲突项只记录当前各来源说法和冲突，不填行业经验推断值。
 
@@ -238,6 +245,7 @@ notes
 ### 9.2 发动机专用校验
 
 - `spec_id` 唯一；同一型号的不同配置具有可区分的配置 ID。
+- `record_scope` 必须是 `MODEL`、`CONFIGURATION` 或 `FAMILY_INTAKE`；`FAMILY_INTAKE` 不能标记为 `APPROVED_PUBLIC`。
 - 数值字段若非空必须为有效非负数。
 - 缸径、行程和排量不能从型号名称自动计算。
 - 型号、别名和市场营销名称必须分列。
