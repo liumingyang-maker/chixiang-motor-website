@@ -108,7 +108,7 @@ Keep missing Keyword Planner, Wordstat, sales, inquiry, pricing, compatibility, 
 
 - [ ] **Step 1: Write the exact CSV header**
 
-Use the 23 columns defined in the design, in the documented order, with UTF-8 encoding and one canonical entity per row.
+Use the 22 columns defined in the design, in the documented order, with UTF-8 encoding and one canonical entity per row.
 
 - [ ] **Step 2: Populate organization, brand, capability, and policy rows**
 
