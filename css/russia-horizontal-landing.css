@@ -16,7 +16,6 @@
   color: var(--rh-ink);
   background: var(--rh-white);
   font-family: "Montserrat", "Arial", sans-serif;
-  overflow-x: clip;
 }
 
 .rh-page *,
@@ -1968,4 +1967,33 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* Foundation mobile containment */
+.rh-header-inner > *,
+.rh-hero-inner > *,
+.rh-procurement-grid > *,
+.rh-product-grid > *,
+.rh-variant-grid > *,
+.rh-factory-intro > *,
+.rh-logistics-inner > *,
+.rh-quote-layout > *,
+.rh-form-grid > * {
+  min-width: 0;
+}
+
+.rh-button,
+.rh-header-quote,
+.rh-card-quote,
+.rh-submit {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.rh-product-image img,
+.rh-variant-card > img,
+.rh-factory-gallery img {
+  max-width: 100%;
 }

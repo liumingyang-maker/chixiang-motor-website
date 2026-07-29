@@ -12,3 +12,31 @@
 @media(min-width:960px){.p5-nav{display:flex;gap:16px}.p5-nav a{font-size:14px;white-space:nowrap}.p5-header-inner{gap:16px}.p5-header .p5-button{padding-inline:15px;font-size:14px;white-space:nowrap}.p5-hero-grid{grid-template-columns:minmax(0,1fr) 430px;min-height:calc(900px - 72px);align-items:center;gap:36px;padding:54px 0}.p5-hero h1{max-width:700px;font-size:clamp(42px,3vw,60px);line-height:1.02}.p5-lead{max-width:680px;margin:16px 0 0;font-size:17px}.p5-actions{margin:20px 0}.p5-points{margin-bottom:0}.p5-hero-art{min-height:420px}.p5-hero-collage{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:20px}.p5-hero-collage img{width:100%;max-height:300px}}
 @media(min-width:960px){.p5-page[data-market="Russia"] .p5-hero h1{font-size:clamp(40px,2.8vw,56px)}}
 .p5-honeypot{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
+
+/* Foundation mobile containment */
+.p5-header-inner > *,
+.p5-hero-grid > *,
+.p5-cards > *,
+.p5-product-grid > *,
+.p5-terms-grid > *,
+.p5-form-grid > * {
+  min-width: 0;
+}
+
+.p5-product-card {
+  min-width: 0;
+}
+
+.p5-button,
+.p5-card-actions a {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.p5-hero-art img,
+.p5-hero-collage img,
+.p5-product-card > img {
+  max-width: 100%;
+}
