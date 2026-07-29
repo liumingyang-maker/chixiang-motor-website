@@ -1,8 +1,11 @@
 # Chixiang Motor GEO Entity Audit
 
-**Version:** 1.0  
-**Audit date:** 2026-07-29  
-**Mode:** Read-only strategic audit; no production code or tracking changes  
+**Version:** 1.0
+
+**Audit date:** 2026-07-29
+
+**Mode:** Read-only strategic audit; no production code or tracking changes
+
 **Canonical domain:** `https://chixiangmotor.com`
 
 ## Executive decision
