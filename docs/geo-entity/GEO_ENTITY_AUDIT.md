@@ -87,6 +87,16 @@ Evidence disposition:
 | `SUPPORTED` | 39 | The entity is credible, but claims, demand, or commercial readiness remain partly unverified. |
 | `CONFLICTING` | 4 | Organization, horizontal-family, 152FMH, and certification facts require reconciliation. |
 
+Recommended-action disposition:
+
+| Action | Count |
+|---|---:|
+| `ENHANCE_EXISTING` | 26 |
+| `KEEP` | 5 |
+| `DO_NOT_BUILD_YET` | 17 |
+| `NEEDS_EVIDENCE` | 8 |
+| `BUILD_NEW` | 0 |
+
 No row is approved as `BUILD_NEW`. Seventeen rows are explicitly `DO_NOT_BUILD_YET`, and eight require `NEEDS_EVIDENCE` before content or Schema amplification.
 
 ## Organization and brand findings
