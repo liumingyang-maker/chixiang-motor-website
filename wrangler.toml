@@ -5,4 +5,4 @@ main = "workers/site-router.mjs"
 [assets]
 directory = "."
 binding = "ASSETS"
-run_worker_first = ["/yandex_8a3590afcb928a95.html"]
+run_worker_first = ["/*", "!/images/*", "!/css/*", "!/js/*", "!/pdf/*", "!/api/*"]
