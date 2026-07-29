@@ -28,37 +28,37 @@
     },
     cg125: {
       slug: 'cg125', name: 'CG125', displacement: '125 cc', cooling: 'Refrigeración por aire', reverse: 'Según configuración',
-      bestFor: 'Motos urbanas y de trabajo', image: 'images/central-asia-hero-products/cg-air.png',
+      bestFor: 'Motos urbanas y de trabajo', image: 'images/central-asia-hero-products/cg-air.webp',
       gallery: ['images/cg银白色/1.webp', 'images/cg银白色/2.webp', 'images/cg银白色/3.webp'],
       benefits: ['Opción para baja cilindrada', 'Selección según modelo o código', 'Repuestos para pedido mayorista']
     },
     cg150: {
       slug: 'cg150', name: 'CG150', displacement: '150 cc', cooling: 'Refrigeración por aire', reverse: 'Según configuración',
-      bestFor: 'Trabajo diario, reparto y reemplazo', image: 'images/central-asia-hero-products/cg-air.png',
+      bestFor: 'Trabajo diario, reparto y reemplazo', image: 'images/central-asia-hero-products/cg-air.webp',
       gallery: ['images/cg银白色/1.webp', 'images/cg银白色/4.webp', 'images/cg银白色/5.webp'],
       benefits: ['Uso diario y comercial', 'Selección por vehículo o código', 'Repuestos para pedidos mayoristas']
     },
     cg200: {
       slug: 'cg200', name: 'CG200', displacement: '200 cc', cooling: 'Refrigeración por aire; confirmar modelo', reverse: 'Se confirma con la configuración del vehículo',
-      bestFor: 'Motos de trabajo y aplicaciones de carga', image: 'images/central-asia-hero-products/cg-air.png',
+      bestFor: 'Motos de trabajo y aplicaciones de carga', image: 'images/central-asia-hero-products/cg-air.webp',
       gallery: ['images/cg银白色/1.webp', 'images/cg银白色/4.webp', 'images/cg银白色/5.webp'],
       benefits: ['Mayor cilindrada para trabajo comercial', 'Suministro B2B con selección técnica', 'Confirmación de código, montaje y sistema eléctrico']
     },
     cargo: {
       slug: 'cargo', name: 'Configuración para carga', displacement: '150–250 cc', cooling: 'Aire o agua según modelo', reverse: 'Según vehículo y configuración',
-      bestFor: 'Carga y trabajo intensivo', image: 'images/central-asia-hero-products/cg-water.png',
+      bestFor: 'Carga y trabajo intensivo', image: 'images/central-asia-hero-products/cg-water.webp',
       gallery: ['images/普通水冷/po85qu0l.webp', 'images/普通水冷/qog3j40j.webp', 'images/普通水冷/pcdwa12q.webp'],
       benefits: ['Selección según vehículo y carga', 'Confirmación de transmisión e interfaces', 'Opciones de repuestos y empaque']
     },
     replacement: {
       slug: 'replacement', name: 'Motor y posventa', displacement: '125–150 cc', cooling: 'Según modelo', reverse: 'Se confirma por foto o código',
-      bestFor: 'Selección de reemplazo y posventa', image: 'images/central-asia-hero-products/cg-air.png',
+      bestFor: 'Selección de reemplazo y posventa', image: 'images/central-asia-hero-products/cg-air.webp',
       gallery: ['images/cg银白色/2.webp', 'images/cg银白色/5.webp', 'images/普通水冷/6kjzxqqh.webp'],
       benefits: ['Selección por foto, placa o código', 'Confirmación antes de cotizar', 'Repuestos para pedidos mayoristas']
     },
     spares: {
       slug: 'spares', name: 'Motor + paquete de repuestos', displacement: 'Según motor confirmado', cooling: 'Según configuración', reverse: 'No es criterio principal de selección',
-      bestFor: 'Distribuidores, talleres y posventa', image: 'images/central-asia-hero-products/cg-air.png',
+      bestFor: 'Distribuidores, talleres y posventa', image: 'images/central-asia-hero-products/cg-air.webp',
       gallery: ['images/cg银白色/2.webp', 'images/cg银白色/3.webp', 'images/cg银白色/5.webp'],
       benefits: ['Lista de piezas por código o muestra', 'Carga mixta para pedidos B2B', 'Paquete de posventa para el canal']
     }

@@ -53,8 +53,8 @@ test('russia page restructured into CB off-road and horizontal 110/125/140/150',
   assert.ok(html.includes('id="horizontal-engines"'), '#horizontal-engines anchor present');
   assert.ok(html.includes('id="cb-offroad"'), '#cb-offroad anchor present');
   assert.ok(!html.includes('/ru/dvigatel-140/'), 'no internal link to removed 140 page');
-  assert.ok(html.includes('/en/product-detail.html?series=cb-offroad'), 'CB link uses .html route');
-  assert.ok(!html.includes('/en/product-detail?series=cb-offroad'), 'no broken CB link without .html');
+  assert.ok(html.includes('/en/product-detail?series=cb-offroad'), 'CB link uses the clean utility route');
+  assert.ok(!html.includes('/en/product-detail.html?series=cb-offroad'), 'legacy .html utility route removed');
   assert.ok(html.includes('yandex-metrica.js'), 'Yandex Metrica preserved');
   assert.ok(html.includes('action="/api/contact"'), 'form action preserved');
   assert.ok(html.includes('name="market" value="Russia"'), 'market field preserved');

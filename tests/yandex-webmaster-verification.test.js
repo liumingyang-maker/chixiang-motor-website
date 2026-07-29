@@ -34,7 +34,7 @@ test('routes the exact Yandex verification URL through the site Worker', () => {
   assert.match(wranglerConfig, /^binding = "ASSETS"$/m);
   assert.match(
     wranglerConfig,
-    /^run_worker_first = \["\/yandex_8a3590afcb928a95\.html"\]$/m
+    /^run_worker_first = \["\/\*", "!\/images\/\*", "!\/css\/\*", "!\/js\/\*", "!\/pdf\/\*", "!\/api\/\*"\]$/m
   );
 });
 
@@ -68,12 +68,12 @@ test('returns the verification file with 200 instead of an HTML canonical redire
   assert.match(await response.text(), /Verification: 8a3590afcb928a95/);
 });
 
-test('passes every other Worker request through to static assets unchanged', async () => {
+test('passes every other clean canonical Worker request through to static assets unchanged', async () => {
   const routerFile = path.join(__dirname, '..', 'workers', 'site-router.mjs');
   assert.ok(fs.existsSync(routerFile), 'the site Worker router must exist');
 
   const { default: router } = await import(pathToFileURL(routerFile).href);
-  const originalRequest = new Request('https://www.chixiangmotor.com/not-found');
+  const originalRequest = new Request('https://chixiangmotor.com/not-found');
   let forwardedRequest;
   const expectedResponse = new Response('asset response', { status: 404 });
   const env = {

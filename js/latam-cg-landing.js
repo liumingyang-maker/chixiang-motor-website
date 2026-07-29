@@ -55,9 +55,10 @@
     hero.querySelector('h1').textContent = data.market.title;
     hero.querySelector('[data-hero-description]').textContent = data.market.description;
     hero.querySelector('[data-hero-points]').innerHTML = data.heroPoints.map(function(point) { return '<li>' + escapeHtml(point) + '</li>'; }).join('');
-    hero.querySelector('[data-hero-engines]').innerHTML = data.productOrder.slice(0, 3).map(function(slug) {
+    hero.querySelector('[data-hero-engines]').innerHTML = data.productOrder.slice(0, 3).map(function(slug, imageIndex) {
       var item = product(slug);
-      return '<figure class="latam-hero-engine"><span class="latam-engine-glow"></span><img src="../../' + item.image + '" alt="' + escapeHtml(item.name) + '" fetchpriority="high"><figcaption><strong>' + escapeHtml(item.heroLabel || item.name) + '</strong></figcaption></figure>';
+      var priority = imageIndex === 1 ? 'high' : 'low';
+      return '<figure class="latam-hero-engine"><span class="latam-engine-glow"></span><img src="../../' + item.image + '" alt="' + escapeHtml(item.name) + '" loading="eager" width="1254" height="1254" decoding="async" fetchpriority="' + priority + '"><figcaption><strong>' + escapeHtml(item.heroLabel || item.name) + '</strong></figcaption></figure>';
     }).join('');
   }
   function renderApplications() {

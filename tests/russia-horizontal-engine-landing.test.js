@@ -40,7 +40,7 @@ test('publishes the approved Russian B2B hero and SEO contract', () => {
   assert.match(html, /MOQ 40 шт\./);
   assert.match(html, /Смешанные модели/);
   assert.match(html, /Только оптовые поставки и OEM\/ODM/);
-  assert.match(html, /<link rel="canonical" href="https:\/\/www\.chixiangmotor\.com\/ru\/gorizontalnyj-dvigatel">/);
+  assert.match(html, /<link rel="canonical" href="https:\/\/chixiangmotor\.com\/ru\/gorizontalnyj-dvigatel">/);
   assert.doesNotMatch(html, /MOQ 50 шт\./);
   assert.doesNotMatch(html, /15\s*[–-]\s*25\s*(?:дн|дней)/i);
 });
@@ -283,7 +283,8 @@ test('defines page-scoped responsive and accessible presentation', () => {
   assert.match(css, /@media\s*\(max-width:\s*899px\)/);
   assert.match(css, /@media\s*\(max-width:\s*639px\)/);
   assert.match(css, /prefers-reduced-motion/);
-  assert.match(css, /overflow-x:\s*(?:clip|hidden)/);
+  assert.doesNotMatch(css, /\.rh-page\s*\{[^}]*overflow-x:/s);
+  assert.match(css, /\.rh-hero\s*\{[^}]*overflow:\s*hidden/s);
   assert.match(css, /\.rh-hero h1\s*\{[^}]*overflow-wrap:\s*anywhere/);
   assert.match(css, /\.rh-header\s*\{[^}]*color:\s*var\(--rh-white\)/);
   assert.match(css, /\.rh-procurement-grid span\s*\{[^}]*color:\s*var\(--rh-white\)/);

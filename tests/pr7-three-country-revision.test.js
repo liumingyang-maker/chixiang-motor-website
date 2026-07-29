@@ -75,7 +75,7 @@ test('Russia market page leads with CB off-road then horizontal 110-150 and spar
   assert.match(html, /id="cb-offroad"/);
   assert.match(html, /id="horizontal-engines"/);
   assert.match(html, /\.\.\/\.\.\/images\/CB\/1\.webp/);
-  assert.match(html, /href="\/en\/product-detail\.html\?series=cb-offroad"/);
+  assert.match(html, /href="\/en\/product-detail\?series=cb-offroad"/);
   assert.doesNotMatch(html, /href="\/ru\/dvigatel-140\/"/);
   assertCommercialThresholds(html, 'ru');
   assertInquiryForm(html, 'Russia');
@@ -127,8 +127,8 @@ test('Russia hero contract enforces a desktop two-column layout', () => {
 test('Russia uses the approved H1 and canonical CB product route', () => {
   const html = read('ru/russia/index.html');
   assert.match(html, /<h1>Двигатели CB для внедорожных мотоциклов и горизонтальные серии в России<\/h1>/);
-  assert.match(html, /href="\/en\/product-detail\.html\?series=cb-offroad"/);
-  assert.doesNotMatch(html, /href="\/en\/product-detail\?series=cb-offroad"/);
+  assert.match(html, /href="\/en\/product-detail\?series=cb-offroad"/);
+  assert.doesNotMatch(html, /href="\/en\/product-detail\.html\?series=cb-offroad"/);
 });
 
 test('Colombia production files are restored to the main-site version', () => {

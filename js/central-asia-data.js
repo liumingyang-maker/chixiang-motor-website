@@ -21,7 +21,7 @@
         reverse: 'По модели',
         bestFor: 'Мотоциклы и универсальные грузовые трициклы',
         summary: 'Простая конструкция и удобное обслуживание для повседневной работы.',
-        heroImage: 'images/central-asia-hero-products/cg-air.png',
+        heroImage: 'images/central-asia-hero-products/cg-air.webp',
         advantages: [
           'Широкий выбор конфигураций',
           'Удобное обслуживание',
@@ -43,7 +43,7 @@
         reverse: 'Опционально, встроенный',
         bestFor: 'Грузовые трициклы и длительная работа под нагрузкой',
         summary: 'Стабильный тепловой режим при длительной перевозке и регулярной нагрузке.',
-        heroImage: 'images/central-asia-hero-products/cg-water.png',
+        heroImage: 'images/central-asia-hero-products/cg-water.webp',
         advantages: [
           'Водяная система охлаждения',
           'Встроенный реверс — опция',
@@ -65,7 +65,7 @@
         reverse: 'Без встроенного реверса',
         bestFor: 'Высокая нагрузка и тяжёлые грузовые трициклы',
         summary: 'Усиленная водяная серия CG для более тяжёлых режимов работы.',
-        heroImage: 'images/central-asia-hero-products/cg-heavy.png',
+        heroImage: 'images/central-asia-hero-products/cg-heavy.webp',
         advantages: [
           'Без встроенного реверса'
         ],
