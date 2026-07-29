@@ -104,7 +104,7 @@ test('defines responsive, accessible and overflow-safe page styles', () => {
   assert.match(css, /overflow-x:\s*hidden/);
   assert.match(css, /safe-area-inset-bottom/);
   assert.match(css, /:focus-visible/);
-  assert.match(css, /central-asia-hero-bg-v2\.png/);
+  assert.match(css, /central-asia-hero-bg-v2\.webp/);
   assert.match(css, /\.ca-button-primary\s*\{[^}]*color:\s*#fff/s);
   assert.match(css, /\.ca-button-primary:active/);
   assert.match(css, /\.ca-button-primary:disabled/);
@@ -117,9 +117,9 @@ test('composes transparent hero engines directly on the snow scene without an ou
   const data = read('js/central-asia-data.js');
   const script = read('js/central-asia-landing.js');
 
-  assert.match(data, /heroImage:\s*'images\/central-asia-hero-products\/cg-air\.png'/);
-  assert.match(data, /heroImage:\s*'images\/central-asia-hero-products\/cg-water\.png'/);
-  assert.match(data, /heroImage:\s*'images\/central-asia-hero-products\/cg-heavy\.png'/);
+  assert.match(data, /heroImage:\s*'images\/central-asia-hero-products\/cg-air\.webp'/);
+  assert.match(data, /heroImage:\s*'images\/central-asia-hero-products\/cg-water\.webp'/);
+  assert.match(data, /heroImage:\s*'images\/central-asia-hero-products\/cg-heavy\.webp'/);
   assert.match(script, /loading="eager" fetchpriority="high"/);
   assert.match(css, /\.ca-hero-product-image::before\s*\{[^}]*radial-gradient\(/s);
   assert.match(css, /\.ca-hero-product-image::after\s*\{[^}]*filter:\s*blur\(/s);

@@ -99,7 +99,7 @@ body.ca-page {
   color: #fff;
   background:
     linear-gradient(90deg, rgba(4, 17, 37, .98) 0%, rgba(5, 25, 52, .94) 42%, rgba(7, 31, 61, .6) 70%, rgba(6, 22, 43, .42) 100%),
-    url("../images/central-asia-hero-bg-v2.png") center / cover no-repeat;
+    url("../images/central-asia-hero-bg-v2.webp") center / cover no-repeat;
 }
 .ca-hero::before {
   content: "";

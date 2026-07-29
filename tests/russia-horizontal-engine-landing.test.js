@@ -283,7 +283,8 @@ test('defines page-scoped responsive and accessible presentation', () => {
   assert.match(css, /@media\s*\(max-width:\s*899px\)/);
   assert.match(css, /@media\s*\(max-width:\s*639px\)/);
   assert.match(css, /prefers-reduced-motion/);
-  assert.match(css, /overflow-x:\s*(?:clip|hidden)/);
+  assert.doesNotMatch(css, /\.rh-page\s*\{[^}]*overflow-x:/s);
+  assert.match(css, /\.rh-hero\s*\{[^}]*overflow:\s*hidden/s);
   assert.match(css, /\.rh-hero h1\s*\{[^}]*overflow-wrap:\s*anywhere/);
   assert.match(css, /\.rh-header\s*\{[^}]*color:\s*var\(--rh-white\)/);
   assert.match(css, /\.rh-procurement-grid span\s*\{[^}]*color:\s*var\(--rh-white\)/);
