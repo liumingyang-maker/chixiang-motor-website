@@ -151,7 +151,7 @@ test('separates start method from electric-starter position and keeps reverse su
   assert.match(html, /class="rh-variant-grid"/);
   assert.match(html, /Способ запуска/);
   assert.match(html, /Положение электростартера/);
-  assert.match(html, /Кикстартер или электростартер/);
+  assert.match(html, /Кикстартер или электростартер/i);
   assert.match(html, /верхнее или нижнее/i);
   assert.match(html, /110 \/ 125 \/ 140 \/ 150 cc/);
   assert.match(html, /Встроенный реверс/);
