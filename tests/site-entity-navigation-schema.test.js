@@ -110,6 +110,28 @@ test('sitemap manifest contains exactly 51 canonical source pages', () => {
   }
 });
 
+test('maintenance manifest reproduces the canonical role and breadcrumb contract', () => {
+  const modulePath = path.join(root, 'scripts', 'site-entity-manifest.js');
+  assert.ok(fs.existsSync(modulePath), 'missing scripts/site-entity-manifest.js');
+  const { loadManifest, organizationId: actualOrganizationId, websiteId: actualWebsiteId } = require(modulePath);
+  const manifest = loadManifest(root);
+  const expected = sitemapPages();
+
+  assert.equal(actualOrganizationId, organizationId);
+  assert.equal(actualWebsiteId, websiteId);
+  assert.equal(manifest.length, 51);
+  assert.deepEqual(manifest.map(entry => entry.url), expected.map(page => page.url));
+  for (let index = 0; index < expected.length; index += 1) {
+    const page = expected[index];
+    const entry = manifest[index];
+    assert.equal(entry.file, page.file);
+    assert.equal(entry.language, page.language);
+    assert.equal(entry.role, pageRole(page));
+    assert.equal(entry.schemaType, expectedPageType(entry.role));
+    assert.deepEqual(entry.breadcrumb.map(item => item.item), expectedTrail(page));
+  }
+});
+
 test('all canonical pages publish their safe primary page type and stable entity references', () => {
   for (const page of sitemapPages()) {
     const html = read(page.file);
