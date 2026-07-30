@@ -7,8 +7,8 @@
 ## 结果概览
 
 - 51 个 canonical 页面全部进入逐页矩阵。
-- 47 个页面有事实或翻译修正，标记为 `CHANGED`。
-- 4 个页面完成核验但不需要为了凑数修改，标记为 `VERIFIED_NO_CHANGE`。
+- 48 个页面有事实、翻译或预览阶段发现的资源修正，标记为 `CHANGED`。
+- 3 个页面完成核验但不需要为了凑数修改，标记为 `VERIFIED_NO_CHANGE`。
 - `en/product-detail.html` 仍是 `noindex` 查询工具，不进入 sitemap；其家族内容按已批准事实收窄。
 - 152FMH 型号与排量映射仍保持待确认，没有在本次修改中推断或补写。
 
@@ -69,23 +69,28 @@
 - 秘鲁、哥伦比亚、俄罗斯和中亚继续保留各自原有 B2B、MOQ、物流和联系方式策略；没有把一个国家的政策复制到另一个国家。
 - 俄罗斯卧式页面补齐既有五语言产品家族的 hreflang 互链，不改变该页的广告或转化路径。
 
+## 预览阶段修正
+
+- 五语言卧式产品家族中，英语、西语、葡语和阿拉伯语页面原来引用不存在的同名 `.png`；已改为仓库中现有的 `.webp`，恢复主图和卡片图，不新增素材或布局。
+- 阿拉伯语联系页的反垃圾隐藏字段原来在 RTL 布局中产生约 11,000px 的离屏画布；四个翻译联系页统一使用裁剪式隐藏类，字段名称、提交合同和反垃圾判断保持不变。
+- 本地截图脚本通过浏览器设备模拟强制真实 390×844、768×1024、1024×1366 和 1440×1000 视口，避免 Windows Edge 最小窗口宽度导致的错误裁图。
+
 ## 仅核验页面
 
 以下 canonical 页面已核验，但没有制造无必要的内容改动：
 
 - `en/cb-engine.html`
 - `en/engine-parts.html`
-- `en/horizontal-engine.html`
 - `ru/russia/index.html`
 
 它们的 canonical、H1、hreflang 或现有市场转化集成由自动测试覆盖。
 
 ## 明确未改变的边界
 
-- 没有改变页面布局、CSS 视觉系统或 URL 结构。
+- 没有改变可见页面设计、视觉系统或 URL 结构；CSS 仅新增不可见反垃圾字段的安全隐藏规则。
 - 没有新增或删除 canonical URL；`sitemap.xml` 和 `robots.txt` 行为未改变。
 - 没有改变 Google Ads、Yandex Metrica、WhatsApp 转化或成功提交后的转化触发逻辑。
-- 没有改变任何表单字段合同、Turnstile、`/api/contact`、Cloudflare Worker 或邮件逻辑。
+- 没有改变任何表单字段合同、提交处理器、Turnstile、`/api/contact`、Cloudflare Worker 或邮件逻辑。
 - 没有改变 Schema 类型、Schema 生成方式或加载行为；只修正了现有 Organization 数据中的注册年份事实与 Logo URL。
 - 没有部署、推送、创建 PR 或合并。本阶段只生成本地代码和预览证据，等待网站所有者审核。
 
