@@ -52,5 +52,10 @@ test('page matrix covers every canonical sitemap URL exactly once', () => {
     assert.ok(row.source_file, row.url);
     assert.ok(row.decision, row.url);
     if (row.change_class !== 'VERIFY_ONLY') assert.ok(row.source_fact_ids, row.url);
+    const pathname = new URL(row.url).pathname;
+    const slug = (pathname.replace(/^\/+|\/+$/g, '') || 'root').replaceAll('/', '__');
+    const language = pathname.split('/').filter(Boolean)[0];
+    assert.equal(row.preview_desktop, `outputs/phase-6-1b-preview/${language}/${slug}--desktop.png`, `${row.url}:desktop-preview`);
+    assert.equal(row.preview_mobile, `outputs/phase-6-1b-preview/${language}/${slug}--mobile.png`, `${row.url}:mobile-preview`);
   }
 });
