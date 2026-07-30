@@ -45,10 +45,14 @@ test('homepage is a current engine-supply gateway with form-first actions', () =
   assert.doesNotMatch(html, /<h3>Motorcycles<\/h3>/);
   assert.doesNotMatch(html, /series=motorcycles/i);
   assert.doesNotMatch(html, /CKD\/SKD|In Preparation/i);
+  assert.match(html, /Industry experience since 2003[\s\S]*8,000\+ engines monthly[\s\S]*50\+ countries[\s\S]*ISO 9001/i);
+  assert.match(html, /href="\/en\/about"[^>]*>About Our Factory<\/a>/);
+  assert.match(html, /href="\/en\/products"[^>]*>Explore Engine Programs<\/a>/);
 });
 
 test('About is the detailed company fact owner', () => {
   const html = read('en/about.html');
+  const body = html.slice(html.indexOf('<body'));
   for (const pattern of [
     /Chongqing Chixiang Motorcycle Manufacturing Co\., Ltd\./,
     /industry experience since 2003/i,
@@ -61,6 +65,8 @@ test('About is the detailed company fact owner', () => {
     /ISO 9001 quality management system certified/i,
     /CCC-certified products are available/i
   ]) assert.match(html, pattern, String(pattern));
+  assert.match(body.replace(/\s+/g, ' '), /No\. 1-2, Building 7, No\. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China/);
+  assert.doesNotMatch(body, /product-detail\?series=tricycles/i);
 });
 
 test('Products separates current supply from the future vehicle program', () => {
@@ -68,11 +74,15 @@ test('Products separates current supply from the future vehicle program', () => 
   assert.match(html, /Motorcycles &amp; CKD\/SKD Kits/);
   const future = futureCard(html);
   assert.match(future, /In Preparation/);
-  assert.match(future, /Specifications and wholesale availability will be published after production approval\./);
+  assert.match(future, /This product program is in preparation\. Specifications and wholesale availability will be published after production approval\./);
   assert.doesNotMatch(future, /Get Quote|Request Quote|MOQ|US\$|\$\d|three months|3 months/i);
   assert.doesNotMatch(html, /<h3>Tricycles<\/h3>/);
   assert.doesNotMatch(html, /Complete Tricycle|complete-vehicle/i);
   assert.match(html, /cargo-tricycle engine/i);
+  assert.doesNotMatch(html, /product-detail\?series=(?:horizontal|cg-air|cb-offroad|parts|tricycles)(?=["&#])/i);
+  for (const owner of ['horizontal-engine', 'cg-engine', 'cb-engine', 'engine-parts']) {
+    assert.match(html, new RegExp(`href="/en/${owner}"`), owner);
+  }
 });
 
 test('structured data uses one stable company identity and no invented product commerce data', () => {
@@ -82,7 +92,10 @@ test('structured data uses one stable company identity and no invented product c
 
   assert.equal((home.match(/"@type"\s*:\s*"Organization"/g) || []).length, 1);
   assert.match(home, /"@id"\s*:\s*"https:\/\/chixiangmotor\.com\/#organization"/);
+  assert.match(home, /"name"\s*:\s*"CHIXIANG MOTOR"/);
+  assert.match(home, /"legalName"\s*:\s*"Chongqing Chixiang Motorcycle Manufacturing Co\., Ltd\."/);
   assert.match(about, /"@id"\s*:\s*"https:\/\/chixiangmotor\.com\/#organization"/);
+  assert.match(about, /"name"\s*:\s*"CHIXIANG MOTOR"/);
   assert.match(products, /"@type"\s*:\s*"CollectionPage"/);
   assert.match(products, /"@type"\s*:\s*"ItemList"/);
 
@@ -117,4 +130,13 @@ test('active company governance excludes Made-in-China as evidence', () => {
     read('docs/geo-entity/GEO_ENTITY_AUDIT.md'),
     /Made-in-China profile is excluded and is not evidence/i
   );
+
+  const facts = read('docs/geo-entity/fact-calibration/COMPANY_FACT_PACK.csv');
+  assert.match(facts, /"product-current-supply-scope"[\s\S]*"APPROVED_PUBLIC"/);
+  assert.match(facts, /"roadmap-motorcycle-ckd-skd"[\s\S]*"APPROVED_PUBLIC"/);
+
+  const matrix = read('docs/geo-entity/phase-6-1b/PAGE_CHANGE_MATRIX.csv');
+  for (const page of ['en-home', 'en-about', 'en-products']) {
+    assert.match(matrix, new RegExp(`^${page},.*english owner contract`, 'm'), `${page}: traceable change row`);
+  }
 });

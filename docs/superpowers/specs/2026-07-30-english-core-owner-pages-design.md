@@ -296,6 +296,8 @@ Each page must have:
 
 ### 10.3 Structured data boundaries
 
+For the three English owner pages in this design only, this section supersedes the general new-Schema deferral in the earlier full-site alignment design. The authorization is limited to Organization, WebSite, WebPage, AboutPage, CollectionPage and ItemList records that mirror approved visible content. It does not authorize Product, ProductGroup, Offer, Review, AggregateRating, price, availability or future-program Schema.
+
 - Use one stable Organization identity and legal name.
 - About is the detailed company-fact owner.
 - Homepage may contain a compact Organization/WebSite summary consistent with About.
