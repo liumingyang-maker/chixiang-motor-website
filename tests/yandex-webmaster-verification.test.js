@@ -9,6 +9,25 @@ const verificationFile = path.join(
   '..',
   'yandex_8a3590afcb928a95.html'
 );
+const nonWwwVerificationFile = path.join(
+  __dirname,
+  '..',
+  'yandex_22d63909f0d852e1.html'
+);
+
+test('publishes the non-www Yandex Webmaster verification file at the site root', () => {
+  assert.ok(
+    fs.existsSync(nonWwwVerificationFile),
+    'the exact non-www verification filename must exist at the site root'
+  );
+
+  const html = fs.readFileSync(nonWwwVerificationFile, 'utf8');
+  assert.match(
+    html,
+    /<meta http-equiv="Content-Type" content="text\/html; charset=UTF-8">/
+  );
+  assert.match(html, /<body>Verification: 22d63909f0d852e1<\/body>/);
+});
 
 test('publishes the Yandex Webmaster verification file at the site root', () => {
   assert.ok(
@@ -66,6 +85,33 @@ test('returns the verification file with 200 instead of an HTML canonical redire
   assert.equal(response.headers.get('location'), null);
   assert.match(response.headers.get('cache-control'), /(?:^|,)\s*no-transform(?:,|$)/);
   assert.match(await response.text(), /Verification: 8a3590afcb928a95/);
+});
+
+test('returns the non-www verification file with 200 instead of stripping .html', async () => {
+  const routerFile = path.join(__dirname, '..', 'workers', 'site-router.mjs');
+  const { default: router } = await import(pathToFileURL(routerFile).href);
+  let fetchedPath = '';
+  const env = {
+    ASSETS: {
+      fetch(request) {
+        fetchedPath = new URL(request.url).pathname;
+        return Promise.resolve(new Response(
+          '<html><body>Verification: 22d63909f0d852e1</body></html>',
+          { status: 200, headers: { 'Content-Type': 'text/html; charset=UTF-8' } }
+        ));
+      }
+    }
+  };
+
+  const response = await router.fetch(
+    new Request('https://chixiangmotor.com/yandex_22d63909f0d852e1.html'),
+    env
+  );
+
+  assert.equal(fetchedPath, '/yandex_22d63909f0d852e1');
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get('location'), null);
+  assert.match(await response.text(), /Verification: 22d63909f0d852e1/);
 });
 
 test('passes every other clean canonical Worker request through to static assets unchanged', async () => {

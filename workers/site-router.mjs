@@ -3,7 +3,8 @@ const CUSTOM_HOSTS = new Set(['chixiangmotor.com', 'www.chixiangmotor.com']);
 const LANGUAGE_ROOTS = new Set(['/ar', '/en', '/es', '/pt', '/ru']);
 const VERIFICATION_ASSETS = new Map([
   ['/yandex_68b52fccf05e4a88.html', '/yandex_68b52fccf05e4a88'],
-  ['/yandex_8a3590afcb928a95.html', '/yandex_8a3590afcb928a95']
+  ['/yandex_8a3590afcb928a95.html', '/yandex_8a3590afcb928a95'],
+  ['/yandex_22d63909f0d852e1.html', '/yandex_22d63909f0d852e1']
 ]);
 const LEGACY_PATHS = new Map([
   ['/ru/uzbekistan/', '/ru/central-asia/'],
