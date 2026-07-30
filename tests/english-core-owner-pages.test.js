@@ -20,6 +20,21 @@ function futureCard(html) {
   return match[0];
 }
 
+test('Products page inline background images resolve to existing local assets', () => {
+  const html = read('en/products.html');
+  const imageUrls = [...html.matchAll(/background-image\s*:\s*url\((['"]?)([^)'"]+)\1\)/gi)]
+    .map(match => match[2])
+    .filter(url => !/^(?:data:|https?:)/i.test(url));
+
+  assert.ok(imageUrls.length > 0, 'expected inline product background images');
+
+  for (const imageUrl of imageUrls) {
+    const cleanPath = decodeURIComponent(imageUrl.split(/[?#]/, 1)[0]);
+    const assetPath = path.resolve(root, 'en', cleanPath);
+    assert.ok(fs.existsSync(assetPath), `${imageUrl}: local image asset is missing`);
+  }
+});
+
 test('English owner pages publish their approved visible H1', () => {
   const expected = {
     'en/index.html': 'Motorcycle & Cargo-Tricycle Engine Manufacturer in China',
