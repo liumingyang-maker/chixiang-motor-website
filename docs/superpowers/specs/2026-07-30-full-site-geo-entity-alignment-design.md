@@ -102,7 +102,7 @@ Phase 6.1B 将 EN、RU、ES、PT、AR 五种语言的全部 51 个 canonical 页
 - HW200、HW250、HW300、HW350 全部采用 1.5 L 机油容量、18级磁电机和 20 滚子离合器，且无内置倒挡。
 - “18级”是网站所有者指定术语，不能改写成“18极”。英文技术名称确认前，对外英文使用不改变含义的中性表达 `high-output magneto`，不继续使用 `18-pole magneto`。
 - Automatic-clutch water-cooled 与内置倒挡系列并列；只有 CG150 和 CG175，实际排量沿用相应 CG 款，不自行补写未确认数值。
-- 152FMH 型号与 110/125/130 营销排量关系继续保留为待确认。本阶段不扩写、不自动统一，也不把行业经验写入页面。
+- 俄罗斯卧式发动机的正式 CX 型号、YX 市场参考名称、启动、离合、倒挡及 150 cm³ 缸头油冷口径，统一遵循 `2026-07-30-russia-horizontal-cx-yx-model-governance-design.md`。未获网站所有者确认的实际排量、缸径和行程不得从同行资料复制为 CHIXIANG 规格。
 
 ## 5. 逐页变更矩阵
 
@@ -202,7 +202,7 @@ page_id,url,source_file,language,page_type,entity_owner,change_class,source_fact
 - 公开 HTML 不再出现 HW 内置倒挡或 `18-pole magneto`；
 - HW 只使用 `HW Water` 作为主要家族名，Hanwei 和 CG Heavy 只作为别名；
 - `CG150B` 不再作为型号出现；
-- 152FMH 待确认冲突没有被偷偷补全。
+- 卧式发动机按已批准的 CX/YX 双名称和配置规则公开；未批准的实际排量、缸径和行程保持不公开。
 
 ### 9.2 SEO 与语言测试
 
