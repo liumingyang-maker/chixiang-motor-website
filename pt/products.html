@@ -31,33 +31,84 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../css/style.css?v=20260527-bg">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": "https://chixiangmotor.com/pt/products#webpage",
-        "url": "https://chixiangmotor.com/pt/products",
-        "name": "Motores e peças CHIXIANG MOTOR",
-        "description": "Famílias atuais de motores para motocicletas e triciclos de carga e peças selecionadas.",
-        "about": { "@id": "https://chixiangmotor.com/#organization" },
-        "mainEntity": { "@id": "https://chixiangmotor.com/pt/products#current-product-families" },
-        "inLanguage": "pt"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "https://chixiangmotor.com/pt/products#current-product-families",
+      "name": "Famílias atuais de motores e peças",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://chixiangmotor.com/pt/motor-horizontal",
+          "name": "Motores horizontais"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://chixiangmotor.com/pt/motor-cg",
+          "name": "Motores CG"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://chixiangmotor.com/pt/motor-cb",
+          "name": "Motores CB"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://chixiangmotor.com/pt/pecas-de-motor",
+          "name": "Peças de motor"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json" data-site-entity-graph>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chixiangmotor.com/pt/products#webpage",
+      "url": "https://chixiangmotor.com/pt/products",
+      "name": "Produtos",
+      "isPartOf": {
+        "@id": "https://chixiangmotor.com/#website"
       },
-      {
-        "@type": "ItemList",
-        "@id": "https://chixiangmotor.com/pt/products#current-product-families",
-        "name": "Famílias atuais de motores e peças",
-        "numberOfItems": 4,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://chixiangmotor.com/pt/motor-horizontal", "name": "Motores horizontais" },
-          { "@type": "ListItem", "position": 2, "url": "https://chixiangmotor.com/pt/motor-cg", "name": "Motores CG" },
-          { "@type": "ListItem", "position": 3, "url": "https://chixiangmotor.com/pt/motor-cb", "name": "Motores CB" },
-          { "@type": "ListItem", "position": 4, "url": "https://chixiangmotor.com/pt/pecas-de-motor", "name": "Peças de motor" }
-        ]
+      "publisher": {
+        "@id": "https://chixiangmotor.com/#organization"
+      },
+      "inLanguage": "pt",
+      "breadcrumb": {
+        "@id": "https://chixiangmotor.com/pt/products#breadcrumb"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chixiangmotor.com/pt/products#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://chixiangmotor.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Produtos",
+          "item": "https://chixiangmotor.com/pt/products"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -111,6 +162,7 @@
 
   <section class="page-header products-page-header">
     <div class="container">
+      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="/pt/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Produtos</span></nav>
       <div class="products-hero-copy">
         <span>Catalogo de produtos da fabrica</span>
         <h1>Motores, peças e futuro programa de motocicletas</h1>

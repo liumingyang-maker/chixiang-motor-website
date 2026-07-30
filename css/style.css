@@ -3479,6 +3479,33 @@ body:has(.about-page-header) .section-subtitle {
   color: #999;
 }
 
+/* Canonical navigation path shared by all language and market pages. */
+.entity-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.entity-breadcrumb [aria-hidden="true"] {
+  opacity: 0.55;
+}
+
+.entity-breadcrumb [aria-current="page"] {
+  color: inherit;
+}
+
+.entity-breadcrumb a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.entity-breadcrumb--standalone {
+  width: min(100% - 2rem, 1200px);
+  margin: 1rem auto;
+  padding: 0;
+}
+
 /* Card outline button 鈥?light */
 .card-actions .btn-outline {
   border-color: #ddd;

@@ -31,38 +31,89 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../css/style.css?v=20260527-bg">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": "https://chixiangmotor.com/ar/products#webpage",
-        "url": "https://chixiangmotor.com/ar/products",
-        "name": "محركات وقطع غيار CHIXIANG MOTOR",
-        "description": "العائلات الحالية لمحركات الدراجات النارية ودراجات الشحن ثلاثية العجلات وقطع الغيار المختارة.",
-        "about": { "@id": "https://chixiangmotor.com/#organization" },
-        "mainEntity": { "@id": "https://chixiangmotor.com/ar/products#current-product-families" },
-        "inLanguage": "ar"
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://chixiangmotor.com/ar/products#current-product-families",
-        "name": "العائلات الحالية للمحركات وقطع الغيار",
-        "numberOfItems": 4,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://chixiangmotor.com/ar/horizontal-engine", "name": "المحركات الأفقية" },
-          { "@type": "ListItem", "position": 2, "url": "https://chixiangmotor.com/ar/cg-engine", "name": "محركات CG" },
-          { "@type": "ListItem", "position": 3, "url": "https://chixiangmotor.com/ar/cb-engine", "name": "محركات CB" },
-          { "@type": "ListItem", "position": 4, "url": "https://chixiangmotor.com/ar/engine-parts", "name": "قطع غيار المحركات" }
-        ]
-      }
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "https://chixiangmotor.com/ar/products#current-product-families",
+      "name": "العائلات الحالية للمحركات وقطع الغيار",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://chixiangmotor.com/ar/horizontal-engine",
+          "name": "المحركات الأفقية"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://chixiangmotor.com/ar/cg-engine",
+          "name": "محركات CG"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://chixiangmotor.com/ar/cb-engine",
+          "name": "محركات CB"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://chixiangmotor.com/ar/engine-parts",
+          "name": "قطع غيار المحركات"
+        }
+      ]
+    }
+  ]
+}
+</script>
   <style>
     .navbar .container, .nav-logo, .nav-links, .nav-right, .hero-cta, .cta-actions, .footer-bottom { direction: rtl; }
     .lang-dropdown { left: 0; right: auto; text-align: right; }
   </style>
+  <script type="application/ld+json" data-site-entity-graph>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chixiangmotor.com/ar/products#webpage",
+      "url": "https://chixiangmotor.com/ar/products",
+      "name": "المنتجات",
+      "isPartOf": {
+        "@id": "https://chixiangmotor.com/#website"
+      },
+      "publisher": {
+        "@id": "https://chixiangmotor.com/#organization"
+      },
+      "inLanguage": "ar",
+      "breadcrumb": {
+        "@id": "https://chixiangmotor.com/ar/products#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chixiangmotor.com/ar/products#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الرئيسية",
+          "item": "https://chixiangmotor.com/ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المنتجات",
+          "item": "https://chixiangmotor.com/ar/products"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -115,6 +166,7 @@
 
   <section class="page-header products-page-header">
     <div class="container">
+      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="/ar/">الرئيسية</a><span aria-hidden="true">/</span><span aria-current="page">المنتجات</span></nav>
       <div class="products-hero-copy">
         <span>&#1603;&#1575;&#1578;&#1575;&#1604;&#1608;&#1580; &#1575;&#1604;&#1605;&#1589;&#1606;&#1593;</span>
         <h1>المحركات وقطع الغيار وبرنامج الدراجات النارية المستقبلي</h1>

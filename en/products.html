@@ -31,33 +31,84 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="../css/style.css?v=20260527-bg">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": "https://chixiangmotor.com/en/products#webpage",
-        "url": "https://chixiangmotor.com/en/products",
-        "name": "Motorcycle Engines, Parts, Motorcycles & CKD/SKD Programs",
-        "description": "Current Chixiang motorcycle and cargo-tricycle engine families, selected engine parts, and a separately labeled future vehicle program.",
-        "about": { "@id": "https://chixiangmotor.com/#organization" },
-        "mainEntity": { "@id": "https://chixiangmotor.com/en/products#current-product-families" },
-        "inLanguage": "en"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "https://chixiangmotor.com/en/products#current-product-families",
+      "name": "Current Chixiang engine and parts families",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://chixiangmotor.com/en/horizontal-engine",
+          "name": "Horizontal Motorcycle Engines"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://chixiangmotor.com/en/cg-engine",
+          "name": "CG Motorcycle Engines"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://chixiangmotor.com/en/cb-engine",
+          "name": "CB Motorcycle Engines"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://chixiangmotor.com/en/engine-parts",
+          "name": "Motorcycle Engine Parts"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json" data-site-entity-graph>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://chixiangmotor.com/en/products#webpage",
+      "url": "https://chixiangmotor.com/en/products",
+      "name": "Products",
+      "isPartOf": {
+        "@id": "https://chixiangmotor.com/#website"
       },
-      {
-        "@type": "ItemList",
-        "@id": "https://chixiangmotor.com/en/products#current-product-families",
-        "name": "Current Chixiang engine and parts families",
-        "numberOfItems": 4,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://chixiangmotor.com/en/horizontal-engine", "name": "Horizontal Motorcycle Engines" },
-          { "@type": "ListItem", "position": 2, "url": "https://chixiangmotor.com/en/cg-engine", "name": "CG Motorcycle Engines" },
-          { "@type": "ListItem", "position": 3, "url": "https://chixiangmotor.com/en/cb-engine", "name": "CB Motorcycle Engines" },
-          { "@type": "ListItem", "position": 4, "url": "https://chixiangmotor.com/en/engine-parts", "name": "Motorcycle Engine Parts" }
-        ]
+      "publisher": {
+        "@id": "https://chixiangmotor.com/#organization"
+      },
+      "inLanguage": "en",
+      "breadcrumb": {
+        "@id": "https://chixiangmotor.com/en/products#breadcrumb"
       }
-    ]
-  }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chixiangmotor.com/en/products#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://chixiangmotor.com/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Products",
+          "item": "https://chixiangmotor.com/en/products"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -117,6 +168,7 @@
 
   <section class="page-header products-page-header">
     <div class="container">
+      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="/en/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Products</span></nav>
       <div class="products-hero-copy">
         <span>Factory Product Catalog</span>
         <h1>Motorcycle Engines, Parts, Motorcycles &amp; CKD/SKD Programs</h1>
