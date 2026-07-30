@@ -877,7 +877,7 @@ h4 { font-size: 1.1rem; }
   align-items: center;
   overflow: hidden;
   color: #fff;
-  background-image: url('../images/factory-showcase/about-factory-hero-7.webp');
+  background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/factory-1.webp');
   background-size: cover;
   background-position: center;
   border-bottom: 0;
@@ -3303,7 +3303,7 @@ body:has(.about-page-header) .section-subtitle {
     min-height: 420px;
     padding-top: calc(56px + 2rem);
     padding-bottom: 2rem;
-    background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.9) 0%, rgba(6, 18, 35, 0.62) 62%, rgba(6, 18, 35, 0.25) 100%), url('../images/factory-showcase/about-factory-hero-7.webp');
+    background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.92) 0%, rgba(6, 18, 35, 0.72) 70%, rgba(6, 18, 35, 0.4) 100%), url('../images/factory-showcase/factory-1.webp');
     background-position: center;
   }
 
@@ -3515,7 +3515,7 @@ body:has(.about-page-header) .section-subtitle {
 /* About page factory hero must override the late light-theme page-header rule. */
 .page-header.about-page-header {
   border-bottom: 0;
-  background-image: url('../images/factory-showcase/about-factory-hero-7.webp');
+  background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/factory-1.webp');
   background-size: cover;
   background-position: center;
 }
