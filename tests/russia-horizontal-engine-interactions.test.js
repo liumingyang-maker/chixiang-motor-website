@@ -26,19 +26,19 @@ test('exports deterministic horizontal-engine interaction helpers', () => {
 test('normalizes unique mixed-model selections', () => {
   const { normalizeModels } = require(scriptPath);
   assert.equal(
-    normalizeModels(['152FMH', '154FMI', '152FMH', '', ' 153FMI ']),
-    '152FMH, 154FMI, 153FMI'
+    normalizeModels(['CX152FMH', 'CX154FMI', 'CX152FMH', '', ' CX1P60FMJ ']),
+    'CX152FMH, CX154FMI, CX1P60FMJ'
   );
 });
 
 test('builds a qualified Russian wholesale WhatsApp URL', () => {
   const { buildWhatsAppUrl } = require(scriptPath);
-  const url = buildWhatsAppUrl('154FMI');
+  const url = buildWhatsAppUrl('CX154FMI');
   assert.match(url, /^https:\/\/wa\.me\/8619008225410\?text=/);
 
   const message = decodeURIComponent(url.split('?text=')[1]);
   assert.match(message, /оптов/i);
-  assert.match(message, /154FMI/);
+  assert.match(message, /CX154FMI/);
   assert.match(message, /MOQ 40/i);
   assert.match(
     message,
@@ -50,29 +50,29 @@ test('builds a qualified Russian wholesale WhatsApp URL', () => {
 
 test('selectModel checks the requested model and serializes the form value', () => {
   const { selectModel } = require(scriptPath);
-  const first = { value: '152FMH', checked: true };
-  const second = { value: '154FMI', checked: false };
+  const first = { value: 'CX152FMH', checked: true };
+  const second = { value: 'CX1P60FMJ', checked: false };
   const hidden = { value: '' };
   const form = {
     querySelector: selector => selector === '[name="product"]' ? hidden : null,
     querySelectorAll: selector => selector === '[data-model-checkbox]' ? [first, second] : []
   };
 
-  assert.equal(selectModel(form, '154FMI'), true);
+  assert.equal(selectModel(form, 'CX1P60FMJ'), true);
   assert.equal(second.checked, true);
-  assert.equal(hidden.value, '152FMH, 154FMI');
+  assert.equal(hidden.value, 'CX152FMH, CX1P60FMJ');
 });
 
 test('selectModel leaves form unchanged for an unknown model', () => {
   const { selectModel } = require(scriptPath);
-  const checkbox = { value: '152FMH', checked: false };
+  const checkbox = { value: 'CX152FMH', checked: false };
   const hidden = { value: '' };
   const form = {
     querySelector: selector => selector === '[name="product"]' ? hidden : null,
     querySelectorAll: () => [checkbox]
   };
 
-  assert.equal(selectModel(form, 'UNKNOWN'), false);
+  assert.equal(selectModel(form, 'YX152FMH'), false);
   assert.equal(checkbox.checked, false);
   assert.equal(hidden.value, '');
 });

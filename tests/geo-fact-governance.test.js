@@ -70,3 +70,53 @@ test('HW family keeps the owner terminology and approved all-model configuration
   assert.match(hw.reverse_configuration, /No built-in reverse/);
   assert.doesNotMatch(hw.candidate_master_values, /18-pole|18极/i);
 });
+
+test('horizontal models use approved CX codes and YX market-reference aliases', () => {
+  const expected = {
+    'model-152fmh': ['CX152FMH', /YX152FMH/, /YX110-class/, '110'],
+    'model-153fmi': ['CX153FMI', /YX153FMI/, /YX125-class/, '125'],
+    'model-154fmi': ['CX154FMI', /YX154FMI/, /YX125-class/, '125'],
+    'model-1p56fmj': ['CX1P56FMJ', /YX1P56FMJ/, /YX140-class/, '140'],
+    'model-1p60fmj': ['CX1P60FMJ', /YX1P60FMJ/, /YX150-class.*W150-2/, '150']
+  };
+
+  for (const [id, [modelCode, aliasCode, aliasClass, nominal]] of Object.entries(expected)) {
+    const record = records.find(item => item.spec_id === id);
+    assert.ok(record, id);
+    assert.equal(record.model_code, modelCode, id);
+    assert.match(record.aliases, aliasCode, id);
+    assert.match(record.aliases, aliasClass, id);
+    assert.equal(record.nominal_displacement_cc, nominal, id);
+    assert.equal(record.approval_status, 'APPROVED_PUBLIC', id);
+    assert.equal(record.visibility, 'PUBLIC', id);
+    assert.match(record.evidence_sources, /owner-confirmation:2026-07-30/, id);
+    for (const field of ['actual_displacement_cc', 'bore_mm', 'stroke_mm']) {
+      assert.equal(record[field], '', `${id}:${field}`);
+    }
+  }
+});
+
+test('horizontal model configurations separate start method from electric-starter position', () => {
+  const ids = ['model-152fmh', 'model-153fmi', 'model-154fmi', 'model-1p56fmj', 'model-1p60fmj'];
+  for (const id of ids) {
+    const record = records.find(item => item.spec_id === id);
+    assert.match(record.start_method, /Kick and electric start/);
+    assert.match(record.configuration, /Electric starter position: upper or lower/);
+    assert.match(record.gear_pattern, /4 gears/);
+    assert.match(record.reverse_configuration, /Built-in reverse.*1\+1 gearbox/);
+  }
+
+  assert.match(records.find(item => item.spec_id === 'model-152fmh').clutch, /Manual or semi-automatic/);
+  assert.match(records.find(item => item.spec_id === 'model-153fmi').clutch, /Manual or semi-automatic/);
+  assert.equal(records.find(item => item.spec_id === 'model-154fmi').clutch, 'Manual clutch');
+  assert.match(records.find(item => item.spec_id === 'model-1p56fmj').clutch, /Manual or semi-automatic/);
+  assert.match(records.find(item => item.spec_id === 'model-1p60fmj').clutch, /Manual or semi-automatic/);
+  assert.notEqual(records.find(item => item.spec_id === 'model-152fmh').clutch, 'Automatic clutch');
+});
+
+test('CX1P60FMJ publishes only the approved internal oil-circuit cooling fact', () => {
+  const model = records.find(item => item.spec_id === 'model-1p60fmj');
+  assert.match(model.cooling, /internal cylinder-head oil circuit/i);
+  assert.match(model.cooling, /no external oil radiator/i);
+  assert.doesNotMatch(model.cooling, /external oil cooler/i);
+});
