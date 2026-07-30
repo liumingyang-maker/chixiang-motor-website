@@ -103,11 +103,9 @@ No row is approved as `BUILD_NEW`. Seventeen rows are explicitly `DO_NOT_BUILD_Y
 
 The site consistently presents the brand as **Chixiang Motor** and the legal English name as **Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.** The Chinese name `重庆驰翔摩托车制造有限公司` also appears in a public 2025 high-technology-enterprise list. This supports that a corresponding legal entity exists, but it does not resolve the site's detailed corporate claims.
 
-The entity record is `CONFLICTING`, not because the brand is doubtful, but because key facts disagree:
+The organization record was reconciled by the site owner on 2026-07-30. The approved public timeline distinguishes industry experience since 2003 from registration of the current company in 2007, and Hangu Town / Gaoteng Avenue is the approved current location. Capacity, quality, export and certification claims remain governed individually by the Company Fact Pack.
 
-- the site says the company was founded in 2003, while a Made-in-China supplier profile says 2007;
-- the site describes a Hangu Town location and its JSON-LD includes a Gaoteng Avenue address, while the supplier profile gives Jiuli Village, Baishiyi Town;
-- the site publishes 8,000+ engines per month, 99% first-pass yield, 15,000 m², 50+ export countries, ISO 9001 / ISO 9001-2000, and CCC language without a single approved fact sheet that ties each claim to a current document.
+> Governance update (2026-07-30): The Made-in-China profile is excluded and is not evidence because it is not controlled by the company. Current company facts are governed by site-owner confirmation and the active Company Fact Pack.
 
 The English home page also contains two Organization JSON-LD blocks. They use different organization naming and URLs, and one references `/images/logo.png`, which is absent from the repository; the available logo asset is `/images/logo.webp`. `sameAs` contains a WhatsApp contact link rather than an authoritative organization profile. These are Phase 6.1 entity-cleanup issues, not reasons to create more company pages.
 
