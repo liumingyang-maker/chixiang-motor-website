@@ -37,55 +37,55 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
-    "alternateName": "Chixiang Motor",
-    "url": "https://chixiangmotor.com/en/",
-    "logo": "https://chixiangmotor.com/images/logo.webp",
-    "foundingDate": "2007",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Chongqing",
-      "addressCountry": "CN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+86-19008225410",
-      "contactType": "sales",
-      "availableLanguage": ["en", "es", "pt", "ru"]
-    },
-    "sameAs": [
-      "https://wa.me/8619008225410"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://chixiangmotor.com/#organization",
+        "name": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+        "legalName": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+        "alternateName": "Chixiang Motor",
+        "url": "https://chixiangmotor.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://chixiangmotor.com/#logo",
+          "url": "https://chixiangmotor.com/images/logo.webp"
+        },
+        "foundingDate": "2007",
+        "description": "Motorcycle and cargo-tricycle engine manufacturer in Chongqing, China, with industry experience since 2003.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District",
+          "addressLocality": "Chongqing",
+          "addressCountry": "CN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+86-19008225410",
+          "email": "chixiangmotor@163.com",
+          "contactType": "sales",
+          "availableLanguage": ["en", "ru", "es", "pt", "ar"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://chixiangmotor.com/#website",
+        "url": "https://chixiangmotor.com/",
+        "name": "Chixiang Motor",
+        "publisher": { "@id": "https://chixiangmotor.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://chixiangmotor.com/en/#webpage",
+        "url": "https://chixiangmotor.com/en/",
+        "name": "Motorcycle & Cargo-Tricycle Engine Manufacturer in China",
+        "isPartOf": { "@id": "https://chixiangmotor.com/#website" },
+        "about": { "@id": "https://chixiangmotor.com/#organization" },
+        "inLanguage": "en"
+      }
     ]
   }
   </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-      "@type": "Organization",
-        "name": "Chixiang Motor",
-          "legalName": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
-            "url": "https://chixiangmotor.com",
-              "logo": "https://chixiangmotor.com/images/logo.webp",
-                "foundingDate": "2007",
-                  "description": "Professional motorcycle engine manufacturer in China. CG, CB, horizontal and tricycle engines. OEM/ODM. Factory direct supply.",
-                    "address": {
-                        "@type": "PostalAddress",
-                            "streetAddress": "No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District",
-                                "addressLocality": "Chongqing",
-                                    "addressCountry": "CN"
-                                      },
-                                        "contactPoint": {
-                                            "@type": "ContactPoint",
-                                                "telephone": "+86-19008225410",
-                                                    "contactType": "sales",
-                                                        "availableLanguage": ["en", "ru", "es", "pt", "ar"]
-                                                          },
-                                                            "sameAs": [
-                                                                "https://wa.me/8619008225410"
-                                                                  ]
-                                                                  }
-                                                                  </script>
 </head>
 <body>
 
