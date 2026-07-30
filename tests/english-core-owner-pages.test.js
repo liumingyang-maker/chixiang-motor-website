@@ -118,14 +118,16 @@ test('English owner pages retain the existing analytics tags', () => {
 });
 
 test('active company governance excludes Made-in-China as evidence', () => {
-  assert.doesNotMatch(
-    read('docs/geo-entity/fact-calibration/COMPANY_FACT_PACK.csv'),
-    /made-in-china/i
-  );
-  assert.doesNotMatch(
-    read('docs/geo-entity/GEO_ENTITY_MATRIX.csv'),
-    /made-in-china/i
-  );
+  for (const file of [
+    'docs/geo-entity/fact-calibration/COMPANY_FACT_PACK.csv',
+    'docs/geo-entity/GEO_ENTITY_MATRIX.csv'
+  ]) {
+    assert.doesNotMatch(
+      read(file),
+      /made-in-china|excluded third-party profile|supplier profile|third-party profile/i,
+      `${file}: excluded third-party values must not remain in active governance`
+    );
+  }
   assert.match(
     read('docs/geo-entity/GEO_ENTITY_AUDIT.md'),
     /Made-in-China profile is excluded and is not evidence/i
