@@ -128,3 +128,63 @@ test('market pages retain their existing conversion integrations', () => {
     for (const pattern of patterns) assert.match(html, pattern, `${file}:${pattern}`);
   }
 });
+
+test('every canonical source page has one H1 and a self-referencing canonical', () => {
+  for (const url of sitemapUrls) {
+    const file = sourceFileForUrl(url);
+    const html = read(file);
+    assert.equal((html.match(/<h1\b/gi) || []).length, 1, `${file}:H1`);
+    const canonicalTags = [...html.matchAll(/<link\b[^>]*\brel=["']canonical["'][^>]*>/gi)].map(match => match[0]);
+    assert.equal(canonicalTags.length, 1, `${file}:canonical-count`);
+    assert.match(canonicalTags[0], new RegExp(`href=["']${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `${file}:canonical-url`);
+  }
+});
+
+test('the nine shared page groups retain complete five-language hreflang sets', () => {
+  const groups = [
+    ['/en/', '/es/', '/pt/', '/ru/', '/ar/'],
+    ['/en/about', '/es/about', '/pt/about', '/ru/about', '/ar/about'],
+    ['/en/products', '/es/products', '/pt/products', '/ru/products', '/ar/products'],
+    ['/en/news', '/es/news', '/pt/news', '/ru/news', '/ar/news'],
+    ['/en/contact', '/es/contacto', '/pt/contato', '/ru/kontakty', '/ar/contact'],
+    ['/en/cg-engine', '/es/motor-cg', '/pt/motor-cg', '/ru/dvigatel-cg', '/ar/cg-engine'],
+    ['/en/cb-engine', '/es/motor-cb', '/pt/motor-cb', '/ru/dvigatel-cb', '/ar/cb-engine'],
+    ['/en/horizontal-engine', '/es/motor-horizontal', '/pt/motor-horizontal', '/ru/gorizontalnyj-dvigatel', '/ar/horizontal-engine'],
+    ['/en/engine-parts', '/es/repuestos-motor', '/pt/pecas-de-motor', '/ru/zapchasti-dvigatelya', '/ar/engine-parts']
+  ];
+  const languages = ['en', 'es', 'pt', 'ru', 'ar'];
+  for (const paths of groups) {
+    for (const pagePath of paths) {
+      const file = sourceFileForUrl(`https://chixiangmotor.com${pagePath}`);
+      const html = read(file);
+      languages.forEach((language, index) => {
+        const href = `https://chixiangmotor.com${paths[index]}`;
+        const tag = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => match[0]).find(value => new RegExp(`hreflang=["']${language}["']`, 'i').test(value));
+        assert.ok(tag, `${file}:${language}:missing`);
+        assert.match(tag, new RegExp(`href=["']${href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `${file}:${language}:href`);
+      });
+      const defaultTag = [...html.matchAll(/<link\b[^>]*>/gi)].map(match => match[0]).find(value => /hreflang=["']x-default["']/i.test(value));
+      assert.ok(defaultTag, `${file}:x-default:missing`);
+      assert.match(defaultTag, new RegExp(`href=["']https://chixiangmotor\\.com${paths[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}["']`, 'i'), `${file}:x-default:href`);
+    }
+  }
+});
+
+test('HW market records never claim reverse or 18-pole magnetos', () => {
+  const latam = between(read('js/latam-cg-products.js'), "'hw-water': {", "'engine-spares': {");
+  assert.match(latam, /HW Water/);
+  assert.match(latam, /Sin reversa interna/i);
+  assert.match(latam, /magneto de alta salida/i);
+  assert.doesNotMatch(latam, /18[- ]pole|18 polos|según el modelo.*reverse|reversa incorporada/i);
+
+  const centralAsia = between(read('js/central-asia-data.js'), "slug: 'cg-heavy'", '    applications: [');
+  assert.match(centralAsia, /name: 'HW Water'/);
+  assert.match(centralAsia, /Без встроенного реверса/i);
+  assert.match(centralAsia, /магнето повышенной мощности/i);
+  assert.doesNotMatch(centralAsia, /18[- ]pole|18-?полюс|CG Heavy/i);
+});
+
+test('the noindex product utility remains outside the canonical sitemap', () => {
+  assert.doesNotMatch(read('sitemap.xml'), /product-detail/i);
+  assert.match(read('en/product-detail.html'), /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']/i);
+});
