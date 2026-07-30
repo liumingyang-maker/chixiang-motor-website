@@ -193,11 +193,11 @@ Localized home, About, product, and family pages remain supporting language equi
 
 | ID | Severity | Conflict | Required evidence/action |
 |---|---|---|---|
-| C1 | P0 for GEO trust | 2003 versus 2007 founding date and conflicting address records. | Approve a legal company fact sheet from the business licence/registry and current factory address. |
+| C1 | Resolved 2026-07-30 | 2003 industry-experience date and 2007 registration date were previously presented as a founding-date conflict; an uncontrolled third-party profile also introduced an address conflict. | The site owner approved the two dates as different facts, confirmed the current Hangu Town address, and excluded the uncontrolled third-party profile from evidence governance. |
 | C2 | P0 for product trust | Horizontal code, displacement, and range mismatches across English and Russia pages. | Approve a factory specification master before model Schema or new pages. |
-| C3 | P0 for trust claims | ISO naming/version, CCC, capacity, first-pass rate, factory area, and export-count claims lack a unified evidence register. | Add document number, scope, validity, source, and approved wording. |
-| C4 | P1 | Duplicate Organization JSON-LD on `/en/`; different names/URLs and a missing `logo.png`. | Consolidate after visible facts are reconciled. |
-| C5 | P1 | `/en/` contains a stray `h` after the Portuguese hreflang element; search rendering currently exposes it beside the title. | Remove in a separately reviewed Phase 6.1 content/markup PR. |
+| C3 | Governed; evidence follow-up | ISO/CCC details and operating statistics do not yet have a complete document register. | The site owner approved narrowly scoped public wording in the Company Fact Pack. Do not add certificate versions, numbers, scope, validity, audit claims, or broader statistical interpretations until supporting records are registered. |
+| C4 | Resolved 2026-07-30 | Duplicate Organization JSON-LD on `/en/`; different names/URLs and a missing `logo.png`. | Consolidated to one stable Organization node with the approved logo URL and entity identifier. |
+| C5 | Resolved 2026-07-30 | `/en/` contained a stray `h` after the Portuguese hreflang element. | Removed in the English core owner-page implementation. |
 | C6 | P1 | `CG150B` versus `CG150SB` naming. | Confirm preferred model identifier. |
 | C7 | P1 | Hanwei, HW Water, and CG Heavy naming is not explicitly reconciled; reverse wording varies. | Define family aliases and model-specific reverse options. |
 | C8 | P1 | Russia hub uses sample/wholesale/mixed/OEM thresholds 2/50/100/100; the horizontal landing uses samples 3 and formal orders 40. | Keep both scoped or approve one dated global policy; never merge them implicitly. |
@@ -210,15 +210,15 @@ Do not publish the following as established facts until evidence is added:
 - universal compatibility with a named motorcycle, tricycle, ATV, frame, or brand;
 - door-to-door Russia delivery or a Russia transit-time promise;
 - a universal MOQ derived from one campaign landing page;
-- current ISO/CCC status without certificate metadata;
-- 2003, 8,000 per month, 99%, 15,000 m², or 50+ countries as independently verified statistics.
+- any ISO/CCC version, certificate number, certified scope, issuing body, validity date, or all-model claim beyond the approved generic wording;
+- 2003, 8,000 per month, 99%, 15,000 m², or 50+ countries as independently audited or third-party-verified statistics.
 
 ## Page decisions
 
 | URL or page group | Decision | Phase 6.1 treatment |
 |---|---|---|
-| `/en/` | `ENHANCE_EXISTING` | Reconcile brand/legal entity, one Organization record, logo URL, and stray hreflang character. |
-| `/en/about` plus localized About pages | `NEEDS_EVIDENCE` | Reconcile legal/company/certification facts before amplifying claims. |
+| `/en/` | `ENHANCE_EXISTING` | Core owner signals were reconciled on 2026-07-30; continue strengthening current product-family relationships without duplicating the company owner content. |
+| `/en/about` plus localized About pages | `ENHANCE_EXISTING` | English company-owner facts were reconciled on 2026-07-30; localized pages should adopt only the same approved Fact Pack wording. |
 | `/en/products` plus localized catalogs | `ENHANCE_EXISTING` | Make family/application hierarchy explicit; keep emerging families as catalog sections. |
 | `/en/cg-engine` plus localized CG pages | `ENHANCE_EXISTING` | Expose subfamilies, strengthen CG150/CG200 selection, no model-page expansion. |
 | `/en/cb-engine` plus localized CB pages | `ENHANCE_EXISTING` | Clarify applications and keep models under the family owner. |

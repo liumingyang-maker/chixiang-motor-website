@@ -1,7 +1,7 @@
 # English Core Owner Pages — Company Entity Design
 
-Date: 2026-07-30  
-Status: Approved design, implementation pending  
+Date: 2026-07-30
+Status: Implemented on feature branch; review and PR pending
 Scope: `/en/`, `/en/about`, `/en/products`, and the active company-fact governance records used by those pages
 
 ## 1. Objective
