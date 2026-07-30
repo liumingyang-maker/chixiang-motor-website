@@ -205,3 +205,15 @@ test('generated entity graphs use one marker and responsive breadcrumb CSS', () 
   assert.match(rule[1], /flex-wrap\s*:\s*wrap/);
   assert.doesNotMatch(rule[1], /white-space\s*:\s*nowrap|overflow-x\s*:\s*hidden|width\s*:\s*\d+px/);
 });
+
+test('the 51-page governance matrix records the entity link and schema contract', () => {
+  const lines = read('docs/geo-entity/phase-6-1b/PAGE_CHANGE_MATRIX.csv').trim().split(/\r?\n/);
+  const header = lines[0].split(',');
+  const testsColumn = header.indexOf('tests');
+  assert.notEqual(testsColumn, -1, 'matrix tests column');
+  assert.equal(lines.length - 1, 51, 'matrix canonical page rows');
+  for (const line of lines.slice(1)) {
+    const columns = line.split(',');
+    assert.match(columns[testsColumn], /(?:^|\|)site entity link\/schema contract(?:\||$)/);
+  }
+});
