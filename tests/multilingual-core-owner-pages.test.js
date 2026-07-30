@@ -131,7 +131,8 @@ test('all twelve scoped pages are traceable in the GEO change matrix', () => {
   for (const language of Object.keys(contracts)) {
     for (const role of ['', 'about', 'products']) {
       const route = role ? `/${language}/${role}` : `/${language}/`;
-      const row = matrix.split(/\r?\n/).find(line => line.includes(`"${route}"`));
+      const canonicalUrl = `https://chixiangmotor.com${route}`;
+      const row = matrix.split(/\r?\n/).find(line => line.split(',')[1] === canonicalUrl);
       assert.ok(row, `${route}: missing matrix row`);
       assert.match(row, /multilingual owner contract/i, `${route}: matrix row must identify this contract`);
     }
