@@ -1868,6 +1868,36 @@ body:has(.about-page-header) .section-subtitle {
   padding: 2.5rem;
 }
 
+.products-owner-intro {
+  max-width: 820px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.products-owner-intro h2 {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.products-owner-intro p,
+.future-program-note {
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.product-card--future {
+  border: 1px dashed rgba(29, 111, 191, 0.45);
+  background: linear-gradient(180deg, #f7fbff 0%, #fff 100%);
+}
+
+.product-card--future:hover {
+  transform: none;
+}
+
+.future-program-note {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
 .contact-honeypot {
   position: absolute;
   width: 1px;
