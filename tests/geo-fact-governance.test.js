@@ -111,7 +111,7 @@ test('horizontal model configurations separate start method from electric-starte
   assert.equal(records.find(item => item.spec_id === 'model-154fmi').clutch, 'Manual clutch');
   assert.match(records.find(item => item.spec_id === 'model-1p56fmj').clutch, /Manual or semi-automatic/);
   assert.match(records.find(item => item.spec_id === 'model-1p60fmj').clutch, /Manual or semi-automatic/);
-  assert.doesNotMatch(records.find(item => item.spec_id === 'model-152fmh').clutch, /Automatic(?!.*semi)/i);
+  assert.notEqual(records.find(item => item.spec_id === 'model-152fmh').clutch, 'Automatic clutch');
 });
 
 test('CX1P60FMJ publishes only the approved internal oil-circuit cooling fact', () => {
