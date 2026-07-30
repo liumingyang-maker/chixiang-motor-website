@@ -108,42 +108,81 @@ test('keeps Google Ads and the current Yandex Russia tag', () => {
   assert.doesNotMatch(html, /109483511/);
 });
 
-test('keeps the product range without presenting 99 dollars as every model price', () => {
-  for (const value of ['152FMH', '153FMI', '154FMI', '1P56FMJ']) {
+test('publishes five official CX models with visible YX market references', () => {
+  const modelPairs = {
+    CX152FMH: /YX152FMH[\s\S]*YX110-class/,
+    CX153FMI: /YX153FMI[\s\S]*YX125-class/,
+    CX154FMI: /YX154FMI[\s\S]*YX125-class/,
+    CX1P56FMJ: /YX1P56FMJ[\s\S]*YX140-class/,
+    CX1P60FMJ: /YX1P60FMJ[\s\S]*YX150-class[\s\S]*W150-2/
+  };
+
+  for (const [model, aliases] of Object.entries(modelPairs)) {
+    assert.match(html, new RegExp(model));
+    assert.match(html, aliases);
+  }
+
+  assert.match(
+    html,
+    /Обозначения YX приведены как привычные российскому рынку названия класса и ориентиры для подбора\. Двигатели серии CX производит CHIXIANG MOTOR\./
+  );
+
+  for (const value of ['110 cc', '125 cc', '140 cc', '150 cc']) {
     assert.match(html, new RegExp(value));
   }
 
   const cards = [...html.matchAll(/<article class="rh-product-card"[\s\S]*?<\/article>/g)];
-  assert.equal(cards.length, 4);
+  assert.equal(cards.length, 5);
   for (const card of cards) {
     assert.doesNotMatch(card[0], /\$99/);
     assert.match(card[0], /data-quote-model=/);
   }
 
-  const card154 = cards.find(card => card[0].includes('data-product-card="154FMI"'));
+  const card154 = cards.find(card => card[0].includes('data-product-card="CX154FMI"'));
   assert.ok(card154);
   assert.match(card154[0], /%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/);
   assert.doesNotMatch(card154[0], /ChatGPT%20Image%202026%E5%B9%B45%E6%9C%8830%E6%97%A5%2010_02_56/);
+
+  assert.doesNotMatch(html, /CX152FMH-(?:5B|6)/);
+  assert.doesNotMatch(html, /106\.7|123\.67|52\.4\s*[x×]\s*49\.5|54\s*[x×]\s*54/);
 });
 
-test('retains kick-start, reverse and distinct starter configurations', () => {
+test('separates start method from electric-starter position and keeps reverse supplemental', () => {
   assert.match(html, /class="rh-variant-grid"/);
-  assert.match(html, /125 cc с кикстартером/);
-  assert.match(html, /140 cc с кикстартером/);
-  assert.match(html, /110 \/ 125 \/ 140 cc с реверсом/);
-  assert.match(html, /Верхний стартер/);
-  assert.match(html, /Нижний стартер/);
+  assert.match(html, /Способ запуска/);
+  assert.match(html, /Положение электростартера/);
+  assert.match(html, /Кикстартер или электростартер/);
+  assert.match(html, /верхнее или нижнее/i);
+  assert.match(html, /110 \/ 125 \/ 140 \/ 150 cc/);
+  assert.match(html, /Встроенный реверс/);
+  assert.match(html, /1\+1/);
   assert.match(html, /%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA\/125\.webp/);
   assert.match(html, /%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA\/140\.webp/);
   assert.match(html, /%E5%86%85%E7%BD%AE%E5%80%92%E6%8C%A1/);
+  assert.doesNotMatch(html, /CX152FMH[\s\S]{0,700}Автоматическое сцепление/);
+  assert.doesNotMatch(html, /Уточните крепления, запуск и разъёмы перед заказом/);
+});
+
+test('describes the 150 model without an external oil radiator', () => {
+  const card = html.match(/<article class="rh-product-card" data-product-card="CX1P60FMJ">[\s\S]*?<\/article>/);
+  assert.ok(card, 'missing CX1P60FMJ card');
+  assert.match(card[0], /масляным контуром головки цилиндра/i);
+  assert.match(card[0], /без внешнего масляного радиатора/i);
+  assert.doesNotMatch(card[0], /внешн(?:ий|его) маслян(?:ый|ого) радиатор(?!а)/i);
 });
 
 test('publishes desktop and mobile comparison formats', () => {
   assert.match(html, /class="rh-compare-table"/);
   assert.match(html, /class="rh-mobile-compare"/);
-  for (const value of ['110 cc', '125 cc', '140 cc']) {
+  for (const value of ['CX152FMH', 'CX153FMI', 'CX154FMI', 'CX1P56FMJ', 'CX1P60FMJ']) {
     assert.match(html, new RegExp(value));
   }
+  const tableHeader = html.match(/<table>[\s\S]*?<thead>[\s\S]*?<\/thead>/);
+  assert.ok(tableHeader);
+  assert.equal((tableHeader[0].match(/<th scope="col">/g) || []).length, 6);
+  const mobileCompare = html.match(/<div class="rh-mobile-compare"[\s\S]*?<\/div>/);
+  assert.ok(mobileCompare);
+  assert.equal((mobileCompare[0].match(/<article>/g) || []).length, 5);
 });
 
 test('uses the approved public factory and delivery facts', () => {
@@ -186,6 +225,9 @@ test('embeds a qualified same-page inquiry form', () => {
   assert.match(html, /name="website"/);
   assert.match(html, /data-model-checkbox/);
   assert.match(html, /data-model-error/);
+  for (const model of ['CX152FMH', 'CX153FMI', 'CX154FMI', 'CX1P56FMJ', 'CX1P60FMJ']) {
+    assert.match(html, new RegExp(`value="${model}" data-model-checkbox`));
+  }
 
   const quantity = getRequiredElement('quantity');
   assert.doesNotMatch(quantity, /\bmin=/);
