@@ -188,3 +188,16 @@ test('the noindex product utility remains outside the canonical sitemap', () => 
   assert.doesNotMatch(read('sitemap.xml'), /product-detail/i);
   assert.match(read('en/product-detail.html'), /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']/i);
 });
+
+test('translated contact honeypots do not create an RTL off-canvas viewport', () => {
+  const contactPages = ['ar/contact.html', 'es/contacto.html', 'pt/contato.html', 'ru/kontakty.html'];
+  for (const file of contactPages) {
+    const html = read(file);
+    assert.match(html, /class=["']contact-honeypot["']/i, `${file}:honeypot-class`);
+    assert.doesNotMatch(html, /<div\b[^>]*style=["'][^"']*left\s*:\s*-9999px/i, `${file}:off-canvas-honeypot`);
+  }
+
+  const css = read('css/style.css');
+  assert.match(css, /\.contact-honeypot\s*\{[^}]*clip-path\s*:\s*inset\(50%\)/is);
+  assert.doesNotMatch(css, /\.contact-honeypot\s*\{[^}]*left\s*:\s*-9999px/is);
+});
