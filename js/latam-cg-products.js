@@ -9,16 +9,16 @@
       benefits: ['CG150, CG200 y CG250 disponibles para selección', 'Modelos combinables dentro de un mismo pedido', 'Confirmación por código, montaje, salida y sistema eléctrico']
     },
     'standard-water': {
-      slug: 'standard-water', name: 'Motores refrigerados por agua para trabajo y carga', heroLabel: 'Standard Water-Cooled', displacement: 'CG150B / CG175SB / CG200SB / CG250SB', cooling: 'Refrigeración por agua y aire', reverse: 'Según el modelo y la transmisión del vehículo',
+      slug: 'standard-water', name: 'Motores refrigerados por agua para trabajo y carga', heroLabel: 'Standard Water-Cooled', displacement: 'CG150SB / CG175SB / CG200SB / CG250SB', cooling: 'Refrigeración por agua', reverse: 'Configuración opcional según el pedido; no es estándar en toda la serie',
       bestFor: 'Motocicletas de trabajo, trimotos de carga y operación comercial', image: 'images/普通水冷/6kjzxqqh.webp',
       gallery: ['images/普通水冷/6kjzxqqh.webp', 'images/普通水冷/e8zlq6eb.webp', 'images/普通水冷/pcdwa12q.webp'],
       benefits: ['Modelos de 150, 175, 200 y 250 cc disponibles en la gama local', 'Sistema de refrigeración para trabajo y carga', 'La aplicación se confirma según vehículo, transmisión y carga']
     },
     'hw-water': {
-      slug: 'hw-water', name: 'Motores HW refrigerados por agua de 200–350 cc', heroLabel: 'HW Water-Cooled 200–350 cc', displacement: 'HW200 / HW250 / HW300 / HW350', cooling: 'Refrigeración por agua', reverse: 'Según el modelo y la transmisión del vehículo',
+      slug: 'hw-water', name: 'HW Water 200–350 cc', heroLabel: 'HW Water 200–350 cc', displacement: 'HW200 / HW250 / HW300 / HW350', cooling: 'Refrigeración por agua con aletas de enfriamiento', reverse: 'Sin reversa interna',
       bestFor: 'Carga pesada, uso continuo y proyectos de ensamblaje', image: 'images/捍威/product_main_image_1.webp',
       gallery: ['images/捍威/product_main_image_1.webp', 'images/捍威/product_main_image_2.webp', 'images/捍威/product_main_image_3.webp'],
-      benefits: ['Gama HW de 200 a 350 cc', 'Opciones para cargas elevadas y operación prolongada', 'Configuración final confirmada por modelo, aplicación y cantidad']
+      benefits: ['Capacidad de aceite de 1,5 L en la familia HW Water', 'Embrague de 20 rodillos y magneto de alta salida', 'Sin reversa interna; las especificaciones del modelo se confirman antes de cotizar']
     },
     'engine-spares': {
       slug: 'engine-spares', name: 'Motores y paquetes de repuestos', displacement: 'Según los motores incluidos en el pedido', cooling: 'Según cada modelo', reverse: 'No es un criterio de selección del paquete',

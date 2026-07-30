@@ -46,7 +46,10 @@ test('Peru sells the approved four product groups with confirmed order totals', 
   assert.match(data, /Motores para motocicletas y trimotos de carga en Perú/);
   assert.match(html, /Motores para motos y trimotos de carga en Perú \| Chixiang Motor/);
   ordered(data, ["'cg-air-range'", "'standard-water'", "'hw-water'", "'engine-spares'"]);
-  ordered(products, ['Motores CG refrigerados por aire de 150–250 cc','Motores refrigerados por agua para trabajo y carga','Motores HW refrigerados por agua de 200–350 cc','Motores y paquetes de repuestos']);
+  ordered(products, ['Motores CG refrigerados por aire de 150–250 cc','Motores refrigerados por agua para trabajo y carga','HW Water 200–350 cc','Motores y paquetes de repuestos']);
+  assert.match(products, /CG150SB \/ CG175SB \/ CG200SB \/ CG250SB/);
+  assert.match(products, /Sin reversa interna/);
+  assert.match(products, /magneto de alta salida/);
   assert.match(products, /images\/普通水冷\/6kjzxqqh\.webp/);
   assert.match(products, /images\/捍威\/product_main_image_1\.webp/);
   assertCommercialThresholds(html, 'es');
@@ -105,7 +108,7 @@ test('Peru hero uses short labels and a safe customer-facing mobile CTA', () => 
   const renderer = read('js/latam-cg-landing.js');
   const html = read('es/peru/index.html');
   const css = read('css/latam-cg-landing.css');
-  ['CG Air-Cooled 150–250 cc', 'Standard Water-Cooled', 'HW Water-Cooled 200–350 cc']
+  ['CG Air-Cooled 150–250 cc', 'Standard Water-Cooled', 'HW Water 200–350 cc']
     .forEach(label => assert.match(products, new RegExp(label)));
   assert.match(renderer, /item\.heroLabel \|\| item\.name/);
   assert.match(html, />Cotizar por WhatsApp<\/a>/);

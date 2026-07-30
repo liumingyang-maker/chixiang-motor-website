@@ -61,7 +61,12 @@ test('defines one canonical market and product data source', () => {
   assert.equal(data.market.defaultCountry, '');
   assert.equal(data.market.indexable, true);
   assert.deepEqual(Array.from(data.products, item => item.slug), ['cg-air', 'cg-water', 'cg-heavy']);
-  assert.deepEqual(Array.from(data.products, item => item.name), ['CG Air', 'CG Water', 'CG Heavy']);
+  assert.deepEqual(Array.from(data.products, item => item.name), ['CG Air', 'CG Water', 'HW Water']);
+  const hwWater = data.products.find(item => item.name === 'HW Water');
+  assert.equal(hwWater.reverse, 'Без встроенного реверса');
+  assert.match(hwWater.advantages.join(' '), /20-роликовая муфта/i);
+  assert.match(hwWater.advantages.join(' '), /магнето повышенной мощности/i);
+  assert.deepEqual(Array.from(hwWater.metrics, item => item.value), ['20', 'Высокая', '1,5 л']);
   assert.equal(data.products[1].reverse, 'Опционально, встроенный');
   assert.equal(data.products[2].reverse, 'Без встроенного реверса');
   assert.match(data.market.whatsappMessageTemplate, /\{product\}/);
