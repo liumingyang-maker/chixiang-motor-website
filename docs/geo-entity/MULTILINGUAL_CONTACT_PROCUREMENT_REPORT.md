@@ -93,10 +93,9 @@ Completed before publishing:
 - Contact/form/Google/Yandex focused regression set: 61/61 passed.
 - Cloudflare Worker suite: 13/13 passed.
 - Safe Schema, breadcrumb and governance checks: 23/23 passed.
+- Full repository suite: 252/252 passed.
 - Deterministic Contact owner generator: zero drift.
 - Deterministic site entity graph generator: zero drift.
-
-The final full-suite total is recorded in the PR after the publish candidate commit.
 
 ## Browser verification
 
