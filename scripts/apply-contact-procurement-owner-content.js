@@ -178,7 +178,7 @@ function updatePage(before, route, l) {
     /<meta\s+property=["']og:description["']\s+content=["'][^"']*["']\s*\/?>/i,
     `<meta property="og:description" content="${escapeHtml(l.description)}">`
   );
-  return after;
+  return after.replace(/\r\n/g, '\n');
 }
 
 const changed = [];
