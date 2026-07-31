@@ -63,10 +63,10 @@ function insertVisibleBreadcrumb(html, entry) {
   throw new Error(`${entry.file}: no safe breadcrumb insertion point`);
 }
 
-function removeGeneratedGraph(html) {
+function removeGeneratedGraph(html, newline = '\n') {
   return html.replace(
     /\s*<script\b(?=[^>]*\bdata-site-entity-graph\b)[^>]*>[\s\S]*?<\/script>\s*/gi,
-    '\n'
+    newline
   );
 }
 
@@ -160,8 +160,13 @@ function entityGraph(entry) {
 }
 
 function insertEntityGraph(html, entry) {
-  const cleaned = cleanLegacyJsonLd(removeGeneratedGraph(html), entry);
-  const block = `  <script type="application/ld+json" data-site-entity-graph>\n${JSON.stringify(entityGraph(entry), null, 2)}\n  </script>\n`;
+  const existing = html.match(
+    /<script\b(?=[^>]*\bdata-site-entity-graph\b)[^>]*>[\s\S]*?<\/script>/i
+  );
+  const newline = existing?.[0].includes('\r\n') ? '\r\n' : '\n';
+  const cleaned = cleanLegacyJsonLd(removeGeneratedGraph(html, newline), entry);
+  const block = `  <script type="application/ld+json" data-site-entity-graph>\n${JSON.stringify(entityGraph(entry), null, 2)}\n  </script>\n`
+    .replace(/\n/g, newline);
   if (!/<\/head>/i.test(cleaned)) throw new Error(`${entry.file}: missing </head>`);
   return cleaned.replace(/<\/head>/i, `${block}</head>`);
 }

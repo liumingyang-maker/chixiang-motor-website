@@ -141,3 +141,12 @@ test('Contact owner generator is idempotent', () => {
   assert.equal(result.status, 0, result.stdout + result.stderr);
   assert.match(result.stdout, /0 contact owner pages need updates/);
 });
+
+test('site entity generator remains idempotent after Contact owner generation', () => {
+  const result = spawnSync(process.execPath, ['scripts/apply-site-entity-schema.js', '--check'], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  assert.equal(result.status, 0, result.stdout + result.stderr);
+  assert.match(result.stdout, /0 canonical pages need updates/);
+});

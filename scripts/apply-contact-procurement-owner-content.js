@@ -160,6 +160,7 @@ function replaceHeadValue(html, pattern, replacement, file, label) {
 }
 
 function updatePage(before, route, l) {
+  const newline = before.includes('\r\n') ? '\r\n' : '\n';
   let after = replaceOwnerRegion(before, renderOwner(route, l), route.file);
   after = after.replace(/<div class="mobile-cta-bar">[\s\S]*?<\/div>/i, renderMobileBar(l));
   after = replaceHeadValue(after, /<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(l.title)}</title>`, route.file, 'title');
@@ -178,7 +179,7 @@ function updatePage(before, route, l) {
     /<meta\s+property=["']og:description["']\s+content=["'][^"']*["']\s*\/?>/i,
     `<meta property="og:description" content="${escapeHtml(l.description)}">`
   );
-  return after.replace(/\r\n/g, '\n');
+  return after.replace(/\r?\n/g, newline);
 }
 
 const changed = [];
