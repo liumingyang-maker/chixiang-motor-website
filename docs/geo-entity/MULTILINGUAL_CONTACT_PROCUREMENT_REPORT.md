@@ -89,11 +89,11 @@ This change does not alter Turnstile verification, email delivery, Google Ads su
 
 Completed before publishing:
 
-- Contact owner contract: 10/10 passed.
+- Contact owner contract: 11/11 passed.
 - Contact/form/Google/Yandex focused regression set: 61/61 passed.
 - Cloudflare Worker suite: 13/13 passed.
 - Safe Schema, breadcrumb and governance checks: 23/23 passed.
-- Full repository suite: 252/252 passed.
+- Full repository suite: 253/253 passed.
 - Deterministic Contact owner generator: zero drift.
 - Deterministic site entity graph generator: zero drift.
 
@@ -121,13 +121,17 @@ The local browser reports Cloudflare Turnstile error `110200` because `127.0.0.1
 
 ## Cloudflare Preview
 
-Actual Preview URLs are added here only after GitHub/Cloudflare returns the deployed host:
+Cloudflare successfully deployed commit `4730d32` from PR #26:
 
-- English: pending
-- Spanish: pending
-- Portuguese: pending
-- Russian: pending
-- Arabic: pending
+- English: https://feature-multilingual-contact-procur-15b5-chixiang-motor-website.970201665.workers.dev/en/contact
+- Spanish: https://feature-multilingual-contact-procur-15b5-chixiang-motor-website.970201665.workers.dev/es/contacto
+- Portuguese: https://feature-multilingual-contact-procur-15b5-chixiang-motor-website.970201665.workers.dev/pt/contato
+- Russian: https://feature-multilingual-contact-procur-15b5-chixiang-motor-website.970201665.workers.dev/ru/kontakty
+- Arabic: https://feature-multilingual-contact-procur-15b5-chixiang-motor-website.970201665.workers.dev/ar/contact
+
+All five deployed routes were opened and checked in the browser at the mobile breakpoint. English and Spanish were also checked at the desktop breakpoint. The deployed pages retain one H1, no horizontal overflow, the `/api/contact` form action, the required procurement fields, the approved contact-channel order, working image assets and the form-first mobile action order. Arabic remains RTL.
+
+The `workers.dev` Preview host is not in the production Turnstile hostname allowlist and therefore reports Turnstile error `110200`. This is expected for the Preview domain: no real inquiry was submitted there. Production Turnstile, Worker delivery and success-only advertising conversion behavior remain covered by the unchanged runtime files and the passing automated regression suites.
 
 ## Submission safety
 
