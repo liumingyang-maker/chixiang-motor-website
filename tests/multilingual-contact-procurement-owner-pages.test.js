@@ -3,6 +3,7 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const { spawnSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
@@ -130,4 +131,13 @@ test('conversion and delivery implementation files retain their approved baselin
   for (const [file, hash] of Object.entries(expected)) {
     assert.equal(sha256(file), hash, file);
   }
+});
+
+test('Contact owner generator is idempotent', () => {
+  const result = spawnSync(process.execPath, ['scripts/apply-contact-procurement-owner-content.js', '--check'], {
+    cwd: root,
+    encoding: 'utf8'
+  });
+  assert.equal(result.status, 0, result.stdout + result.stderr);
+  assert.match(result.stdout, /0 contact owner pages need updates/);
 });
