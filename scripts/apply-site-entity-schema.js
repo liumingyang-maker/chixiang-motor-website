@@ -43,6 +43,7 @@ function removeGeneratedBreadcrumb(html) {
 
 function insertVisibleBreadcrumb(html, entry) {
   if (entry.role === 'home') return removeGeneratedBreadcrumb(html);
+  if (/data-contact-procurement-owner=/i.test(html)) return html;
   const clean = removeGeneratedBreadcrumb(html);
   const rendered = renderVisibleBreadcrumb(entry);
   const legacy = /<p\b(?=[^>]*\bclass=["'][^"']*\bbreadcrumb\b[^"']*["'])[^>]*>[\s\S]*?<\/p>/i;

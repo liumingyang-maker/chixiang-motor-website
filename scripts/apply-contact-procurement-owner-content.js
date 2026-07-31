@@ -64,7 +64,7 @@ function renderOwner(route, l) {
   return `${START}
   <section class="page-header" data-contact-procurement-owner="${route.language}">
     <div class="container">
-      <nav class="breadcrumb entity-breadcrumb" aria-label="${escapeHtml(l.breadcrumbLabel)}"><a href="/${route.language}/">${escapeHtml(l.home)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(l.h1)}</span></nav>
+      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="/${route.language}/">${escapeHtml(l.home)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(l.h1)}</span></nav>
       <h1>${escapeHtml(l.h1)}</h1>
       <p class="section-subtitle">${escapeHtml(l.pageLead)}</p>
     </div>
