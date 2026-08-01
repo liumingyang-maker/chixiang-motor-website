@@ -178,8 +178,9 @@ function hash(value) {
 function updatePage(entry) {
   const file = path.join(root, entry.file);
   const before = fs.readFileSync(file, 'utf8');
+  const newline = before.includes('\r\n') ? '\r\n' : '\n';
   const afterBreadcrumb = insertVisibleBreadcrumb(before, entry);
-  const after = insertEntityGraph(afterBreadcrumb, entry);
+  const after = insertEntityGraph(afterBreadcrumb, entry).replace(/\r?\n/g, newline);
   if (hash(before) === hash(after)) return false;
   if (!checkOnly) fs.writeFileSync(file, after, 'utf8');
   return true;

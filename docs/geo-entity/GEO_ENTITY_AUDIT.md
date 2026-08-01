@@ -1,5 +1,11 @@
 # Chixiang Motor GEO Entity Audit
 
+> **Status notice (2026-08-01): Historical snapshot.** This v1.0 audit is retained as
+> the original discovery record. Its conflict counts and proposed actions do not
+> override facts later approved by the owner or pages already implemented. For the
+> current phase status, source hierarchy and freeze rules, use
+> [`FOUNDATION_CLOSURE_AND_FREEZE.md`](FOUNDATION_CLOSURE_AND_FREEZE.md).
+
 **Version:** 1.0
 
 **Audit date:** 2026-07-29
