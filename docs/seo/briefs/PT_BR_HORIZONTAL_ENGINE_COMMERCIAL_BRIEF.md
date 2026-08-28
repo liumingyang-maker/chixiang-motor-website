@@ -1,69 +1,72 @@
-# PT-BR Horizontal Engine Commercial Brief — /pt/motor-horizontal
+# Brief Comercial PT-BR — Motor Horizontal / /pt/motor-horizontal
 
-BRIEF ONLY. No production change. Brazilian Portuguese. GPT/Codex review before any implementation.
+BRIEF ONLY. Nenhuma mudança de produção. Português do Brasil. Revisão GPT/Codex antes de qualquer implementação.
 
-## CURRENT OWNER
-/pt/motor-horizontal — after Batch 1 the title already reads "Motor Horizontal para Moto | 110–150 cc" and the page publishes the approved five CX nominal classes 110 / 125 / 125 / 140 / 150 cc. Do NOT change Title/H1 in a future batch without a strong WHY_CHANGE (title was just corrected; it is now consistent with the approved family).
+## CURRENT OWNER (proprietário atual)
+/pt/motor-horizontal — após o Batch 1 o título já diz "Motor Horizontal para Moto | 110–150 cc" e a página publica as cinco classes nominais aprovadas da família CX: 110 / 125 / 125 / 140 / 150 cc. NÃO alterar Título/H1 num futuro batch sem um WHY_CHANGE forte (o título acabou de ser corrigido e já está coerente com a família aprovada).
 
-## TARGET BUYER (Q3–Q5)
-- importador de motores para moto (imports from China)
-- montadora / small assembly of moto and light utility vehicles
-- atacadista / distribuidor building a horizontal-engine line
-- pit bike / light ATV / mini-enduro application buyers
+## TARGET BUYER (comprador-alvo, Q3–Q5)
+- importador de motores para moto (compra direta da fábrica na China)
+- montadora de motos e utilitários leves
+- atacadista e distribuidor montando uma linha de motores horizontais
+- compradores para pit bike, quadriciclo leve e mini-enduro
 
-## PRIMARY INTENT
-"motor horizontal para moto" wholesale supply from a Chinese manufacturer — Chixiang's actual CX horizontal family, in nominal classes, kick/electric start, manual or semi-automatic clutch, optional reverse/1+1 by configuration.
+## PRIMARY INTENT (intenção primária)
+fornecimento por atacado de motor horizontal para moto a partir de um fabricante chinês — a família CX horizontal da Chixiang, em classes nominais, partida a pedal/elétrica, embreagem manual ou semiautomática, com reversa/1+1 opcional conforme configuração.
 
-## SECONDARY INTENTS
-- moto leve / pit bike / light enduro / light ATV applications
-- configuration confirmation (electric-starter position, clutch, reverse)
-- combined engine + parts order (link to /pt/pecas-de-motor)
+## SECONDARY INTENTS (intenções secundárias)
+- moto leve, pit bike, mini-enduro e quadriciclo leve
+- confirmação de configuração (posição do motor de arranque elétrico, embreagem, reversa)
+- pedido combinado de motor + peças (link para /pt/pecas-de-motor)
 
-## WHY_CHANGE
-The horizontal family is the best-fit, least-ambiguous Brazil product angle (unlike "CG" which is Honda-entangled). Deepening approved application + procurement clarity here targets real B2B buyers and reinforces a page already near position 10.
+## WHY_CHANGE (por que mudar)
+A família horizontal é o ângulo de produto mais adequado e menos ambíguo no Brasil (ao contrário de "CG", que está atrelado à Honda). Aprofundar aplicação e clareza de compra com fatos aprovados mira compradores B2B reais e reforça uma página já próxima da posição 10.
 
-## EXPECTED_GAIN
-Hold/improve the ~pos 9.6 page; convert generic motorcycle-horizon intent into qualified importer inquiries. Not a raw-volume play.
+## EXPECTED_GAIN (ganho esperado)
+Manter/melhorar a página em ~posição 9,6; converter a intenção genérica de "motor horizontal" em consultas qualificadas de importador. Não é aposta em volume bruto.
 
-## RANKING_RISK
-MEDIUM — /pt/motor-horizontal is already near page 1. Any future edit must be conservative; prefer adding evidence/application clarity over rewriting title/H1. If editing, state WHY_CHANGE / EXPECTED_GAIN / RANKING_RISK / ROLLBACK_PLAN.
+## RANKING_RISK (risco de ranqueamento)
+MÉDIO — /pt/motor-horizontal já está perto da primeira página. Qualquer ajuste futuro deve ser conservador; preferir clareza de aplicação/evidência a reescrever título/H1. Se editar, declarar WHY_CHANGE / EXPECTED_GAIN / RANKING_RISK / ROLLBACK_PLAN.
 
-## CANNIBALIZATION_RISK / INTENT GUARD
-- DO NOT route "industrial horizontal shaft engine" / general-purpose gasoline / agricultural intent to this page. Keep every heading motorcycle-qualified (para moto / motocicleta), matching the ES lesson that "motores horizontales" is intent-ambiguous.
-- Do not create per-cc pages (motor-horizontal-110/125/150). Keep variants on this owner.
-- Do not build /pt/brasil/ for this; owner absorbs Brazil.
+## CANNIBALIZATION_RISK / INTENT GUARD (canibalização e intenção)
+- NÃO direcionar tráfego de "motor de eixo horizontal industrial" / motor de uso geral / agrícola para esta página. Manter todo título qualificado para moto (para moto / motocicleta), aprendendo com o caso espanhol de "motores horizontales", de intenção ambígua.
+- Não criar páginas por cilindrada (motor-horizontal-110/125/150). Manter as variantes nesta página.
+- Não criar /pt/brasil/ para isto; os proprietários atuais já absorvem o Brasil.
 
-## FACTS_ALLOWED (only approved)
-- Five CX models and nominal classes 110 / 125 / 125 / 140 / 150 cc (ENGINE_SPEC_MASTER model-152fmh..1p60fmj).
-- Air-cooled; kick and electric start; electric-starter position upper or lower; manual or semi-automatic clutch; 4 gears; optional built-in reverse or 1+1 gearbox by configuration.
-- Applications per master: mopeds / pit bikes / light enduro / ATV / assembly projects.
-- YX names are market/search references, not the brand/manufacturer.
-- Company: industry since 2003, registered 2007, Chongqing; ISO 9001; testing capability.
+## FACTS_ALLOWED (apenas fatos aprovados)
+- Cinco modelos CX e classes nominais 110 / 125 / 125 / 140 / 150 cc (ENGINE_SPEC_MASTER model-152fmh a 1p60fmj).
+- Refrigerado a ar; partida a pedal e elétrica; posição do motor de arranque elétrico superior ou inferior; embreagem manual ou semiautomática; 4 marchas; reversa integrada ou caixa 1+1 opcional conforme configuração.
+- Aplicações conforme o master: motonetas / pit bikes / mini-enduro leve / ATV leve / projetos de montagem. (Cargueiro/triciclo de carga NÃO é aplicação aprovada para a família horizontal — manter fora deste brief.)
+- Os nomes YX são referências de mercado/busca, não a marca nem o fabricante.
+- Empresa: experiência desde 2003, registrada em 2007, Chongqing; ISO 9001; capacidade de teste.
 
-## FACTS_FORBIDDEN
-- Actual displacement / bore / stroke for any CX horizontal model (intentionally BLANK / UNKNOWN in the master).
-- Invented power/torque/vibration claims; "strong torque"; "low vibration".
-- MOQ, price, lead time, stock; universal-fit.
-- 24-hour or any SLA.
-- Brazil market demand "proven" (no query-level data yet).
-- Spanish wording; keyword stuffing of atacado/fornecedor/importador.
+## FACTS_FORBIDDEN (proibido)
+- Cilindrada real / diâmetro / curso de qualquer modelo CX horizontal (deixados propositalmente EM BRANCO / DESCONHECIDOS no master).
+- Potência/torção/vibração inventados; "strong torque"; "low vibration".
+- MOQ, preço, prazo, estoque; encaixe universal.
+- 24 horas ou qualquer SLA.
+- "Demanda do mercado brasileiro comprovada" (sem dado por consulta ainda).
+- Espanhol; keyword stuffing de atacado/fornecedor/importador.
 
-## PROPOSED CONTENT SECTIONS (future)
-1. Motor horizontal para moto: o que é e onde é usado (application clarity, motorcycle-qualified).
-2. Classes nominais 110–150 cc + as opções de configuração confirmadas por pedido.
+## PROPOSED CONTENT SECTIONS (seções propostas, futuro)
+1. Motor horizontal para moto: o que é e onde é usado (clareza de aplicação, sempre qualificada para moto).
+2. Classes nominais 110–150 cc + opções de configuração confirmadas por pedido.
 3. Aplicações (moto leve, pit bike, mini-enduro, ATV leve, projetos de montagem).
-4. O que confirmar antes da cotação (mirror approved quotation inputs).
-5. Fabricante + controle de qualidade (approved facts).
-6. Nota sobre referências YX (market/search reference, not the brand).
+4. O que confirmar antes da cotação (reflete os dados aprovados de cotação).
+5. Fabricante e controle de qualidade (fatos aprovados).
+6. Nota sobre as referências YX (referência de mercado/busca, não a marca).
 
-## INTERNAL LINKS
-→ /pt/pecas-de-motor (parts), /pt/motor-cg, /pt/motor-cb, /pt/contato, /pt/products. Breadcrumb Início → Produtos → Motor Horizontal.
+## INTERNAL LINKS (links internos)
+→ /pt/pecas-de-motor (peças), /pt/motor-cg, /pt/motor-cb, /pt/contato, /pt/products. Breadcrumb: Início → Produtos → Motor Horizontal.
 
-## EVIDENCE_NEEDED (first-party)
-Real CX horizontal engine photos, kick vs electric start versions, electric-starter position, gearbox/reverse, application photos (pit bike / light ATV / cargo tricycle), factory/test-bench. No AI proof; no fabricated cutaway.
+## EVIDENCE_NEEDED (evidência própria necessária)
+Fotos reais do motor horizontal CX: versões de partida a pedal e elétrica, posição do motor de arranque, caixa/reversa, aplicações (pit bike / ATV leve / moto leve), fábrica e bancada de teste. Sem prova de IA; sem corte/cutaway inventado. (Não incluir triciclo de carga, que não é aplicação aprovada para horizontal.)
 
-## QUERY_DATA_NEEDED
-GSC pt-BR: does "motor horizontal para moto" carry motorcycle intent vs industrial? Country breakdown; volumes. Do not infer Brazil demand from the page-level ~7 impressions.
+## QUERY_DATA_NEEDED (dados de busca necessários)
+GSC pt-BR: "motor horizontal para moto" traz intenção de moto ou industrial? Divisão por país e volumes. Não deduzir demanda do Brasil a partir das ~7 impressões em nível de página.
 
-## MEASUREMENT PLAN
-28-day GSC on /pt/motor-horizontal (position/CTR/impressions by query), inquiry Q-tag count; ensure no drift to industrial intent. Keep page-1 signal stable.
+## MEASUREMENT PLAN (plano de medição)
+28 dias = observação inicial (posição/CTR/impressões por consulta em /pt/motor-horizontal + contagem e qualificação de consultas). 90 dias = avaliação direcional de SEO antes de novo ajuste. Não reagir a oscilação de curto prazo trocando a página repetidamente. Manter estável o sinal de primeira página.
+
+## ROLLBACK_PLAN (plano de reversão)
+Congelar a versão atual antes de editar; branch/PR separado com Preview por página; guardar o SHA anterior. Se houver perda de posição/cliques ou exposição de fato não aprovado (ex.: cilindrada real, aplicação de carga), reverter ao SHA anterior num único commit. Título/H1 só mudam com WHY_CHANGE aprovado.

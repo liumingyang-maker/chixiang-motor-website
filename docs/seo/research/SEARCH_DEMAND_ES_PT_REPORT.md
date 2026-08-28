@@ -30,7 +30,7 @@ Branch: seo/es-pt-growth-discovery-phase-2. Base HEAD: ea63342721401d78ea87864b1
 
 ## 3. Portuguese / Brazil demand (PT-BR)
 - `/pt/` ≈11 imp / pos 7.7 and `/pt/motor-horizontal` ≈7 imp / pos 9.6 — small, but the locale is **untreated**, not disproven. (GSC_OBSERVED SUPPLIED)
-- **CG = Honda entanglement** (see §1). Recommended PT commercial focus shifts to **fabricante/exportador chino**, **motor de moto por mayor / atacado**, **importar motor da China**, and **motor horizontal / triciclo de carga**, while explicitly de-prioritizing generic "motor CG" Brazil bets. (SERP_OBSERVED + INFERENCE)
+- **CG = Honda entanglement** (see §1). Recommended PT commercial focus shifts to **fornecedor chinês**, **motor de moto no atacado**, **importar motor da China**, and **motor horizontal para moto / pit bike / ATV leve**, while explicitly de-prioritizing generic "motor CG" Brazil bets. (SERP_OBSERVED + INFERENCE)
 - **Parts (peças) intent is largely local distributor demand** (MTO, Works, Emtecorp) — retail/wholesale supply of many brands, not "buy from a Chinese engine factory". PT parts content must address the **importer who sources from China**, a narrower but real segment. (SERP_OBSERVED + INFERENCE)
 
 ## 4. Cluster-by-cluster opportunity read (see registry CSV for full rows)

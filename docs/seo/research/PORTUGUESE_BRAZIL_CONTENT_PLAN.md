@@ -4,7 +4,7 @@ Research only. **No production file changed.** Copy must be genuine Brazilian Po
 
 ## Key discovery that reshapes the Brazil bet (SERP_OBSERVED, non-geo caveat)
 - In Brazil, **"CG" is a Honda model name** (CG 150 / Titan / Fan). Queries like `motor cg 150 preço/comprar` return **consumer** replacement and **used engines** on Mercado Livre, OLX, Magazine Luiza, Casas Bahia — retail intent, not B2B importer intent, plus **Honda trademark adjacency**. → Do **not** make Brazil "motor CG" a commercial target. (Registry: PT CG row = NO_ACTION.)
-- Brazil B2B/parts intent that IS real (`... por mayor / atacado / importar da China`) is dominated by **B2B marketplaces** (Alibaba PT, Made-in-China PT, Global Sources PT) and **national distributors** (MTO, Works, Emtecorp) that stock many brands. Chixiang's differentiated role is **Chinese factory / exportador supplying importers and assemblers**, which is a narrower but valid segment.
+- Brazil B2B/parts intent that IS real (`... no atacado / importar da China`) is dominated by **B2B marketplaces** (Alibaba PT, Made-in-China PT, Global Sources PT) and **national distributors** (MTO, Works, Emtecorp) that stock many brands. Chixiang's differentiated role is **fábrica chinesa que fornece importadores e montadoras**, which is a narrower but valid segment.
 - **The most promising Brazil product angle is the horizontal / cargo-tricycle motorcycle engine** (`motor horizontal`, moto + triciclo de carga, Loncin-type supply seen on Alibaba/AliExpress), which matches Chixiang's actual CX horizontal family better than a Honda-CG-replacement query. `/pt/motor-horizontal` is already ~pos 9.6 (GSC_supplied).
 
 ## Architecture constraints (OBSERVED — same as ES)
@@ -21,7 +21,7 @@ Research only. **No production file changed.** Copy must be genuine Brazilian Po
 - Evidence: real CG & CB engine photos + valve-train comparison. (EVIDENCE_NEEDED)
 
 ### PT-G2 — "Importar motor de moto da China: guia para importadores" (P1 — best PT head page)
-- Intent: informational-commercial, importer-facing. Keywords (BR): importar motor de moto da China, comprar motor de moto por maior, fornecedor de motor de moto china, motor de moto no atacado.
+- Intent: informational-commercial, importer-facing. Keywords (BR): importar motor de moto da China, comprar motor de moto no atacado, fornecedor de motor de moto china, motor de moto no atacado.
 - Owners: `/pt/` home + `/pt/products` + `/pt/contato` (and cross-links to family owners).
 - Why separate: this is the angle with genuine B2B value in Brazil and mirrors the existing EN procurement guide; it targets the **importer/wholesaler** not the retail mechanic.
 - Cannibalization: LOW (informational, distinct from family owners' transactional terms).
