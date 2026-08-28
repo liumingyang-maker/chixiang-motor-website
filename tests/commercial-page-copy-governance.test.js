@@ -118,3 +118,19 @@ test("frozen contracts intact on the three edited horizontal owner pages", () =>
     assert.ok(t.includes("#webpage") && t.includes("#breadcrumb"), f + " schema ids changed");
   }
 });
+
+const ESPT_HOME = ["es/index.html", "pt/index.html"];
+
+test("ES/PT home pages carry no 24-hour reply promise and no CB torque/vibration claim", () => {
+  for (const f of ESPT_HOME) {
+    const t = read(f);
+    assert.doesNotMatch(t, /24\s*horas|responde en 24|responde em at/i, f + " still has 24h promise");
+    assert.doesNotMatch(t, /buen torque|bom torque/i, f + " still has CB torque claim");
+    assert.doesNotMatch(t, /baja vibraci|baixa vibra/i, f + " still has CB vibration claim");
+  }
+  // neutral (non-SLA) CTA + approved off-road qualifier preserved after cleanup
+  assert.match(read("es/index.html"), /Env\u00edenos el modelo, cantidad y pa\u00eds de destino\./);
+  assert.match(read("pt/index.html"), /Envie o modelo, quantidade e mercado de destino\./);
+  assert.match(read("es/index.html"), /off-road seg\u00fan configuraci\u00f3n/);
+  assert.match(read("pt/index.html"), /off-road conforme configura\u00e7\u00e3o/);
+});
