@@ -188,6 +188,14 @@ test('the form reuses the existing Worker contract without new field names', () 
   assert.match(block, /data-whatsapp-fallback="false"/, 'WhatsApp must never open automatically on failure');
   assert.match(block, /name="website"/, 'honeypot');
   assert.match(block, /name="market" value="Algeria"/);
+  assert.match(block, /<input type="hidden" name="country" value="Algeria">/,
+    'country must stay the stable segmentation value');
+  assert.doesNotMatch(block, /name="country"[^>]*type="text"/,
+    'country must never be a visitor-editable field');
+  assert.match(block, /<label for="wilaya">Wilaya \/ Ville/,
+    'the wilaya stays visible to the buyer');
+  assert.match(block, /<input id="wilaya" type="text"[^>]*aria-required="true"[^>]*>/,
+    'the wilaya control is identified by id only');
   assert.match(block, /name="source_form" value="ads_algerie_fr"/);
   const names = [...block.matchAll(/<(?:input|select|textarea)\b[^>]*name="([^"]+)"/g)].map((m) => m[1]);
   const unique = [...new Set(names)];
@@ -197,7 +205,7 @@ test('the form reuses the existing Worker contract without new field names', () 
   for (const required of ['name', 'company', 'contact', 'country', 'product_interest', 'quantity']) {
     assert.ok(unique.includes(required), 'expected submitted field: ' + required);
   }
-  assert.ok(!/name="(wilaya|buyer_type|city|platform)"/i.test(block), 'unsupported names must never be submitted');
+  assert.ok(!/name="(wilaya|ville|buyer_type|city|platform)"/i.test(block), 'unsupported names must never be submitted');
   assert.match(block, /<select id="dz-buyer-type"[^>]*aria-required="true"/, 'buyer type is collected without a fake field name');
   assert.ok(/<select id="dz-buyer-type"[\s\S]*Importateur[\s\S]*Distributeur[\s\S]*Grossiste[\s\S]*Assembleur[\s\S]*Revendeur/.test(block));
 });
@@ -210,7 +218,9 @@ test('the optional email is mirrored because contact shadows email in the Worker
   assert.match(block, /<input type="hidden" name="requirements" value="">/, 'requirements carries the compact mirror line');
   assert.match(script, /push\('Email', value\(form, 'email'\)\)/);
   assert.match(script, /push\('Type acheteur'/);
-  assert.match(script, /push\('Pays \/ Wilaya', value\(form, 'country'\)/, 'wilaya is stored in the supported country field');
+  assert.match(script, /document\.getElementById\('wilaya'\)/, 'the wilaya is read from the visible control');
+  assert.match(script, /push\('Wilaya', wilaya \? wilaya\.value\.trim\(\) : ''\)/, 'and serialised into requirements');
+  assert.doesNotMatch(script, /value\(form, 'country'\)/, 'the script never reads or writes country from the visitor');
 });
 
 test('ad parameters are captured at page load and re-applied at submit', () => {
@@ -291,4 +301,32 @@ test('the page answers the procurement questions in raw HTML', () => {
   assert.ok(page.includes('chixiangmotor@163.com'));
   assert.ok((page.match(/<details/g) || []).length >= 5, 'a real FAQ of at least five answers');
   assert.ok(!page.includes('class="al-faq"><div'), 'FAQ answers live in HTML, not in generated markup');
+});
+
+test('the wilaya is serialised into requirements while country stays Algeria', () => {
+  const named = {
+    country: { value: 'Algeria' },
+    email: { value: 'buyer@example.com' },
+    vehicle: { value: 'CG 200' },
+    product_interest: { value: 'CB' },
+    quantity: { value: '50' },
+    displacement: { value: '150' },
+    application: { value: 'Route et tout-chemin' },
+    engine_code: { value: 'CX162FMJ' }
+  };
+  const form = {
+    ids: { wilaya: { value: '16 - Alger' }, 'dz-buyer-type': { value: 'Importateur' } },
+    querySelector(sel) {
+      const m = /\[name="([^"]+)"\]/.exec(sel);
+      return m && named[m[1]] ? named[m[1]] : null;
+    },
+    appendChild() {}
+  };
+  const line = boot('', form).qualificationLine(form);
+  assert.ok(line.startsWith('Wilaya: 16 - Alger'), line);
+  assert.ok(line.includes('Type acheteur: Importateur'), line);
+  assert.ok(line.includes('Email: buyer@example.com'), line);
+  assert.ok(line.includes('Familles vendues: CG 200'), line);
+  assert.ok(line.includes('Pays: Algeria'), line);
+  assert.equal(named.country.value, 'Algeria', 'the country slot is never repurposed for the wilaya');
 });

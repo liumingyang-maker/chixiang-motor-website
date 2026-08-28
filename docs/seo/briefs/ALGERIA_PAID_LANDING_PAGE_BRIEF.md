@@ -30,12 +30,15 @@ This is the decision record for `https://chixiangmotor.com/ads/algerie/`.
 ## Form contract actually used
 
 Submitted names, all natively supported by `contact-handler.mjs normalizeInquiry()`:
-`website` honeypot, hidden `market=Algeria`, `source_form=ads_algerie_fr`, `source_cta`, `requirements`,
+`website` honeypot, hidden `market=Algeria`, hidden `country=Algeria`, `source_form=ads_algerie_fr`, `source_cta`,`requirements`,
 then `name`, `company`, `contact`, `country`, `email`, `product_interest`, `displacement`, `quantity`,
 `application`, `vehicle`, `engine_code`, `message`. `page_url` and `site_language` are injected by `js/main.js`.
 
 Deliberate mappings (no backend change):
-- Wilaya and city go into the supported `country` field, so they survive even if JavaScript fails.
+- `country` is submitted as the fixed value `Algeria` so lead segmentation, CRM export, market reporting and
+  reuse across countries stay stable. The visitor's Wilaya / Ville is a visible control (`id="wilaya"`, no submitted
+  name) that `js/algeria-landing.js` serialises into `requirements` as `Wilaya: ...`. Consequence: with JavaScript
+  blocked the wilaya is not transmitted, while `country=Algeria` always is.
 - `Type d'entreprise` has no backend field, so its select carries **no name attribute**; `js/algeria-landing.js`
   writes it into `requirements` as a compact `Key: value; ...` line at submit.
 - The Worker reads `contact` first and only falls back to `email`, and the e-mail template has no separate

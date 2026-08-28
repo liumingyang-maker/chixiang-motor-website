@@ -58,11 +58,13 @@
   // Non-named qualification controls (wilaya / buyer type) are unsupported by the
   // backend, so they are folded into supported fields instead of inventing names.
   function qualificationLine(form) {
+    var wilaya = document.getElementById('wilaya');
     var buyerType = document.getElementById('dz-buyer-type');
     var parts = [];
     function push(label, val) { if (val) { parts.push(label + ': ' + val); } }
-    push('Pays / Wilaya', value(form, 'country') || 'Algeria');
+    push('Wilaya', wilaya ? wilaya.value.trim() : '');
     push('Type acheteur', buyerType ? buyerType.value : '');
+    push('Pays', 'Algeria');
     push('Produit', value(form, 'product_interest'));
     push('Cylindree', value(form, 'displacement'));
     push('Quantite', value(form, 'quantity'));
@@ -115,7 +117,7 @@
       product: productLabel(form),
       application: state.application || value(form, 'application'),
       quantity: value(form, 'quantity'),
-      wilaya: value(form, 'country')
+      wilaya: (function () { var el = document.getElementById('wilaya'); return el ? el.value.trim() : ''; })()
     };
     var url = buildWhatsAppUrl(context);
     var links = document.querySelectorAll('[data-whatsapp-link]');
@@ -227,10 +229,12 @@
       composeRequirements(form);
       syncSelection(form);
     }, true);
-    ['product_interest', 'application', 'quantity', 'displacement', 'country', 'vehicle'].forEach(function (name) {
+    ['product_interest', 'application', 'quantity', 'displacement', 'vehicle'].forEach(function (name) {
       var input = field(form, name);
       if (input) { input.addEventListener('change', function () { syncSelection(form); }); }
     });
+    var wilayaControl = document.getElementById('wilaya');
+    if (wilayaControl) { wilayaControl.addEventListener('input', function () { refreshWhatsAppLinks(form); }); }
     bindProductButtons(form);
     bindSourceCta(form);
     syncSelection(form);
