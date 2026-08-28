@@ -53,6 +53,9 @@ function classify(pathname) {
   if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|how-to-choose-motorcycle-engine-manufacturer-china)$/.test(pathname)) {
     return { role: 'article', schemaType: 'WebPage' };
   }
+  if (pathname === '/es/guia/que-es-un-motor-cg/') {
+    return { role: 'article', schemaType: 'WebPage' };
+  }
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(pathname)) {
     return { role: 'market', schemaType: 'WebPage' };
   }

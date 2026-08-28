@@ -56,6 +56,7 @@ function pageRole(page) {
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(page.pathname)) return 'contact';
   if (/\/news$/.test(page.pathname)) return 'news';
   if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|how-to-choose-motorcycle-engine-manufacturer-china)$/.test(page.pathname)) return 'article';
+  if (page.pathname === '/es/guia/que-es-un-motor-cg/') return 'article';
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(page.pathname)) return 'market';
   return 'family';
 }
@@ -100,10 +101,10 @@ function breadcrumbUrls(node) {
   });
 }
 
-test('sitemap manifest contains exactly 51 canonical source pages', () => {
+test('sitemap manifest contains exactly 52 canonical source pages', () => {
   const pages = sitemapPages();
-  assert.equal(pages.length, 51);
-  assert.equal(new Set(pages.map(page => page.url)).size, 51);
+  assert.equal(pages.length, 52);
+  assert.equal(new Set(pages.map(page => page.url)).size, 52);
   for (const page of pages) {
     assert.ok(fs.existsSync(path.join(root, page.file)), `${page.url}: missing ${page.file}`);
     assert.equal(new URL(page.url).origin, origin);
@@ -119,7 +120,7 @@ test('maintenance manifest reproduces the canonical role and breadcrumb contract
 
   assert.equal(actualOrganizationId, organizationId);
   assert.equal(actualWebsiteId, websiteId);
-  assert.equal(manifest.length, 51);
+  assert.equal(manifest.length, 52);
   assert.deepEqual(manifest.map(entry => entry.url), expected.map(page => page.url));
   for (let index = 0; index < expected.length; index += 1) {
     const page = expected[index];
@@ -149,12 +150,12 @@ test('all canonical pages publish their safe primary page type and stable entity
   }
 });
 
-test('46 non-home pages expose a visible canonical breadcrumb trail', () => {
+test('47 non-home pages expose a visible canonical breadcrumb trail', () => {
   const pages = sitemapPages();
   const homePages = pages.filter(page => pageRole(page) === 'home');
   const nonHomePages = pages.filter(page => pageRole(page) !== 'home');
   assert.equal(homePages.length, 5);
-  assert.equal(nonHomePages.length, 46);
+  assert.equal(nonHomePages.length, 47);
 
   for (const page of homePages) {
     assert.equal(visibleBreadcrumb(read(page.file)), null, `${page.file}: language home has no breadcrumb`);
@@ -175,7 +176,7 @@ test('46 non-home pages expose a visible canonical breadcrumb trail', () => {
   }
 });
 
-test('46 non-home pages publish matching BreadcrumbList structured data', () => {
+test('47 non-home pages publish matching BreadcrumbList structured data', () => {
   for (const page of sitemapPages()) {
     const html = read(page.file);
     const nodes = schemaNodes(html, page.file);
@@ -206,12 +207,12 @@ test('generated entity graphs use one marker and responsive breadcrumb CSS', () 
   assert.doesNotMatch(rule[1], /white-space\s*:\s*nowrap|overflow-x\s*:\s*hidden|width\s*:\s*\d+px/);
 });
 
-test('the 51-page governance matrix records the entity link and schema contract', () => {
+test('the 52-page governance matrix records the entity link and schema contract', () => {
   const lines = read('docs/geo-entity/phase-6-1b/PAGE_CHANGE_MATRIX.csv').trim().split(/\r?\n/);
   const header = lines[0].split(',');
   const testsColumn = header.indexOf('tests');
   assert.notEqual(testsColumn, -1, 'matrix tests column');
-  assert.equal(lines.length - 1, 51, 'matrix canonical page rows');
+  assert.equal(lines.length - 1, 52, 'matrix canonical page rows');
   for (const line of lines.slice(1)) {
     const columns = line.split(',');
     assert.match(columns[testsColumn], /(?:^|\|)site entity link\/schema contract(?:\||$)/);
