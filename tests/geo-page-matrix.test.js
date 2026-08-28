@@ -44,8 +44,8 @@ const allowedClasses = new Set(['FACT_FIX', 'OWNER_ENHANCEMENT', 'TRANSLATION_SY
 
 test('page matrix covers every canonical sitemap URL exactly once', () => {
   const rows = parseCsv(read('docs/geo-entity/phase-6-1b/PAGE_CHANGE_MATRIX.csv'));
-  assert.equal(rows.length, 51);
-  assert.equal(new Set(rows.map(row => row.url)).size, 51);
+  assert.equal(rows.length, 52);
+  assert.equal(new Set(rows.map(row => row.url)).size, 52);
   assert.deepEqual([...rows.map(row => row.url)].sort(), [...sitemapUrls].sort());
   for (const row of rows) {
     assert.ok(allowedClasses.has(row.change_class), `${row.url}:${row.change_class}`);
