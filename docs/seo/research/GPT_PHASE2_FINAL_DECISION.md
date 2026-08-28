@@ -10,7 +10,7 @@ Labels: OBSERVED / SERP_OBSERVED (non-geo caveat) / GSC_OBSERVED (owner-supplied
 1. ES-G1 "¿Qué es un motor CG?" guide — APPROVED, Wave 1. Built on branch seo/es-cg-guide-wave-1 at URL
    /es/guia/que-es-un-motor-cg/ (article/WebPage, Inicio→Noticias→guide, links to CG/CB/parts/contact).
    Informational only; no supplier keywords in title/H1; Chixiang-scoped CG wording (no universal CG
-   definition); selection keyed to concrete engine code + spec sheet. GPT review corrections applied.
+   definition); selection keyed to concrete engine code + spec sheet. GPT review corrections applied. **STATUS: RELEASED + PRODUCTION VERIFIED** (see Waves / Verification sections).
 2. ES Horizontal guide (Qué es / dónde se usa) — WATCH. Not built. Only reconsider after GSC query evidence
    confirms the motorcycle-intent demand is distinct enough from /es/motor-horizontal.
 3. PT-BR: existing commercial owners FIRST (/pt/motor-cg, /pt/motor-cb, /pt/motor-horizontal,
@@ -42,13 +42,27 @@ Labels: OBSERVED / SERP_OBSERVED (non-geo caveat) / GSC_OBSERVED (owner-supplied
 - No strong torque / low vibration / invented performance; no 24-hour or any SLA; no MOQ/price/lead-time/stock;
   no certificate number/scope; Brazil copy in Brazilian Portuguese (no Spanish "por mayor").
 
-## Waves (plan only; no execution here)
-- Wave 1 (done): ES-G1 guide + Batch-1 governance (already merged) + ES/PT home cleanup (Task A branch).
+## Waves (Wave 1 shipped and verified; Wave 2-4 plan only - nothing executed from this file)
+- Wave 1 = RELEASED + PRODUCTION VERIFIED.
+  Task A (ES/PT home claim cleanup) - branch seo/governance-cleanup-es-pt-home, PR #29,
+  merge e61f7da6db66be102b98aa9a8ff7f063c2d3b296. Live /es/ and /pt/ checked: no 24-hour reply
+  promise, no CB torque/vibration wording, configuration qualifier intact.
+  Task B (ES-G1 guide + minimal Foundation extension) - branch seo/es-cg-guide-wave-1, PR #30,
+  merge b53df1de9a10f02be46f65ca9246fc513d034de8 (= origin/main after Wave 1).
+  Batch-1 governance corrections shipped earlier via PR #28, merge
+  ea63342721401d78ea87864b131026f80fe51379 (the base of Wave 1).
 - Wave 2: measure ES-G1 after reindex; then consider ES Horizontal support ONLY if query evidence clears item 2.
 - Wave 3: strengthen existing PT owners via the two approved commercial briefs (docs/seo/briefs/*), pending evidence.
 - Wave 4: revisit DR / Brazil market pages only on GSC country × query.
 
-## Open verification before any deploy of the ES guide
-- The guide uses a nested trailing-slash directory URL; confirm the production host serves
-  /es/guia/que-es-un-motor-cg/index.html for the directory path (repo test mocks asset fetch).
-- Confirm post-Batch-1 GSC re-pull (old PT "50cc-125cc" title still cached in some SERP sources).
+## Verification after deploy
+- RESOLVED / OBSERVED PASS - the nested trailing-slash directory URL is served correctly in
+  production: https://chixiangmotor.com/es/guia/que-es-un-motor-cg/ returns HTTP 200, no 404,
+  no redirect loop (the earlier "repo test mocks asset fetch" caveat is closed).
+- Production smoke for the same URL: canonical exact self-reference with trailing slash; UTF-8
+  accents intact when the raw response bytes are decoded (no ? -mangled text, no U+FFFD); Article
+  schema with inLanguage es; breadcrumb Inicio -> Noticias -> guide; owner links /es/motor-cg,
+  /es/motor-cb, /es/repuestos-motor, /es/contacto present; /es/news shows the accented guide card;
+  sitemap.xml lists the guide URL exactly once; owner pages /es/motor-cg, /es/motor-cb and
+  /es/motor-horizontal still 200 with unchanged canonical and H1.
+- STILL PENDING - post-Batch-1 GSC re-pull (old PT "50cc-125cc" title still cached in some SERP sources).
