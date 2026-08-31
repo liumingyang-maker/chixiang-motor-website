@@ -45,3 +45,7 @@ tests/
 tests/**
 workers/
 workers/**
+# Exact-file publication carve-out: an internal text extraction artifact that
+# happens to live next to the real catalogue PDF. The pdf/ directory itself
+# stays public; only this intermediate file stops being uploaded.
+pdf/extracted.txt

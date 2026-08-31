@@ -56,6 +56,9 @@ function listFiles(dir) {
 
 const INTERNAL_DIRS = ['docs', 'research', 'scripts', 'tests', 'workers'];
 const PUBLIC_DIRS = ['ar', 'css', 'en', 'es', 'images', 'js', 'pdf', 'pt', 'ru'];
+/* Exact-file carve-outs that are deliberately withheld from the upload even though
+ * they live under an otherwise public directory. Broad directory rules are forbidden. */
+const PUBLIC_CARVE_OUTS = ['pdf/extracted.txt'];
 
 /* The complete, reviewed rule set. Any new rule must be an explicit decision. */
 const EXPECTED_RULES = [
@@ -66,6 +69,7 @@ const EXPECTED_RULES = [
   '.assetsignore', '.gitignore', 'AGENTS.md', 'README.md',
   'FOUNDATION_AUDIT_REPORT.md', 'FOUNDATION_FIX_REPORT.md', 'serve.json',
   'wrangler.toml', 'package.json', 'package-lock.json',
+  'pdf/extracted.txt',
   'docs/', 'docs/**', 'research/', 'research/**', 'scripts/', 'scripts/**',
   'tests/', 'tests/**', 'workers/', 'workers/**'
 ];
@@ -103,6 +107,10 @@ test('every public runtime file on disk stays uploadable', () => {
     const files = listFiles(dir);
     assert.ok(files.length > 0, 'expected public content under ' + dir + '/');
     for (const file of files) {
+      if (PUBLIC_CARVE_OUTS.includes(file)) {
+        assert.equal(isUploaded(file), false, 'carved-out internal artifact must stay unpublished: ' + file);
+        continue;
+      }
       assert.equal(isUploaded(file), true, 'public runtime file must stay uploadable: ' + file);
       checked += 1;
     }
@@ -157,4 +165,53 @@ test('this hardening touches no governed Foundation file', () => {
   assert.ok(!/ads/.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);
   assert.equal(manifest.length, 52, 'manifest page set is unchanged');
+});
+
+test('the pdf directory stays public while the extracted text artifact is withheld', () => {
+  // (4) only an exact-file rule was added - no broad pdf rule
+  assert.ok(rules.includes('pdf/extracted.txt'), 'the exact carve-out rule must exist');
+  assert.ok(!rules.includes('pdf/'), 'a broad pdf/ rule must not exist');
+  assert.ok(!rules.includes('pdf/**'), 'a broad pdf/** rule must not exist');
+  assert.deepEqual(rules.filter((r) => r.startsWith('pdf/')), ['pdf/extracted.txt'],
+    'the pdf path may only carry the reviewed exact-file rule');
+  // (1) the internal artifact is excluded from the upload but kept in Git
+  assert.equal(isUploaded('pdf/extracted.txt'), false, 'extracted text must not be published');
+  assert.ok(fs.existsSync(path.join(root, 'pdf', 'extracted.txt')),
+    'the file must stay tracked on disk; only publication changes');
+  // (2) and (3) every other real file under pdf/ remains uploadable
+  const pdfFiles = listFiles('pdf');
+  const realPdfs = pdfFiles.filter((file) => !PUBLIC_CARVE_OUTS.includes(file));
+  assert.ok(realPdfs.length >= 1, 'expected at least one real PDF to stay public');
+  for (const file of realPdfs) {
+    assert.equal(isUploaded(file), true, 'actual PDF must stay uploadable: ' + file);
+  }
+  assert.ok(pdfFiles.includes('pdf/' + String.fromCharCode(0x6700, 0x65b0) + 'cdr21.pdf'),
+    'the catalogue PDF must still be present under pdf/');
+  // future PDFs must not be swallowed by a directory rule
+  for (const file of ['pdf/catalog.pdf', 'pdf/2026 price list.pdf', 'pdf/deep/spec.pdf']) {
+    assert.equal(isUploaded(file), true, 'future PDF assets must remain publishable: ' + file);
+  }
+  // (5) documented public roots keep working
+  for (const sample of ['ads/algerie/index.html', 'ar/cg-engine.html', 'en/cg-engine.html',
+    'es/motor-cg.html', 'pt/motor-cg.html', 'ru/dvigatel-cg.html', 'css/style.css',
+    'css/algeria-landing.css', 'js/main.js', 'js/algeria-landing.js', 'images/logo.webp',
+    'images/CB/1.webp']) {
+    assert.equal(isUploaded(sample), true, 'public path must stay uploadable: ' + sample);
+  }
+  // (6) public root files
+  for (const file of ['index.html', 'robots.txt', 'sitemap.xml', '_headers', '_redirects']) {
+    assert.equal(isUploaded(file), true, 'public root file must stay uploadable: ' + file);
+  }
+  // (7) Worker invariants: still the Worker entry, still in Git, still not a static asset
+  const Q = String.fromCharCode(34);
+  const wrangler = read('wrangler.toml');
+  assert.ok(wrangler.includes('main = ' + Q + 'workers/site-router.mjs' + Q),
+    'the Worker entry point must remain unchanged');
+  assert.ok(rules.includes('workers/') && rules.includes('workers/**'),
+    'Worker source must stay excluded from the static asset upload');
+  assert.equal(isUploaded('workers/site-router.mjs'), false);
+  for (const kept of ['workers/site-router.mjs', 'workers/contact-api/src/index.mjs',
+    'workers/contact-api/src/contact-handler.mjs']) {
+    assert.ok(fs.existsSync(path.join(root, kept)), 'Worker source must remain in Git: ' + kept);
+  }
 });
