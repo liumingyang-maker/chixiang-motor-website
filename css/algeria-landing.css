@@ -666,6 +666,7 @@ body:not(.al-page) .al-mobile-cta { display: none; }
   .al-mobile-cta { display: flex; }
   .al-compare { display: none; }
 }
+.al-mobile-cta[hidden] { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .al-page *,
