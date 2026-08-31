@@ -15,3 +15,37 @@ _github_upload_packages/**
 *.zip
 *.log
 UPLOAD_STEPS.txt
+
+# ---------------------------------------------------------------------------
+# Internal engineering, governance and automation sources.
+# These files stay in Git but must never be uploaded as public client-side
+# static assets (assets.directory = "." publishes the repository root).
+#
+# Excluding a path here only stops the static-asset upload. The Worker itself
+# is still deployed from `main = "workers/site-router.mjs"` in wrangler.toml,
+# exactly as documented for .assetsignore (https://developers.cloudflare.com/workers/static-assets/binding/#ignoring-assets).
+# ---------------------------------------------------------------------------
+.assetsignore
+.gitignore
+AGENTS.md
+README.md
+FOUNDATION_AUDIT_REPORT.md
+FOUNDATION_FIX_REPORT.md
+serve.json
+wrangler.toml
+package.json
+package-lock.json
+docs/
+docs/**
+research/
+research/**
+scripts/
+scripts/**
+tests/
+tests/**
+workers/
+workers/**
+# Exact-file publication carve-out: an internal text extraction artifact that
+# happens to live next to the real catalogue PDF. The pdf/ directory itself
+# stays public; only this intermediate file stops being uploaded.
+pdf/extracted.txt
