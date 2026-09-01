@@ -472,3 +472,25 @@ test('the hero lists approved displacements as discrete classes, never as an int
   assert.ok(!items[0].includes("110") && !items[0].includes("140"), "no displacement may be added to CG");
   assert.ok(!items[1].includes("125") && !items[1].includes("175"), "no displacement may be added to CB");
 });
+test('no customer-visible copy states engine classes as an interval', () => {
+  const DASH = "\u2013", EMDASH = "\u2014", A = "\u00e0";
+  const visible = page
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<script[\s\S]*?<\/script>/g, " ")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ");
+  const generic = new RegExp("\\d{2,4}\\s*(?:" + A + "|" + DASH + "|" + EMDASH + "|-|to)\\s*\\d{2,4}", "i");
+  const hit = visible.match(generic);
+  assert.equal(hit, null, "customer copy must not state any number-to-number range: " + (hit ? hit[0] : ""));
+  for (const bad of ["125 " + A + " 250", "125" + DASH + "250", "125-250", "125 to 250",
+    "150 " + A + " 250", "150" + DASH + "250", "150-250", "150 to 250",
+    "CG air - 125 " + A + " 250"]) {
+    assert.ok(!visible.includes(bad), "forbidden interval wording returned: " + bad);
+  }
+  const caption = (visible.match(/CG air -[^A-Z]{0,60}/) || [""])[0].trim();
+  assert.equal(caption, "CG air - 125 / 150 / 175 / 200 / 250", "the hero caption lists the discrete CG classes");
+  assert.ok(page.includes("<figcaption>CG air - 125 / 150 / 175 / 200 / 250</figcaption>"),
+    "caption markup is exactly the approved discrete set");
+  assert.ok(page.includes("<figcaption>CG eau</figcaption>") && page.includes("<figcaption>CB</figcaption>"),
+    "the other hero captions stay untouched");
+});
