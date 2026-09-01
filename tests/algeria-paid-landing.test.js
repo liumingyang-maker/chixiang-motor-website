@@ -98,10 +98,12 @@ test('no organic page links to the paid page yet', () => {
 test('one H1 and the frozen hero copy carry real French accents', () => {
   assert.equal((page.match(/<h1\b/gi) || []).length, 1, 'exactly one visible H1');
   const h1 = (page.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [])[1] || '';
-  assert.equal(h1.trim(), 'Moteurs de moto CG et CB pour importateurs et distributeurs en Alg\u00e9rie');
-  assert.ok(page.includes('S\u00e9ries CG, CB, moteurs horizontaux et pi\u00e8ces de rechange pour les importateurs, distributeurs et assembleurs.'));
-  assert.ok(page.includes('La configuration est confirm\u00e9e selon le mod\u00e8le et le projet.'));
-  assert.ok(page.includes('Demander une offre'));
+  const h1Text = h1.trim().replace(/\u2019/g, String.fromCharCode(39));
+  assert.equal(h1Text, 'Moteurs CG et CB en gros pour l' + String.fromCharCode(39) + 'Alg\u00e9rie');
+  assert.ok(page.includes('s\u00e9ries CG, CB, moteurs horizontaux et pi\u00e8ces de moteur.'));
+  assert.ok(page.includes('Confirmez le mod\u00e8le, la cylindr\u00e9e et la quantit\u00e9 pour recevoir une offre adapt\u00e9e au projet.'));
+  assert.ok(page.includes('La quantit\u00e9, la configuration et les conditions sont confirm\u00e9es selon le mod\u00e8le et le projet.'));
+  assert.ok(page.includes('Demander un devis'));
   assert.ok(page.includes('Wilaya / Ville'));
   assert.ok(page.includes('Cylindr\u00e9e nominale'));
   assert.ok(page.includes('Quelles marques ou familles de moteurs vendez-vous actuellement ?'));
@@ -133,8 +135,8 @@ test('approved product facts are published and unapproved ones are absent', () =
 });
 
 test('no universal-fit and no Indian-platform compatibility claim', () => {
-  assert.match(page, /Aucune compatibilit\u00e9 universelle n['\u2019]est annonc\u00e9e sans ces \u00e9l\u00e9ments\./,
-    'the page must keep the explicit non-universal-fit disclaimer');
+  assert.match(page, /Sans ces \u00e9l\u00e9ments, aucune compatibilit\u00e9 ne peut \u00eatre annonc\u00e9e\./,
+    'the page must keep an explicit no-compatibility-without-evidence statement');
   assert.doesNotMatch(page, /compatibilit\u00e9 universelle (?:est|garantie)|convient \u00e0 tous|compatible avec tous|fit universel/i,
     'no affirmative universal-fit claim');
   assert.doesNotMatch(page, /Bajaj|TVS|Boxer|Apache|Keeway|Piaggio/i, 'no Indian-platform compatibility framing');
@@ -164,7 +166,7 @@ test('every local asset referenced by the page exists on disk', () => {
 });
 
 test('hero images respect the documented performance budget', () => {
-  const heroStage = page.match(/<div class="al-hero-stage"[\s\S]*?<\/div>/) || [];
+  const heroStage = page.match(/data-hero-stage[\s\S]*?(?=<\/section>)/) || [];
   const heroRefs = [...new Set([...(heroStage[0] || '').matchAll(/src="([^"]+)"/g)].map((m) => m[1]))].map(decodeURIComponent);
   assert.equal(heroRefs.length, 3, 'three engine tiles above the fold');
   let total = 0;
@@ -286,9 +288,13 @@ test('the stylesheet is self-contained and hides no horizontal overflow', () => 
 });
 
 test('the page answers the procurement questions in raw HTML', () => {
-  for (const id of ['acheteurs', 'familles', 'comparaison', 'pieces', 'usine', 'demarche', 'offre', 'questions']) {
+  for (const id of ['familles', 'comparaison', 'usine', 'offre', 'questions']) {
     assert.ok(page.includes('id="' + id + '"'), 'missing section: ' + id);
   }
+  for (const gone of ['acheteurs', 'demarche', 'pieces']) {
+    assert.ok(!page.includes('id="' + gone + '"'), 'V2 must drop the section: ' + gone);
+  }
+  assert.ok((page.match(/<section\b/g) || []).length <= 7, 'V2 must stay short, found ' + (page.match(/<section\b/g) || []).length + ' sections');
   assert.ok(page.includes('Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.'));
   assert.match(page, /[Ee]xp\u00e9rience dans le secteur depuis 2003/, 'industry experience since 2003');
   assert.ok(/soci\u00e9t\u00e9 enregistr\u00e9e en 2007/i.test(page), 'registration year is distinguished from 2003');
@@ -329,4 +335,210 @@ test('the wilaya is serialised into requirements while country stays Algeria', (
   assert.ok(line.includes('Familles vendues: CG 200'), line);
   assert.ok(line.includes('Pays: Algeria'), line);
   assert.equal(named.country.value, 'Algeria', 'the country slot is never repurposed for the wilaya');
+});
+test('V2 keeps internal prioritisation and fact-governance vocabulary out of customer copy', () => {
+  assert.doesNotMatch(page, /Priorit[e\u00e9] [123]/, 'internal priority labels must not be visible to buyers');
+  assert.doesNotMatch(page, /donn\u00e9es approuv\u00e9es/, 'fact-governance vocabulary must not be customer copy');
+  assert.doesNotMatch(page, /al\u00e9sage et course non publi\u00e9s/, 'unpublished-dimension wording must not be customer copy');
+  assert.doesNotMatch(page, /pr\u00e9sent\u00e9e comme sup\u00e9rieure/, 'the comparative-superiority governance sentence is gone');
+  assert.doesNotMatch(page, /Aucun d\u00e9lai de livraison, prix ou disponibilit\u00e9/, 'the compliance-memo disclaimer is removed');
+  assert.ok(page.includes('\u00c0 confirmer selon le mod\u00e8le'), 'unknowns now use customer language');
+  assert.match(page, /aria-label="Comparaison en cartes"/, 'the aria-label typo is corrected');
+  assert.doesNotMatch(page, /Comparation/, 'no French typo remains');
+});
+
+test('V2 moves technical fields into one optional disclosure without dropping any', () => {
+  const block = formBlock();
+  const cut = block.indexOf('<details class="al-form-more">');
+  assert.ok(cut > 0, 'the optional technical disclosure must exist inside the form');
+  const more = block.slice(cut);
+  const first = block.slice(0, cut);
+  for (const name of ['displacement', 'application', 'vehicle', 'engine_code', 'email', 'message']) {
+    assert.ok(more.includes('name="' + name + '"'), 'optional disclosure must still carry ' + name);
+  }
+  for (const name of ['name', 'company', 'contact', 'product_interest', 'quantity']) {
+    assert.ok(first.includes('name="' + name + '"'), 'field must stay in the first visible block: ' + name);
+  }
+  assert.ok(first.includes('id="wilaya"') && first.includes('id="dz-buyer-type"'),
+    'wilaya and buyer type stay in the first visible block');
+  assert.doesNotMatch(more, /\brequired\b/, 'a control inside a closed disclosure must never be required');
+});
+
+test('V2 product card CTAs still prefill the form using existing option values', () => {
+  const block = formBlock();
+  const productValues = [...block.matchAll(/<select id="dz-product"[\s\S]*?<\/select>/g)][0][0]
+    .split(/\r?\n/).filter((l) => /<option>/.test(l)).map((l) => /<option>([^<]+)<\/option>/.exec(l)[1]);
+  const appValues = [...block.matchAll(/<select id="dz-application"[\s\S]*?<\/select>/g)][0][0]
+    .split(/\r?\n/).filter((l) => /<option>/.test(l)).map((l) => /<option>([^<]+)<\/option>/.exec(l)[1]);
+  const products = [...page.matchAll(/data-select-product="([^"]+)"/g)].map((m) => m[1]);
+  const apps = [...page.matchAll(/data-select-application="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(products.length, 5, 'every family card must offer a quote action');
+  assert.equal(apps.length, 5, 'every family card must suggest an application');
+  for (const value of products) assert.ok(productValues.includes(value), 'unknown product option targeted: ' + value);
+  for (const value of apps) assert.ok(appValues.includes(value), 'unknown application option targeted: ' + value);
+  assert.ok(products.includes('CG \u00e0 refroidissement par air'), 'CG air must stay selectable from its card');
+});
+
+test('V2 header stays one compact row and keeps WhatsApp plus the quote action only', () => {
+  assert.match(css, /\.al-header-inner\s*\{[\s\S]*?flex-wrap:\s*nowrap/, 'the header must never wrap into a second row');
+  const header = (page.match(/<header[\s\S]*?<\/header>/) || [''])[0];
+  assert.ok(header.includes('data-whatsapp-link'), 'WhatsApp must stay in the header');
+  assert.ok(header.includes('>Devis<'), 'the header quote CTA uses the short label');
+  assert.equal((header.match(/class="al-button/g) || []).length, 2, 'the header holds exactly two actions');
+  assert.doesNotMatch(header, /href="#(familles|comparaison|usine|questions)"/, 'no site-like navigation in a paid header');
+});
+
+test('V2 removes the nested narrow card layout and keeps the sticky CTA hideable', () => {
+  assert.doesNotMatch(css, /minmax\(0,\s*320px\)/, 'no fixed 320px image column may sit inside a card column');
+  assert.doesNotMatch(css, /\.al-families/, 'the old two-up card grid is gone');
+  assert.match(css, /\.al-mobile-cta\[hidden\]\s*\{\s*display:\s*none/, 'the sticky CTA must still honour its hidden state');
+  assert.doesNotMatch(css, /box-shadow:[^;]*\d{2,3}px\s+\d{2,3}px/, 'shadows stay restrained, no heavy elevation stack');
+});
+
+test('V2 adds no external dependency and keeps one prioritised hero resource', () => {
+  const hosts = [...new Set([...page.matchAll(/(?:src|href)="https?:\/\/([^/"]+)/g)].map((m) => m[1]))];
+  const unexpected = hosts.filter((h) => !/googletagmanager\.com|analytics\.google\.com|^wa\.me$|doubleclick\.net/.test(h));
+  assert.deepEqual(unexpected, [], 'only the existing Google Ads hosts may be loaded externally: ' + unexpected.join(','));
+  assert.doesNotMatch(page, /fonts\.(googleapis|gstatic)|cdn\.jsdelivr|unpkg\.com|bootstrap|tailwind|recaptcha/i,
+    'no new font, icon or UI library CDN may be introduced');
+  assert.equal((page.match(/fetchpriority="high"/g) || []).length, 1);
+  assert.equal((page.match(/<video\b|<iframe\b/g) || []).length, 0, 'no video or iframe player above the fold');
+});
+
+test('V2 keeps the FAQ short and puts the platform guidance next to the field', () => {
+  const faqBlock = (page.split('<div class="al-faq">')[1] || '').split('</section>')[0];
+  assert.ok(faqBlock, 'the FAQ list must exist');
+  assert.equal((faqBlock.match(/<details\b/g) || []).length, 5, 'V2 keeps five high-value questions');
+  const vehicleField = (page.split('<label for="dz-vehicle">')[1] || '').split('</div>')[0];
+  assert.ok(vehicleField.includes('Indiquez la plateforme'), 'the platform guidance sits under the platform field');
+  const visibleText = page.replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]*>/g, ' ');
+  for (const brand of ['Haojiang', 'Sanya', 'Lifan', 'Touareg']) {
+    assert.ok(!visibleText.includes(brand), brand + ' may only appear as a form example, never as page copy');
+    assert.ok(new RegExp('placeholder="[^"]*' + brand).test(page), brand + ' should sit inside the qualification placeholder');
+  }
+  assert.doesNotMatch(page, /compatible[s]? avec (Haojiang|Sanya|Lifan|Touareg)/i, 'no compatibility claim against local platforms');
+});
+test('the paid page never points at the quarantined Arabic locale', () => {
+  assert.doesNotMatch(page, /href="[^"]*\/ar\//, 'no link into the blocked /ar/ pages');
+  assert.doesNotMatch(page, /lang="ar"|dir="rtl"/, 'the page stays French and left-to-right');
+  assert.ok(page.includes('href="/en/"'), 'the only cross-site link is the approved English home');
+});
+// Page-scoped guard only. export-country-count stays a governed Fact Pack row; it is simply
+// not cleared for customer-facing wording until approved_public_wording is frozen for it.
+test('the Algeria page publishes no export-country scale claim', () => {
+  const visible = page.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
+  const flat = visible.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  for (const phrase of ["50+ pays", "50 pays", "plus de 50 pays", "exporte dans plus de 50",
+    "present dans plus de 50", "50+ marches", "50 marches", "couvre 50"]) {
+    assert.ok(!flat.includes(phrase), "customer copy must not claim: " + phrase);
+  }
+  assert.equal((visible.match(/pays/gi) || []).length, 0, "the word pays must not appear in customer copy at all");
+  assert.equal((visible.match(/exportation/gi) || []).length, 0, "no exportation scale wording");
+});
+
+test('the four factory metrics are the governed set', () => {
+  const stats = (page.match(/<div class="al-stats">[\s\S]*?<\/div>\s*<\/div>/) || [""])[0];
+  const visible = stats.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  assert.equal((stats.match(/<div><strong>/g) || []).length, 4, "exactly four factory metrics");
+  for (const fact of ["99 %", "15 000 m\u00b2", "100", "8 000+"]) {
+    assert.ok(visible.includes(fact), "missing governed metric: " + fact);
+  }
+  assert.ok(visible.includes("conformit\u00e9 au premier contr\u00f4le"), "yield label");
+  assert.ok(visible.includes("superficie d\u2019usine") || visible.includes("superficie d'usine"), "area label");
+  assert.ok(visible.includes("collaborateurs"), "employee label");
+  assert.ok(visible.includes("moteurs / mois"), "capacity label");
+  assert.ok(!/50/.test(visible), "no country count in the metric block");
+});
+test('the hero lists approved displacements as discrete classes, never as an interval', () => {
+  const hero = (page.split('id="top"')[1] || "").split("</section>")[0];
+  assert.ok(hero.length > 200, "the hero section must be present to be audited");
+  const visible = hero.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
+  for (const bad of ["125" + "\u2013" + "250", "125-250", "150" + "\u2013" + "250", "150-250"]) {
+    assert.ok(!visible.includes(bad), "interval notation implies sizes that are not approved: " + bad);
+  }
+  assert.ok(!/CG\s*125\s*[\u2013-]\s*250/.test(visible), "no CG range");
+  assert.ok(!/CB\s*150\s*[\u2013-]\s*250/.test(visible), "no CB range");
+  const signals = (hero.split('class="al-hero-signals"')[1] || "").split("</ul>")[0];
+  const items = [...signals.matchAll(/<li>([^<]*)<\/li>/g)].map((m) => m[1]);
+  assert.equal(items.length, 4, "the hero keeps four quick signals");
+  assert.equal(items[0], "CG 125 / 150 / 175 / 200 / 250");
+  assert.equal(items[1], "CB 150 / 200 / 250");
+  for (const cls of ["125", "150", "175", "200", "250"]) {
+    assert.ok(items[0].includes(cls), "CG must stay published: " + cls);
+  }
+  for (const cls of ["150", "200", "250"]) {
+    assert.ok(items[1].includes(cls), "CB must stay published: " + cls);
+  }
+  assert.ok(!items[0].includes("110") && !items[0].includes("140"), "no displacement may be added to CG");
+  assert.ok(!items[1].includes("125") && !items[1].includes("175"), "no displacement may be added to CB");
+});
+test('no customer-visible copy states engine classes as an interval', () => {
+  const DASH = "\u2013", EMDASH = "\u2014", A = "\u00e0";
+  const visible = page
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<script[\s\S]*?<\/script>/g, " ")
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ");
+  const generic = new RegExp("\\d{2,4}\\s*(?:" + A + "|" + DASH + "|" + EMDASH + "|-|to)\\s*\\d{2,4}", "i");
+  const hit = visible.match(generic);
+  assert.equal(hit, null, "customer copy must not state any number-to-number range: " + (hit ? hit[0] : ""));
+  for (const bad of ["125 " + A + " 250", "125" + DASH + "250", "125-250", "125 to 250",
+    "150 " + A + " 250", "150" + DASH + "250", "150-250", "150 to 250",
+    "CG air - 125 " + A + " 250"]) {
+    assert.ok(!visible.includes(bad), "forbidden interval wording returned: " + bad);
+  }
+  const caption = (visible.match(/CG air -[^A-Z]{0,60}/) || [""])[0].trim();
+  assert.equal(caption, "CG air - 125 / 150 / 175 / 200 / 250", "the hero caption lists the discrete CG classes");
+  assert.ok(page.includes("<figcaption>CG air - 125 / 150 / 175 / 200 / 250</figcaption>"),
+    "caption markup is exactly the approved discrete set");
+  assert.ok(page.includes("<figcaption>CG eau</figcaption>") && page.includes("<figcaption>CB</figcaption>"),
+    "the other hero captions stay untouched");
+});
+test('the base anchor reset cannot outrank component foreground colours', () => {
+  // the reset must stay at specificity (0,1,0) so the component rules below win
+  assert.match(css, /\.al-page :where\(a\)\s*\{\s*color:\s*inherit/, 'the anchor reset must be wrapped in :where()');
+  assert.ok(!/^\.al-page a\s*\{\s*color:\s*inherit/m.test(css), 'the old (0,1,1) reset must not come back');
+  for (const sel of ['.al-brand', '.al-header-phone', '.al-button-primary', '.al-button-wa', '.al-button-dark']) {
+    const rule = css.match(new RegExp('\\' + sel + '\\s*\\{[^}]*\\}'));
+    assert.ok(rule, 'missing component rule: ' + sel);
+    assert.match(rule[0], /color:/, sel + ' must declare its own foreground');
+  }
+  assert.match(css, /\.al-button-primary\s*\{[^}]*color:\s*#fff/, 'red CTA foreground stays white');
+  assert.match(css, /\.al-button-wa\s*\{[^}]*color:\s*#fff/, 'WhatsApp CTA foreground stays white');
+  assert.ok(!/!important/.test(css.replace(/animation-duration[^}]*|transition-duration[^}]*/g, '')),
+    'the cascade is fixed structurally, not with !important');
+});
+
+test('the three primary cards share one bottom-anchored action region', () => {
+  const cards = [...page.matchAll(/<article class="al-card">([\s\S]*?)<\/article>/g)].map((m) => m[1]);
+  assert.equal(cards.length, 3, 'three primary product cards');
+  for (const [i, card] of cards.entries()) {
+    const cta = card.indexOf('al-card-cta');
+    const tech = card.indexOf('<details class="al-card-tech"');
+    assert.ok(cta > 0 && tech > 0, 'card ' + i + ' needs both a CTA and a disclosure');
+    assert.ok(tech > cta, 'card ' + i + ': the disclosure must follow the CTA');
+    assert.ok(card.indexOf('al-card-note') < cta, 'card ' + i + ': copy precedes the action region');
+  }
+  assert.match(css, /\.al-card-cta\s*\{\s*margin-top:\s*auto/, 'the action region is anchored with an auto margin, not per-card pixel values');
+  assert.match(css, /\.al-card-body\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*column/, 'the card body is a flex column');
+  assert.ok(!/\.al-card:nth-child[^{]*\{[^}]*margin/.test(css), 'no per-card hard-coded offsets');
+});
+
+test('the mobile brand is never rendered through a truncating ellipsis', () => {
+  assert.ok(!/text-overflow:\s*ellipsis/.test(css), 'the ellipsis pattern must not remain anywhere in this stylesheet');
+  assert.match(page, /<strong>CHIXIANG MOTOR<\/strong>/, 'the full wordmark is in the markup');
+  assert.ok(!/\u2026/.test(page), 'no literal ellipsis character is shipped in the page');
+  assert.match(css, /\.al-brand\s*\{[^}]*min-width:\s*0/, 'the brand still shrinks without clipping its name');
+  assert.match(css, /@media \(max-width: 479px\)[\s\S]*?\.al-brand strong \{ font-size: 15px/, 'the narrow breakpoint sizes the wordmark instead of truncating it');
+});
+
+test('each step keeps its number and description as one layout unit', () => {
+  const steps = page.match(/<p class="al-form-steps">([\s\S]*?)<\/p>/);
+  assert.ok(steps, 'the compact three-step line must exist');
+  const units = [...steps[1].matchAll(/<span class="al-step"><b>(\d)<\/b> ([^<]+)<\/span>/g)];
+  assert.equal(units.length, 3, 'three atomic step units');
+  assert.deepEqual(units.map((u) => u[1]), ['1', '2', '3'], 'steps stay numbered in order');
+  for (const u of units) assert.ok(u[2].trim().length > 12, 'every step keeps its description');
+  assert.match(css, /\.al-form-steps\s*\{[^}]*display:\s*flex[^}]*flex-wrap:\s*wrap/, 'steps wrap between units, never inside one');
+  assert.match(css, /\.al-step\s*\{[^}]*display:\s*inline-flex/, 'a step is one inline-flex unit');
 });
