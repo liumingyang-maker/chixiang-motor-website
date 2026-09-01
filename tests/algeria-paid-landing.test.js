@@ -423,3 +423,29 @@ test('the paid page never points at the quarantined Arabic locale', () => {
   assert.doesNotMatch(page, /lang="ar"|dir="rtl"/, 'the page stays French and left-to-right');
   assert.ok(page.includes('href="/en/"'), 'the only cross-site link is the approved English home');
 });
+// Page-scoped guard only. export-country-count stays a governed Fact Pack row; it is simply
+// not cleared for customer-facing wording until approved_public_wording is frozen for it.
+test('the Algeria page publishes no export-country scale claim', () => {
+  const visible = page.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
+  const flat = visible.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  for (const phrase of ["50+ pays", "50 pays", "plus de 50 pays", "exporte dans plus de 50",
+    "present dans plus de 50", "50+ marches", "50 marches", "couvre 50"]) {
+    assert.ok(!flat.includes(phrase), "customer copy must not claim: " + phrase);
+  }
+  assert.equal((visible.match(/pays/gi) || []).length, 0, "the word pays must not appear in customer copy at all");
+  assert.equal((visible.match(/exportation/gi) || []).length, 0, "no exportation scale wording");
+});
+
+test('the four factory metrics are the governed set', () => {
+  const stats = (page.match(/<div class="al-stats">[\s\S]*?<\/div>\s*<\/div>/) || [""])[0];
+  const visible = stats.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  assert.equal((stats.match(/<div><strong>/g) || []).length, 4, "exactly four factory metrics");
+  for (const fact of ["99 %", "15 000 m\u00b2", "100", "8 000+"]) {
+    assert.ok(visible.includes(fact), "missing governed metric: " + fact);
+  }
+  assert.ok(visible.includes("conformit\u00e9 au premier contr\u00f4le"), "yield label");
+  assert.ok(visible.includes("superficie d\u2019usine") || visible.includes("superficie d'usine"), "area label");
+  assert.ok(visible.includes("collaborateurs"), "employee label");
+  assert.ok(visible.includes("moteurs / mois"), "capacity label");
+  assert.ok(!/50/.test(visible), "no country count in the metric block");
+});
