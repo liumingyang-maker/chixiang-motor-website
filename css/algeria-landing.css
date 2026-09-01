@@ -40,7 +40,10 @@
 .al-page *::after { box-sizing: border-box; }
 
 .al-page img { max-width: 100%; height: auto; display: block; }
-.al-page a { color: inherit; text-decoration: none; }
+/* :where() keeps this base rule at specificity (0,1,0) so every component rule below
+   (.al-brand, .al-button-primary, .al-header-phone ...) wins on its own merit instead of
+   this reset overriding them. Links that must stay dark simply inherit the ink colour. */
+.al-page :where(a) { color: inherit; text-decoration: none; }
 
 .al-shell {
   width: 100%;
@@ -99,7 +102,7 @@
   flex: 1 1 auto;
 }
 .al-brand img { width: 34px; height: 34px; border-radius: 7px; background: #fff; flex: 0 0 auto; }
-.al-brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.al-brand span { white-space: nowrap; }
 .al-brand small {
   display: block;
   font-size: 10.5px;
@@ -293,7 +296,10 @@
   font-size: 14px;
   color: var(--al-ink-soft);
 }
-.al-card-cta { margin-top: 10px; width: 100%; }
+/* auto margin absorbs the slack of an equal-height card, so the CTA row and the
+   disclosure row below it line up across the three primary cards; the flex gap keeps
+   a minimum distance when the copy is long */
+.al-card-cta { margin-top: auto; width: 100%; }
 .al-card-tech { margin-top: 10px; border-top: 1px solid var(--al-line); padding-top: 10px; }
 .al-card-tech summary,
 .al-form-more summary {
@@ -380,11 +386,12 @@
 .al-stats strong { display: block; font-size: 21px; font-variant-numeric: tabular-nums; }
 .al-stats span { font-size: 13px; color: #c7d0dd; }
 .al-factory { display: grid; gap: 12px; margin-bottom: 24px; }
-.al-factory figure { margin: 0; }
+.al-factory figure { margin: 0; display: flex; flex-direction: column; }
 .al-factory img { border-radius: var(--al-radius-sm); }
+.al-factory figure img { flex: 1 1 auto; min-height: 0; height: 100%; object-fit: cover; }
 .al-factory figcaption { margin-top: 6px; font-size: 12.5px; letter-spacing: .05em; text-transform: uppercase; color: #b9c3d1; }
 .al-factory-lead img { width: 100%; }
-.al-factory-grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.al-factory-grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; }
 .al-facts { margin: 0; padding-left: 20px; color: #d3dbe6; font-size: 15.5px; }
 .al-facts li { margin-bottom: 8px; }
 
@@ -392,13 +399,14 @@
 
 .al-offer-grid { display: grid; gap: 26px; }
 .al-offer-copy h2 { margin: 0 0 10px; font-size: clamp(23px, 5.4vw, 32px); line-height: 1.2; }
-.al-form-steps { margin: 18px 0 0; font-size: 14.5px; color: var(--al-ink-soft); }
+.al-form-steps { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 18px 0 0; font-size: 14.5px; color: var(--al-ink-soft); }
+.al-step { display: inline-flex; align-items: flex-start; gap: 6px; }
 .al-form-steps b {
   display: inline-flex; align-items: center; justify-content: center;
   width: 22px; height: 22px; margin-right: 5px;
   border-radius: 50%; background: var(--al-ink); color: #fff; font-size: 12px;
 }
-.al-form-steps b + b { margin-left: 12px; }
+.al-form-steps b { flex: 0 0 auto; }
 .al-contact-card { margin-top: 22px; padding: 18px; border: 1px solid var(--al-line); border-radius: var(--al-radius); background: var(--al-tonal); }
 .al-contact-card h3 { margin: 0 0 10px; font-size: 17px; }
 .al-contact-lines { display: grid; gap: 8px; font-size: 15px; }
@@ -497,7 +505,7 @@ body:not(.al-page) .al-mobile-cta { display: none; }
   }
   .al-compare-cards { display: none; }
   .al-offer-grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: start; }
-  .al-factory { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; }
+.al-factory { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: stretch; }
   .al-faq-grid { grid-template-columns: minmax(0, .42fr) minmax(0, 1fr); gap: 34px; }
 }
 
@@ -515,6 +523,7 @@ body:not(.al-page) .al-mobile-cta { display: none; }
 
 @media (max-width: 479px) {
   .al-brand small { display: none; }
+  .al-brand strong { font-size: 15px; letter-spacing: .01em; }
   .al-button-wa-header { padding: 10px 10px; font-size: 13px; }
   .al-button-compact { padding: 10px 12px; }
 }

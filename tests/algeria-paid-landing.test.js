@@ -494,3 +494,51 @@ test('no customer-visible copy states engine classes as an interval', () => {
   assert.ok(page.includes("<figcaption>CG eau</figcaption>") && page.includes("<figcaption>CB</figcaption>"),
     "the other hero captions stay untouched");
 });
+test('the base anchor reset cannot outrank component foreground colours', () => {
+  // the reset must stay at specificity (0,1,0) so the component rules below win
+  assert.match(css, /\.al-page :where\(a\)\s*\{\s*color:\s*inherit/, 'the anchor reset must be wrapped in :where()');
+  assert.ok(!/^\.al-page a\s*\{\s*color:\s*inherit/m.test(css), 'the old (0,1,1) reset must not come back');
+  for (const sel of ['.al-brand', '.al-header-phone', '.al-button-primary', '.al-button-wa', '.al-button-dark']) {
+    const rule = css.match(new RegExp('\\' + sel + '\\s*\\{[^}]*\\}'));
+    assert.ok(rule, 'missing component rule: ' + sel);
+    assert.match(rule[0], /color:/, sel + ' must declare its own foreground');
+  }
+  assert.match(css, /\.al-button-primary\s*\{[^}]*color:\s*#fff/, 'red CTA foreground stays white');
+  assert.match(css, /\.al-button-wa\s*\{[^}]*color:\s*#fff/, 'WhatsApp CTA foreground stays white');
+  assert.ok(!/!important/.test(css.replace(/animation-duration[^}]*|transition-duration[^}]*/g, '')),
+    'the cascade is fixed structurally, not with !important');
+});
+
+test('the three primary cards share one bottom-anchored action region', () => {
+  const cards = [...page.matchAll(/<article class="al-card">([\s\S]*?)<\/article>/g)].map((m) => m[1]);
+  assert.equal(cards.length, 3, 'three primary product cards');
+  for (const [i, card] of cards.entries()) {
+    const cta = card.indexOf('al-card-cta');
+    const tech = card.indexOf('<details class="al-card-tech"');
+    assert.ok(cta > 0 && tech > 0, 'card ' + i + ' needs both a CTA and a disclosure');
+    assert.ok(tech > cta, 'card ' + i + ': the disclosure must follow the CTA');
+    assert.ok(card.indexOf('al-card-note') < cta, 'card ' + i + ': copy precedes the action region');
+  }
+  assert.match(css, /\.al-card-cta\s*\{\s*margin-top:\s*auto/, 'the action region is anchored with an auto margin, not per-card pixel values');
+  assert.match(css, /\.al-card-body\s*\{[^}]*display:\s*flex[^}]*flex-direction:\s*column/, 'the card body is a flex column');
+  assert.ok(!/\.al-card:nth-child[^{]*\{[^}]*margin/.test(css), 'no per-card hard-coded offsets');
+});
+
+test('the mobile brand is never rendered through a truncating ellipsis', () => {
+  assert.ok(!/text-overflow:\s*ellipsis/.test(css), 'the ellipsis pattern must not remain anywhere in this stylesheet');
+  assert.match(page, /<strong>CHIXIANG MOTOR<\/strong>/, 'the full wordmark is in the markup');
+  assert.ok(!/\u2026/.test(page), 'no literal ellipsis character is shipped in the page');
+  assert.match(css, /\.al-brand\s*\{[^}]*min-width:\s*0/, 'the brand still shrinks without clipping its name');
+  assert.match(css, /@media \(max-width: 479px\)[\s\S]*?\.al-brand strong \{ font-size: 15px/, 'the narrow breakpoint sizes the wordmark instead of truncating it');
+});
+
+test('each step keeps its number and description as one layout unit', () => {
+  const steps = page.match(/<p class="al-form-steps">([\s\S]*?)<\/p>/);
+  assert.ok(steps, 'the compact three-step line must exist');
+  const units = [...steps[1].matchAll(/<span class="al-step"><b>(\d)<\/b> ([^<]+)<\/span>/g)];
+  assert.equal(units.length, 3, 'three atomic step units');
+  assert.deepEqual(units.map((u) => u[1]), ['1', '2', '3'], 'steps stay numbered in order');
+  for (const u of units) assert.ok(u[2].trim().length > 12, 'every step keeps its description');
+  assert.match(css, /\.al-form-steps\s*\{[^}]*display:\s*flex[^}]*flex-wrap:\s*wrap/, 'steps wrap between units, never inside one');
+  assert.match(css, /\.al-step\s*\{[^}]*display:\s*inline-flex/, 'a step is one inline-flex unit');
+});
