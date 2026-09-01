@@ -449,3 +449,26 @@ test('the four factory metrics are the governed set', () => {
   assert.ok(visible.includes("moteurs / mois"), "capacity label");
   assert.ok(!/50/.test(visible), "no country count in the metric block");
 });
+test('the hero lists approved displacements as discrete classes, never as an interval', () => {
+  const hero = (page.split('id="top"')[1] || "").split("</section>")[0];
+  assert.ok(hero.length > 200, "the hero section must be present to be audited");
+  const visible = hero.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
+  for (const bad of ["125" + "\u2013" + "250", "125-250", "150" + "\u2013" + "250", "150-250"]) {
+    assert.ok(!visible.includes(bad), "interval notation implies sizes that are not approved: " + bad);
+  }
+  assert.ok(!/CG\s*125\s*[\u2013-]\s*250/.test(visible), "no CG range");
+  assert.ok(!/CB\s*150\s*[\u2013-]\s*250/.test(visible), "no CB range");
+  const signals = (hero.split('class="al-hero-signals"')[1] || "").split("</ul>")[0];
+  const items = [...signals.matchAll(/<li>([^<]*)<\/li>/g)].map((m) => m[1]);
+  assert.equal(items.length, 4, "the hero keeps four quick signals");
+  assert.equal(items[0], "CG 125 / 150 / 175 / 200 / 250");
+  assert.equal(items[1], "CB 150 / 200 / 250");
+  for (const cls of ["125", "150", "175", "200", "250"]) {
+    assert.ok(items[0].includes(cls), "CG must stay published: " + cls);
+  }
+  for (const cls of ["150", "200", "250"]) {
+    assert.ok(items[1].includes(cls), "CB must stay published: " + cls);
+  }
+  assert.ok(!items[0].includes("110") && !items[0].includes("140"), "no displacement may be added to CG");
+  assert.ok(!items[1].includes("125") && !items[1].includes("175"), "no displacement may be added to CB");
+});
