@@ -30,7 +30,7 @@ function formBlock() {
 }
 
 // Boot the landing script with a minimal DOM so its helpers can be executed.
-function boot(search, form) {
+function bootWithDocument(search, form) {
   const listeners = new Map();
   const document = {
     readyState: 'loading',
@@ -43,7 +43,11 @@ function boot(search, form) {
     },
     querySelector() { return null; },
     querySelectorAll() { return []; },
-    getElementById(id) { return form && form.ids[id] ? form.ids[id] : null; },
+    getElementById(id) {
+      if (!form) return null;
+      if (form.id === id) return form;
+      return form.ids && form.ids[id] ? form.ids[id] : null;
+    },
     createElement() { return { type: '', name: '', value: '' }; },
     head: { appendChild() {} }
   };
@@ -56,7 +60,11 @@ function boot(search, form) {
     matchMedia() { return { matches: false }; }
   };
   vm.runInNewContext(script, { window, document, URLSearchParams, console, Date, RegExp, Array, Object, String, Number, encodeURIComponent, decodeURIComponent });
-  return window.ChixiangAlgeria;
+  return { api: window.ChixiangAlgeria, documentListeners: listeners };
+}
+
+function boot(search, form) {
+  return bootWithDocument(search, form).api;
 }
 
 test('the Algeria landing page exists at the paid-path document root', () => {
@@ -223,6 +231,44 @@ test('the optional email is mirrored because contact shadows email in the Worker
   assert.match(script, /document\.getElementById\('wilaya'\)/, 'the wilaya is read from the visible control');
   assert.match(script, /push\('Wilaya', wilaya \? wilaya\.value\.trim\(\) : ''\)/, 'and serialised into requirements');
   assert.doesNotMatch(script, /value\(form, 'country'\)/, 'the script never reads or writes country from the visitor');
+});
+
+test('a closed optional disclosure opens and focuses its first invalid control', () => {
+  const formListeners = new Map();
+  const details = { open: false };
+  let focusCalls = 0;
+  const email = {
+    closest(selector) { return selector === 'details.al-form-more' ? details : null; },
+    focus() { focusCalls += 1; }
+  };
+  const form = {
+    id: 'dzQuoteForm',
+    ids: {},
+    querySelector(selector) { return selector === ':invalid' ? email : null; },
+    addEventListener(type, handler, options) {
+      const handlers = formListeners.get(type) || [];
+      handlers.push({ handler, options });
+      formListeners.set(type, handlers);
+    }
+  };
+  const runtime = bootWithDocument('', form);
+  for (const handler of runtime.documentListeners.get('DOMContentLoaded') || []) handler();
+  const invalidHandler = (formListeners.get('invalid') || [])[0];
+  assert.ok(invalidHandler, 'the page listens for native invalid events');
+  assert.equal(invalidHandler.options, true, 'invalid is captured because it does not bubble');
+  let prevented = false;
+  invalidHandler.handler({ target: email, preventDefault() { prevented = true; } });
+  assert.equal(details.open, true, 'the invalid optional control is no longer hidden');
+  assert.equal(focusCalls, 1, 'the first invalid control receives focus after the disclosure opens');
+  assert.equal(prevented, false, 'native validation remains responsible for blocking submission');
+
+  const visibleInvalid = {};
+  details.open = false;
+  focusCalls = 0;
+  form.querySelector = (selector) => selector === ':invalid' ? visibleInvalid : null;
+  invalidHandler.handler({ target: email, preventDefault() {} });
+  assert.equal(details.open, true, 'a later invalid optional control is still revealed');
+  assert.equal(focusCalls, 0, 'an earlier visible invalid control keeps focus priority');
 });
 
 test('ad parameters are captured at page load and re-applied at submit', () => {
@@ -507,6 +553,65 @@ test('the base anchor reset cannot outrank component foreground colours', () => 
   assert.match(css, /\.al-button-wa\s*\{[^}]*color:\s*#fff/, 'WhatsApp CTA foreground stays white');
   assert.ok(!/!important/.test(css.replace(/animation-duration[^}]*|transition-duration[^}]*/g, '')),
     'the cascade is fixed structurally, not with !important');
+});
+
+// Static contrast guards read the actual component declarations and theme tokens.
+// Browser QA remains necessary for cascade, gradients and interaction states.
+function contrastColor(value) {
+  let resolved = value.trim();
+  const token = /^var\((--[\w-]+)\)$/.exec(resolved);
+  if (token) {
+    const definition = css.match(new RegExp(token[1] + ':\\s*(#[0-9a-f]{3,6})\\s*;', 'i'));
+    assert.ok(definition, 'missing color token: ' + token[1]);
+    resolved = definition[1];
+  }
+  assert.match(resolved, /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i, 'expected an opaque hex color');
+  const hex = resolved.slice(1);
+  return hex.length === 3 ? hex.split('').map((digit) => digit + digit).join('') : hex;
+}
+
+function componentColor(selector, property) {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const rule = css.match(new RegExp(escaped + '\\s*\\{([^}]+)\\}'));
+  assert.ok(rule, 'missing color rule: ' + selector);
+  const declaration = rule[1].match(new RegExp('(?:^|;)\\s*' + property + ':\\s*([^;]+)'));
+  assert.ok(declaration, 'missing ' + property + ' on ' + selector);
+  return contrastColor(declaration[1]);
+}
+
+function contrastRatio(foreground, background) {
+  function luminance(hex) {
+    const rgb = hex.match(/../g).map((channel) => parseInt(channel, 16) / 255)
+      .map((channel) => channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4);
+    return rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722;
+  }
+  const a = luminance(foreground);
+  const b = luminance(background);
+  return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+}
+
+test('WhatsApp text contrast meets AA in normal and interactive states', () => {
+  const foreground = componentColor('.al-button-wa', 'color');
+  for (const selector of ['.al-button-wa', '.al-button-wa:focus-visible']) {
+    const ratio = contrastRatio(foreground, componentColor(selector, 'background'));
+    assert.ok(ratio >= 4.5, selector + ' text contrast is ' + ratio.toFixed(2) + ':1; needs 4.5:1');
+  }
+  assert.match(css, /\.al-button-wa:hover,\s*\.al-button-wa:focus-visible\s*\{/,
+    'hover and keyboard focus share the tested interactive background');
+});
+
+test('hero eyebrow text contrast meets AA against every gradient stop', () => {
+  const foreground = componentColor('.al-eyebrow', 'color');
+  const hero = css.match(/\.al-hero\s*\{([^}]+)\}/);
+  assert.ok(hero, 'the hero rule must exist');
+  const gradient = hero[1].match(/background:\s*linear-gradient\(([^;]+)\);/);
+  assert.ok(gradient, 'the hero gradient must be audited');
+  const stops = gradient[1].match(/var\(--[\w-]+\)|#[0-9a-f]{3,6}/gi) || [];
+  assert.ok(stops.length >= 2, 'all gradient colors must be checked');
+  for (const stop of stops) {
+    const ratio = contrastRatio(foreground, contrastColor(stop));
+    assert.ok(ratio >= 4.5, 'eyebrow against ' + stop + ' is ' + ratio.toFixed(2) + ':1; needs 4.5:1');
+  }
 });
 
 test('the three primary cards share one bottom-anchored action region', () => {

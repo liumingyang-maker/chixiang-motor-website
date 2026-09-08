@@ -170,6 +170,32 @@
     });
   }
 
+  // Native `invalid` does not bubble. Capture it so an optional control inside the
+  // closed technical-details disclosure never leaves the visitor at a hidden error.
+  // This only reveals the existing control: it does not prevent validation, submit,
+  // mutate fields or touch the shared Worker / conversion path.
+  function bindCollapsedValidationRecovery(form) {
+    form.addEventListener('invalid', function (event) {
+      var target = event && event.target;
+      if (!target || typeof target.closest !== 'function') { return; }
+      var disclosure = target.closest('details.al-form-more');
+      if (!disclosure || disclosure.open) { return; }
+      disclosure.open = true;
+      function focusFirstInvalid() {
+        // Keep the browser's document-order priority if a required visible field
+        // is also invalid. Otherwise focus naturally scrolls the revealed control in view.
+        if (form.querySelector(':invalid') === target && typeof target.focus === 'function') {
+          target.focus();
+        }
+      }
+      if (typeof window.requestAnimationFrame === 'function') {
+        window.requestAnimationFrame(focusFirstInvalid);
+      } else {
+        focusFirstInvalid();
+      }
+    }, true);
+  }
+
   function shouldShowMobileCta(mobileState) {
     return Boolean(mobileState && mobileState.passedHero &&
       !mobileState.offerVisible && !mobileState.footerVisible &&
@@ -224,6 +250,7 @@
       refreshWhatsAppLinks(form);
       return;
     }
+    bindCollapsedValidationRecovery(form);
     form.addEventListener('submit', function () {
       applyAdParams(form);
       composeRequirements(form);

@@ -72,7 +72,7 @@ An Indian-platform mention is a flag, never an automatic disqualification.
 - WhatsApp conversion keeps the existing delegated click listener and the approved number. The form sets
   `data-whatsapp-fallback="false"` so WhatsApp never opens automatically on failure, as required by the standard.
 
-## Rollback plan
+## Rollback plan - V1 initial page addition (historical)
 
 The page is additive: one document, one stylesheet, one behaviour script, one test file, one brief.
 Rollback is a single revert of the page commit, which removes `ads/algerie/index.html` plus its CSS, JS and test.
@@ -158,7 +158,34 @@ marques/familles vendues, Code moteur, E-mail and Message moved into one optiona
 market / country / source_form trio, the Wilaya and buyer-type serialisation into
 `requirements`, attribution capture and the conversion path are untouched, and `js/algeria-landing.js`
 was not modified. A closed disclosure keeps every control in `FormData` (verified in a real browser:
-all six optional keys present) and holds no `required` attribute, so it can never block a submit.
+all six optional keys present) and holds no `required` attribute. Leaving optional fields empty
+does not violate a required constraint. Once filled, those controls remain subject to their own
+format and other constraints, including when the disclosure is closed. A nonempty invalid e-mail
+can therefore block submission. Error visibility and recovery after closing the disclosure must
+be verified in a real browser before merge; absence of `required` alone does not prove usable
+validation. This check must not submit to the real inquiry endpoint or fire real ad conversions.
+
+## V2 rollback - restore the previous production V1
+
+Rollback V2 through a separate rollback PR that reverses the changes introduced by V2 and
+restores the previous production V1. Before preparing that PR, verify the V2 merge commit,
+the current main HEAD and any subsequent changes or dependencies. Do not use reset, force
+push or history rewriting. The historical V1 removal procedure above is not the V2 rollback:
+`/ads/algerie/` must remain available rather than become a 404. After the approved rollback,
+verify the V1 page, its static resources and the inquiry entry point on the production URL.
+Any real inquiry submission still requires the Site Owner's controlled verification.
+
+## 2026-09-08 minimal review corrections
+
+Keep the frozen V2 layout, copy, fields, factory crop, shared scripts and conversion semantics.
+Only adjust the WhatsApp background colors and the hero eyebrow foreground to meet the
+normal-text contrast threshold of 4.5:1; update the CSS cache key and add ratio-based regression
+checks. The static calculations do not replace final browser screenshots and computed styles.
+Header primary/secondary action hierarchy remains subject to visual review after these changes;
+this batch does not redesign the header. Collapsed invalid-email validation is a pre-merge
+evidence gate, and production V1 real-inquiry evidence must be provided by the Site Owner
+before V2 merge. E-mail delivery, field integrity, client-side conversion firing and Google Ads
+attribution are recorded separately; attribution remains pending without account-side evidence.
 
 ## Measured before / after (same browser, both versions served locally)
 

@@ -16,8 +16,8 @@
   --al-night-2: #1b2331;
   --al-accent: #d92b2b;
   --al-accent-dark: #b21f1f;
-  --al-wa: #1f9d55;
-  --al-wa-dark: #17844a;
+  --al-wa: #17844a;
+  --al-wa-dark: #126c3b;
   --al-radius: 12px;
   --al-radius-sm: 8px;
   --al-radius-btn: 10px;
@@ -69,7 +69,7 @@
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--al-accent);
+  color: #ff8f8f;
 }
 
 /* ---------- header : one visual row on mobile ---------- */
