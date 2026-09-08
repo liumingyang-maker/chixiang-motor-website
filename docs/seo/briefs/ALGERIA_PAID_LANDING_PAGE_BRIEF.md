@@ -72,7 +72,7 @@ An Indian-platform mention is a flag, never an automatic disqualification.
 - WhatsApp conversion keeps the existing delegated click listener and the approved number. The form sets
   `data-whatsapp-fallback="false"` so WhatsApp never opens automatically on failure, as required by the standard.
 
-## Rollback plan
+## Rollback plan - V1 initial page addition (historical)
 
 The page is additive: one document, one stylesheet, one behaviour script, one test file, one brief.
 Rollback is a single revert of the page commit, which removes `ads/algerie/index.html` plus its CSS, JS and test.
@@ -103,3 +103,103 @@ Campaign pause is the operational lever; the site needs no emergency change.
 - `en/product-detail.html` references missing `CB/3.webp`, `CB/4.webp`, `CB/5.webp`.
 - No real packaging, carton, container or warehouse photo exists in the repository, so the page describes
   export support in words and shows only assembly, equipment, inspection, testing and workshop images.
+---
+
+# V2 - Conversion design / UX refinement (2026-09-01)
+
+V1 was approved on contract and facts but read as technical documentation. V2 changes
+presentation only: shorter page, clearer hierarchy, stronger factory proof. No governed
+fact, no tracking behaviour and no backend field was altered.
+
+## Page order
+
+| Before (V1) | After (V2) |
+| --- | --- |
+| header, hero, buyer cards, product families, CG/CB comparison, parts, factory, process, offer, FAQ, footer | header, hero, compact B2B strip, product families, CG/CB comparison, factory, offer, FAQ, footer |
+
+Removed as standalone sections: the five buyer-profile cards, the four-step process block
+and the separate Parts section. Parts information is now a secondary product card, so no
+approved fact was deleted. The note about buyers selling other engine origins moved from a
+section paragraph to the hint under the platform qualification field.
+
+## Focal hierarchy instead of equal tiles
+
+The hero keeps three real repository photos but gives one dominant visual (CG air) with two
+supporting visuals (CG water, CB). Measured image area ratio main : secondary is 4.4x to 4.9x
+at every tested width, so the eye lands on one product first.
+
+## Layered product cards
+
+Each card shows image, family, nominal displacement classes, cooling, typical application,
+one configuration note and the quote action. Governed technical detail (model codes, starting,
+clutch, gearbox, reverse, validation list) sits inside a native `<details>` row labelled
+"Voir les details techniques". Internal priority labels (Priorite 1/2/3) are no longer
+customer-visible. The old desktop pattern of a two-up grid containing a 320 px internal image
+column is deleted; card text now always spans the full card body (266-563 px depending on
+width, spec values 334 px at 1440).
+
+## Copy
+
+Comparison heading is "CG ou CB : reperes rapides" with a five-row decision table; factory
+heading is "Fabrication, controle et essais a Chongqing"; the form heading is "Demandez une
+offre pour votre configuration". Governance vocabulary that leaked into buyer copy was replaced
+by customer language ("A confirmer selon le modele"), the defensive sentence about delivery,
+price and availability was removed from the conversion path, and the `Comparation` aria-label
+typo is fixed. Facts are still governed silently: the commercial boundary sentence stays in the
+form and FAQ, the no-compatibility-without-evidence statement stays in the FAQ, certification
+wording stays text-only and unchanged.
+
+## Form
+
+The first visible block is seven fields (Nom, Societe, Telephone / WhatsApp, Wilaya / Ville,
+Type d'entreprise, Produit recherche, Quantite estimee). Cylindrée nominale, Application,
+marques/familles vendues, Code moteur, E-mail and Message moved into one optional
+"Ajouter des details techniques (optionnel)" disclosure. Field names, values, the fixed
+market / country / source_form trio, the Wilaya and buyer-type serialisation into
+`requirements`, attribution capture and the conversion path are untouched, and `js/algeria-landing.js`
+was not modified. A closed disclosure keeps every control in `FormData` (verified in a real browser:
+all six optional keys present) and holds no `required` attribute. Leaving optional fields empty
+does not violate a required constraint. Once filled, those controls remain subject to their own
+format and other constraints, including when the disclosure is closed. A nonempty invalid e-mail
+can therefore block submission. Error visibility and recovery after closing the disclosure must
+be verified in a real browser before merge; absence of `required` alone does not prove usable
+validation. This check must not submit to the real inquiry endpoint or fire real ad conversions.
+
+## V2 rollback - restore the previous production V1
+
+Rollback V2 through a separate rollback PR that reverses the changes introduced by V2 and
+restores the previous production V1. Before preparing that PR, verify the V2 merge commit,
+the current main HEAD and any subsequent changes or dependencies. Do not use reset, force
+push or history rewriting. The historical V1 removal procedure above is not the V2 rollback:
+`/ads/algerie/` must remain available rather than become a 404. After the approved rollback,
+verify the V1 page, its static resources and the inquiry entry point on the production URL.
+Any real inquiry submission still requires the Site Owner's controlled verification.
+
+## 2026-09-08 minimal review corrections
+
+Keep the frozen V2 layout, copy, fields, factory crop, shared scripts and conversion semantics.
+Only adjust the WhatsApp background colors and the hero eyebrow foreground to meet the
+normal-text contrast threshold of 4.5:1; update the CSS cache key and add ratio-based regression
+checks. The static calculations do not replace final browser screenshots and computed styles.
+Header primary/secondary action hierarchy remains subject to visual review after these changes;
+this batch does not redesign the header. Collapsed invalid-email validation is a pre-merge
+evidence gate, and production V1 real-inquiry evidence must be provided by the Site Owner
+before V2 merge. E-mail delivery, field integrity, client-side conversion firing and Google Ads
+attribution are recorded separately; attribution remains pending without account-side evidence.
+
+## Measured before / after (same browser, both versions served locally)
+
+| Metric at 390 px | V1 | V2 |
+| --- | --- | --- |
+| document height | 17,256 px | 9,290 px (-46.2%) |
+| form height, default state | 1,548 px | 896 px (-42.1%) |
+| distance from page top to the form | 14,144 px | 7,238 px |
+| sections in main | 10 | 7 |
+| elements carrying a box-shadow | 11 | 4 |
+| rendered text characters | 9,153 | 4,912 (-46.2%) |
+| initial transfer | 308 KB | 303 KB (-1.6%) |
+
+At 1024 px the page is 36.6% shorter and the form 44.8% shorter; at 1440 px 38.6% and 43.7%.
+No width tested (390 / 600 / 768 / 900 / 1024 / 1440) has horizontal overflow or clipped text,
+the header stays one row of 65 px on mobile (73 px from 900 px up) and the smallest interactive
+target is 44 px.
