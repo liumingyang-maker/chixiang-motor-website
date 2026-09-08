@@ -14,13 +14,17 @@ function toCrlf(text) {
   return text.replace(/\r?\n/g, '\r\n');
 }
 
-function memoryFiles(overrides = {}) {
+function toLf(text) {
+  return text.replace(/\r\n/g, '\n');
+}
+
+function memoryFiles(overrides = {}, normalizePage = toCrlf) {
   const files = new Map();
   const factFile = path.join(root, 'docs', 'geo-entity', 'fact-calibration', 'ENGINE_SPEC_MASTER.csv');
   files.set(path.resolve(factFile), fs.readFileSync(factFile, 'utf8'));
   for (const route of routes) {
     const file = path.resolve(root, route.file);
-    files.set(file, toCrlf(fs.readFileSync(file, 'utf8')));
+    files.set(file, normalizePage(fs.readFileSync(file, 'utf8')));
   }
   for (const [file, content] of Object.entries(overrides)) {
     files.set(path.resolve(root, file), content);
@@ -78,6 +82,12 @@ test('does not rewrite synchronized CRLF product-family pages', () => {
   assert.equal(result.exitCode, 0);
 });
 
+test('does not rewrite synchronized LF product-family pages', () => {
+  const result = runGenerator(memoryFiles({}, toLf));
+  assert.deepEqual(result.writes, []);
+  assert.equal(result.exitCode, 0);
+});
+
 test('detects a real managed-content drift on a CRLF page', () => {
   const file = 'en/cg-engine.html';
   const source = toCrlf(fs.readFileSync(path.join(root, file), 'utf8'));
@@ -92,6 +102,19 @@ test('detects a real managed-content drift on a CRLF page', () => {
   const result = runGenerator(memoryFiles({ [file]: beforeOwner + changedOwner }));
   assert.deepEqual(result.writes, [path.resolve(root, file)]);
   assert.equal(result.exitCode, 0);
+});
+
+test('reports a real drift in --check mode without writing the page', () => {
+  const file = 'en/cg-engine.html';
+  const source = toCrlf(fs.readFileSync(path.join(root, file), 'utf8'));
+  const changed = source.replace('Approved product family information', 'Drifted product family information');
+  assert.notEqual(changed, source);
+
+  const result = runGenerator(memoryFiles({ [file]: changed }), { checkOnly: true });
+  assert.deepEqual(result.writes, []);
+  assert.equal(result.exitCode, 1);
+  assert.ok(result.logs.some(message => /1 product family pages are not synchronized\./.test(message)));
+  assert.ok(result.logs.some(message => /en[\\/]cg-engine\.html/.test(message)));
 });
 
 test('rejects mixed newlines rather than normalizing a whole page', () => {

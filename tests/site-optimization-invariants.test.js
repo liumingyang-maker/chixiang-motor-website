@@ -111,7 +111,7 @@ function breadcrumb(html) {
 }
 
 function ownerMarker(html) {
-  const match = html.match(/<main\b[^>]*\bdata-product-family-owner=(["'])(.*?)\1[^>]*>/i);
+  const match = html.match(/<[a-z][\w:-]*\b[^>]*\bdata-product-family-owner=(["'])(.*?)\1[^>]*>/i);
   return match ? match[0] : null;
 }
 
@@ -176,6 +176,13 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
     } else {
       assert.deepEqual(afterScripts, beforeScripts, `${file}: script set changed`);
     }
+  }
+});
+
+test('every baseline product-family owner marker is observable by the invariant', () => {
+  for (const route of routes) {
+    if (route.protected) continue;
+    assert.notEqual(ownerMarker(baseline(route.file)), null, `${route.file}: baseline owner marker was not found`);
   }
 });
 

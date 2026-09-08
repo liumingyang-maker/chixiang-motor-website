@@ -26,6 +26,13 @@ const expectedMenuLinks = [
   '/en/contact'
 ];
 
+const currentPageLinks = new Map([
+  ['en/cg-engine.html', '/en/cg-engine'],
+  ['en/cb-engine.html', '/en/cb-engine'],
+  ['en/horizontal-engine.html', '/en/horizontal-engine'],
+  ['en/engine-parts.html', '/en/engine-parts']
+]);
+
 function source() {
   assert.ok(fs.existsSync(scriptFile), 'missing js/core-menu-accessibility.js');
   return fs.readFileSync(scriptFile, 'utf8');
@@ -197,6 +204,16 @@ test('four English family pages contain the approved overlay structure and page-
       .match(/href="([^"]+)"/g)
       .map(match => match.slice(6, -1));
     assert.deepEqual(links, expectedMenuLinks, `${file}: unexpected mobile routes`);
+  }
+});
+
+test('each mobile menu exposes exactly one current product-family page', () => {
+  for (const file of pages) {
+    const html = fs.readFileSync(path.join(root, file), 'utf8');
+    const menu = [...html.matchAll(/<ul class="mobile-nav-list">([\s\S]*?)<\/ul>/g)][0][1];
+    const currentLinks = [...menu.matchAll(/<a\b(?=[^>]*\bhref="([^"]+)")(?=[^>]*\baria-current="page")[^>]*>/g)]
+      .map(match => match[1]);
+    assert.deepEqual(currentLinks, [currentPageLinks.get(file)], `${file}: missing or incorrect current-page state`);
   }
 });
 
