@@ -85,7 +85,7 @@ test("no broken horizontal-card png reference remains in any HTML file", () => {
   const htmls = [];
   (function walk(d) {
     for (const e of fs.readdirSync(path.join(root, d), { withFileTypes: true })) {
-      if (e.name === ".git" || e.name === "node_modules") continue;
+      if (e.name === ".git" || e.name === "node_modules" || e.name.startsWith("_gpt_review_bundle")) continue;
       const rel = path.join(d, e.name);
       if (e.isDirectory()) walk(rel);
       else if (e.name.endsWith(".html")) htmls.push(rel);
