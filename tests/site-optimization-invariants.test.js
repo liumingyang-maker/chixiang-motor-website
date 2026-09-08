@@ -145,12 +145,41 @@ function procurementForms(html, file) {
   return forms.map(match => normalized(match[0]));
 }
 
-test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
-  const result = childProcess.spawnSync('git', ['diff', '--quiet', frozenBaseline, '--', ...frozenFiles], {
+function frozenDiffArgs(candidate) {
+  return [
+    'diff',
+    '--quiet',
+    frozenBaseline,
+    ...(candidate ? [candidate] : []),
+    '--',
+    ...frozenFiles
+  ];
+}
+
+function frozenDiff(candidate) {
+  return childProcess.spawnSync('git', frozenDiffArgs(candidate), {
     cwd: root,
     encoding: 'utf8'
   });
-  assert.equal(result.status, 0, result.stderr || result.stdout || 'frozen file changed');
+}
+
+test('frozen-file guard uses distinct candidate and working-tree comparisons', () => {
+  assert.deepEqual(
+    frozenDiffArgs('HEAD'),
+    ['diff', '--quiet', frozenBaseline, 'HEAD', '--', ...frozenFiles]
+  );
+  assert.deepEqual(
+    frozenDiffArgs(),
+    ['diff', '--quiet', frozenBaseline, '--', ...frozenFiles]
+  );
+});
+
+test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
+  const candidate = frozenDiff('HEAD');
+  assert.equal(candidate.status, 0, candidate.stderr || candidate.stdout || 'frozen file changed in candidate commit');
+
+  const workingTree = frozenDiff();
+  assert.equal(workingTree.status, 0, workingTree.stderr || workingTree.stdout || 'frozen file changed in working tree');
 });
 
 test('mutable pages retain the SEO, ownership, baseline breadcrumb state and complete JSON-LD contracts', () => {
