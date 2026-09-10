@@ -248,13 +248,14 @@ function replaceFaqSchema(html, route) {
   return updated;
 }
 
-function updateProtectedOwner(html, route) {
-  const mainPattern = /<main\b([^>]*\bid=["']main-content["'][^>]*)>/i;
-  if (!mainPattern.test(html)) throw new Error(`${route.file}: main-content not found`);
-  return html.replace(mainPattern, (full, attributes) => {
-    if (/data-product-family-owner=/i.test(full)) return full;
-    return `<main${attributes} data-product-family-owner="${route.family}" data-owner-language="${route.language}">`;
-  });
+function preservePageNewlines(before, after, file) {
+  const hasCrlf = before.includes('\r\n');
+  const hasBareLf = /(?<!\r)\n/.test(before);
+  const hasLoneCr = /\r(?!\n)/.test(before);
+  if ((hasCrlf && hasBareLf) || hasLoneCr) {
+    throw new Error(`Unsupported mixed page newlines: ${file}`);
+  }
+  return after.replace(/\r?\n/g, hasCrlf ? '\r\n' : '\n');
 }
 
 function hash(value) {
@@ -271,12 +272,13 @@ for (const route of routes) {
   const before = fs.readFileSync(file, 'utf8');
   let after;
   if (route.protected) {
-    after = updateProtectedOwner(before, route);
+    after = before;
   } else {
     const marker = /<!-- Product Detail SEO Content -->[\s\S]*?<!-- \/Product Detail SEO Content -->/;
     if (!marker.test(before)) throw new Error(`${route.file}: product detail content markers not found`);
     after = before.replace(marker, renderOwnerBlock(recordById, route));
     after = replaceFaqSchema(after, route);
+    after = preservePageNewlines(before, after, route.file);
   }
   if (hash(before) !== hash(after)) {
     changed.push(route.file);
