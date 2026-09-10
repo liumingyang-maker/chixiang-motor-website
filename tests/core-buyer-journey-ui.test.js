@@ -241,3 +241,29 @@ test('T05 procurement form uses real main.js with controlled FormData and no ext
   }
   assert.equal(opened.length, 0, 'controlled successful submission must not trigger an outbound fallback');
 });
+
+test('T04 English home hero keeps the approved conversion content and uses an image-only engine-family visual', () => {
+  const html = read('en/index.html');
+  const hero = html.match(/<section class="hero site-home-refresh site-home-hero" id="home">[\s\S]*?<\/section>/)?.[0] || '';
+  assert.match(html, /<link rel="stylesheet" href="\.\.\/css\/core-buyer-journey\.css(?:\?[^"']*)?">/);
+  assert.ok(hero, 'scoped English home hero is required');
+  assert.doesNotMatch(hero, /class="hero-bg"|class="hero-overlay"/);
+  assert.match(hero, /<h1 class="hero-brand-headline">Motorcycle &amp; Cargo-Tricycle Engine Manufacturer in China<\/h1>/);
+  assert.match(hero, /href="\/en\/contact" class="btn btn-accent btn-lg">Send Inquiry<\/a>/);
+  assert.match(hero, /href="\/en\/products" class="btn btn-outline-light btn-lg">View Products<\/a>/);
+  assert.ok(hero.indexOf('hero-brand-headline') < hero.indexOf('site-home-hero__visual'), 'mobile DOM order must be copy and CTAs before the visual');
+  assert.equal((hero.match(/fetchpriority="high"/g) || []).length, 1, 'only one hero image may be high priority');
+  for (const src of [
+    '../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp',
+    '../images/CB/1.webp',
+    '../images/%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%8D%A7%E5%BC%8F/1.webp'
+  ]) {
+    assert.match(hero, new RegExp(`src="${src}"`));
+    const localAsset = path.resolve(root, 'en', decodeURIComponent(src));
+    assert.ok(fs.existsSync(localAsset), `${src}: existing product asset required`);
+  }
+  const css = read('css/core-buyer-journey.css');
+  assert.match(css, /\.site-home-hero\s+\.site-home-hero__inner/);
+  assert.match(css, /\.site-home-hero\s+\.site-home-hero__visual/);
+  assert.match(css, /@media\s*\(max-width:\s*768px\)[\s\S]*flex-direction:\s*column/);
+});

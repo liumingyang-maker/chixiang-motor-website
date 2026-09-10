@@ -47,3 +47,112 @@
     padding: 1.25rem;
   }
 }
+
+/* English-home sample: text and actions lead; current engine imagery supports it. */
+.site-home-hero {
+  display: block;
+  min-height: clamp(38rem, 82vh, 52rem);
+  padding-block: calc(var(--nav-height) + 2rem) 2rem;
+  background: linear-gradient(120deg, #06182d 0%, #0b3154 58%, #123e65 100%);
+}
+
+.site-home-hero .site-home-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  min-height: inherit;
+}
+
+.site-home-hero .hero-brand {
+  max-width: 42rem;
+  padding: 1.5rem 0;
+  text-align: start;
+}
+
+.site-home-hero .hero-brand-line {
+  margin-inline: 0 auto;
+}
+
+.site-home-hero .hero-cta {
+  justify-content: flex-start;
+}
+
+.site-home-hero .hero-brand-since {
+  text-align: start;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+.site-home-hero .site-home-hero__visual {
+  display: grid;
+  grid-template-columns: 1.05fr 0.8fr 0.9fr;
+  align-items: end;
+  gap: clamp(0.35rem, 1.2vw, 1rem);
+  padding: clamp(0.5rem, 2vw, 1.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.2);
+}
+
+.site-home-hero .site-home-hero__engine {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 29rem;
+  object-fit: contain;
+  filter: drop-shadow(0 1rem 1.25rem rgba(0, 0, 0, 0.3));
+}
+
+.site-home-hero .site-home-hero__engine--cg {
+  align-self: stretch;
+}
+
+@media (max-width: 1024px) {
+  .site-home-hero .site-home-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-home-hero {
+    min-height: auto;
+    padding-block: calc(var(--nav-height) + 1rem) 1.5rem;
+  }
+
+  .site-home-hero .site-home-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .site-home-hero .hero-brand {
+    order: 0;
+    padding: 0.5rem 0 0;
+    text-align: start;
+    background: transparent;
+  }
+
+  .site-home-hero .hero-brand-line {
+    margin-inline: 0 auto;
+  }
+
+  .site-home-hero .hero-cta {
+    justify-content: flex-start;
+  }
+
+  .site-home-hero .hero-cta .btn {
+    flex: 1 1 10rem;
+  }
+
+  .site-home-hero .site-home-hero__visual {
+    order: 1;
+    padding: 0.65rem;
+  }
+
+  .site-home-hero .site-home-hero__engine {
+    max-height: 17rem;
+  }
+}
