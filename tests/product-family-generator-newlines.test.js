@@ -96,7 +96,7 @@ test('detects a real managed-content drift on a CRLF page', () => {
   assert.notEqual(markerIndex, -1);
   const beforeOwner = source.slice(0, markerIndex + marker.length);
   const afterOwner = source.slice(markerIndex + marker.length);
-  const changedOwner = afterOwner.replace('Approved product family information', 'Drifted product family information');
+  const changedOwner = afterOwner.replace('Specifications and configurations', 'Drifted product family information');
   assert.notEqual(changedOwner, afterOwner);
 
   const result = runGenerator(memoryFiles({ [file]: beforeOwner + changedOwner }));
@@ -107,7 +107,7 @@ test('detects a real managed-content drift on a CRLF page', () => {
 test('reports a real drift in --check mode without writing the page', () => {
   const file = 'en/cg-engine.html';
   const source = toCrlf(fs.readFileSync(path.join(root, file), 'utf8'));
-  const changed = source.replace('Approved product family information', 'Drifted product family information');
+  const changed = source.replace('Specifications and configurations', 'Drifted product family information');
   assert.notEqual(changed, source);
 
   const result = runGenerator(memoryFiles({ [file]: changed }), { checkOnly: true });

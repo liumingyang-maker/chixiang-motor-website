@@ -6,6 +6,7 @@ const vm = require('node:vm');
 
 const root = path.resolve(__dirname, '..');
 const mainSource = fs.readFileSync(path.join(root, 'js', 'main.js'), 'utf8');
+const { locales } = require(path.join(root, 'scripts', 'product-family-owner-manifest.js'));
 const contactPages = [
   { file: 'en/contact.html', lang: 'en', source: 'contact_owner_en' },
   { file: 'es/contacto.html', lang: 'es', source: 'contact_owner_es' },
@@ -266,4 +267,53 @@ test('T04 English home hero keeps the approved conversion content and uses an im
   assert.match(css, /\.site-home-hero\s+\.site-home-hero__inner/);
   assert.match(css, /\.site-home-hero\s+\.site-home-hero__visual/);
   assert.match(css, /@media\s*\(max-width:\s*768px\)[\s\S]*flex-direction:\s*column/);
+});
+
+const productFamilyPages = [
+  { file: 'en/cg-engine.html', lang: 'en' }, { file: 'en/cb-engine.html', lang: 'en' },
+  { file: 'en/horizontal-engine.html', lang: 'en' }, { file: 'en/engine-parts.html', lang: 'en' },
+  { file: 'es/motor-cg.html', lang: 'es' }, { file: 'es/motor-cb.html', lang: 'es' },
+  { file: 'es/motor-horizontal.html', lang: 'es' }, { file: 'es/repuestos-motor.html', lang: 'es' },
+  { file: 'pt/motor-cg.html', lang: 'pt' }, { file: 'pt/motor-cb.html', lang: 'pt' },
+  { file: 'pt/motor-horizontal.html', lang: 'pt' }, { file: 'pt/pecas-de-motor.html', lang: 'pt' },
+  { file: 'ru/dvigatel-cg.html', lang: 'ru' }, { file: 'ru/dvigatel-cb.html', lang: 'ru' },
+  { file: 'ru/zapchasti-dvigatelya.html', lang: 'ru' },
+  { file: 'ar/cg-engine.html', lang: 'ar' }, { file: 'ar/cb-engine.html', lang: 'ar' },
+  { file: 'ar/horizontal-engine.html', lang: 'ar' }, { file: 'ar/engine-parts.html', lang: 'ar' }
+];
+
+test('T06 makes buyer planning precede specifications and keeps the protected Russian horizontal page byte-identical', () => {
+  const expectedHeadings = {
+    en: 'Specifications and configurations',
+    es: 'Especificaciones y configuraciones',
+    pt: 'Especificações e configurações',
+    ru: 'Характеристики и комплектации',
+    ar: 'المواصفات والتجهيزات'
+  };
+  for (const [language, heading] of Object.entries(expectedHeadings)) {
+    assert.equal(locales[language].labels.approvedHeading, heading, `${language}: approved display heading`);
+  }
+
+  for (const page of productFamilyPages) {
+    const html = read(page.file);
+    const region = html.match(/<!-- PRODUCT FAMILY OWNER START -->[\s\S]*?<!-- PRODUCT FAMILY OWNER END -->/)?.[0] || '';
+    assert.match(html, /<link rel="stylesheet" href="\.\.\/css\/core-buyer-journey\.css(?:\?[^"']*)?">/);
+    assert.match(region, /class="section product-seo-detail"/);
+    assert.match(region, /<div class="container site-product-family-refresh">/);
+    assert.match(region, /site-product-family-refresh__buyer-notes/);
+    assert.ok(
+      region.indexOf('site-product-family-refresh__buyer-notes') < region.indexOf('site-product-family-refresh__specifications'),
+      `${page.file}: applications and checklist must come before specifications`
+    );
+    assert.match(region, new RegExp(`<h2 class="section-title site-product-family-refresh__specifications">${expectedHeadings[page.lang]}<\\/h2>`));
+    assert.match(region, /site-product-family-refresh__table-hint/);
+  }
+
+  const protectedFile = 'ru/gorizontalnyj-dvigatel.html';
+  const protectedHash = require('node:crypto').createHash('sha1').update(fs.readFileSync(path.join(root, protectedFile))).digest('hex');
+  assert.equal(protectedHash, '9202077f363311225bef88b2881656a4dbf040b2', 'protected Russian horizontal page must remain byte-identical');
+
+  const css = read('css/core-buyer-journey.css');
+  assert.match(css, /\.site-product-family-refresh\s+\.responsive-table-wrap/);
+  assert.match(css, /\.site-product-family-refresh__table-hint/);
 });

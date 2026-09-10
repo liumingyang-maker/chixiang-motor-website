@@ -78,11 +78,12 @@ function unit(value, suffix) {
 }
 
 function list(items) {
-  return `<ul style="color:var(--text-secondary);line-height:1.9;list-style:disc;padding-left:1.2rem;">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+  return `<ul class="site-product-family-refresh__list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
 function table(labels, columns, rows) {
-  return `<div class="responsive-table-wrap" tabindex="0">
+  return `<div class="responsive-table-wrap site-product-family-refresh__table" tabindex="0">
+          <p class="site-product-family-refresh__table-hint" aria-hidden="true">${escapeHtml(labels.tableHint)}</p>
           <table class="specs-table catalog-spec-table">
             <thead><tr>${columns.map(column => `<th>${escapeHtml(column)}</th>`).join('')}</tr></thead>
             <tbody>${rows.map(row => `<tr>${row.map((cell, index) => index === 0 ? `<th>${escapeHtml(cell)}</th>` : `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
@@ -195,14 +196,14 @@ function renderOwnerBlock(recordById, route) {
   return `<!-- Product Detail SEO Content -->
   <!-- PRODUCT FAMILY OWNER START -->
   <section class="section product-seo-detail" data-product-family-owner="${route.family}" data-owner-language="${route.language}">
-    <div class="container">
-      <h2 class="section-title">${escapeHtml(l.approvedHeading)}</h2>
+    <div class="container site-product-family-refresh">
       <p class="section-subtitle">${escapeHtml(locale.intro[route.family])}</p>
-      ${familyContent}
-      <div class="features-grid" style="margin-top:2rem;">
-        <div class="feature-item" style="text-align:left;"><h3>${escapeHtml(l.applications)}</h3>${list(applications)}</div>
-        <div class="feature-item" style="text-align:left;"><h3>${escapeHtml(l.checklist)}</h3>${list(checklist)}</div>
+      <div class="features-grid site-product-family-refresh__buyer-notes" style="margin-top:2rem;">
+        <div class="feature-item" style="text-align:left;"><h2 class="site-product-family-refresh__buyer-heading">${escapeHtml(l.applications)}</h2>${list(applications)}</div>
+        <div class="feature-item" style="text-align:left;"><h2 class="site-product-family-refresh__buyer-heading">${escapeHtml(l.checklist)}</h2>${list(checklist)}</div>
       </div>
+      <h2 class="section-title site-product-family-refresh__specifications">${escapeHtml(l.approvedHeading)}</h2>
+      ${familyContent}
       <div class="catalog-table-block" style="margin-top:2rem;">
         <h3>${escapeHtml(l.related)}</h3>
         <div class="cta-actions" style="justify-content:flex-start;margin-top:1rem;">

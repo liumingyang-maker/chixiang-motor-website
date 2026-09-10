@@ -156,3 +156,48 @@
     max-height: 17rem;
   }
 }
+
+/* Product-family pages: decision inputs precede data-dense configurations. */
+.site-product-family-refresh .site-product-family-refresh__buyer-notes {
+  margin-bottom: 2.5rem;
+}
+
+.site-product-family-refresh .site-product-family-refresh__buyer-heading {
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+}
+
+.site-product-family-refresh .site-product-family-refresh__list {
+  padding-inline-start: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  list-style: disc;
+}
+
+.site-product-family-refresh .site-product-family-refresh__specifications {
+  margin-top: 0;
+}
+
+.site-product-family-refresh .responsive-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+  overscroll-behavior-inline: contain;
+}
+
+.site-product-family-refresh .site-product-family-refresh__table-hint {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+
+@media (min-width: 769px) {
+  .site-product-family-refresh .site-product-family-refresh__table-hint {
+    display: none;
+  }
+}
