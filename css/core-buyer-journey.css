@@ -1,0 +1,49 @@
+/* Package C: scoped buyer-journey presentation. */
+.site-contact-refresh .contact-layout {
+  grid-template-columns: minmax(0, 1.35fr) minmax(17rem, 0.85fr);
+  align-items: start;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.site-contact-refresh .contact-form {
+  box-shadow: 0 14px 34px rgba(18, 45, 77, 0.08);
+}
+
+.site-contact-refresh .contact-form h2 {
+  margin-bottom: 0;
+}
+
+.site-contact-refresh .contact-form .form-group {
+  margin-bottom: 1.1rem;
+}
+
+.site-contact-refresh .contact-form input,
+.site-contact-refresh .contact-form select,
+.site-contact-refresh .contact-form textarea {
+  font-size: 1rem;
+}
+
+.site-contact-refresh .contact-form :is(input, select, textarea, button):focus-visible {
+  outline: 3px solid rgba(13, 110, 253, 0.45);
+  outline-offset: 2px;
+}
+
+.site-contact-refresh .contact-owner-summary {
+  padding-block: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .site-contact-refresh .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-contact-refresh .contact-layout {
+    gap: 1.5rem;
+  }
+
+  .site-contact-refresh .contact-form {
+    padding: 1.25rem;
+  }
+}

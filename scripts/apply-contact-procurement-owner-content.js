@@ -59,37 +59,8 @@ function renderChannels(l) {
   return l.channelOrder.map(channel => channelHtml[channel]).join('\n          ');
 }
 
-function renderOwner(route, l) {
-  const option = (value, label) => `<option value="${value}">${escapeHtml(label)}</option>`;
-  return `${START}
-  <section class="page-header" data-contact-procurement-owner="${route.language}">
-    <div class="container">
-      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="/${route.language}/">${escapeHtml(l.home)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(l.h1)}</span></nav>
-      <h1>${escapeHtml(l.h1)}</h1>
-      <p class="section-subtitle">${escapeHtml(l.pageLead)}</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="contact-layout">
-        <div class="contact-owner-summary">
-          <h2>${escapeHtml(l.procurementHeading)}</h2>
-          <p>${escapeHtml(l.procurementIntro)}</p>
-          <h3>${escapeHtml(l.checklistHeading)}</h3>
-          <ul class="procurement-checklist">
-            ${l.checklist.map(item => `<li>${escapeHtml(item)}</li>`).join('\n            ')}
-          </ul>
-          ${renderOwnerLinks(route.language, l)}
-          <h3>${escapeHtml(l.channelHeading)}</h3>
-          <!-- CONTACT CHANNEL LIST START -->
-          <div class="contact-channel-list" data-contact-channel-list>
-          ${renderChannels(l)}
-          </div>
-          <!-- CONTACT CHANNEL LIST END -->
-        </div>
-
-        <div class="contact-form" id="procurement-form">
+function renderProcurementForm(route, l, option) {
+  return `<div class="contact-form" id="procurement-form">
           <h2>${escapeHtml(l.formHeading)}</h2>
           <p class="contact-form-intro">${escapeHtml(l.formLead)}</p>
           <form method="POST" action="/api/contact"
@@ -140,7 +111,43 @@ function renderOwner(route, l) {
             <input type="hidden" name="source_form" value="${route.sourceForm}">
             <button type="submit" class="btn btn-accent btn-lg">${escapeHtml(l.actions.submit)}</button>
           </form>
-        </div>
+        </div>`;
+}
+
+function renderOwnerSummary(route, l) {
+  return `<div class="contact-owner-summary">
+          <h2>${escapeHtml(l.procurementHeading)}</h2>
+          <p>${escapeHtml(l.procurementIntro)}</p>
+          <h3>${escapeHtml(l.checklistHeading)}</h3>
+          <ul class="procurement-checklist">
+            ${l.checklist.map(item => `<li>${escapeHtml(item)}</li>`).join('\n            ')}
+          </ul>
+          ${renderOwnerLinks(route.language, l)}
+          <h3>${escapeHtml(l.channelHeading)}</h3>
+          <!-- CONTACT CHANNEL LIST START -->
+          <div class="contact-channel-list" data-contact-channel-list>
+          ${renderChannels(l)}
+          </div>
+          <!-- CONTACT CHANNEL LIST END -->
+        </div>`;
+}
+
+function renderOwner(route, l) {
+  const option = (value, label) => `<option value="${value}">${escapeHtml(label)}</option>`;
+  return `${START}
+  <section class="page-header" data-contact-procurement-owner="${route.language}">
+    <div class="container">
+      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="/${route.language}/">${escapeHtml(l.home)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(l.h1)}</span></nav>
+      <h1>${escapeHtml(l.h1)}</h1>
+      <p class="section-subtitle">${escapeHtml(l.pageLead)}</p>
+    </div>
+  </section>
+
+  <section class="section site-contact-refresh">
+    <div class="container">
+      <div class="contact-layout">
+        ${renderProcurementForm(route, l, option)}
+        ${renderOwnerSummary(route, l)}
       </div>
     </div>
   </section>
