@@ -24,7 +24,7 @@ const routes = [
 const locales = {
   en: {
     labels: {
-      approvedHeading: 'Approved product family information', model: 'Model', nominal: 'Nominal class',
+      approvedHeading: 'Specifications and configurations', tableHint: 'Scroll horizontally to view all specifications', model: 'Model', nominal: 'Nominal class',
       actual: 'Actual displacement', boreStroke: 'Bore × stroke', cooling: 'Cooling', start: 'Starting method',
       starterPosition: 'Electric-starter position', clutch: 'Clutch', gears: 'Transmission', options: 'Supplemental options',
       marketReference: 'Market/search reference', applications: 'Applications', checklist: 'Information needed for quotation',
@@ -83,7 +83,7 @@ const locales = {
   },
   es: {
     labels: {
-      approvedHeading: 'Información aprobada de la familia de productos', model: 'Modelo', nominal: 'Clase nominal',
+      approvedHeading: 'Especificaciones y configuraciones', tableHint: 'Desplácese horizontalmente para ver todas las especificaciones', model: 'Modelo', nominal: 'Clase nominal',
       actual: 'Cilindrada real', boreStroke: 'Diámetro × carrera', cooling: 'Refrigeración', start: 'Arranque',
       starterPosition: 'Posición del arranque eléctrico', clutch: 'Embrague', gears: 'Transmisión', options: 'Opciones adicionales',
       marketReference: 'Referencia de mercado/búsqueda', applications: 'Aplicaciones', checklist: 'Información necesaria para cotizar',
@@ -142,7 +142,7 @@ const locales = {
   },
   pt: {
     labels: {
-      approvedHeading: 'Informações aprovadas da família de produtos', model: 'Modelo', nominal: 'Classe nominal',
+      approvedHeading: 'Especificações e configurações', tableHint: 'Role horizontalmente para ver todas as especificações', model: 'Modelo', nominal: 'Classe nominal',
       actual: 'Cilindrada real', boreStroke: 'Diâmetro × curso', cooling: 'Refrigeração', start: 'Partida',
       starterPosition: 'Posição da partida elétrica', clutch: 'Embreagem', gears: 'Transmissão', options: 'Opções adicionais',
       marketReference: 'Referência de mercado/pesquisa', applications: 'Aplicações', checklist: 'Informações necessárias para cotação',
@@ -201,7 +201,7 @@ const locales = {
   },
   ru: {
     labels: {
-      approvedHeading: 'Подтверждённая информация о семействе', model: 'Модель', nominal: 'Номинальный класс',
+      approvedHeading: 'Характеристики и комплектации', tableHint: 'Прокрутите по горизонтали, чтобы увидеть все характеристики', model: 'Модель', nominal: 'Номинальный класс',
       actual: 'Фактический объём', boreStroke: 'Диаметр × ход', cooling: 'Охлаждение', start: 'Запуск',
       starterPosition: 'Положение электростартера', clutch: 'Сцепление', gears: 'Коробка передач', options: 'Дополнительные варианты',
       marketReference: 'Рыночное/поисковое обозначение', applications: 'Применение', checklist: 'Данные для расчёта предложения',
@@ -260,7 +260,7 @@ const locales = {
   },
   ar: {
     labels: {
-      approvedHeading: 'معلومات معتمدة عن عائلة المنتج', model: 'الطراز', nominal: 'الفئة الاسمية',
+      approvedHeading: 'المواصفات والتجهيزات', tableHint: 'مرر أفقياً لعرض جميع المواصفات', model: 'الطراز', nominal: 'الفئة الاسمية',
       actual: 'السعة الفعلية', boreStroke: 'القطر × الشوط', cooling: 'التبريد', start: 'طريقة التشغيل',
       starterPosition: 'موضع بادئ التشغيل الكهربائي', clutch: 'القابض', gears: 'ناقل الحركة', options: 'خيارات إضافية',
       marketReference: 'مرجع السوق/البحث', applications: 'الاستخدامات', checklist: 'المعلومات المطلوبة لعرض السعر',
