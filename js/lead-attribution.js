@@ -412,10 +412,12 @@
         first_referrer_domain: first.first_referrer_domain || '',
         previous_page: session.previous_page || '',
         last_page: session.current_page || '',
+        first_visit_time: first.first_visit_time || '',
         attribution_client_version: VERSION
       };
       CAMPAIGN_FIELDS.forEach(function(name) {
         fields[name] = session[name] || first['first_' + name] || '';
+        fields['first_' + name] = first['first_' + name] || '';
       });
       Object.keys(fields).forEach(function(name) { setHiddenField(form, name, fields[name]); });
       return fields;

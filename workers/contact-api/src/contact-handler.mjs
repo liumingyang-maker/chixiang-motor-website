@@ -1,3 +1,6 @@
+import { createEventId, normalizeAttributionEvent } from './attribution-contract.mjs';
+import { recordSuccessfulForm as persistSuccessfulForm } from './lead-store.mjs';
+
 const SALES_INBOX = 'chixiangmotor@163.com';
 const SENDER = 'inquiry@chixiangmotor.com';
 const TURNSTILE_SITEVERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -65,6 +68,32 @@ export function normalizeInquiry(fields) {
     gclid: pick(fields, ['gclid']),
     gbraid: pick(fields, ['gbraid']),
     wbraid: pick(fields, ['wbraid']),
+    fbclid: pick(fields, ['fbclid']),
+    msclkid: pick(fields, ['msclkid']),
+    yclid: pick(fields, ['yclid']),
+    ttclid: pick(fields, ['ttclid']),
+    lead_id: pick(fields, ['lead_id']),
+    first_source: pick(fields, ['first_source']),
+    session_source: pick(fields, ['session_source']),
+    landing_page: pick(fields, ['landing_page']),
+    session_landing_page: pick(fields, ['session_landing_page']),
+    first_referrer_domain: pick(fields, ['first_referrer_domain']),
+    previous_page: pick(fields, ['previous_page']),
+    last_page: pick(fields, ['last_page']),
+    attribution_client_version: pick(fields, ['attribution_client_version']),
+    first_visit_time: pick(fields, ['first_visit_time']),
+    first_utm_source: pick(fields, ['first_utm_source']),
+    first_utm_medium: pick(fields, ['first_utm_medium']),
+    first_utm_campaign: pick(fields, ['first_utm_campaign']),
+    first_utm_content: pick(fields, ['first_utm_content']),
+    first_utm_term: pick(fields, ['first_utm_term']),
+    first_gclid: pick(fields, ['first_gclid']),
+    first_gbraid: pick(fields, ['first_gbraid']),
+    first_wbraid: pick(fields, ['first_wbraid']),
+    first_fbclid: pick(fields, ['first_fbclid']),
+    first_msclkid: pick(fields, ['first_msclkid']),
+    first_yclid: pick(fields, ['first_yclid']),
+    first_ttclid: pick(fields, ['first_ttclid']),
     website: pick(fields, ['website'])
   };
 }
@@ -134,6 +163,20 @@ export function buildInquiryEmail(fields) {
     ['Message', inquiry.message],
     ['Page URL', inquiry.page_url],
     ['Language', inquiry.site_language],
+    ['Lead ID', inquiry.lead_id],
+    ['First source', inquiry.first_source],
+    ['Session source', inquiry.session_source],
+    ['Landing page', inquiry.landing_page],
+    ['Session landing page', inquiry.session_landing_page],
+    ['First referrer domain', inquiry.first_referrer_domain],
+    ['Previous page', inquiry.previous_page],
+    ['Last page', inquiry.last_page],
+    ['Attribution client version', inquiry.attribution_client_version],
+    ['First UTM source', inquiry.first_utm_source],
+    ['First UTM medium', inquiry.first_utm_medium],
+    ['First UTM campaign', inquiry.first_utm_campaign],
+    ['First UTM content', inquiry.first_utm_content],
+    ['First UTM term', inquiry.first_utm_term],
     ['UTM source', inquiry.utm_source],
     ['UTM medium', inquiry.utm_medium],
     ['UTM campaign', inquiry.utm_campaign],
@@ -142,6 +185,10 @@ export function buildInquiryEmail(fields) {
     ['GCLID', inquiry.gclid],
     ['GBRAID', inquiry.gbraid],
     ['WBRAID', inquiry.wbraid],
+    ['FBCLID', inquiry.fbclid],
+    ['MSCLKID', inquiry.msclkid],
+    ['YCLID', inquiry.yclid],
+    ['TTCLID', inquiry.ttclid],
     ['Submitted At', submittedAt]
   ];
 
@@ -255,6 +302,49 @@ async function verifyTurnstile(fields, request, env, fetcher = fetch) {
   return { ok: true };
 }
 
+function buildFormAttributionEvent(fields, options = {}) {
+  const inquiry = normalizeInquiry(fields);
+  if (!inquiry.lead_id) return null;
+  const nowValue = options.now ? options.now() : new Date();
+  const now = (nowValue instanceof Date ? nowValue : new Date(nowValue)).toISOString();
+  const eventId = options.createEventId ? options.createEventId() : createEventId();
+  const input = {
+    schema_version: 1,
+    client_version: inquiry.attribution_client_version,
+    event_id: eventId,
+    event_type: 'form_submitted_successfully',
+    lead_id: inquiry.lead_id,
+    first_source: inquiry.first_source,
+    session_source: inquiry.session_source,
+    landing_page: inquiry.landing_page,
+    session_landing_page: inquiry.session_landing_page,
+    first_referrer_domain: inquiry.first_referrer_domain,
+    previous_page: inquiry.previous_page,
+    click_page: inquiry.last_page || inquiry.page_url,
+    product: inquiry.product,
+    cta: inquiry.source_cta || inquiry.source_form || 'contact_form',
+    language: inquiry.site_language,
+    first_visit_time: inquiry.first_visit_time,
+    client_timestamp: now
+  };
+  for (const name of [
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'yclid', 'ttclid'
+  ]) {
+    if (inquiry[name]) input[name] = inquiry[name];
+    if (inquiry[`first_${name}`]) input[`first_${name}`] = inquiry[`first_${name}`];
+  }
+  const normalized = normalizeAttributionEvent(input);
+  return normalized.ok ? { event: normalized.event, now } : null;
+}
+
+function logAttributionFailure(error) {
+  console.error('Contact attribution storage failed.', {
+    name: error instanceof Error ? error.name : 'UnknownError',
+    message: error instanceof Error ? error.message : String(error)
+  });
+}
+
 export async function handleContactRequest(request, env = {}, options = {}) {
   const origin = request.headers.get('origin') || '';
 
@@ -297,6 +387,22 @@ export async function handleContactRequest(request, env = {}, options = {}) {
       code: 'email_delivery_failed',
       error: 'Email service unavailable.'
     }, 502, origin);
+  }
+
+  const attribution = buildFormAttributionEvent(fields, options);
+  if (attribution && env.LEADS_DB) {
+    const save = options.recordSuccessfulForm || persistSuccessfulForm;
+    const logFailure = options.logAttributionFailure || logAttributionFailure;
+    const task = Promise.resolve().then(() => save(env.LEADS_DB, attribution.event, {
+      country: request.cf?.country || '',
+      country_source: request.cf?.country ? 'cloudflare_edge' : '',
+      now: attribution.now
+    })).catch(error => {
+      logFailure(error);
+      return { result: 'database_unavailable' };
+    });
+    if (options.waitUntil) options.waitUntil(task);
+    else void task;
   }
 
   return jsonResponse({ ok: true }, 200, origin);

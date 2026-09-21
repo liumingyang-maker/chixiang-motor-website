@@ -312,6 +312,9 @@ test('enriches forms before FormData with the shared Lead ID and attribution', (
   assert.equal(form.field('landing_page').value, '/en/contact');
   assert.equal(form.field('last_page').value, '/en/contact');
   assert.equal(form.field('gclid').value, 'abc');
+  assert.equal(form.field('first_gclid').value, 'abc');
   assert.equal(form.field('utm_campaign').value, 'cg');
+  assert.equal(form.field('first_utm_campaign').value, 'cg');
+  assert.equal(form.field('first_visit_time').value, '2026-09-21T00:00:00.000Z');
   assert.equal(form.field('attribution_client_version').value, '1.0.0');
 });

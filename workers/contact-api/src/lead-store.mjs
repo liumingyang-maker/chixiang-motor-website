@@ -1,4 +1,4 @@
-import { isAllowedTransition, normalizeCountry, normalizeLeadId } from './attribution-contract.mjs';
+import { createEventId, isAllowedTransition, normalizeCountry, normalizeLeadId } from './attribution-contract.mjs';
 
 const RETENTION_MS = 180 * 24 * 60 * 60 * 1000;
 const CLICK_ID_FIELDS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'yclid', 'ttclid'];
@@ -39,12 +39,6 @@ async function eventDedupeKey(event) {
     event.cta || '',
     bucket
   ].join('|'));
-}
-
-function randomEventId() {
-  const alphabet = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
-  const bytes = crypto.getRandomValues(new Uint8Array(20));
-  return `EVT-${[...bytes].map(byte => alphabet[byte & 31]).join('')}`;
 }
 
 function insertLeadStatement(db, event, server, initialStatus) {
@@ -211,7 +205,7 @@ export async function listRecentLeads(db, limit = 50) {
 
 function statusEvent(leadId, eventType, timestamp) {
   return {
-    event_id: randomEventId(),
+    event_id: createEventId(),
     lead_id: leadId,
     event_type: eventType,
     client_timestamp: timestamp

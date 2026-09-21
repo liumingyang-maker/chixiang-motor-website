@@ -21,6 +21,7 @@ export const ALLOWED_ORIGINS = new Set([
 
 const LEAD_ID = /^CX-[0-9A-HJKMNP-TV-Z]{10}$/;
 const EVENT_ID = /^EVT-[0-9A-HJKMNP-TV-Z]{20}$/;
+const CROCKFORD = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
 const CAMPAIGN_FIELDS = [
   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
   'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'yclid', 'ttclid'
@@ -34,6 +35,12 @@ function clean(value, limit) {
 export function normalizeLeadId(value) {
   const id = String(value || '').trim().toUpperCase();
   return LEAD_ID.test(id) ? id : '';
+}
+
+export function createEventId(randomFill = values => crypto.getRandomValues(values)) {
+  const bytes = new Uint8Array(20);
+  randomFill(bytes);
+  return `EVT-${[...bytes].map(byte => CROCKFORD[byte & 31]).join('')}`;
 }
 
 export function normalizeHostname(value) {
