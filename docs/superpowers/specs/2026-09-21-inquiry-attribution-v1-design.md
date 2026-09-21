@@ -1,6 +1,6 @@
 # Inquiry Attribution V1 Design
 
-**Status:** Proposed for owner review
+**Status:** Approved for implementation
 **Date:** 2026-09-21
 **Base candidate:** `44ce7a5a5db38b1eab21f12d12ec07e7d03d94be`
 **Implementation branch:** `codex/inquiry-attribution-v1`
@@ -356,6 +356,7 @@ Automatic:
 
 ```text
 new D1 lead + whatsapp_click event → whatsapp_clicked
+successful form submission → message_received
 ```
 
 Manual owner actions:
@@ -367,6 +368,8 @@ qualified or message_received → previous status through one explicit revert ac
 ```
 
 The database records a timestamped status event for every manual transition. It does not store an operator identity because V1 has exactly one Access-authorized owner.
+
+`form_submitted_successfully` is stronger evidence than a click, so it creates or advances the lead to `message_received` without requiring a WhatsApp reference. The undo control applies only to the latest manual status transition; it never reverses the automatic fact that a form was successfully delivered.
 
 A message is considered attributable only when the received WhatsApp text still contains a valid `CX-...` reference. A click without a received reference remains a click.
 
