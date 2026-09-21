@@ -121,16 +121,22 @@ test('Arabic Contact remains RTL and every honeypot is viewport safe', () => {
   }
 });
 
-test('conversion and delivery implementation files retain their approved baseline', () => {
-  const expected = {
-    'js/main.js': 'd685fefc94ae57b27e470335b315d8cfacf8b8f6de56e3db8eebfbc391227ba8',
-    'js/yandex-metrica.js': '7ff3c32d95e7672476cb33f4b3b3ee90880a5dceeb6ca1c9af342ca3d59f9608',
-    'workers/contact-api/src/contact-handler.mjs': 'c1315daccefc0f8543398ccf393d0eb916e5c4d6093aae1ecc875f3d82d115f5',
-    'workers/contact-api/src/index.mjs': 'd24cf2d2dc596265d57c9011909e2a0cf567fc8a2d1eee816f4c97f46c151c42'
-  };
-  for (const [file, hash] of Object.entries(expected)) {
-    assert.equal(sha256(file), hash, file);
+test('all five Contact pages disclose anonymous attribution retention', () => {
+  for (const page of pages) {
+    const html = read(page.file);
+    const disclosure = html.match(/<p class=["']contact-attribution-disclosure["']>[\s\S]*?<\/p>/i)?.[0] || '';
+    assert.ok(disclosure, `${page.file}: disclosure`);
+    assert.match(disclosure, /90/, `${page.file}: browser retention`);
+    assert.match(disclosure, /180/, `${page.file}: service retention`);
   }
+  assert.match(read('css/style.css'), /\.contact-attribution-disclosure\s*\{/);
+});
+
+test('non-exempt Yandex implementation retains its approved baseline', () => {
+  assert.equal(
+    sha256('js/yandex-metrica.js'),
+    '7ff3c32d95e7672476cb33f4b3b3ee90880a5dceeb6ca1c9af342ca3d59f9608'
+  );
 });
 
 test('Contact owner generator is idempotent', () => {

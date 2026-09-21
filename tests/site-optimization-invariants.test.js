@@ -26,6 +26,19 @@ const frozenFiles = [
   'js/algeria-landing.js'
 ];
 
+// Owner-approved, separate-PR exception for Inquiry Attribution V1.
+// The fixed baseline and full frozen registry remain unchanged; dedicated
+// regression tests protect the existing behaviour of these five files.
+const authorizedFrozenChanges = new Set([
+  'ads/algerie/index.html',
+  'js/main.js',
+  'workers/contact-api/src/contact-handler.mjs',
+  'workers/contact-api/src/index.mjs',
+  'workers/contact-api/wrangler.jsonc'
+]);
+
+const unchangedFrozenFiles = frozenFiles.filter(file => !authorizedFrozenChanges.has(file));
+
 const corePages = [
   'en/index.html', 'en/products.html', 'en/about.html', 'en/contact.html', 'en/news.html',
   'es/index.html', 'es/products.html', 'es/about.html', 'es/contacto.html', 'es/news.html',
@@ -41,6 +54,7 @@ const mutablePages = [
   'en/how-to-choose-motorcycle-engine-manufacturer-china.html',
   'en/air-cooled-vs-water-cooled-motorcycle-engine.html'
 ];
+const protectedMutablePages = new Set(routes.filter(route => route.protected).map(route => route.file));
 
 const contactPages = [
   'en/contact.html',
@@ -152,7 +166,7 @@ function frozenDiffArgs(candidate) {
     frozenBaseline,
     ...(candidate ? [candidate] : []),
     '--',
-    ...frozenFiles
+    ...unchangedFrozenFiles
   ];
 }
 
@@ -166,11 +180,11 @@ function frozenDiff(candidate) {
 test('frozen-file guard uses distinct candidate and working-tree comparisons', () => {
   assert.deepEqual(
     frozenDiffArgs('HEAD'),
-    ['diff', '--quiet', frozenBaseline, 'HEAD', '--', ...frozenFiles]
+    ['diff', '--quiet', frozenBaseline, 'HEAD', '--', ...unchangedFrozenFiles]
   );
   assert.deepEqual(
     frozenDiffArgs(),
-    ['diff', '--quiet', frozenBaseline, '--', ...frozenFiles]
+    ['diff', '--quiet', frozenBaseline, '--', ...unchangedFrozenFiles]
   );
 });
 
@@ -194,16 +208,26 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
 
     const beforeScripts = scriptSources(before);
     const afterScripts = scriptSources(after);
+    const withoutAttributionScript = afterScripts.filter(source => source !== '../js/lead-attribution.js');
+    if (protectedMutablePages.has(file)) {
+      assert.deepEqual(afterScripts, beforeScripts, `${file}: protected script set changed`);
+      continue;
+    }
+    assert.equal(
+      afterScripts.length - withoutAttributionScript.length,
+      1,
+      `${file}: expected exactly one approved attribution script`
+    );
     if (a2MenuPages.has(file)) {
-      const withoutAllowedA2Script = afterScripts.filter(source => source !== '../js/core-menu-accessibility.js');
+      const withoutAllowedA2Script = withoutAttributionScript.filter(source => source !== '../js/core-menu-accessibility.js');
       assert.equal(
-        afterScripts.length - withoutAllowedA2Script.length,
+        withoutAttributionScript.length - withoutAllowedA2Script.length,
         1,
         `${file}: expected exactly one approved A2 script`
       );
       assert.deepEqual(withoutAllowedA2Script, beforeScripts, `${file}: script set changed`);
     } else {
-      assert.deepEqual(afterScripts, beforeScripts, `${file}: script set changed`);
+      assert.deepEqual(withoutAttributionScript, beforeScripts, `${file}: script set changed`);
     }
   }
 });

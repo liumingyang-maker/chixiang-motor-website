@@ -297,7 +297,16 @@
         return false;
       }
 
-      window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(form)), '_blank', 'noopener');
+      const rawUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(form));
+      const attribution = window.ChixiangAttribution;
+      const productField = form.querySelector('[name="product_interest"], [name="product"]');
+      const finalUrl = attribution && typeof attribution.prepareWhatsAppOpen === 'function'
+        ? attribution.prepareWhatsAppOpen(rawUrl, {
+          cta: 'form_fallback',
+          product: productField && productField.value ? productField.value : ''
+        })
+        : rawUrl;
+      window.open(finalUrl, '_blank', 'noopener');
       return true;
     }
 

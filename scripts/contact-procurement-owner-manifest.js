@@ -71,6 +71,7 @@ const locales = {
     channelHeading: 'Supplemental contact channels',
     formHeading: 'Procurement inquiry form',
     formLead: 'The form is the primary inquiry route. We will review the details before discussing configuration and quotation.',
+    attributionDisclosure: 'We use an anonymous reference and limited source information to connect inquiries with their website source. Browser data expires after 90 days and service records after 180 days.',
     fields: {
       name: 'Your name', company: 'Company', contact: 'Primary contact', email: 'Email (optional)',
       country: 'Destination country or market', product: 'Product interest', quantity: 'Expected quantity',
@@ -124,6 +125,7 @@ const locales = {
     channelHeading: 'Canales de contacto complementarios',
     formHeading: 'Formulario de consulta de compras',
     formLead: 'El formulario es el canal principal. Revisaremos los datos antes de tratar la configuración y la cotización.',
+    attributionDisclosure: 'Usamos una referencia anónima y datos limitados de procedencia para relacionar las consultas con su origen en el sitio web. Los datos del navegador caducan después de 90 días y los registros del servicio después de 180 días.',
     fields: {
       name: 'Nombre', company: 'Empresa', contact: 'Contacto principal', email: 'Email (opcional)',
       country: 'País o mercado de destino', product: 'Producto de interés', quantity: 'Cantidad estimada',
@@ -177,6 +179,7 @@ const locales = {
     channelHeading: 'Canais de contato complementares',
     formHeading: 'Formulário de consulta de compras',
     formLead: 'O formulário é o canal principal. Analisaremos os dados antes de discutir configuração e cotação.',
+    attributionDisclosure: 'Usamos uma referência anônima e informações limitadas de origem para relacionar consultas à sua origem no site. Os dados do navegador expiram após 90 dias e os registros do serviço após 180 dias.',
     fields: {
       name: 'Nome', company: 'Empresa', contact: 'Contato principal', email: 'Email (opcional)',
       country: 'País ou mercado de destino', product: 'Produto de interesse', quantity: 'Quantidade estimada',
@@ -230,6 +233,7 @@ const locales = {
     channelHeading: 'Дополнительные способы связи',
     formHeading: 'Форма запроса для закупки',
     formLead: 'Форма — основной канал запроса. Мы изучим данные до обсуждения конфигурации и предложения.',
+    attributionDisclosure: 'Мы используем анонимный идентификатор и ограниченные данные об источнике, чтобы связать запрос с его источником на сайте. Данные в браузере удаляются через 90 дней, а служебные записи — через 180 дней.',
     fields: {
       name: 'Имя', company: 'Компания', contact: 'Основной контакт', email: 'Email (необязательно)',
       country: 'Страна или целевой рынок', product: 'Интересующая продукция', quantity: 'Планируемое количество',
@@ -283,6 +287,7 @@ const locales = {
     channelHeading: 'قنوات اتصال إضافية',
     formHeading: 'نموذج استفسار المشتريات',
     formLead: 'النموذج هو قناة الاستفسار الأساسية. سنراجع التفاصيل قبل مناقشة التكوين وعرض السعر.',
+    attributionDisclosure: 'نستخدم مرجعًا مجهولًا ومعلومات محدودة عن المصدر لربط الاستفسارات بمصدرها على الموقع. تنتهي بيانات المتصفح بعد 90 يومًا وسجلات الخدمة بعد 180 يومًا.',
     fields: {
       name: 'الاسم', company: 'الشركة', contact: 'وسيلة الاتصال الأساسية', email: 'البريد الإلكتروني (اختياري)',
       country: 'بلد أو سوق الوجهة', product: 'المنتج المطلوب', quantity: 'الكمية المتوقعة',
