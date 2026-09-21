@@ -43,19 +43,19 @@ function browser(options = {}) {
         return bytes;
       }
     },
-    navigator: {},
-    fetch: async () => new Response('{}', { status: 202 })
+    navigator: options.navigator || {},
+    fetch: options.fetch || (async () => new Response('{}', { status: 202 }))
   };
   const doc = {
     referrer: options.referrer || '',
     readyState: 'complete',
     documentElement: { lang: options.language || 'en' },
-    currentScript: { dataset: {} },
+    currentScript: { dataset: options.scriptDataset || {} },
     addEventListener(type, handler, capture) {
       listeners.set(type + ':' + Boolean(capture), handler);
     },
     querySelectorAll() { return []; },
-    createElement() { return {}; }
+    createElement() { return { type: '', name: '', value: '' }; }
   };
   return { win, doc, listeners };
 }
@@ -182,4 +182,136 @@ test('falls back to document memory when Web Storage is unavailable', () => {
   const diagnostics = client.getDiagnostics();
   assert.equal(diagnostics.storage_available, false);
   assert.match(diagnostics.lead_id, /^CX-/);
+});
+
+test('decorates wa.me and api.whatsapp.com with exactly one short Ref', () => {
+  const b = browser();
+  const client = createClient(b.win, b.doc, { now });
+  client.init();
+  const leadId = client.getDiagnostics().lead_id;
+
+  const first = client.decorateWhatsAppUrl(
+    'https://wa.me/8619008225410?text=' + encodeURIComponent('Hello, I need CG engines.'),
+    { product: 'CG Engine', cta: 'hero' }
+  );
+  assert.equal(new URL(first).searchParams.get('text'), `Hello, I need CG engines.\n\nRef: ${leadId}`);
+
+  const second = client.decorateWhatsAppUrl(first, { product: 'CG Engine', cta: 'hero' });
+  assert.equal((new URL(second).searchParams.get('text').match(/Ref:/g) || []).length, 1);
+
+  const apiUrl = client.decorateWhatsAppUrl('https://api.whatsapp.com/send?phone=8619008225410', {});
+  assert.equal(new URL(apiUrl).searchParams.get('text'), `Hello, I am interested in your motorcycle engines.\n\nRef: ${leadId}`);
+  const multiline = client.decorateWhatsAppUrl(
+    'https://wa.me/8619008225410?text=' + encodeURIComponent('Product: CG150\nQuantity: 100'),
+    {}
+  );
+  assert.equal(new URL(multiline).searchParams.get('text'), `Product: CG150\nQuantity: 100\n\nRef: ${leadId}`);
+  assert.equal(client.decorateWhatsAppUrl('https://wa.me/12345?text=Hello', {}), 'https://wa.me/12345?text=Hello');
+});
+
+test('uses language-appropriate defaults without exposing source data', () => {
+  const defaults = {
+    es: 'Hola',
+    pt: 'Olá',
+    ru: 'Здравствуйте',
+    ar: 'مرحبًا'
+  };
+  for (const [language, opening] of Object.entries(defaults)) {
+    const b = browser({ language });
+    const client = createClient(b.win, b.doc, { now });
+    const text = new URL(client.decorateWhatsAppUrl('https://wa.me/8619008225410', {})).searchParams.get('text');
+    assert.match(text, new RegExp('^' + opening));
+    assert.doesNotMatch(text, /Google|utm_|gclid|country/i);
+  }
+});
+
+test('decorates a clicked anchor before navigation and sends one compact beacon', async () => {
+  const beacons = [];
+  const ymCalls = [];
+  const b = browser({
+    href: 'https://chixiangmotor.com/en/cg-engine?utm_source=facebook&utm_campaign=test',
+    referrer: 'https://facebook.com/ad',
+    scriptDataset: { yandexCounter: '109483511' },
+    navigator: {
+      sendBeacon(url, body) {
+        beacons.push({ url, body });
+        return true;
+      }
+    }
+  });
+  b.win.ym = (...args) => ymCalls.push(args);
+  const client = createClient(b.win, b.doc, { now });
+  client.init();
+  const anchor = {
+    href: 'https://wa.me/8619008225410?text=CG150',
+    dataset: { product: 'CG150', source: 'product_card' },
+    getAttribute(name) { return name === 'href' ? this.href : ''; },
+    setAttribute(name, value) { if (name === 'href') this.href = value; }
+  };
+  let prevented = false;
+  b.listeners.get('click:true')({
+    target: { closest() { return anchor; } },
+    preventDefault() { prevented = true; }
+  });
+
+  assert.equal(prevented, false);
+  assert.match(new URL(anchor.href).searchParams.get('text'), /Ref: CX-/);
+  assert.equal(beacons.length, 1);
+  assert.equal(beacons[0].url, '/api/attribution/whatsapp-click');
+  const payload = JSON.parse(await beacons[0].body.text());
+  assert.equal(payload.event_type, 'whatsapp_click');
+  assert.equal(payload.first_source, 'Facebook');
+  assert.equal(payload.click_page, '/en/cg-engine');
+  assert.equal(payload.product, 'CG150');
+  assert.equal(payload.cta, 'product_card');
+  assert.deepEqual(ymCalls[0].slice(0, 3), [109483511, 'reachGoal', 'whatsapp_click']);
+});
+
+test('uses one keepalive fetch when sendBeacon declines the event', async () => {
+  const requests = [];
+  const b = browser({
+    navigator: { sendBeacon() { return false; } },
+    fetch: async (url, init) => {
+      requests.push({ url, init });
+      return new Response('{}', { status: 202 });
+    }
+  });
+  const client = createClient(b.win, b.doc, { now });
+  client.prepareWhatsAppOpen('https://wa.me/8619008225410?text=Hello', { cta: 'form_fallback' });
+  await new Promise(resolve => setTimeout(resolve, 0));
+  assert.equal(requests.length, 1);
+  assert.equal(requests[0].url, '/api/attribution/whatsapp-click');
+  assert.equal(requests[0].init.keepalive, true);
+  assert.equal(requests[0].init.credentials, 'same-origin');
+});
+
+function formHarness() {
+  const fields = new Map();
+  return {
+    appendChild(input) { fields.set(input.name, input); },
+    querySelector(selector) {
+      const match = selector.match(/^\[name="([^"]+)"\]$/);
+      return match ? fields.get(match[1]) || null : null;
+    },
+    field(name) { return fields.get(name); }
+  };
+}
+
+test('enriches forms before FormData with the shared Lead ID and attribution', () => {
+  const b = browser({
+    href: 'https://chixiangmotor.com/en/contact?gclid=abc&utm_campaign=cg',
+    referrer: 'https://google.com/search?q=cg'
+  });
+  const client = createClient(b.win, b.doc, { now });
+  const form = formHarness();
+  client.enrichForm(form);
+
+  assert.match(form.field('lead_id').value, /^CX-/);
+  assert.equal(form.field('first_source').value, 'Google Ads');
+  assert.equal(form.field('session_source').value, 'Google Ads');
+  assert.equal(form.field('landing_page').value, '/en/contact');
+  assert.equal(form.field('last_page').value, '/en/contact');
+  assert.equal(form.field('gclid').value, 'abc');
+  assert.equal(form.field('utm_campaign').value, 'cg');
+  assert.equal(form.field('attribution_client_version').value, '1.0.0');
 });

@@ -84,3 +84,10 @@ test('preserves clicks when gtag is missing or throws', () => {
 test('keeps the existing form conversion destination', () => {
   assert.match(source, /AW-16777656395\/Om_nCMCV4swcEMvwmsA-/);
 });
+
+test('routes the programmatic fallback through attribution without moving Ads calls', () => {
+  assert.match(source, /ChixiangAttribution/);
+  assert.match(source, /prepareWhatsAppOpen/);
+  assert.equal((source.match(/AW-16777656395\/bovKCKOx088cEMvwmsA-/g) || []).length, 1);
+  assert.equal((source.match(/AW-16777656395\/Om_nCMCV4swcEMvwmsA-/g) || []).length, 1);
+});

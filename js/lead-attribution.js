@@ -27,9 +27,24 @@
     'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
     'gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'yclid', 'ttclid'
   ];
+  var DEFAULT_MESSAGES = {
+    en: 'Hello, I am interested in your motorcycle engines.',
+    es: 'Hola, me interesan sus motores para motocicletas.',
+    pt: 'Olá, tenho interesse nos seus motores para motocicletas.',
+    ru: 'Здравствуйте, меня интересуют ваши мотоциклетные двигатели.',
+    ar: 'مرحبًا، أنا مهتم بمحركات الدراجات النارية لديكم.'
+  };
 
   function clean(value, limit) {
     return String(value || '').replace(/[\u0000-\u001f\u007f]/g, '').trim().slice(0, limit || 160);
+  }
+
+  function cleanMessage(value, limit) {
+    return String(value || '')
+      .replace(/\r\n?/g, '\n')
+      .replace(/[\u0000-\u0009\u000b-\u001f\u007f]/g, '')
+      .trim()
+      .slice(0, limit || 1800);
   }
 
   function sanitizeHostname(value) {
@@ -190,6 +205,11 @@
     var storageAvailable = true;
     var first = null;
     var session = null;
+    var listenersBound = false;
+    var lastEventResult = 'not_sent';
+    var yandexCounter = clean(document && document.currentScript && document.currentScript.dataset
+      ? document.currentScript.dataset.yandexCounter
+      : '', 20);
 
     function randomFill(bytes) {
       if (typeof config.randomFill === 'function') return config.randomFill(bytes);
@@ -249,6 +269,183 @@
       return record;
     }
 
+    function whatsappNumber(url) {
+      if (url.hostname === 'wa.me') return clean(url.pathname.replace(/^\/+/, ''), 30);
+      if (url.hostname === 'api.whatsapp.com') return clean(url.searchParams.get('phone'), 30);
+      return '';
+    }
+
+    function decorateWhatsAppUrl(value) {
+      if (!initialized) init();
+      var raw = String(value || '');
+      var url;
+      try {
+        url = new URL(raw, window.location.href);
+      } catch (error) {
+        return raw;
+      }
+      if (whatsappNumber(url) !== '8619008225410') return raw;
+
+      var message = cleanMessage(url.searchParams.get('text'), 1800);
+      message = message.replace(/(?:\r?\n){0,2}Ref:\s*CX-[0-9A-HJKMNP-TV-Z]{10}\s*$/i, '').trim();
+      if (!message) message = DEFAULT_MESSAGES[languageOf(document)] || DEFAULT_MESSAGES.en;
+      url.searchParams.set('text', message + '\n\nRef: ' + first.lead_id);
+      return url.toString();
+    }
+
+    function eventId() {
+      return 'EVT-' + createLeadId(randomFill).slice(3) + createLeadId(randomFill).slice(3);
+    }
+
+    function eventPayload(context) {
+      var details = context || {};
+      var payload = {
+        schema_version: SCHEMA_VERSION,
+        client_version: VERSION,
+        event_id: eventId(),
+        event_type: 'whatsapp_click',
+        lead_id: first.lead_id,
+        first_source: first.first_source,
+        session_source: session.session_source,
+        landing_page: first.landing_page,
+        session_landing_page: session.session_landing_page,
+        first_referrer_domain: first.first_referrer_domain || '',
+        previous_page: session.previous_page || '',
+        click_page: session.current_page || '',
+        product: clean(details.product, 120),
+        cta: clean(details.cta, 80),
+        language: languageOf(document),
+        first_visit_time: first.first_visit_time,
+        client_timestamp: now().toISOString()
+      };
+      CAMPAIGN_FIELDS.forEach(function(name) {
+        if (first['first_' + name]) payload['first_' + name] = first['first_' + name];
+        if (session[name]) payload[name] = session[name];
+      });
+      return payload;
+    }
+
+    function sendEvent(payload) {
+      var body = JSON.stringify(payload);
+      try {
+        if (window.navigator && typeof window.navigator.sendBeacon === 'function') {
+          var queued = window.navigator.sendBeacon(
+            '/api/attribution/whatsapp-click',
+            new Blob([body], { type: 'application/json' })
+          );
+          if (queued) {
+            lastEventResult = 'beacon_queued';
+            return;
+          }
+        }
+      } catch (error) {
+        lastEventResult = 'beacon_failed';
+      }
+
+      if (typeof window.fetch !== 'function') {
+        lastEventResult = 'transport_unavailable';
+        return;
+      }
+      lastEventResult = 'fetch_queued';
+      window.fetch('/api/attribution/whatsapp-click', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', accept: 'application/json' },
+        body: body,
+        keepalive: true,
+        credentials: 'same-origin'
+      }).then(function(response) {
+        lastEventResult = response.ok ? 'fetch_sent' : 'fetch_rejected';
+      }).catch(function() {
+        lastEventResult = 'fetch_failed';
+      });
+    }
+
+    function reportYandex(payload) {
+      if (yandexCounter !== '109483511' || typeof window.ym !== 'function') return;
+      try {
+        window.ym(109483511, 'reachGoal', 'whatsapp_click', {
+          lead_id: payload.lead_id,
+          product: payload.product,
+          cta: payload.cta
+        });
+      } catch (error) {
+        // Analytics must never prevent WhatsApp navigation.
+      }
+    }
+
+    function recordWhatsAppOpen(context) {
+      if (!initialized) init();
+      var payload = eventPayload(context);
+      sendEvent(payload);
+      reportYandex(payload);
+      return payload;
+    }
+
+    function prepareWhatsAppOpen(value, context) {
+      var decorated = decorateWhatsAppUrl(value);
+      if (decorated !== String(value || '') || whatsappNumber(new URL(decorated, window.location.href)) === '8619008225410') {
+        recordWhatsAppOpen(context);
+      }
+      return decorated;
+    }
+
+    function setHiddenField(form, name, value) {
+      if (!value) return;
+      var input = form.querySelector('[name="' + name + '"]');
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        form.appendChild(input);
+      }
+      input.value = clean(value, name.indexOf('clid') >= 0 || name.indexOf('braid') >= 0 ? 256 : 500);
+    }
+
+    function enrichForm(form) {
+      if (!initialized) init();
+      var fields = {
+        lead_id: first.lead_id,
+        first_source: first.first_source,
+        session_source: session.session_source,
+        landing_page: first.landing_page,
+        session_landing_page: session.session_landing_page,
+        first_referrer_domain: first.first_referrer_domain || '',
+        previous_page: session.previous_page || '',
+        last_page: session.current_page || '',
+        attribution_client_version: VERSION
+      };
+      CAMPAIGN_FIELDS.forEach(function(name) {
+        fields[name] = session[name] || first['first_' + name] || '';
+      });
+      Object.keys(fields).forEach(function(name) { setHiddenField(form, name, fields[name]); });
+      return fields;
+    }
+
+    function bindListeners() {
+      if (listenersBound || !document || typeof document.addEventListener !== 'function') return;
+      listenersBound = true;
+      document.addEventListener('click', function(event) {
+        var target = event.target;
+        if (!target || typeof target.closest !== 'function') return;
+        var anchor = target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com/"]');
+        if (!anchor) return;
+        var raw = typeof anchor.getAttribute === 'function' ? anchor.getAttribute('href') : anchor.href;
+        var data = anchor.dataset || {};
+        var finalUrl = prepareWhatsAppOpen(raw || anchor.href, {
+          product: data.attributionProduct || data.product || data.whatsappModel || '',
+          cta: data.attributionCta || data.source || 'link'
+        });
+        if (typeof anchor.setAttribute === 'function') anchor.setAttribute('href', finalUrl);
+        else anchor.href = finalUrl;
+      }, true);
+      document.addEventListener('submit', function(event) {
+        var form = event.target;
+        if (!form || typeof form.getAttribute !== 'function') return;
+        var action = form.getAttribute('action') || '';
+        if (action === '/api/contact' || action.endsWith('/api/contact')) enrichForm(form);
+      }, true);
+    }
+
     function init() {
       if (initialized) return api;
       initialized = true;
@@ -268,6 +465,7 @@
       var previous = validStoredSession(storedSession, first.lead_id) ? storedSession : null;
       session = makeSessionRecord(campaign, referrer, page, currentDate, previous);
       writeStorage(window.sessionStorage, SESSION_KEY, session);
+      bindListeners();
       return api;
     }
 
@@ -285,13 +483,18 @@
         previous_page: session.previous_page || '',
         current_page: session.current_page || '',
         first_visit_time: first.first_visit_time,
-        session_start_time: session.session_start_time
+        session_start_time: session.session_start_time,
+        last_event_result: lastEventResult
       };
     }
 
     var api = {
       init: init,
-      getDiagnostics: getDiagnostics
+      getDiagnostics: getDiagnostics,
+      decorateWhatsAppUrl: decorateWhatsAppUrl,
+      prepareWhatsAppOpen: prepareWhatsAppOpen,
+      recordWhatsAppOpen: recordWhatsAppOpen,
+      enrichForm: enrichForm
     };
     return api;
   }

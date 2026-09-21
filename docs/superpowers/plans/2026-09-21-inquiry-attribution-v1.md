@@ -265,8 +265,8 @@ Add one capture-phase `submit` listener that creates or updates hidden fields be
 const attribution = window.ChixiangAttribution;
 const rawUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(buildWhatsAppText(form));
 const productField = form.querySelector('[name="product_interest"], [name="product"]');
-const finalUrl = attribution && typeof attribution.decorateWhatsAppUrl === 'function'
-  ? attribution.decorateWhatsAppUrl(rawUrl, {
+const finalUrl = attribution && typeof attribution.prepareWhatsAppOpen === 'function'
+  ? attribution.prepareWhatsAppOpen(rawUrl, {
       cta: 'form_fallback',
       product: productField && productField.value ? productField.value : ''
     })
