@@ -207,16 +207,22 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
 
     const beforeScripts = scriptSources(before);
     const afterScripts = scriptSources(after);
+    const withoutAttributionScript = afterScripts.filter(source => source !== '../js/lead-attribution.js');
+    assert.equal(
+      afterScripts.length - withoutAttributionScript.length,
+      1,
+      `${file}: expected exactly one approved attribution script`
+    );
     if (a2MenuPages.has(file)) {
-      const withoutAllowedA2Script = afterScripts.filter(source => source !== '../js/core-menu-accessibility.js');
+      const withoutAllowedA2Script = withoutAttributionScript.filter(source => source !== '../js/core-menu-accessibility.js');
       assert.equal(
-        afterScripts.length - withoutAllowedA2Script.length,
+        withoutAttributionScript.length - withoutAllowedA2Script.length,
         1,
         `${file}: expected exactly one approved A2 script`
       );
       assert.deepEqual(withoutAllowedA2Script, beforeScripts, `${file}: script set changed`);
     } else {
-      assert.deepEqual(afterScripts, beforeScripts, `${file}: script set changed`);
+      assert.deepEqual(withoutAttributionScript, beforeScripts, `${file}: script set changed`);
     }
   }
 });

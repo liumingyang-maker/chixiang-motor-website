@@ -63,6 +63,7 @@ function renderProcurementForm(route, l, option) {
   return `<div class="contact-form" id="procurement-form">
           <h2>${escapeHtml(l.formHeading)}</h2>
           <p class="contact-form-intro">${escapeHtml(l.formLead)}</p>
+          <p class="contact-attribution-disclosure">${escapeHtml(l.attributionDisclosure)}</p>
           <form method="POST" action="/api/contact"
             data-whatsapp-fallback="false"
             data-message-sending="${escapeHtml(l.messages.sending)}"
