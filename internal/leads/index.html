@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Inquiry source lookup | Chixiang Motor</title>
+  <link rel="stylesheet" href="./leads.css">
+  <script src="./leads.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to inquiry lookup</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <span class="brand">CHIXIANG MOTOR</span>
+      <span class="owner-label">Owner tool</span>
+    </div>
+  </header>
+
+  <main id="main-content" class="shell page-grid">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Inquiry attribution</p>
+      <h1 id="page-title">Inquiry source lookup</h1>
+      <p>Search the short reference shown in a WhatsApp message or inquiry email. A click is not counted as a received inquiry until you confirm it here.</p>
+    </section>
+
+    <section class="card search-card" aria-labelledby="search-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="search-title">Find one lead</h2>
+          <p>Example: CX-7K3P2M9Q4D</p>
+        </div>
+        <p id="service-status" class="service-status" aria-live="polite">Ready</p>
+      </div>
+      <form id="lookup-form" novalidate>
+        <label for="lead-search">Lead ID</label>
+        <div class="search-row">
+          <input id="lead-search" name="lead_id" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="13" aria-describedby="lead-help lead-error">
+          <button id="search-button" class="button button-primary" type="submit">Search</button>
+        </div>
+        <p id="lead-help" class="field-help">Enter the CX reference exactly as it appears in the message.</p>
+        <p id="lead-error" class="field-error" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="loading-state" class="card state-card" aria-live="polite" hidden>
+      <h2>Loading inquiry data</h2>
+      <p>Please wait while the latest record is retrieved.</p>
+    </section>
+
+    <section id="error-state" class="card state-card state-error" role="alert" hidden>
+      <h2>Data could not be loaded</h2>
+      <p id="error-message">Try again. Your last successful result remains visible.</p>
+      <button id="retry-button" class="button button-secondary" type="button">Retry</button>
+    </section>
+
+    <section id="result-panel" class="card result-card" aria-labelledby="result-title" hidden>
+      <div class="section-heading result-heading">
+        <div>
+          <p class="eyebrow">Matched record</p>
+          <h2 id="result-title" tabindex="-1">Lead details</h2>
+        </div>
+        <span id="lead-status" class="status-pill">Unknown</span>
+      </div>
+
+      <dl id="lead-facts" class="facts-grid"></dl>
+
+      <div class="action-group" aria-label="Lead status actions">
+        <button id="mark-message" class="button button-primary" type="button" data-action="mark_message_received" hidden>Mark message received</button>
+        <button id="mark-qualified" class="button button-primary" type="button" data-action="mark_qualified" hidden>Mark qualified</button>
+        <button id="revert-status" class="button button-secondary" type="button" data-action="revert" hidden>Undo last status</button>
+      </div>
+
+      <div class="export-actions">
+        <button id="copy-ai" class="button button-secondary" type="button">Copy for AI</button>
+        <button id="download-json" class="button button-secondary" type="button">Download JSON</button>
+      </div>
+
+      <div class="timeline-block">
+        <h3>Event timeline</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Event</th><th>Page</th><th>Source</th><th>Time</th></tr>
+            </thead>
+            <tbody id="event-timeline"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="recent-leads" class="card recent-card" aria-labelledby="recent-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="recent-title">Recent records</h2>
+          <p>The newest 50 records. Select a Lead ID to view details.</p>
+        </div>
+        <button id="refresh-recent" class="button button-secondary" type="button">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Lead ID</th><th>Source</th><th>Status</th><th>Updated</th><th><span class="visually-hidden">Action</span></th></tr>
+          </thead>
+          <tbody id="recent-body"></tbody>
+        </table>
+      </div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h3>No attribution records yet</h3>
+        <p>Records will appear after a tracked WhatsApp click or a successfully delivered contact form.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
