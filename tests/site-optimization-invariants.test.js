@@ -26,6 +26,19 @@ const frozenFiles = [
   'js/algeria-landing.js'
 ];
 
+// Owner-approved, separate-PR exception for Inquiry Attribution V1.
+// The fixed baseline and full frozen registry remain unchanged; dedicated
+// regression tests protect the existing behaviour of these five files.
+const authorizedFrozenChanges = new Set([
+  'ads/algerie/index.html',
+  'js/main.js',
+  'workers/contact-api/src/contact-handler.mjs',
+  'workers/contact-api/src/index.mjs',
+  'workers/contact-api/wrangler.jsonc'
+]);
+
+const unchangedFrozenFiles = frozenFiles.filter(file => !authorizedFrozenChanges.has(file));
+
 const corePages = [
   'en/index.html', 'en/products.html', 'en/about.html', 'en/contact.html', 'en/news.html',
   'es/index.html', 'es/products.html', 'es/about.html', 'es/contacto.html', 'es/news.html',
@@ -152,7 +165,7 @@ function frozenDiffArgs(candidate) {
     frozenBaseline,
     ...(candidate ? [candidate] : []),
     '--',
-    ...frozenFiles
+    ...unchangedFrozenFiles
   ];
 }
 
@@ -166,11 +179,11 @@ function frozenDiff(candidate) {
 test('frozen-file guard uses distinct candidate and working-tree comparisons', () => {
   assert.deepEqual(
     frozenDiffArgs('HEAD'),
-    ['diff', '--quiet', frozenBaseline, 'HEAD', '--', ...frozenFiles]
+    ['diff', '--quiet', frozenBaseline, 'HEAD', '--', ...unchangedFrozenFiles]
   );
   assert.deepEqual(
     frozenDiffArgs(),
-    ['diff', '--quiet', frozenBaseline, '--', ...frozenFiles]
+    ['diff', '--quiet', frozenBaseline, '--', ...unchangedFrozenFiles]
   );
 });
 
