@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { DatabaseSync } from 'node:sqlite';
 import test from 'node:test';
 
 import {
@@ -151,6 +153,56 @@ class FakeD1 {
   }
 }
 
+class SqliteStatement {
+  constructor(statement) {
+    this.statement = statement;
+    this.args = [];
+  }
+
+  bind(...args) {
+    this.args = args;
+    return this;
+  }
+
+  async first() {
+    return this.statement.get(...this.args);
+  }
+
+  async all() {
+    return { results: this.statement.all(...this.args) };
+  }
+
+  async run() {
+    const result = this.statement.run(...this.args);
+    return { success: true, meta: { changes: Number(result.changes) } };
+  }
+}
+
+class SqliteD1 {
+  constructor() {
+    this.db = new DatabaseSync(':memory:');
+    const migration = fs.readFileSync(new URL('../migrations/0001_inquiry_attribution.sql', import.meta.url), 'utf8');
+    this.db.exec(migration);
+  }
+
+  prepare(sql) {
+    return new SqliteStatement(this.db.prepare(sql));
+  }
+
+  async batch(statements) {
+    this.db.exec('BEGIN');
+    try {
+      const results = [];
+      for (const statement of statements) results.push(await statement.run());
+      this.db.exec('COMMIT');
+      return results;
+    } catch (error) {
+      this.db.exec('ROLLBACK');
+      throw error;
+    }
+  }
+}
+
 const baseEvent = (overrides = {}) => ({
   schema_version: 1,
   client_version: '1.0.0',
@@ -285,4 +337,31 @@ test('cleanup is bounded to 500 events then 500 event-free leads', async () => {
   assert.deepEqual(second, { events_deleted: 1, leads_deleted: 1 });
   assert.equal(db.events.length, 0);
   assert.equal(db.leads.size, 0);
+});
+
+test('executes the production statements against a real SQLite engine', async () => {
+  const db = new SqliteD1();
+  assert.deepEqual(await recordEvent(db, baseEvent(), server()), { result: 'recorded' });
+  assert.deepEqual(await recordEvent(db, baseEvent(), server()), { result: 'event_already_recorded' });
+
+  assert.deepEqual(
+    await transitionLeadStatus(db, 'CX-7K3P2M9Q4D', 'mark_message_received', server('2026-09-21T02:00:00.000Z')),
+    { ok: true, status: 'message_received' }
+  );
+  assert.deepEqual(
+    await transitionLeadStatus(db, 'CX-7K3P2M9Q4D', 'mark_qualified', server('2026-09-21T03:00:00.000Z')),
+    { ok: true, status: 'qualified' }
+  );
+  assert.deepEqual(
+    await revertLatestStatus(db, 'CX-7K3P2M9Q4D', server('2026-09-21T04:00:00.000Z')),
+    { ok: true, status: 'message_received' }
+  );
+
+  const lead = await getLead(db, 'CX-7K3P2M9Q4D');
+  assert.equal(lead.first_source, 'Google Organic');
+  assert.equal(lead.status, 'message_received');
+  assert.equal(lead.events.length, 4);
+  const exported = await exportLead(db, lead.lead_id);
+  assert.equal(exported.click_ids.gclid_present, true);
+  assert.equal(JSON.stringify(exported).includes('session-click-id'), false);
 });
