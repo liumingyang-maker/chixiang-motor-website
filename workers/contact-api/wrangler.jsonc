@@ -3,6 +3,7 @@
   "name": "chixiang-contact-api",
   "main": "src/index.mjs",
   "compatibility_date": "2026-05-25",
+  "workers_dev": false,
   "send_email": [
     {
       "name": "EMAIL",
@@ -17,9 +18,36 @@
     {
       "pattern": "chixiangmotor.com/api/contact*",
       "zone_name": "chixiangmotor.com"
+    },
+    {
+      "pattern": "www.chixiangmotor.com/api/attribution/*",
+      "zone_name": "chixiangmotor.com"
+    },
+    {
+      "pattern": "chixiangmotor.com/api/attribution/*",
+      "zone_name": "chixiangmotor.com"
+    },
+    {
+      "pattern": "www.chixiangmotor.com/api/internal/leads*",
+      "zone_name": "chixiangmotor.com"
+    },
+    {
+      "pattern": "chixiangmotor.com/api/internal/leads*",
+      "zone_name": "chixiangmotor.com"
     }
   ],
+  "triggers": {
+    "crons": ["17 3 * * *"]
+  },
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "LEADS_DB",
+      "database_name": "chixiang-lead-attribution-preview",
+      "database_id": "1632faea-e8f1-44f8-a70e-7437fbd6b1e3",
+      "migrations_dir": "migrations"
+    }
+  ]
 }
