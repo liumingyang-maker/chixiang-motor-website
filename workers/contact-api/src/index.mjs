@@ -1,6 +1,14 @@
 import { handleContactRequest } from './contact-handler.mjs';
 import { handleAttributionRequest } from './attribution-handler.mjs';
+import { handleInternalLeadsRequest } from './internal-leads-handler.mjs';
 import { cleanupExpiredLeads } from './lead-store.mjs';
+
+const INTERNAL_LEAD_PATHS = new Set([
+  '/api/internal/leads',
+  '/api/internal/leads/recent',
+  '/api/internal/leads/status',
+  '/api/internal/leads/export'
+]);
 
 export default {
   async fetch(request, env, ctx) {
@@ -14,6 +22,10 @@ export default {
 
     if (url.pathname === '/api/attribution/whatsapp-click') {
       return handleAttributionRequest(request, env);
+    }
+
+    if (INTERNAL_LEAD_PATHS.has(url.pathname)) {
+      return handleInternalLeadsRequest(request, env, ctx);
     }
 
     return new Response('Not found', { status: 404 });

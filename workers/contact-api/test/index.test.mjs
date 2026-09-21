@@ -35,3 +35,22 @@ test('scheduled cleanup is delegated through waitUntil without requiring a datab
   assert.equal(pending.length, 1);
   assert.deepEqual(await pending[0], { events_deleted: 0, leads_deleted: 0 });
 });
+
+test('dispatches exact internal paths and passes the Access context through', async () => {
+  const ctx = {
+    access: { async getIdentity() { return { email: 'chixiangmotor@163.com' }; } }
+  };
+  const exact = await worker.fetch(
+    new Request('https://chixiangmotor.com/api/internal/leads?lead_id=CX-7K3P2M9Q4D'),
+    {},
+    ctx
+  );
+  assert.equal(exact.status, 503, 'exact route reached the authenticated database guard');
+
+  const lookalike = await worker.fetch(
+    new Request('https://chixiangmotor.com/api/internal/leads/exported?lead_id=CX-7K3P2M9Q4D'),
+    {},
+    ctx
+  );
+  assert.equal(lookalike.status, 404);
+});
