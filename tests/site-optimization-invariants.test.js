@@ -54,6 +54,7 @@ const mutablePages = [
   'en/how-to-choose-motorcycle-engine-manufacturer-china.html',
   'en/air-cooled-vs-water-cooled-motorcycle-engine.html'
 ];
+const protectedMutablePages = new Set(routes.filter(route => route.protected).map(route => route.file));
 
 const contactPages = [
   'en/contact.html',
@@ -208,6 +209,10 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
     const beforeScripts = scriptSources(before);
     const afterScripts = scriptSources(after);
     const withoutAttributionScript = afterScripts.filter(source => source !== '../js/lead-attribution.js');
+    if (protectedMutablePages.has(file)) {
+      assert.deepEqual(afterScripts, beforeScripts, `${file}: protected script set changed`);
+      continue;
+    }
     assert.equal(
       afterScripts.length - withoutAttributionScript.length,
       1,

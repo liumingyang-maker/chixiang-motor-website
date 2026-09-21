@@ -1,11 +1,13 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const childProcess = require('node:child_process');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.join(__dirname, '..');
 const publicRoots = ['en', 'es', 'pt', 'ru', 'ar', 'ads'];
+const protectedPages = new Set(['ru/gorizontalnyj-dvigatel.html']);
 
 function htmlFiles(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -21,6 +23,7 @@ function relative(file) {
 
 function eligiblePages() {
   return publicRoots.flatMap(name => htmlFiles(path.join(root, name)))
+    .filter(file => !protectedPages.has(relative(file)))
     .filter(file => /wa\.me|api\.whatsapp\.com|data-whatsapp-(?:link|model)|action=["']\/api\/contact|js\/main\.js/i.test(fs.readFileSync(file, 'utf8')))
     .sort();
 }
@@ -51,6 +54,14 @@ test('declares the main Yandex counter only where it already exists', () => {
     const expected = /ym\(109483511,\s*["']init["']/.test(html) ? '109483511' : '';
     assert.equal(metadata ? metadata[1] : '', expected, `${relative(file)}: counter metadata`);
   }
+});
+
+test('does not instrument the separately protected Russian horizontal landing page', () => {
+  const file = path.join(root, 'ru', 'gorizontalnyj-dvigatel.html');
+  const content = fs.readFileSync(file);
+  const hash = crypto.createHash('sha1').update(content).digest('hex');
+  assert.equal(hash, '9202077f363311225bef88b2881656a4dbf040b2');
+  assert.doesNotMatch(content.toString('utf8'), /js\/lead-attribution\.js/i);
 });
 
 test('application script is idempotent in check mode', () => {

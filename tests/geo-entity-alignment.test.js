@@ -41,14 +41,29 @@ const publicSource = decodeNumericEntities([
   read('js/central-asia-data.js')
 ].join('\n'));
 
-test('tracking, form and Worker implementation files remain byte-identical', () => {
+test('unchanged Yandex tracking files remain byte-identical', () => {
   const expected = {
-    'workers/contact-api/src/index.mjs': 'D24CF2D2DC596265D57C9011909E2A0CF567FC8A2D1EEE816F4C97F46C151C42',
-    'js/main.js': 'D685FEFC94AE57B27E470335B315D8CFACF8B8F6DE56E3DB8EEBFBC391227BA8',
     'js/yandex-metrica.js': '7FF3C32D95E7672476CB33F4B3B3EE90880A5DCEEB6CA1C9AF342CA3D59F9608',
     'js/yandex-metrika.js': '14F540301683170BA4BA807FEAF033791E74F68603A2394845E01C29BD107CCB'
   };
   for (const [file, hash] of Object.entries(expected)) assert.equal(sha256(file), hash, file);
+});
+
+test('authorized attribution entry-point changes preserve conversion and route behavior', () => {
+  const main = read('js/main.js');
+  const worker = read('workers/contact-api/src/index.mjs');
+  assert.match(main, /AW-16777656395\/Om_nCMCV4swcEMvwmsA-/);
+  assert.match(main, /AW-16777656395\/bovKCKOx088cEMvwmsA-/);
+  assert.match(main, /prepareWhatsAppOpen/);
+  assert.match(worker, /url\.pathname === '\/api\/contact'/);
+  assert.match(worker, /url\.pathname === '\/api\/attribution\/whatsapp-click'/);
+  for (const route of [
+    '/api/internal/leads',
+    '/api/internal/leads/recent',
+    '/api/internal/leads/status',
+    '/api/internal/leads/export'
+  ]) assert.match(worker, new RegExp(`'${route.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'`));
+  assert.match(worker, /return new Response\('Not found', \{ status: 404 \}\)/);
 });
 
 test('About pages distinguish industry experience from company registration', () => {

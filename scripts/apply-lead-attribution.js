@@ -5,6 +5,7 @@ const root = path.join(__dirname, '..');
 const publicRoots = ['en', 'es', 'pt', 'ru', 'ar', 'ads'];
 const checkOnly = process.argv.includes('--check');
 const moduleFile = path.join(root, 'js', 'lead-attribution.js');
+const protectedPages = new Set(['ru/gorizontalnyj-dvigatel.html']);
 
 function htmlFiles(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -66,6 +67,8 @@ function updatePage(before, file) {
 const changed = [];
 for (const directory of publicRoots.map(name => path.join(root, name))) {
   for (const file of htmlFiles(directory)) {
+    const relative = path.relative(root, file).replace(/\\/g, '/');
+    if (protectedPages.has(relative)) continue;
     const before = fs.readFileSync(file, 'utf8');
     if (!eligible(before)) continue;
     const after = updatePage(before, file);
