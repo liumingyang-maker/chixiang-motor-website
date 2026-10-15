@@ -182,11 +182,19 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
   assert.equal(workingTree.status, 0, workingTree.stderr || workingTree.stdout || 'frozen file changed in working tree');
 });
 
+// Freeze-exception contract (product-detail tool page): neutral H1 instead of a
+// fixed CG air-cooled shell. SEO/JSON-LD/owner/scripts still match the baseline.
+const productDetailToolH1 = 'Motorcycle Engine Product Series';
+
 test('mutable pages retain the SEO, ownership, baseline breadcrumb state and complete JSON-LD contracts', () => {
   for (const file of mutablePages) {
     const before = baseline(file);
     const after = current(file);
-    assert.equal(oneH1(after, file), oneH1(before, file), `${file}: H1 changed`);
+    if (file === 'en/product-detail.html') {
+      assert.equal(oneH1(after, file), productDetailToolH1, `${file}: tool H1 contract changed`);
+    } else {
+      assert.equal(oneH1(after, file), oneH1(before, file), `${file}: H1 changed`);
+    }
     assert.deepEqual(seoContract(after), seoContract(before), `${file}: SEO metadata changed`);
     assert.equal(breadcrumb(after), breadcrumb(before), `${file}: breadcrumb state changed`);
     assert.deepEqual(jsonLd(after, file), jsonLd(before, file), `${file}: JSON-LD changed`);
