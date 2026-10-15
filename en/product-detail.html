@@ -40,9 +40,9 @@
     <ul class="mobile-nav-list">
       <li><a href="/en/">Home<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/products">Products<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/product-detail?series=cg-air">CG Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/product-detail?series=cb-offroad">CB Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/product-detail?series=horizontal">Horizontal Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="/en/cg-engine">CG Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="/en/cb-engine">CB Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="/en/horizontal-engine">Horizontal Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/product-detail?series=tricycles">Tricycle Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/product-detail?series=parts">Engine Parts Series<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/about">About Us<span class="mnav-arrow">&rsaquo;</span></a></li>
@@ -81,7 +81,7 @@
 
   <section class="product-detail section">
     <div class="container">
-      <p class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/products">Products</a> / <span id="series-name">CG Air-Cooled Series</span></p>
+      <p class="breadcrumb"><a href="/en/">Home</a> / <a href="/en/products">Products</a> / <span id="series-name">Select a Series</span></p>
 
       <div class="product-detail-layout" style="margin-top: 2rem;">
 
@@ -93,16 +93,21 @@
 
         <!-- Specs Container -->
         <div id="specs-container">
-          <h1 id="product-title">CG Air-Cooled Engine Series</h1>
+          <h1 id="product-title">Motorcycle Engine Product Series</h1>
           <p style="color: var(--text-secondary); margin: 1rem 0; line-height: 1.6;" id="product-desc">
-            Classic pushrod OHV engine design, proven across millions of motorcycles worldwide.
+            Choose an engine family below to open the corresponding product page with approved specifications.
+            This selector page does not replace the family product pages.
           </p>
-
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;" id="product-tags">
-            <span style="padding:0.3rem 0.85rem; background:rgba(43,123,214,0.15); border-radius:100px; font-size:0.8rem; color:var(--accent-blue);">Air-Cooled</span>
-            <span style="padding:0.3rem 0.85rem; background:rgba(43,123,214,0.1); border-radius:100px; font-size:0.8rem; color:var(--text-secondary);">125–250cc</span>
-            <span style="padding:0.3rem 0.85rem; background:rgba(43,123,214,0.1); border-radius:100px; font-size:0.8rem; color:var(--text-secondary);">5-Speed</span>
+          <div id="series-selector-panel" style="margin: 1.25rem 0 1.5rem;">
+            <ul style="list-style:none;padding:0;margin:0;display:grid;gap:0.65rem;">
+              <li><a href="/en/cg-engine" style="font-weight:600;">CG engines</a> — air-cooled and approved water-cooled CG families</li>
+              <li><a href="/en/cb-engine" style="font-weight:600;">CB engines</a> — street and off-road configurations</li>
+              <li><a href="/en/horizontal-engine" style="font-weight:600;">Horizontal engines</a> — CX compact series</li>
+              <li><a href="/en/engine-parts" style="font-weight:600;">Engine parts</a> — service and assembly components</li>
+              <li><a href="/en/contact" style="font-weight:600;">Other configurations</a> — contact us to confirm availability</li>
+            </ul>
           </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;" id="product-tags"></div>
 
           <!-- Balance Shaft Type Selector -->
           <div class="variant-selector" id="variant-selector" style="display:none;">
@@ -117,7 +122,8 @@
             <p class="color-name-display">Selected: <strong id="color-name">—</strong></p>
           </div>
 
-          <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Technical Specifications</h3>
+          <p id="specs-empty-note" style="color: var(--text-secondary); margin: 2rem 0 0.5rem;">Select a series above, or open a family product page, to view published specifications.</p>
+          <h3 style="margin-top: 1rem; margin-bottom: 1rem;">Technical Specifications</h3>
           <div class="responsive-table-wrap" id="specs-table-container">
             <table class="specs-table" id="specs-table"></table>
           </div>
@@ -163,7 +169,7 @@
   <script>
   (function() {
     const params = new URLSearchParams(window.location.search);
-    const series = params.get('series') || 'cg-air';
+    const series = params.get('series');
 
     const data = {
       'horizontal': {
@@ -324,9 +330,9 @@
           'All shift modes: sequential, cyclic, and built-in reverse gear',
           'Two versions available: motorcycle and cargo tricycle configurations',
           'High-speed 6-speed version available for performance applications',
-          'Easy maintenance with widely available universal parts',
+          'Easy maintenance with widely available service parts',
           'Full OEM/ODM support — multiple casing colors and designs',
-          'Applicable for all types of motorcycles'
+          'Applicable for selected motorcycle types subject to configuration'
         ],
         applications: 'Commuter motorcycles, delivery bikes, three-wheeled cargo vehicles, agricultural utility vehicles, and general-purpose two/three-wheelers. The 250cc variant is ideal for heavier loads and highway cruising.',
         related: ['cg-balancer','cg-water','tsunami'],
@@ -542,7 +548,7 @@
       },
       'cb-offroad': {
         name: 'CB Series Off-Road Motorcycle Engine',
-        desc: 'CB越野系列 — Chain-driven off-road engine with low vibration and ultra-quiet operation. Smooth power delivery for easy handling and comfortable long-distance riding. Universal parts keep maintenance simple and affordable.',
+        desc: 'CB越野系列 — Chain-driven off-road engine with low vibration and smooth operation. Smooth power delivery for easy handling and comfortable long-distance riding. Widely serviceable parts help keep maintenance simple and affordable.',
         tags: ['Off-Road', '150–250cc', 'Chain Drive', 'Low Vibration', '5-Speed'],
         specs: [
           ['Model', 'CB150', 'CB200-C', 'CB250'],
@@ -560,9 +566,9 @@
         ],
         advantages: [
           'Chain-driven off-road design — reliable power transfer',
-          'Low vibration, ultra-quiet — comfortable long-duration riding without arm fatigue',
+          'Low vibration — comfortable long-duration riding',
           'Smooth power delivery — easy shifting and simple handling',
-          'Universal parts — affordable and simple maintenance',
+          'Serviceable parts — affordable and simple maintenance',
           'Fuel-efficient — low operating cost',
           'Suitable for all motorcycle types, supports OEM/ODM'
         ],
@@ -640,12 +646,12 @@
       },
       'efi-water': {
         name: 'Electronic Fuel Injection Water-Cooled Engine',
-        desc: '电喷水冷系列 — Electronic Fuel Injection technology for cleaner, more efficient combustion. Meets tightening global emission standards including Euro 5 requirements. EFI provides optimal fuel-air mixture across all RPM ranges for improved performance and fuel economy.',
-        tags: ['EFI', 'Water-Cooled', 'Euro 5 Ready', 'Fuel Efficient', 'Low Emissions'],
+        desc: '电喷水冷系列 — Electronic Fuel Injection technology for cleaner, more efficient combustion. EFI can support cleaner combustion and efficient fuel use. Emission compliance depends on the destination market and ordered configuration; confirm before quotation.',
+        tags: ['EFI', 'Water-Cooled', 'Market-specific compliance', 'Fuel Efficient', 'Low Emissions'],
         specs: [
           ['Fuel System', 'Electronic Fuel Injection (EFI)'],
           ['Cooling', 'Water-cooled'],
-          ['Emission Standard', 'Euro 5 compliant (with appropriate calibration)'],
+          ['Emission compliance', 'Market-specific; confirm for the ordered configuration'],
           ['Fuel Efficiency', 'Improved 15–20% vs. carburetor models'],
           ['Cold Start', 'Automatic enrichment — no choke needed'],
           ['Altitude Compensation', 'Automatic fuel mapping adjustment'],
@@ -653,13 +659,13 @@
         ],
         advantages: [
           'EFI precision — optimal fuel-air mixture at all RPMs',
-          'Meets Euro 5 and other global emission standards',
+          'Emission compliance depends on market and ordered configuration',
           'Better cold-start performance without manual choke',
           'Automatic altitude compensation — no re-jetting needed',
           'Improved fuel economy vs. carbureted engines',
           'Cleaner combustion = longer engine life'
         ],
-        applications: 'All motorcycle and tricycle applications where emission compliance is required. Especially suited for markets with Euro 5 or equivalent emission standards.',
+        applications: 'All motorcycle and tricycle applications where emission compliance is required. Suitable for markets that require controlled emissions when the ordered configuration supports it.',
         related: ['hanwei','tsunami','cg-water'],
         images: [
           '../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_1.webp',
@@ -772,7 +778,7 @@
       },
       'atv-ac320': {
         name: 'ATV Off-Road Beach Vehicle Engine (CVT with Reverse)',
-        desc: 'AC320越野沙滩车发动机 — Purpose-built ATV/UTV engine featuring squeeze-flow combustion technology and high-performance ignition for stable output. Integrated camshaft seat, single-axis balancer with suspension damping for superior vibration control. Heavy-duty CVT system with reinforced 5-jaw clutch and premium belt. Patented transmission with centralized drive shaft and coaxial front/rear output. L-H-N-R 4-gear design for all terrain conditions.',
+        desc: 'AC320越野沙滩车发动机 — Purpose-built ATV/UTV engine featuring squeeze-flow combustion technology and high-performance ignition for stable output. Integrated camshaft seat, single-axis balancer with suspension damping for superior vibration control. Heavy-duty CVT system with reinforced 5-jaw clutch and premium belt. Transmission with centralized drive shaft and coaxial front/rear output. L-H-N-R 4-gear design for all terrain conditions.',
         tags: ['ATV/UTV', '287cc', '17kW', 'CVT', 'Built-in Reverse', '4-Gear (L-H-N-R)'],
         images: [
           '../images/atv/tb_image_share_1773217554909.webp',
@@ -805,7 +811,7 @@
           '3-stage oil filtration with automotive-grade fine filter — reduced wear, extended life',
           'Integrated transmission & thermal system — enhanced CVT reliability',
           'Reinforced 5-jaw clutch with premium joint-venture belt — improved durability',
-          'Patented transmission: forced main/counter-shaft lubrication, center drive shaft, coaxial front/rear output',
+          'Transmission: forced main/counter-shaft lubrication, center drive shaft, coaxial front/rear output',
           'L-H-N-R 4-gear design — adapts to all terrain conditions',
           'Compact, reliable layout — easy integration into ATV/UTV platforms'
         ],
@@ -813,8 +819,64 @@
         related: ['cb-offroad','auto-clutch','motorcycles']
       }
     };
+    const holdMessages = {
 
-    const d = data[series] || data['cg-air'];
+      'efi-water': 'Detailed fuel-injection specifications are not published for this configuration. Contact us to confirm available options for your market.',
+
+      'horizontal-water': 'Detailed specifications for this horizontal water-cooled configuration are not published. Contact us to confirm availability.',
+
+      'horizontal-dualclutch': 'Detailed specifications for this dual-clutch configuration are not published. Contact us to confirm availability.',
+
+      'horizontal-under': 'Detailed specifications for this under-engine configuration are not published. Contact us to confirm availability.'
+
+    };
+
+    const knownSeries = Object.keys(data);
+
+    if (!series) {
+
+      // No series parameter: keep the static neutral selector.
+
+      return;
+
+    }
+
+    if (holdMessages[series]) {
+
+      document.getElementById('series-name').textContent = 'Limited information';
+
+      document.getElementById('product-title').textContent = 'Series details on request';
+
+      document.getElementById('product-desc').textContent = holdMessages[series];
+
+      document.getElementById('product-tags').innerHTML = '';
+
+      document.getElementById('specs-empty-note').textContent = 'Published specifications are not available for this configuration.';
+
+      document.getElementById('specs-table-container').style.display = 'none';
+
+      document.getElementById('advantages-list').innerHTML = '';
+
+      document.getElementById('applications').textContent = 'Please contact us with your target model, quantity and destination market.';
+
+      return;
+
+    }
+
+    if (!data[series]) {
+
+      document.getElementById('series-name').textContent = 'Invalid selection';
+
+      document.getElementById('product-title').textContent = 'Invalid product selection';
+
+      document.getElementById('product-desc').textContent = 'The requested series is not available. Choose a family from the list below or contact us for assistance.';
+
+      return;
+
+    }
+
+
+    const d = data[series];
 
     // Set page title and SEO metadata for the current product.
     var pageUrl = 'https://chixiangmotor.com/en/product-detail?series=' + encodeURIComponent(series);
