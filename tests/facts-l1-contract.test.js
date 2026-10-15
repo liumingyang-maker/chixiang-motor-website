@@ -108,8 +108,8 @@ test('AC320 catalog CTA label matches contact destination', () => {
   const i = html.indexOf('AC320');
   assert.ok(i !== -1);
   const window = html.slice(i, i + 900);
-  assert.ok(window.includes('View Specs') || window.includes('Consult Specs'), 'CTA should open specs');
-  assert.ok(window.includes('/en/ac320-atv-engine'), 'CTA should target AC320 page');
+  assert.ok(window.includes('View Specs'), 'CTA should say View Specs');
+  assert.ok(window.includes('href="/en/ac320-atv-engine"'), 'CTA should link AC320 page');
   assert.ok(!window.includes('17kW'));
 });
 
@@ -156,4 +156,34 @@ test('product-detail hold messages cover vehicle programs and omit legacy CX mea
   for (const banned of ['CX152FMH-5B', "'106.7'", '52.4 x 49.5', '123.67']) {
     assert.ok(!html.includes(banned), 'legacy value present: ' + banned);
   }
+});
+
+
+test('AC320 page keeps SEO metadata in head without JS-hostile noscript', () => {
+  const html = read('en/ac320-atv-engine.html');
+  const headEnd = html.search(/<\/head>/i);
+  assert.ok(headEnd > 0);
+  const head = html.slice(0, headEnd);
+  const body = html.slice(headEnd);
+  assert.match(head, /<title>/i);
+  assert.match(head, /rel=["']canonical["']/i);
+  assert.match(head, /rel=["']alternate["']/i);
+  assert.ok(!/<noscript>[\s\S]*?<\/noscript>/i.test(head), 'noscript must not live in head');
+  assert.match(body, /<noscript>[\s\S]*mc\.yandex\.ru\/watch\//i);
+});
+
+test('AC320 page exposes one breadcrumb and a real img hero', () => {
+  const html = read('en/ac320-atv-engine.html');
+  const navs = html.match(/<nav\b[^>]*class=["'][^"']*breadcrumb[^"']*["'][^>]*>/gi) || [];
+  assert.equal(navs.length, 1, 'exactly one breadcrumb nav');
+  assert.match(navs[0], /entity-breadcrumb/);
+  assert.match(html, /<img\b[^>]*src=["']\.\.\/images\/atv\/tb_image_share_1773217554909\.webp["'][^>]*alt=["'][^"']+["']/i);
+  assert.ok(!/background-image:url\(['"]\.\.\/images\/atv\//i.test(html), 'hero must not be CSS background only');
+});
+
+test('AC320 hero image asset exists', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const asset = path.join(root, 'images/atv/tb_image_share_1773217554909.webp');
+  assert.ok(fs.existsSync(asset), asset);
 });
