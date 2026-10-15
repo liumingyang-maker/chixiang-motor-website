@@ -195,8 +195,20 @@ function readFile(file) {
   return require('node:fs').readFileSync(require('node:path').join(root, file), 'utf8');
 }
 
+function stripA1SitemapEntry(xml) {
+  return xml
+    .replace(
+      /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/ac320-atv-engine<\/loc>[\s\S]*?<\/url>/,
+      ''
+    )
+    .replace(/\r\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n');
+}
+
 test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
-  const others = frozenFiles.filter((file) => file !== 'workers/site-router.mjs');
+  const others = frozenFiles.filter(
+    (file) => file !== 'workers/site-router.mjs' && file !== 'sitemap.xml'
+  );
   for (const revArgs of [['HEAD'], []]) {
     const result = childProcess.spawnSync(
       'git',
@@ -205,6 +217,15 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
     );
     assert.equal(result.status, 0, result.stderr || result.stdout || 'frozen file changed');
   }
+});
+
+test('sitemap matches baseline after removing only the approved AC320 entry', () => {
+  const baseline = gitShow(frozenBaseline, 'sitemap.xml').replace(/\r\n/g, '\n');
+  const candidate = stripA1SitemapEntry(gitShow('HEAD', 'sitemap.xml'));
+  const working = stripA1SitemapEntry(readFile('sitemap.xml'));
+  assert.equal(candidate, baseline, 'sitemap candidate has unapproved changes');
+  assert.equal(working, baseline, 'sitemap working tree has unapproved changes');
+  assert.match(readFile('sitemap.xml'), /en\/ac320-atv-engine/);
 });
 
 test('site-router matches baseline after reverting only the approved P1 payload', () => {

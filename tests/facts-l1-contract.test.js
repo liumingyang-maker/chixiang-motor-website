@@ -108,7 +108,8 @@ test('AC320 catalog CTA label matches contact destination', () => {
   const i = html.indexOf('AC320');
   assert.ok(i !== -1);
   const window = html.slice(i, i + 900);
-  assert.ok(window.includes('Consult Specs'), 'CTA should say Consult Specs');
+  assert.ok(window.includes('View Specs') || window.includes('Consult Specs'), 'CTA should open specs');
+  assert.ok(window.includes('/en/ac320-atv-engine'), 'CTA should target AC320 page');
   assert.ok(!window.includes('17kW'));
 });
 
