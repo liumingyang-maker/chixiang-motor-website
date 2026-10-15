@@ -119,6 +119,11 @@ function renderCg(recordById, locale) {
       <div class="catalog-table-block" id="cg-water-cooled">
         <h3>CG Water-Cooled</h3>
         ${table(l, columns, rows(water))}
+        <div class="feature-item" style="text-align:left;margin-top:1.25rem;" data-cg-water-procurement>
+          <h3>CG water-cooled engines: before you request a quotation</h3>
+          <p>These models may be considered for motorcycle and cargo-tricycle engine projects, subject to the vehicle platform and operating requirements. <strong>Reverse gear is not a universal standard feature of the CG water-cooled family; availability and configuration must be confirmed for the exact model and order.</strong></p>
+          <p>Please provide the target engine model or nominal displacement, quantity, destination market, vehicle application, required starting/clutch/transmission arrangement, and mounting or output-interface requirements. Matching service parts can be discussed after the engine specification is confirmed.</p>
+        </div>
       </div>
       <h3 class="section-title" style="margin-top:2.5rem;">${escapeHtml(l.familyOptions)}</h3>
       <div class="features-grid" style="margin-top:1.5rem;">${cards}</div>`;
