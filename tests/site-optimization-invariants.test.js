@@ -174,12 +174,56 @@ test('frozen-file guard uses distinct candidate and working-tree comparisons', (
   );
 });
 
-test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
-  const candidate = frozenDiff('HEAD');
-  assert.equal(candidate.status, 0, candidate.stderr || candidate.stdout || 'frozen file changed in candidate commit');
+function stripP1RouterPayload(content) {
+  let out = content.replace(/\/\* P1-SERIES-301 START \*\/[\s\S]*?\/\* P1-SERIES-301 END \*\/\r?\n?/, '');
+  out = out.replace('function redirectLocation(requestUrl, method) {', 'function redirectLocation(requestUrl) {');
+  out = out.replace(
+    /\n  const productTarget = productSeriesRedirect\(requestUrl, method \|\| 'GET'\);\n  if \(productTarget\) return productTarget;\n/,
+    '\n'
+  );
+  out = out.replace('const location = redirectLocation(requestUrl, request.method);', 'const location = redirectLocation(requestUrl);');
+  out = out.replace(/\n{3,}/g, '\n\n');
+  return out;
+}
 
-  const workingTree = frozenDiff();
-  assert.equal(workingTree.status, 0, workingTree.stderr || workingTree.stdout || 'frozen file changed in working tree');
+function gitShow(rev, file) {
+  return git(['show', `${rev}:${file}`]);
+}
+
+function readFile(file) {
+  return require('node:fs').readFileSync(require('node:path').join(root, file), 'utf8');
+}
+
+test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
+  const others = frozenFiles.filter((file) => file !== 'workers/site-router.mjs');
+  for (const revArgs of [['HEAD'], []]) {
+    const result = childProcess.spawnSync(
+      'git',
+      ['diff', '--quiet', frozenBaseline, ...revArgs, '--', ...others],
+      { cwd: root, encoding: 'utf8' }
+    );
+    assert.equal(result.status, 0, result.stderr || result.stdout || 'frozen file changed');
+  }
+});
+
+test('site-router matches baseline after reverting only the approved P1 payload', () => {
+  const baseline = gitShow(frozenBaseline, 'workers/site-router.mjs').replace(/\r\n/g, '\n');
+  const candidate = stripP1RouterPayload(gitShow('HEAD', 'workers/site-router.mjs').replace(/\r\n/g, '\n'));
+  const working = stripP1RouterPayload(readFile('workers/site-router.mjs').replace(/\r\n/g, '\n'));
+  assert.equal(candidate, baseline, 'site-router candidate differs outside approved P1 payload');
+  assert.equal(working, baseline, 'site-router working tree differs outside approved P1 payload');
+
+  // Reverse guard: approved payload must exist and stay fenced.
+  const raw = readFile('workers/site-router.mjs');
+  assert.match(raw, /\/\* P1-SERIES-301 START \*\//);
+  assert.match(raw, /\/\* P1-SERIES-301 END \*\//);
+  assert.match(raw, /PRODUCT_SERIES_ROUTES/);
+  assert.match(raw, /productSeriesRedirect/);
+
+  // Unapproved legacy logic must survive stripping (not silently deleted).
+  assert.match(stripP1RouterPayload(raw), /LEGACY_PATHS/);
+  assert.match(stripP1RouterPayload(raw), /VERIFICATION_ASSETS/);
+  assert.match(stripP1RouterPayload(raw), /CANONICAL_ORIGIN/);
 });
 
 // Freeze-exception contract (product-detail tool page): neutral H1 instead of a
