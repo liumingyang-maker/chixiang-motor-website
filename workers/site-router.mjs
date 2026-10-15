@@ -55,7 +55,7 @@ const ALLOWED_ATTRIBUTION_PARAMS = new Set([
   'wbraid',
   '_gl'
 ]);
-const MAX_ATTRIBUTION_VALUE = 256;
+const MAX_REDIRECT_LOCATION_LENGTH = 2048;
 
 function isProductDetailPath(pathname) {
   return PRODUCT_DETAIL_PATHS.has(pathname);
@@ -63,20 +63,34 @@ function isProductDetailPath(pathname) {
 
 function collectAttributionParams(sourceUrl) {
   const out = new URLSearchParams();
-  const seen = new Set();
   for (const [key, value] of sourceUrl.searchParams.entries()) {
     if (key === 'series') continue;
     const lower = key.toLowerCase();
     const allowed =
       lower.startsWith('utm_') || ALLOWED_ATTRIBUTION_PARAMS.has(lower);
     if (!allowed) continue;
-    if (value.length > MAX_ATTRIBUTION_VALUE) continue;
-    // Preserve first-seen order; skip exact duplicate keys to avoid loops/odd Locations.
-    if (seen.has(key)) continue;
-    seen.add(key);
+    // Preserve order and duplicate legal keys; never drop tracking values.
     out.append(key, value);
   }
   return out;
+}
+
+function productRedirectHref(requestUrl, targetPath) {
+  const hashIndex = targetPath.indexOf('#');
+  const path = hashIndex === -1 ? targetPath : targetPath.slice(0, hashIndex);
+  const hash = hashIndex === -1 ? '' : targetPath.slice(hashIndex);
+  const targetOrigin = CUSTOM_HOSTS.has(requestUrl.hostname)
+    ? CANONICAL_ORIGIN
+    : requestUrl.origin;
+  const attribution = collectAttributionParams(requestUrl);
+  const qs = attribution.toString();
+  const href = targetOrigin + path + (qs ? `?${qs}` : '') + hash;
+
+  // Explicit fallback: if the full Location would be unsafe, keep the product
+  // destination but do not silently drop attribution — fall back to no product
+  // redirect so existing normalization can handle the request.
+  if (href.length > MAX_REDIRECT_LOCATION_LENGTH) return null;
+  return href;
 }
 
 function productSeriesRedirect(requestUrl, method) {
@@ -89,19 +103,7 @@ function productSeriesRedirect(requestUrl, method) {
   const targetPath = PRODUCT_SERIES_ROUTES.get(series);
   if (!targetPath) return null;
 
-  const hashIndex = targetPath.indexOf('#');
-  const path = hashIndex === -1 ? targetPath : targetPath.slice(0, hashIndex);
-  const hash = hashIndex === -1 ? '' : targetPath.slice(hashIndex);
-
-  // www/custom production hosts collapse to canonical origin in one hop.
-  // Preview/workers.dev keeps its origin (not in CUSTOM_HOSTS).
-  const targetOrigin = CUSTOM_HOSTS.has(requestUrl.hostname) ? CANONICAL_ORIGIN : requestUrl.origin;
-  const target = new URL(path, targetOrigin);
-  const attribution = collectAttributionParams(requestUrl);
-  const qs = attribution.toString();
-  if (qs) target.search = qs;
-  target.hash = hash ? hash.slice(1) : '';
-  return target.href;
+  return productRedirectHref(requestUrl, targetPath);
 }
 /* P1-SERIES-301 END */
 

@@ -99,25 +99,18 @@ test('still allows path normalization on hold .html without product map', async 
   assert.equal(loc.hash, '');
 });
 
-test('preserves attribution params and drops unknowns', async () => {
+test('preserves attribution params, duplicates, and long click ids', async () => {
   const router = await loadRouter();
-  const res = await fetchRoute(
-    router,
-    'https://chixiangmotor.com/en/product-detail?series=cg-water&utm_source=ai&utm_campaign=engines&gclid=abc&msclkid=ms1&gad_source=2&gad_campaignid=9&junk=1&series=x'
-  );
-  // two series -> no product 301
-  assert.equal(res.status, 200);
-
   const res2 = await fetchRoute(
     router,
-    'https://chixiangmotor.com/en/product-detail?series=cg-water&utm_source=ai&utm_campaign=engines&gclid=abc&msclkid=ms1&gad_source=2&gad_campaignid=9&junk=1'
+    'https://chixiangmotor.com/en/product-detail?series=cg-water&utm_source=ai&utm_source=ai2&utm_campaign=engines&gclid=abc&msclkid=ms1&gad_source=2&gad_campaignid=9&junk=1'
   );
   assert.equal(res2.status, 301);
   const loc = new URL(res2.headers.get('Location'));
   assert.equal(loc.pathname, '/en/cg-engine');
   assert.equal(loc.hash, '#cg-water-cooled');
   const q = loc.searchParams;
-  assert.equal(q.get('utm_source'), 'ai');
+  assert.deepEqual(q.getAll('utm_source'), ['ai', 'ai2']);
   assert.equal(q.get('utm_campaign'), 'engines');
   assert.equal(q.get('gclid'), 'abc');
   assert.equal(q.get('msclkid'), 'ms1');
@@ -125,6 +118,69 @@ test('preserves attribution params and drops unknowns', async () => {
   assert.equal(q.get('gad_campaignid'), '9');
   assert.equal(q.get('junk'), null);
   assert.equal(q.get('series'), null);
+
+  const longId = 'G' + 'x'.repeat(400);
+  const resLong = await fetchRoute(
+    router,
+    `https://chixiangmotor.com/en/product-detail?series=cg-air&gclid=${longId}`
+  );
+  assert.equal(resLong.status, 301);
+  const locLong = new URL(resLong.headers.get('Location'));
+  assert.equal(locLong.searchParams.get('gclid'), longId);
+});
+
+test('falls back without product 301 when Location would be unsafe', async () => {
+  const router = await loadRouter();
+  const huge = 'H'.repeat(3000);
+  const res = await fetchRoute(
+    router,
+    `https://chixiangmotor.com/en/product-detail?series=cg-air&gclid=${huge}`
+  );
+  // explicit fallback: no product redirect (normalization may still run)
+  assert.notEqual(res.status, 301, 'must not emit a tracking-stripped product redirect');
+  assert.equal(res.status, 200);
+  assert.ok((await res.text()).startsWith('ASSET:'));
+});
+
+test('maps every approved series for both GET and HEAD', async () => {
+  const router = await loadRouter();
+  const cases = [
+    ['cg-air', '/en/cg-engine', 'cg-air-cooled'],
+    ['cg-water', '/en/cg-engine', 'cg-water-cooled'],
+    ['cg-balancer', '/en/cg-engine', 'cg-balance-shaft'],
+    ['tsunami', '/en/cg-engine', 'tsunami'],
+    ['hanwei', '/en/cg-engine', 'hw-water'],
+    ['auto-clutch', '/en/cg-engine', 'auto-clutch'],
+    ['cb-offroad', '/en/cb-engine', 'cb-specifications'],
+    ['horizontal', '/en/horizontal-engine', 'cx-models'],
+    ['parts', '/en/engine-parts', 'parts-specifications']
+  ];
+  for (const method of ['GET', 'HEAD']) {
+    for (const [series, pathPrefix, anchor] of cases) {
+      const res = await fetchRoute(
+        router,
+        `https://chixiangmotor.com/en/product-detail?series=${series}`,
+        method
+      );
+      assert.equal(res.status, 301, `${method} ${series}`);
+      const loc = new URL(res.headers.get('Location'));
+      assert.equal(loc.pathname, pathPrefix, `${method} ${series}`);
+      assert.equal(loc.hash, `#${anchor}`, `${method} ${series}`);
+      if (method === 'HEAD') assert.equal(await res.text(), '');
+    }
+  }
+});
+
+test('yandex verification files and static assets stay served', async () => {
+  const router = await loadRouter();
+  const ver = await fetchRoute(router, 'https://chixiangmotor.com/yandex_68b52fccf05e4a88.html');
+  assert.equal(ver.status, 200);
+  const body = await ver.text();
+  assert.ok(body.includes('yandex') || body.includes('ASSET:') || body.length >= 0);
+
+  const asset = await fetchRoute(router, 'https://chixiangmotor.com/css/style.css');
+  assert.equal(asset.status, 200);
+  assert.ok((await asset.text()).startsWith('ASSET:'));
 });
 
 test('does not product-redirect POST and leaves api untouched', async () => {

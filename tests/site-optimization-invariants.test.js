@@ -178,11 +178,12 @@ function stripP1RouterPayload(content) {
   let out = content.replace(/\/\* P1-SERIES-301 START \*\/[\s\S]*?\/\* P1-SERIES-301 END \*\/\r?\n?/, '');
   out = out.replace('function redirectLocation(requestUrl, method) {', 'function redirectLocation(requestUrl) {');
   out = out.replace(
-    /\n  const productTarget = productSeriesRedirect\(requestUrl, method \|\| 'GET'\);\n  if \(productTarget\) return productTarget;\n/,
+    /\r?\n  const productTarget = productSeriesRedirect\(requestUrl, method \|\| 'GET'\);\r?\n  if \(productTarget\) return productTarget;\r?\n/,
     '\n'
   );
   out = out.replace('const location = redirectLocation(requestUrl, request.method);', 'const location = redirectLocation(requestUrl);');
-  out = out.replace(/\n{3,}/g, '\n\n');
+  // collapse only the seam left by fence removal
+  out = out.replace(/\n{3,}(?=function normalizedDocumentPath)/, '\n\n');
   return out;
 }
 
@@ -224,6 +225,40 @@ test('site-router matches baseline after reverting only the approved P1 payload'
   assert.match(stripP1RouterPayload(raw), /LEGACY_PATHS/);
   assert.match(stripP1RouterPayload(raw), /VERIFICATION_ASSETS/);
   assert.match(stripP1RouterPayload(raw), /CANONICAL_ORIGIN/);
+});
+
+test('P1 fenced payload content is pinned and rejects unapproved additions', () => {
+  const raw = readFile('workers/site-router.mjs');
+  const match = raw.match(/\/\* P1-SERIES-301 START \*\/([\s\S]*?)\/\* P1-SERIES-301 END \*\//);
+  assert.ok(match, 'P1 fence missing');
+  const payload = match[1].replace(/\r\n/g, '\n').trim();
+  const hash = require('node:crypto').createHash('sha256').update(payload).digest('hex');
+  // Pinned approved payload for PR P1 rework (attribution retention + length fallback).
+  const approved = new Set([
+    // filled below by test run helper if needed — keep explicit value:
+    hash
+  ]);
+  // Strong pin: exact expected hash constant
+  const expected = 'd538065efdf7c8e349a67ef9c96f300eafbf53e439e738056a58a18b99a7c6f1';
+  assert.equal(hash, expected, 'fenced P1 payload changed; update pin only with Owner/GPT approval');
+
+  // Negative: fence must not swallow legacy routing markers
+  assert.ok(payload.indexOf('LEGACY_PATHS') === -1);
+  assert.ok(payload.indexOf('VERIFICATION_ASSETS') === -1);
+  // Positive structure
+  assert.match(payload, /PRODUCT_SERIES_ROUTES/);
+  assert.match(payload, /ALLOWED_ATTRIBUTION_PARAMS/);
+  assert.match(payload, /MAX_REDIRECT_LOCATION_LENGTH/);
+  assert.match(payload, /productRedirectHref/);
+});
+
+test('frozen strip is local to product redirects, not a global whitespace rewrite', () => {
+  const raw = readFile('workers/site-router.mjs');
+  const stripped = stripP1RouterPayload(raw);
+  // stripping must not collapse blank lines across the whole file inappropriately:
+  // LEGACY_PATHS block spacing must match baseline (already asserted) and remain present.
+  assert.match(stripped.replace(/\r\n/g, '\n'), /const LEGACY_PATHS = new Map\(\[\n  \['\/ru\/uzbekistan\/'/);
+  assert.ok(stripped.includes('async fetch(request, env)'));
 });
 
 // Freeze-exception contract (product-detail tool page): neutral H1 instead of a
