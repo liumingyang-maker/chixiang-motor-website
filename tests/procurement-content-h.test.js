@@ -57,3 +57,18 @@ test('H/U content omits banned commercial claims', () => {
     }
   }
 });
+
+
+test('homepage product cards use owner pages, not tool detail queries', () => {
+  const html = read('en/index.html');
+  assert.ok(!html.includes('product-detail?series='));
+  assert.ok(html.includes('href="/en/ac320-atv-engine"'));
+  assert.ok(html.includes('href="/en/cg-engine#tsunami"') || html.includes('href="/en/cg-engine"'));
+});
+
+test('homepage parts card does not claim full stock', () => {
+  const html = read('en/index.html');
+  assert.ok(!html.includes('In Stock'));
+  assert.ok(!html.includes('Full Range'));
+  assert.match(html, /Confirm by model and order/i);
+});
