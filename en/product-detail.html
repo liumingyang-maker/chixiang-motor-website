@@ -182,26 +182,11 @@
           ['Cooling', 'Air-cooled', 'Air-cooled', 'Air-cooled', 'Air-cooled', 'Air-cooled with internal cylinder-head oil circuit'],
           ['Starting', 'Kick and electric start', 'Kick and electric start', 'Kick and electric start', 'Kick and electric start', 'Kick and electric start'],
           ['Electric-starter position', 'Upper or lower', 'Upper or lower', 'Upper or lower', 'Upper or lower', 'Upper or lower'],
-          ['Clutch', 'Manual or semi-automatic', 'Manual or semi-automatic', 'Manual or semi-automatic', 'Manual or semi-automatic', 'Manual or semi-automatic'],
+          ['Clutch', 'Manual or semi-automatic', 'Manual or semi-automatic', 'Manual', 'Manual or semi-automatic', 'Manual or semi-automatic'],
           ['Gears', '4', '4', '4', '4', '4'],
           ['Reverse', 'Optional built-in reverse or 1+1; confirm per order', 'Optional; confirm per order', 'Optional; confirm per order', 'Optional; confirm per order', 'Optional; confirm per order']
         ],
-          ['Type', 'Single-cyl, 4-stroke, air-cooled, inclined horizontal 10°, OHC', 'Same', 'Same'],
-          ['Nominal class', '110 cc', '125 cc', '125 cc'],
-          ['Bore × stroke', 'Not published for all models', 'Not published for all models', 'Not published for all models'],
-          ['Max power', 'Confirm per model', 'Confirm per model', 'Confirm per model'],
-          ['Max horsepower', 'Confirm per model', 'Confirm per model', 'Confirm per model'],
-          ['Max torque', 'Confirm per model', 'Confirm per model', 'Confirm per model'],
-          ['Compression Ratio', '9.7:1', '9.7:1', '9.0:1'],
-          ['Net Weight (kg)', '19', '19', '23'],
-          ['Dimensions (mm)', '477 x 395 x 280', '477 x 395 x 280', '450 x 280 x 277'],
-          ['Fuel Consumption (g/kW)', '≤ 367', '≤ 367', '≤ 367'],
-          ['Starting System', 'Electric / Kick', 'Electric / Kick', 'Kick Only'],
-          ['Clutch Type', 'Auto wet multi-plate', 'Auto wet multi-plate', 'Auto wet multi-plate'],
-          ['Lubrication', 'Pressure splash', 'Pressure splash', 'Pressure splash'],
-          ['Ignition', 'CDI AC', 'CDI AC', 'CDI AC'],
-          ['Transmission', 'Constant mesh 2-stage, 4-speed', 'Same', 'Same']
-        ],
+
         advantages: [
           'Low center of gravity improves working stability',
           'Air-cooled system for effective heat dissipation',
@@ -787,7 +772,7 @@
       'atv-ac320': {
         name: 'ATV Off-Road Beach Vehicle Engine (CVT with Reverse)',
         desc: 'AC320越野沙滩车发动机 — Purpose-built ATV/UTV engine featuring squeeze-flow combustion technology and high-performance ignition for stable output. Integrated camshaft seat, single-axis balancer with suspension damping for superior vibration control. Heavy-duty CVT system with reinforced 5-jaw clutch and premium belt. Transmission with centralized drive shaft and coaxial front/rear output. L-H-N-R 4-gear design for all terrain conditions.',
-        tags: ['ATV/UTV', '287cc', '17kW', 'CVT', 'Built-in Reverse', '4-Gear (L-H-N-R)'],
+        tags: ['ATV/UTV', '287cc', 'Liquid-cooled', 'CVT', 'Built-in Reverse', '4-Gear (L-H-N-R)'],
         images: [
           '../images/atv/tb_image_share_1773217554909.webp',
           '../images/atv/tb_image_share_1773217558802.webp',
@@ -800,8 +785,8 @@
           ['Engine Model', '175MN'],
           ['Type', 'Single-cyl, 4-stroke, liquid-cooled, vertical'],
           ['Displacement (cc)', '287.2'],
-          ['Max Power (kW/rpm)', '17 / 6800 (±1.5%)'],
-          ['Max Torque (N·m/rpm)', '28 / 5500 (±1.5%)'],
+          ['Max power', 'Confirm per approved factory spec'],
+          ['Max torque', 'Confirm per approved factory spec'],
           ['Compression Ratio', '11:1'],
           ['Fuel Consumption (g/kW·h)', '≤ 354'],
           ['Bore × Stroke (mm)', '75 × 65'],
@@ -868,7 +853,12 @@
       document.getElementById('advantages-list').innerHTML = '';
 
       document.getElementById('applications').textContent = 'Please contact us with your target model, quantity and destination market.';
-
+      var holdCta = document.querySelector('a.btn-accent.btn-lg');
+      if (holdCta) {
+        holdCta.textContent = 'Contact us';
+        holdCta.setAttribute('href', '/en/contact');
+      }
+      document.getElementById('related-products').innerHTML = '';
       return;
 
     }
@@ -1140,7 +1130,7 @@
 
       var relatedHtml = '';
       d.related.forEach(function(r) {
-        if (data[r]) {
+        if (data[r] && !holdMessages[r] && r !== 'motorcycles' && r !== 'tricycles') {
           var relatedImage = getProductCardImage(data[r]);
           var imageStyle = relatedImage
             ? ' style="background-image:url(' + relatedImage + ');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"'
@@ -1169,4 +1159,3 @@
 
 </body>
 </html>
-
