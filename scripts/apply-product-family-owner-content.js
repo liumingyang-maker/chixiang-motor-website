@@ -110,12 +110,13 @@ function renderCg(recordById, locale) {
     v.manualWet,
     record.gear_pattern ? v.five : '—'
   ]);
-  const cards = locale.familyCards.map(([heading, body]) => `<div class="feature-item" style="text-align:left;"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
-  return `<div class="catalog-table-block">
+  const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
+  const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
+  return `<div class="catalog-table-block" id="cg-air-cooled">
         <h3>CG Air-Cooled</h3>
         ${table(l, columns, rows(air))}
       </div>
-      <div class="catalog-table-block">
+      <div class="catalog-table-block" id="cg-water-cooled">
         <h3>CG Water-Cooled</h3>
         ${table(l, columns, rows(water))}
       </div>
@@ -136,7 +137,7 @@ function renderCb(recordById, locale) {
     v.manualWet,
     v.five
   ]);
-  return `<div class="catalog-table-block">
+  return `<div class="catalog-table-block" id="cb-specifications">
         ${table(l, [l.model, l.nominal, l.actual, l.cooling, l.start, l.clutch, l.gears], rows)}
       </div>`;
 }
@@ -164,7 +165,7 @@ function renderHorizontal(recordById, locale) {
 
 function renderParts(locale) {
   const l = locale.labels;
-  return `<div class="catalog-table-block">
+  return `<div class="catalog-table-block" id="parts-specifications">
         ${table(l, [l.category, l.examples], locale.partsCategories)}
       </div>`;
 }
