@@ -46,3 +46,16 @@ test('X2 does not invent future exhibitions or blanket certification', () => {
   assert.match(html, /only to specific approved engine models/i);
 });
 
+
+
+test('X2 cards use uniform container and single-column mobile stack class', () => {
+  const about = read('en/about.html');
+  assert.match(about, /data-credential-cards/);
+  assert.match(about, /features-grid x2-stack/);
+  assert.match(about, /reference translation pending legal-name verification/);
+  const home = read('en/index.html');
+  assert.match(home, /id="business-presence"[\s\S]*features-grid x2-stack/);
+  const css = read('css/style.css');
+  assert.match(css, /\.x2-stack/);
+  assert.match(css, /grid-template-columns:\s*1fr/);
+});
