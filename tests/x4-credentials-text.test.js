@@ -37,3 +37,8 @@ test('quality workflow remains four-stage with sampling qualifier', () => {
   assert.match(html, /Export Packing/);
   assert.match(html, /sampling arrangements/);
 });
+
+test('quality notes span full grid width', () => {
+  const html = read('en/about.html');
+  assert.match(html, /grid-column:1\s*\/\s*-1;[^>]*>Specific test items/);
+});
