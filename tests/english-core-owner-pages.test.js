@@ -77,8 +77,8 @@ test('About is the detailed company fact owner', () => {
     /8,000\+/,
     /99% first-pass yield/i,
     /50\+ (?:export )?countries/i,
-    /ISO 9001 quality management system certified/i,
-    /CCC-certified products are available/i
+    /ISO 9001 quality-management certification documentation/i,
+    /CCC certification documents are available/i
   ]) assert.match(html, pattern, String(pattern));
   assert.match(body.replace(/\s+/g, ' '), /No\. 1-2, Building 7, No\. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China/);
   assert.doesNotMatch(body, /product-detail\?series=tricycles/i);

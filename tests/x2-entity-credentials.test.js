@@ -43,7 +43,7 @@ test('X2 does not invent future exhibitions or blanket certification', () => {
   assert.ok(!html.includes('92nd') || !/history|participated/i.test(html.split('92nd')[1] || ''));
   assert.ok(!/all models CCC/i.test(html));
   assert.ok(!/Euro 5 certified/i.test(html));
-  assert.match(html, /only to specific approved engine models/i);
+  assert.match(html, /applicable engine models/i);
 });
 
 
