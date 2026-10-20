@@ -81,13 +81,39 @@ function list(items) {
   return `<ul style="color:var(--text-secondary);line-height:1.9;list-style:disc;padding-left:1.2rem;">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
-function table(labels, columns, rows) {
+function table(labels, columns, rows, options = {}) {
+  const rowIds = Array.isArray(options.rowIds) ? options.rowIds : null;
+  const rowHeaderScope = options.rowHeaderScope === true;
+  const body = rows.map((row, rowIndex) => {
+    const idAttr = rowIds && rowIds[rowIndex] ? ` id="${escapeHtml(rowIds[rowIndex])}"` : '';
+    const cells = row.map((cell, index) => index === 0
+      ? (rowHeaderScope ? `<th scope="row">${escapeHtml(cell)}</th>` : `<th>${escapeHtml(cell)}</th>`)
+      : `<td>${escapeHtml(cell)}</td>`
+    ).join('');
+    return `<tr${idAttr}>${cells}</tr>`;
+  }).join('');
   return `<div class="responsive-table-wrap" tabindex="0">
           <table class="specs-table catalog-spec-table">
             <thead><tr>${columns.map(column => `<th>${escapeHtml(column)}</th>`).join('')}</tr></thead>
-            <tbody>${rows.map(row => `<tr>${row.map((cell, index) => index === 0 ? `<th>${escapeHtml(cell)}</th>` : `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody>
+            <tbody>${body}</tbody>
           </table>
         </div>`;
+}
+
+const cgModelRowAnchors = {
+  'model-cg125': 'cg-air-125',
+  'model-cg150': 'cg-air-150',
+  'model-cg175': 'cg-air-175',
+  'model-cg200': 'cg-air-200',
+  'model-cg250': 'cg-air-250',
+  'model-cg150sb': 'cg-water-150sb',
+  'model-cg175sb': 'cg-water-175sb',
+  'model-cg200sb': 'cg-water-200sb',
+  'model-cg250sb': 'cg-water-250sb'
+};
+
+function modelQuickLinks(entries, ariaLabel) {
+  return `<nav class="model-quick-links" aria-label="${escapeHtml(ariaLabel)}">${entries.map(([anchor, code]) => `<a href="#${escapeHtml(anchor)}">${escapeHtml(code)}</a>`).join('')}</nav>`;
 }
 
 function model(recordById, specId) {
@@ -107,8 +133,11 @@ function cgWaterProcurementNote(language) {
 function renderCg(recordById, locale, language) {
   const l = locale.labels;
   const v = locale.values;
-  const air = modelIds.cg.slice(0, 5).map(id => model(recordById, id));
-  const water = modelIds.cg.slice(5).map(id => model(recordById, id));
+  const withEnglishRowAnchors = language === 'en';
+  const airSpecIds = modelIds.cg.slice(0, 5);
+  const waterSpecIds = modelIds.cg.slice(5);
+  const air = airSpecIds.map(id => model(recordById, id));
+  const water = waterSpecIds.map(id => model(recordById, id));
   const columns = [l.model, l.nominal, l.actual, l.boreStroke, l.cooling, l.start, l.clutch, l.gears];
   const rows = records => records.map(record => [
     record.model_code,
@@ -120,15 +149,25 @@ function renderCg(recordById, locale, language) {
     v.manualWet,
     record.gear_pattern ? v.five : '—'
   ]);
+  const airRowIds = withEnglishRowAnchors ? airSpecIds.map(id => cgModelRowAnchors[id]) : null;
+  const waterRowIds = withEnglishRowAnchors ? waterSpecIds.map(id => cgModelRowAnchors[id]) : null;
+  const airQuickLinks = withEnglishRowAnchors
+    ? modelQuickLinks(air.map((record, index) => [airRowIds[index], record.model_code]), 'Choose CG air-cooled engine model')
+    : '';
+  const waterQuickLinks = withEnglishRowAnchors
+    ? modelQuickLinks(water.map((record, index) => [waterRowIds[index], record.model_code]), 'Choose CG water-cooled engine model')
+    : '';
+  const airTableOptions = withEnglishRowAnchors ? { rowIds: airRowIds, rowHeaderScope: true } : undefined;
+  const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true } : undefined;
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
   return `<div class="catalog-table-block" id="cg-air-cooled">
         <h3>CG Air-Cooled</h3>
-        ${table(l, columns, rows(air))}
+        ${airQuickLinks}${table(l, columns, rows(air), airTableOptions)}
       </div>
       <div class="catalog-table-block" id="cg-water-cooled">
         <h3>CG Water-Cooled</h3>
-        ${table(l, columns, rows(water))}${cgWaterProcurementNote(language)}
+        ${waterQuickLinks}${table(l, columns, rows(water), waterTableOptions)}${cgWaterProcurementNote(language)}
       </div>
       <h3 class="section-title" style="margin-top:2.5rem;">${escapeHtml(l.familyOptions)}</h3>
       <div class="features-grid" style="margin-top:1.5rem;">${cards}</div>`;
@@ -225,7 +264,7 @@ function renderOwnerBlock(recordById, route) {
       </div>
     </div>
   </section>
-  ${renderFaq(locale, route.family)}
+  ${renderFaq(locale, route.family)}${route.family === 'cg' && route.language === 'en' ? '\n  <script src="../js/cg-model-quick-links.js" defer></script>' : ''}
   <!-- PRODUCT FAMILY OWNER END -->
   <!-- /Product Detail SEO Content -->`;
 }
