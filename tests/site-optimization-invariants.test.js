@@ -57,6 +57,13 @@ const a2MenuPages = new Set([
   'en/engine-parts.html'
 ]);
 
+const allowedExtraScripts = new Map([
+  ['en/cg-engine.html', new Set(['../js/core-menu-accessibility.js', '../js/cg-model-quick-links.js'])],
+  ['en/cb-engine.html', new Set(['../js/core-menu-accessibility.js'])],
+  ['en/horizontal-engine.html', new Set(['../js/core-menu-accessibility.js'])],
+  ['en/engine-parts.html', new Set(['../js/core-menu-accessibility.js'])]
+]);
+
 function git(args, options = {}) {
   return childProcess.execFileSync('git', args, {
     cwd: root,
@@ -303,13 +310,14 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
     const beforeScripts = scriptSources(before);
     const afterScripts = scriptSources(after);
     if (a2MenuPages.has(file)) {
-      const withoutAllowedA2Script = afterScripts.filter(source => source !== '../js/core-menu-accessibility.js');
+      const allowed = allowedExtraScripts.get(file) || new Set(['../js/core-menu-accessibility.js']);
+      const withoutAllowedExtras = afterScripts.filter(source => !allowed.has(source));
       assert.equal(
-        afterScripts.length - withoutAllowedA2Script.length,
-        1,
-        `${file}: expected exactly one approved A2 script`
+        afterScripts.length - withoutAllowedExtras.length,
+        allowed.size,
+        `${file}: expected the approved extra scripts only`
       );
-      assert.deepEqual(withoutAllowedA2Script, beforeScripts, `${file}: script set changed`);
+      assert.deepEqual(withoutAllowedExtras, beforeScripts, `${file}: script set changed`);
     } else {
       assert.deepEqual(afterScripts, beforeScripts, `${file}: script set changed`);
     }
