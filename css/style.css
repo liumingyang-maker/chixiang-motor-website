@@ -3697,3 +3697,63 @@ body:has(.about-page-header) .section-subtitle {
   outline-offset: -2px;
   scroll-margin-top: 5.5rem;
 }
+
+/* zh-cn mobile readability (PR48 R2) */
+@media (max-width: 767px) {
+  .zh-cn-page .features-grid,
+  .zh-cn-page .feature-item,
+  .zh-cn-page .contact-form,
+  .zh-cn-page .form-row {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .zh-cn-page .features-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .zh-cn-page .contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+  .zh-cn-page .contact-form label {
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.4;
+    text-align: left;
+  }
+  .zh-cn-page .contact-form input,
+  .zh-cn-page .contact-form select,
+  .zh-cn-page .contact-form textarea {
+    width: 100%;
+    min-height: 44px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  .zh-cn-page .contact-form textarea {
+    min-height: 120px;
+  }
+  .zh-cn-page .table-scroll-hint {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0.35rem 0 0.5rem;
+  }
+}
+.zh-cn-page .table-scroll-hint {
+  display: none;
+}
+@media (max-width: 767px) {
+  .zh-cn-page .model-quick-links {
+    gap: 0.5rem;
+  }
+  .zh-cn-page .model-quick-links a {
+    min-height: 40px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+}
