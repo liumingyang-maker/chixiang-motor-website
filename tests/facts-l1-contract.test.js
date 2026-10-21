@@ -85,6 +85,9 @@ test('catalog horizontal air-cooled range matches approved 110-150 family', () =
   assert.ok(en.includes('110–150cc') || en.includes('110-150cc'));
   assert.ok(!en.includes('100–125cc'));
   assert.ok(!en.includes('100-125cc'));
+  const tool = read('en/product-detail.html');
+  assert.ok(!tool.includes('100–125cc'), 'product-detail tool tag must not use old 100–125 range');
+  assert.ok(!tool.includes('100-125cc'), 'product-detail tool tag must not use old 100-125 range');
 });
 
 test('catalog omits absolute and unapproved commercial claims', () => {

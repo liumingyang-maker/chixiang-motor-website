@@ -86,7 +86,7 @@ test('the paid page stays outside the SEO Foundation contract', () => {
   assert.ok(!/ads/.test(read('robots.txt')), 'robots.txt must stay open so noindex can be read');
   const manifest = loadManifest(root);
   assert.ok(manifest.every((entry) => !/ads/.test(entry.pathname)), 'manifest must not classify the paid page');
-  assert.equal(manifest.length, 53, 'the governed 52-page sitemap set is unchanged');
+  assert.equal(manifest.length, 71, 'the governed 71-page sitemap set is unchanged');
 });
 
 test('no organic page links to the paid page yet', () => {

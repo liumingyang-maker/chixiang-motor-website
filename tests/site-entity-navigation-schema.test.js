@@ -50,13 +50,16 @@ function schemaTypes(nodes) {
 }
 
 function pageRole(page) {
-  if (/^\/(?:en|es|pt|ru|ar)\/$/.test(page.pathname)) return 'home';
+  if (/^\/(?:en|es|pt|ru|ar|zh-cn)\/$/.test(page.pathname)) return 'home';
   if (/\/(?:about)$/.test(page.pathname)) return 'about';
   if (/\/(?:products)$/.test(page.pathname)) return 'products';
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(page.pathname)) return 'contact';
   if (/\/news$/.test(page.pathname)) return 'news';
   if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|how-to-choose-motorcycle-engine-manufacturer-china)$/.test(page.pathname)) return 'article';
   if (page.pathname === '/es/guia/que-es-un-motor-cg/') return 'article';
+  if (/^\/zh-cn\/guides\/?$/.test(page.pathname)) return 'about';
+  if (/^\/zh-cn\/guides\//.test(page.pathname)) return 'article';
+  if (/^\/zh-cn\/(?:factory|evidence|domestic-wholesale)$/.test(page.pathname)) return 'about';
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(page.pathname)) return 'market';
   return 'family';
 }
@@ -79,13 +82,15 @@ function expectedTrail(page) {
   if (role === 'home') return [];
   const trail = [`${origin}/${page.language}/`];
   if (role === 'family' || role === 'market') trail.push(`${origin}/${page.language}/products`);
-  if (role === 'article') trail.push(`${origin}/${page.language}/news`);
+  if (role === 'article') {
+    trail.push(page.language === 'zh-cn' ? `${origin}/zh-cn/guides/` : `${origin}/${page.language}/news`);
+  }
   trail.push(page.url);
   return trail;
 }
 
 function visibleBreadcrumb(html) {
-  const match = html.match(/<nav\b(?=[^>]*\bclass=["'][^"']*\bentity-breadcrumb\b[^"']*["'])(?=[^>]*\baria-label=["']Breadcrumb["'])[^>]*>([\s\S]*?)<\/nav>/i);
+  const match = html.match(/<nav\b(?=[^>]*\bclass=["'][^"']*\bentity-breadcrumb\b[^"']*["'])(?=[^>]*\baria-label=["'](?:Breadcrumb|面包屑)["'])[^>]*>([\s\S]*?)<\/nav>/i);
   return match ? match[0] : null;
 }
 
@@ -101,10 +106,10 @@ function breadcrumbUrls(node) {
   });
 }
 
-test('sitemap manifest contains exactly 53 canonical source pages', () => {
+test('sitemap manifest contains exactly 71 canonical source pages', () => {
   const pages = sitemapPages();
-  assert.equal(pages.length, 53);
-  assert.equal(new Set(pages.map(page => page.url)).size, 53);
+  assert.equal(pages.length, 71);
+  assert.equal(new Set(pages.map(page => page.url)).size, 71);
   for (const page of pages) {
     assert.ok(fs.existsSync(path.join(root, page.file)), `${page.url}: missing ${page.file}`);
     assert.equal(new URL(page.url).origin, origin);
@@ -120,7 +125,7 @@ test('maintenance manifest reproduces the canonical role and breadcrumb contract
 
   assert.equal(actualOrganizationId, organizationId);
   assert.equal(actualWebsiteId, websiteId);
-  assert.equal(manifest.length, 53);
+  assert.equal(manifest.length, 71);
   assert.deepEqual(manifest.map(entry => entry.url), expected.map(page => page.url));
   for (let index = 0; index < expected.length; index += 1) {
     const page = expected[index];
@@ -154,8 +159,8 @@ test('47 non-home pages expose a visible canonical breadcrumb trail', () => {
   const pages = sitemapPages();
   const homePages = pages.filter(page => pageRole(page) === 'home');
   const nonHomePages = pages.filter(page => pageRole(page) !== 'home');
-  assert.equal(homePages.length, 5);
-  assert.equal(nonHomePages.length, 48);
+  assert.equal(homePages.length, 6);
+  assert.equal(nonHomePages.length, 65);
 
   for (const page of homePages) {
     assert.equal(visibleBreadcrumb(read(page.file)), null, `${page.file}: language home has no breadcrumb`);
@@ -207,12 +212,12 @@ test('generated entity graphs use one marker and responsive breadcrumb CSS', () 
   assert.doesNotMatch(rule[1], /white-space\s*:\s*nowrap|overflow-x\s*:\s*hidden|width\s*:\s*\d+px/);
 });
 
-test('the 53-page governance matrix records the entity link and schema contract', () => {
+test('the 71-page governance matrix records the entity link and schema contract', () => {
   const lines = read('docs/geo-entity/phase-6-1b/PAGE_CHANGE_MATRIX.csv').trim().split(/\r?\n/);
   const header = lines[0].split(',');
   const testsColumn = header.indexOf('tests');
   assert.notEqual(testsColumn, -1, 'matrix tests column');
-  assert.equal(lines.length - 1, 53, 'matrix canonical page rows');
+  assert.equal(lines.length - 1, 71, 'matrix canonical page rows');
   for (const line of lines.slice(1)) {
     const columns = line.split(',');
     assert.match(columns[testsColumn], /(?:^|\|)site entity link\/schema contract(?:\||$)/);

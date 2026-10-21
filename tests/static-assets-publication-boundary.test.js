@@ -160,11 +160,12 @@ test('the Worker entry point is untouched while its source stops being an asset'
 
 test('this hardening touches no governed Foundation file', () => {
   const sitemap = read('sitemap.xml');
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 53, 'sitemap entity set is unchanged');
+  // 53 baseline + 18 approved zh-cn pages
+  assert.equal((sitemap.match(/<loc>/g) || []).length, 71, 'sitemap entity set is baseline plus approved zh-cn pages');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
   assert.ok(!/ads/.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);
-  assert.equal(manifest.length, 53, 'manifest page set is unchanged');
+  assert.equal(manifest.length, 71, 'manifest page set is baseline plus approved zh-cn pages');
 });
 
 test('the pdf directory stays public while the extracted text artifact is withheld', () => {

@@ -3697,3 +3697,102 @@ body:has(.about-page-header) .section-subtitle {
   outline-offset: -2px;
   scroll-margin-top: 5.5rem;
 }
+
+/* zh-cn mobile readability (PR48 R2/R3) */
+.zh-cn-page .table-scroll-hint {
+  display: none;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0.5rem;
+}
+@media (max-width: 1023px) {
+  .zh-cn-page .features-grid,
+  .zh-cn-page .feature-item,
+  .zh-cn-page .contact-form,
+  .zh-cn-page .form-row {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .zh-cn-page .features-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .zh-cn-page .contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+  .zh-cn-page .contact-form label {
+    white-space: normal;
+    word-break: keep-all;
+    line-height: 1.4;
+    text-align: left;
+    align-self: stretch;
+  }
+  .zh-cn-page .contact-form input,
+  .zh-cn-page .contact-form select,
+  .zh-cn-page .contact-form textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  .zh-cn-page .contact-form textarea {
+    min-height: 120px;
+  }
+  .zh-cn-page .table-scroll-hint {
+    display: block;
+  }
+}
+/* tablet/desktop form comfort: label above control until wide desktop */
+.zh-cn-page .contact-form .form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.zh-cn-page .contact-form label {
+  white-space: normal;
+  line-height: 1.4;
+}
+.zh-cn-page .contact-form input,
+.zh-cn-page .contact-form select,
+.zh-cn-page .contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  min-height: 42px;
+}
+/* model quick links: apply on zh pages too (not only product-family owner block) */
+.zh-cn-page .model-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem;
+}
+.zh-cn-page .model-quick-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.zh-cn-page .model-quick-links a:hover,
+.zh-cn-page .model-quick-links a:focus-visible {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
