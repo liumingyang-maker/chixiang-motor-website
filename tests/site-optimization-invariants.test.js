@@ -202,20 +202,49 @@ function readFile(file) {
   return require('node:fs').readFileSync(require('node:path').join(root, file), 'utf8');
 }
 
+// Approved zh-cn sitemap URLs for this PR only (not a wildcard).
+const APPROVED_ZH_CN_SITEMAP = new Set([
+  'https://chixiangmotor.com/zh-cn/',
+  'https://chixiangmotor.com/zh-cn/products',
+  'https://chixiangmotor.com/zh-cn/horizontal-engine',
+  'https://chixiangmotor.com/zh-cn/cg-engine',
+  'https://chixiangmotor.com/zh-cn/cargo-tricycle-engine',
+  'https://chixiangmotor.com/zh-cn/about',
+  'https://chixiangmotor.com/zh-cn/factory',
+  'https://chixiangmotor.com/zh-cn/evidence',
+  'https://chixiangmotor.com/zh-cn/domestic-wholesale',
+  'https://chixiangmotor.com/zh-cn/contact',
+  'https://chixiangmotor.com/zh-cn/cb-engine',
+  'https://chixiangmotor.com/zh-cn/ac320-atv-engine',
+  'https://chixiangmotor.com/zh-cn/engine-parts',
+  'https://chixiangmotor.com/zh-cn/guides/',
+  'https://chixiangmotor.com/zh-cn/guides/cg250-water-cooled-selection',
+  'https://chixiangmotor.com/zh-cn/guides/horizontal-engine-buying-checklist',
+  'https://chixiangmotor.com/zh-cn/guides/how-to-verify-engine-factory',
+  'https://chixiangmotor.com/zh-cn/guides/engine-fitment-checklist'
+]);
+
 function stripA1SitemapEntry(xml) {
-  return xml
+  let out = xml
     .replace(/^\uFEFF/, '')
     .replace(
       /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/ac320-atv-engine<\/loc>[\s\S]*?<\/url>/,
       ''
-    )
-    .replace(
-      /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/zh-cn\/[^<]*<\/loc>[\s\S]*?<\/url>/g,
+    );
+  for (const url of APPROVED_ZH_CN_SITEMAP) {
+    out = out.replace(
+      new RegExp('\\s*<url>\\s*<loc>' + url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '</loc>[\\s\\S]*?</url>'),
       ''
-    )
+    );
+  }
+  return out
     .replace(/\r\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
     .replace(/\n+$/, '\n');
+}
+
+function zhCnSitemapUrls(xml) {
+  return [...xml.matchAll(/<loc>(https:\/\/chixiangmotor\.com\/zh-cn\/[^<]*)<\/loc>/g)].map(m => m[1]);
 }
 
 test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
@@ -239,14 +268,18 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
   assert.ok(manifestSrc.includes('zh-cn'), 'manifest supports zh-cn');
 });
 
-test('sitemap matches baseline after removing only approved AC320 and zh-cn entries', () => {
+test('sitemap matches baseline after removing only approved AC320 and exact zh-cn entries', () => {
   const baseline = gitShow(frozenBaseline, 'sitemap.xml').replace(/\r\n/g, '\n');
   const candidate = stripA1SitemapEntry(gitShow('HEAD', 'sitemap.xml'));
   const working = stripA1SitemapEntry(readFile('sitemap.xml'));
   assert.equal(candidate, baseline, 'sitemap candidate has unapproved changes');
   assert.equal(working, baseline, 'sitemap working tree has unapproved changes');
   assert.match(readFile('sitemap.xml'), /en\/ac320-atv-engine/);
-  assert.match(readFile('sitemap.xml'), /zh-cn\//);
+  const zhUrls = zhCnSitemapUrls(readFile('sitemap.xml'));
+  assert.equal(zhUrls.length, 18, 'exactly 18 approved zh-cn sitemap URLs');
+  for (const url of zhUrls) {
+    assert.ok(APPROVED_ZH_CN_SITEMAP.has(url), `unapproved zh-cn sitemap URL: ${url}`);
+  }
 });
 
 test('site-router matches baseline after reverting only the approved P1 payload', () => {
