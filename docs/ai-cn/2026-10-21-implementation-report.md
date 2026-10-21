@@ -44,20 +44,20 @@ F-12（2025 高企）**未**对外发布。
 
 ## 4. 未认证 / 待确认
 
-- 产能、面积、合格率、出口国别：仅 `website_existing`，未进首屏强背书  
-- ISO/CCC/高企编号：不公开，只保留核对流程  
-- 152FMH 实际排量/缸径行程：继续留空  
+- 产能、面积、合格率、出口国别：仅 `website_existing`，未进首屏强背书
+- ISO/CCC/高企编号：不公开，只保留核对流程
+- 152FMH 实际排量/缸径行程：继续留空
 
 ## 5. 跨语言修复
 
-- `ru/index.html`：删除「24 小时回复」SLA  
-- 英文 9 个核心页增加 `hreflang="zh-CN"`  
+- `ru/index.html`：删除「24 小时回复」SLA
+- 英文 9 个核心页增加 `hreflang="zh-CN"`
 
 ## 6. SEO / 抓取
 
-- sitemap +18 中文 URL；robots 仍全站 Allow  
-- 实体图由 `apply-site-entity-schema.js` 幂等生成  
-- 中文测试 C01–C14 通过；全站 **401/401**  
+- sitemap +18 中文 URL；robots 仍全站 Allow
+- 实体图由 `apply-site-entity-schema.js` 幂等生成
+- 中文测试 C01–C14 通过；全站 **401/401**
 
 ## 7. 未完成及理由
 
