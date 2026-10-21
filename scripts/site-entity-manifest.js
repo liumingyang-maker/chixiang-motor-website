@@ -10,7 +10,8 @@ const labels = {
   es: { home: 'Inicio', products: 'Productos', news: 'Noticias' },
   pt: { home: 'Início', products: 'Produtos', news: 'Notícias' },
   ru: { home: 'Главная', products: 'Продукты', news: 'Новости' },
-  ar: { home: 'الرئيسية', products: 'المنتجات', news: 'الأخبار' }
+  ar: { home: 'الرئيسية', products: 'المنتجات', news: 'الأخبار' },
+  'zh-cn': { home: '首页', products: '发动机产品', news: '采购指南' }
 };
 
 const marketTitles = {
@@ -45,8 +46,9 @@ function sourceFileForUrl(url) {
 }
 
 function classify(pathname) {
-  if (/^\/(?:en|es|pt|ru|ar)\/$/.test(pathname)) return { role: 'home', schemaType: 'WebPage' };
+  if (/^\/(?:en|es|pt|ru|ar|zh-cn)\/$/.test(pathname)) return { role: 'home', schemaType: 'WebPage' };
   if (/\/about$/.test(pathname)) return { role: 'about', schemaType: 'AboutPage' };
+  if (/^\/zh-cn\/(?:factory|evidence|domestic-wholesale)$/.test(pathname)) return { role: 'about', schemaType: 'AboutPage' };
   if (/\/products$/.test(pathname)) return { role: 'products', schemaType: 'CollectionPage' };
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(pathname)) return { role: 'contact', schemaType: 'ContactPage' };
   if (/\/news$/.test(pathname)) return { role: 'news', schemaType: 'CollectionPage' };
@@ -56,6 +58,8 @@ function classify(pathname) {
   if (pathname === '/es/guia/que-es-un-motor-cg/') {
     return { role: 'article', schemaType: 'WebPage' };
   }
+  if (/^\/zh-cn\/guides\/?$/.test(pathname)) return { role: 'about', schemaType: 'AboutPage' };
+  if (/^\/zh-cn\/guides\//.test(pathname)) return { role: 'article', schemaType: 'WebPage' };
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(pathname)) {
     return { role: 'market', schemaType: 'WebPage' };
   }
@@ -87,7 +91,7 @@ function breadcrumbFor(entry) {
     trail.push({ name: languageLabels.products, item: `${canonicalOrigin}/${entry.language}/products` });
   }
   if (entry.role === 'article') {
-    trail.push({ name: languageLabels.news, item: `${canonicalOrigin}/${entry.language}/news` });
+    trail.push({ name: languageLabels.news, item: entry.language === 'zh-cn' ? `${canonicalOrigin}/zh-cn/guides/` : `${canonicalOrigin}/${entry.language}/news` });
   }
   trail.push({ name: entry.name, item: entry.url });
   return trail;
