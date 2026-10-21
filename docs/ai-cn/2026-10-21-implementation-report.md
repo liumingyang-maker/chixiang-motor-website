@@ -1,74 +1,127 @@
-# 2026-10-21 实现报告 — 中文站 + 证据中心 + AI 可发现性
+# 2026-10-21 实现报告（修订版 · PR #48 合并前补测）
 
-## 1. 基线与分支
+> 回应《驰翔 PR48 正式合并前审核及 MiMo 修复指令》§3。**未合并、未上线。**
+
+## 1. 最终 HEAD
 
 | 项 | 值 |
 | --- | --- |
-| 基线 commit | `b5acee0`（main，含 PR #47） |
-| 工作分支 | `codex/zh-cn-evidence-center` |
-| 技术调整 | **非 Astro**：沿用静态 HTML + 生成器 + Cloudflare Workers |
-| PR | 见提交后链接（**Draft，待批准，不合并**） |
+| PR | https://github.com/liumingyang-maker/chixiang-motor-website/pull/48 （Draft） |
+| 分支 | `codex/zh-cn-evidence-center` |
+| 提交 | `d2c85d2` 功能主提交 → `e0711b5` Sitemap 白名单收紧 + 区间标签 → `（whitespace）` |
+| 基线 | `b5acee0` |
+| `git diff --check` | **exit 0**（已清尾随空白） |
+| 未提交工作区 | 仅本地一次性脚本（未入 PR）；**无未提交业务改动** |
 
-## 2. 交付页面（18）
+`git diff --stat b5acee0..HEAD`：52+ files，约 +3600/−30 行（以推送 SHA 为准）。
 
-| URL | 标题摘要 | 英文对应 |
-| --- | --- | --- |
-| `/zh-cn/` | 重庆摩托车及货运三轮车发动机制造与供应 | `/en/` |
-| `/zh-cn/products` | 在售系列 + CKD 筹备隔离 | `/en/products` |
-| `/zh-cn/horizontal-engine` | 五款 CX 卧机 + 采购清单 | `/en/horizontal-engine` |
-| `/zh-cn/cg-engine` | CG 风冷/水冷表 + 倒挡限定 | `/en/cg-engine` |
-| `/zh-cn/cargo-tricycle-engine` | 三轮动力核对清单 | 主题页 |
-| `/zh-cn/about` | 三主体 + 2003/2007 区分 | `/en/about` |
-| `/zh-cn/factory` | 车间实拍 + 流程边界 | About 扩展 |
-| `/zh-cn/evidence` | 三公开来源证据中心 | **新增** |
-| `/zh-cn/domestic-wholesale` | 1688 + 国内联系 | **新增** |
-| `/zh-cn/contact` | 国内询价表单 | `/en/contact` |
-| `/zh-cn/cb-engine` | CB150/200-C/250 | `/en/cb-engine` |
-| `/zh-cn/ac320-atv-engine` | AC320 287.2cc 专页 | `/en/ac320-atv-engine` |
-| `/zh-cn/engine-parts` | 配件按型号/订单 | `/en/engine-parts` |
-| `/zh-cn/guides/` | 指南索引 | — |
-| `/zh-cn/guides/cg250-water-cooled-selection` | CG250 水冷选型 | — |
-| `/zh-cn/guides/horizontal-engine-buying-checklist` | 卧机采购清单 | — |
-| `/zh-cn/guides/how-to-verify-engine-factory` | 核实工厂方法 | — |
-| `/zh-cn/guides/engine-fitment-checklist` | 同排量≠互换 | — |
+## 2. `String to replace not found` 闭环说明
 
-## 3. 公开证据（真实来源）
+- **发生时间**：开发过程（写 `tests/site-optimization-invariants.test.js` 时）。  
+- **原因**：`stripA1SitemapEntry` 与 `test('sitemap matches baseline…')` 之间隔了 `test('frozen files…')`，一次**跨非相邻块**的 `old_string` 替换失败。  
+- **是否在 `d2c85d2` 之后**：否，属提交前编辑尝试；`d2c85d2` 已含可用的 strip 函数。  
+- **最终修复提交**：`e0711b5` 将白名单从「任意 `/zh-cn/`」收紧为 **18 条精确 URL**，并断言数量=18 且集合 ⊆ 白名单。  
+- **原基线保护仍在**：`stripA1SitemapEntry` 仍剥离 AC320 后与 `frozenBaseline` 逐字比对；冻结文件门禁保留（sitemap / site-entity-manifest 为受控例外）。
 
-| ID | 来源 | 证明 | 不代表 |
-| --- | --- | --- | --- |
-| F-08 | gxq.cq.gov.cn 2024-06-28 公示 | 科技型企业入库补助—通过 | 高企证书 |
-| F-09 | mopei8.com 2023-10-29 名录 | 展位 2T85、发动机类 | 官方推荐 |
-| F-10 | Google Patents CN221406869U | 线缆散热结构专利公开 | 整机性能认证 |
+### Sitemap URL 差异（XML 解析）
 
-F-12（2025 高企）**未**对外发布。
+`node/`python 脚本 `scripts/check-sitemap-url-diff.py`（基线 `b5acee0` vs HEAD）：
 
-## 4. 未认证 / 待确认
+- OLD_COUNT **53** → NEW_COUNT **71**
+- ADDED **18**（全部 `https://chixiangmotor.com/zh-cn/...`）
+- REMOVED **0** · DUPLICATES **0**
+- 结果：`URL_DIFF_OK`
 
-- 产能、面积、合格率、出口国别：仅 `website_existing`，未进首屏强背书
-- ISO/CCC/高企编号：不公开，只保留核对流程
-- 152FMH 实际排量/缸径行程：继续留空
+## 3. 最终 HEAD 测试（可复现）
 
-## 5. 跨语言修复
+```text
+node --test tests/*.test.js
+→ tests 401 · pass 401 · fail 0 · exit 0
 
-- `ru/index.html`：删除「24 小时回复」SLA
-- 英文 9 个核心页增加 `hreflang="zh-CN"`
+node --test workers/contact-api/test/*.test.mjs
+→ tests 13 · pass 13 · fail 0
 
-## 6. SEO / 抓取
+node scripts/apply-product-family-owner-content.js --check → 0
+node scripts/apply-contact-procurement-owner-content.js --check → 0
+node scripts/apply-site-entity-schema.js --check → 0
+```
 
-- sitemap +18 中文 URL；robots 仍全站 Allow
-- 实体图由 `apply-site-entity-schema.js` 幂等生成
-- 中文测试 C01–C14 通过；全站 **401/401**
+（401 含新增 `zh-cn-content-quality` 16 条；与上一版数量相同，因加固断言并入既有用例。）
 
-## 7. 未完成及理由
+## 4. Preview 验收
 
-| 项 | 理由 |
+| 项 | 值 |
 | --- | --- |
-| Preview 浏览器截图矩阵 | 需 PR 预览部署后补 |
-| 百度/Bing 验证提交 | 需账号与授权 |
-| 1688 简介上线 | 需人工粘贴 |
-| 目录纠错提交 | 需人工工单 |
-| AI 问答基线实测 | 需上线后人工在各 App 测 |
+| Build | `cdfd0047-9b4b-4f53-9597-d6d98dfceaeb` success |
+| Version | `712eb37a-43ff-421c-b116-3bd1e257476e` |
+| Preview URL | https://712eb37a-chixiang-motor-website.970201665.workers.dev |
+| Alias | https://codex-zh-cn-evidence-center-chixiang-motor-website.970201665.workers.dev |
+| 索引 | 响应头 `x-robots-tag: noindex`（预览不可索引）✓ |
 
-## 8. 最短授权清单
+### HTTP 抽样（Preview）
 
-见 `docs/ai-cn/09-manual-approval-needed.md`。**合并前须负责人批准。**
+18 个中文 URL **全部 200**；`/en/` `/ru/` `/robots.txt` `/sitemap.xml` 200。
+
+### SEO 抽样
+
+- `<html lang="zh-CN">` ✓ · 自指 canonical ✓ · 首页链到 `/zh-cn/evidence` ✓  
+- 证据页含 gxq.cq.gov.cn / mopei8.com / CN221406869U ✓  
+
+### 截图（375 / 1280，均 **无整页横向溢出**）
+
+见审阅包 `PR48-REVIEW-PACK/screenshots/`：zh-home、horizontal、cg、cargo、evidence、wholesale、contact × 两视口 = 14 张。
+
+## 5. 询价表单（结构核验，未向生产发信）
+
+| 检查 | 结果 |
+| --- | --- |
+| `action=/api/contact` | ✓ |
+| name / contact / country / requirements | ✓ |
+| honeypot | ✓（源码可见） |
+| Turnstile | **运行时由 main.js 注入**（源码无静态字段，与现网一致） |
+| 强制 WhatsApp | **无** |
+| 1688 链接 | ✓ shop7p518ep539950.1688.com |
+
+未做真实 POST（避免生产测试询盘）；沿用原 Worker/反垃圾契约。
+
+## 6. 跨语言检查表
+
+| 语种 | 问题 | 状态 |
+| --- | --- | --- |
+| RU `ru/index.html` | 24h SLA | **已删**（C11 断言） |
+| RU CCC | 「CCC by approved model」 | **已是按型号限定**，无需再改 |
+| RU 卧机 50–125/100–125 | 未发现 | OK |
+| EN `product-detail` 标签 `100–125cc` | 旧区间 | **已改** `110–150cc`（`e0711b5`）+ 测试断言 |
+| ES/PT/AR | 未发现 24h/泛化 CCC/旧区间 | OK（抽样） |
+| 全站 | `CCC Certified` 无 | OK |
+
+## 7. 证据三条（预览可点开）
+
+| 证据 | 主体 | 页面锚点 | 来源 |
+| --- | --- | --- | --- |
+| 高新区 2024 补助公示 | 重庆驰翔摩托车制造有限公司 | `#ev-gxq-2024` | gxq.cq.gov.cn |
+| 2023 摩配会 2T85 | 同上 | `#ev-mopei-2023` | mopei8.com |
+| 专利 CN221406869U | 权利人关联驰翔 | `#ev-patent-cn221406869u` | Google Patents |
+
+文案均含「证明 / 不代表」。高企编号、ISO/CCC 编号 **继续不公开**。
+
+## 8. 仍需人工（不阻塞本次代码验收）
+
+| 事项 | 影响上线？ |
+| --- | --- |
+| 合并 PR #48 | **是**（需负责人批准） |
+| 百度验证 token | 否 |
+| 1688 简介粘贴 | 否 |
+| 目录纠错工单 | 否 |
+| 产能/证书编号放开 | 否（默认不放开） |
+
+## 9. 合并门槛自检
+
+- [x] HEAD 已提交；`git diff --check` 0  
+- [x] Sitemap 冻结测试允许**精确 18 URL**  
+- [x] Preview 浏览器 + 移动端截图  
+- [x] 18 页 / 证据 / 语言切换正常；外语不退化  
+- [x] RU SLA 已处理；CCC 限定；区间标签已修  
+- [x] 证据链接准确；三主体/证书不越界  
+- [x] Preview `noindex`；生产配置未改  
+- [ ] **负责人明确批准合并** ← 等待中  
