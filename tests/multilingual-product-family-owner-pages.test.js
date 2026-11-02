@@ -106,12 +106,32 @@ test('managed family content removes unapproved legacy commercial specifications
   ];
 
   for (const file of files.filter(file => file !== 'ru/gorizontalnyj-dvigatel.html')) {
-    const block = ownerBlock(read(file));
+    let block = ownerBlock(read(file));
     assert.ok(block, `${file}: managed owner block missing`);
+    // CG200 spotlight is owner-approved (F-15 2026-11-02); strip it before legacy-term scan
+    block = block.replace(/<div class="catalog-table-block" id="cg200-spotlight">[\s\S]*?<\/div>\s*<\/div>/, '');
     for (const claim of forbiddenLegacyRows) {
       assert.doesNotMatch(block, new RegExp(claim, 'i'), `${file}: ${claim}`);
     }
   }
+});
+
+test('CG200 spotlight publishes only the owner-confirmed reference set', () => {
+  const html = read('en/cg-engine.html');
+  assert.ok(html.includes('id="cg200-spotlight"'));
+  assert.ok(html.includes('CX163FML'));
+  assert.ok(html.includes('10.8 kW @ 8000 rpm'));
+  assert.ok(html.includes('14.2 N·m @ 6500 rpm'));
+  assert.ok(html.includes('30 kg'));
+  assert.ok(html.includes('1.0 L'));
+  assert.ok(html.includes('358 × 324 × 460 mm'));
+  // other displacements must not inherit CG200 performance figures
+  assert.ok(!/CG125[\s\S]{0,200}10\.8 kW/.test(html));
+  assert.ok(html.includes('Do not copy values across displacements'));
+  // purchase policy
+  assert.ok(html.includes('id="cg-purchase-policy"'));
+  assert.ok(html.includes('50 units'));
+  assert.ok(html.includes('not international freight'));
 });
 
 test('every model published by the generated contracts is approved public', () => {
