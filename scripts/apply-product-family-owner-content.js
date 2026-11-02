@@ -116,6 +116,93 @@ function modelQuickLinks(entries, ariaLabel) {
   return `<nav class="model-quick-links" aria-label="${escapeHtml(ariaLabel)}">${entries.map(([anchor, code]) => `<a href="#${escapeHtml(anchor)}">${escapeHtml(code)}</a>`).join('')}</nav>`;
 }
 
+// Owner-approved CG200 air-cooled spotlight (2026-11-02). Other displacements stay table-only until verified.
+const CG_AIR_SPOTLIGHT = {
+  en: {
+    title: 'CG200 air-cooled — factory reference configuration',
+    factoryCode: 'CX163FML',
+    tiles: [
+      ['Actual displacement', '197 cc', 'Nominal class CG200'],
+      ['Bore × stroke', '63.5 × 62.2 mm', 'Air-cooled single cylinder'],
+      ['Max power', '10.8 kW @ 8000 rpm', 'Max-net wording to confirm'],
+      ['Max torque', '14.2 N·m @ 6500 rpm', ''],
+      ['Net weight', '30 kg', 'Engine only'],
+      ['Starting', 'Electric + kick', 'Standard dual start'],
+      ['Transmission', '4 / 5 / 6-speed', 'Default 5-speed'],
+      ['Shift pattern', 'International / cyclic', 'Confirm per order'],
+      ['Oil capacity', '1.0 L', 'Total capacity, not fill volume'],
+      ['Dimensions', '358 × 324 × 460 mm', '']
+    ],
+    note: 'Data above is the owner-confirmed CG200 (CX163FML) reference set. CG125/150/175/250 power, torque, weight and packaging are not published until factory-verified. Do not copy values across displacements.'
+  },
+  'zh-cn': {
+    title: 'CG200 风冷 — 厂家参考配置',
+    factoryCode: 'CX163FML',
+    tiles: [
+      ['实际排量', '197 cc', '名义排量 CG200'],
+      ['缸径×行程', '63.5 × 62.2 mm', '单缸风冷'],
+      ['最大功率', '10.8 kW @ 8000 rpm', '最大/净功率口径待确认'],
+      ['最大扭矩', '14.2 N·m @ 6500 rpm', ''],
+      ['净重', '30 kg', '仅发动机'],
+      ['启动方式', '电启动 + 脚启动', '标准双启动'],
+      ['变速箱', '4 / 5 / 6 挡', '默认 5 挡'],
+      ['换挡方式', '国际挡 / 循环挡', '按订单确认'],
+      ['机油总容量', '1.0 L', '总容量≠必然加注量'],
+      ['外形尺寸', '358 × 324 × 460 mm', '']
+    ],
+    note: '以上为负责人确认的 CG200（CX163FML）参考数据。CG125/150/175/250 的功率、扭矩、重量与包装在厂内核实前不公开，不得跨排量套用。'
+  }
+};
+
+const CG_PURCHASE_POLICY = {
+  en: {
+    title: 'Order terms for the CG air-cooled series',
+    items: [
+      ['MOQ', '50 units', 'Models can be mixed in one order; not 50 per model'],
+      ['Delivery', 'Free to a China warehouse', 'Orders from 50 units; not international freight'],
+      ['Lead time', '50–100 units ≈ 2 weeks; over 100 within 1 month', 'Subject to order confirmation'],
+      ['OEM / ODM', 'Free appearance, nameplate and packaging design from 50 units', 'New parts R&D and tooling quoted separately'],
+      ['Export warranty', '3 months excluding wear parts', 'Start date and claims process per contract']
+    ]
+  },
+  'zh-cn': {
+    title: 'CG 风冷系列采购条件',
+    items: [
+      ['起订量', '50 台', '允许不同型号混装，不是每款各 50 台'],
+      ['配送', '免费送至中国境内指定仓库', '50 台及以上；不含国际运费'],
+      ['交期', '50–100 台约 2 周；100 台以上 1 个月内', '按订单确认为准'],
+      ['OEM / ODM', '50 台以上免费外观、铭牌、包装方案定制', '新增零件研发、开模另计'],
+      ['出口质保', '3 个月（易损件除外）', '起算与理赔按合同确认']
+    ]
+  }
+};
+
+function cgAirSpotlight(language) {
+  const data = CG_AIR_SPOTLIGHT[language] || CG_AIR_SPOTLIGHT.en;
+  const tiles = data.tiles.map(([label, value, note]) => `
+            <div class="spec-tile"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong>${note ? `<small>${escapeHtml(note)}</small>` : ''}</div>`).join('');
+  return `
+      <div class="catalog-table-block" id="cg200-spotlight">
+        <h3>${escapeHtml(data.title)}</h3>
+        <p class="section-subtitle" style="margin-top:.5rem">Factory code <strong>${escapeHtml(data.factoryCode)}</strong></p>
+        <div class="cg-spotlight-grid">${tiles}
+        </div>
+        <p class="disclaimer" style="margin-top:1rem">${escapeHtml(data.note)}</p>
+      </div>`;
+}
+
+function cgPurchasePolicy(language) {
+  const data = CG_PURCHASE_POLICY[language] || CG_PURCHASE_POLICY.en;
+  const items = data.items.map(([label, value, note]) => `
+          <div class="purchase-row"><div class="purchase-icon">✓</div><div><h4>${escapeHtml(label)} — ${escapeHtml(value)}</h4><p>${escapeHtml(note)}</p></div></div>`).join('');
+  return `
+      <div class="catalog-table-block" id="cg-purchase-policy">
+        <h3>${escapeHtml(data.title)}</h3>
+        <div class="purchase-rows">${items}
+        </div>
+      </div>`;
+}
+
 function model(recordById, specId) {
   return approvedPublic(recordById, specId);
 }
@@ -161,7 +248,8 @@ function renderCg(recordById, locale, language) {
   const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true } : undefined;
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
-  return `<div class="catalog-table-block" id="cg-air-cooled">
+  return `${cgAirSpotlight(language)}
+      <div class="catalog-table-block" id="cg-air-cooled">
         <h3>CG Air-Cooled</h3>
         ${airQuickLinks}${table(l, columns, rows(air), airTableOptions)}
       </div>
@@ -169,6 +257,7 @@ function renderCg(recordById, locale, language) {
         <h3>CG Water-Cooled</h3>
         ${waterQuickLinks}${table(l, columns, rows(water), waterTableOptions)}${cgWaterProcurementNote(language)}
       </div>
+      ${cgPurchasePolicy(language)}
       <h3 class="section-title" style="margin-top:2.5rem;">${escapeHtml(l.familyOptions)}</h3>
       <div class="features-grid" style="margin-top:1.5rem;">${cards}</div>`;
 }
