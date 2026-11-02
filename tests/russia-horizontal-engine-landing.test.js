@@ -186,7 +186,7 @@ test('publishes desktop and mobile comparison formats', () => {
 });
 
 test('uses the approved public factory and delivery facts', () => {
-  for (const value of ['2003', '15 000', '8 000', '50\\+', 'ISO 9001']) {
+  for (const value of ['2003', '15 000', '10 000', '50\\+', 'ISO 9001']) {
     assert.match(html, new RegExp(value));
   }
   assert.match(html, /перевозчик|экспедитор/i);
