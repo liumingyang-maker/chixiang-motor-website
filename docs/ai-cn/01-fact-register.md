@@ -11,7 +11,7 @@
 | F-04 | 驰翔/德谐参与制造相关业务；驰德按订单承担外贸服务 | 三主体 | owner_confirmed | owner_statement | /en/about | 业务协作 | 非母子公司；资质不跨主体 | true |
 | F-05 | 官方 1688 自营店：shop7p518ep539950.1688.com | 重庆驰翔摩托车制造有限公司 | owner_confirmed | owner_statement | /en/about | 自营渠道链接 | 不等于价格/库存已核验 | true |
 | F-06 | 型号大类：卧机 110–150、CG125–250、CB150–250、CG 水冷、AC320 等 | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/cg-engine 等 | 已批准型号表范围 | 不逐项证明通用适配 | true |
-| F-07 | 官网披露场地约 15000㎡、月产能 8000+、检测实验室等 | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/about | 自有网站自述 | **非独立审计**；不进首屏强背书、不推导年销量 | true（弱化展示） |
+| F-07 | 官网披露场地约 15000㎡、月产能 10000+（负责人 2026-10-21 批准）、检测实验室等 | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/about | 自有网站自述 | **非独立审计**；不进首屏强背书、不推导年销量 | true（弱化展示） |
 | F-08 | 重庆高新区 2024 公示：科技型企业入库补助 1 万元—通过 | 重庆驰翔摩托车制造有限公司 | public_verified | government | https://gxq.cq.gov.cn/ggtz/202406/t20240628_13334163.html | 该公示所列补助审核通过 | **不是**国家高新技术企业证书 | true |
 | F-09 | 2023 广州摩配会行业名录：展位 2T85，摩托车发动机 | 重庆驰翔摩托车制造有限公司 | public_verified | industry_directory | https://www.mopei8.com/news/zhanhui/4853.html | 该名录参展记录 | 不是官方推荐供应商/年度认证 | true |
 | F-10 | 专利 CN221406869U《一种高效散热的发动机线缆》公开 | 关联重庆驰翔 | public_verified | patent_database | https://patents.google.com/patent/CN221406869U/zh | 该项结构专利公开 | 不等于整机性能认证 | true |

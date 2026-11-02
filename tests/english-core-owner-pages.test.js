@@ -60,7 +60,7 @@ test('homepage is a current engine-supply gateway with form-first actions', () =
   assert.doesNotMatch(html, /<h3>Motorcycles<\/h3>/);
   assert.doesNotMatch(html, /series=motorcycles/i);
   assert.doesNotMatch(html, /CKD\/SKD|In Preparation/i);
-  assert.match(html, /Industry experience since 2003[\s\S]*8,000\+ engines monthly[\s\S]*50\+ countries[\s\S]*ISO 9001/i);
+  assert.match(html, /Industry experience since 2003[\s\S]*10,000\+ engines monthly[\s\S]*50\+ countries[\s\S]*ISO 9001/i);
   assert.match(html, /href="\/en\/about"[^>]*>About Our Factory<\/a>/);
   assert.match(html, /href="\/en\/products"[^>]*>Explore Engine Programs<\/a>/);
 });
@@ -74,7 +74,8 @@ test('About is the detailed company fact owner', () => {
     /registered in 2007/i,
     /Hangu Town/i,
     /15,000 m/i,
-    /8,000\+/,
+    /10,000\+/,
+    /10000\+/,
     /99% first-pass yield/i,
     /50\+ (?:export )?countries/i,
     /ISO 9001 quality-management certification documentation/i,

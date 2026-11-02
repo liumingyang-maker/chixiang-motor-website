@@ -249,7 +249,10 @@ function zhCnSitemapUrls(xml) {
 
 test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
   const others = frozenFiles.filter(
-    (file) => file !== 'workers/site-router.mjs' && file !== 'sitemap.xml' && file !== 'scripts/site-entity-manifest.js'
+    (file) => file !== 'workers/site-router.mjs'
+      && file !== 'sitemap.xml'
+      && file !== 'scripts/site-entity-manifest.js'
+      && file !== 'ads/algerie/index.html'
   );
   for (const revArgs of [['HEAD'], []]) {
     const result = childProcess.spawnSync(
@@ -258,6 +261,22 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
       { cwd: root, encoding: 'utf8' }
     );
     assert.equal(result.status, 0, result.stderr || result.stdout || 'frozen file changed');
+  }
+  // ads/algerie/index.html: approved capacity-only update 8 000+ -> 10 000+ (owner 2026-10-21)
+  for (const revArgs of [['HEAD'], []]) {
+    const result = childProcess.spawnSync(
+      'git',
+      ['diff', '--unified=0', frozenBaseline, ...revArgs, '--', 'ads/algerie/index.html'],
+      { cwd: root, encoding: 'utf8' }
+    );
+    const diff = result.stdout || '';
+    const changed = diff.split('\n').filter(line => (line.startsWith('+') || line.startsWith('-')) && !line.startsWith('+++') && !line.startsWith('---'));
+    for (const line of changed) {
+      assert.ok(
+        /8 000|10 000|8,000|10,000|8000|10000/.test(line),
+        `ads/algerie/index.html has non-capacity change: ${line}`
+      );
+    }
   }
   // site-entity-manifest.js may gain zh-cn labels/classification for the approved Chinese site.
   // Keep critical exports and language labels intact in the working tree.

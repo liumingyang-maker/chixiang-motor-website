@@ -346,7 +346,7 @@ test('the page answers the procurement questions in raw HTML', () => {
   assert.ok(/soci\u00e9t\u00e9 enregistr\u00e9e en 2007/i.test(page), 'registration year is distinguished from 2003');
   assert.doesNotMatch(page, /fond\u00e9e? en 2003|depuis 2003, notre entreprise a \u00e9t\u00e9 fond\u00e9e/i, 'never claim founded in 2003');
   assert.ok(page.includes('Hangu Town, Jiulongpo District, Chongqing'));
-  assert.ok(page.includes('8 000+'));
+  assert.ok(page.includes('10 000+'));
   assert.ok(page.includes('99 %'));
   assert.ok(page.includes('15 000 m\u00b2'));
   assert.ok(page.includes('100</strong><span>collaborateurs'));
@@ -486,7 +486,7 @@ test('the four factory metrics are the governed set', () => {
   const stats = (page.match(/<div class="al-stats">[\s\S]*?<\/div>\s*<\/div>/) || [""])[0];
   const visible = stats.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   assert.equal((stats.match(/<div><strong>/g) || []).length, 4, "exactly four factory metrics");
-  for (const fact of ["99 %", "15 000 m\u00b2", "100", "8 000+"]) {
+  for (const fact of ["99 %", "15 000 m\u00b2", "100", "10 000+"]) {
     assert.ok(visible.includes(fact), "missing governed metric: " + fact);
   }
   assert.ok(visible.includes("conformit\u00e9 au premier contr\u00f4le"), "yield label");
