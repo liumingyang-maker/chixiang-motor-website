@@ -178,12 +178,17 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
   if (!hubs.length) return '';
 
   const isZh = lang === 'zh';
+  const catLabelMap = new Map();
+  for (const c of catalog.categories || []) {
+    if (c && c.id) catLabelMap.set(c.id, isZh ? c.name_zh : c.name_en);
+  }
+  const publicProductMap = new Map(publicProducts(catalog).map((p) => [p.id, p]));
   const categorySet = new Set();
   hubs.forEach((hub) => {
     hub.core_parts.forEach((p) => { if (p && p.category) categorySet.add(p.category); });
   });
   const modelOptions = hubs.map((h) => `<option value="${escapeHtml(h.id)}">${escapeHtml(isZh ? h.model_name_zh : h.model_name_en)}</option>`).join('');
-  const categoryOptions = [...categorySet].map((cat) => `<option value="${escapeHtml(cat)}">${escapeHtml(cat)}</option>`).join('');
+  const categoryOptions = [...categorySet].map((cat) => `<option value="${escapeHtml(cat)}">${escapeHtml(catLabelMap.get(cat) || cat)}</option>`).join('');
   const toolbarHtml = `        <div class="btv-hub-toolbar" id="btv-hub-toolbar">
           <div class="btv-hub-toolbar__field">
             <label for="btvFilterModel">${isZh ? '按车型筛选' : 'Filter by Model'}</label>
@@ -234,7 +239,7 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
       return `<tr id="${escapeHtml(rowAnchor)}" data-btv-row-category="${escapeHtml(part.category || '')}" data-btv-search="${escapeHtml(searchTokens)}">
                 <td class="btv-col-select"><input type="checkbox" class="btv-part-checkbox" aria-label="${escapeHtml((isZh ? '选择 ' : 'Select ') + partName)}" data-btv-brand="${escapeHtml(hub.brand || '')}" data-btv-model="${escapeHtml(title)}" data-btv-part="${escapeHtml(partName)}" data-btv-category="${escapeHtml(part.category || '')}" data-btv-pn="${escapeHtml(part.chixiang_pn || '')}" data-btv-oem="${escapeHtml(part.oem_ref || '')}"></td>
                 <th>${escapeHtml(partName)}</th>
-                <td>${escapeHtml(part.category || '—')}</td>
+                <td>${escapeHtml(catLabelMap.get(part.category) || part.category || '—')}</td>
                 <td>${escapeHtml(part.chixiang_pn || '—')}</td>
                 <td>${escapeHtml(part.oem_ref || '—')}</td>
                 <td>${escapeHtml(part.material_spec || partNotes || '—')}</td>
@@ -242,9 +247,23 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
               </tr>`;
     }).join('\n              ');
 
+    const scopeBadge = hub.supply_scope === 'engines-and-parts'
+      ? `<span class="btv-supply-badge btv-supply-badge--engine">${isZh ? '整机总成 + 核心配件供应' : 'Complete Engine + Core Parts'}</span>`
+      : (hub.supply_scope === 'parts-only'
+        ? `<span class="btv-supply-badge btv-supply-badge--parts">${isZh ? '专供售后核心配件' : 'Core Replacement Parts Supply'}</span>`
+        : '');
+    const linkedEngine = hub.detail_product_id && publicProductMap.get(hub.detail_product_id);
+    const engineLinkHtml = linkedEngine
+      ? `<div class="btv-model-actions"><a class="btn btn-primary btn-sm" href="${escapeHtml(detailHref(linkedEngine, lang))}">${isZh ? '查看整机实拍与原厂对标参数 →' : 'View Complete Engine Photos &amp; OEM Specs →'}</a></div>`
+      : '';
+
     return `        <div class="catalog-table-block" id="hub-${escapeHtml(hub.id)}" data-btv-model-hub="${escapeHtml(hub.id)}" style="margin-top:2rem;">
-          <h3>${escapeHtml(title)}${meta.length ? ` <span style="font-size:0.9rem;font-weight:400;color:var(--text-secondary);">(${escapeHtml(meta.join(' · '))})</span>` : ''}</h3>
-          ${summary ? `<p style="color:var(--text-secondary);margin:0.5rem 0 0.75rem;">${escapeHtml(summary)}</p>` : ''}
+          <div class="btv-model-hub-head">
+            <h3>${escapeHtml(title)}${meta.length ? ` <span style="font-size:0.9rem;font-weight:400;color:var(--text-secondary);">(${escapeHtml(meta.join(' · '))})</span>` : ''}</h3>
+            ${scopeBadge}
+          </div>
+          ${summary ? `<p style="color:var(--text-secondary);margin:0.5rem 0 0.75rem;line-height:1.7;">${escapeHtml(summary)}</p>` : ''}
+          ${engineLinkHtml}
           <p class="table-scroll-hint">${isZh ? '← 左右滑动查看完整料号并勾选批量询价 →' : '← Swipe horizontally to view OEM numbers &amp; select parts →'}</p>
           <div class="responsive-table-wrap" tabindex="0">
             <table class="specs-table catalog-spec-table btv-bom-table">
@@ -301,7 +320,16 @@ ${renderBrandCards(catalog, lang)}
         </div>
       </section>`);
   }
-  const order = ['crankcases', 'engine-covers', 'complete-engines'];
+  const CORE_CATEGORY_IDS = new Set(['crankcases', 'engine-covers', 'complete-engines']);
+  const order = [
+    'complete-engines',
+    'crankcases',
+    'engine-covers',
+    'cylinder-head-kits',
+    'crankshaft-timing',
+    'clutch-transmission',
+    'overhaul-seals'
+  ];
   const categories = (catalog.categories || [])
     .slice()
     .sort((a, b) => {
@@ -310,6 +338,12 @@ ${renderBrandCards(catalog, lang)}
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     });
   for (const category of categories) {
+    const hasProducts = publicProducts(catalog).some((p) => {
+      if (p.category !== category.id) return false;
+      if (page.brand && !(p.vehicle_brands || []).includes(page.brand)) return false;
+      return true;
+    });
+    if (!CORE_CATEGORY_IDS.has(category.id) && !hasProducts) continue;
     parts.push(renderCategorySection(catalog, category, lang, page.brand, detailSet));
   }
   const modelHubsHtml = renderModelHubsSection(catalog, lang, page.brand);
@@ -338,8 +372,8 @@ function detailPageHtml(catalog, product, lang) {
   const name = lang === 'zh' ? product.name_zh : product.name_en;
   const isZh = lang === 'zh';
   const home = isZh ? '/zh-cn/' : '/en/';
-  const hub = isZh ? '/zh-cn/bajaj-tvs-engines-parts/' : '/en/bajaj-tvs-engines-parts';
-  const productsCrumb = isZh ? '/zh-cn/products/' : '/en/products';
+  const hub = isZh ? '/zh-cn/bajaj-tvs-engines-parts' : '/en/bajaj-tvs-engines-parts';
+  const productsCrumb = isZh ? '/zh-cn/products' : '/en/products';
   const productsCrumbLabel = isZh ? '发动机产品' : 'Products';
   const hubLabel = isZh ? 'Bajaj / TVS 发动机与配件' : 'Bajaj / TVS Engines & Parts';
   const contact = isZh ? '/zh-cn/contact/' : '/en/contact';
@@ -397,7 +431,28 @@ function detailPageHtml(catalog, product, lang) {
   const quoteLabel = isZh ? '获取报价' : 'Get a Quote';
 
   const evidenceHref = isZh ? '/zh-cn/evidence/' : '/en/evidence';
-  const entityGraph = {
+  const photoUrls = (product.photos || [])
+    .filter((ph) => ph && ph.src)
+    .map((ph) => `https://chixiangmotor.com/${ph.src}`);
+  const productNode = {
+    '@type': 'Product',
+    '@id': `${canonical}#product`,
+    name,
+    description: desc,
+    url: canonical,
+    brand: { '@id': 'https://chixiangmotor.com/#organization' },
+    manufacturer: { '@id': 'https://chixiangmotor.com/#organization' },
+    ...(product.part_number ? { sku: product.part_number, mpn: product.part_number } : {}),
+    ...(photoUrls.length ? { image: photoUrls } : {}),
+    ...(specRows.length ? {
+      additionalProperty: specRows.map(([k, v]) => ({
+        '@type': 'PropertyValue',
+        name: k,
+        value: String(v)
+      }))
+    } : {})
+  };
+  const productGraph = {
     '@context': 'https://schema.org',
     '@graph': [
       {
@@ -408,10 +463,22 @@ function detailPageHtml(catalog, product, lang) {
         alternateName: 'Chixiang Motor',
         url: 'https://chixiangmotor.com/',
         logo: 'https://chixiangmotor.com/images/logo.webp',
-        foundingDate: '2007'
+        foundingDate: '2007',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District',
+          addressLocality: 'Chongqing',
+          addressCountry: 'CN'
+        }
       },
+      productNode
+    ]
+  };
+  const entityGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        '@type': 'WebPage',
+        '@type': 'ItemPage',
         '@id': `${canonical}#webpage`,
         url: canonical,
         name,
@@ -419,7 +486,8 @@ function detailPageHtml(catalog, product, lang) {
         publisher: { '@id': 'https://chixiangmotor.com/#organization' },
         inLanguage: isZh ? 'zh-cn' : 'en',
         description: desc,
-        breadcrumb: { '@id': `${canonical}#breadcrumb` }
+        breadcrumb: { '@id': `${canonical}#breadcrumb` },
+        mainEntity: { '@id': `${canonical}#product` }
       },
       {
         '@type': 'BreadcrumbList',
@@ -472,6 +540,9 @@ ${DETAIL_MARKER}
   <meta property="og:image" content="${escapeHtml(ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/css/style.css">
+  <script type="application/ld+json">
+${JSON.stringify(productGraph, null, 2)}
+  </script>
   <script type="application/ld+json" data-site-entity-graph>
 ${JSON.stringify(entityGraph, null, 2)}
   </script>
@@ -499,13 +570,15 @@ ${JSON.stringify(entityGraph, null, 2)}
   <nav class="navbar">
     <div class="container">
       <a href="${home}" class="nav-logo"><span class="logo-icon"><img src="/images/logo.webp" alt="CHIXIANG MOTOR" width="36" height="36" decoding="async"></span><span class="logo-text">CHIXIANG MOTOR</span></a>
-      <ul class="nav-links"><li><a href="${home}">${homeLabel}</a></li><li><a href="${productsCrumb}">${productsCrumbLabel}</a></li><li><a href="${hub}" aria-current="page">${hubLabel}</a></li><li><a href="${contact}">${contactLabel}</a></li></ul>
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">${isZh
+        ? `<li><a href="/zh-cn/">首页</a></li><li><a href="/zh-cn/products">发动机产品</a></li><li><a href="/zh-cn/bajaj-tvs-engines-parts" class="active" aria-current="page">Bajaj / TVS 配件</a></li><li><a href="/zh-cn/evidence">证据中心</a></li><li><a href="/zh-cn/contact/">联系询价</a></li>`
+        : `<li><a href="/en/">Home</a></li><li><a href="/en/products">Products</a></li><li><a href="/en/bajaj-tvs-engines-parts" class="active" aria-current="page">Bajaj / TVS Parts</a></li><li><a href="/en/evidence">Evidence</a></li><li><a href="/en/about">About Us</a></li><li><a href="/en/news">News</a></li><li><a href="/en/contact">Contact</a></li>`}</ul>
       <div class="nav-right"><a href="${escapeHtml(inquiryHref(lang, product, 'detail-page'))}" class="btn btn-accent btn-sm">${quoteLabel}</a><button class="menu-toggle" aria-label="${isZh ? '打开菜单' : 'Toggle menu'}"><span></span><span></span><span></span></button></div>
     </div>
   </nav>
   <main>
     <section class="page-header"><div class="container">
-      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="${home}">${homeLabel}</a><span aria-hidden="true">/</span><a href="${productsCrumb}">${productsCrumbLabel}</a><span aria-hidden="true">/</span><a href="${hub}">${hubLabel}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(name)}</span></nav>
+      <nav class="breadcrumb entity-breadcrumb" aria-label="Breadcrumb"><a href="${home}">${homeLabel}</a><span aria-hidden="true">/</span><a href="${productsCrumb}">${productsCrumbLabel}</a><span aria-hidden="true">/</span><a href="${hub}">${escapeHtml(hubLabel)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(name)}</span></nav>
       <h1>${escapeHtml(name)}</h1>
       <p class="section-subtitle">${escapeHtml(desc)}</p>
     </div></section>

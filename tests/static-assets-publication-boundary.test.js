@@ -160,12 +160,14 @@ test('the Worker entry point is untouched while its source stops being an asset'
 
 test('this hardening touches no governed Foundation file', () => {
   const sitemap = read('sitemap.xml');
-  // 53 baseline + 21 approved zh-cn pages + /en/evidence + 3 EN Bajaj/TVS pages
-  assert.equal((sitemap.match(/<loc>/g) || []).length, 78, 'sitemap entity set is baseline plus approved zh-cn, evidence, and Bajaj/TVS pages');
+  const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
+  const expectedCanonical = 78 + 2 * publicBtvCount;
+  // 53 baseline + 21 approved zh-cn pages + /en/evidence + 3 EN Bajaj/TVS pages + public Bajaj/TVS detail pages
+  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches baseline + approved zh-cn, evidence, and Bajaj/TVS pages');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
   assert.ok(!/ads/.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);
-  assert.equal(manifest.length, 78, 'manifest page set is baseline plus approved zh-cn, evidence, and Bajaj/TVS pages');
+  assert.equal(manifest.length, expectedCanonical, 'manifest page set matches baseline + approved zh-cn, evidence, and Bajaj/TVS pages');
 });
 
 test('the pdf directory stays public while the extracted text artifact is withheld', () => {

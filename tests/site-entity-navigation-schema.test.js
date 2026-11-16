@@ -62,6 +62,7 @@ function pageRole(page) {
   if (/^\/zh-cn\/guides\//.test(page.pathname)) return 'article';
   if (/^\/zh-cn\/(?:factory|evidence|domestic-wholesale)$/.test(page.pathname)) return 'about';
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(page.pathname)) return 'market';
+  if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(page.pathname)) return 'btv-detail';
   return 'family';
 }
 
@@ -74,6 +75,7 @@ function expectedPageType(role) {
     news: 'CollectionPage',
     article: 'WebPage',
     market: 'WebPage',
+    'btv-detail': 'ItemPage',
     family: 'CollectionPage'
   }[role];
 }
@@ -82,7 +84,8 @@ function expectedTrail(page) {
   const role = pageRole(page);
   if (role === 'home') return [];
   const trail = [`${origin}/${page.language}/`];
-  if (role === 'family' || role === 'market') trail.push(`${origin}/${page.language}/products`);
+  if (role === 'family' || role === 'market' || role === 'btv-detail') trail.push(`${origin}/${page.language}/products`);
+  if (role === 'btv-detail') trail.push(`${origin}/${page.language}/bajaj-tvs-engines-parts`);
   if (role === 'article') {
     trail.push(page.language === 'zh-cn' ? `${origin}/zh-cn/guides/` : `${origin}/${page.language}/news`);
   }
@@ -107,10 +110,13 @@ function breadcrumbUrls(node) {
   });
 }
 
-test('sitemap manifest contains exactly 78 canonical source pages', () => {
+const expectedPublicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true).length;
+const expectedCanonicalTotal = 78 + 2 * expectedPublicBtvCount;
+
+test('sitemap manifest contains exactly the expected canonical source pages', () => {
   const pages = sitemapPages();
-  assert.equal(pages.length, 78);
-  assert.equal(new Set(pages.map(page => page.url)).size, 78);
+  assert.equal(pages.length, expectedCanonicalTotal);
+  assert.equal(new Set(pages.map(page => page.url)).size, expectedCanonicalTotal);
   for (const page of pages) {
     assert.ok(fs.existsSync(path.join(root, page.file)), `${page.url}: missing ${page.file}`);
     assert.equal(new URL(page.url).origin, origin);
@@ -126,7 +132,7 @@ test('maintenance manifest reproduces the canonical role and breadcrumb contract
 
   assert.equal(actualOrganizationId, organizationId);
   assert.equal(actualWebsiteId, websiteId);
-  assert.equal(manifest.length, 78);
+  assert.equal(manifest.length, expectedCanonicalTotal);
   assert.deepEqual(manifest.map(entry => entry.url), expected.map(page => page.url));
   for (let index = 0; index < expected.length; index += 1) {
     const page = expected[index];
@@ -150,18 +156,20 @@ test('all canonical pages publish their safe primary page type and stable entity
     assert.ok(html.includes(websiteId), `${page.file}: missing shared WebSite @id`);
     assert.doesNotMatch(
       JSON.stringify(jsonLdBlocks(html, page.file)),
-      /"@type":"(?:Product|ProductGroup|Offer|Review|AggregateRating)"/,
+      role === 'btv-detail'
+        ? /"@type":"(?:ProductGroup|Offer|Review|AggregateRating)"/
+        : /"@type":"(?:Product|ProductGroup|Offer|Review|AggregateRating)"/,
       `${page.file}: ecommerce schema is outside the approved scope`
     );
   }
 });
 
-test('47 non-home pages expose a visible canonical breadcrumb trail', () => {
+test('non-home pages expose a visible canonical breadcrumb trail', () => {
   const pages = sitemapPages();
   const homePages = pages.filter(page => pageRole(page) === 'home');
   const nonHomePages = pages.filter(page => pageRole(page) !== 'home');
   assert.equal(homePages.length, 6);
-  assert.equal(nonHomePages.length, 72);
+  assert.equal(nonHomePages.length, expectedCanonicalTotal - 6);
 
   for (const page of homePages) {
     assert.equal(visibleBreadcrumb(read(page.file)), null, `${page.file}: language home has no breadcrumb`);
@@ -218,7 +226,7 @@ test('the 78-page governance matrix records the entity link and schema contract'
   const header = lines[0].split(',');
   const testsColumn = header.indexOf('tests');
   assert.notEqual(testsColumn, -1, 'matrix tests column');
-  assert.equal(lines.length - 1, 78, 'matrix canonical page rows');
+  assert.equal(lines.length - 1, expectedCanonicalTotal, 'matrix canonical page rows');
   for (const line of lines.slice(1)) {
     const columns = line.split(',');
     assert.match(columns[testsColumn], /(?:^|\|)site entity link\/schema contract(?:\||$)/);

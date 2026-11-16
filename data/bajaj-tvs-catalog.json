@@ -65,11 +65,122 @@
       "name_zh": "发动机总成",
       "anchor": "complete-engines",
       "description_en": "Complete aftermarket replacement engine assemblies built to OEM mounting and shaft specifications for direct distributor and fleet supply.",
-      "description_zh": "适用于已支持摩托车应用的发动机总成。供货与配置按订单确认。",
+      "description_zh": "按原厂安装接口、花键与传动规格制造的整机替换总成，支持与国产 CG/CB/水冷三轮整机同柜混装出口。",
+      "subcategories": []
+    },
+    {
+      "id": "cylinder-head-kits",
+      "name_en": "Cylinder Kits & Heads",
+      "name_zh": "套缸活塞与缸头总成",
+      "anchor": "cylinder-head-kits",
+      "description_en": "Precision-bored cylinder blocks, pistons, rings, cylinder heads, and rocker assemblies matched to target OEM displacements.",
+      "description_zh": "按目标原厂排量与气道结构匹配的套缸活塞组件、缸头总成与气门摇臂部件。",
+      "subcategories": []
+    },
+    {
+      "id": "crankshaft-timing",
+      "name_en": "Crankshafts & Timing",
+      "name_zh": "曲轴连杆与正时部件",
+      "anchor": "crankshaft-timing",
+      "description_en": "Forged crankshaft connecting-rod assemblies, silent timing chains, and tensioners for high-mileage commuter and 3-wheeler fleets.",
+      "description_zh": "高里程商用两轮与三轮车型专用的锻造曲轴连杆总成、正时链条及涨紧器组件。",
+      "subcategories": []
+    },
+    {
+      "id": "clutch-transmission",
+      "name_en": "Clutch & Transmission",
+      "name_zh": "离合器与传动/倒挡齿轮",
+      "anchor": "clutch-transmission",
+      "description_en": "Clutch assemblies, friction plates, primary/counter transmission shafts, shift drums, and 3-wheeler reverse gear sets.",
+      "description_zh": "重载离合器总成、摩擦片、主副轴传动齿轮、变速鼓拨叉及三轮车倒挡齿轮组。",
+      "subcategories": []
+    },
+    {
+      "id": "overhaul-seals",
+      "name_en": "Overhaul Gasket & Seal Kits",
+      "name_zh": "全车大修包 / 密封垫片包",
+      "anchor": "overhaul-seals",
+      "description_en": "Complete engine overhaul gasket kits and oil seal sets for field maintenance and distributor service stock.",
+      "description_zh": "适用于售后整机大修的全套密封垫片包、油封包及边盖密封件。",
       "subcategories": []
     }
   ],
   "model_hubs": [
+    {
+      "id": "bajaj-boxer-ct100-bm100",
+      "brand": "bajaj",
+      "supply_scope": "engines-and-parts",
+      "detail_product_id": "bajaj-boxer-ct100-bm100-complete-engine",
+      "model_name_en": "Bajaj Boxer CT100 / Boxer BM100",
+      "model_name_zh": "Bajaj Boxer CT100 / Boxer BM100 商用两轮平台",
+      "displacement_cc": "99.27 cc (53.0 × 45.0 mm) / 102 cc (47.0 × 58.8 mm) opt.",
+      "engine_code": "CT100 / BM100 OHC (DU10 / DD10 / PF Ref.)",
+      "summary_en": "Built to Indian OEM 4-stroke air-cooled SOHC architecture (99.27 cc classic spec: 6.03 kW / 8.2 PS @ 7,500 rpm, 8.05 N·m @ 4,500 rpm, 9.5:1 compression, 4-speed constant mesh, 1.0 L oil capacity, 428-14T sprocket). Available both as complete replacement engines and as core overhaul castings/kits, consolidated in mixed containers with Chinese CG/CB engines.",
+      "summary_zh": "严格对标印度原厂四冲程风冷顶置凸轮轴（OHC）平台规格（经典 99.27 cc 版：53.0×45.0 mm，6.03 kW / 8.2 PS @ 7,500 rpm，8.05 N·m @ 4,500 rpm，压缩比 9.5:1，国际 4 挡常啮合，脚启动，机油容量 1.0 L，428-14T 输出链轮；另可按单确认 102 cc 长行程 47.0×58.8 mm 版）。支持整机总成及重点核心件出口，并可与中国 CG/CB 整机同柜混装发运。",
+      "core_parts": [
+        {
+          "part_name_en": "Complete Replacement Engine Assembly (Kick Start, 4-Speed)",
+          "part_name_zh": "Boxer CT100 / BM100 整机总成（脚启动·4挡）",
+          "category": "complete-engines",
+          "chixiang_pn": "CX-BJ-CT100-ENG",
+          "oem_ref": "DU10 Platform",
+          "material_spec": "99.27 cc OHC · 1.0 L oil · 428-14T sprocket · Export ready",
+          "notes_en": "Matched to CT100 / Boxer BM100 mounting points & wiring harness.",
+          "notes_zh": "对标原厂悬挂安装孔位、外置上油管及线束插头。"
+        },
+        {
+          "part_name_en": "Left & Right Crankcase Halves",
+          "part_name_zh": "左右曲轴箱体（中箱体）",
+          "category": "crankcases",
+          "chixiang_pn": "CX-BJ-CT100-CC",
+          "oem_ref": "DU10 / DD70013N Ref.",
+          "material_spec": "ADC12 Die-Cast Aluminum · CNC Bearing Bores",
+          "notes_en": "Verify kick-start vs electric-start boss before ordering.",
+          "notes_zh": "订购前请核对脚启动或电启动箱体版本。"
+        },
+        {
+          "part_name_en": "Clutch Cover Assembly (Right Engine Cover)",
+          "part_name_zh": "离合器边盖（右盖 · OIL 1.0L 标识）",
+          "category": "engine-covers",
+          "chixiang_pn": "CX-BJ-CT100-RC",
+          "oem_ref": "36DU4079 / 52PF0761",
+          "material_spec": "Die-Cast Aluminum · Mating Face Machined",
+          "notes_en": "Includes oil sight window & oil filler boss.",
+          "notes_zh": "带机油观察窗及注油口安装位。"
+        },
+        {
+          "part_name_en": "Magneto Cover Assembly (Left Stator Cover - Kick Start)",
+          "part_name_zh": "磁电机边盖（左盖 · 脚启动版）",
+          "category": "engine-covers",
+          "chixiang_pn": "CX-BJ-CT100-LC",
+          "oem_ref": "52PF2129 / 52PF2124",
+          "material_spec": "ADC12 Aluminum · Protective Stator & Sprocket Housing",
+          "notes_en": "ES variant (52PF2105) available per model confirmation.",
+          "notes_zh": "电启动版本（52PF2105 参考）可按车型版本确认供货。"
+        },
+        {
+          "part_name_en": "Cylinder Block & Piston Kit (53.0 mm)",
+          "part_name_zh": "套缸活塞总成（缸体 + 活塞 + 环 + 销）",
+          "category": "cylinder-head-kits",
+          "chixiang_pn": "CX-BJ-CT100-CY",
+          "oem_ref": "DU101218 / 36DU4212",
+          "material_spec": "Cast Alloy Liner + Piston & Ring Set (53.0 × 45.0 mm)",
+          "notes_en": "99.27 cc standard bore; 102 cc kit (36PF0027/0045 ref.) on request.",
+          "notes_zh": "99.27 cc 标准缸径；102 cc 长行程套件可按单确认。"
+        },
+        {
+          "part_name_en": "Clutch Cover & Magneto Cover Gasket Set",
+          "part_name_zh": "左右边盖密封垫片 / 全车大修密封包",
+          "category": "overhaul-seals",
+          "chixiang_pn": "CX-BJ-CT100-GK",
+          "oem_ref": "DD101060 / JP541208",
+          "material_spec": "Heat-Resistant Non-Asbestos Composite & Oil Seals",
+          "notes_en": "Full engine overhaul gasket kit available for batch service stock.",
+          "notes_zh": "提供边盖垫片及全车大修密封包批量配货。"
+        }
+      ],
+      "public": true
+    },
     {
       "_template_note": "【录入示例模板 · public=false 不会发布到前台】按车型聚合多款核心配件与 OEM 参考料号，避免一物一页。填入真实数据时请把占位示例替换为工厂确认值，并将 public 改为 true。",
       "id": "template-bajaj-boxer-bm150",
@@ -107,6 +218,126 @@
     }
   ],
   "products": [
+    {
+      "id": "bajaj-boxer-ct100-bm100-complete-engine",
+      "name_en": "Complete Replacement Engine for Bajaj Boxer CT100 / BM100 (99.27 cc OHC)",
+      "name_zh": "适配 Bajaj Boxer CT100 / BM100 发动机总成（99.27 cc 单缸风冷 OHC）",
+      "part_number": "CX-BJ-CT100-ENG",
+      "oem_part_numbers": [
+        "DU10 Platform",
+        "DU101218",
+        "36DU4079",
+        "52PF2129"
+      ],
+      "category": "complete-engines",
+      "subcategory": "",
+      "product_brand": "CHIXIANG MOTOR",
+      "vehicle_brands": [
+        "bajaj"
+      ],
+      "models": [
+        {
+          "name": "Bajaj Boxer CT100 / Boxer BM100",
+          "versions": [
+            "Classic 99.27 cc Kick-Start (53.0 × 45.0 mm)",
+            "102 cc Long-Stroke Option (47.0 × 58.8 mm)"
+          ]
+        }
+      ],
+      "engine_codes": [
+        "CT100 / BM100 OHC"
+      ],
+      "photos": [
+        {
+          "src": "images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+          "alt_en": "CHIXIANG MOTOR replacement complete engine for Bajaj Boxer CT100 / BM100 clutch side view",
+          "alt_zh": "重庆驰翔适配 Bajaj Boxer CT100 / BM100 发动机总成右侧离合器边盖实拍",
+          "view": "outer"
+        },
+        {
+          "src": "images/bajaj-tvs/bajaj-boxer-ct100-bm100-magneto-side.webp",
+          "alt_en": "CHIXIANG MOTOR replacement complete engine for Bajaj Boxer CT100 / BM100 magneto and sprocket side view",
+          "alt_zh": "重庆驰翔适配 Bajaj Boxer CT100 / BM100 发动机总成左侧磁电机与链轮实拍",
+          "view": "mating"
+        },
+        {
+          "src": "images/bajaj-tvs/bajaj-boxer-ct100-bm100-sprocket-interface.webp",
+          "alt_en": "Bajaj Boxer CT100 / BM100 428-14T output sprocket, wiring harness, and mounting interface detail",
+          "alt_zh": "Bajaj Boxer CT100 / BM100 428-14T 输出链轮与线束接口细节实拍",
+          "view": "interface"
+        }
+      ],
+      "delivery_form": "assembly",
+      "specs": {
+        "engine_type": {
+          "label_en": "Engine Type",
+          "label_zh": "发动机类型",
+          "value": "Single-cylinder, 4-stroke, air-cooled, SOHC"
+        },
+        "displacement": {
+          "label_en": "OEM Reference Displacement",
+          "label_zh": "对标原厂排量",
+          "value": "99.27 cc (102 cc / 47.0 × 58.8 mm generation available per order)"
+        },
+        "bore_stroke": {
+          "label_en": "Bore × Stroke",
+          "label_zh": "缸径 × 行程",
+          "value": "53.0 × 45.0 mm (classic 99.27 cc OEM spec)"
+        },
+        "compression_ratio": {
+          "label_en": "Compression Ratio",
+          "label_zh": "压缩比",
+          "value": "9.5 : 1"
+        },
+        "max_power": {
+          "label_en": "Max Net Power (OEM Spec)",
+          "label_zh": "最大净功率（原厂标准）",
+          "value": "6.03 kW (8.2 PS) @ 7,500 rpm"
+        },
+        "max_torque": {
+          "label_en": "Max Net Torque (OEM Spec)",
+          "label_zh": "最大净扭矩（原厂标准）",
+          "value": "8.05 N·m @ 4,500 rpm"
+        },
+        "transmission": {
+          "label_en": "Transmission",
+          "label_zh": "变速箱",
+          "value": "4-speed constant mesh"
+        },
+        "start_method": {
+          "label_en": "Starting System",
+          "label_zh": "启动方式",
+          "value": "Kick-start"
+        },
+        "oil_capacity": {
+          "label_en": "Engine Oil Capacity",
+          "label_zh": "机油容量",
+          "value": "1.0 L (OIL 1.0L specification)"
+        },
+        "output_interface": {
+          "label_en": "Output Sprocket & Harness",
+          "label_zh": "输出链轮与线束",
+          "value": "428-14T drive sprocket · Standard multi-pin plug & breather hoses"
+        },
+        "packaging": {
+          "label_en": "Container & Packaging",
+          "label_zh": "出口包装与混装",
+          "value": "Export carton / palletized loading; supports mixed container with CG & CB engines"
+        }
+      },
+      "included_accessories": [
+        {
+          "name_en": "428-14T output drive sprocket",
+          "name_zh": "428-14T 主动输出链轮"
+        },
+        {
+          "name_en": "Pre-wired stator harness plug & crankcase breather hoses",
+          "name_zh": "磁电机插头线束及曲轴箱通气管"
+        }
+      ],
+      "related_products": [],
+      "public": true
+    },
     {
       "_template_note": "【整机/核心总成示例模板 · public=false 不会生成详情页或写入 sitemap】仅用于整机或独立核心总成；真实图片放 images/bajaj-tvs/ 后按 photos 格式填写，确认无误后再将 public 改为 true。",
       "id": "template-bajaj-boxer-bm150-complete-engine",

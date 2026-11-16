@@ -3940,3 +3940,37 @@ body:has(.about-page-header) .section-subtitle {
   background: #dbeafe;
   border-color: #2563eb;
 }
+
+.btv-page .product-card .product-img.has-img {
+  background-color: #f4f6f8;
+  border-bottom: 1px solid var(--border-color);
+}
+.btv-model-hub-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.btv-supply-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btv-supply-badge--engine {
+  background: #e6f4ea;
+  color: #137333;
+  border: 1px solid #b7e1c4;
+}
+.btv-supply-badge--parts {
+  background: #e8f0fe;
+  color: #1967d2;
+  border: 1px solid #bfd7fb;
+}
+.btv-model-actions {
+  margin: 0.25rem 0 0.85rem;
+}

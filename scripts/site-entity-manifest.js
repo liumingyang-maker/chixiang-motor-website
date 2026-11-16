@@ -6,12 +6,12 @@ const organizationId = `${canonicalOrigin}/#organization`;
 const websiteId = `${canonicalOrigin}/#website`;
 
 const labels = {
-  en: { home: 'Home', products: 'Products', news: 'News' },
+  en: { home: 'Home', products: 'Products', news: 'News', btvHub: 'Bajaj / TVS Engines & Parts' },
   es: { home: 'Inicio', products: 'Productos', news: 'Noticias' },
   pt: { home: 'Início', products: 'Produtos', news: 'Notícias' },
   ru: { home: 'Главная', products: 'Продукты', news: 'Новости' },
   ar: { home: 'الرئيسية', products: 'المنتجات', news: 'الأخبار' },
-  'zh-cn': { home: '首页', products: '发动机产品', news: '采购指南' }
+  'zh-cn': { home: '首页', products: '发动机产品', news: '采购指南', btvHub: 'Bajaj / TVS 发动机与配件' }
 };
 
 const marketTitles = {
@@ -64,6 +64,9 @@ function classify(pathname) {
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(pathname)) {
     return { role: 'market', schemaType: 'WebPage' };
   }
+  if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(pathname)) {
+    return { role: 'btv-detail', schemaType: 'ItemPage' };
+  }
   return { role: 'family', schemaType: 'CollectionPage' };
 }
 
@@ -88,8 +91,11 @@ function breadcrumbFor(entry) {
   if (entry.role === 'home') return [];
   const languageLabels = labels[entry.language];
   const trail = [{ name: languageLabels.home, item: `${canonicalOrigin}/${entry.language}/` }];
-  if (entry.role === 'family' || entry.role === 'market') {
+  if (entry.role === 'family' || entry.role === 'market' || entry.role === 'btv-detail') {
     trail.push({ name: languageLabels.products, item: `${canonicalOrigin}/${entry.language}/products` });
+  }
+  if (entry.role === 'btv-detail') {
+    trail.push({ name: languageLabels.btvHub, item: `${canonicalOrigin}/${entry.language}/bajaj-tvs-engines-parts` });
   }
   if (entry.role === 'article') {
     trail.push({ name: languageLabels.news, item: entry.language === 'zh-cn' ? `${canonicalOrigin}/zh-cn/guides/` : `${canonicalOrigin}/${entry.language}/news` });

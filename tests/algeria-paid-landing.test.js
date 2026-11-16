@@ -86,7 +86,8 @@ test('the paid page stays outside the SEO Foundation contract', () => {
   assert.ok(!/ads/.test(read('robots.txt')), 'robots.txt must stay open so noindex can be read');
   const manifest = loadManifest(root);
   assert.ok(manifest.every((entry) => !/ads/.test(entry.pathname)), 'manifest must not classify the paid page');
-  assert.equal(manifest.length, 78, 'the governed 78-page sitemap set is unchanged');
+  const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
+  assert.equal(manifest.length, 78 + 2 * publicBtvCount, 'the governed sitemap set matches baseline + public Bajaj/TVS detail pages');
 });
 
 test('no organic page links to the paid page yet', () => {

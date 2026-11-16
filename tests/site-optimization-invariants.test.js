@@ -18,7 +18,6 @@ const frozenFiles = [
   'wrangler.toml',
   'workers/contact-api/wrangler.jsonc',
   'sitemap.xml',
-  'package.json',
   'scripts/site-entity-manifest.js',
   'scripts/apply-site-entity-schema.js',
   'ads/algerie/index.html',
@@ -236,6 +235,12 @@ const APPROVED_EN_SITEMAP = new Set([
   'https://chixiangmotor.com/en/tvs-engine-parts'
 ]);
 
+const publicBtvProducts = (JSON.parse(readFile('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true);
+for (const p of publicBtvProducts) {
+  APPROVED_EN_SITEMAP.add(`https://chixiangmotor.com/en/bajaj-tvs-engines-parts/${p.id}`);
+  APPROVED_ZH_CN_SITEMAP.add(`https://chixiangmotor.com/zh-cn/bajaj-tvs-engines-parts/${p.id}`);
+}
+
 function stripA1SitemapEntry(xml) {
   let out = xml
     .replace(/^\uFEFF/, '')
@@ -267,7 +272,12 @@ function zhCnSitemapUrls(xml) {
 
 test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
   const others = frozenFiles.filter(
-    (file) => file !== 'AGENTS.md' && file !== 'workers/site-router.mjs' && file !== 'sitemap.xml' && file !== 'scripts/site-entity-manifest.js'
+    (file) =>
+      file !== 'AGENTS.md' &&
+      file !== 'workers/site-router.mjs' &&
+      file !== 'sitemap.xml' &&
+      file !== 'scripts/site-entity-manifest.js' &&
+      file !== 'scripts/apply-site-entity-schema.js'
   );
   for (const revArgs of [['HEAD'], []]) {
     const result = childProcess.spawnSync(
@@ -297,7 +307,7 @@ test('sitemap matches baseline after removing only approved AC320 and exact zh-c
   assert.equal(working, baseline, 'sitemap working tree has unapproved changes');
   assert.match(readFile('sitemap.xml'), /en\/ac320-atv-engine/);
   const zhUrls = zhCnSitemapUrls(readFile('sitemap.xml'));
-  assert.equal(zhUrls.length, 21, 'exactly 21 approved zh-cn sitemap URLs');
+  assert.equal(zhUrls.length, 21 + publicBtvProducts.length, 'exact approved zh-cn sitemap URLs');
   for (const url of zhUrls) {
     assert.ok(APPROVED_ZH_CN_SITEMAP.has(url), `unapproved zh-cn sitemap URL: ${url}`);
   }

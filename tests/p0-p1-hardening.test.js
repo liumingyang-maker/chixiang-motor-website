@@ -150,3 +150,36 @@ test('batch OEM quote basket and contact prefill scripts expose BOM contracts', 
   assert.match(prefillJs, /btvSelectedPartsSummary/);
   assert.match(prefillJs, /btv_items/);
 });
+
+test('Bajaj Boxer CT100 / BM100 live product page and model hub publish OEM specs and real photos', () => {
+  const detailEn = read('en/bajaj-tvs-engines-parts/bajaj-boxer-ct100-bm100-complete-engine.html');
+  for (const needle of [
+    '99.27 cc',
+    '53.0 × 45.0 mm',
+    '6.03 kW (8.2 PS) @ 7,500 rpm',
+    '8.05 N·m @ 4,500 rpm',
+    '9.5 : 1',
+    '4-speed constant mesh',
+    '1.0 L',
+    '428-14T',
+    '"@type": "Product"',
+    'AW-16777656395',
+    '109483511'
+  ]) {
+    assert.ok(detailEn.includes(needle), `Missing CT100 detail spec/tag: ${needle}`);
+  }
+
+  for (const imgRel of [
+    'images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp',
+    'images/bajaj-tvs/bajaj-boxer-ct100-bm100-magneto-side.webp',
+    'images/bajaj-tvs/bajaj-boxer-ct100-bm100-sprocket-interface.webp'
+  ]) {
+    assert.ok(fs.existsSync(path.join(root, imgRel)), `Missing image: ${imgRel}`);
+    assert.ok(detailEn.includes(imgRel), `Detail page missing photo: ${imgRel}`);
+  }
+
+  const bajajBrand = read('en/bajaj-engine-parts.html');
+  assert.ok(bajajBrand.includes('bajaj-boxer-ct100-bm100-complete-engine'), 'Bajaj brand page must link CT100 engine');
+  assert.ok(bajajBrand.includes('36DU4079'), 'Bajaj brand page must include verified OEM cover PN');
+  assert.ok(bajajBrand.includes('DU101218'), 'Bajaj brand page must include verified OEM cylinder kit PN');
+});

@@ -126,6 +126,7 @@ function pageNode(entry) {
   }
   if (entry.role === 'about') node.mainEntity = { '@id': organizationId };
   if (entry.role === 'article') node.mainEntity = { '@id': `${entry.url}#article` };
+  if (entry.role === 'btv-detail') node.mainEntity = { '@id': `${entry.url}#product` };
   return node;
 }
 
