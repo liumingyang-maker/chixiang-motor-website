@@ -735,6 +735,14 @@ h4 { font-size: 1.1rem; }
   margin-bottom: 1rem;
 }
 
+.btv-page .cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .cta-section .cta-actions {
   display: flex;
   gap: 1rem;
@@ -3147,7 +3155,7 @@ body:has(.about-page-header) .section-subtitle {
   .hero,
   .footer {
     overflow-x: hidden;
-    max-width: 100vw;
+    max-width: 100%;
   }
 
   img,
@@ -3588,6 +3596,12 @@ body:has(.about-page-header) .section-subtitle {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
+  max-width: 100%;
+}
+
+.entity-breadcrumb > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .entity-breadcrumb [aria-hidden="true"] {

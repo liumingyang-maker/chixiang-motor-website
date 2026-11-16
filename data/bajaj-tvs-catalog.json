@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "updated": "2026-11-11",
+  "note": "Bajaj / TVS 发动机与配件唯一产品数据源。分类页与品牌页共用此文件。products 数组为空时前台只展示分类与询价入口，不生成虚构产品。字段规范见 bajaj-tvs-catalog.schema.md",
+  "brands": [
+    {
+      "id": "bajaj",
+      "name_en": "Bajaj",
+      "name_zh": "Bajaj",
+      "path_en": "/en/bajaj-engine-parts",
+      "path_zh": "/zh-cn/bajaj-engine-parts/"
+    },
+    {
+      "id": "tvs",
+      "name_en": "TVS",
+      "name_zh": "TVS",
+      "path_en": "/en/tvs-engine-parts",
+      "path_zh": "/zh-cn/tvs-engine-parts/"
+    }
+  ],
+  "categories": [
+    {
+      "id": "crankcases",
+      "name_en": "Crankcases",
+      "name_zh": "箱体、曲轴箱",
+      "anchor": "crankcases",
+      "description_en": "Left and right crankcase halves and related crankcase components. Confirm engine code and model version before ordering.",
+      "description_zh": "左右箱体及曲轴箱相关件。订购前请确认发动机代码与具体车型版本。",
+      "subcategories": [
+        {
+          "id": "left-crankcase",
+          "name_en": "Left crankcase",
+          "name_zh": "左箱体"
+        },
+        {
+          "id": "right-crankcase",
+          "name_en": "Right crankcase",
+          "name_zh": "右箱体"
+        }
+      ]
+    },
+    {
+      "id": "engine-covers",
+      "name_en": "Engine Covers",
+      "name_zh": "发动机盖件",
+      "anchor": "engine-covers",
+      "description_en": "Clutch covers, magneto covers and other engine cover parts. Matching is checked against engine code and interface details.",
+      "description_zh": "离合器盖、磁电机盖及其他发动机盖件。按发动机代码与接口资料核对匹配。",
+      "subcategories": [
+        {
+          "id": "clutch-cover",
+          "name_en": "Clutch cover",
+          "name_zh": "离合器盖"
+        },
+        {
+          "id": "magneto-cover",
+          "name_en": "Magneto cover",
+          "name_zh": "磁电机盖"
+        }
+      ]
+    },
+    {
+      "id": "complete-engines",
+      "name_en": "Complete Engines",
+      "name_zh": "发动机总成",
+      "anchor": "complete-engines",
+      "description_en": "Complete engine assemblies for supported motorcycle applications. Availability and configuration are confirmed per order.",
+      "description_zh": "适用于已支持摩托车应用的发动机总成。供货与配置按订单确认。",
+      "subcategories": []
+    }
+  ],
+  "model_hubs": [],
+  "products": []
+}

@@ -107,10 +107,10 @@ function breadcrumbUrls(node) {
   });
 }
 
-test('sitemap manifest contains exactly 72 canonical source pages', () => {
+test('sitemap manifest contains exactly 78 canonical source pages', () => {
   const pages = sitemapPages();
-  assert.equal(pages.length, 72);
-  assert.equal(new Set(pages.map(page => page.url)).size, 72);
+  assert.equal(pages.length, 78);
+  assert.equal(new Set(pages.map(page => page.url)).size, 78);
   for (const page of pages) {
     assert.ok(fs.existsSync(path.join(root, page.file)), `${page.url}: missing ${page.file}`);
     assert.equal(new URL(page.url).origin, origin);
@@ -126,7 +126,7 @@ test('maintenance manifest reproduces the canonical role and breadcrumb contract
 
   assert.equal(actualOrganizationId, organizationId);
   assert.equal(actualWebsiteId, websiteId);
-  assert.equal(manifest.length, 72);
+  assert.equal(manifest.length, 78);
   assert.deepEqual(manifest.map(entry => entry.url), expected.map(page => page.url));
   for (let index = 0; index < expected.length; index += 1) {
     const page = expected[index];
@@ -161,7 +161,7 @@ test('47 non-home pages expose a visible canonical breadcrumb trail', () => {
   const homePages = pages.filter(page => pageRole(page) === 'home');
   const nonHomePages = pages.filter(page => pageRole(page) !== 'home');
   assert.equal(homePages.length, 6);
-  assert.equal(nonHomePages.length, 66);
+  assert.equal(nonHomePages.length, 72);
 
   for (const page of homePages) {
     assert.equal(visibleBreadcrumb(read(page.file)), null, `${page.file}: language home has no breadcrumb`);
@@ -213,12 +213,12 @@ test('generated entity graphs use one marker and responsive breadcrumb CSS', () 
   assert.doesNotMatch(rule[1], /white-space\s*:\s*nowrap|overflow-x\s*:\s*hidden|width\s*:\s*\d+px/);
 });
 
-test('the 72-page governance matrix records the entity link and schema contract', () => {
+test('the 78-page governance matrix records the entity link and schema contract', () => {
   const lines = read('docs/geo-entity/phase-6-1b/PAGE_CHANGE_MATRIX.csv').trim().split(/\r?\n/);
   const header = lines[0].split(',');
   const testsColumn = header.indexOf('tests');
   assert.notEqual(testsColumn, -1, 'matrix tests column');
-  assert.equal(lines.length - 1, 72, 'matrix canonical page rows');
+  assert.equal(lines.length - 1, 78, 'matrix canonical page rows');
   for (const line of lines.slice(1)) {
     const columns = line.split(',');
     assert.match(columns[testsColumn], /(?:^|\|)site entity link\/schema contract(?:\||$)/);

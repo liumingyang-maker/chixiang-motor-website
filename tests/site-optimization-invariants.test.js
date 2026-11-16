@@ -51,6 +51,7 @@ const contactPages = [
 ];
 
 const a2MenuPages = new Set([
+  'en/contact.html',
   'en/cg-engine.html',
   'en/cb-engine.html',
   'en/horizontal-engine.html',
@@ -58,6 +59,7 @@ const a2MenuPages = new Set([
 ]);
 
 const allowedExtraScripts = new Map([
+  ['en/contact.html', new Set(['/js/btv-inquiry-prefill.js'])],
   ['en/cg-engine.html', new Set(['../js/core-menu-accessibility.js', '../js/cg-model-quick-links.js'])],
   ['en/cb-engine.html', new Set(['../js/core-menu-accessibility.js'])],
   ['en/horizontal-engine.html', new Set(['../js/core-menu-accessibility.js'])],
@@ -221,7 +223,17 @@ const APPROVED_ZH_CN_SITEMAP = new Set([
   'https://chixiangmotor.com/zh-cn/guides/cg250-water-cooled-selection',
   'https://chixiangmotor.com/zh-cn/guides/horizontal-engine-buying-checklist',
   'https://chixiangmotor.com/zh-cn/guides/how-to-verify-engine-factory',
-  'https://chixiangmotor.com/zh-cn/guides/engine-fitment-checklist'
+  'https://chixiangmotor.com/zh-cn/guides/engine-fitment-checklist',
+  'https://chixiangmotor.com/zh-cn/bajaj-tvs-engines-parts',
+  'https://chixiangmotor.com/zh-cn/bajaj-engine-parts',
+  'https://chixiangmotor.com/zh-cn/tvs-engine-parts'
+]);
+
+const APPROVED_EN_SITEMAP = new Set([
+  'https://chixiangmotor.com/en/evidence',
+  'https://chixiangmotor.com/en/bajaj-tvs-engines-parts',
+  'https://chixiangmotor.com/en/bajaj-engine-parts',
+  'https://chixiangmotor.com/en/tvs-engine-parts'
 ]);
 
 function stripA1SitemapEntry(xml) {
@@ -230,11 +242,13 @@ function stripA1SitemapEntry(xml) {
     .replace(
       /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/ac320-atv-engine<\/loc>[\s\S]*?<\/url>/,
       ''
-    )
-    .replace(
-      /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/evidence<\/loc>[\s\S]*?<\/url>/,
+    );
+  for (const url of APPROVED_EN_SITEMAP) {
+    out = out.replace(
+      new RegExp('\\s*<url>\\s*<loc>' + url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '</loc>[\\s\\S]*?</url>'),
       ''
     );
+  }
   for (const url of APPROVED_ZH_CN_SITEMAP) {
     out = out.replace(
       new RegExp('\\s*<url>\\s*<loc>' + url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '</loc>[\\s\\S]*?</url>'),
@@ -283,7 +297,7 @@ test('sitemap matches baseline after removing only approved AC320 and exact zh-c
   assert.equal(working, baseline, 'sitemap working tree has unapproved changes');
   assert.match(readFile('sitemap.xml'), /en\/ac320-atv-engine/);
   const zhUrls = zhCnSitemapUrls(readFile('sitemap.xml'));
-  assert.equal(zhUrls.length, 18, 'exactly 18 approved zh-cn sitemap URLs');
+  assert.equal(zhUrls.length, 21, 'exactly 21 approved zh-cn sitemap URLs');
   for (const url of zhUrls) {
     assert.ok(APPROVED_ZH_CN_SITEMAP.has(url), `unapproved zh-cn sitemap URL: ${url}`);
   }
