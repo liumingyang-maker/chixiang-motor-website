@@ -17,6 +17,12 @@
 - 已批准的公司事实、产品事实、型号命名与商业政策；
 - 尚未确认的事实继续留空，尤其不得猜测 152FMH 的实际排量、缸径和行程。
 
+## 对外统一品牌实体口径（Owner 批准）
+
+- 对外全站统一以 `CHIXIANG MOTOR`（`Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.` / 重庆驰翔摩托车制造有限公司）作为唯一品牌与制造实体；
+- 不再在公开产品页与 About 页面展示“三家公司非母子公司、资质不跨主体”及 `reference translation pending legal-name verification` 等防御性分裂文案；
+- 仅在页脚或贸易条款处保留克制的商务出口说明（如 *"Export documentation and logistics are executed through Chixiang's designated export division."*）。
+
 修改上述内容必须同时满足：explicit user approval（用户明确批准）、可追溯的新证据、
 separate PR（独立 PR）、相应自动化测试、Preview 验收和明确回滚方案。
 

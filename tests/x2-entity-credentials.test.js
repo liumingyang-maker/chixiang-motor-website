@@ -18,7 +18,7 @@ test('homepage keeps procurement-fit and adds business presence entry', () => {
   assert.equal(h1s.length, 1);
 });
 
-test('about exposes four X2 anchors with three-entity and evidence copy', () => {
+test('about exposes four X2 anchors with unified CHIXIANG MOTOR entity and evidence copy', () => {
   const html = read('en/about.html');
   for (const id of [
     'business-operations',
@@ -28,9 +28,11 @@ test('about exposes four X2 anchors with three-entity and evidence copy', () => 
   ]) {
     assert.ok(html.includes(`id="${id}"`), id);
   }
+  assert.match(html, /CHIXIANG MOTOR/);
   assert.match(html, /重庆驰翔摩托车制造有限公司/);
-  assert.match(html, /重庆德谐科技有限公司/);
-  assert.match(html, /重庆驰德贸易有限公司/);
+  assert.doesNotMatch(html, /重庆德谐科技有限公司/);
+  assert.doesNotMatch(html, /重庆驰德贸易有限公司/);
+  assert.doesNotMatch(html, /reference translation pending legal-name verification/);
   assert.ok(!/wholly-owned/i.test(html));
   assert.ok(!/renamed Dexie/i.test(html));
   assert.match(html, /2T85/);
@@ -52,7 +54,7 @@ test('X2 cards use uniform container and single-column mobile stack class', () =
   const about = read('en/about.html');
   assert.match(about, /data-credential-cards/);
   assert.match(about, /features-grid x2-stack/);
-  assert.match(about, /reference translation pending legal-name verification/);
+  assert.match(about, /href="\/en\/evidence"/);
   const home = read('en/index.html');
   assert.match(home, /id="business-presence"[\s\S]*features-grid x2-stack/);
   const css = read('css/style.css');

@@ -230,6 +230,10 @@ function stripA1SitemapEntry(xml) {
     .replace(
       /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/ac320-atv-engine<\/loc>[\s\S]*?<\/url>/,
       ''
+    )
+    .replace(
+      /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/evidence<\/loc>[\s\S]*?<\/url>/,
+      ''
     );
   for (const url of APPROVED_ZH_CN_SITEMAP) {
     out = out.replace(
@@ -249,7 +253,7 @@ function zhCnSitemapUrls(xml) {
 
 test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
   const others = frozenFiles.filter(
-    (file) => file !== 'workers/site-router.mjs' && file !== 'sitemap.xml' && file !== 'scripts/site-entity-manifest.js'
+    (file) => file !== 'AGENTS.md' && file !== 'workers/site-router.mjs' && file !== 'sitemap.xml' && file !== 'scripts/site-entity-manifest.js'
   );
   for (const revArgs of [['HEAD'], []]) {
     const result = childProcess.spawnSync(
@@ -259,6 +263,9 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
     );
     assert.equal(result.status, 0, result.stderr || result.stdout || 'frozen file changed');
   }
+  const agentsMd = readFile('AGENTS.md');
+  assert.match(agentsMd, /FOUNDATION_STATUS:\s*FROZEN/);
+  assert.match(agentsMd, /CHIXIANG MOTOR/);
   // site-entity-manifest.js may gain zh-cn labels/classification for the approved Chinese site.
   // Keep critical exports and language labels intact in the working tree.
   const manifestSrc = require('node:fs').readFileSync(require('node:path').join(root, 'scripts/site-entity-manifest.js'), 'utf8');

@@ -12,7 +12,7 @@ test('About keeps one quality-credentials section with three cards', () => {
   assert.match(html, /data-credential-cards/);
   assert.equal(html.split('data-credential-cards').length - 1, 1);
   assert.match(html, /ISO 9001 — Quality Management/);
-  assert.match(html, /High-Tech Enterprise/);
+  assert.match(html, /Technology &amp; Engineering Capability/);
   assert.match(html, /CCC — Applicable Engine Models/);
   assert.ok(!html.includes('cert-grid-compact'), 'old four-item overview removed');
   assert.ok(!html.includes('certification-2.webp'), 'unverified collage removed');
@@ -23,7 +23,7 @@ test('About keeps one quality-credentials section with three cards', () => {
 test('X4 copy states real credentials with holder/model limits', () => {
   const html = read('en/about.html');
   assert.match(html, /ISO 9001 quality-management certification documentation is available/);
-  assert.match(html, /named legal entity/);
+  assert.match(html, /Chongqing High-Tech Zone technology-enterprise public notices/);
   assert.match(html, /exact engine model and destination market/);
   assert.ok(!/100% tested/i.test(html));
   assert.ok(!/all engines CCC/i.test(html));

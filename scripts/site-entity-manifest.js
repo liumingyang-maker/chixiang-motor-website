@@ -48,6 +48,7 @@ function sourceFileForUrl(url) {
 function classify(pathname) {
   if (/^\/(?:en|es|pt|ru|ar|zh-cn)\/$/.test(pathname)) return { role: 'home', schemaType: 'WebPage' };
   if (/\/about$/.test(pathname)) return { role: 'about', schemaType: 'AboutPage' };
+  if (pathname === '/en/evidence') return { role: 'about', schemaType: 'AboutPage' };
   if (/^\/zh-cn\/(?:factory|evidence|domestic-wholesale)$/.test(pathname)) return { role: 'about', schemaType: 'AboutPage' };
   if (/\/products$/.test(pathname)) return { role: 'products', schemaType: 'CollectionPage' };
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(pathname)) return { role: 'contact', schemaType: 'ContactPage' };

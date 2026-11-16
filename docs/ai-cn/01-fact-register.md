@@ -8,7 +8,7 @@
 | F-01 | 重庆驰翔摩托车制造有限公司（CHIXIANG MOTOR） | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/about | 品牌与主体名称 | 最终工商状态 | true |
 | F-02 | 相关从业经历可追溯至 2003 年；公司注册于 2007 年 | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/about | 两个时间点需区分 | 不得写成「2003 年注册成立」 | true |
 | F-03 | 现址重庆高新区含谷片区（高腾大道一带） | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/about | 厂区所在片区 | 中文详细门牌待确认；白市驿为旧址 | true |
-| F-04 | 驰翔/德谐参与制造相关业务；驰德按订单承担外贸服务 | 三主体 | owner_confirmed | owner_statement | /en/about | 业务协作 | 非母子公司；资质不跨主体 | true |
+| F-04 | 对外统一以 CHIXIANG MOTOR（重庆驰翔摩托车制造有限公司 / Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.）作为唯一品牌与制造实体；出口单证与物流由驰翔指定出口部门执行 | CHIXIANG MOTOR（重庆驰翔摩托车制造有限公司） | owner_confirmed | owner_statement | /en/about | 统一品牌与制造实体 | 不在公开页面展示三主体分裂解释 | true |
 | F-05 | 官方 1688 自营店：shop7p518ep539950.1688.com | 重庆驰翔摩托车制造有限公司 | owner_confirmed | owner_statement | /en/about | 自营渠道链接 | 不等于价格/库存已核验 | true |
 | F-06 | 型号大类：卧机 110–150、CG125–250、CB150–250、CG 水冷、AC320 等 | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/cg-engine 等 | 已批准型号表范围 | 不逐项证明通用适配 | true |
 | F-07 | 官网披露场地约 15000㎡、月产能 8000+、检测实验室等 | 重庆驰翔摩托车制造有限公司 | website_existing | owned_website | /en/about | 自有网站自述 | **非独立审计**；不进首屏强背书、不推导年销量 | true（弱化展示） |

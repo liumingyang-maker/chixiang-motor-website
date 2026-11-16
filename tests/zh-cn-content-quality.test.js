@@ -94,9 +94,13 @@ test('C07 high-tech claim is not published as certified', () => {
   assert.ok(ev.includes('待企业负责人'));
 });
 
-test('C08 ISO and CCC are not cross-entity or universal', () => {
+test('C08 unified CHIXIANG MOTOR entity and model-level ISO/CCC verification', () => {
   const about = read('zh-cn/about.html');
-  assert.ok(about.includes('按主体与型号核对'));
+  assert.ok(about.includes('CHIXIANG MOTOR'));
+  assert.ok(about.includes('重庆驰翔摩托车制造有限公司'));
+  assert.ok(about.includes('按型号核对'));
+  assert.ok(!about.includes('重庆德谐科技有限公司'));
+  assert.ok(!about.includes('重庆驰德贸易有限公司'));
   assert.ok(!about.includes('所有型号 CCC'));
   assert.ok(!about.includes('全系列获证'));
 });
