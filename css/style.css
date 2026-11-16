@@ -260,12 +260,13 @@ h4 { font-size: 1.1rem; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1rem, 1.8vw, 1.85rem);
 }
 
 .nav-links a {
   font-size: 0.9rem;
   color: #555;
+  white-space: nowrap;
   transition: color var(--transition-fast);
   position: relative;
 }
@@ -2973,6 +2974,135 @@ body:has(.about-page-header) .section-subtitle {
   .catalog-spec-table th:first-child {
     min-width: 135px;
   }
+
+  .responsive-table-wrap .specs-table.btv-bom-table {
+    min-width: 620px;
+  }
+
+  .btv-bom-table th:first-child,
+  .btv-bom-table td.btv-col-select {
+    position: static;
+    min-width: 44px;
+    width: 44px;
+    text-align: center;
+  }
+}
+
+/* --- Bajaj/TVS Filter Toolbar, Batch Quote Basket & Contact Echo Card --- */
+.btv-hub-toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  align-items: end;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.btv-hub-toolbar__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.btv-hub-toolbar__field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.btv-hub-toolbar__field select,
+.btv-hub-toolbar__field input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--text-primary);
+}
+
+.btv-hub-toolbar__count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.btv-part-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent-red);
+}
+
+.btv-quote-basket {
+  position: sticky;
+  bottom: 1rem;
+  z-index: 95;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  background: #111827;
+  color: #fff;
+  padding: 0.9rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  margin-top: 1.5rem;
+}
+
+.btv-quote-basket[hidden] {
+  display: none;
+}
+
+.btv-quote-basket__actions {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.btv-quote-basket .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btv-echo-card {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-left: 4px solid var(--accent-blue);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.btv-echo-card__head {
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+}
+
+.btv-echo-card__list {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.btv-echo-codes {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .btv-quote-basket {
+    bottom: 4.5rem;
+  }
+}
 
   .variant-card {
     min-width: 0;

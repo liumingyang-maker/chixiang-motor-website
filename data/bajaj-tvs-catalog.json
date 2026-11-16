@@ -24,7 +24,7 @@
       "name_en": "Crankcases",
       "name_zh": "箱体、曲轴箱",
       "anchor": "crankcases",
-      "description_en": "Left and right crankcase halves and related crankcase components. Confirm engine code and model version before ordering.",
+      "description_en": "Left and right crankcase halves and related crankcase assemblies machined to OEM mounting and bearing tolerances.",
       "description_zh": "左右箱体及曲轴箱相关件。订购前请确认发动机代码与具体车型版本。",
       "subcategories": [
         {
@@ -44,7 +44,7 @@
       "name_en": "Engine Covers",
       "name_zh": "发动机盖件",
       "anchor": "engine-covers",
-      "description_en": "Clutch covers, magneto covers and other engine cover parts. Matching is checked against engine code and interface details.",
+      "description_en": "Clutch covers, magneto covers, and protective engine cover assemblies verified against OEM mating interfaces.",
       "description_zh": "离合器盖、磁电机盖及其他发动机盖件。按发动机代码与接口资料核对匹配。",
       "subcategories": [
         {
@@ -64,11 +64,133 @@
       "name_en": "Complete Engines",
       "name_zh": "发动机总成",
       "anchor": "complete-engines",
-      "description_en": "Complete engine assemblies for supported motorcycle applications. Availability and configuration are confirmed per order.",
+      "description_en": "Complete aftermarket replacement engine assemblies built to OEM mounting and shaft specifications for direct distributor and fleet supply.",
       "description_zh": "适用于已支持摩托车应用的发动机总成。供货与配置按订单确认。",
       "subcategories": []
     }
   ],
-  "model_hubs": [],
-  "products": []
+  "model_hubs": [
+    {
+      "_template_note": "【录入示例模板 · public=false 不会发布到前台】按车型聚合多款核心配件与 OEM 参考料号，避免一物一页。填入真实数据时请把占位示例替换为工厂确认值，并将 public 改为 true。",
+      "id": "template-bajaj-boxer-bm150",
+      "brand": "bajaj",
+      "model_name_en": "[TEMPLATE] Bajaj Boxer BM150",
+      "model_name_zh": "【模板】Bajaj Boxer BM150 车型聚合配件表",
+      "displacement_cc": "填真实排量，如 144.8cc（未确认留空）",
+      "engine_code": "填发动机铭牌代码（如有）",
+      "summary_en": "Template entry: replace with verified OEM fitment notes, metallurgy standards, and mixed container loading availability.",
+      "summary_zh": "示例模板：替换为真实车型适配、材质硬度与中印同柜混装出货说明。",
+      "core_parts": [
+        {
+          "_field_guide": "chixiang_pn=驰翔内部料号 | oem_ref=原厂OEM参考料号 | material_spec=材质/硬度/工艺标准",
+          "part_name_en": "Left Crankcase (Template)",
+          "part_name_zh": "左曲轴箱（示例）",
+          "category": "crankcases",
+          "chixiang_pn": "[填驰翔料号，如 CX-BJ-BM150-L]",
+          "oem_ref": "[填原厂 OEM 参考号，如 DU101xxx]",
+          "material_spec": "[填材质与硬度，如 ADC12 Die-Cast Aluminum / HV xxx / CNC Machined]",
+          "notes_en": "[选填英文备注：如安装孔位/版本年份限制]",
+          "notes_zh": "[选填中文备注]"
+        },
+        {
+          "part_name_en": "Clutch Cover (Template)",
+          "part_name_zh": "离合器盖（示例）",
+          "category": "engine-covers",
+          "chixiang_pn": "[填驰翔料号，如 CX-BJ-BM150-CC]",
+          "oem_ref": "[填原厂 OEM 参考号]",
+          "material_spec": "[填材质与表面处理/硬度]",
+          "notes_en": "[选填英文备注]",
+          "notes_zh": "[选填中文备注]"
+        }
+      ],
+      "public": false
+    }
+  ],
+  "products": [
+    {
+      "_template_note": "【整机/核心总成示例模板 · public=false 不会生成详情页或写入 sitemap】仅用于整机或独立核心总成；真实图片放 images/bajaj-tvs/ 后按 photos 格式填写，确认无误后再将 public 改为 true。",
+      "id": "template-bajaj-boxer-bm150-complete-engine",
+      "name_en": "[TEMPLATE] Complete Engine Assembly for Bajaj Boxer BM150",
+      "name_zh": "【模板】适配 Bajaj Boxer BM150 发动机总成",
+      "part_number": "[填驰翔整机料号，如 CX-BJ-BM150-ENG]",
+      "oem_part_numbers": [
+        "[填原厂 OEM 参考料号 1]",
+        "[填原厂 OEM 参考料号 2（如有）]"
+      ],
+      "category": "complete-engines",
+      "subcategory": "",
+      "product_brand": "CHIXIANG MOTOR",
+      "vehicle_brands": [
+        "bajaj"
+      ],
+      "models": [
+        {
+          "name": "Boxer BM150",
+          "versions": [
+            "[填具体年款/版本，如 Kick & Electric Start]"
+          ]
+        }
+      ],
+      "engine_codes": [
+        "[填已核实发动机代码]"
+      ],
+      "photos": [],
+      "_photos_example": [
+        {
+          "src": "images/bajaj-tvs/boxer-bm150-engine-outer.webp",
+          "alt_en": "CHIXIANG MOTOR replacement complete engine for Bajaj Boxer BM150",
+          "alt_zh": "重庆驰翔适配 Bajaj Boxer BM150 发动机总成",
+          "view": "outer"
+        }
+      ],
+      "photo_views": [
+        "outer",
+        "inner",
+        "mating",
+        "mounting",
+        "interface"
+      ],
+      "delivery_form": "assembly",
+      "specs": {
+        "displacement": {
+          "label_en": "Displacement",
+          "label_zh": "排量",
+          "value": "[填真实标称/实测排量]"
+        },
+        "bore_stroke": {
+          "label_en": "Bore × Stroke",
+          "label_zh": "缸径 × 行程",
+          "value": "[填真实缸径×行程 mm]"
+        },
+        "cooling": {
+          "label_en": "Cooling",
+          "label_zh": "冷却方式",
+          "value": "[如 Air-cooled]"
+        },
+        "start_method": {
+          "label_en": "Start Method",
+          "label_zh": "启动方式",
+          "value": "[如 Electric / Kick start]"
+        },
+        "transmission": {
+          "label_en": "Transmission",
+          "label_zh": "变速箱",
+          "value": "[如 4-speed / 5-speed]"
+        },
+        "material_hardness": {
+          "label_en": "Key Material & Hardness",
+          "label_zh": "核心材质与硬度标准",
+          "value": "[填箱体/曲轴/齿轮材质及硬度检验标准]"
+        }
+      },
+      "included_accessories": [
+        {
+          "name_en": "[选填随附配件英文名，如 Carburetor / Starter Motor]",
+          "name_zh": "[选填随附配件中文名]"
+        }
+      ],
+      "related_products": [],
+      "public": false
+    }
+  ]
 }

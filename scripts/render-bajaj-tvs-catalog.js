@@ -102,11 +102,11 @@ ${cards}
 
 function detailHref(product, lang) {
   return lang === 'zh'
-    ? `/zh-cn/bajaj-tvs-engines-parts/${product.id}/`
+    ? `/zh-cn/bajaj-tvs-engines-parts/${product.id}`
     : `/en/bajaj-tvs-engines-parts/${product.id}`;
 }
 
-function productCard(product, lang) {
+function productCard(product, lang, detailSet) {
   const name = lang === 'zh' ? product.name_zh : product.name_en;
   const photo = (product.photos || [])[0];
   const specs = [];
@@ -125,7 +125,8 @@ function productCard(product, lang) {
   if (product.engine_codes && product.engine_codes.length) {
     specs.push(`${lang === 'zh' ? '发动机代码' : 'Engine code'}: ${escapeHtml(product.engine_codes.join(', '))}`);
   }
-  const href = escapeHtml(detailHref(product, lang));
+  const hasDetailPage = product.public === true && detailSet && detailSet.has(detailRelPath(product, lang));
+  const href = hasDetailPage ? escapeHtml(detailHref(product, lang)) : escapeHtml(inquiryHref(lang, product, 'product-card-info'));
   const imgHtml = photo && photo.src
     ? `          <a class="product-img has-img" href="${href}" style="background-image:url('/${escapeHtml(photo.src)}')" role="img" aria-label="${escapeHtml(lang === 'zh' ? (photo.alt_zh || name) : (photo.alt_en || name))}"></a>`
     : '';
@@ -134,16 +135,15 @@ function productCard(product, lang) {
   return `        <article class="product-card" data-btv-product="${escapeHtml(product.id)}">
 ${imgHtml}
           <div class="product-info">
-            <h3><a href="${href}">${escapeHtml(name)}</a></h3>
+            <h3>${hasDetailPage ? `<a href="${href}">${escapeHtml(name)}</a>` : escapeHtml(name)}</h3>
 ${specs.length ? `            <div class="specs">${specs.map((s) => `<p>${s}</p>`).join('')}</div>\n` : ''}            <div class="card-actions">
-              <a class="btn btn-primary btn-sm" href="${href}">${detailLabel}</a>
-              <a class="btn btn-accent btn-sm" href="${escapeHtml(inquiryHref(lang, product, 'product-card'))}">${quoteLabel}</a>
+              ${hasDetailPage ? `<a class="btn btn-primary btn-sm" href="${href}">${detailLabel}</a>\n              ` : ''}<a class="btn btn-accent btn-sm" href="${escapeHtml(inquiryHref(lang, product, 'product-card'))}">${quoteLabel}</a>
             </div>
           </div>
         </article>`;
 }
 
-function renderCategorySection(catalog, category, lang, brandFilter) {
+function renderCategorySection(catalog, category, lang, brandFilter, detailSet) {
   const title = lang === 'zh' ? category.name_zh : category.name_en;
   const desc = lang === 'zh' ? category.description_zh : category.description_en;
   const products = publicProducts(catalog).filter((p) => {
@@ -153,7 +153,7 @@ function renderCategorySection(catalog, category, lang, brandFilter) {
   });
   const grid = products.length
     ? `        <div class="products-grid" data-btv-products="${escapeHtml(category.id)}">
-${products.map((p) => productCard(p, lang)).join('\n')}
+${products.map((p) => productCard(p, lang, detailSet)).join('\n')}
         </div>`
     : '';
   const sub = (category.subcategories || []).length
@@ -178,6 +178,34 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
   if (!hubs.length) return '';
 
   const isZh = lang === 'zh';
+  const categorySet = new Set();
+  hubs.forEach((hub) => {
+    hub.core_parts.forEach((p) => { if (p && p.category) categorySet.add(p.category); });
+  });
+  const modelOptions = hubs.map((h) => `<option value="${escapeHtml(h.id)}">${escapeHtml(isZh ? h.model_name_zh : h.model_name_en)}</option>`).join('');
+  const categoryOptions = [...categorySet].map((cat) => `<option value="${escapeHtml(cat)}">${escapeHtml(cat)}</option>`).join('');
+  const toolbarHtml = `        <div class="btv-hub-toolbar" id="btv-hub-toolbar">
+          <div class="btv-hub-toolbar__field">
+            <label for="btvFilterModel">${isZh ? '按车型筛选' : 'Filter by Model'}</label>
+            <select id="btvFilterModel" data-btv-filter-model>
+              <option value="">${isZh ? '全部车型' : 'All Models'}</option>
+              ${modelOptions}
+            </select>
+          </div>
+          <div class="btv-hub-toolbar__field">
+            <label for="btvFilterCategory">${isZh ? '按配件分类' : 'Filter by Category'}</label>
+            <select id="btvFilterCategory" data-btv-filter-category>
+              <option value="">${isZh ? '全部分类' : 'All Categories'}</option>
+              ${categoryOptions}
+            </select>
+          </div>
+          <div class="btv-hub-toolbar__field btv-hub-toolbar__search">
+            <label for="btvFilterSearch">${isZh ? '搜索料号 / OEM 参考号 / 名称' : 'Search Chixiang PN, OEM Ref, or Part'}</label>
+            <input type="search" id="btvFilterSearch" data-btv-filter-search placeholder="${isZh ? '输入驰翔料号、OEM 料号或配件名…' : 'e.g. DH101234, CX-BJ, Clutch Cover...'}">
+          </div>
+          <div class="btv-hub-toolbar__count" data-btv-filter-count></div>
+        </div>`;
+
   const blocks = hubs.map((hub) => {
     const title = isZh ? hub.model_name_zh : hub.model_name_en;
     const summary = isZh ? (hub.summary_zh || '') : (hub.summary_en || '');
@@ -185,9 +213,10 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
     if (hub.displacement_cc) meta.push(isZh ? `排量：${hub.displacement_cc}` : `Displacement: ${hub.displacement_cc}`);
     if (hub.engine_code) meta.push(isZh ? `发动机代码：${hub.engine_code}` : `Engine code: ${hub.engine_code}`);
 
-    const rows = hub.core_parts.map((part) => {
+    const rows = hub.core_parts.map((part, idx) => {
       const partName = isZh ? part.part_name_zh : part.part_name_en;
       const partNotes = isZh ? (part.notes_zh || '') : (part.notes_en || '');
+      const rowAnchor = `part-${hub.id}-${idx + 1}`;
       const qParams = new URLSearchParams({
         product_interest: 'parts',
         source_form: 'bajaj-tvs-catalog',
@@ -200,8 +229,10 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
         qParams.set('btv_pn', [part.chixiang_pn, part.oem_ref].filter(Boolean).join(' / '));
       }
       if (hub.engine_code) qParams.set('engine_code', hub.engine_code);
-      const qHref = `${isZh ? '/zh-cn/contact/' : '/en/contact'}?${qParams.toString()}`;
-      return `<tr>
+      const qHref = `${isZh ? '/zh-cn/contact' : '/en/contact'}?${qParams.toString()}`;
+      const searchTokens = [title, partName, part.category || '', part.chixiang_pn || '', part.oem_ref || '', part.material_spec || '', partNotes].join(' ').toLowerCase();
+      return `<tr id="${escapeHtml(rowAnchor)}" data-btv-row-category="${escapeHtml(part.category || '')}" data-btv-search="${escapeHtml(searchTokens)}">
+                <td class="btv-col-select"><input type="checkbox" class="btv-part-checkbox" aria-label="${escapeHtml((isZh ? '选择 ' : 'Select ') + partName)}" data-btv-brand="${escapeHtml(hub.brand || '')}" data-btv-model="${escapeHtml(title)}" data-btv-part="${escapeHtml(partName)}" data-btv-category="${escapeHtml(part.category || '')}" data-btv-pn="${escapeHtml(part.chixiang_pn || '')}" data-btv-oem="${escapeHtml(part.oem_ref || '')}"></td>
                 <th>${escapeHtml(partName)}</th>
                 <td>${escapeHtml(part.category || '—')}</td>
                 <td>${escapeHtml(part.chixiang_pn || '—')}</td>
@@ -213,11 +244,13 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
 
     return `        <div class="catalog-table-block" id="hub-${escapeHtml(hub.id)}" data-btv-model-hub="${escapeHtml(hub.id)}" style="margin-top:2rem;">
           <h3>${escapeHtml(title)}${meta.length ? ` <span style="font-size:0.9rem;font-weight:400;color:var(--text-secondary);">(${escapeHtml(meta.join(' · '))})</span>` : ''}</h3>
-          ${summary ? `<p style="color:var(--text-secondary);margin:0.5rem 0 1rem;">${escapeHtml(summary)}</p>` : ''}
+          ${summary ? `<p style="color:var(--text-secondary);margin:0.5rem 0 0.75rem;">${escapeHtml(summary)}</p>` : ''}
+          <p class="table-scroll-hint">${isZh ? '← 左右滑动查看完整料号并勾选批量询价 →' : '← Swipe horizontally to view OEM numbers &amp; select parts →'}</p>
           <div class="responsive-table-wrap" tabindex="0">
-            <table class="specs-table catalog-spec-table">
+            <table class="specs-table catalog-spec-table btv-bom-table">
               <thead>
                 <tr>
+                  <th class="btv-col-select">${isZh ? '选' : 'Pick'}</th>
                   <th>${isZh ? '核心配件' : 'Core Part'}</th>
                   <th>${isZh ? '分类' : 'Category'}</th>
                   <th>${isZh ? '驰翔料号' : 'Chixiang PN'}</th>
@@ -234,18 +267,30 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
         </div>`;
   }).join('\n');
 
+  const basketHtml = `        <div class="btv-quote-basket" id="btvQuoteBasket" hidden>
+          <div class="btv-quote-basket__info">
+            <strong>${isZh ? '已选询价配件 (<span data-btv-basket-count>0</span>)' : 'Selected Parts for Quote (<span data-btv-basket-count>0</span>)'}</strong>
+          </div>
+          <div class="btv-quote-basket__actions">
+            <button type="button" class="btn btn-outline btn-sm" data-btv-basket-clear>${isZh ? '清空' : 'Clear'}</button>
+            <button type="button" class="btn btn-accent btn-sm" data-btv-basket-submit>${isZh ? '批量打包询价 →' : 'Request Batch Quote →'}</button>
+          </div>
+        </div>`;
+
   return `      <section class="section" id="model-hubs" data-btv-section="model-hubs">
         <div class="container">
           <h2 class="section-title">${isZh ? '按车型聚合配件与 OEM 料号表' : 'Model-Aggregated Parts & OEM Cross-Reference'}</h2>
           <p class="section-subtitle">${isZh
-            ? '同一车型对应的核心配件与原厂参考料号集中展示，支持与整机同柜混装订购。'
-            : 'Core replacement parts and OEM reference numbers aggregated by vehicle model—ready for mixed container loading with complete engines.'}</p>
+            ? '同一车型对应的核心配件与原厂参考料号集中展示，支持勾选多个料号打包询价及与整机同柜混装订购。'
+            : 'Filter by vehicle model or search by OEM reference number. Check multiple parts below for batch quotation and mixed container loading.'}</p>
+${toolbarHtml}
 ${blocks}
+${basketHtml}
         </div>
       </section>`;
 }
 
-function renderCatalogBody(catalog, page) {
+function renderCatalogBody(catalog, page, detailSet) {
   const lang = page.lang;
   const parts = [];
   if (page.mode === 'hub') {
@@ -265,7 +310,7 @@ ${renderBrandCards(catalog, lang)}
       return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
     });
   for (const category of categories) {
-    parts.push(renderCategorySection(catalog, category, lang, page.brand));
+    parts.push(renderCategorySection(catalog, category, lang, page.brand, detailSet));
   }
   const modelHubsHtml = renderModelHubsSection(catalog, lang, page.brand);
   if (modelHubsHtml) parts.push(modelHubsHtml);
@@ -389,18 +434,43 @@ function detailPageHtml(catalog, product, lang) {
     ]
   };
 
+  const ogImage = (product.photos || [])[0] && (product.photos || [])[0].src
+    ? `https://chixiangmotor.com/${product.photos[0].src}`
+    : 'https://chixiangmotor.com/images/parts.webp';
+  const detailTitle = `${escapeHtml(name)}${isZh ? '｜Bajaj / TVS 发动机与配件｜CHIXIANG MOTOR' : ' | Bajaj & TVS Engine Parts | CHIXIANG MOTOR'}`;
+
   return `<!DOCTYPE html>
 ${DETAIL_MARKER}
 <html lang="${isZh ? 'zh-CN' : 'en'}">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16777656395"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16777656395');
+</script>
   <meta charset="UTF-8">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109483511,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109483511" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(name)}${isZh ? '｜Bajaj / TVS 发动机与配件｜CHIXIANG MOTOR' : ' | Bajaj & TVS Engine Parts | CHIXIANG MOTOR'}</title>
+  <title>${detailTitle}</title>
   <meta name="description" content="${escapeHtml(desc)}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" hreflang="${isZh ? 'zh-CN' : 'en'}" href="${canonical}">
   <link rel="alternate" hreflang="${isZh ? 'en' : 'zh-CN'}" href="${otherLangUrl}">
   <link rel="alternate" hreflang="x-default" href="https://chixiangmotor.com/en/bajaj-tvs-engines-parts/${product.id}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHIXIANG MOTOR">
+  <meta property="og:title" content="${detailTitle}">
+  <meta property="og:description" content="${escapeHtml(desc)}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${escapeHtml(ogImage)}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/css/style.css">
   <script type="application/ld+json" data-site-entity-graph>
 ${JSON.stringify(entityGraph, null, 2)}
@@ -612,6 +682,7 @@ function main() {
     process.exit(2);
   }
 
+  const expected = expectedDetailPaths(catalog);
   const changes = [];
 
   for (const page of PAGES) {
@@ -622,7 +693,7 @@ function main() {
     }
     const html = fs.readFileSync(abs, 'utf8');
     const nl = newlineOf(html);
-    const replacement = toNewlines(renderCatalogBody(catalog, page), nl);
+    const replacement = toNewlines(renderCatalogBody(catalog, page, expected), nl);
     let next;
     try {
       next = replaceRegion(html, replacement);
@@ -638,7 +709,6 @@ function main() {
     }
   }
 
-  const expected = expectedDetailPaths(catalog);
   for (const product of publicProducts(catalog)) {
     for (const lang of ['en', 'zh']) {
       const rel = detailRelPath(product, lang);

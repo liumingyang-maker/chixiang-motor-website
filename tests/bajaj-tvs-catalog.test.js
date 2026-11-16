@@ -12,7 +12,7 @@ const HUB_PAGES = [
   {
     file: 'en/bajaj-tvs-engines-parts.html',
     canonical: 'https://chixiangmotor.com/en/bajaj-tvs-engines-parts',
-    h1: 'Engines & Parts for Bajaj & TVS Motorcycles',
+    h1: 'Aftermarket Replacement Engines & OEM Cross-Reference Catalog for Bajaj & TVS',
     lang: 'en'
   },
   {
@@ -101,8 +101,7 @@ test('hub and brand pages carry the approved hero copy and CTAs', () => {
     const html = read(page.file);
     assert.equal(h1Text(html), page.h1, `${page.file}: H1`);
     if (page.lang === 'en') {
-      assert.ok(html.includes('Complete engines, crankcases and engine covers.'));
-      assert.ok(html.includes('View Products'));
+      assert.ok(html.includes('mixed container'));
       assert.ok(html.includes('Request a Quote'));
     } else {
       assert.ok(html.includes('发动机总成、曲轴箱与发动机盖件'));

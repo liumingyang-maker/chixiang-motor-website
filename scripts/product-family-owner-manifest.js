@@ -46,8 +46,8 @@ const locales = {
     },
     applications: {
       cg: ['Work and street motorcycles', 'Cargo-tricycle or ATV configurations when ordered for that application', 'Distributor replacement and assembly projects'],
-      cb: ['Street and off-road motorcycles subject to configuration', 'Distributor replacement stock', 'Qualified motorcycle assembly projects'],
-      horizontal: ['Mopeds, pit bikes and light enduro applications', 'Light ATV and assembly projects subject to configuration', 'Distributor wholesale supply'],
+      cb: ['Street, utility, and off-road motorcycles (150cc / 200cc / 250cc platforms)', 'Distributor replacement stock', 'Qualified motorcycle assembly projects'],
+      horizontal: ['Mopeds, pit bikes and light enduro applications', 'Light ATV and OEM motorcycle assembly projects', 'Distributor wholesale supply'],
       parts: ['Distributor spare-parts stock', 'Engine assembly and maintenance support', 'After-sales service for matching engine families']
     },
     checklist: {
@@ -56,7 +56,7 @@ const locales = {
     },
     marketNote: 'YX names are Russian-market search and selection references. These CX engines are manufactured by CHIXIANG MOTOR; YX is not the product brand or manufacturer.',
     familyCards: [
-      ['CG balance-shaft configuration', 'For motorcycle applications, a balance shaft can help reduce single-cylinder vibration and improve running smoothness. Shift and reverse configuration depends on the order.'],
+      ['CG balance-shaft configuration', 'For motorcycle applications, a balance shaft helps reduce single-cylinder vibration and improve running smoothness, with international 5-speed, rotary, or built-in reverse gearboxes tailored to the platform.'],
       ['Tsunami water-cooled family', 'A strengthened CG water-cooled family with cooling fins and enlarged oil capacity for improved heat dissipation and sustained-load stability. Exact oil volume remains unpublished.'],
       ['HW Water heavy-duty family', 'A heavy-duty CG water-cooled upgrade with cooling fins, 1.5 L oil capacity, heavy-duty internal parts, a 20-roller clutch and a high-output magneto. No built-in reverse.'],
       ['Automatic-clutch water-cooled family', 'Available only in CG150 and CG175 classes, with automatic centrifugal clutch. It is a separate family from built-in-reverse configurations.']

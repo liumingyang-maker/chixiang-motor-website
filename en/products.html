@@ -21,7 +21,7 @@
   <link rel="alternate" href="https://chixiangmotor.com/pt/products" hreflang="pt" />
   <link rel="alternate" href="https://chixiangmotor.com/ru/products" hreflang="ru" />
   <link rel="alternate" href="https://chixiangmotor.com/ar/products" hreflang="ar" />
-  <link rel="alternate" href="https://chixiangmotor.com/zh-cn/products/" hreflang="zh-CN" />
+  <link rel="alternate" href="https://chixiangmotor.com/zh-cn/products" hreflang="zh-CN" />
 
   <link rel="alternate" href="https://chixiangmotor.com/en/products" hreflang="x-default" />
   <meta property="og:type" content="website">
@@ -36,6 +36,23 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://chixiangmotor.com/#organization",
+      "name": "CHIXIANG MOTOR",
+      "legalName": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "alternateName": "Chixiang Motor",
+      "url": "https://chixiangmotor.com/",
+      "logo": "https://chixiangmotor.com/images/logo.webp",
+      "foundingDate": "2007",
+      "description": "Motorcycle and cargo-tricycle engine manufacturer in Chongqing, China, with industry experience since 2003.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District",
+        "addressLocality": "Chongqing",
+        "addressCountry": "CN"
+      }
+    },
     {
       "@type": "ItemList",
       "@id": "https://chixiangmotor.com/en/products#current-product-families",
@@ -128,12 +145,13 @@
     </div>
     <ul class="mobile-nav-list">
       <li><a href="/en/">Home<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/products">Products<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="/en/products" aria-current="page">Products<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/cg-engine">CG Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/cb-engine">CB Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/horizontal-engine">Horizontal Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/products?filter=water-cooled">Cargo-Tricycle Engines<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/engine-parts">Engine Parts Series<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="/en/bajaj-tvs-engines-parts">Bajaj / TVS Parts<span class="mnav-arrow">&rsaquo;</span></a></li>
+      <li><a href="/en/evidence">Evidence Center<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/about">About Us<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/news">News<span class="mnav-arrow">&rsaquo;</span></a></li>
       <li><a href="/en/contact">Contact Us<span class="mnav-arrow">&rsaquo;</span></a></li>
@@ -144,18 +162,21 @@
   <nav class="navbar">
     <div class="container">
       <a href="/en/" class="nav-logo"><span class="logo-icon"><img src="../images/logo.webp" alt="CHIXIANG MOTOR"></span><span class="logo-text">CHIXIANG MOTOR</span></a>
-      <ul class="nav-links">
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
         <li><a href="/en/">Home</a></li>
         <li><a href="/en/products" class="active">Products</a></li>
-        <li><a href="/en/news">News</a></li>
+        <li><a href="/en/bajaj-tvs-engines-parts">Bajaj / TVS Parts</a></li>
+        <li><a href="/en/evidence">Evidence</a></li>
         <li><a href="/en/about">About Us</a></li>
-        <li><a href="/en/contact">Contact Us</a></li>
+        <li><a href="/en/news">News</a></li>
+        <li><a href="/en/contact">Contact</a></li>
       </ul>
       <div class="nav-right">
         <div class="lang-switcher">
           <button class="lang-current" aria-label="Select language"><span>EN</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
           <div class="lang-dropdown">
             <a href="/en/products" class="active">English</a>
+            <a href="/zh-cn/products">简体中文</a>
             <a href="/ru/products">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;</a>
             <a href="/es/products">Espa&ntilde;ol</a>
             <a href="/pt/products">Portugu&ecirc;s</a>
@@ -204,9 +225,9 @@
           <div class="product-img" style="background-image:url('../images/%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/3504ab0b-70d8-42bd-ab24-cddc34045a26.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Air-Cooled</span></div>
           <div class="product-info">
             <h3>Horizontal Air-Cooled Engines</h3>
-            <p class="specs">卧机系列 · 110–150cc · Low center of gravity, compact design, low maintenance. 4-speed transmission, electric/kick start or kick start only. Ideal for small commuter and utility motorcycles.</p>
+            <p class="specs">Horizontal Air-Cooled Series · 110–150cc · Low center of gravity, compact layout, and straightforward servicing. 4-speed gearbox with electric/kick or kick-only starting for commuter and utility motorcycles.</p>
             <div class="card-actions">
-              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Series</a>
+              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Horizontal Engines</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -217,9 +238,9 @@
           <div class="product-img" style="background-image:url('../images/%E5%8D%A7%E5%BC%8F%E4%B8%8B%E7%BD%AE%E5%BC%8F/product_main_image_1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Under-Engine</span></div>
           <div class="product-info">
             <h3>Horizontal Under-Engine Motorcycle Engine</h3>
-            <p class="specs">卧式下置发动机 · Dual-clutch layout for smoother shifting. Classic platform with serviceable parts and manageable maintenance cost. Supports OEM/ODM customization.</p>
+            <p class="specs">Lower-Mount Starter Horizontal · Dual-clutch layout for smooth shifting. Proven platform with serviceable components and full OEM/ODM mounting customization.</p>
             <div class="card-actions">
-              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Horizontal Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -230,9 +251,9 @@
           <div class="product-img" style="background-image:url('../images/%E5%8F%8C%E7%A6%BB%E5%90%88%E5%8F%91%E5%8A%A8%E6%9C%BA/product_main_image_1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Dual Clutch</span></div>
           <div class="product-info">
             <h3>Horizontal Dual-Clutch Engine</h3>
-            <p class="specs">卧式双离合发动机 · Dual-clutch configuration for underbone-style motorcycle projects; interface and fitment confirm per order. OEM/ODM supported.</p>
+            <p class="specs">Dual-Clutch Horizontal Series · Engineered for underbone motorcycle platforms with standard mounting interfaces and custom output-shaft/OEM branding options.</p>
             <div class="card-actions">
-              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Horizontal Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -243,9 +264,9 @@
           <div class="product-img" style="background-image:url('../images/%E5%8D%A7%E5%BC%8F%E6%B0%B4%E5%86%B7/1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Water-Cooled</span></div>
           <div class="product-info">
             <h3>Horizontal Water-Cooled Engine</h3>
-            <p class="specs">卧式水冷发动机 · Horizontal water-cooled configuration for sustained commercial use in hot climates. Displacement and interfaces confirm per order. OEM/ODM supported.</p>
+            <p class="specs">Water-Cooled Horizontal Series · Liquid-cooled thermal management for continuous commercial operation in hot climates, available with custom output and OEM specifications.</p>
             <div class="card-actions">
-              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/horizontal-engine" class="btn btn-primary btn-sm">View Horizontal Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -256,9 +277,9 @@
           <div class="product-img" style="background-image:url('../images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Air-Cooled</span></div>
           <div class="product-info">
             <h3>CG Series Air-Cooled Engine</h3>
-            <p class="specs">CG风冷系列 · 125cc / 150cc / 175cc / 200cc / 250cc · Optimized combustion, fuel-efficient. 5-speed; shift and reverse options depend on model and order. Electric/kick start, CDI ignition.</p>
+            <p class="specs">CG Air-Cooled Series · 125cc / 150cc / 175cc / 200cc / 250cc · 5-speed constant-mesh transmission, CDI ignition, and electric/kick starting with standard or reverse gearbox options.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Series</a>
+              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View CG Series</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -269,9 +290,9 @@
           <div class="product-img" style="background-image:url('../images/cg%E5%B9%B3%E8%A1%A1%E8%BD%B4/%E9%BB%91%E8%89%B2%E6%91%A9%E6%89%98%E8%BD%A6%E5%BC%95%E6%93%8E%E7%89%B9%E5%86%99.webp');background-size:contain;background-position:center;"><span class="product-badge">Balancer Shaft</span></div>
           <div class="product-info">
             <h3>CG Series Balance Shaft Engine</h3>
-            <p class="specs">CG平衡轴系列 · 125–250cc · A balance shaft helps reduce single-cylinder vibration and improve running smoothness for motorcycle applications. Gear configuration depends on the intended application and order.</p>
+            <p class="specs">CG Balance-Shaft Series · 125–250cc · Internal/external balance shaft reduces single-cylinder vibration for smoother riding, available with international 5-speed, rotary, or reverse gearboxes.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/cg-engine#cg-balance-shaft" class="btn btn-primary btn-sm">View CG Balance Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -282,9 +303,9 @@
           <div class="product-img" style="background-image:url('../images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Water-Cooled CG</span></div>
           <div class="product-info">
             <h3>CG Series Water-Cooled Engine</h3>
-            <p class="specs">CG水冷系列 · 150cc / 175cc / 200cc / 250cc · Water-cooled with cooling fins for improved heat dissipation. Strong torque for cargo-tricycle use. Reverse configuration depends on model and order.</p>
+            <p class="specs">CG Water-Cooled Series · 150cc / 175cc / 200cc / 250cc (CG150SB–CG250SB) · Liquid-cooled architecture with cooling fins and optional built-in reverse for heavy cargo tricycles.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/cg-engine#cg-water-cooled" class="btn btn-primary btn-sm">View CG Water-Cooled</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -295,9 +316,9 @@
           <div class="product-img" style="background-image:url('../images/%E6%B5%B7%E5%95%B8/1.webp');background-size:contain;background-position:center;"><span class="product-badge">Dual Cooling</span></div>
           <div class="product-info">
             <h3>Tsunami Series Water-Cooled Engine</h3>
-            <p class="specs">海啸系列 · Strengthened CG water-cooled family with cooling fins and enlarged oil capacity for improved heat dissipation, durability and sustained-load stability. Exact configuration depends on the order.</p>
+            <p class="specs">Tsunami Dual-Cooling Series · Strengthened CG water-cooled family featuring extra cooling fins and enlarged oil capacity for sustained heavy-duty heat dissipation and durability.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/cg-engine#tsunami" class="btn btn-primary btn-sm">View Tsunami Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -308,9 +329,9 @@
           <div class="product-img" style="background-image:url('../images/%E6%8D%8D%E5%A8%81/product_main_image_1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Heavy-Duty</span></div>
           <div class="product-info">
             <h3>HW Water</h3>
-            <p class="specs">HW Water 200–350cc. Heavy-duty water-cooled series with a 1.5 L oil capacity, 20-roller clutch and high-output magneto. No built-in reverse.</p>
+            <p class="specs">HW Water 200–350cc · Heavy-duty water-cooled series equipped with a 1.5 L oil capacity, 20-roller clutch, and high-output magneto. No built-in reverse.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/cg-engine#hw-water" class="btn btn-primary btn-sm">View HW Water Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -321,9 +342,9 @@
           <div class="product-img" style="background-image:url('../images/%E7%94%B5%E5%96%B7%E6%B0%B4%E5%86%B7/product_main_image_1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">EFI</span></div>
           <div class="product-info">
             <h3>Electronic Fuel Injection Water-Cooled Engine</h3>
-            <p class="specs">电喷水冷系列 · EFI technology for cleaner combustion and fuel efficiency. Emission compliance depends on the destination market and ordered configuration; confirm before quotation.</p>
+            <p class="specs">EFI Water-Cooled Series · Electronic fuel injection for cleaner combustion, lower fuel consumption, and target-market emission calibration.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View EFI Options</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -334,9 +355,9 @@
           <div class="product-img" style="background-image:url('../images/CB/1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Off-Road</span></div>
           <div class="product-info">
             <h3>CB Series Off-Road Motorcycle Engine</h3>
-            <p class="specs">CB越野系列 · 150cc / 200cc / 250cc · Chain-driven, low vibration. Smooth power delivery, easy handling. Serviceable parts, fuel-efficient. 5-speed transmission.</p>
+            <p class="specs">CB Off-Road &amp; Street Series · 150cc / 200cc / 250cc (CB150, CB200-C, CB250) · Camshaft-upward chain-driven architecture with 5-speed constant-mesh transmission and serviceable parts.</p>
             <div class="card-actions">
-              <a href="/en/cb-engine" class="btn btn-primary btn-sm">View Series</a>
+              <a href="/en/cb-engine" class="btn btn-primary btn-sm">View CB Series</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -347,7 +368,7 @@
           <div class="product-img" style="background-image:url('../images/atv/tb_image_share_1773217554909.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">ATV / CVT</span></div>
           <div class="product-info">
             <h3>ATV Off-Road Beach Vehicle Engine (CVT with Reverse)</h3>
-            <p class="specs">AC320 (175MN) · 287cc · Liquid-cooled · CVT (L-H-N-R) with built-in reverse. Confirm mounting, output shaft, driveline and cooling package before quotation. For ATV/UTV applications.</p>
+            <p class="specs">AC320 (175MN) · 287.2cc · Liquid-cooled · CVT (L-H-N-R) with built-in reverse, CDI ignition, and reinforced 5-jaw centrifugal clutch for ATV and UTV platforms.</p>
             <div class="card-actions">
               <a href="/en/ac320-atv-engine" class="btn btn-primary btn-sm">View Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
@@ -360,9 +381,9 @@
           <div class="product-img" style="background-image:url('../images/auto-clutch-engine/auto-clutch-1.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Auto Clutch</span></div>
           <div class="product-info">
             <h3>Automatic Clutch Engine Series</h3>
-            <p class="specs">CG150 / CG175 water-cooled automatic-clutch family with electric start and 5-speed constant-mesh transmission. This family is separate from built-in-reverse configurations; confirm the ordered configuration before purchase.</p>
+            <p class="specs">Automatic-Clutch Water-Cooled Series · CG150 / CG175 water-cooled platforms featuring electric start, automatic centrifugal clutch, and 5-speed constant-mesh transmission.</p>
             <div class="card-actions">
-              <a href="/en/cg-engine" class="btn btn-primary btn-sm">View Specs</a>
+              <a href="/en/cg-engine#auto-clutch" class="btn btn-primary btn-sm">View Auto-Clutch Specs</a>
               <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
             </div>
           </div>
@@ -373,12 +394,11 @@
           <div class="product-img" style="background-image:url('../images/parts.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"><span class="product-badge">Spare Parts</span></div>
           <div class="product-info">
             <h3>Engine Parts Series</h3>
-            <p class="specs">发动机零件 · Cylinder kits, cylinder heads, clutch plates, magneto coils, valves, oil pumps, reverse gear units, crankshafts, starter shafts, shift shafts, main shafts, starter motors, electrical components.</p>
+            <p class="specs">OEM-Grade Engine Parts · Cylinder kits, cylinder heads, clutch plates, magneto coils, valves, oil pumps, reverse gear units, crankshafts, shafts, starter motors, and electrical components—plus Bajaj &amp; TVS replacement assemblies.</p>
             <div class="card-actions">
-              <a href="/en/engine-parts" class="btn btn-primary btn-sm">View Catalog</a>
-              <a href="/en/contact" class="btn btn-outline btn-sm">Inquire</a>
+              <a href="/en/engine-parts" class="btn btn-primary btn-sm">View Engine Parts</a>
+              <a href="/en/bajaj-tvs-engines-parts" class="btn btn-outline btn-sm">Bajaj / TVS Catalog</a>
             </div>
-            <p class="specs" style="margin-top:0.65rem;"><a href="/en/bajaj-tvs-engines-parts">Bajaj / TVS Engines &amp; Parts</a></p>
           </div>
         </div>
 
@@ -405,14 +425,14 @@
         </div>
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <a href="/en/products">Products</a><br><a href="/en/about">About Us</a><br><a href="/en/news">News</a><br><a href="/en/contact">Contact</a>
+          <a href="/en/products">Products</a><br><a href="/en/evidence">Evidence Center</a><br><a href="/en/about">About Us</a><br><a href="/en/news">News</a><br><a href="/en/contact">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Product Series</h4>
-          <a href="/en/products?filter=horizontal">Horizontal Engines</a><br>
-          <a href="/en/products?filter=cg">CG Series</a><br>
-          <a href="/en/products?filter=water-cooled">Water-Cooled Engines</a><br>
-          <a href="/en/products?filter=offroad">CB Off-Road</a>
+          <a href="/en/cg-engine">CG Series</a><br>
+          <a href="/en/cb-engine">CB Off-Road</a><br>
+          <a href="/en/horizontal-engine">Horizontal Engines</a><br>
+          <a href="/en/bajaj-tvs-engines-parts">Bajaj / TVS Parts</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
@@ -432,7 +452,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.</span>
+        <span>&copy; 2026 Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (CHIXIANG MOTOR) &middot; Export documentation and logistics are executed through Chixiang's designated export division.</span>
         <span>Chongqing, China</span>
       </div>
     </div>

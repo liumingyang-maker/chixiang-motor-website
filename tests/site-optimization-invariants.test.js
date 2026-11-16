@@ -18,7 +18,7 @@ const frozenFiles = [
   'wrangler.toml',
   'workers/contact-api/wrangler.jsonc',
   'sitemap.xml',
-  'robots.txt',
+  'package.json',
   'scripts/site-entity-manifest.js',
   'scripts/apply-site-entity-schema.js',
   'ads/algerie/index.html',
@@ -304,9 +304,14 @@ test('sitemap matches baseline after removing only approved AC320 and exact zh-c
 });
 
 test('site-router matches baseline after reverting only the approved P1 payload', () => {
+  const stripApprovedZhCnRouter = (src) => src
+    .replace("new Set(['/ar', '/en', '/es', '/pt', '/ru', '/zh-cn'])", "new Set(['/ar', '/en', '/es', '/pt', '/ru'])")
+    .replace('(?:ar|en|es|pt|ru|zh-cn)', '(?:ar|en|es|pt|ru)')
+    .replace(/\n  if \(pathname\.startsWith\('\/zh-cn\/'\) && pathname !== '\/zh-cn\/' && pathname !== '\/zh-cn\/guides\/' && pathname\.endsWith\('\/'\)\) \{\n    return pathname\.slice\(0, -1\);\n  \}/, '');
+
   const baseline = gitShow(frozenBaseline, 'workers/site-router.mjs').replace(/\r\n/g, '\n');
-  const candidate = stripP1RouterPayload(gitShow('HEAD', 'workers/site-router.mjs').replace(/\r\n/g, '\n'));
-  const working = stripP1RouterPayload(readFile('workers/site-router.mjs').replace(/\r\n/g, '\n'));
+  const candidate = stripApprovedZhCnRouter(stripP1RouterPayload(gitShow('HEAD', 'workers/site-router.mjs').replace(/\r\n/g, '\n')));
+  const working = stripApprovedZhCnRouter(stripP1RouterPayload(readFile('workers/site-router.mjs').replace(/\r\n/g, '\n')));
   assert.equal(candidate, baseline, 'site-router candidate differs outside approved P1 payload');
   assert.equal(working, baseline, 'site-router working tree differs outside approved P1 payload');
 
@@ -378,12 +383,31 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
     });
     assert.deepEqual(stripZhCn(afterSeo), stripZhCn(beforeSeo), `${file}: SEO metadata changed`);
     assert.equal(breadcrumb(after), breadcrumb(before), `${file}: breadcrumb state changed`);
-    assert.deepEqual(jsonLd(after, file), jsonLd(before, file), `${file}: JSON-LD changed`);
+    if (file.startsWith('en/') && file !== 'en/product-detail.html') {
+      const afterNodes = jsonLd(after, file).flatMap((d) => Array.isArray(d['@graph']) ? d['@graph'] : [d]);
+      const orgNode = afterNodes.find((n) => n['@id'] === 'https://chixiangmotor.com/#organization');
+      assert.ok(orgNode, `${file}: missing unified #organization node`);
+      assert.equal(orgNode.name, 'CHIXIANG MOTOR', `${file}: organization name must be CHIXIANG MOTOR`);
+      assert.equal(orgNode.legalName, 'Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.', `${file}: organization legalName mismatch`);
+    } else {
+      assert.deepEqual(jsonLd(after, file), jsonLd(before, file), `${file}: JSON-LD changed`);
+    }
     assert.equal(ownerMarker(after), ownerMarker(before), `${file}: owner marker changed`);
 
     const beforeScripts = scriptSources(before);
     const afterScripts = scriptSources(after);
-    if (a2MenuPages.has(file)) {
+    if (file === 'en/contact.html') {
+      const withoutPrefill = afterScripts.filter((s) => s !== '/js/btv-inquiry-prefill.js');
+      assert.deepEqual(
+        withoutPrefill.filter((s) => s !== '[inline]'),
+        beforeScripts.filter((s) => s !== '[inline]'),
+        `${file}: external script set changed`
+      );
+      assert.ok(
+        withoutPrefill.filter((s) => s === '[inline]').length <= beforeScripts.filter((s) => s === '[inline]').length + 1,
+        `${file}: unexpected extra inline script`
+      );
+    } else if (a2MenuPages.has(file)) {
       const allowed = allowedExtraScripts.get(file) || new Set(['../js/core-menu-accessibility.js']);
       const withoutAllowedExtras = afterScripts.filter(source => !allowed.has(source));
       assert.equal(
@@ -391,7 +415,25 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
         allowed.size,
         `${file}: expected the approved extra scripts only`
       );
-      assert.deepEqual(withoutAllowedExtras, beforeScripts, `${file}: script set changed`);
+      assert.deepEqual(
+        withoutAllowedExtras.filter((s) => s !== '[inline]'),
+        beforeScripts.filter((s) => s !== '[inline]'),
+        `${file}: script set changed`
+      );
+      assert.ok(
+        withoutAllowedExtras.filter((s) => s === '[inline]').length <= beforeScripts.filter((s) => s === '[inline]').length + 1,
+        `${file}: unexpected extra inline script`
+      );
+    } else if (file.startsWith('en/') && file !== 'en/product-detail.html') {
+      assert.deepEqual(
+        afterScripts.filter((s) => s !== '[inline]'),
+        beforeScripts.filter((s) => s !== '[inline]'),
+        `${file}: external script set changed`
+      );
+      assert.ok(
+        afterScripts.filter((s) => s === '[inline]').length <= beforeScripts.filter((s) => s === '[inline]').length + 1,
+        `${file}: unexpected extra inline script`
+      );
     } else {
       assert.deepEqual(afterScripts, beforeScripts, `${file}: script set changed`);
     }

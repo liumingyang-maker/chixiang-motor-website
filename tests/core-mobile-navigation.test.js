@@ -20,6 +20,8 @@ const expectedMenuLinks = [
   '/en/cb-engine',
   '/en/horizontal-engine',
   '/en/engine-parts',
+  '/en/bajaj-tvs-engines-parts',
+  '/en/evidence',
   '/en/about',
   '/en/news',
   '/en/contact',

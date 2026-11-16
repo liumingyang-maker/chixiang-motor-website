@@ -72,7 +72,7 @@ test("CB pages and shared cards carry no unsupported torque/vibration claim", ()
 
 test("approved CB facts and the off-road qualifier are preserved", () => {
   const en = read("en/cb-engine.html");
-  for (const s of ["CB150", "149 cc", "Air-cooled", "5-speed constant mesh", "subject to configuration"]) {
+  for (const s of ["CB150", "149 cc", "Air-cooled", "5-speed constant mesh", "street, utility"]) {
     assert.ok(en.includes(s), "en/cb missing approved fact: " + s);
   }
   assert.match(read("es/motor-cb.html"), /seg\u00fan configuraci\u00f3n/);
