@@ -3974,3 +3974,30 @@ body:has(.about-page-header) .section-subtitle {
 .btv-model-actions {
   margin: 0.25rem 0 0.85rem;
 }
+.btv-spec-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1.5rem 1.25rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  text-decoration: none;
+  border-bottom: 3px solid var(--accent-color, #e63946);
+}
+.btv-spec-banner__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 600;
+}
+.btv-spec-banner__code {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.btv-spec-banner__note {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}

@@ -180,6 +180,33 @@ test('Bajaj Boxer CT100 / BM100 live product page and model hub publish OEM spec
 
   const bajajBrand = read('en/bajaj-engine-parts.html');
   assert.ok(bajajBrand.includes('bajaj-boxer-ct100-bm100-complete-engine'), 'Bajaj brand page must link CT100 engine');
+  assert.ok(bajajBrand.includes('bajaj-boxer-bm150-complete-engine'), 'Bajaj brand page must link BM150 engine');
+  assert.ok(bajajBrand.includes('bajaj-re-4s-200-complete-engine'), 'Bajaj brand page must link RE 4S engine');
   assert.ok(bajajBrand.includes('36DU4079'), 'Bajaj brand page must include verified OEM cover PN');
-  assert.ok(bajajBrand.includes('DU101218'), 'Bajaj brand page must include verified OEM cylinder kit PN');
+  assert.ok(bajajBrand.includes('36PF0004'), 'Bajaj brand page must include verified BM150 OEM crankcase PN');
+
+  const tvsBrand = read('en/tvs-engine-parts.html');
+  assert.ok(tvsBrand.includes('tvs-hlx-150-complete-engine'), 'TVS brand page must link HLX 150 engine');
+  assert.ok(tvsBrand.includes('tvs-king-200-complete-engine'), 'TVS brand page must link TVS King engine');
+  assert.ok(tvsBrand.includes('147.49 cc'), 'TVS brand page must publish HLX 150 displacement');
+  assert.ok(tvsBrand.includes('199.26 cc'), 'TVS brand page must publish TVS King displacement');
+
+  const modelChecks = [
+    ['en/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine.html', ['144.8 cc', '56.0 × 58.8 mm', '36PF0004', '"@type": "Product"']],
+    ['en/bajaj-tvs-engines-parts/bajaj-re-4s-200-complete-engine.html', ['198.88 cc', '63.5 × 62.8 mm', '4 Forward + 1 Reverse', 'bajaj-re-4s-200-starter-side.webp', 'bajaj-re-4s-200-clutch-interface.webp', '"@type": "Product"']],
+    ['en/bajaj-tvs-engines-parts/tvs-hlx-150-complete-engine.html', ['147.49 cc', '57.0 × 57.8 mm', '8.9 kW (11.93 HP) @ 7,500 rpm', '12.3 N·m @ 5,000 rpm', '"@type": "Product"']],
+    ['en/bajaj-tvs-engines-parts/tvs-king-200-complete-engine.html', ['199.26 cc', '62.0 × 66.0 mm', '4 Forward + 1 Reverse', '9.6 ± 0.3 : 1', '"@type": "Product"']]
+  ];
+  for (const [rel, needles] of modelChecks) {
+    const html = read(rel);
+    for (const needle of needles) {
+      assert.ok(html.includes(needle), `${rel}: missing expected spec/asset "${needle}"`);
+    }
+  }
+  for (const imgRel of [
+    'images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp',
+    'images/bajaj-tvs/bajaj-re-4s-200-clutch-interface.webp'
+  ]) {
+    assert.ok(fs.existsSync(path.join(root, imgRel)), `Missing image: ${imgRel}`);
+  }
 });

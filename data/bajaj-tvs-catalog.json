@@ -182,6 +182,316 @@
       "public": true
     },
     {
+      "id": "bajaj-boxer-bm150",
+      "brand": "bajaj",
+      "supply_scope": "engines-and-parts",
+      "detail_product_id": "bajaj-boxer-bm150-complete-engine",
+      "model_name_en": "Bajaj Boxer BM150",
+      "model_name_zh": "Bajaj Boxer BM150 商用两轮主力（非洲 Boda-Boda / 拉美）",
+      "displacement_cc": "144.8 cc (56.0 × 58.8 mm)",
+      "engine_code": "BM150 SOHC (36PF / JA Ref.)",
+      "summary_en": "Flagship commercial utility platform across Nigeria, Kenya, Uganda, Tanzania, and Latin America: 144.8 cc single-cylinder air-cooled SOHC 2-valve engine (56.0 × 58.8 mm, 9.5:1 compression), 4-speed / 5-speed international mesh transmission, kick & electric start, single or DTS-i twin-spark variants. Available as complete replacement engines and high-turnover castings/kits for mixed container loading.",
+      "summary_zh": "非洲摩的（尼日利亚、肯尼亚、乌干达、坦桑尼亚）及拉美市场绝对主力车型：144.8 cc 单缸风冷 SOHC 两气门（缸径×行程 56.0×58.8 mm，压缩比 9.5:1），4挡/5挡国际循环挡，脚启动+电启动，支持单火花塞/双火花塞版本核对。可提供整机总成及高频核心铸件/套件同柜混装出口。",
+      "core_parts": [
+        {
+          "part_name_en": "Complete Replacement Engine Assembly (144.8 cc, 4/5-Speed)",
+          "part_name_zh": "Boxer BM150 整机总成（144.8 cc · 电/脚启动）",
+          "category": "complete-engines",
+          "chixiang_pn": "CX-BJ-BM150-ENG",
+          "oem_ref": "36PF0004 / 36PF0005 Ref.",
+          "material_spec": "144.8 cc SOHC · 56.0 × 58.8 mm · Export pallet ready",
+          "notes_en": "Confirm 4-speed vs 5-speed gearbox and single vs twin-spark ignition per order.",
+          "notes_zh": "订购前请确认 4 挡 / 5 挡与单/双火花塞配置。"
+        },
+        {
+          "part_name_en": "Left Crankcase Half Assembly",
+          "part_name_zh": "左曲轴箱体（中箱体 LH）",
+          "category": "crankcases",
+          "chixiang_pn": "CX-BJ-BM150-LH",
+          "oem_ref": "36PF0004",
+          "material_spec": "ADC12 Die-Cast Aluminum · CNC Bearing Bores",
+          "notes_en": "Matches BM150 kick & electric-start casing mounts.",
+          "notes_zh": "对标 BM150 脚/电启动箱体悬挂孔位。"
+        },
+        {
+          "part_name_en": "Right Crankcase Half Assembly",
+          "part_name_zh": "右曲轴箱体（中箱体 RH）",
+          "category": "crankcases",
+          "chixiang_pn": "CX-BJ-BM150-RH",
+          "oem_ref": "36PF0005",
+          "material_spec": "ADC12 Die-Cast Aluminum · CNC Mating Faces",
+          "notes_en": "Matched pair supply available with LH crankcase.",
+          "notes_zh": "支持左右中箱成对配对供应。"
+        },
+        {
+          "part_name_en": "Clutch Cover Assembly (Right Engine Cover)",
+          "part_name_zh": "离合器边盖（右盖）",
+          "category": "engine-covers",
+          "chixiang_pn": "CX-BJ-BM150-CC",
+          "oem_ref": "36PF0008",
+          "material_spec": "Die-Cast Aluminum · Mating Face Precision Machined",
+          "notes_en": "Mating clutch gasket ref.: JA541212.",
+          "notes_zh": "对应离合器盖垫片参考号：JA541212。"
+        },
+        {
+          "part_name_en": "Magneto Cover Assembly (Left Stator Cover)",
+          "part_name_zh": "磁电机边盖（左盖）",
+          "category": "engine-covers",
+          "chixiang_pn": "CX-BJ-BM150-MC",
+          "oem_ref": "",
+          "material_spec": "ADC12 Aluminum · Protective Ignition & Sprocket Housing",
+          "notes_en": "Confirm ES/KS cover geometry against engine prefix.",
+          "notes_zh": "按发动机型号确认电/脚启动左盖结构。"
+        },
+        {
+          "part_name_en": "Cylinder Block & Piston Kit (56.0 mm)",
+          "part_name_zh": "套缸活塞总成（56.0 × 58.8 mm）",
+          "category": "cylinder-head-kits",
+          "chixiang_pn": "CX-BJ-BM150-CY",
+          "oem_ref": "36PF / 36JA Series",
+          "material_spec": "Wear-Resistant Cast Liner + Piston, Rings & Pin",
+          "notes_en": "144.8 cc standard size kit.",
+          "notes_zh": "144.8 cc 标准缸径套缸组件。"
+        },
+        {
+          "part_name_en": "Crankshaft & Connecting Rod Assembly",
+          "part_name_zh": "曲轴连杆总成（58.8 mm 行程）",
+          "category": "crankshaft-timing",
+          "chixiang_pn": "CX-BJ-BM150-CS",
+          "oem_ref": "",
+          "material_spec": "Forged Alloy Steel · Dynamic Balanced & Induction Hardened",
+          "notes_en": "Built for high-mileage commercial boda-boda duty.",
+          "notes_zh": "适配高频商用载客高里程工况。"
+        },
+        {
+          "part_name_en": "Clutch Plate Kit & Primary/Counter Shaft Gears",
+          "part_name_zh": "离合器片组件与主副轴传动齿轮",
+          "category": "clutch-transmission",
+          "chixiang_pn": "CX-BJ-BM150-TR",
+          "oem_ref": "36PF0009 / 36JZ",
+          "material_spec": "Heat-Treated 20CrMnTi Gears + Friction Plates",
+          "notes_en": "Clutch cover gasket ref.: JA541212.",
+          "notes_zh": "配套离合盖密封垫参考 JA541212。"
+        }
+      ],
+      "public": true
+    },
+    {
+      "id": "bajaj-re-4s-compact",
+      "brand": "bajaj",
+      "supply_scope": "engines-and-parts",
+      "detail_product_id": "bajaj-re-4s-200-complete-engine",
+      "model_name_en": "Bajaj RE 4S / RE Compact (200cc 3-Wheeler)",
+      "model_name_zh": "Bajaj RE 4S / RE Compact 三轮客货运主力（198.88 cc 4F+1R）",
+      "displacement_cc": "198.88 cc (63.5 × 62.8 mm)",
+      "engine_code": "RE 4S / 200 DTS-i (4F+1R Reverse)",
+      "summary_en": "Global three-wheeler tuk-tuk benchmark across Egypt, Nigeria, Peru, Colombia, Bangladesh, and Southeast Asia: rear-mounted 198.88 cc single-cylinder forced air-cooled DTS-i engine (63.5 × 62.8 mm, 9.7:1, ~7.6 kW @ 5,000 rpm, 14.5–17.0 N·m @ 3,500 rpm) with integrated 4-forward + 1-reverse gearbox. Specializes in heavy-duty reverse-chamber crankcases, reverse gear clusters, and complete assemblies.",
+      "summary_zh": "全球出货量领先的三轮 Tuk-Tuk 主力（埃及、尼日利亚、秘鲁、哥伦比亚、孟加拉及东南亚）：后置单缸 198.88 cc 强制风冷（带风扇导风罩），DTS-i 双火花塞点火，4 前进挡 + 1 倒挡一体化齿轮箱（高扭矩低速调校：7.6 kW @ 5,000 rpm，14.5–17.0 N·m @ 3,500 rpm）。重点供货高壁垒带倒挡齿轮室箱体、倒挡齿轮组及整机总成。",
+      "core_parts": [
+        {
+          "part_name_en": "Complete Replacement Engine Assembly (198.88 cc, 4F+1R Reverse)",
+          "part_name_zh": "Bajaj RE 4S / 200 三轮车整机总成（强制风冷·带倒挡）",
+          "category": "complete-engines",
+          "chixiang_pn": "CX-BJ-RE200-ENG",
+          "oem_ref": "RE 4S / 200 DTS-i",
+          "material_spec": "198.88 cc · Forced Air-Cooled Shroud · 4F+1R Reverse",
+          "notes_en": "Confirm petrol vs CNG/LPG compression & differential flange per market.",
+          "notes_zh": "订购前请核对燃油/CNG 版本与后桥输出花键/法兰。"
+        },
+        {
+          "part_name_en": "Crankcase Halves with Integrated Reverse Gear Chamber (LH/RH)",
+          "part_name_zh": "带倒挡齿轮室专用左右曲轴箱体",
+          "category": "crankcases",
+          "chixiang_pn": "CX-BJ-RE200-CC",
+          "oem_ref": "",
+          "material_spec": "Heavy-Duty ADC12 Casting · CNC Reverse Chamber & Bearing Bores",
+          "notes_en": "Engineered for heavy tuk-tuk loads and water-crossing durability.",
+          "notes_zh": "针对三轮重载与涉水路况强化箱体结构与CNC孔位精度。"
+        },
+        {
+          "part_name_en": "Reverse Gear Cluster & Shifter Fork Set",
+          "part_name_zh": "三轮车倒挡齿轮组及倒挡拨叉总成",
+          "category": "clutch-transmission",
+          "chixiang_pn": "CX-BJ-RE200-RG",
+          "oem_ref": "",
+          "material_spec": "Carburized Alloy Steel 20CrMnTi · Precision Ground Teeth",
+          "notes_en": "Heavy-duty 4F+1R reverse gear transmission matched to RE architecture.",
+          "notes_zh": "4F+1R 倒挡齿轮组件，按原厂齿数与模数核对。"
+        },
+        {
+          "part_name_en": "Heavy-Duty Three-Wheeler Clutch Assembly",
+          "part_name_zh": "三轮车重载离合器总成",
+          "category": "clutch-transmission",
+          "chixiang_pn": "CX-BJ-RE200-CL",
+          "oem_ref": "",
+          "material_spec": "Reinforced Basket + High-Friction Multi-Plate Pack",
+          "notes_en": "Designed for commercial stop-and-go passenger/cargo duty.",
+          "notes_zh": "适配商用客货三轮高频起步与重载坡道。"
+        },
+        {
+          "part_name_en": "Cylinder Block & Piston Kit (63.5 mm)",
+          "part_name_zh": "套缸活塞组件（63.5 × 62.8 mm）",
+          "category": "cylinder-head-kits",
+          "chixiang_pn": "CX-BJ-RE200-CY",
+          "oem_ref": "",
+          "material_spec": "63.5 mm Bore Alloy Block + Forged/Cast Piston Rings",
+          "notes_en": "Confirm single-spark or DTS-i twin-spark cylinder head matching.",
+          "notes_zh": "订购前请确认单/双火花塞缸头配对要求。"
+        },
+        {
+          "part_name_en": "Timing Chain, Tensioner & Overhaul Gasket Kit",
+          "part_name_zh": "正时链条涨紧器及三轮全车大修密封包",
+          "category": "crankshaft-timing",
+          "chixiang_pn": "CX-BJ-RE200-TM",
+          "oem_ref": "",
+          "material_spec": "High-Tensile Timing Chain + Heat-Resistant Gasket Kit",
+          "notes_en": "Available as overhaul maintenance kit with reverse-chamber gaskets.",
+          "notes_zh": "含倒挡齿轮室及箱体大修全套密封垫。"
+        }
+      ],
+      "public": true
+    },
+    {
+      "id": "tvs-hlx-150-125",
+      "brand": "tvs",
+      "supply_scope": "engines-and-parts",
+      "detail_product_id": "tvs-hlx-150-complete-engine",
+      "model_name_en": "TVS HLX 150 / HLX 125 (Ecothrust Utility)",
+      "model_name_zh": "TVS HLX 150 / HLX 125 商用两轮主力（东非/西非/拉美）",
+      "displacement_cc": "147.49 cc (57.0 × 57.8 mm) / 124.53 cc",
+      "engine_code": "HLX 150 / 125 Ecothrust",
+      "summary_en": "Fast-growing commercial commuter & boda-boda platform in East Africa, West Africa, and Latin America: single-cylinder 4-stroke natural air-cooled Ecothrust engine (HLX 150: 147.49 cc, 57.0 × 57.8 mm, 8.9 kW / 11.93 HP @ 7,500 rpm, 12.3 N·m @ 5,000 rpm, 9.7:1, 4-speed or 5-speed wet multi-plate clutch). Supplied as complete assemblies and core aftermarket parts.",
+      "summary_zh": "东非、西非及拉美近年增速最快的商用两轮平台：单缸四冲程风冷 Ecothrust 节能高扭平台（HLX 150 排量 147.49 cc，缸径×行程 57.0×57.8 mm，最大功率 8.9 kW / 11.93 HP @ 7,500 rpm，最大扭矩 12.3 N·m @ 5,000 rpm；HLX 125 排量 124.53 cc，4/5 挡常啮合湿式多片离合器）。支持整机及中箱体/边盖/曲轴/缸头供货。",
+      "core_parts": [
+        {
+          "part_name_en": "Complete Replacement Engine Assembly (HLX 150 / HLX 125)",
+          "part_name_zh": "TVS HLX 150 / 125 整机总成（Ecothrust 平台）",
+          "category": "complete-engines",
+          "chixiang_pn": "CX-TVS-HLX150-ENG",
+          "oem_ref": "",
+          "material_spec": "147.49 cc (57.0 × 57.8 mm) · 4/5-Speed · Export ready",
+          "notes_en": "Specify 147.49 cc (HLX 150) vs 124.53 cc (HLX 125) and 4G vs 5G gearbox.",
+          "notes_zh": "请确认 HLX 150（147.49 cc）或 HLX 125（124.53 cc）及 4 挡 / 5 挡版本。"
+        },
+        {
+          "part_name_en": "Left & Right Middle Crankcases (HLX 150 / 125)",
+          "part_name_zh": "左右中箱体（Crankcase LH / RH）",
+          "category": "crankcases",
+          "chixiang_pn": "CX-TVS-HLX-CC",
+          "oem_ref": "",
+          "material_spec": "ADC12 Die-Cast Aluminum · High-Precision Bearing Seats",
+          "notes_en": "Vertically split crankcase matching HLX commercial mounting frames.",
+          "notes_zh": "按 HLX 商用车架悬挂及轴承孔公差机加工。"
+        },
+        {
+          "part_name_en": "Clutch Cover, Magneto Cover & Cam Chain Cover",
+          "part_name_zh": "离合器盖、磁电机盖与小链盖",
+          "category": "engine-covers",
+          "chixiang_pn": "CX-TVS-HLX-CV",
+          "oem_ref": "",
+          "material_spec": "Die-Cast Aluminum · Heat & Impact Resistant",
+          "notes_en": "Verify 4-gear vs 5-gear HLX 150X cover profile per order.",
+          "notes_zh": "按 HLX 4 挡或 5 挡（HLX 150X）版本确认盖件外观接口。"
+        },
+        {
+          "part_name_en": "Crankshaft & Connecting Rod Assembly (57.8 mm Stroke)",
+          "part_name_zh": "曲轴连杆总成（57.8 mm 长行程）",
+          "category": "crankshaft-timing",
+          "chixiang_pn": "CX-TVS-HLX-CS",
+          "oem_ref": "",
+          "material_spec": "Forged Steel Crankshaft · Reinforced Pin & Bearing",
+          "notes_en": "Long-stroke low-end torque specification for unpaved roads.",
+          "notes_zh": "适配非洲非铺装路况长行程低扭曲轴。"
+        },
+        {
+          "part_name_en": "Cylinder Head Assembly (57.0 mm Platform)",
+          "part_name_zh": "缸头总成（配气机构与摇臂组件）",
+          "category": "cylinder-head-kits",
+          "chixiang_pn": "CX-TVS-HLX-HD",
+          "oem_ref": "",
+          "material_spec": "Aluminum Alloy Cylinder Head · Pre-Assembled Valves Optional",
+          "notes_en": "Available bare or assembled with intake/exhaust valves & rockers.",
+          "notes_zh": "支持裸缸头或带气门摇臂总成出货。"
+        },
+        {
+          "part_name_en": "Gearshift Drum, Shifter Forks & Overhaul Gasket Kit",
+          "part_name_zh": "变速鼓、换挡拨叉及全车大修密封包",
+          "category": "clutch-transmission",
+          "chixiang_pn": "CX-TVS-HLX-TR",
+          "oem_ref": "",
+          "material_spec": "Hardened Alloy Steel Shift Drum/Forks + Seal Kit",
+          "notes_en": "Confirm 4-speed or 5-speed shift pattern.",
+          "notes_zh": "确认 4 挡或 5 挡变速鼓齿形。"
+        }
+      ],
+      "public": true
+    },
+    {
+      "id": "tvs-king-200",
+      "brand": "tvs",
+      "supply_scope": "engines-and-parts",
+      "detail_product_id": "tvs-king-200-complete-engine",
+      "model_name_en": "TVS King Deluxe / GS 200 (3-Wheeler)",
+      "model_name_zh": "TVS King Deluxe / GS 200 三轮车主力（东非/秘鲁/中美洲）",
+      "displacement_cc": "199.26 cc (62.0 × 66.0 mm)",
+      "engine_code": "TVS King 200 Duralife (4F+1R)",
+      "summary_en": "Major commercial 3-wheeler platform in East Africa, Peru, and Central America: 199.26 cc single-cylinder 4-stroke forced air-cooled (water-cooled variants on newer editions) Duralife engine (62.0 × 66.0 mm, 9.6:1 compression, 6.7–7.5 kW @ 4,750–5,500 rpm, 13.0–15.5 N·m @ 3,000–3,250 rpm, fork-and-cam 4F+1R reverse gearbox, integrated fine oil filter gallery). Available as complete engines and core parts.",
+      "summary_zh": "东非、秘鲁及中美洲主力三轮车平台：单缸四冲程强制风冷（部分新款水冷可选）Duralife 架构，排量 199.26 cc（缸径×行程 62.0×66.0 mm，压缩比 9.6:1，最大扭矩 13.0–15.5 N·m @ 3,000–3,250 rpm），集成 4 前进挡 + 1 倒挡机构与机油精滤油道。提供三轮整机总成、压铸箱体侧盖及全车大修包。",
+      "core_parts": [
+        {
+          "part_name_en": "Complete Replacement Engine Assembly (199.26 cc, 4F+1R Reverse)",
+          "part_name_zh": "TVS King Deluxe / GS 200 整机总成（4F+1R 倒挡）",
+          "category": "complete-engines",
+          "chixiang_pn": "CX-TVS-KING200-ENG",
+          "oem_ref": "",
+          "material_spec": "199.26 cc (62.0 × 66.0 mm) · Fine Oil Filter Gallery · 4F+1R",
+          "notes_en": "Confirm carburetor vs FI variant and forced air-cooled vs water-cooled edition.",
+          "notes_zh": "订购前请确认化油器/电喷及强制风冷/水冷版本。"
+        },
+        {
+          "part_name_en": "Three-Wheeler Die-Cast Crankcases & Side Covers (w/ Oil Filter Gallery)",
+          "part_name_zh": "三轮车专用压铸箱体与侧盖（带机油精滤油道）",
+          "category": "crankcases",
+          "chixiang_pn": "CX-TVS-KING200-CC",
+          "oem_ref": "",
+          "material_spec": "ADC12 High-Pressure Die-Casting · Precision Oil Passage Machining",
+          "notes_en": "Includes wet-sump crankcase housing & clutch/side covers.",
+          "notes_zh": "重点加工精滤油道与箱体结合密封面。"
+        },
+        {
+          "part_name_en": "Heavy-Duty Clutch Assembly & Reverse Transmission Gears",
+          "part_name_zh": "重载离合器总成与传动/倒挡齿轮组",
+          "category": "clutch-transmission",
+          "chixiang_pn": "CX-TVS-KING200-TR",
+          "oem_ref": "",
+          "material_spec": "Wet Multi-Plate Clutch + Fork-and-Cam 4F+1R Gears",
+          "notes_en": "Built for high-torque passenger and cargo hill climbing.",
+          "notes_zh": "匹配三轮高扭矩爬坡与载重需求。"
+        },
+        {
+          "part_name_en": "Long-Stroke Crankshaft & Rocker Arm Kit (66.0 mm Stroke)",
+          "part_name_zh": "长行程曲轴（66.0 mm）与气门摇臂组件",
+          "category": "crankshaft-timing",
+          "chixiang_pn": "CX-TVS-KING200-CS",
+          "oem_ref": "",
+          "material_spec": "Forged Alloy Crankshaft + Hardened Valve Rocker Arms",
+          "notes_en": "Matched to 127 mm nominal connecting-rod geometry.",
+          "notes_zh": "对标长行程重载曲轴与气门摇臂规格。"
+        },
+        {
+          "part_name_en": "Complete Overhaul Gasket & Oil Seal Kit (TGP Spec)",
+          "part_name_zh": "全车大修垫片包 / 油封密封件包",
+          "category": "overhaul-seals",
+          "chixiang_pn": "CX-TVS-KING200-GK",
+          "oem_ref": "",
+          "material_spec": "Crankcase Center + Cylinder Base/Head + Left/Right Cover Gaskets & Seals",
+          "notes_en": "Full service overhaul kit covering center case, top-end, and side covers.",
+          "notes_zh": "含中箱垫、上下缸垫、左右边盖垫片与油封全车大修套装。"
+        }
+      ],
+      "public": true
+    },
+    {
       "_template_note": "【录入示例模板 · public=false 不会发布到前台】按车型聚合多款核心配件与 OEM 参考料号，避免一物一页。填入真实数据时请把占位示例替换为工厂确认值，并将 public 改为 true。",
       "id": "template-bajaj-boxer-bm150",
       "brand": "bajaj",
@@ -336,6 +646,336 @@
         }
       ],
       "related_products": [],
+      "public": true
+    },
+    {
+      "id": "bajaj-boxer-bm150-complete-engine",
+      "name_en": "Complete Replacement Engine for Bajaj Boxer BM150 (144.8 cc)",
+      "name_zh": "适配 Bajaj Boxer BM150 发动机总成（144.8 cc 单缸风冷）",
+      "part_number": "CX-BJ-BM150-ENG",
+      "oem_part_numbers": [
+        "36PF0004",
+        "36PF0005",
+        "36PF0008",
+        "JA541212"
+      ],
+      "category": "complete-engines",
+      "subcategory": "",
+      "product_brand": "CHIXIANG MOTOR",
+      "vehicle_brands": [
+        "bajaj"
+      ],
+      "models": [
+        {
+          "name": "Bajaj Boxer BM150",
+          "versions": [
+            "4-Speed / 5-Speed International Mesh",
+            "Kick & Electric Start (Single or Twin-Spark Variant)"
+          ]
+        }
+      ],
+      "engine_codes": [
+        "BM150 / 36PF Platform"
+      ],
+      "photos": [],
+      "delivery_form": "assembly",
+      "specs": {
+        "engine_type": {
+          "label_en": "Engine Type",
+          "label_zh": "发动机类型",
+          "value": "Single-cylinder, 4-stroke, air-cooled, SOHC 2-valve"
+        },
+        "displacement": {
+          "label_en": "OEM Reference Displacement",
+          "label_zh": "对标原厂排量",
+          "value": "144.8 cc"
+        },
+        "bore_stroke": {
+          "label_en": "Bore × Stroke",
+          "label_zh": "缸径 × 行程",
+          "value": "56.0 × 58.8 mm"
+        },
+        "compression_ratio": {
+          "label_en": "Compression Ratio",
+          "label_zh": "压缩比",
+          "value": "9.5 : 1"
+        },
+        "transmission": {
+          "label_en": "Transmission",
+          "label_zh": "变速箱",
+          "value": "4-speed / 5-speed international constant mesh (confirmed per order)"
+        },
+        "start_method": {
+          "label_en": "Starting System",
+          "label_zh": "启动方式",
+          "value": "Kick & electric start"
+        },
+        "target_markets": {
+          "label_en": "Primary Fleet Markets",
+          "label_zh": "主力适用市场",
+          "value": "Nigeria, Kenya, Uganda, Tanzania & Latin America commercial fleets"
+        },
+        "packaging": {
+          "label_en": "Container & Packaging",
+          "label_zh": "出口包装与混装",
+          "value": "Export carton / palletized loading; supports mixed container with CG & CB engines"
+        }
+      },
+      "included_accessories": [],
+      "related_products": [
+        "bajaj-boxer-ct100-bm100-complete-engine"
+      ],
+      "public": true
+    },
+    {
+      "id": "bajaj-re-4s-200-complete-engine",
+      "name_en": "Complete Replacement Engine for Bajaj RE 4S / RE Compact (198.88 cc 4F+1R)",
+      "name_zh": "适配 Bajaj RE 4S / RE Compact 三轮车发动机总成（198.88 cc 强制风冷·带倒挡）",
+      "part_number": "CX-BJ-RE200-ENG",
+      "oem_part_numbers": [
+        "RE 4S / Compact 200 DTS-i"
+      ],
+      "category": "complete-engines",
+      "subcategory": "",
+      "product_brand": "CHIXIANG MOTOR",
+      "vehicle_brands": [
+        "bajaj"
+      ],
+      "models": [
+        {
+          "name": "Bajaj RE 4S / RE Compact",
+          "versions": [
+            "200cc 4-Forward + 1-Reverse Integrated Gearbox",
+            "Forced Air-Cooled Shroud (Petrol / CNG-LPG Calibrations)"
+          ]
+        }
+      ],
+      "engine_codes": [
+        "RE 4S 200cc 4F+1R"
+      ],
+      "photos": [
+        {
+          "src": "images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp",
+          "alt_en": "200cc forced air-cooled three-wheeler replacement engine for Bajaj RE 4S starter and shroud side",
+          "alt_zh": "200cc 强制风冷三轮车发动机总成（适配 Bajaj RE 4S）导风罩与启动电机侧展示",
+          "view": "outer"
+        },
+        {
+          "src": "images/bajaj-tvs/bajaj-re-4s-200-clutch-interface.webp",
+          "alt_en": "200cc forced air-cooled three-wheeler replacement engine clutch lever, oil line, and differential side",
+          "alt_zh": "200cc 强制风冷三轮车发动机离合拉臂、油管及传动倒挡接口侧展示",
+          "view": "interface"
+        }
+      ],
+      "delivery_form": "assembly",
+      "specs": {
+        "engine_type": {
+          "label_en": "Engine Type",
+          "label_zh": "发动机类型",
+          "value": "Rear-mounted single-cylinder, 4-stroke, forced air-cooled (fan & shroud, DTS-i ref.)"
+        },
+        "displacement": {
+          "label_en": "OEM Reference Displacement",
+          "label_zh": "对标原厂排量",
+          "value": "198.88 cc"
+        },
+        "bore_stroke": {
+          "label_en": "Bore × Stroke",
+          "label_zh": "缸径 × 行程",
+          "value": "63.5 × 62.8 mm"
+        },
+        "compression_ratio": {
+          "label_en": "Compression Ratio",
+          "label_zh": "压缩比",
+          "value": "9.7 : 1"
+        },
+        "max_power": {
+          "label_en": "Max Net Power (OEM Spec)",
+          "label_zh": "最大净功率（原厂标准）",
+          "value": "~7.6 kW (10–10.2 HP) @ 5,000 rpm"
+        },
+        "max_torque": {
+          "label_en": "Max Net Torque (OEM Spec)",
+          "label_zh": "最大净扭矩（原厂标准）",
+          "value": "14.5 – 17.0 N·m @ 3,500 rpm (fuel tuning dependent)"
+        },
+        "transmission": {
+          "label_en": "Transmission & Reverse",
+          "label_zh": "变速箱与倒挡",
+          "value": "4 Forward + 1 Reverse constant mesh with integrated reverse gear housing"
+        },
+        "target_markets": {
+          "label_en": "Primary Fleet Markets",
+          "label_zh": "主力适用市场",
+          "value": "Egypt, Nigeria, Peru, Colombia, Bangladesh & Southeast Asia tuk-tuk fleets"
+        },
+        "packaging": {
+          "label_en": "Container & Packaging",
+          "label_zh": "出口包装与混装",
+          "value": "Reinforced export crate; consolidates with Chinese cargo-tricycle engines"
+        }
+      },
+      "included_accessories": [],
+      "related_products": [
+        "tvs-king-200-complete-engine"
+      ],
+      "public": true
+    },
+    {
+      "id": "tvs-hlx-150-complete-engine",
+      "name_en": "Complete Replacement Engine for TVS HLX 150 / HLX 125 (147.49 cc Ecothrust)",
+      "name_zh": "适配 TVS HLX 150 / HLX 125 发动机总成（147.49 cc Ecothrust 平台）",
+      "part_number": "CX-TVS-HLX150-ENG",
+      "oem_part_numbers": [
+        "TVS HLX 150 / 125 Ecothrust"
+      ],
+      "category": "complete-engines",
+      "subcategory": "",
+      "product_brand": "CHIXIANG MOTOR",
+      "vehicle_brands": [
+        "tvs"
+      ],
+      "models": [
+        {
+          "name": "TVS HLX 150 / HLX 125",
+          "versions": [
+            "HLX 150 (147.49 cc, 4-Speed / 5-Speed HLX 150X)",
+            "HLX 125 (124.53 cc)"
+          ]
+        }
+      ],
+      "engine_codes": [
+        "HLX 150 / 125 Ecothrust"
+      ],
+      "photos": [],
+      "delivery_form": "assembly",
+      "specs": {
+        "engine_type": {
+          "label_en": "Engine Type",
+          "label_zh": "发动机类型",
+          "value": "Single-cylinder, 4-stroke, natural air-cooled, Ecothrust long-stroke platform"
+        },
+        "displacement": {
+          "label_en": "OEM Reference Displacement",
+          "label_zh": "对标原厂排量",
+          "value": "147.49 cc (HLX 150) / 124.53 cc (HLX 125)"
+        },
+        "bore_stroke": {
+          "label_en": "Bore × Stroke (HLX 150)",
+          "label_zh": "缸径 × 行程（HLX 150）",
+          "value": "57.0 × 57.8 mm"
+        },
+        "compression_ratio": {
+          "label_en": "Compression Ratio",
+          "label_zh": "压缩比",
+          "value": "9.7 ± 0.3 : 1"
+        },
+        "max_power": {
+          "label_en": "Max Net Power (HLX 150 OEM)",
+          "label_zh": "最大净功率（HLX 150 原厂标准）",
+          "value": "8.9 kW (11.93 HP) @ 7,500 rpm"
+        },
+        "max_torque": {
+          "label_en": "Max Net Torque (HLX 150 OEM)",
+          "label_zh": "最大净扭矩（HLX 150 原厂标准）",
+          "value": "12.3 N·m @ 5,000 rpm"
+        },
+        "clutch_transmission": {
+          "label_en": "Clutch & Transmission",
+          "label_zh": "离合与变速箱",
+          "value": "Wet multi-plate clutch · 4-speed or 5-speed constant mesh"
+        },
+        "target_markets": {
+          "label_en": "Primary Fleet Markets",
+          "label_zh": "主力适用市场",
+          "value": "East Africa, West Africa & Latin America commercial motorcycles"
+        }
+      },
+      "included_accessories": [],
+      "related_products": [
+        "tvs-king-200-complete-engine"
+      ],
+      "public": true
+    },
+    {
+      "id": "tvs-king-200-complete-engine",
+      "name_en": "Complete Replacement Engine for TVS King Deluxe / GS 200 (199.26 cc 4F+1R)",
+      "name_zh": "适配 TVS King Deluxe / GS 200 三轮车发动机总成（199.26 cc 4F+1R）",
+      "part_number": "CX-TVS-KING200-ENG",
+      "oem_part_numbers": [
+        "TVS King Deluxe / GS 200 Duralife"
+      ],
+      "category": "complete-engines",
+      "subcategory": "",
+      "product_brand": "CHIXIANG MOTOR",
+      "vehicle_brands": [
+        "tvs"
+      ],
+      "models": [
+        {
+          "name": "TVS King Deluxe / GS 200",
+          "versions": [
+            "Forced Air-Cooled Duralife (199.26 cc, 4F+1R)",
+            "Water-Cooled / FI Regional Versions (per confirmation)"
+          ]
+        }
+      ],
+      "engine_codes": [
+        "TVS King 200 4F+1R"
+      ],
+      "photos": [],
+      "delivery_form": "assembly",
+      "specs": {
+        "engine_type": {
+          "label_en": "Engine Type",
+          "label_zh": "发动机类型",
+          "value": "Single-cylinder, 4-stroke, forced air-cooled (water-cooled opt.), Duralife w/ fine oil filter gallery"
+        },
+        "displacement": {
+          "label_en": "OEM Reference Displacement",
+          "label_zh": "对标原厂排量",
+          "value": "199.26 cc"
+        },
+        "bore_stroke": {
+          "label_en": "Bore × Stroke",
+          "label_zh": "缸径 × 行程",
+          "value": "62.0 × 66.0 mm"
+        },
+        "compression_ratio": {
+          "label_en": "Compression Ratio",
+          "label_zh": "压缩比",
+          "value": "9.6 ± 0.3 : 1"
+        },
+        "max_power": {
+          "label_en": "Max Net Power (OEM Spec)",
+          "label_zh": "最大净功率（原厂标准）",
+          "value": "6.7 – 7.5 kW (9–10 HP) @ 4,750–5,500 rpm"
+        },
+        "max_torque": {
+          "label_en": "Max Net Torque (OEM Spec)",
+          "label_zh": "最大净扭矩（原厂标准）",
+          "value": "13.0 – 15.5 N·m @ 3,000–3,250 rpm"
+        },
+        "transmission": {
+          "label_en": "Transmission & Reverse",
+          "label_zh": "变速箱与倒挡",
+          "value": "4 Forward + 1 Reverse constant mesh, fork & cam shift mechanism"
+        },
+        "clutch_lubrication": {
+          "label_en": "Clutch & Lubrication",
+          "label_zh": "离合与润滑油道",
+          "value": "Wet multi-plate clutch · Forced wet-sump w/ fine oil filter passage"
+        },
+        "target_markets": {
+          "label_en": "Primary Fleet Markets",
+          "label_zh": "主力适用市场",
+          "value": "East Africa, Peru & Central America passenger/cargo 3-wheelers"
+        }
+      },
+      "included_accessories": [],
+      "related_products": [
+        "tvs-hlx-150-complete-engine"
+      ],
       "public": true
     },
     {

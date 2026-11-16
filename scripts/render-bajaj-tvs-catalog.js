@@ -127,9 +127,11 @@ function productCard(product, lang, detailSet) {
   }
   const hasDetailPage = product.public === true && detailSet && detailSet.has(detailRelPath(product, lang));
   const href = hasDetailPage ? escapeHtml(detailHref(product, lang)) : escapeHtml(inquiryHref(lang, product, 'product-card-info'));
+  const dispSpec = product.specs && (product.specs.displacement || product.specs.engine_type);
+  const specBadgeText = dispSpec && dispSpec.value ? dispSpec.value.split('(')[0].trim() : (product.part_number || 'OEM Spec');
   const imgHtml = photo && photo.src
     ? `          <a class="product-img has-img" href="${href}" style="background-image:url('/${escapeHtml(photo.src)}')" role="img" aria-label="${escapeHtml(lang === 'zh' ? (photo.alt_zh || name) : (photo.alt_en || name))}"></a>`
-    : '';
+    : `          <a class="btv-spec-banner" href="${href}"><span class="btv-spec-banner__eyebrow">${lang === 'zh' ? 'CHIXIANG MOTOR · 整机规格卡' : 'CHIXIANG MOTOR · Complete Engine'}</span><span class="btv-spec-banner__code">${escapeHtml(specBadgeText)}</span><span class="btv-spec-banner__note">${lang === 'zh' ? '支持按原厂接口配置定制与混装发运' : 'Built to OEM mounting & shaft specs'}</span></a>`;
   const quoteLabel = lang === 'zh' ? '询价' : 'Request a Quote';
   const detailLabel = lang === 'zh' ? '查看详情' : 'View Details';
   return `        <article class="product-card" data-btv-product="${escapeHtml(product.id)}">
