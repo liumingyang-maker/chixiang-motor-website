@@ -43,7 +43,7 @@ const locales = {
     values: {
       air: 'Air-cooled', water: 'Water-cooled', internalOil: 'Air-cooled with an internal cylinder-head oil circuit; no external oil radiator',
       electricKick: 'Electric / kick start', kickElectric: 'Kick or electric start', upperLower: 'Upper or lower for electric-start versions',
-      manualWet: 'Manual wet multi-plate', manualSemi: 'Manual or semi-automatic', manual: 'Manual clutch', five: '5-speed constant mesh',
+      manualWet: 'Manual wet multi-plate', manualSemi: 'Manual or semi-automatic', manual: 'Manual clutch', five: '5-speed constant mesh', fiveRotaryReverse: '5-speed rotary (optional reverse)',
       four: '4 gears', reverse: 'Built-in reverse or 1+1 gearbox is optional; confirm for the ordered configuration'
     },
     applications: {
@@ -104,7 +104,7 @@ const locales = {
     values: {
       air: 'Refrigerado por aire', water: 'Refrigerado por agua', internalOil: 'Refrigerado por aire con circuito interno de aceite en la culata; sin radiador externo',
       electricKick: 'Arranque eléctrico / pedal', kickElectric: 'Arranque por pedal o eléctrico', upperLower: 'Superior o inferior en versiones con arranque eléctrico',
-      manualWet: 'Manual multidisco húmedo', manualSemi: 'Manual o semiautomático', manual: 'Manual', five: '5 velocidades de engrane constante',
+      manualWet: 'Manual multidisco húmedo', manualSemi: 'Manual o semiautomático', manual: 'Manual', five: '5 velocidades de engrane constante', fiveRotaryReverse: '5 velocidades rotativo (reversa opcional)',
       four: '4 velocidades', reverse: 'Reversa integrada o caja 1+1 opcional; confirmar según la configuración pedida'
     },
     applications: {
@@ -165,7 +165,7 @@ const locales = {
     values: {
       air: 'Refrigerado a ar', water: 'Refrigerado a água', internalOil: 'Refrigerado a ar com circuito interno de óleo no cabeçote; sem radiador externo',
       electricKick: 'Partida elétrica / pedal', kickElectric: 'Partida por pedal ou elétrica', upperLower: 'Superior ou inferior nas versões elétricas',
-      manualWet: 'Manual multidisco úmida', manualSemi: 'Manual ou semiautomática', manual: 'Manual', five: '5 marchas de engrenamento constante',
+      manualWet: 'Manual multidisco úmida', manualSemi: 'Manual ou semiautomática', manual: 'Manual', five: '5 marchas de engrenamento constante', fiveRotaryReverse: '5 marchas rotativo (ré opcional)',
       four: '4 marchas', reverse: 'Ré integrada ou caixa 1+1 opcional; confirmar na configuração pedida'
     },
     applications: {
@@ -226,7 +226,7 @@ const locales = {
     values: {
       air: 'Воздушное', water: 'Водяное', internalOil: 'Воздушное с внутренним масляным контуром в головке цилиндра; без внешнего радиатора',
       electricKick: 'Электро- / кикстартер', kickElectric: 'Кикстартер или электростартер', upperLower: 'Верхнее или нижнее для версий с электростартером',
-      manualWet: 'Ручное многодисковое в масляной ванне', manualSemi: 'Ручное или полуавтоматическое', manual: 'Ручное', five: '5-ступенчатая постоянного зацепления',
+      manualWet: 'Ручное многодисковое в масляной ванне', manualSemi: 'Ручное или полуавтоматическое', manual: 'Ручное', five: '5-ступенчатая постоянного зацепления', fiveRotaryReverse: '5-ступенчатая круговая (задний ход опционально)',
       four: '4 передачи', reverse: 'Опционально встроенный реверс или коробка 1+1; подтвердить для заказа'
     },
     applications: {
@@ -287,7 +287,7 @@ const locales = {
     values: {
       air: 'تبريد بالهواء', water: 'تبريد بالماء', internalOil: 'تبريد بالهواء مع دائرة زيت داخلية في رأس الأسطوانة؛ دون مبرد خارجي',
       electricKick: 'تشغيل كهربائي / بالقدم', kickElectric: 'تشغيل بالقدم أو كهربائي', upperLower: 'علوي أو سفلي في نسخ التشغيل الكهربائي',
-      manualWet: 'يدوي متعدد الأقراص رطب', manualSemi: 'يدوي أو نصف أوتوماتيكي', manual: 'يدوي', five: '5 سرعات بتعشيق ثابت',
+      manualWet: 'يدوي متعدد الأقراص رطب', manualSemi: 'يدوي أو نصف أوتوماتيكي', manual: 'يدوي', five: '5 سرعات بتعشيق ثابت', fiveRotaryReverse: '5 سرعات دائرية (رجوع للخلف اختياري)',
       four: '4 سرعات', reverse: 'رجوع مدمج أو علبة 1+1 اختيارية؛ يؤكد حسب التكوين المطلوب'
     },
     applications: {

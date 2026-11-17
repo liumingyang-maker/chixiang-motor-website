@@ -70,7 +70,7 @@ test('approved parameter cells are unchanged and water gears reflect brochure ve
     if (row.includes('cg-water-200sb') || row.includes('cg-water-250sb')) {
       assert.match(row, /<td>5-speed constant mesh<\/td><\/tr>$/);
     } else {
-      assert.match(row, /<td>—<\/td><\/tr>$/);
+      assert.match(row, /<td>5-speed rotary \(optional reverse\)<\/td><\/tr>$/);
     }
   }
 });

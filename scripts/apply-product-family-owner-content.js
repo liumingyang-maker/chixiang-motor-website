@@ -136,8 +136,8 @@ const brochureModelMetrics = {
   'model-cg175': { maxPower: '9.5 kW @ 8,000 rpm', maxTorque: '11.5 N·m @ 6,500 rpm', compression: '8.6–9.3 : 1', weight: '31 kg', dimensions: '380 × 355 × 500 mm' },
   'model-cg200': { maxPower: '10 kW @ 7,500 rpm', maxTorque: '13.5 N·m @ 6,500 rpm', compression: '8.5–9.3 : 1', weight: '31.3 kg', dimensions: '380 × 355 × 500 mm' },
   'model-cg250': { maxPower: '10.5 kW @ 7,000 rpm', maxTorque: '16.5 N·m @ 5,000 rpm', compression: '8.7 : 1', weight: '32 kg', dimensions: '380 × 355 × 500 mm' },
-  'model-cg150sb': { maxPower: '8.5 kW @ 8,500 rpm (±5%)', maxTorque: '10.0 N·m @ 7,500 rpm (±5%)', compression: '10.0 : 1', weight: '31.2 kg', dimensions: '425 × 385 × 530 mm' },
-  'model-cg175sb': { maxPower: '9.5 kW @ 8,000 rpm (±5%)', maxTorque: '11.5 N·m @ 6,500 rpm (±5%)', compression: '8.6–9.3 : 1', weight: '31.6 kg', dimensions: '425 × 385 × 530 mm' },
+  'model-cg150sb': { maxPower: '8.5 kW @ 8,500 rpm (±5%)', maxTorque: '10.0 N·m @ 7,500 rpm (±5%)', compression: '10.0 : 1', weight: '31.2 kg', dimensions: '425 × 385 × 530 mm', gearsKey: 'fiveRotaryReverse' },
+  'model-cg175sb': { maxPower: '9.5 kW @ 8,000 rpm (±5%)', maxTorque: '11.5 N·m @ 6,500 rpm (±5%)', compression: '8.6–9.3 : 1', weight: '31.6 kg', dimensions: '425 × 385 × 530 mm', gearsKey: 'fiveRotaryReverse' },
   'model-cg200sb': { maxPower: '10.5 kW @ 7,500 rpm (±5%)', maxTorque: '15.0 N·m @ 6,000 rpm (±5%)', compression: '9.2 : 1', weight: '33 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
   'model-cg250sb': { maxPower: '11.5 kW @ 7,000 rpm (±5%)', maxTorque: '19.5 N·m @ 5,000 rpm (±5%)', compression: '10.0–10.5 : 1', weight: '32.9 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
   'model-cb150': { maxPower: '—', maxTorque: '—', weight: '29 kg', dimensions: '385 × 355 × 452 mm' },
@@ -157,7 +157,7 @@ function renderCg(recordById, locale, language) {
   const waterColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.grossWeight, l.packageDimensions, l.cooling, l.start, l.clutch, l.gears];
   const rows = records => records.map(record => {
     const metrics = brochureModelMetrics[record.spec_id] || {};
-    const gearText = record.gear_pattern || metrics.gearsConfirmed ? v.five : '—';
+    const gearText = record.gear_pattern || (metrics.gearsKey ? v[metrics.gearsKey] : (metrics.gearsConfirmed ? v.five : '—'));
     return [
       record.model_code,
       unit(record.nominal_displacement_cc, 'cc'),
