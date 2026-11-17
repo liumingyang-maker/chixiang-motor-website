@@ -36,6 +36,7 @@ test('X3 copy avoids unapproved commerce and competitor claims', () => {
 
 test('X3 does not touch homepage procurement blocks', () => {
   const home = read('en/index.html');
-  assert.match(home, /id="procurement-fit"/);
-  assert.ok(!home.includes('shop7p518ep539950'));
+  const body = home.slice(home.indexOf('<body'));
+  assert.match(body, /id="procurement-fit"/);
+  assert.ok(!body.includes('shop7p518ep539950'));
 });

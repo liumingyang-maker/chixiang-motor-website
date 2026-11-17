@@ -4,6 +4,11 @@ const path = require('node:path');
 const canonicalOrigin = 'https://chixiangmotor.com';
 const organizationId = `${canonicalOrigin}/#organization`;
 const websiteId = `${canonicalOrigin}/#website`;
+const officialSameAs = [
+  'https://www.youtube.com/@chixiangmotor',
+  'https://www.linkedin.com/company/chixiang-motor/',
+  'https://shop7p518ep539950.1688.com/'
+];
 
 const labels = {
   en: { home: 'Home', products: 'Products', news: 'News', btvHub: 'Bajaj / TVS Engines & Parts' },
@@ -131,6 +136,7 @@ module.exports = {
   canonicalOrigin,
   organizationId,
   websiteId,
+  officialSameAs,
   labels,
   loadManifest
 };

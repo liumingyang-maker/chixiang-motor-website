@@ -221,11 +221,18 @@ test('localized homepages avoid untranslated English trust-wall strings and publ
   }
   assert.ok(read('es/index.html').includes('años de fabricación'), 'es/index.html must use proper Spanish accents');
   assert.ok(read('es/about.html').includes('fábrica'), 'es/about.html must use proper Spanish accents');
+  const { officialSameAs } = require('../scripts/site-entity-manifest');
   for (const file of ['en/about.html', 'en/evidence.html', 'llms.txt']) {
     const text = read(file);
     assert.ok(text.includes('50'), `${file}: missing 50-unit MOQ`);
     assert.ok(text.includes('10 working days'), `${file}: missing 10 working days lead time`);
     assert.ok(text.includes('FOB Guangzhou'), `${file}: missing FOB Guangzhou default`);
     assert.ok(text.includes('60-day'), `${file}: missing 60-day warranty`);
+  }
+  for (const file of ['en/index.html', 'en/about.html', 'en/evidence.html', 'zh-cn/evidence.html', 'llms.txt']) {
+    const text = read(file);
+    for (const url of officialSameAs) {
+      assert.ok(text.includes(url), `${file}: missing verified sameAs channel ${url}`);
+    }
   }
 });

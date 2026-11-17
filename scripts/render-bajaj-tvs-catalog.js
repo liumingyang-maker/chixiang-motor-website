@@ -9,6 +9,7 @@
  */
 const fs = require('node:fs');
 const path = require('node:path');
+const { officialSameAs } = require('./site-entity-manifest');
 
 const root = process.env.BTV_ROOT
   ? path.resolve(process.env.BTV_ROOT)
@@ -465,6 +466,7 @@ function detailPageHtml(catalog, product, lang) {
         alternateName: 'Chixiang Motor',
         url: 'https://chixiangmotor.com/',
         logo: 'https://chixiangmotor.com/images/logo.webp',
+        sameAs: officialSameAs,
         foundingDate: '2007',
         address: {
           '@type': 'PostalAddress',

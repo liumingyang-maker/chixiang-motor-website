@@ -402,11 +402,12 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
       assert.ok(orgNode, `${file}: missing unified #organization node`);
       assert.equal(orgNode.name, 'CHIXIANG MOTOR', `${file}: organization name must be CHIXIANG MOTOR`);
       assert.equal(orgNode.legalName, 'Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.', `${file}: organization legalName mismatch`);
-    } else if (file === 'ru/gorizontalnyj-dvigatel.html') {
-      const normalizeMoq = (nodes) => JSON.parse(JSON.stringify(nodes).replace(/MOQ 40 шт\./g, 'MOQ 50 шт.'));
-      assert.deepEqual(jsonLd(after, file), normalizeMoq(jsonLd(before, file)), `${file}: JSON-LD changed`);
     } else {
-      assert.deepEqual(jsonLd(after, file), jsonLd(before, file), `${file}: JSON-LD changed`);
+      const stripOrgSameAs = (nodes) => JSON.parse(JSON.stringify(nodes, (key, value) => (key === 'sameAs' ? undefined : value)));
+      const normalizeNodes = (nodes) => file === 'ru/gorizontalnyj-dvigatel.html'
+        ? JSON.parse(JSON.stringify(stripOrgSameAs(nodes)).replace(/MOQ 40 шт\./g, 'MOQ 50 шт.'))
+        : stripOrgSameAs(nodes);
+      assert.deepEqual(normalizeNodes(jsonLd(after, file)), normalizeNodes(jsonLd(before, file)), `${file}: JSON-LD changed`);
     }
     assert.equal(ownerMarker(after), ownerMarker(before), `${file}: owner marker changed`);
 

@@ -5,6 +5,7 @@ const {
   canonicalOrigin,
   organizationId,
   websiteId,
+  officialSameAs,
   loadManifest
 } = require('./site-entity-manifest');
 
@@ -86,6 +87,15 @@ function cleanLegacyJsonLd(html, entry) {
       throw new Error(`${entry.file}: cannot update invalid JSON-LD: ${error.message}`);
     }
     let changed = false;
+    const syncOrganizationSameAs = node => {
+      if (!node || node['@id'] !== organizationId || !typesOf(node).includes('Organization')) return false;
+      const beforeSameAs = JSON.stringify(node.sameAs ?? null);
+      const afterSameAs = JSON.stringify(officialSameAs);
+      if (beforeSameAs === afterSameAs) return false;
+      node.sameAs = officialSameAs;
+      return true;
+    };
+    if (syncOrganizationSameAs(data)) changed = true;
     if (Array.isArray(data['@graph'])) {
       const before = data['@graph'].length;
       data['@graph'] = data['@graph'].filter(node => {
@@ -94,7 +104,10 @@ function cleanLegacyJsonLd(html, entry) {
         const breadcrumbNode = typesOf(node).includes('BreadcrumbList');
         return !pageNode && !websiteNode && !breadcrumbNode;
       });
-      changed = before !== data['@graph'].length;
+      if (before !== data['@graph'].length) changed = true;
+      for (const node of data['@graph']) {
+        if (syncOrganizationSameAs(node)) changed = true;
+      }
     }
     if (entry.role === 'article' && typesOf(data).includes('Article')) {
       data['@id'] = `${entry.url}#article`;
