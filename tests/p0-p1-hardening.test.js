@@ -86,6 +86,7 @@ test('all 16 public English pages enforce unified nav, footer, entity schema, an
     assert.ok(html.includes("designated export division"), `${rel}: missing footer export division note`);
     assert.ok(!html.includes('13140229441'), `${rel}: outdated phone number present`);
     assert.ok(!html.includes('8,000+'), `${rel}: stale 8,000+ capacity claim present`);
+    assert.ok(!html.includes('>8K<'), `${rel}: stale 8K capacity badge present`);
     assert.ok(!/confirm per order|subject to configuration/i.test(html), `${rel}: defensive copy present`);
     assert.doesNotMatch(html, /href="(?:https:\/\/chixiangmotor\.com)?\/zh-cn\/[^"]+\/"/, `${rel}: trailing slash on non-root /zh-cn/ link`);
 
