@@ -389,6 +389,9 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
     const afterSeo = seoContract(after);
     const stripZhCn = (contract) => ({
       ...contract,
+      description: file === 'ru/gorizontalnyj-dvigatel.html'
+        ? String(contract.description || '').replace('MOQ 40 шт.', 'MOQ 50 шт.')
+        : contract.description,
       links: contract.links.filter(link => link.hreflang !== 'zh-CN')
     });
     assert.deepEqual(stripZhCn(afterSeo), stripZhCn(beforeSeo), `${file}: SEO metadata changed`);
@@ -399,6 +402,9 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
       assert.ok(orgNode, `${file}: missing unified #organization node`);
       assert.equal(orgNode.name, 'CHIXIANG MOTOR', `${file}: organization name must be CHIXIANG MOTOR`);
       assert.equal(orgNode.legalName, 'Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.', `${file}: organization legalName mismatch`);
+    } else if (file === 'ru/gorizontalnyj-dvigatel.html') {
+      const normalizeMoq = (nodes) => JSON.parse(JSON.stringify(nodes).replace(/MOQ 40 шт\./g, 'MOQ 50 шт.'));
+      assert.deepEqual(jsonLd(after, file), normalizeMoq(jsonLd(before, file)), `${file}: JSON-LD changed`);
     } else {
       assert.deepEqual(jsonLd(after, file), jsonLd(before, file), `${file}: JSON-LD changed`);
     }

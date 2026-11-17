@@ -59,6 +59,14 @@ function renderChannels(l) {
   return l.channelOrder.map(channel => channelHtml[channel]).join('\n          ');
 }
 
+function renderCommercialTerms(l) {
+  if (!l.commercialHeading || !Array.isArray(l.commercialTerms) || !l.commercialTerms.length) return '';
+  return `<h3>${escapeHtml(l.commercialHeading)}</h3>
+          <ul class="procurement-checklist" data-commercial-terms>
+            ${l.commercialTerms.map(item => `<li><strong>${escapeHtml(item.label)}:</strong> ${escapeHtml(item.value)}</li>`).join('\n            ')}
+          </ul>`;
+}
+
 function renderOwner(route, l) {
   const option = (value, label) => `<option value="${value}">${escapeHtml(label)}</option>`;
   return `${START}
@@ -81,6 +89,7 @@ function renderOwner(route, l) {
             ${l.checklist.map(item => `<li>${escapeHtml(item)}</li>`).join('\n            ')}
           </ul>
           ${renderOwnerLinks(route.language, l)}
+          ${renderCommercialTerms(l)}
           <h3>${escapeHtml(l.channelHeading)}</h3>
           <!-- CONTACT CHANNEL LIST START -->
           <div class="contact-channel-list" data-contact-channel-list>

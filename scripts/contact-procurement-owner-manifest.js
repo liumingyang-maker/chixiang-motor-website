@@ -68,6 +68,13 @@ const locales = {
       'Required starting, clutch, transmission, cooling or reverse configuration'
     ],
     productLinksLabel: 'Product family pages',
+    commercialHeading: 'Standard Commercial & Warranty Terms',
+    commercialTerms: [
+      { label: 'MOQ', value: '50 units minimum order (mixed loading across available engine models supported)' },
+      { label: 'Standard Lead Time', value: 'Approx. 10 working days for standard configurations after order confirmation' },
+      { label: 'Trade Terms & Ports', value: 'Default FOB Guangzhou; other major Chinese export ports supported per buyer logistics requirements' },
+      { label: 'After-Sales & Warranty', value: '60-day warranty after arrival at the destination port covering verified manufacturing or assembly defects (requires engine serial number and photo/video evidence; confirmed replacement parts are supplied free of charge with your next scheduled container, excluding normal wear items or improper lubrication/coolant/installation)' }
+    ],
     channelHeading: 'Supplemental contact channels',
     formHeading: 'Procurement inquiry form',
     formLead: 'The form is the primary inquiry route. We will review the details before discussing configuration and quotation.',
@@ -121,6 +128,13 @@ const locales = {
       'Configuración requerida de arranque, embrague, transmisión, refrigeración o reversa'
     ],
     productLinksLabel: 'Páginas de familias de productos',
+    commercialHeading: 'Condiciones comerciales y garantía estándar',
+    commercialTerms: [
+      { label: 'Pedido mínimo (MOQ)', value: '50 unidades (se admite carga mixta entre los modelos disponibles)' },
+      { label: 'Plazo de despacho habitual', value: 'Aprox. 10 días hábiles para configuraciones estándar tras confirmar el pedido' },
+      { label: 'Puerto FOB', value: 'FOB Guangzhou por defecto; otros puertos principales de China disponibles según requerimiento logístico del comprador' },
+      { label: 'Garantía y repuestos posventa', value: 'Garantía de 60 días desde la llegada al puerto de destino por defectos verificados de fabricación o ensamblaje (requiere número de serie del motor y foto/video; los repuestos confirmados se envían sin costo en su próximo contenedor programado, excluyendo desgaste normal o uso indebido sin aceite/refrigerante o mala instalación)' }
+    ],
     channelHeading: 'Canales de contacto complementarios',
     formHeading: 'Formulario de consulta de compras',
     formLead: 'El formulario es el canal principal. Revisaremos los datos antes de tratar la configuración y la cotización.',
@@ -174,6 +188,13 @@ const locales = {
       'Configuração necessária de partida, embreagem, transmissão, refrigeração ou ré'
     ],
     productLinksLabel: 'Páginas das famílias de produtos',
+    commercialHeading: 'Condições comerciais e garantia padrão',
+    commercialTerms: [
+      { label: 'Pedido mínimo (MOQ)', value: '50 unidades (aceitamos carregamento misto entre modelos de motores disponíveis)' },
+      { label: 'Prazo padrão de embarque', value: 'Aprox. 10 dias úteis para configurações padrão após confirmação do pedido' },
+      { label: 'Termos e porto FOB', value: 'Padrão FOB Guangzhou; outros principais portos chineses de exportação atendidos conforme necessidade do comprador' },
+      { label: 'Garantia e reposição de peças', value: 'Garantia de 60 dias após a chegada ao porto de destino para defeitos verificados de fabricação ou montagem (mediante número de série do motor e foto/vídeo; peças aprovadas são enviadas gratuitamente no seu próximo contêiner programado, excluindo desgaste normal, instalação inadequada ou falta de óleo/arrefecimento)' }
+    ],
     channelHeading: 'Canais de contato complementares',
     formHeading: 'Formulário de consulta de compras',
     formLead: 'O formulário é o canal principal. Analisaremos os dados antes de discutir configuração e cotação.',
@@ -227,6 +248,13 @@ const locales = {
       'Нужная конфигурация запуска, сцепления, коробки передач, охлаждения или реверса'
     ],
     productLinksLabel: 'Страницы семейств продукции',
+    commercialHeading: 'Стандартные коммерческие условия и гарантия',
+    commercialTerms: [
+      { label: 'Минимальный заказ (MOQ)', value: 'от 50 единиц (возможна смешанная погрузка разных доступных моделей)' },
+      { label: 'Стандартный срок отгрузки', value: 'около 10 рабочих дней для стандартных конфигураций после подтверждения заказа' },
+      { label: 'Условия FOB и порты', value: 'по умолчанию FOB Гуанчжоу; возможна отгрузка через другие основные экспортные порты Китая по согласованию с покупателем' },
+      { label: 'Гарантия и замена запчастей', value: 'гарантия 60 дней после прибытия в порт назначения на подтверждённые производственные или сборочные дефекты (требуется серийный номер двигателя и фото/видео; подтверждённые детали бесплатно отправляются со следующим плановым контейнером; не распространяется на естественный износ и ошибки монтажа/смазки/охлаждения)' }
+    ],
     channelHeading: 'Дополнительные способы связи',
     formHeading: 'Форма запроса для закупки',
     formLead: 'Форма — основной канал запроса. Мы изучим данные до обсуждения конфигурации и предложения.',
@@ -280,6 +308,13 @@ const locales = {
       'متطلبات التشغيل والقابض وناقل الحركة والتبريد أو الرجوع للخلف'
     ],
     productLinksLabel: 'صفحات فئات المنتجات',
+    commercialHeading: 'الشروط التجارية والضمان القياسي',
+    commercialTerms: [
+      { label: 'الحد الأدنى للطلب (MOQ)', value: '50 وحدة كحد أدنى (مع إمكانية خلط الموديلات المتاحة في الشحنة نفسها)' },
+      { label: 'مدة التجهيز القياسية', value: 'نحو 10 أيام عمل للمواصفات القياسية بعد تأكيد الطلب' },
+      { label: 'شروط الشحن والموانئ', value: 'FOB قوانغتشو افتراضيًا، مع دعم الموانئ الصينية الرئيسية الأخرى حسب متطلبات العميل' },
+      { label: 'الضمان وقطع الغيار بعد البيع', value: 'ضمان لمدة 60 يومًا بعد الوصول إلى ميناء الوجهة يغطي عيوب التصنيع أو التجميع المؤكدة (يتطلب الرقم التسلسلي للمحرك وصورة أو فيديو واضحًا؛ وتُرسل قطع الغيار البديلة المعتمدة مجانًا مع الحاوية التالية المجدولة، ويُستثنى التآكل الطبيعي أو سوء التركيب أو نقص الزيت/التبريد)' }
+    ],
     channelHeading: 'قنوات اتصال إضافية',
     formHeading: 'نموذج استفسار المشتريات',
     formLead: 'النموذج هو قناة الاستفسار الأساسية. سنراجع التفاصيل قبل مناقشة التكوين وعرض السعر.',

@@ -72,9 +72,17 @@ test('Contact product choices do not present complete vehicles as current supply
   }
 });
 
-test('Contact pages do not publish universal commercial or unsupported vehicle claims', () => {
-  const forbidden = /MOQ\s*\d|minimum order\s*\d|sample(?:s)?\s+from\s+\d|US\$|USD\s*\d|delivery\s+in\s+\d|complete motorcycles?|complete (?:cargo )?tricycles?/i;
-  for (const page of pages) assert.doesNotMatch(read(page.file), forbidden, page.file);
+test('Contact pages publish owner-approved commercial terms and avoid unsupported vehicle claims', () => {
+  const forbidden = /sample(?:s)?\s+from\s+\d|US\$|USD\s*\d|delivery\s+in\s+\d|complete motorcycles?|complete (?:cargo )?tricycles?/i;
+  for (const page of pages) {
+    const html = read(page.file);
+    assert.doesNotMatch(html, forbidden, page.file);
+    assert.match(html, /data-commercial-terms/, `${page.file}: missing commercial terms block`);
+    assert.match(html, /50/, `${page.file}: missing 50-unit MOQ`);
+    assert.match(html, /10/, `${page.file}: missing 10 working days lead time`);
+    assert.match(html, /FOB/i, `${page.file}: missing FOB port terms`);
+    assert.match(html, /60/, `${page.file}: missing 60-day warranty`);
+  }
 });
 
 test('localized supplemental contact channels use the approved order', () => {

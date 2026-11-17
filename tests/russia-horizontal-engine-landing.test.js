@@ -37,11 +37,11 @@ test('publishes the approved Russian B2B hero and SEO contract', () => {
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.match(html, /Горизонтальные двигатели оптом с завода/);
   assert.match(html, /От \$99 за единицу/);
-  assert.match(html, /MOQ 40 шт\./);
+  assert.match(html, /MOQ 50 шт\./);
   assert.match(html, /Смешанные модели/);
   assert.match(html, /Только оптовые поставки и OEM\/ODM/);
   assert.match(html, /<link rel="canonical" href="https:\/\/chixiangmotor\.com\/ru\/gorizontalnyj-dvigatel">/);
-  assert.doesNotMatch(html, /MOQ 50 шт\./);
+  assert.doesNotMatch(html, /MOQ 40 шт\./);
   assert.doesNotMatch(html, /15\s*[–-]\s*25\s*(?:дн|дней)/i);
 });
 
@@ -84,9 +84,9 @@ test('publishes the standard-order and qualified sample policies in their approv
   assert.ok(procurement, 'missing procurement strip');
   assert.ok(quote, 'missing inquiry section');
 
-  assert.match(hero[0], /MOQ 40 шт\./);
+  assert.match(hero[0], /MOQ 50 шт\./);
   assert.match(hero[0], /Смешанные модели/);
-  assert.match(procurement[0], /MOQ 40 шт\./);
+  assert.match(procurement[0], /MOQ 50 шт\./);
   assert.match(procurement[0], /Смешанные модели/);
   assert.doesNotMatch(hero[0], /Образц|от 3 двигател/i);
   assert.match(
@@ -95,7 +95,7 @@ test('publishes the standard-order and qualified sample policies in their approv
   );
   assert.match(
     quote[0],
-    /Серийный заказ\s*[—–-]\s*от 40 двигателей в общей партии;\s*можно смешивать модели\./i
+    /Серийный заказ\s*[—–-]\s*от 50 двигателей в общей партии;\s*можно смешивать модели\./i
   );
   assert.doesNotMatch(visibleText, trialOrderTier);
 });
@@ -239,9 +239,9 @@ test('embeds a qualified same-page inquiry form', () => {
   assert.ok(quantityHelper, 'missing quantity helper');
   assert.equal(
     quantityHelper[1].trim(),
-    'Серийный заказ — от 40 шт.; поле используется для оценки запроса.'
+    'Серийный заказ — от 50 шт.; поле используется для оценки запроса.'
   );
-  assert.doesNotMatch(quantityHelper[1], /\bMOQ\s*40\b/i);
+  assert.doesNotMatch(quantityHelper[1], /\bMOQ\s*50\b/i);
 });
 
 test('orders the mobile actions as inquiry then Email without messenger links', () => {
