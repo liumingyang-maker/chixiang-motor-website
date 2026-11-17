@@ -57,7 +57,7 @@ test('legacy anchors and water procurement note remain', () => {
   assert.match(html, /No built-in reverse/);
 });
 
-test('approved parameter cells are unchanged and water gears stay blank', () => {
+test('approved parameter cells are unchanged and water gears reflect brochure verification', () => {
   const html = read('en/cg-engine.html');
   for (const [code, actual, bore] of approvedSpecs) {
     assert.ok(html.includes(`>${code}</th>`), code);
@@ -67,7 +67,11 @@ test('approved parameter cells are unchanged and water gears stay blank', () => 
   const waterRows = (html.match(/<tr id="cg-water-[^"]+">[\s\S]*?<\/tr>/g) || []);
   assert.equal(waterRows.length, 4);
   for (const row of waterRows) {
-    assert.match(row, /<td>—<\/td><\/tr>$/);
+    if (row.includes('cg-water-200sb') || row.includes('cg-water-250sb')) {
+      assert.match(row, /<td>5-speed constant mesh<\/td><\/tr>$/);
+    } else {
+      assert.match(row, /<td>—<\/td><\/tr>$/);
+    }
   }
 });
 

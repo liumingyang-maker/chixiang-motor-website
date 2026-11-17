@@ -98,11 +98,9 @@ test('the canonical product-family contract covers exactly four families in five
   }
 });
 
-test('managed family content removes unapproved legacy commercial specifications', () => {
+test('managed family content publishes owner-supplied specs and avoids unapproved brochure claims', () => {
   const forbiddenLegacyRows = [
-    'Peak Power', 'Maximum Horsepower', 'Max Power', 'Max Torque',
-    'Net Weight', 'Gross Weight', 'Overall Dimensions', 'Package Dimensions',
-    'Fuel Consumption', 'Min. Fuel Consumption'
+    'Peak Power', 'Maximum Horsepower', 'Fuel Consumption', 'Min. Fuel Consumption'
   ];
 
   for (const file of files.filter(file => file !== 'ru/gorizontalnyj-dvigatel.html')) {
@@ -111,6 +109,18 @@ test('managed family content removes unapproved legacy commercial specifications
     for (const claim of forbiddenLegacyRows) {
       assert.doesNotMatch(block, new RegExp(claim, 'i'), `${file}: ${claim}`);
     }
+  }
+  for (const cgFile of ['en/cg-engine.html', 'es/motor-cg.html', 'pt/motor-cg.html', 'ru/dvigatel-cg.html', 'ar/cg-engine.html']) {
+    const block = ownerBlock(read(cgFile));
+    assert.match(block, /7\.5 kW @ 8,000 rpm/);
+    assert.match(block, /380 × 355 × 500 mm/);
+    assert.match(block, /425 × 385 × 530 mm/);
+  }
+  for (const cbFile of ['en/cb-engine.html', 'es/motor-cb.html', 'pt/motor-cb.html', 'ru/dvigatel-cb.html', 'ar/cb-engine.html']) {
+    const block = ownerBlock(read(cbFile));
+    assert.match(block, /10\.2 kW @ 7,000 rpm/);
+    assert.match(block, /385 × 355 × 452 mm/);
+    assert.doesNotMatch(block, /8\.2 kW @ 5,000 rpm/, `${cbFile}: suspicious CB150 typo must stay withheld`);
   }
 });
 

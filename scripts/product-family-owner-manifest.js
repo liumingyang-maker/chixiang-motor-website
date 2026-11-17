@@ -25,7 +25,9 @@ const locales = {
   en: {
     labels: {
       approvedHeading: 'Approved product family information', model: 'Model', nominal: 'Nominal class',
-      actual: 'Actual displacement', boreStroke: 'Bore × stroke', cooling: 'Cooling', start: 'Starting method',
+      actual: 'Actual displacement', boreStroke: 'Bore × stroke', maxPower: 'Max power', maxTorque: 'Max torque',
+      compression: 'Compression ratio', netWeight: 'Net weight', grossWeight: 'Gross weight (pkg)',
+      dimensions: 'Overall dimensions', packageDimensions: 'Package dimensions', cooling: 'Cooling', start: 'Starting method',
       starterPosition: 'Electric-starter position', clutch: 'Clutch', gears: 'Transmission', options: 'Supplemental options',
       marketReference: 'Market/search reference', applications: 'Applications', checklist: 'Information needed for quotation',
       familyOptions: 'Approved family configurations', parts: 'Parts categories', category: 'Category', examples: 'Examples',
@@ -84,7 +86,9 @@ const locales = {
   es: {
     labels: {
       approvedHeading: 'Información aprobada de la familia de productos', model: 'Modelo', nominal: 'Clase nominal',
-      actual: 'Cilindrada real', boreStroke: 'Diámetro × carrera', cooling: 'Refrigeración', start: 'Arranque',
+      actual: 'Cilindrada real', boreStroke: 'Diámetro × carrera', maxPower: 'Potencia máx.', maxTorque: 'Torque máx.',
+      compression: 'Compresión', netWeight: 'Peso neto', grossWeight: 'Peso bruto (empaque)',
+      dimensions: 'Dimensiones', packageDimensions: 'Dimensiones de empaque', cooling: 'Refrigeración', start: 'Arranque',
       starterPosition: 'Posición del arranque eléctrico', clutch: 'Embrague', gears: 'Transmisión', options: 'Opciones adicionales',
       marketReference: 'Referencia de mercado/búsqueda', applications: 'Aplicaciones', checklist: 'Información necesaria para cotizar',
       familyOptions: 'Configuraciones de familia aprobadas', parts: 'Categorías de repuestos', category: 'Categoría', examples: 'Ejemplos',
@@ -143,7 +147,9 @@ const locales = {
   pt: {
     labels: {
       approvedHeading: 'Informações aprovadas da família de produtos', model: 'Modelo', nominal: 'Classe nominal',
-      actual: 'Cilindrada real', boreStroke: 'Diâmetro × curso', cooling: 'Refrigeração', start: 'Partida',
+      actual: 'Cilindrada real', boreStroke: 'Diâmetro × curso', maxPower: 'Potência máx.', maxTorque: 'Torque máx.',
+      compression: 'Compressão', netWeight: 'Peso líquido', grossWeight: 'Peso bruto (embalagem)',
+      dimensions: 'Dimensões', packageDimensions: 'Dimensões da embalagem', cooling: 'Refrigeração', start: 'Partida',
       starterPosition: 'Posição da partida elétrica', clutch: 'Embreagem', gears: 'Transmissão', options: 'Opções adicionais',
       marketReference: 'Referência de mercado/pesquisa', applications: 'Aplicações', checklist: 'Informações necessárias para cotação',
       familyOptions: 'Configurações de família aprovadas', parts: 'Categorias de peças', category: 'Categoria', examples: 'Exemplos',
@@ -202,7 +208,9 @@ const locales = {
   ru: {
     labels: {
       approvedHeading: 'Подтверждённая информация о семействе', model: 'Модель', nominal: 'Номинальный класс',
-      actual: 'Фактический объём', boreStroke: 'Диаметр × ход', cooling: 'Охлаждение', start: 'Запуск',
+      actual: 'Фактический объём', boreStroke: 'Диаметр × ход', maxPower: 'Макс. мощность', maxTorque: 'Макс. крутящий момент',
+      compression: 'Степень сжатия', netWeight: 'Вес нетто', grossWeight: 'Вес брутто (упак.)',
+      dimensions: 'Габариты', packageDimensions: 'Габариты упаковки', cooling: 'Охлаждение', start: 'Запуск',
       starterPosition: 'Положение электростартера', clutch: 'Сцепление', gears: 'Коробка передач', options: 'Дополнительные варианты',
       marketReference: 'Рыночное/поисковое обозначение', applications: 'Применение', checklist: 'Данные для расчёта предложения',
       familyOptions: 'Подтверждённые конфигурации семейства', parts: 'Категории запчастей', category: 'Категория', examples: 'Примеры',
@@ -261,7 +269,9 @@ const locales = {
   ar: {
     labels: {
       approvedHeading: 'معلومات معتمدة عن عائلة المنتج', model: 'الطراز', nominal: 'الفئة الاسمية',
-      actual: 'السعة الفعلية', boreStroke: 'القطر × الشوط', cooling: 'التبريد', start: 'طريقة التشغيل',
+      actual: 'السعة الفعلية', boreStroke: 'القطر × الشوط', maxPower: 'أقصى قدرة', maxTorque: 'أقصى عزم',
+      compression: 'نسبة الانضغاط', netWeight: 'الوزن الصافي', grossWeight: 'الوزن الإجمالي (التغليف)',
+      dimensions: 'الأبعاد', packageDimensions: 'أبعاد التغليف', cooling: 'التبريد', start: 'طريقة التشغيل',
       starterPosition: 'موضع بادئ التشغيل الكهربائي', clutch: 'القابض', gears: 'ناقل الحركة', options: 'خيارات إضافية',
       marketReference: 'مرجع السوق/البحث', applications: 'الاستخدامات', checklist: 'المعلومات المطلوبة لعرض السعر',
       familyOptions: 'تكوينات عائلة معتمدة', parts: 'فئات قطع الغيار', category: 'الفئة', examples: 'أمثلة',

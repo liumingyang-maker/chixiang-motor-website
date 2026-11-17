@@ -130,6 +130,21 @@ function cgWaterProcurementNote(language) {
         </div>`;
 }
 
+const brochureModelMetrics = {
+  'model-cg125': { maxPower: '7.5 kW @ 8,000 rpm', maxTorque: '8.6 N·m @ 7,000 rpm', compression: '9.2 : 1', weight: '31 kg', dimensions: '380 × 355 × 500 mm' },
+  'model-cg150': { maxPower: '8.5 kW @ 8,000 rpm', maxTorque: '10 N·m @ 7,500 rpm', compression: '9.2 : 1', weight: '31.05 kg', dimensions: '380 × 355 × 500 mm' },
+  'model-cg175': { maxPower: '9.5 kW @ 8,000 rpm', maxTorque: '11.5 N·m @ 6,500 rpm', compression: '8.6–9.3 : 1', weight: '31 kg', dimensions: '380 × 355 × 500 mm' },
+  'model-cg200': { maxPower: '10 kW @ 7,500 rpm', maxTorque: '13.5 N·m @ 6,500 rpm', compression: '8.5–9.3 : 1', weight: '31.3 kg', dimensions: '380 × 355 × 500 mm' },
+  'model-cg250': { maxPower: '10.5 kW @ 7,000 rpm', maxTorque: '16.5 N·m @ 5,000 rpm', compression: '8.7 : 1', weight: '32 kg', dimensions: '380 × 355 × 500 mm' },
+  'model-cg150sb': { maxPower: '8.5 kW @ 8,500 rpm (±5%)', maxTorque: '10.0 N·m @ 7,500 rpm (±5%)', compression: '10.0 : 1', weight: '31.2 kg', dimensions: '425 × 385 × 530 mm' },
+  'model-cg175sb': { maxPower: '9.5 kW @ 8,000 rpm (±5%)', maxTorque: '11.5 N·m @ 6,500 rpm (±5%)', compression: '8.6–9.3 : 1', weight: '31.6 kg', dimensions: '425 × 385 × 530 mm' },
+  'model-cg200sb': { maxPower: '10.5 kW @ 7,500 rpm (±5%)', maxTorque: '15.0 N·m @ 6,000 rpm (±5%)', compression: '9.2 : 1', weight: '33 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
+  'model-cg250sb': { maxPower: '11.5 kW @ 7,000 rpm (±5%)', maxTorque: '19.5 N·m @ 5,000 rpm (±5%)', compression: '10.0–10.5 : 1', weight: '32.9 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
+  'model-cb150': { maxPower: '—', maxTorque: '—', weight: '29 kg', dimensions: '385 × 355 × 452 mm' },
+  'model-cb200-c': { maxPower: '10.2 kW @ 7,000 rpm', maxTorque: '13.5 N·m @ 6,000 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' },
+  'model-cb250': { maxPower: '12 kW @ 7,000 rpm', maxTorque: '17.5 N·m @ 5,500 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' }
+};
+
 function renderCg(recordById, locale, language) {
   const l = locale.labels;
   const v = locale.values;
@@ -138,17 +153,27 @@ function renderCg(recordById, locale, language) {
   const waterSpecIds = modelIds.cg.slice(5);
   const air = airSpecIds.map(id => model(recordById, id));
   const water = waterSpecIds.map(id => model(recordById, id));
-  const columns = [l.model, l.nominal, l.actual, l.boreStroke, l.cooling, l.start, l.clutch, l.gears];
-  const rows = records => records.map(record => [
-    record.model_code,
-    unit(record.nominal_displacement_cc, 'cc'),
-    unit(record.actual_displacement_cc, 'cc'),
-    record.bore_mm && record.stroke_mm ? `${record.bore_mm} × ${record.stroke_mm} mm` : '—',
-    record.cooling === 'Water-cooled' ? v.water : v.air,
-    v.electricKick,
-    v.manualWet,
-    record.gear_pattern ? v.five : '—'
-  ]);
+  const airColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.cooling, l.start, l.clutch, l.gears];
+  const waterColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.grossWeight, l.packageDimensions, l.cooling, l.start, l.clutch, l.gears];
+  const rows = records => records.map(record => {
+    const metrics = brochureModelMetrics[record.spec_id] || {};
+    const gearText = record.gear_pattern || metrics.gearsConfirmed ? v.five : '—';
+    return [
+      record.model_code,
+      unit(record.nominal_displacement_cc, 'cc'),
+      unit(record.actual_displacement_cc, 'cc'),
+      record.bore_mm && record.stroke_mm ? `${record.bore_mm} × ${record.stroke_mm} mm` : '—',
+      metrics.maxPower || '—',
+      metrics.maxTorque || '—',
+      metrics.compression || '—',
+      metrics.weight || '—',
+      metrics.dimensions || '—',
+      record.cooling === 'Water-cooled' ? v.water : v.air,
+      v.electricKick,
+      v.manualWet,
+      gearText
+    ];
+  });
   const airRowIds = withEnglishRowAnchors ? airSpecIds.map(id => cgModelRowAnchors[id]) : null;
   const waterRowIds = withEnglishRowAnchors ? waterSpecIds.map(id => cgModelRowAnchors[id]) : null;
   const airQuickLinks = withEnglishRowAnchors
@@ -163,11 +188,11 @@ function renderCg(recordById, locale, language) {
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
   return `<div class="catalog-table-block" id="cg-air-cooled">
         <h3>CG Air-Cooled</h3>
-        ${airQuickLinks}${table(l, columns, rows(air), airTableOptions)}
+        ${airQuickLinks}${table(l, airColumns, rows(air), airTableOptions)}
       </div>
       <div class="catalog-table-block" id="cg-water-cooled">
         <h3>CG Water-Cooled</h3>
-        ${waterQuickLinks}${table(l, columns, rows(water), waterTableOptions)}${cgWaterProcurementNote(language)}
+        ${waterQuickLinks}${table(l, waterColumns, rows(water), waterTableOptions)}${cgWaterProcurementNote(language)}
       </div>
       <h3 class="section-title" style="margin-top:2.5rem;">${escapeHtml(l.familyOptions)}</h3>
       <div class="features-grid" style="margin-top:1.5rem;">${cards}</div>`;
@@ -177,17 +202,24 @@ function renderCb(recordById, locale) {
   const l = locale.labels;
   const v = locale.values;
   const records = modelIds.cb.map(id => model(recordById, id));
-  const rows = records.map(record => [
-    record.model_code,
-    unit(record.nominal_displacement_cc, 'cc'),
-    unit(record.actual_displacement_cc, 'cc'),
-    v.air,
-    v.kickElectric,
-    v.manualWet,
-    v.five
-  ]);
+  const rows = records.map(record => {
+    const metrics = brochureModelMetrics[record.spec_id] || {};
+    return [
+      record.model_code,
+      unit(record.nominal_displacement_cc, 'cc'),
+      unit(record.actual_displacement_cc, 'cc'),
+      metrics.maxPower || '—',
+      metrics.maxTorque || '—',
+      metrics.weight || '—',
+      metrics.dimensions || '—',
+      v.air,
+      v.kickElectric,
+      v.manualWet,
+      v.five
+    ];
+  });
   return `<div class="catalog-table-block" id="cb-specifications">
-        ${table(l, [l.model, l.nominal, l.actual, l.cooling, l.start, l.clutch, l.gears], rows)}
+        ${table(l, [l.model, l.nominal, l.actual, l.maxPower, l.maxTorque, l.netWeight, l.dimensions, l.cooling, l.start, l.clutch, l.gears], rows)}
       </div>`;
 }
 
