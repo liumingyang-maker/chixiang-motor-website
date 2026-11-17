@@ -32,7 +32,11 @@ const locales = {
       marketReference: 'Market/search reference', applications: 'Applications', checklist: 'Information needed for quotation',
       familyOptions: 'Approved family configurations', parts: 'Parts categories', category: 'Category', examples: 'Examples',
       related: 'Related product and company pages', faq: 'FAQ', contact: 'Send an inquiry', products: 'All products',
-      about: 'About the factory', email: 'Email sales'
+      about: 'About the factory', email: 'Email sales', carburetor: 'Carburetor',
+      hwHeading: 'HW Water Heavy-Duty Specifications (200–350 cc)',
+      hwNote: 'Single-cylinder, 4-stroke vertical water-cooled architecture with cooling fins, 1.5 L oil capacity, 20-roller clutch, and 18-stage DC magneto. Pressure-splash lubrication, CDI ignition, electric/kick start, manual wet multi-plate clutch. No built-in reverse.',
+      horizontalCatalogHeading: 'Catalog Horizontal Specifications (110 / 125 / 130)',
+      horizontalCatalogNote: 'Owner catalog horizontal variants (10° inclined overhead-cam four-stroke, pressure-splash lubrication, AC CDI ignition, automatic wet multi-plate clutch, 4-speed constant mesh).'
     },
     intro: {
       cg: 'CHIXIANG MOTOR supplies CG air-cooled and approved CG water-cooled engine families for international B2B distributors, assembly projects and replacement markets.',
@@ -43,8 +47,8 @@ const locales = {
     values: {
       air: 'Air-cooled', water: 'Water-cooled', internalOil: 'Air-cooled with an internal cylinder-head oil circuit; no external oil radiator',
       electricKick: 'Electric / kick start', kickElectric: 'Kick or electric start', upperLower: 'Upper or lower for electric-start versions',
-      manualWet: 'Manual wet multi-plate', manualSemi: 'Manual or semi-automatic', manual: 'Manual clutch', five: '5-speed constant mesh', fiveRotaryReverse: '5-speed rotary (optional reverse)',
-      four: '4 gears', reverse: 'Built-in reverse or 1+1 gearbox is optional; confirm for the ordered configuration'
+      manualWet: 'Manual wet multi-plate', autoWet: 'Automatic wet multi-plate', manualSemi: 'Manual or semi-automatic', manual: 'Manual clutch', five: '5-speed constant mesh', fiveRotaryReverse: '5-speed rotary (optional reverse)',
+      four: '4 gears', fourConstant: '4-speed constant mesh', reverse: 'Built-in reverse or 1+1 gearbox is optional; confirm for the ordered configuration'
     },
     applications: {
       cg: ['Work and street motorcycles', 'Cargo-tricycle or ATV configurations when ordered for that application', 'Distributor replacement and assembly projects'],
@@ -93,7 +97,11 @@ const locales = {
       marketReference: 'Referencia de mercado/búsqueda', applications: 'Aplicaciones', checklist: 'Información necesaria para cotizar',
       familyOptions: 'Configuraciones de familia aprobadas', parts: 'Categorías de repuestos', category: 'Categoría', examples: 'Ejemplos',
       related: 'Páginas relacionadas de productos y empresa', faq: 'Preguntas frecuentes', contact: 'Enviar una consulta', products: 'Todos los productos',
-      about: 'Acerca de la fábrica', email: 'Enviar correo a ventas'
+      about: 'Acerca de la fábrica', email: 'Enviar correo a ventas', carburetor: 'Carburador',
+      hwHeading: 'Especificaciones HW Water de servicio pesado (200–350 cc)',
+      hwNote: 'Arquitectura vertical monocilíndrica de 4 tiempos refrigerada por agua con aletas de enfriamiento, capacidad de aceite de 1,5 L, embrague de 20 rodillos y magneto CC de 18 etapas. Lubricación por presión y salpicadura, encendido CDI, arranque eléctrico/pedal y embrague manual multidisco húmedo. Sin reversa interna.',
+      horizontalCatalogHeading: 'Especificaciones de catálogo horizontal (110 / 125 / 130)',
+      horizontalCatalogNote: 'Variantes horizontales del catálogo oficial (4 tiempos inclinado 10° con árbol de levas en culata, lubricación por presión y salpicadura, encendido CDI CA, embrague automático multidisco húmedo y 4 velocidades de engrane constante).'
     },
     intro: {
       cg: 'CHIXIANG MOTOR suministra familias de motores CG refrigerados por aire y familias CG refrigeradas por agua aprobadas para distribuidores B2B, proyectos de ensamblaje y mercados de reposición.',
@@ -104,8 +112,8 @@ const locales = {
     values: {
       air: 'Refrigerado por aire', water: 'Refrigerado por agua', internalOil: 'Refrigerado por aire con circuito interno de aceite en la culata; sin radiador externo',
       electricKick: 'Arranque eléctrico / pedal', kickElectric: 'Arranque por pedal o eléctrico', upperLower: 'Superior o inferior en versiones con arranque eléctrico',
-      manualWet: 'Manual multidisco húmedo', manualSemi: 'Manual o semiautomático', manual: 'Manual', five: '5 velocidades de engrane constante', fiveRotaryReverse: '5 velocidades rotativo (reversa opcional)',
-      four: '4 velocidades', reverse: 'Reversa integrada o caja 1+1 opcional; confirmar según la configuración pedida'
+      manualWet: 'Manual multidisco húmedo', autoWet: 'Automático multidisco húmedo', manualSemi: 'Manual o semiautomático', manual: 'Manual', five: '5 velocidades de engrane constante', fiveRotaryReverse: '5 velocidades rotativo (reversa opcional)',
+      four: '4 velocidades', fourConstant: '4 velocidades de engrane constante', reverse: 'Reversa integrada o caja 1+1 opcional; confirmar según la configuración pedida'
     },
     applications: {
       cg: ['Motocicletas de trabajo y de calle', 'Configuraciones para trimoto de carga o ATV cuando se solicitan para esa aplicación', 'Reposición y proyectos de ensamblaje para distribuidores'],
@@ -154,7 +162,11 @@ const locales = {
       marketReference: 'Referência de mercado/pesquisa', applications: 'Aplicações', checklist: 'Informações necessárias para cotação',
       familyOptions: 'Configurações de família aprovadas', parts: 'Categorias de peças', category: 'Categoria', examples: 'Exemplos',
       related: 'Páginas relacionadas de produtos e empresa', faq: 'Perguntas frequentes', contact: 'Enviar consulta', products: 'Todos os produtos',
-      about: 'Sobre a fábrica', email: 'Enviar e-mail para vendas'
+      about: 'Sobre a fábrica', email: 'Enviar e-mail para vendas', carburetor: 'Carburador',
+      hwHeading: 'Especificações HW Water para serviço pesado (200–350 cc)',
+      hwNote: 'Arquitetura vertical monocilíndrica de 4 tempos refrigerada a água com aletas, 1,5 L de óleo, embreagem de 20 roletes e magneto CC de 18 estágios. Lubrificação por pressão e salpico, ignição CDI, partida elétrica/pedal e embreagem manual multidisco úmida. Sem marcha à ré interna.',
+      horizontalCatalogHeading: 'Especificações de catálogo horizontal (110 / 125 / 130)',
+      horizontalCatalogNote: 'Variantes horizontais do catálogo oficial (4 tempos inclinado 10° com comando no cabeçote, lubrificação por pressão e salpico, ignição CDI CA, embreagem automática multidisco úmida e 4 marchas de engrenamento constante).'
     },
     intro: {
       cg: 'A CHIXIANG MOTOR fornece famílias de motores CG refrigerados a ar e famílias CG refrigeradas a água aprovadas para distribuidores B2B, montagem e reposição.',
@@ -165,8 +177,8 @@ const locales = {
     values: {
       air: 'Refrigerado a ar', water: 'Refrigerado a água', internalOil: 'Refrigerado a ar com circuito interno de óleo no cabeçote; sem radiador externo',
       electricKick: 'Partida elétrica / pedal', kickElectric: 'Partida por pedal ou elétrica', upperLower: 'Superior ou inferior nas versões elétricas',
-      manualWet: 'Manual multidisco úmida', manualSemi: 'Manual ou semiautomática', manual: 'Manual', five: '5 marchas de engrenamento constante', fiveRotaryReverse: '5 marchas rotativo (ré opcional)',
-      four: '4 marchas', reverse: 'Ré integrada ou caixa 1+1 opcional; confirmar na configuração pedida'
+      manualWet: 'Manual multidisco úmida', autoWet: 'Automática multidisco úmida', manualSemi: 'Manual ou semiautomática', manual: 'Manual', five: '5 marchas de engrenamento constante', fiveRotaryReverse: '5 marchas rotativo (ré opcional)',
+      four: '4 marchas', fourConstant: '4 marchas de engrenamento constante', reverse: 'Ré integrada ou caixa 1+1 opcional; confirmar na configuração pedida'
     },
     applications: {
       cg: ['Motocicletas de trabalho e urbanas', 'Configurações para triciclo de carga ou ATV quando pedidas para essa aplicação', 'Reposição e montagem para distribuidores'],
@@ -215,7 +227,11 @@ const locales = {
       marketReference: 'Рыночное/поисковое обозначение', applications: 'Применение', checklist: 'Данные для расчёта предложения',
       familyOptions: 'Подтверждённые конфигурации семейства', parts: 'Категории запчастей', category: 'Категория', examples: 'Примеры',
       related: 'Связанные страницы продукции и компании', faq: 'Частые вопросы', contact: 'Отправить запрос', products: 'Вся продукция',
-      about: 'О заводе', email: 'Написать в отдел продаж'
+      about: 'О заводе', email: 'Написать в отдел продаж', carburetor: 'Карбюратор',
+      hwHeading: 'Характеристики серии HW Water повышенной прочности (200–350 см³)',
+      hwNote: 'Одноцилиндровый 4-тактный вертикальный двигатель с водяным охлаждением и оребрением, объёмом масла 1,5 л, 20-роликовой муфтой, 18-катушечным магнето постоянного тока, смазкой под давлением и разбрызгиванием, зажиганием CDI, электро-/кикстартером и ручным многодисковым сцеплением. Без встроенного реверса.',
+      horizontalCatalogHeading: 'Каталожные характеристики горизонтальных двигателей (110 / 125 / 130)',
+      horizontalCatalogNote: 'Каталожные модификации горизонтальных двигателей (4-тактный наклон 10°, верхний распредвал, смазка под давлением и разбрызгиванием, зажигание AC CDI, автоматическое многодисковое сцепление, 4-ступенчатая КПП постоянного зацепления).'
     },
     intro: {
       cg: 'CHIXIANG MOTOR поставляет семейства воздушных и подтверждённых водяных двигателей CG для B2B-дистрибьюторов, сборочных проектов и рынка замены.',
@@ -226,8 +242,8 @@ const locales = {
     values: {
       air: 'Воздушное', water: 'Водяное', internalOil: 'Воздушное с внутренним масляным контуром в головке цилиндра; без внешнего радиатора',
       electricKick: 'Электро- / кикстартер', kickElectric: 'Кикстартер или электростартер', upperLower: 'Верхнее или нижнее для версий с электростартером',
-      manualWet: 'Ручное многодисковое в масляной ванне', manualSemi: 'Ручное или полуавтоматическое', manual: 'Ручное', five: '5-ступенчатая постоянного зацепления', fiveRotaryReverse: '5-ступенчатая круговая (задний ход опционально)',
-      four: '4 передачи', reverse: 'Опционально встроенный реверс или коробка 1+1; подтвердить для заказа'
+      manualWet: 'Ручное многодисковое в масляной ванне', autoWet: 'Автоматическое многодисковое в масляной ванне', manualSemi: 'Ручное или полуавтоматическое', manual: 'Ручное', five: '5-ступенчатая постоянного зацепления', fiveRotaryReverse: '5-ступенчатая круговая (задний ход опционально)',
+      four: '4 передачи', fourConstant: '4-ступенчатая постоянного зацепления', reverse: 'Опционально встроенный реверс или коробка 1+1; подтвердить для заказа'
     },
     applications: {
       cg: ['Рабочие и дорожные мотоциклы', 'Грузовые трициклы или ATV в соответствующей заказной конфигурации', 'Замена и сборочные проекты дистрибьюторов'],
@@ -276,7 +292,11 @@ const locales = {
       marketReference: 'مرجع السوق/البحث', applications: 'الاستخدامات', checklist: 'المعلومات المطلوبة لعرض السعر',
       familyOptions: 'تكوينات عائلة معتمدة', parts: 'فئات قطع الغيار', category: 'الفئة', examples: 'أمثلة',
       related: 'صفحات المنتجات والشركة ذات الصلة', faq: 'الأسئلة الشائعة', contact: 'إرسال استفسار', products: 'جميع المنتجات',
-      about: 'عن المصنع', email: 'مراسلة المبيعات'
+      about: 'عن المصنع', email: 'مراسلة المبيعات', carburetor: 'المكربن',
+      hwHeading: 'مواصفات سلسلة HW Water للخدمة الشاقة (200–350 سم³)',
+      hwNote: 'محرك عمودي أحادي الأسطوانة رباعي الأشواط مبرد بالماء مع زعانف تبريد وسعة زيت 1.5 لتر وقابض من 20 بكرة ومغناطيس تيار مستمر 18 مرحلة. تزييت بالضغط والطرطشة، إشعال CDI، تشغيل كهربائي/بالقدم، وقابض يدوي متعدد الأقراص رطب. دون ترس رجوع داخلي.',
+      horizontalCatalogHeading: 'مواصفات الكتالوج للمحركات الأفقية (110 / 125 / 130)',
+      horizontalCatalogNote: 'إصدارات المحركات الأفقية في الكتالوج الرسمي (رباعي الأشواط مائل 10 درجات بعمود حدبات علوي، تزييت بالضغط والطرطشة، إشعال AC CDI، قابض أوتوماتيكي متعدد الأقراص رطب، وناقل حركة 4 سرعات).'
     },
     intro: {
       cg: 'توفر CHIXIANG MOTOR عائلات محركات CG المبردة بالهواء وعائلات CG المبردة بالماء المعتمدة للموزعين ومشاريع التجميع وأسواق الاستبدال B2B.',
@@ -287,8 +307,8 @@ const locales = {
     values: {
       air: 'تبريد بالهواء', water: 'تبريد بالماء', internalOil: 'تبريد بالهواء مع دائرة زيت داخلية في رأس الأسطوانة؛ دون مبرد خارجي',
       electricKick: 'تشغيل كهربائي / بالقدم', kickElectric: 'تشغيل بالقدم أو كهربائي', upperLower: 'علوي أو سفلي في نسخ التشغيل الكهربائي',
-      manualWet: 'يدوي متعدد الأقراص رطب', manualSemi: 'يدوي أو نصف أوتوماتيكي', manual: 'يدوي', five: '5 سرعات بتعشيق ثابت', fiveRotaryReverse: '5 سرعات دائرية (رجوع للخلف اختياري)',
-      four: '4 سرعات', reverse: 'رجوع مدمج أو علبة 1+1 اختيارية؛ يؤكد حسب التكوين المطلوب'
+      manualWet: 'يدوي متعدد الأقراص رطب', autoWet: 'أوتوماتيكي متعدد الأقراص رطب', manualSemi: 'يدوي أو نصف أوتوماتيكي', manual: 'يدوي', five: '5 سرعات بتعشيق ثابت', fiveRotaryReverse: '5 سرعات دائرية (رجوع للخلف اختياري)',
+      four: '4 سرعات', fourConstant: '4 سرعات بتعشيق ثابت', reverse: 'رجوع مدمج أو علبة 1+1 اختيارية؛ يؤكد حسب التكوين المطلوب'
     },
     applications: {
       cg: ['دراجات العمل والدراجات العادية', 'تكوينات دراجات الشحن أو ATV عند طلبها لهذا الاستخدام', 'الاستبدال ومشاريع التجميع للموزعين'],

@@ -140,7 +140,7 @@ const brochureModelMetrics = {
   'model-cg175sb': { maxPower: '9.5 kW @ 8,000 rpm (±5%)', maxTorque: '11.5 N·m @ 6,500 rpm (±5%)', compression: '8.6–9.3 : 1', weight: '31.6 kg', dimensions: '425 × 385 × 530 mm', gearsKey: 'fiveRotaryReverse' },
   'model-cg200sb': { maxPower: '10.5 kW @ 7,500 rpm (±5%)', maxTorque: '15.0 N·m @ 6,000 rpm (±5%)', compression: '9.2 : 1', weight: '33 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
   'model-cg250sb': { maxPower: '11.5 kW @ 7,000 rpm (±5%)', maxTorque: '19.5 N·m @ 5,000 rpm (±5%)', compression: '10.0–10.5 : 1', weight: '32.9 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
-  'model-cb150': { maxPower: '—', maxTorque: '—', weight: '29 kg', dimensions: '385 × 355 × 452 mm' },
+  'model-cb150': { maxPower: '8.2 kW @ 8,500 rpm', maxTorque: '10.5 N·m @ 7,000 rpm', weight: '29 kg', dimensions: '385 × 355 × 452 mm' },
   'model-cb200-c': { maxPower: '10.2 kW @ 7,000 rpm', maxTorque: '13.5 N·m @ 6,000 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' },
   'model-cb250': { maxPower: '12 kW @ 7,000 rpm', maxTorque: '17.5 N·m @ 5,500 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' }
 };
@@ -186,6 +186,16 @@ function renderCg(recordById, locale, language) {
   const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true } : undefined;
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
+  const hwWaterModels = [
+    ['HW200', '200 cc', '197 ml', '63.5 × 62.2 mm', '10.5 kW @ 7,500 rpm', '15 N·m @ 6,000 rpm', '9.2 : 1', '38 kg', '425 × 385 × 530 mm', 'PZ30'],
+    ['HW250', '250 cc', '249 ml', '70 × 64 mm', '11.5 kW @ 7,000 rpm', '19.5 N·m @ 5,000 rpm', '10.1–10.5 : 1', '38.1 kg', '425 × 385 × 530 mm', 'PZ30'],
+    ['HW300', '300 cc', '300 ml', '74 × 64 mm', '12.5 kW @ 6,500 rpm', '21 N·m @ 4,500 rpm', '10.4 : 1', '39 kg', '425 × 385 × 530 mm', 'PZ30'],
+    ['HW350', '350 cc', '300.3 ml', '76 × 66.2 mm', '13 kW @ 6,500 rpm', '22.5 N·m @ 4,500 rpm', '10.4 : 1', '40.4 kg', '425 × 385 × 530 mm', 'PZ30']
+  ];
+  const hwColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.carburetor, l.cooling, l.start, l.clutch];
+  const hwRows = hwWaterModels.map(item => [...item, v.water, v.electricKick, v.manualWet]);
+  const hwRowIds = withEnglishRowAnchors ? ['hw-200', 'hw-250', 'hw-300', 'hw-350'] : undefined;
+  const hwTable = table(l, hwColumns, hwRows, { rowIds: hwRowIds, rowHeaderScope: true });
   return `<div class="catalog-table-block" id="cg-air-cooled">
         <h3>CG Air-Cooled</h3>
         ${airQuickLinks}${table(l, airColumns, rows(air), airTableOptions)}
@@ -195,7 +205,12 @@ function renderCg(recordById, locale, language) {
         ${waterQuickLinks}${table(l, waterColumns, rows(water), waterTableOptions)}${cgWaterProcurementNote(language)}
       </div>
       <h3 class="section-title" style="margin-top:2.5rem;">${escapeHtml(l.familyOptions)}</h3>
-      <div class="features-grid" style="margin-top:1.5rem;">${cards}</div>`;
+      <div class="features-grid" style="margin-top:1.5rem;">${cards}</div>
+      <div class="catalog-table-block" id="hw-water-specifications" style="margin-top:2rem;">
+        <h3>${escapeHtml(l.hwHeading)}</h3>
+        ${hwTable}
+        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(l.hwNote)}</p>
+      </div>`;
 }
 
 function renderCb(recordById, locale) {
@@ -238,8 +253,20 @@ function renderHorizontal(recordById, locale) {
     v.four,
     v.reverse
   ]);
+  const catalogModels = [
+    ['CX152FMH-5B', '110 cc', '106.7 ml', '52.4 × 49.5 mm', '4.7 kW @ 8,000 rpm', '6.7 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm'],
+    ['CX152FMH-6', '125 cc', '107 ml', '52.4 × 49.5 mm', '4.9 kW @ 8,000 rpm', '6.9 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm'],
+    ['CX152FMH-5B (130)', '130 cc', '123.67 ml', '54 × 54 mm', '6.3 kW @ 7,500 rpm', '8.8 N·m @ 5,500 rpm', '9.0 : 1', '23 kg', '450 × 280 × 277 mm']
+  ];
+  const catalogColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.cooling, l.start, l.clutch, l.gears];
+  const catalogRows = catalogModels.map(item => [...item, v.air, v.electricKick, v.autoWet, v.fourConstant]);
   return `<div class="catalog-table-block" id="cx-models">
         ${table(l, [l.model, l.nominal, l.marketReference, l.cooling, l.start, l.starterPosition, l.clutch, l.gears, l.options], rows)}
+      </div>
+      <div class="catalog-table-block" id="horizontal-catalog-specs" style="margin-top:2rem;">
+        <h3>${escapeHtml(l.horizontalCatalogHeading)}</h3>
+        ${table(l, catalogColumns, catalogRows, { rowHeaderScope: true })}
+        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(l.horizontalCatalogNote)}</p>
       </div>
       <div class="feature-item" style="text-align:left;margin-top:1.5rem;"><h3>${escapeHtml(l.marketReference)}</h3><p>${escapeHtml(locale.marketNote)}</p></div>`;
 }

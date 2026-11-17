@@ -143,8 +143,13 @@ test('publishes five official CX models with visible YX market references', () =
   assert.match(card154[0], /%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/);
   assert.doesNotMatch(card154[0], /ChatGPT%20Image%202026%E5%B9%B45%E6%9C%8830%E6%97%A5%2010_02_56/);
 
-  assert.doesNotMatch(html, /CX152FMH-(?:5B|6)/);
-  assert.doesNotMatch(html, /106\.7|123\.67|52\.4\s*[x×]\s*49\.5|54\s*[x×]\s*54/);
+  assert.match(html, /id="horizontal-catalog-specs"/);
+  assert.match(html, /CX152FMH-5B/);
+  assert.match(html, /CX152FMH-6/);
+  assert.match(html, /106\.7 ml/);
+  assert.match(html, /123\.67 ml/);
+  assert.match(html, /52\.4 × 49\.5 mm/);
+  assert.match(html, /54 × 54 mm/);
 });
 
 test('separates start method from electric-starter position and keeps reverse supplemental', () => {

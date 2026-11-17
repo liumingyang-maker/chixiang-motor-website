@@ -33,7 +33,7 @@ test('keeps Russian YX terminology as a market reference rather than the manufac
   assert.doesNotMatch(html, /manufactured by (?:YX|Yinxiang)/i);
 });
 
-test('publishes approved configurations without legacy measurement conflicts', () => {
+test('publishes approved configurations and owner-supplied catalog table', () => {
   assert.match(html, /Starting method/);
   assert.match(html, /Electric-starter position/);
   assert.match(html, /Kick or electric start/);
@@ -45,9 +45,14 @@ test('publishes approved configurations without legacy measurement conflicts', (
   assert.match(html, /internal cylinder-head oil circuit/i);
   assert.match(html, /no external oil radiator/i);
 
-  assert.doesNotMatch(html, /CX152FMH-(?:5B|6)/);
-  assert.doesNotMatch(html, /106\.7|123\.67|52\.4\s*[x×]\s*49\.5|54\s*[x×]\s*54/);
-  assert.doesNotMatch(html, /Automatic wet multi-plate/);
+  assert.match(html, /id="horizontal-catalog-specs"/);
+  assert.match(html, /CX152FMH-5B/);
+  assert.match(html, /CX152FMH-6/);
+  assert.match(html, /106\.7 ml/);
+  assert.match(html, /123\.67 ml/);
+  assert.match(html, /52\.4 × 49\.5 mm/);
+  assert.match(html, /54 × 54 mm/);
+  assert.match(html, /Automatic wet multi-plate/);
 });
 
 test('retains canonical, one H1, and existing contact paths', () => {

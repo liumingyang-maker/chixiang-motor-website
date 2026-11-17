@@ -115,12 +115,25 @@ test('managed family content publishes owner-supplied specs and avoids unapprove
     assert.match(block, /7\.5 kW @ 8,000 rpm/);
     assert.match(block, /380 × 355 × 500 mm/);
     assert.match(block, /425 × 385 × 530 mm/);
+    assert.match(block, /HW200/);
+    assert.match(block, /HW350/);
+    assert.match(block, /300\.3 ml/);
+    assert.match(block, /76 × 66\.2 mm/);
   }
   for (const cbFile of ['en/cb-engine.html', 'es/motor-cb.html', 'pt/motor-cb.html', 'ru/dvigatel-cb.html', 'ar/cb-engine.html']) {
     const block = ownerBlock(read(cbFile));
+    assert.match(block, /8\.2 kW @ 8,500 rpm/);
+    assert.match(block, /10\.5 N·m @ 7,000 rpm/);
     assert.match(block, /10\.2 kW @ 7,000 rpm/);
     assert.match(block, /385 × 355 × 452 mm/);
     assert.doesNotMatch(block, /8\.2 kW @ 5,000 rpm/, `${cbFile}: suspicious CB150 typo must stay withheld`);
+  }
+  for (const hzFile of ['en/horizontal-engine.html', 'es/motor-horizontal.html', 'pt/motor-horizontal.html', 'ar/horizontal-engine.html']) {
+    const block = ownerBlock(read(hzFile));
+    assert.match(block, /CX152FMH-5B/);
+    assert.match(block, /CX152FMH-6/);
+    assert.match(block, /106\.7 ml/);
+    assert.match(block, /123\.67 ml/);
   }
 });
 
