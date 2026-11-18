@@ -198,7 +198,7 @@ test('the pdf directory stays public while the extracted text artifact is withhe
   for (const sample of ['ads/algerie/index.html', 'ar/cg-engine.html', 'en/cg-engine.html',
     'es/motor-cg.html', 'pt/motor-cg.html', 'ru/dvigatel-cg.html', 'css/style.css',
     'css/algeria-landing.css', 'js/main.js', 'js/algeria-landing.js', 'images/logo.webp',
-    'images/CB/1.webp']) {
+    'images/cb-offroad/chixiang-cb-offroad-engine-01.webp']) {
     assert.equal(isUploaded(sample), true, 'public path must stay uploadable: ' + sample);
   }
   // (6) public root files

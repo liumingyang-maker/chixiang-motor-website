@@ -283,14 +283,15 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
       file !== 'ads/algerie/index.html'
   );
   const algeriaBaseline = gitShow(frozenBaseline, 'ads/algerie/index.html').replace(/\r\n/g, '\n');
-  // Approved diffs vs frozen baseline: 10k capacity sync + image-asset English path migration (2026-11-16).
+  // Approved diffs vs frozen baseline: 10k capacity sync + image-asset English path migration (2026-11-16, CB phase 2026-11-19).
   const normalizeAlgeria = (text) => text
     .replace(/\r\n/g, '\n')
     .replace(/10 000\+/g, '8 000+')
     .replace(/images\/cg-air-cooled-silver\/chixiang-cg-air-cooled-silver-01\.webp/g, 'images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp')
     .replace(/images\/standard-water-cooled\/chixiang-standard-water-cooled-01\.webp/g, 'images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp')
     .replace(/images\/cg-air-cooled-silver\/chixiang-cg-air-cooled-silver-0[0-9]\.webp/g, 'images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp')
-    .replace(/images\/standard-water-cooled\/chixiang-standard-water-cooled-0[0-9]\.webp/g, 'images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp');
+    .replace(/images\/standard-water-cooled\/chixiang-standard-water-cooled-0[0-9]\.webp/g, 'images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp')
+    .replace(/images\/cb-offroad\/chixiang-cb-offroad-engine-0[0-9]\.(?:webp|png)/g, 'images/CB/1.webp');
   assert.equal(normalizeAlgeria(readFile('ads/algerie/index.html')), algeriaBaseline, 'ads/algerie/index.html has unapproved diff outside capacity update');
   for (const revArgs of [['HEAD'], []]) {
     const result = childProcess.spawnSync(

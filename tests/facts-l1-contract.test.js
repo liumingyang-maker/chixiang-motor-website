@@ -180,13 +180,13 @@ test('AC320 page exposes one breadcrumb and a real img hero', () => {
   const navs = html.match(/<nav\b[^>]*class=["'][^"']*breadcrumb[^"']*["'][^>]*>/gi) || [];
   assert.equal(navs.length, 1, 'exactly one breadcrumb nav');
   assert.match(navs[0], /entity-breadcrumb/);
-  assert.match(html, /<img\b[^>]*src=["']\.\.\/images\/atv\/tb_image_share_1773217554909\.webp["'][^>]*alt=["'][^"']+["']/i);
+  assert.match(html, /<img\b[^>]*src=["']\.\.\/images\/atv\/chixiang-ac320-atv-engine-01\.webp["'][^>]*alt=["'][^"']+["']/i);
   assert.ok(!/background-image:url\(['"]\.\.\/images\/atv\//i.test(html), 'hero must not be CSS background only');
 });
 
 test('AC320 hero image asset exists', () => {
   const fs = require('node:fs');
   const path = require('node:path');
-  const asset = path.join(root, 'images/atv/tb_image_share_1773217554909.webp');
+  const asset = path.join(root, 'images/atv/chixiang-ac320-atv-engine-01.webp');
   assert.ok(fs.existsSync(asset), asset);
 });

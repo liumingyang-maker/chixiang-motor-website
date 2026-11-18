@@ -77,7 +77,7 @@ test('Russia market page leads with CB off-road then horizontal 110-150 and spar
   ['110','125','140','150'].forEach(cc => assert.ok(html.includes(cc), `displacement ${cc} present`));
   assert.match(html, /id="cb-offroad"/);
   assert.match(html, /id="horizontal-engines"/);
-  assert.match(html, /\.\.\/\.\.\/images\/CB\/1\.webp/);
+  assert.match(html, /\.\.\/\.\.\/images\/cb-offroad\/chixiang-cb-offroad-engine-01\.webp/);
   assert.match(html, /href="\/en\/product-detail\?series=cb-offroad"/);
   assert.doesNotMatch(html, /href="\/ru\/dvigatel-140\/"/);
   assertCommercialThresholds(html, 'ru');

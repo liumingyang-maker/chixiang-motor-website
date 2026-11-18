@@ -100,7 +100,8 @@ Campaign pause is the operational lever; the site needs no emergency change.
 - E-mail is a fallback alias of `contact` in the Worker; a dedicated e-mail row would need a Worker change.
 - Duplicate conversion semantics are in-flight only.
 - Central Asia captures no ad parameters.
-- `en/product-detail.html` references missing `CB/3.webp`, `CB/4.webp`, `CB/5.webp`.
+- `en/product-detail.html` previously referenced missing `CB/3.webp`, `CB/4.webp`, `CB/5.webp`; resolved by the
+  image-asset normalization pass — the CB off-road gallery now lists the four real images under `images/cb-offroad/`.
 - No real packaging, carton, container or warehouse photo exists in the repository, so the page describes
   export support in words and shows only assembly, equipment, inspection, testing and workshop images.
 ---
