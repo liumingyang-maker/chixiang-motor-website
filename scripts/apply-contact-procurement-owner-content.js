@@ -52,7 +52,7 @@ function renderOwnerLinks(language, l) {
 function renderChannels(l) {
   const channelHtml = {
     email: `<a data-contact-channel="email" href="mailto:chixiangmotor@163.com"><strong>${escapeHtml(l.channels.email)}</strong><span>chixiangmotor@163.com</span></a>`,
-    wechat: `<div class="contact-channel" data-contact-channel="wechat"><strong>${escapeHtml(l.channels.wechat)}</strong><img src="../images/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F/wechat.webp" alt="${escapeHtml(l.wechatQrAlt)}" width="90" height="90" loading="lazy" decoding="async"></div>`,
+    wechat: `<div class="contact-channel" data-contact-channel="wechat"><strong>${escapeHtml(l.channels.wechat)}</strong><img src="../images/contact-channels/wechat-qr.webp" alt="${escapeHtml(l.wechatQrAlt)}" width="90" height="90" loading="lazy" decoding="async"></div>`,
     whatsapp: `<a data-contact-channel="whatsapp" href="https://wa.me/8619008225410" target="_blank" rel="noopener"><strong>${escapeHtml(l.channels.whatsapp)}</strong><span>+86 19008225410</span></a>`,
     phone: `<a data-contact-channel="phone" href="tel:+8619008225410"><strong>${escapeHtml(l.channels.phone)}</strong><span>+86 19008225410</span></a>`
   };

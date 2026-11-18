@@ -140,7 +140,7 @@ test('publishes five official CX models with visible YX market references', () =
 
   const card154 = cards.find(card => card[0].includes('data-product-card="CX154FMI"'));
   assert.ok(card154);
-  assert.match(card154[0], /%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8/);
+  assert.match(card154[0], /horizontal-electric-start/);
   assert.doesNotMatch(card154[0], /ChatGPT%20Image%202026%E5%B9%B45%E6%9C%8830%E6%97%A5%2010_02_56/);
 
   assert.match(html, /id="horizontal-catalog-specs"/);
@@ -165,9 +165,9 @@ test('separates start method from electric-starter position and keeps reverse su
   assert.match(html, /110 \/ 125 \/ 140 \/ 150 cc/);
   assert.match(html, /Встроенный реверс/);
   assert.match(html, /1\+1/);
-  assert.match(html, /%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA\/125\.webp/);
-  assert.match(html, /%E8%84%9A%E5%90%AF%E5%8A%A8%E5%8F%91%E5%8A%A8%E6%9C%BA\/140\.webp/);
-  assert.match(html, /%E5%86%85%E7%BD%AE%E5%80%92%E6%8C%A1/);
+  assert.match(html, /chixiang-horizontal-kick-start-125-07\.webp/);
+  assert.match(html, /chixiang-horizontal-kick-start-140-08\.webp/);
+  assert.match(html, /chixiang-builtin-reverse-render-06\.webp/);
   assert.doesNotMatch(html, /CX152FMH[\s\S]{0,700}Автоматическое сцепление/);
   assert.doesNotMatch(html, /Уточните крепления, запуск и разъёмы перед заказом/);
 });

@@ -10,10 +10,10 @@ const internalTerms = /NOT APPROVED|INPUT REQUIRED|Phase 5|Research only|Confide
 
 test('homepage Horizontal Engines card uses an existing local image (not the broken png)', () => {
   const html = read('en/index.html');
-  const encodedDir = '%E5%8D%A7%E5%BC%8F%E7%94%B5%E5%90%AF%E5%8A%A8';
-  assert.ok(html.includes(encodedDir + '/3504ab0b-70d8-42bd-ab24-cddc34045a26.webp'), 'horizontal card references the webp image');
-  assert.ok(!html.includes(encodedDir + '/3504ab0b-70d8-42bd-ab24-cddc34045a26.png'), 'broken png reference removed');
-  assert.ok(exists('images/卧式电启动/3504ab0b-70d8-42bd-ab24-cddc34045a26.webp'), 'webp image file exists on disk');
+  const encodedDir = 'horizontal-electric-start';
+  assert.ok(html.includes(encodedDir + '/chixiang-horizontal-electric-start-02.webp'), 'horizontal card references the webp image');
+  assert.ok(!html.includes(encodedDir + '/chixiang-horizontal-electric-start-02.png'), 'broken png reference removed');
+  assert.ok(exists('images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp'), 'webp image file exists on disk');
 });
 
 test('homepage Horizontal Engines copy uses the 110-150cc range', () => {

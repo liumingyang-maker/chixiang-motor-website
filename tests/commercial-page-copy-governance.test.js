@@ -81,7 +81,7 @@ test("approved CB facts and the off-road qualifier are preserved", () => {
 });
 
 test("no broken horizontal-card png reference remains in any HTML file", () => {
-  const pngToken = "3504ab0b-70d8-42bd-ab24-cddc34045a26.png";
+  const pngToken = "chixiang-horizontal-electric-start-02.png";
   const htmls = [];
   (function walk(d) {
     for (const e of fs.readdirSync(path.join(root, d), { withFileTypes: true })) {
@@ -99,7 +99,7 @@ test("no broken horizontal-card png reference remains in any HTML file", () => {
 
 test("the corresponding webp asset exists on disk", () => {
   assert.ok(
-    fs.existsSync(path.join(root, "images", "\u5367\u5F0F\u7535\u542F\u52A8", "3504ab0b-70d8-42bd-ab24-cddc34045a26.webp")),
+    fs.existsSync(path.join(root, "images", "horizontal-electric-start", "chixiang-horizontal-electric-start-02.webp")),
     "webp asset missing"
   );
 });

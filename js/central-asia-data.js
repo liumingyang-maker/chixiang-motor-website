@@ -28,11 +28,11 @@
           'Подбор под мотоцикл или трицикл'
         ],
         gallery: [
-          'images/cg银白色/1.webp',
-          'images/cg银白色/2.webp',
-          'images/cg银白色/3.webp',
-          'images/cg银白色/4.webp',
-          'images/cg银白色/5.webp'
+          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp',
+          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-02.webp',
+          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-03.webp',
+          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-04.webp',
+          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-05.webp'
         ]
       },
       {
@@ -50,11 +50,11 @@
           'Комплектация под рабочую нагрузку'
         ],
         gallery: [
-          'images/普通水冷/6kjzxqqh.webp',
-          'images/普通水冷/e8zlq6eb.webp',
-          'images/普通水冷/pcdwa12q.webp',
-          'images/普通水冷/po85qu0l.webp',
-          'images/普通水冷/qog3j40j.webp'
+          'images/standard-water-cooled/chixiang-standard-water-cooled-01.webp',
+          'images/standard-water-cooled/chixiang-standard-water-cooled-02.webp',
+          'images/standard-water-cooled/chixiang-standard-water-cooled-03.webp',
+          'images/standard-water-cooled/chixiang-standard-water-cooled-04.webp',
+          'images/standard-water-cooled/chixiang-standard-water-cooled-05.webp'
         ]
       },
       {
@@ -77,11 +77,11 @@
           { value: '1,5 л', label: 'объём масла' }
         ],
         gallery: [
-          'images/捍威/product_main_image_1.webp',
-          'images/捍威/product_main_image_2.webp',
-          'images/捍威/product_main_image_3.webp',
-          'images/捍威/product_main_image_4.webp',
-          'images/捍威/product_main_image_5.webp'
+          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp',
+          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-02.webp',
+          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-03.webp',
+          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-04.webp',
+          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-05.webp'
         ]
       }
     ],

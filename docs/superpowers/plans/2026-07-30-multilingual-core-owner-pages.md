@@ -173,7 +173,7 @@ Remove both `series=motorcycles` and `series=tricycles` cards. Preserve the carg
 
 ```html
 <article class="product-card product-card--future" data-category="vehicle">
-  <div class="product-img" style="background-image:url('../images/%E6%91%A9%E6%89%98%E8%BD%A6/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240327163851.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;">
+  <div class="product-img" style="background-image:url('../images/motorcycle-programs/chixiang-motorcycle-program-photo-01.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;">
     <span class="product-badge">В подготовке</span>
   </div>
   <div class="product-info">

@@ -50,8 +50,8 @@ test('Peru sells the approved four product groups with confirmed order totals', 
   assert.match(products, /CG150SB \/ CG175SB \/ CG200SB \/ CG250SB/);
   assert.match(products, /Sin reversa interna/);
   assert.match(products, /magneto de alta salida/);
-  assert.match(products, /images\/普通水冷\/6kjzxqqh\.webp/);
-  assert.match(products, /images\/捍威\/product_main_image_1\.webp/);
+  assert.match(products, /images\/standard-water-cooled\/chixiang-standard-water-cooled-01\.webp/);
+  assert.match(products, /images\/hw-water-heavy-duty\/chixiang-hw-water-heavy-duty-01\.webp/);
   assertCommercialThresholds(html, 'es');
   assertInquiryForm(html, 'Peru');
   assert.doesNotMatch(html + data + products, internalTerms);
