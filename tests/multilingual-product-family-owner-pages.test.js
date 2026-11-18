@@ -134,6 +134,10 @@ test('managed family content publishes owner-supplied specs and avoids unapprove
     assert.match(block, /CX152FMH-6/);
     assert.match(block, /106\.7 ml/);
     assert.match(block, /123\.67 ml/);
+    assert.match(block, /140 ml/);
+    assert.match(block, /149\.8 ml/);
+    assert.match(block, /56 × 57 mm/);
+    assert.match(block, /60 × 53 mm/);
   }
 });
 

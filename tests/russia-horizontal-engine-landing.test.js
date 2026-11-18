@@ -150,6 +150,10 @@ test('publishes five official CX models with visible YX market references', () =
   assert.match(html, /123\.67 ml/);
   assert.match(html, /52\.4 × 49\.5 mm/);
   assert.match(html, /54 × 54 mm/);
+  assert.match(html, /56 × 57 mm/);
+  assert.match(html, /60 × 53 mm/);
+  assert.match(html, /140 ml/);
+  assert.match(html, /149\.8 ml/);
 });
 
 test('separates start method from electric-starter position and keeps reverse supplemental', () => {

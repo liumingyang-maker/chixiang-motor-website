@@ -35,8 +35,8 @@ const locales = {
       about: 'About the factory', email: 'Email sales', carburetor: 'Carburetor',
       hwHeading: 'HW Water Heavy-Duty Specifications (200–350 cc)',
       hwNote: 'Single-cylinder, 4-stroke vertical water-cooled architecture with cooling fins, 1.5 L oil capacity, 20-roller clutch, and 18-stage DC magneto. Pressure-splash lubrication, CDI ignition, electric/kick start, manual wet multi-plate clutch. No built-in reverse.',
-      horizontalCatalogHeading: 'Catalog Horizontal Specifications (110 / 125 / 130)',
-      horizontalCatalogNote: 'Owner catalog horizontal variants (10° inclined overhead-cam four-stroke, pressure-splash lubrication, AC CDI ignition, automatic wet multi-plate clutch, 4-speed constant mesh).'
+      horizontalCatalogHeading: 'Catalog & Reference Horizontal Specifications (110–150 cc)',
+      horizontalCatalogNote: '110/125/130 specs reflect the owner catalog (10° inclined OHC four-stroke, AC CDI ignition, automatic wet multi-plate clutch, 4-speed constant mesh); 140 cc (CX1P56FMJ) and 150 cc (CX1P60FMJ) reflect standard YX-class reference metrics (manual or semi-automatic clutch; CX1P60FMJ uses an internal cylinder-head oil circuit with no external oil radiator).'
     },
     intro: {
       cg: 'CHIXIANG MOTOR supplies CG air-cooled and approved CG water-cooled engine families for international B2B distributors, assembly projects and replacement markets.',
@@ -100,8 +100,8 @@ const locales = {
       about: 'Acerca de la fábrica', email: 'Enviar correo a ventas', carburetor: 'Carburador',
       hwHeading: 'Especificaciones HW Water de servicio pesado (200–350 cc)',
       hwNote: 'Arquitectura vertical monocilíndrica de 4 tiempos refrigerada por agua con aletas de enfriamiento, capacidad de aceite de 1,5 L, embrague de 20 rodillos y magneto CC de 18 etapas. Lubricación por presión y salpicadura, encendido CDI, arranque eléctrico/pedal y embrague manual multidisco húmedo. Sin reversa interna.',
-      horizontalCatalogHeading: 'Especificaciones de catálogo horizontal (110 / 125 / 130)',
-      horizontalCatalogNote: 'Variantes horizontales del catálogo oficial (4 tiempos inclinado 10° con árbol de levas en culata, lubricación por presión y salpicadura, encendido CDI CA, embrague automático multidisco húmedo y 4 velocidades de engrane constante).'
+      horizontalCatalogHeading: 'Especificaciones horizontales de catálogo y referencia (110–150 cc)',
+      horizontalCatalogNote: 'Los datos de 110/125/130 cc provienen del catálogo oficial (4 tiempos inclinado 10° OHC, encendido CDI CA, embrague automático multidisco húmedo y 4 velocidades); 140 cc (CX1P56FMJ) y 150 cc (CX1P60FMJ) corresponden a valores estándar de referencia clase YX (embrague manual o semiautomático; CX1P60FMJ incorpora circuito interno de aceite en culata sin radiador externo).'
     },
     intro: {
       cg: 'CHIXIANG MOTOR suministra familias de motores CG refrigerados por aire y familias CG refrigeradas por agua aprobadas para distribuidores B2B, proyectos de ensamblaje y mercados de reposición.',
@@ -165,8 +165,8 @@ const locales = {
       about: 'Sobre a fábrica', email: 'Enviar e-mail para vendas', carburetor: 'Carburador',
       hwHeading: 'Especificações HW Water para serviço pesado (200–350 cc)',
       hwNote: 'Arquitetura vertical monocilíndrica de 4 tempos refrigerada a água com aletas, 1,5 L de óleo, embreagem de 20 roletes e magneto CC de 18 estágios. Lubrificação por pressão e salpico, ignição CDI, partida elétrica/pedal e embreagem manual multidisco úmida. Sem marcha à ré interna.',
-      horizontalCatalogHeading: 'Especificações de catálogo horizontal (110 / 125 / 130)',
-      horizontalCatalogNote: 'Variantes horizontais do catálogo oficial (4 tempos inclinado 10° com comando no cabeçote, lubrificação por pressão e salpico, ignição CDI CA, embreagem automática multidisco úmida e 4 marchas de engrenamento constante).'
+      horizontalCatalogHeading: 'Especificações horizontais de catálogo e referência (110–150 cc)',
+      horizontalCatalogNote: 'Os modelos 110/125/130 cc seguem o catálogo oficial (4 tempos inclinado 10° OHC, ignição CDI CA, embreagem automática multidisco úmida e 4 marchas); 140 cc (CX1P56FMJ) e 150 cc (CX1P60FMJ) utilizam parâmetros padrão de referência classe YX (embreagem manual ou semiautomática; CX1P60FMJ com circuito interno de óleo no cabeçote e sem radiador externo).'
     },
     intro: {
       cg: 'A CHIXIANG MOTOR fornece famílias de motores CG refrigerados a ar e famílias CG refrigeradas a água aprovadas para distribuidores B2B, montagem e reposição.',
@@ -230,8 +230,8 @@ const locales = {
       about: 'О заводе', email: 'Написать в отдел продаж', carburetor: 'Карбюратор',
       hwHeading: 'Характеристики серии HW Water повышенной прочности (200–350 см³)',
       hwNote: 'Одноцилиндровый 4-тактный вертикальный двигатель с водяным охлаждением и оребрением, объёмом масла 1,5 л, 20-роликовой муфтой, 18-катушечным магнето постоянного тока, смазкой под давлением и разбрызгиванием, зажиганием CDI, электро-/кикстартером и ручным многодисковым сцеплением. Без встроенного реверса.',
-      horizontalCatalogHeading: 'Каталожные характеристики горизонтальных двигателей (110 / 125 / 130)',
-      horizontalCatalogNote: 'Каталожные модификации горизонтальных двигателей (4-тактный наклон 10°, верхний распредвал, смазка под давлением и разбрызгиванием, зажигание AC CDI, автоматическое многодисковое сцепление, 4-ступенчатая КПП постоянного зацепления).'
+      horizontalCatalogHeading: 'Каталожные и справочные характеристики (110–150 см³)',
+      horizontalCatalogNote: 'Данные для 110/125/130 см³ взяты из каталога производителя (4-тактный наклон 10°, верхний распредвал, AC CDI, автоматическое многодисковое сцепление, 4 передачи); для 140 см³ (CX1P56FMJ) и 150 см³ (CX1P60FMJ) приведены стандартные справочные параметры класса YX (ручное или полуавтоматическое сцепление; CX1P60FMJ оснащён внутренним масляным контуром головки без внешнего радиатора).'
     },
     intro: {
       cg: 'CHIXIANG MOTOR поставляет семейства воздушных и подтверждённых водяных двигателей CG для B2B-дистрибьюторов, сборочных проектов и рынка замены.',
@@ -295,8 +295,8 @@ const locales = {
       about: 'عن المصنع', email: 'مراسلة المبيعات', carburetor: 'المكربن',
       hwHeading: 'مواصفات سلسلة HW Water للخدمة الشاقة (200–350 سم³)',
       hwNote: 'محرك عمودي أحادي الأسطوانة رباعي الأشواط مبرد بالماء مع زعانف تبريد وسعة زيت 1.5 لتر وقابض من 20 بكرة ومغناطيس تيار مستمر 18 مرحلة. تزييت بالضغط والطرطشة، إشعال CDI، تشغيل كهربائي/بالقدم، وقابض يدوي متعدد الأقراص رطب. دون ترس رجوع داخلي.',
-      horizontalCatalogHeading: 'مواصفات الكتالوج للمحركات الأفقية (110 / 125 / 130)',
-      horizontalCatalogNote: 'إصدارات المحركات الأفقية في الكتالوج الرسمي (رباعي الأشواط مائل 10 درجات بعمود حدبات علوي، تزييت بالضغط والطرطشة، إشعال AC CDI، قابض أوتوماتيكي متعدد الأقراص رطب، وناقل حركة 4 سرعات).'
+      horizontalCatalogHeading: 'مواصفات الكتالوج والمرجع للمحركات الأفقية (110–150 سم³)',
+      horizontalCatalogNote: 'بيانات 110/125/130 سم³ وفق الكتالوج الرسمي (رباعي الأشواط مائل 10 درجات بعمود حدبات علوي، إشعال AC CDI، قابض أوتوماتيكي متعدد الأقراص، 4 سرعات)؛ وتعتمد فئتا 140 سم³ (CX1P56FMJ) و150 سم³ (CX1P60FMJ) معايير المرجع القياسية لفئة YX (قابض يدوي أو نصف أوتوماتيكي؛ ويضم CX1P60FMJ دائرة زيت داخلية في رأس الأسطوانة دون مبرد خارجي).'
     },
     intro: {
       cg: 'توفر CHIXIANG MOTOR عائلات محركات CG المبردة بالهواء وعائلات CG المبردة بالماء المعتمدة للموزعين ومشاريع التجميع وأسواق الاستبدال B2B.',

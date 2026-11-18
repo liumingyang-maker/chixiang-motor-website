@@ -254,12 +254,14 @@ function renderHorizontal(recordById, locale) {
     v.reverse
   ]);
   const catalogModels = [
-    ['CX152FMH-5B', '110 cc', '106.7 ml', '52.4 × 49.5 mm', '4.7 kW @ 8,000 rpm', '6.7 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm'],
-    ['CX152FMH-6', '125 cc', '107 ml', '52.4 × 49.5 mm', '4.9 kW @ 8,000 rpm', '6.9 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm'],
-    ['CX152FMH-5B (130)', '130 cc', '123.67 ml', '54 × 54 mm', '6.3 kW @ 7,500 rpm', '8.8 N·m @ 5,500 rpm', '9.0 : 1', '23 kg', '450 × 280 × 277 mm']
+    ['CX152FMH-5B', '110 cc', '106.7 ml', '52.4 × 49.5 mm', '4.7 kW @ 8,000 rpm', '6.7 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm', v.air, v.autoWet],
+    ['CX152FMH-6', '125 cc', '107 ml', '52.4 × 49.5 mm', '4.9 kW @ 8,000 rpm', '6.9 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm', v.air, v.autoWet],
+    ['CX152FMH-5B (130)', '130 cc', '123.67 ml', '54 × 54 mm', '6.3 kW @ 7,500 rpm', '8.8 N·m @ 5,500 rpm', '9.0 : 1', '23 kg', '450 × 280 × 277 mm', v.air, v.autoWet],
+    ['CX1P56FMJ', '140 cc', '140 ml', '56 × 57 mm', '8.2 kW @ 8,000 rpm', '10.2 N·m @ 7,500 rpm', '9.8 : 1', '21 kg', '460 × 300 × 260 mm', v.air, v.manualSemi],
+    ['CX1P60FMJ', '150 cc', '149.8 ml', '60 × 53 mm', '10.2 kW @ 9,500 rpm', '11.2 N·m @ 8,000 rpm', '9.9 : 1', '22 kg', '435 × 285 × 235 mm', v.internalOil, v.manualSemi]
   ];
   const catalogColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.cooling, l.start, l.clutch, l.gears];
-  const catalogRows = catalogModels.map(item => [...item, v.air, v.electricKick, v.autoWet, v.fourConstant]);
+  const catalogRows = catalogModels.map(([m, nom, act, bs, pwr, trq, comp, wt, dim, cool, clu]) => [m, nom, act, bs, pwr, trq, comp, wt, dim, cool, v.electricKick, clu, v.fourConstant]);
   return `<div class="catalog-table-block" id="cx-models">
         ${table(l, [l.model, l.nominal, l.marketReference, l.cooling, l.start, l.starterPosition, l.clutch, l.gears, l.options], rows)}
       </div>
