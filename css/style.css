@@ -378,6 +378,8 @@ h4 { font-size: 1.1rem; }
 /* --- Hero Section --- */
 .hero {
   position: relative;
+  width: 100%;
+  max-width: 100%;
   min-height: 100svh;
   padding-top: var(--nav-height);
   display: flex;
@@ -389,24 +391,31 @@ h4 { font-size: 1.1rem; }
 
 .hero-bg {
   position: absolute;
-  inset: 0;
+  top: var(--nav-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 0;
   background-color: #0d0d0d;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center 42%;
   background-size: cover;
 }
 
 /* Gradient overlay — darkens image for readability and smooth bottom transition */
 .hero-overlay {
   position: absolute;
-  inset: 0;
+  top: var(--nav-height);
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(13,13,13,0.42) 0%,
-    rgba(13,13,13,0.58) 42%,
-    rgba(13,13,13,0.88) 78%,
+    rgba(13,13,13,0.34) 0%,
+    rgba(13,13,13,0.54) 42%,
+    rgba(13,13,13,0.88) 76%,
     rgba(13,13,13,0.96) 100%
   );
 }
@@ -416,7 +425,8 @@ h4 { font-size: 1.1rem; }
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 3.25rem 2rem 2.75rem;
+  padding: 3.25rem 2rem 4.25rem;
+  width: 100%;
   max-width: 880px;
 }
 
@@ -491,11 +501,11 @@ h4 { font-size: 1.1rem; }
 
 .hero-scroll {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1.15rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.45);
   animation: bounce 2s infinite;
   transition: color var(--transition-fast);
 }
@@ -2590,15 +2600,20 @@ body:has(.about-page-header) .section-subtitle {
   }
 
   .hero-bg {
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
     position: relative;
     width: 100%;
-    aspect-ratio: 4/3;
+    height: auto;
+    aspect-ratio: 16/9;
     max-height: 320px;
   }
 
   .hero-bg[style*="background"] {
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center 40% !important;
     background-color: #0d0d0d !important;
   }
 
@@ -3314,7 +3329,7 @@ body:has(.about-page-header) .section-subtitle {
 
   /* --- Hero tighter --- */
   .hero-bg {
-    aspect-ratio: 1/1;
+    aspect-ratio: 16/9;
     max-height: 260px;
   }
 
