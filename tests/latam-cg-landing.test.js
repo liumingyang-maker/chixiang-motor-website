@@ -16,6 +16,7 @@ test('publishes independent SEO shells for Peru and Colombia', () => {
     const html=read(`es/${market}/index.html`);
     assert.match(html,new RegExp(`<html lang="${lang}"`));
     assert.equal((html.match(/<h1\b/g)||[]).length,1);
+    assert.doesNotMatch(html,/<h1>\s*<\/h1>/);
     assert.match(html,new RegExp(`<title>${title.replace(/[|]/g,'\\|')}</title>`));
     assert.match(html,new RegExp(`rel="canonical" href="${canonical.replace(/[/.]/g,'\\$&')}"`));
     assert.match(html,/<meta name="robots" content="index,follow">/);

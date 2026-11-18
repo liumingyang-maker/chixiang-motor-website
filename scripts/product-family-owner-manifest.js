@@ -68,11 +68,29 @@ const locales = {
       ['Automatic-clutch water-cooled family', 'Available only in CG150 and CG175 classes, with automatic centrifugal clutch. It is a separate family from built-in-reverse configurations.']
     ],
     partsCategories: [
-      ['Cylinder and piston kits', 'Cylinders, pistons, rings and gasket sets'], ['Cylinder heads and valve train', 'Head assemblies, intake and exhaust valves'],
-      ['Clutch components', 'Clutch housings, friction plates, steel plates and assemblies'], ['Magneto and electrical parts', 'Stators, coils, CDI units, ignition coils and starter motors'],
-      ['Oil and starting systems', 'Oil pumps, starter shafts and related service parts'], ['Transmission and reverse parts', 'Main shafts, shift shafts, gears and reverse components'],
-      ['Crankshaft components', 'Crankshafts, connecting rods and related assemblies'], ['Routine service parts', 'Spark plugs, bearings, filters and related engine service items']
+      ['Cylinder Set', 'Cylinder blocks, pistons, rings and gasket kits (sized per displacement)'],
+      ['Cylinder Head', 'Cylinder head assemblies, intake/exhaust ports and cam/valve seats'],
+      ['Clutch Plate', 'Friction plates, steel plates, 20-roller one-way & heavy-duty clutch assemblies'],
+      ['Magneto Coil', 'Stator coils (including high-output DC options) and rotor/flywheel assemblies'],
+      ['Valve', 'Intake and exhaust valves paired per head and displacement specification'],
+      ['Oil Pump', 'Oil pump assemblies and drive gears for pressurized splash lubrication'],
+      ['Crankshaft', 'Crankshafts and connecting-rod assemblies matching exact stroke & pin specs'],
+      ['Starting Shaft', 'Kick-starter shafts, return springs and ratchet gears'],
+      ['Variable Shaft', 'Gearshift drums, shift forks and gear-selector shafts'],
+      ['Main Shaft', 'Transmission main shafts, countershafts and constant-mesh gear sets'],
+      ['Starter Motor', 'Electric starter motors (upper or lower mount depending on engine code)'],
+      ['Bearings, Spark Plugs & Gears', 'Crankcase bearings, spark plugs and primary/timing drive gears'],
+      ['Electrical & Ignition Parts', 'CDI units, voltage regulators/rectifiers, ignition coils and starter relays']
     ],
+    partsMatrixHeading: 'Engine Platform Coverage & Fitment Checklist',
+    partsMatrixColumns: ['Engine family', 'Core overhaul & wear parts supplied', 'Dimensions confirmed before quotation'],
+    partsMatrixRows: [
+      ['Horizontal CX (110–150 cc)', 'Cylinder set, head, clutch plates, magneto stator, 4-speed shafts, starter/shift shafts, AC CDI', 'Nominal/actual cc, bore size, manual vs. automatic/semi-auto clutch, upper/lower starter mount'],
+      ['CG Air-Cooled (125–250 cc)', 'Cylinder & piston kit, pushrod/rocker head, 5-speed shafts, crankshaft, magneto, oil pump', 'Exact model code (CG125–CG250), bore × stroke, wristpin diameter, balance-shaft option'],
+      ['CG Water & HW (150–350 cc)', 'Water-cooled cylinder/head, 20-roller clutch (HW), 18-stage DC magneto, valves, gaskets, PZ30-matched parts', 'Standard SB vs. HW series, output shaft/spline, magneto plug pins, presence or absence of reverse gear'],
+      ['CB Series (150–250 cc)', 'OHC chain-driven cylinder head, timing chain & tensioner, 5-speed transmission, crankshaft, clutch', 'Exact model (CB150 / CB200-C / CB250), displacement (149 / 197 / 223 cc), electrical connector style']
+    ],
+    partsMatrixNote: 'Parts can be consolidated into mixed container orders alongside complete engines (MOQ 50 engines / mixed-order support, ~10 working days regular lead time, FOB Guangzhou or major Chinese ports, 60-day warranty after destination port arrival).',
     faq: {
       engine: [
         ['How do you confirm the correct configuration?', 'Send the model, intended vehicle, quantity and destination market. Starting, clutch, transmission, reverse and interfaces are confirmed before quotation.'],
@@ -133,11 +151,29 @@ const locales = {
       ['Familia automática refrigerada por agua', 'Disponible solo en clases CG150 y CG175 con embrague centrífugo automático. Es distinta de las configuraciones con reversa integrada.']
     ],
     partsCategories: [
-      ['Kits de cilindro y pistón', 'Cilindros, pistones, aros y juntas'], ['Culatas y tren de válvulas', 'Culatas, válvulas de admisión y escape'],
-      ['Componentes de embrague', 'Campanas, discos de fricción, discos de acero y conjuntos'], ['Magneto y piezas eléctricas', 'Estatores, bobinas, CDI, bobinas de encendido y motores de arranque'],
-      ['Sistemas de aceite y arranque', 'Bombas de aceite, ejes de arranque y piezas de servicio'], ['Transmisión y reversa', 'Ejes principales, ejes de cambio, engranajes y componentes de reversa'],
-      ['Componentes del cigüeñal', 'Cigüeñales, bielas y conjuntos relacionados'], ['Piezas de mantenimiento', 'Bujías, rodamientos, filtros y piezas de servicio']
+      ['Juego de cilindro (Cylinder Set)', 'Camisas, bloques, pistones, anillos y empaques según cilindrada'],
+      ['Culata (Cylinder Head)', 'Conjuntos de culata, asientos de válvula y conductos'],
+      ['Discos y embrague (Clutch Plate)', 'Discos de fricción, discos de acero, embrague de 20 rodillos (HW) y conjuntos'],
+      ['Bobina de magneto (Magneto Coil)', 'Estatores (incluidas opciones CC de alta salida) y rotores'],
+      ['Válvulas (Valve)', 'Válvulas de admisión y escape según culata y cilindrada'],
+      ['Bomba de aceite (Oil Pump)', 'Conjuntos de bomba de aceite y engranajes de mando'],
+      ['Cigüeñal (Crankshaft)', 'Cigüeñales y bielas según carrera y diámetro de bulón'],
+      ['Eje de arranque (Starting Shaft)', 'Ejes de pedal de arranque, resortes y trinquetes'],
+      ['Eje selector (Variable Shaft)', 'Tambores selectores, horquillas y ejes de cambio'],
+      ['Eje principal (Main Shaft)', 'Ejes primario/secundario y juegos de piñones de transmisión'],
+      ['Motor de arranque (Starter Motor)', 'Motores de arranque eléctrico (posición superior o inferior según modelo)'],
+      ['Rodamientos, bujías y engranajes', 'Rodamientos de cárter, bujías y piñones primarios/distribución'],
+      ['Sistema eléctrico y encendido', 'Unidades CDI, reguladores/rectificadores, bobinas de alta y relés']
     ],
+    partsMatrixHeading: 'Cobertura por plataforma y lista de verificación',
+    partsMatrixColumns: ['Familia de motor', 'Repuestos clave suministrados', 'Datos confirmados antes de cotizar'],
+    partsMatrixRows: [
+      ['Horizontal CX (110–150 cc)', 'Cilindro, culata, discos de embrague, estator, ejes de 4 velocidades, eje de arranque/cambio, CDI', 'Cilindrada real, diámetro del cilindro, embrague automático/semiautomático/manual, posición del arranque'],
+      ['CG Aire (125–250 cc)', 'Kit de cilindro y pistón, culata, caja de 5 velocidades, cigüeñal, magneto, bomba de aceite', 'Código exacto (CG125–CG250), diámetro × carrera, diámetro de bulón, opción con eje balanceador'],
+      ['CG Agua y HW (150–350 cc)', 'Cilindro/culata refrigerados por agua, embrague de 20 rodillos (HW), magneto de 18 etapas, válvulas y juntas', 'Serie SB estándar vs. HW pesado, eje de salida/estrías, conector de magneto y configuración de reversa'],
+      ['Serie CB (150–250 cc)', 'Culata OHC por cadena, cadena de distribución y tensor, caja de 5 velocidades, cigüeñal y embrague', 'Modelo exacto (CB150 / CB200-C / CB250), cilindrada (149 / 197 / 223 cc) y tipo de conectores']
+    ],
+    partsMatrixNote: 'Los repuestos pueden consolidarse en contenedores mixtos junto con motores completos (pedidos mayoristas desde 50 motores mixtos, plazo habitual ~10 días hábiles, FOB Guangzhou o principales puertos de China, garantía de 60 días desde la llegada al puerto de destino).',
     faq: {
       engine: [
         ['¿Cómo confirman la configuración correcta?', 'Envíe modelo, vehículo, cantidad y mercado de destino. Antes de cotizar se confirman arranque, embrague, transmisión, reversa e interfaces.'],
@@ -198,11 +234,29 @@ const locales = {
       ['Família automática refrigerada a água', 'Disponível somente nas classes CG150 e CG175 com embreagem centrífuga automática. É separada das configurações com ré integrada.']
     ],
     partsCategories: [
-      ['Kits de cilindro e pistão', 'Cilindros, pistões, anéis e juntas'], ['Cabeçotes e válvulas', 'Cabeçotes e válvulas de admissão e escape'],
-      ['Componentes de embreagem', 'Campanas, discos de fricção, discos de aço e conjuntos'], ['Magneto e elétrica', 'Estatores, bobinas, CDI, bobinas de ignição e motores de partida'],
-      ['Óleo e partida', 'Bombas de óleo, eixos de partida e peças de serviço'], ['Transmissão e ré', 'Eixos principais, eixos de câmbio, engrenagens e componentes de ré'],
-      ['Componentes do virabrequim', 'Virabrequins, bielas e conjuntos'], ['Peças de manutenção', 'Velas, rolamentos, filtros e itens de serviço']
+      ['Conjunto de cilindro (Cylinder Set)', 'Cilindros, pistões, anéis e jogos de juntas por cilindrada'],
+      ['Cabeçote (Cylinder Head)', 'Conjuntos de cabeçote, sedes de válvula e dutos'],
+      ['Discos de embreagem (Clutch Plate)', 'Discos de fricção, discos de aço, embreagem de 20 roletes (HW) e conjuntos'],
+      ['Bobina do magneto (Magneto Coil)', 'Estatores (incluindo versões CC de alta saída) e rotores'],
+      ['Válvulas (Valve)', 'Válvulas de admissão e escape pareadas conforme cabeçote e cilindrada'],
+      ['Bomba de óleo (Oil Pump)', 'Conjuntos de bomba de óleo e engrenagens de acionamento'],
+      ['Virabrequim (Crankshaft)', 'Virabrequins e bielas conforme curso e diâmetro de pino'],
+      ['Eixo de partida (Starting Shaft)', 'Eixos do pedal de partida, molas e catracas'],
+      ['Eixo seletor (Variable Shaft)', 'Tambores seletores, garfos e eixos de mudança'],
+      ['Eixo principal (Main Shaft)', 'Eixos primário/secundário e engrenagens de câmbio'],
+      ['Motor de partida (Starter Motor)', 'Motores de partida elétrica (montagem superior ou inferior conforme modelo)'],
+      ['Rolamentos, velas e engrenagens', 'Rolamentos de carcaça, velas e engrenagens primárias/distribuição'],
+      ['Peças elétricas e ignição', 'Unidades CDI, reguladores/retificadores, bobinas de ignição e relés']
     ],
+    partsMatrixHeading: 'Cobertura por plataforma e verificação de encaixe',
+    partsMatrixColumns: ['Família do motor', 'Principais peças fornecidas', 'Parâmetros confirmados antes da cotação'],
+    partsMatrixRows: [
+      ['Horizontal CX (110–150 cc)', 'Conjunto de cilindro, cabeçote, discos, estator, eixos de 4 marchas, partida/câmbio e CDI', 'Cilindrada real, diâmetro, embreagem automática/semiautomática/manual, posição da partida elétrica'],
+      ['CG a Ar (125–250 cc)', 'Kit cilindro/pistão, cabeçote, câmbio de 5 marchas, virabrequim, magneto e bomba de óleo', 'Código exato (CG125–CG250), diâmetro × curso, pino do pistão e opção com eixo balanceador'],
+      ['CG Água e HW (150–350 cc)', 'Cilindro/cabeçote refrigerados a água, embreagem 20 roletes (HW), magneto 18 estágios, válvulas', 'Linha SB padrão vs. HW pesada, eixo de saída/estrias, conector do magneto e presença de marcha à ré'],
+      ['Série CB (150–250 cc)', 'Cabeçote OHC por corrente, corrente de comando e tensor, câmbio de 5 marchas e embreagem', 'Modelo exato (CB150 / CB200-C / CB250), cilindrada (149 / 197 / 223 cc) e conectores elétricos']
+    ],
+    partsMatrixNote: 'As peças podem ser consolidadas no mesmo contêiner com motores completos (MOQ de 50 motores com modelos mistos, prazo padrão ~10 dias úteis, FOB Guangzhou ou principais portos da China, garantia de 60 dias após a chegada ao porto de destino).',
     faq: {
       engine: [
         ['Como confirmam a configuração correta?', 'Envie modelo, veículo, quantidade e mercado. Partida, embreagem, transmissão, ré e interfaces são confirmadas antes da cotação.'],
@@ -263,11 +317,29 @@ const locales = {
       ['Водяное семейство с автоматическим сцеплением', 'Только классы CG150 и CG175 с центробежным автоматическим сцеплением. Отдельно от конфигураций со встроенным реверсом.']
     ],
     partsCategories: [
-      ['Цилиндро-поршневые комплекты', 'Цилиндры, поршни, кольца и прокладки'], ['Головки и клапанный механизм', 'Головки, впускные и выпускные клапаны'],
-      ['Детали сцепления', 'Корзины, фрикционные и стальные диски, узлы'], ['Магнето и электрика', 'Статоры, катушки, CDI, катушки зажигания и стартеры'],
-      ['Масляная система и запуск', 'Масляные насосы, валы стартера и сервисные детали'], ['Трансмиссия и реверс', 'Главные и переключающие валы, шестерни и детали реверса'],
-      ['Кривошипно-шатунные детали', 'Коленвалы, шатуны и связанные узлы'], ['Расходные сервисные детали', 'Свечи, подшипники, фильтры и сервисные позиции']
+      ['Цилиндро-поршневая группа (Cylinder Set)', 'Цилиндры, поршни, кольца и комплекты прокладок по кубатуре'],
+      ['Головка цилиндра (Cylinder Head)', 'Головки цилиндра в сборе, сёдла и каналы клапанов'],
+      ['Сцепление и диски (Clutch Plate)', 'Фрикционные и стальные диски, 20-роликовая муфта (HW) и узлы в сборе'],
+      ['Катушки магнето (Magneto Coil)', 'Статоры (включая 18-катушечные генераторы постоянного тока) и роторы'],
+      ['Клапаны (Valve)', 'Впускные и выпускные клапаны под конкретную головку и объём'],
+      ['Масляный насос (Oil Pump)', 'Масляные насосы и приводные шестерни смазки'],
+      ['Коленвал (Crankshaft)', 'Коленчатые валы и шатуны под точный ход поршня и палец'],
+      ['Вал кикстартера (Starting Shaft)', 'Валы кикстартера, пружины возврата и храповики'],
+      ['Копирный вал КПП (Variable Shaft)', 'Барабаны переключения передач, вилки и валы селектора'],
+      ['Первичный и вторичный валы (Main Shaft)', 'Первичные/вторичные валы КПП и комплекты шестерён'],
+      ['Электростартер (Starter Motor)', 'Стартеры (верхнее или нижнее крепление в зависимости от модели)'],
+      ['Подшипники, свечи и малые шестерни', 'Подшипники картера, свечи зажигания и первичные шестерни'],
+      ['Электрика и зажигание', 'Коммутаторы CDI, реле-регуляторы, катушки зажигания и реле стартера']
     ],
+    partsMatrixHeading: 'Охват по платформам и карта проверки перед заказом',
+    partsMatrixColumns: ['Семейство двигателей', 'Основные узлы и детали в поставке', 'Параметры, сверяемые перед расчётом'],
+    partsMatrixRows: [
+      ['Горизонтальные CX (110–150 cc)', 'ЦПГ, головка, диски сцепления, статор, валы 4-ст. КПП, валы запуска/переключения, CDI', 'Фактический объём, диаметр цилиндра, тип сцепления (автомат/полуавтомат/механика), положение стартера'],
+      ['CG воздушные (125–250 cc)', 'ЦПГ, головка толкательного типа, валы 5-ст. КПП, коленвал, магнето, масляный насос', 'Точный код (CG125–CG250), диаметр × ход, диаметр поршневого пальца, наличие балансирного вала'],
+      ['CG водяные и HW (150–350 cc)', 'Цилиндр/головка водяного охлаждения, 20-роликовая муфта (HW), магнето 18 этапов, клапаны', 'Стандартная серия SB или тяжёлая HW, выходной вал/шлицы, разъём магнето, наличие встроенного реверса'],
+      ['Серия CB (150–250 cc)', 'Верхневальная головка OHC, цепь ГРМ и натяжитель, 5-ст. КПП, коленвал и сцепление', 'Точная модель (CB150 / CB200-C / CB250), объём (149 / 197 / 223 cc) и тип разъёмов']
+    ],
+    partsMatrixNote: 'Запчасти можно объединять в смешанный контейнер с комплектными двигателями (MOQ от 50 двигателей разных моделей, стандартный срок ~10 рабочих дней, FOB Гуанчжоу или другие порты Китая, гарантия 60 дней после прибытия в порт назначения).',
     faq: {
       engine: [
         ['Как подтверждается нужная конфигурация?', 'Укажите модель, технику, количество и рынок. До расчёта подтверждаются запуск, сцепление, коробка, реверс и интерфейсы.'],
@@ -328,11 +400,29 @@ const locales = {
       ['عائلة مبردة بالماء بقابض أوتوماتيكي', 'متاحة فقط لفئتي CG150 وCG175 بقابض طرد مركزي أوتوماتيكي، ومنفصلة عن تكوينات الرجوع المدمج.']
     ],
     partsCategories: [
-      ['أطقم الأسطوانة والمكبس', 'أسطوانات ومكابس وحلقات وجوانات'], ['رؤوس الأسطوانات والصمامات', 'رؤوس وصمامات سحب وعادم'],
-      ['مكونات القابض', 'أجراس وأقراص احتكاك وأقراص فولاذية ومجموعات'], ['المولد والأجزاء الكهربائية', 'ملفات ثابتة وملفات وCDI وملفات إشعال ومحركات بادئ'],
-      ['نظام الزيت والتشغيل', 'مضخات زيت وأعمدة تشغيل وقطع صيانة'], ['ناقل الحركة والرجوع', 'أعمدة رئيسية وأعمدة تبديل وتروس ومكونات رجوع'],
-      ['مكونات عمود المرفق', 'أعمدة مرفق وأذرع توصيل ومجموعات'], ['قطع الصيانة الدورية', 'شمعات ومحامل وفلاتر وقطع خدمة']
+      ['طقم الأسطوانة (Cylinder Set)', 'أسطوانات ومكابس وحلقات وجوانات حسب السعة الفعلية'],
+      ['رأس الأسطوانة (Cylinder Head)', 'مجموعات رأس الأسطوانة ومقاعد الصمامات'],
+      ['أقراص ومجموعة القابض (Clutch Plate)', 'أقراص احتكاك وفولاذية وقابض 20 بكرة للخدمة الشاقة (HW)'],
+      ['ملف المغناطيس (Magneto Coil)', 'ملفات ثابتة (تشمل خيارات تيار مستمر عالية الخرج) ودوارات'],
+      ['الصمامات (Valve)', 'صمامات السحب والعادم المطابقة لكل رأس أسطوانة'],
+      ['مضخة الزيت (Oil Pump)', 'مضخات الزيت وتروس الدفع لنظام التزييت بالضغط'],
+      ['عمود المرفق (Crankshaft)', 'أعمدة المرفق وأذرع التوصيل حسب الشوط وقطر المسمار'],
+      ['عمود التشغيل (Starting Shaft)', 'أعمدة بادئ القدم والنوابض والتروس'],
+      ['عمود تبديل السرعات (Variable Shaft)', 'طبلة التبديل والشوكات وأعمدة التبديل'],
+      ['العمود الرئيسي (Main Shaft)', 'الأعمدة الرئيسية والثانوية ومجموعات تروس النقل'],
+      ['محرك بادئ التشغيل (Starter Motor)', 'محركات التشغيل الكهربائي (تركيب علوي أو سفلي حسب الطراز)'],
+      ['المحامل وشمعات الاحتراق والتروس', 'محامل الكرنك وشمعات الإشعال والتروس الأولية'],
+      ['القطع الكهربائية والإشعال', 'وحدات CDI ومنظمات الجهد وملفات الإشعال والمرحلات']
     ],
+    partsMatrixHeading: 'تغطية المنصات وقائمة التحقق قبل عرض السعر',
+    partsMatrixColumns: ['عائلة المحرك', 'القطع الأساسية الموردة', 'الأبعاد المطلوب تأكيدها قبل التسعير'],
+    partsMatrixRows: [
+      ['المحركات الأفقية CX (110–150 سم³)', 'طقم أسطوانة ورأس وأقراص قابض وملف ثابت وأعمدة 4 سرعات وCDI', 'السعة الفعلية وقطر الأسطوانة ونوع القابض (أوتوماتيكي/نصف أوتوماتيكي/يدوي) وموضع البادئ'],
+      ['CG المبردة بالهواء (125–250 سم³)', 'طقم أسطوانة ومكبس ورأس وصمامات وناقل 5 سرعات وعمود مرفق ومضخة زيت', 'رمز الطراز الدقيق (CG125–CG250) والقطر × الشوط وقطر مسمار المكبس وخيار عمود الموازنة'],
+      ['CG المبردة بالماء وHW (150–350 سم³)', 'أسطوانة ورأس تبريد مائي وقابض 20 بكرة (HW) ومغناطيس 18 مرحلة وصمامات', 'سلسلة SB القياسية مقابل HW الشاقة وعمود الخرج وأطراف قابس المغناطيس وخيار الرجوع'],
+      ['سلسلة CB (150–250 سم³)', 'رأس أسطوانة OHC بجنزير وجنزير التوقيت والشداد وناقل 5 سرعات وعمود مرفق', 'الطراز الدقيق (CB150 / CB200-C / CB250) والسعة (149 / 197 / 223 سم³) ونوع المقابس']
+    ],
+    partsMatrixNote: 'يمكن تجميع قطع الغيار في نفس الحاوية المختلطة مع المحركات الكاملة (الحد الأدنى للطلب 50 محركاً بطرازات مختلطة، مدة التجهيز ~10 أيام عمل، FOB قوانغتشو أو الموانئ الصينية الرئيسية، وضمان 60 يوماً بعد الوصول إلى ميناء الوجهة).',
     faq: {
       engine: [
         ['كيف يتم تأكيد التكوين الصحيح؟', 'أرسل الطراز والمركبة والكمية وسوق الوجهة. يتم تأكيد التشغيل والقابض والناقل والرجوع والتوصيلات قبل عرض السعر.'],

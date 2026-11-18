@@ -277,6 +277,11 @@ function renderParts(locale) {
   const l = locale.labels;
   return `<div class="catalog-table-block" id="parts-specifications">
         ${table(l, [l.category, l.examples], locale.partsCategories)}
+      </div>
+      <div class="catalog-table-block" id="parts-compatibility-matrix" style="margin-top:2rem;">
+        <h3>${escapeHtml(locale.partsMatrixHeading)}</h3>
+        ${table(l, locale.partsMatrixColumns, locale.partsMatrixRows, { rowHeaderScope: true })}
+        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(locale.partsMatrixNote)}</p>
       </div>`;
 }
 
