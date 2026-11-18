@@ -9,14 +9,38 @@
 - Quality & Testing: Two dedicated engine testing laboratories equipped with eddy-current dynamometers, exhaust gas analyzers, and incoming metallurgical/hardness inspection for crankshafts, gears, crankcases, and clutch assemblies
 - Certifications: ISO 9001 quality management system; CCC certification available for applicable engine models
 - Export & Commercial Terms: 50-unit MOQ (mixed loading across available engine models supported); ~10 working days standard lead time; default FOB Guangzhou with other major Chinese export ports supported; 60-day warranty after destination port arrival for verified manufacturing/assembly defects (replacement parts supplied free with next scheduled container upon serial number and photo/video verification); export documentation and logistics executed through Chixiang's designated export division
+- Standard Packing & Accessory Scope: Complete engines ship with core engine assembly and factory stator/rotor coils; kick-starter lever, gearshift lever, intake manifold, carburetor (e.g., PZ26/PZ27/PZ30), CDI/regulator/relay kit, and carton or 12-unit palletized export packing are confirmed per order BOM / Proforma Invoice before shipment
 - Contact: +86 19008225410 (Tel / WhatsApp) | chixiangmotor@163.com
 
 ## Primary Chinese Motorcycle & Cargo-Tricycle Engine Platforms
-- CG Air-Cooled & Water-Cooled Series (125cc–250cc, including Balance-Shaft, Tsunami, HW Water heavy-duty, and Automatic-Clutch families): https://chixiangmotor.com/en/cg-engine
-- CB Air-Cooled Street & Off-Road Series (CB150, CB200-C, CB250): https://chixiangmotor.com/en/cb-engine
-- Horizontal Air-Cooled Series (CX152FMH 110cc, CX153FMI/CX154FMI 125cc, CX1P56FMJ 140cc, CX1P60FMJ 150cc): https://chixiangmotor.com/en/horizontal-engine
-- AC320 ATV/UTV Liquid-Cooled CVT Engine (175MN, 287.2cc): https://chixiangmotor.com/en/ac320-atv-engine
-- OEM-Grade Engine Parts: https://chixiangmotor.com/en/engine-parts
+- CG Air-Cooled Series (5-speed constant mesh, manual wet multi-plate clutch, electric/kick start, 380x355x500 mm, 31–32 kg net weight; Balance-Shaft variants available): https://chixiangmotor.com/en/cg-engine#cg-air-cooled
+  - CG125: 124 cc actual (56.5 x 49.5 mm), 7.5 kW @ 8,000 rpm, 8.6 N·m @ 7,000 rpm, 9.2:1, 31 kg
+  - CG150: 149 cc actual (62 x 49.5 mm), 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, 9.2:1, 31.05 kg
+  - CG175: 174 cc actual (62 x 57.5 mm), 9.5 kW @ 8,000 rpm, 11.5 N·m @ 6,500 rpm, 8.6–9.3:1, 31 kg
+  - CG200: 197 cc actual (63.5 x 62.2 mm), 10 kW @ 7,500 rpm, 13.5 N·m @ 6,500 rpm, 8.5–9.3:1, 31.3 kg
+  - CG250: 229.5 cc actual (67 x 65 mm), 10.5 kW @ 7,000 rpm, 16.5 N·m @ 5,000 rpm, 8.7:1, 32 kg
+- CG Water-Cooled Cargo-Tricycle Series (425x385x530 mm pkg, 31.2–33 kg gross pkg, electric/kick start, manual wet multi-plate clutch; Tsunami dual-cooling & Auto-Clutch 150/175 families available): https://chixiangmotor.com/en/cg-engine#cg-water-cooled
+  - CG150SB: 149.5 cc actual (62 x 49.5 mm), 8.5 kW @ 8,500 rpm, 10.0 N·m @ 7,500 rpm, 10.0:1, 5-speed rotary (optional reverse)
+  - CG175SB: 173.6 cc actual (62 x 57.5 mm), 9.5 kW @ 8,000 rpm, 11.5 N·m @ 6,500 rpm, 8.6–9.3:1, 5-speed rotary (optional reverse)
+  - CG200SB: 197 cc actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15.0 N·m @ 6,000 rpm, 9.2:1, 5-speed constant mesh
+  - CG250SB: 246.3 cc actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.0–10.5:1, 5-speed constant mesh
+- HW Heavy-Duty Water-Cooled Cargo-Tricycle Series (cooling fins, 1.5 L oil capacity, 20-roller one-way clutch, 18-stage DC magneto, PZ30 carburetor, 425x385x530 mm, NO built-in reverse): https://chixiangmotor.com/en/cg-engine#hw-water-specifications
+  - HW200: 197 ml actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15 N·m @ 6,000 rpm, 9.2:1, 38 kg net
+  - HW250: 249 ml actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.1–10.5:1, 38.1 kg net
+  - HW300: 300 ml actual (74 x 64 mm), 12.5 kW @ 6,500 rpm, 21 N·m @ 4,500 rpm, 10.4:1, 39 kg net
+  - HW350: 300.3 ml actual (76 x 66.2 mm), 13 kW @ 6,500 rpm, 22.5 N·m @ 4,500 rpm, 10.4:1, 40.4 kg net
+- CB OHC Air-Cooled Series (overhead camshaft chain-driven, 385x355x452 mm, 5-speed constant mesh, kick/electric start, manual wet multi-plate): https://chixiangmotor.com/en/cb-engine
+  - CB150: 149 cc actual, 8.2 kW @ 8,500 rpm, 10.5 N·m @ 7,000 rpm, 29 kg net
+  - CB200-C: 197 cc actual, 10.2 kW @ 7,000 rpm, 13.5 N·m @ 6,000 rpm, 31 kg net
+  - CB250: 223 cc actual, 12 kW @ 7,000 rpm, 17.5 N·m @ 5,500 rpm, 31 kg net
+- Horizontal CX Air-Cooled Series (110–150 cc nominal classes, YX market-reference alignment, 4-speed, optional built-in reverse / 1+1): https://chixiangmotor.com/en/horizontal-engine
+  - CX152FMH-5B (110 cc): 106.7 ml (52.4 x 49.5 mm), 4.7 kW @ 8,000 rpm, 6.7 N·m @ 6,000 rpm, 9.7:1, 19 kg, 477x395x280 mm, automatic wet clutch
+  - CX152FMH-6 (125 cc): 107 ml (52.4 x 49.5 mm), 4.9 kW @ 8,000 rpm, 6.9 N·m @ 6,000 rpm, 9.7:1, 19 kg, 477x395x280 mm, automatic wet clutch
+  - CX152FMH-5B (130 cc catalog square-bore code): 123.67 ml (54 x 54 mm), 6.3 kW @ 7,500 rpm, 8.8 N·m @ 5,500 rpm, 9.0:1, 23 kg, 450x280x277 mm, automatic wet clutch
+  - CX1P56FMJ (140 cc / YX140 reference): 140 ml (56 x 57 mm), 8.2 kW @ 8,000 rpm, 10.2 N·m @ 7,500 rpm, 9.8:1, 21 kg, 460x300x260 mm, manual or semi-auto clutch
+  - CX1P60FMJ (150 cc / W150-2 reference): 149.8 ml (60 x 53 mm), 10.2 kW @ 9,500 rpm, 11.2 N·m @ 8,000 rpm, 9.9:1, 22 kg, 435x285x235 mm, air-cooled with internal cylinder-head oil circuit (no external oil radiator), manual or semi-auto clutch
+- AC320 ATV/UTV Liquid-Cooled CVT Engine (175MN, 287.2 cc): https://chixiangmotor.com/en/ac320-atv-engine
+- Engine Parts Catalog (13 categories: Cylinder Set, Cylinder Head, Clutch Plate, Magneto Coil, Valve, Oil Pump, Crankshaft, Starting/Variable/Main Shafts, Starter Motor, Bearings/Plugs/Gears, CDI/Electrical; 4-platform fitment matrix for CX/CG Air/CG Water & HW/CB): https://chixiangmotor.com/en/engine-parts
 
 ## Indian Platform Aftermarket Replacement Engines & OEM Cross-Reference Catalog
 - Bajaj & TVS Replacement Engines & OEM Cross-Reference Hub: https://chixiangmotor.com/en/bajaj-tvs-engines-parts

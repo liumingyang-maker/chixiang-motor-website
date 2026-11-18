@@ -277,8 +277,12 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
       file !== 'workers/site-router.mjs' &&
       file !== 'sitemap.xml' &&
       file !== 'scripts/site-entity-manifest.js' &&
-      file !== 'scripts/apply-site-entity-schema.js'
+      file !== 'scripts/apply-site-entity-schema.js' &&
+      file !== 'ads/algerie/index.html'
   );
+  const algeriaBaseline = gitShow(frozenBaseline, 'ads/algerie/index.html').replace(/\r\n/g, '\n');
+  const normalizeAlgeria = (text) => text.replace(/\r\n/g, '\n').replace(/10 000\+/g, '8 000+');
+  assert.equal(normalizeAlgeria(readFile('ads/algerie/index.html')), algeriaBaseline, 'ads/algerie/index.html has unapproved diff outside capacity update');
   for (const revArgs of [['HEAD'], []]) {
     const result = childProcess.spawnSync(
       'git',

@@ -315,6 +315,7 @@ function renderOwnerBlock(recordById, route) {
       <h2 class="section-title">${escapeHtml(l.approvedHeading)}</h2>
       <p class="section-subtitle">${escapeHtml(locale.intro[route.family])}</p>
       ${familyContent}
+      ${route.family !== 'parts' ? `<div class="feature-item" style="text-align:left;margin-top:1.5rem;" data-packing-scope><h3>${escapeHtml(l.packingScopeHeading)}</h3><p>${escapeHtml(l.packingScopeBody)}</p></div>` : ''}
       <div class="features-grid" style="margin-top:2rem;">
         <div class="feature-item" style="text-align:left;"><h3>${escapeHtml(l.applications)}</h3>${list(applications)}</div>
         <div class="feature-item" style="text-align:left;"><h3>${escapeHtml(l.checklist)}</h3>${list(checklist)}</div>

@@ -36,7 +36,9 @@ const locales = {
       hwHeading: 'HW Water Heavy-Duty Specifications (200–350 cc)',
       hwNote: 'Single-cylinder, 4-stroke vertical water-cooled architecture with cooling fins, 1.5 L oil capacity, 20-roller clutch, and 18-stage DC magneto. Pressure-splash lubrication, CDI ignition, electric/kick start, manual wet multi-plate clutch. No built-in reverse.',
       horizontalCatalogHeading: 'Catalog & Reference Horizontal Specifications (110–150 cc)',
-      horizontalCatalogNote: '110/125/130 specs reflect the owner catalog (10° inclined OHC four-stroke, AC CDI ignition, automatic wet multi-plate clutch, 4-speed constant mesh); 140 cc (CX1P56FMJ) and 150 cc (CX1P60FMJ) reflect standard YX-class reference metrics (manual or semi-automatic clutch; CX1P60FMJ uses an internal cylinder-head oil circuit with no external oil radiator).'
+      horizontalCatalogNote: '110/125/130 specs reflect the owner catalog (10° inclined OHC four-stroke, AC CDI ignition, automatic wet multi-plate clutch, 4-speed constant mesh; note CX152FMH-5B (130) is the catalog designation for the 54 × 54 mm square-bore 123.67 ml class); 140 cc (CX1P56FMJ) and 150 cc (CX1P60FMJ) reflect standard YX-class reference metrics (manual or semi-automatic clutch; CX1P60FMJ uses an internal cylinder-head oil circuit with no external oil radiator).',
+      packingScopeHeading: 'Standard Export Packing & Accessory Scope',
+      packingScopeBody: 'Complete engines ship with the core engine assembly and factory stator/rotor coils. Ancillary items (kick-starter lever, gearshift lever, intake manifold, carburetor such as PZ26/PZ27/PZ30, CDI/regulator/relay kit, and carton or 12-unit palletized export packing) are explicitly confirmed on your order BOM / Proforma Invoice before shipment.'
     },
     intro: {
       cg: 'CHIXIANG MOTOR supplies CG air-cooled and approved CG water-cooled engine families for international B2B distributors, assembly projects and replacement markets.',
@@ -119,7 +121,9 @@ const locales = {
       hwHeading: 'Especificaciones HW Water de servicio pesado (200–350 cc)',
       hwNote: 'Arquitectura vertical monocilíndrica de 4 tiempos refrigerada por agua con aletas de enfriamiento, capacidad de aceite de 1,5 L, embrague de 20 rodillos y magneto CC de 18 etapas. Lubricación por presión y salpicadura, encendido CDI, arranque eléctrico/pedal y embrague manual multidisco húmedo. Sin reversa interna.',
       horizontalCatalogHeading: 'Especificaciones horizontales de catálogo y referencia (110–150 cc)',
-      horizontalCatalogNote: 'Los datos de 110/125/130 cc provienen del catálogo oficial (4 tiempos inclinado 10° OHC, encendido CDI CA, embrague automático multidisco húmedo y 4 velocidades); 140 cc (CX1P56FMJ) y 150 cc (CX1P60FMJ) corresponden a valores estándar de referencia clase YX (embrague manual o semiautomático; CX1P60FMJ incorpora circuito interno de aceite en culata sin radiador externo).'
+      horizontalCatalogNote: 'Los datos de 110/125/130 cc provienen del catálogo oficial (4 tiempos inclinado 10° OHC, encendido CDI CA, embrague automático multidisco húmedo y 4 velocidades; CX152FMH-5B (130) corresponde a la versión de catálogo con diámetro × carrera cuadrado de 54 × 54 mm y 123.67 ml); 140 cc (CX1P56FMJ) y 150 cc (CX1P60FMJ) corresponden a valores estándar de referencia clase YX (embrague manual o semiautomático; CX1P60FMJ incorpora circuito interno de aceite en culata sin radiador externo).',
+      packingScopeHeading: 'Alcance de empaque y accesorios de exportación',
+      packingScopeBody: 'Cada motor se despacha como conjunto base con bobinas de estator/rotor de fábrica. Los accesorios complementarios (pedal de arranque, palanca de cambios, pipa de admisión, carburador tipo PZ26/PZ27/PZ30, kit eléctrico CDI/regulador/relé y empaque en caja o paletizado de 12 unidades) se confirman por escrito en la lista de pedido / Proforma antes del despacho.'
     },
     intro: {
       cg: 'CHIXIANG MOTOR suministra familias de motores CG refrigerados por aire y familias CG refrigeradas por agua aprobadas para distribuidores B2B, proyectos de ensamblaje y mercados de reposición.',
@@ -202,7 +206,9 @@ const locales = {
       hwHeading: 'Especificações HW Water para serviço pesado (200–350 cc)',
       hwNote: 'Arquitetura vertical monocilíndrica de 4 tempos refrigerada a água com aletas, 1,5 L de óleo, embreagem de 20 roletes e magneto CC de 18 estágios. Lubrificação por pressão e salpico, ignição CDI, partida elétrica/pedal e embreagem manual multidisco úmida. Sem marcha à ré interna.',
       horizontalCatalogHeading: 'Especificações horizontais de catálogo e referência (110–150 cc)',
-      horizontalCatalogNote: 'Os modelos 110/125/130 cc seguem o catálogo oficial (4 tempos inclinado 10° OHC, ignição CDI CA, embreagem automática multidisco úmida e 4 marchas); 140 cc (CX1P56FMJ) e 150 cc (CX1P60FMJ) utilizam parâmetros padrão de referência classe YX (embreagem manual ou semiautomática; CX1P60FMJ com circuito interno de óleo no cabeçote e sem radiador externo).'
+      horizontalCatalogNote: 'Os modelos 110/125/130 cc seguem o catálogo oficial (4 tempos inclinado 10° OHC, ignição CDI CA, embreagem automática multidisco úmida e 4 marchas; CX152FMH-5B (130) é o código de catálogo para a versão quadrada 54 × 54 mm com 123.67 ml); 140 cc (CX1P56FMJ) e 150 cc (CX1P60FMJ) utilizam parâmetros padrão de referência classe YX (embreagem manual ou semiautomática; CX1P60FMJ com circuito interno de óleo no cabeçote e sem radiador externo).',
+      packingScopeHeading: 'Padrão de embalagem e acessórios de exportação',
+      packingScopeBody: 'Os motores completos saem de fábrica com o conjunto principal e bobinas de estator/rotor. Itens complementares (pedal de partida, pedal de câmbio, coletor, carburador como PZ26/PZ27/PZ30, kit CDI/regulador/relé e embalagem em caixa ou palete com 12 unidades) são confirmados expressamente na lista de pedido / Proforma antes do embarque.'
     },
     intro: {
       cg: 'A CHIXIANG MOTOR fornece famílias de motores CG refrigerados a ar e famílias CG refrigeradas a água aprovadas para distribuidores B2B, montagem e reposição.',
@@ -285,7 +291,9 @@ const locales = {
       hwHeading: 'Характеристики серии HW Water повышенной прочности (200–350 см³)',
       hwNote: 'Одноцилиндровый 4-тактный вертикальный двигатель с водяным охлаждением и оребрением, объёмом масла 1,5 л, 20-роликовой муфтой, 18-катушечным магнето постоянного тока, смазкой под давлением и разбрызгиванием, зажиганием CDI, электро-/кикстартером и ручным многодисковым сцеплением. Без встроенного реверса.',
       horizontalCatalogHeading: 'Каталожные и справочные характеристики (110–150 см³)',
-      horizontalCatalogNote: 'Данные для 110/125/130 см³ взяты из каталога производителя (4-тактный наклон 10°, верхний распредвал, AC CDI, автоматическое многодисковое сцепление, 4 передачи); для 140 см³ (CX1P56FMJ) и 150 см³ (CX1P60FMJ) приведены стандартные справочные параметры класса YX (ручное или полуавтоматическое сцепление; CX1P60FMJ оснащён внутренним масляным контуром головки без внешнего радиатора).'
+      horizontalCatalogNote: 'Данные для 110/125/130 см³ взяты из каталога производителя (4-тактный наклон 10°, верхний распредвал, AC CDI, автоматическое многодисковое сцепление, 4 передачи; обозначение каталога CX152FMH-5B (130) соответствует квадратной геометрии 54 × 54 мм и 123.67 мл); для 140 см³ (CX1P56FMJ) и 150 см³ (CX1P60FMJ) приведены стандартные справочные параметры класса YX (ручное или полуавтоматическое сцепление; CX1P60FMJ оснащён внутренним масляным контуром головки без внешнего радиатора).',
+      packingScopeHeading: 'Комплектация поставки и экспортная упаковка',
+      packingScopeBody: 'Базовый двигатель поставляется в сборе со штатным генератором (статор/ротор). Наличие в комплекте кикстартера, лапки КПП, впускного патрубка, карбюратора (например PZ26/PZ27/PZ30), блока CDI/реле-регулятора и формат упаковки (картон/паллета по 12 шт.) фиксируются в спецификации заказа (PI/BOM) до отгрузки.'
     },
     intro: {
       cg: 'CHIXIANG MOTOR поставляет семейства воздушных и подтверждённых водяных двигателей CG для B2B-дистрибьюторов, сборочных проектов и рынка замены.',
@@ -368,7 +376,9 @@ const locales = {
       hwHeading: 'مواصفات سلسلة HW Water للخدمة الشاقة (200–350 سم³)',
       hwNote: 'محرك عمودي أحادي الأسطوانة رباعي الأشواط مبرد بالماء مع زعانف تبريد وسعة زيت 1.5 لتر وقابض من 20 بكرة ومغناطيس تيار مستمر 18 مرحلة. تزييت بالضغط والطرطشة، إشعال CDI، تشغيل كهربائي/بالقدم، وقابض يدوي متعدد الأقراص رطب. دون ترس رجوع داخلي.',
       horizontalCatalogHeading: 'مواصفات الكتالوج والمرجع للمحركات الأفقية (110–150 سم³)',
-      horizontalCatalogNote: 'بيانات 110/125/130 سم³ وفق الكتالوج الرسمي (رباعي الأشواط مائل 10 درجات بعمود حدبات علوي، إشعال AC CDI، قابض أوتوماتيكي متعدد الأقراص، 4 سرعات)؛ وتعتمد فئتا 140 سم³ (CX1P56FMJ) و150 سم³ (CX1P60FMJ) معايير المرجع القياسية لفئة YX (قابض يدوي أو نصف أوتوماتيكي؛ ويضم CX1P60FMJ دائرة زيت داخلية في رأس الأسطوانة دون مبرد خارجي).'
+      horizontalCatalogNote: 'بيانات 110/125/130 سم³ وفق الكتالوج الرسمي (رباعي الأشواط مائل 10 درجات بعمود حدبات علوي، إشعال AC CDI، قابض أوتوماتيكي متعدد الأقراص، 4 سرعات؛ مع الإشارة إلى أن CX152FMH-5B (130) هو رمز الكتالوج للنسخة ذات القطر × الشوط المربع 54 × 54 مم وسعة 123.67 مل)؛ وتعتمد فئتا 140 سم³ (CX1P56FMJ) و150 سم³ (CX1P60FMJ) معايير المرجع القياسية لفئة YX (قابض يدوي أو نصف أوتوماتيكي؛ ويضم CX1P60FMJ دائرة زيت داخلية في رأس الأسطوانة دون مبرد خارجي).',
+      packingScopeHeading: 'نطاق التغليف التصديري والملحقات القياسية',
+      packingScopeBody: 'تُشحن المحركات الكاملة مع الوحدة الأساسية وملفات المغناطيس المصنعية. ويتم تأكيد شمول الملحقات الإضافية (ذراع التشغيل بالقدم، ذراع تبديل السرعات، أنبوب السحب، المكربن مثل PZ26/PZ27/PZ30، وطقم CDI والمنظم، إضافة إلى التغليف الكرتوني أو الطبليات سعة 12 محركاً) خطياً في الفاتورة المبدئية وقائمة الطلب قبل الشحن.'
     },
     intro: {
       cg: 'توفر CHIXIANG MOTOR عائلات محركات CG المبردة بالهواء وعائلات CG المبردة بالماء المعتمدة للموزعين ومشاريع التجميع وأسواق الاستبدال B2B.',
