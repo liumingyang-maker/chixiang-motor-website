@@ -24,7 +24,7 @@ test('X4 copy states real credentials with holder/model limits', () => {
   const html = read('en/about.html');
   assert.match(html, /ISO 9001 quality-management certification documentation is available/);
   assert.match(html, /Chongqing High-Tech Zone technology-enterprise public notices/);
-  assert.match(html, /exact engine model and destination market/);
+  assert.match(html, /exact engine[\s\S]{0,40}model and destination market/);
   assert.ok(!/100% tested/i.test(html));
   assert.ok(!/all engines CCC/i.test(html));
   assert.ok(!/certificate verified/i.test(html));

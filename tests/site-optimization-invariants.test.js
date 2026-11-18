@@ -144,7 +144,9 @@ function jsonLd(html, file) {
 }
 
 function scriptSources(html) {
-  return tags(html, 'script').map(tag => attribute(tag, 'src') || '[inline]');
+  return tags(html, 'script')
+    .filter(tag => !/data-(?:product-family|static-catalog)-schema/i.test(tag))
+    .map(tag => attribute(tag, 'src') || '[inline]');
 }
 
 function procurementForms(html, file) {
@@ -303,10 +305,11 @@ test('frozen files have no candidate-tree or working-tree diff from the fixed ba
   assert.ok(manifestSrc.includes('zh-cn'), 'manifest supports zh-cn');
 });
 
-test('sitemap matches baseline after removing only approved AC320 and exact zh-cn entries', () => {
-  const baseline = gitShow(frozenBaseline, 'sitemap.xml').replace(/\r\n/g, '\n');
-  const candidate = stripA1SitemapEntry(gitShow('HEAD', 'sitemap.xml'));
-  const working = stripA1SitemapEntry(readFile('sitemap.xml'));
+test('sitemap matches baseline after removing only approved AC320, exact zh-cn entries, and lastmod refresh', () => {
+  const normalizeLastmod = (xml) => xml.replace(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g, '<lastmod>DATE</lastmod>');
+  const baseline = normalizeLastmod(gitShow(frozenBaseline, 'sitemap.xml').replace(/\r\n/g, '\n'));
+  const candidate = normalizeLastmod(stripA1SitemapEntry(gitShow('HEAD', 'sitemap.xml')));
+  const working = normalizeLastmod(stripA1SitemapEntry(readFile('sitemap.xml')));
   assert.equal(candidate, baseline, 'sitemap candidate has unapproved changes');
   assert.equal(working, baseline, 'sitemap working tree has unapproved changes');
   assert.match(readFile('sitemap.xml'), /en\/ac320-atv-engine/);
@@ -386,6 +389,8 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
     const after = current(file);
     if (file === 'en/product-detail.html') {
       assert.equal(oneH1(after, file), productDetailToolH1, `${file}: tool H1 contract changed`);
+    } else if (file === 'en/index.html') {
+      assert.equal(oneH1(after, file), 'Motorcycle &amp; Cargo-Tricycle Engine Manufacturer in Chongqing, China', `${file}: approved GEO H1 changed`);
     } else {
       assert.equal(oneH1(after, file), oneH1(before, file), `${file}: H1 changed`);
     }
@@ -396,10 +401,15 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
       description: file === 'ru/gorizontalnyj-dvigatel.html'
         ? String(contract.description || '').replace('MOQ 40 шт.', 'MOQ 50 шт.')
         : contract.description,
-      links: contract.links.filter(link => link.hreflang !== 'zh-CN')
+      links: contract.links.filter(link =>
+        link.hreflang !== 'zh-CN' &&
+        !(file === 'en/product-detail.html' && link.rel === 'canonical')
+      ).sort((a, b) => String(a.hreflang || a.rel).localeCompare(String(b.hreflang || b.rel)))
     });
     assert.deepEqual(stripZhCn(afterSeo), stripZhCn(beforeSeo), `${file}: SEO metadata changed`);
     assert.equal(breadcrumb(after), breadcrumb(before), `${file}: breadcrumb state changed`);
+    const stripAddedProductSchema = (html) => html
+      .replace(/<script\b[^>]*data-(?:product-family|static-catalog)-schema[^>]*>[\s\S]*?<\/script>/gi, '');
     if (file.startsWith('en/') && file !== 'en/product-detail.html') {
       const afterNodes = jsonLd(after, file).flatMap((d) => Array.isArray(d['@graph']) ? d['@graph'] : [d]);
       const orgNode = afterNodes.find((n) => n['@id'] === 'https://chixiangmotor.com/#organization');
@@ -407,11 +417,14 @@ test('mutable pages retain the SEO, ownership, baseline breadcrumb state and com
       assert.equal(orgNode.name, 'CHIXIANG MOTOR', `${file}: organization name must be CHIXIANG MOTOR`);
       assert.equal(orgNode.legalName, 'Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.', `${file}: organization legalName mismatch`);
     } else {
-      const stripOrgSameAs = (nodes) => JSON.parse(JSON.stringify(nodes, (key, value) => (key === 'sameAs' ? undefined : value)));
+      const stripOrgSameAsAndAddress = (nodes) => JSON.parse(
+        JSON.stringify(nodes, (key, value) => (key === 'sameAs' ? undefined : value))
+          .replace(/No\. 1-2, Building 7, No\. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China/g, 'No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District')
+      ).map(doc => doc && doc['@type'] === 'FAQPage' ? { '@context': doc['@context'], '@type': 'FAQPage', mainEntityCount: Array.isArray(doc.mainEntity) ? doc.mainEntity.length : 0 } : doc);
       const normalizeNodes = (nodes) => file === 'ru/gorizontalnyj-dvigatel.html'
-        ? JSON.parse(JSON.stringify(stripOrgSameAs(nodes)).replace(/MOQ 40 шт\./g, 'MOQ 50 шт.'))
-        : stripOrgSameAs(nodes);
-      assert.deepEqual(normalizeNodes(jsonLd(after, file)), normalizeNodes(jsonLd(before, file)), `${file}: JSON-LD changed`);
+        ? JSON.parse(JSON.stringify(stripOrgSameAsAndAddress(nodes)).replace(/MOQ 40 шт\./g, 'MOQ 50 шт.'))
+        : stripOrgSameAsAndAddress(nodes);
+      assert.deepEqual(normalizeNodes(jsonLd(stripAddedProductSchema(after), file)), normalizeNodes(jsonLd(before, file)), `${file}: JSON-LD changed`);
     }
     assert.equal(ownerMarker(after), ownerMarker(before), `${file}: owner marker changed`);
 

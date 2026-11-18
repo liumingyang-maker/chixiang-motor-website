@@ -75,11 +75,11 @@ test('About pages distinguish industry experience from company registration', ()
 
 test('all translated catalogues publish the approved HW Water family facts', () => {
   const catalogues = {
-    'en/products.html': [/HW Water/, /1\.5 L/, /20-roller/i, /high-output magneto/i, /No built-in reverse/i],
-    'es/products.html': [/HW Water/, /1,5 L/, /20 rodillos/i, /magneto de alta salida/i, /Sin reversa interna/i],
-    'pt/products.html': [/HW Water/, /1,5 L/, /20 roletes/i, /magneto de alta saída/i, /Sem marcha à ré interna/i],
-    'ru/products.html': [/HW Water/, /1,5 л/i, /20-роликовой/i, /магнето повышенной мощности/i, /Без встроенного реверса/i],
-    'ar/products.html': [/HW Water/, /1\.5 لتر/i, /20 بكرة/i, /عالي الخرج/i, /من دون ترس رجوع داخلي/i]
+    'en/products.html': [/HW Water/, /1\.5 L/, /20-roller/i, /high-output magneto/i, /forward transmission/i],
+    'es/products.html': [/HW Water/, /1,5 L/, /20 rodillos/i, /magneto de alta salida/i, /reversa externas/i],
+    'pt/products.html': [/HW Water/, /1,5 L/, /20 roletes/i, /magneto de alta saída/i, /ré externas/i],
+    'ru/products.html': [/HW Water/, /1,5 л/i, /20-роликовой/i, /магнето повышенной мощности/i, /редукторами реверса/i],
+    'ar/products.html': [/HW Water/, /1\.5 لتر/i, /20 بكرة/i, /عالي الخرج/i, /الرجوع الخارجية/i]
   };
   for (const [file, patterns] of Object.entries(catalogues)) {
     const html = decodeNumericEntities(read(file));
@@ -102,7 +102,7 @@ test('noindex product utility keeps family claims within approved boundaries', (
   assert.match(hw, /1\.5 L/);
   assert.match(hw, /20-roller clutch/i);
   assert.match(hw, /high-output magneto/i);
-  assert.match(hw, /no built-in reverse/i);
+  assert.match(hw, /forward transmission/i);
   assert.doesNotMatch(hw, /18[- ]pole|no slipping|eliminates overheating|reverse gear included/i);
 
   const balancer = between(utility, "'cg-balancer': {", "'cg-water': {");

@@ -105,12 +105,9 @@ for (const [language, contract] of Object.entries(contracts)) {
       assert.match(html, /CCC/i);
     });
 
-    await t.test('Products current/future boundary', () => {
+    await t.test('Products current supply without future vehicle disclaimer', () => {
       const html = read(`${language}/products.html`);
-      const card = futureCard(html);
-      assert.ok(card.includes(contract.futureStatus));
-      assert.ok(card.includes(contract.futureName));
-      assert.doesNotMatch(card, /href=|\bbtn\b|price|MOQ|"@type"\s*:\s*"(?:Product|Offer|AggregateRating|Review)"/i);
+      assert.doesNotMatch(html, /product-card--future/i);
       assert.doesNotMatch(html, /series=(?:motorcycles|tricycles)/i);
 
       const jsonLd = JSON.stringify(jsonLdBlocks(html));

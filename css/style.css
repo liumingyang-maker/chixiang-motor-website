@@ -393,21 +393,21 @@ h4 { font-size: 1.1rem; }
   z-index: 0;
   background-color: #0d0d0d;
   background-repeat: no-repeat;
-  background-position: center top;
-  background-size: contain;
+  background-position: center center;
+  background-size: cover;
 }
 
-/* Gradient overlay 鈥?darkens image for readability and smooth bottom transition */
+/* Gradient overlay — darkens image for readability and smooth bottom transition */
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(13,13,13,0.05) 0%,
-    rgba(13,13,13,0.18) 42%,
-    rgba(13,13,13,0.82) 78%,
-    rgba(13,13,13,0.95) 100%
+    rgba(13,13,13,0.42) 0%,
+    rgba(13,13,13,0.58) 42%,
+    rgba(13,13,13,0.88) 78%,
+    rgba(13,13,13,0.96) 100%
   );
 }
 
@@ -2329,9 +2329,9 @@ body:has(.about-page-header) .section-subtitle {
   }
 
   .hero-bg {
-    background-image: url('../mobile%20%E4%B8%BB%E5%9B%BE.webp') !important;
-    background-position: center top;
-    background-size: contain;
+    background-image: url('../images/factory-showcase/factory-5.webp') !important;
+    background-position: center center;
+    background-size: cover;
   }
 
   .hero-brand {
@@ -2597,7 +2597,7 @@ body:has(.about-page-header) .section-subtitle {
   }
 
   .hero-bg[style*="background"] {
-    background-size: contain !important;
+    background-size: cover !important;
     background-position: center !important;
     background-color: #0d0d0d !important;
   }

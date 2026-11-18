@@ -128,9 +128,9 @@ test("ES/PT home pages carry no 24-hour reply promise and no CB torque/vibration
     assert.doesNotMatch(t, /buen torque|bom torque/i, f + " still has CB torque claim");
     assert.doesNotMatch(t, /baja vibraci|baixa vibra/i, f + " still has CB vibration claim");
   }
-  // neutral (non-SLA) CTA + approved off-road qualifier preserved after cleanup
-  assert.match(read("es/index.html"), /Env\u00edenos el modelo, cantidad y pa\u00eds de destino\./);
-  assert.match(read("pt/index.html"), /Envie o modelo, quantidade e mercado de destino\./);
-  assert.match(read("es/index.html"), /off-road seg\u00fan configuraci\u00f3n/);
-  assert.match(read("pt/index.html"), /off-road conforme configura\u00e7\u00e3o/);
+  // neutral (non-SLA) CTA + approved commercial terms preserved after cleanup
+  assert.match(read("es/index.html"), /MOQ est\u00e1ndar desde 50 unidades/);
+  assert.match(read("pt/index.html"), /MOQ padr\u00e3o a partir de 50 unidades/);
+  assert.match(read("es/index.html"), /149 \/ 197 \/ 223 cc/);
+  assert.match(read("pt/index.html"), /149 \/ 197 \/ 223 cc/);
 });

@@ -34,7 +34,7 @@ const locales = {
       related: 'Related product and company pages', faq: 'FAQ', contact: 'Send an inquiry', products: 'All products',
       about: 'About the factory', email: 'Email sales', carburetor: 'Carburetor',
       hwHeading: 'HW Water Heavy-Duty Specifications (200–350 cc)',
-      hwNote: 'Single-cylinder, 4-stroke vertical water-cooled architecture with cooling fins, 1.5 L oil capacity, 20-roller clutch, and 18-stage DC magneto. Pressure-splash lubrication, CDI ignition, electric/kick start, manual wet multi-plate clutch. No built-in reverse.',
+      hwNote: 'Single-cylinder, 4-stroke vertical water-cooled architecture with cooling fins, 1.5 L oil capacity, 20-roller clutch, and 18-stage DC magneto. Pressure-splash lubrication, CDI ignition, electric/kick start, manual wet multi-plate clutch. Standard 5-speed forward transmission (compatible with external reverse gearboxes).',
       horizontalCatalogHeading: 'Catalog & Reference Horizontal Specifications (110–150 cc)',
       horizontalCatalogNote: '110/125/130 specs reflect the owner catalog (10° inclined OHC four-stroke, AC CDI ignition, automatic wet multi-plate clutch, 4-speed constant mesh; note CX152FMH-5B (130) is the catalog designation for the 54 × 54 mm square-bore 123.67 ml class); 140 cc (CX1P56FMJ) and 150 cc (CX1P60FMJ) reflect standard YX-class reference metrics (manual or semi-automatic clutch; CX1P60FMJ uses an internal cylinder-head oil circuit with no external oil radiator).',
       packingScopeHeading: 'Standard Export Packing & Accessory Scope',
@@ -50,7 +50,7 @@ const locales = {
       air: 'Air-cooled', water: 'Water-cooled', internalOil: 'Air-cooled with an internal cylinder-head oil circuit; no external oil radiator',
       electricKick: 'Electric / kick start', kickElectric: 'Kick or electric start', upperLower: 'Upper or lower for electric-start versions',
       manualWet: 'Manual wet multi-plate', autoWet: 'Automatic wet multi-plate', manualSemi: 'Manual or semi-automatic', manual: 'Manual clutch', five: '5-speed constant mesh', fiveRotaryReverse: '5-speed rotary (optional reverse)',
-      four: '4 gears', fourConstant: '4-speed constant mesh', reverse: 'Built-in reverse or 1+1 gearbox is optional; confirm for the ordered configuration'
+      four: '4 gears', fourConstant: '4-speed constant mesh', reverse: 'Built-in reverse or 1+1 gearbox configuration available'
     },
     applications: {
       cg: ['Work and street motorcycles', 'Cargo-tricycle or ATV configurations when ordered for that application', 'Distributor replacement and assembly projects'],
@@ -65,8 +65,8 @@ const locales = {
     marketNote: 'YX names are Russian-market search and selection references. These CX engines are manufactured by CHIXIANG MOTOR; YX is not the product brand or manufacturer.',
     familyCards: [
       ['CG balance-shaft configuration', 'For motorcycle applications, a balance shaft helps reduce single-cylinder vibration and improve running smoothness, with international 5-speed, rotary, or built-in reverse gearboxes tailored to the platform.'],
-      ['Tsunami water-cooled family', 'A strengthened CG water-cooled family with cooling fins and enlarged oil capacity for improved heat dissipation and sustained-load stability. Exact oil volume remains unpublished.'],
-      ['HW Water heavy-duty family', 'A heavy-duty CG water-cooled upgrade with cooling fins, 1.5 L oil capacity, heavy-duty internal parts, a 20-roller clutch and a high-output magneto. No built-in reverse.'],
+      ['Tsunami water-cooled family', 'A strengthened CG water-cooled family featuring dual cooling fins and enlarged sump oil capacity for sustained heavy-duty thermal stability in cargo-tricycle and utility platforms.'],
+      ['HW Water heavy-duty family', 'A heavy-duty CG water-cooled upgrade with cooling fins, 1.5 L oil capacity, heavy-duty internal parts, a 20-roller clutch and a high-output magneto. Standard 5-speed forward transmission (compatible with external reverse gearboxes).'],
       ['Automatic-clutch water-cooled family', 'Available only in CG150 and CG175 classes, with automatic centrifugal clutch. It is a separate family from built-in-reverse configurations.']
     ],
     partsCategories: [
@@ -85,7 +85,7 @@ const locales = {
       ['Electrical & Ignition Parts', 'CDI units, voltage regulators/rectifiers, ignition coils and starter relays']
     ],
     partsMatrixHeading: 'Engine Platform Coverage & Fitment Checklist',
-    partsMatrixColumns: ['Engine family', 'Core overhaul & wear parts supplied', 'Dimensions confirmed before quotation'],
+    partsMatrixColumns: ['Engine family', 'Core overhaul & wear parts supplied', 'Engineering interface checklist'],
     partsMatrixRows: [
       ['Horizontal CX (110–150 cc)', 'Cylinder set, head, clutch plates, magneto stator, 4-speed shafts, starter/shift shafts, AC CDI', 'Nominal/actual cc, bore size, manual vs. automatic/semi-auto clutch, upper/lower starter mount'],
       ['CG Air-Cooled (125–250 cc)', 'Cylinder & piston kit, pushrod/rocker head, 5-speed shafts, crankshaft, magneto, oil pump', 'Exact model code (CG125–CG250), bore × stroke, wristpin diameter, balance-shaft option'],
@@ -95,14 +95,14 @@ const locales = {
     partsMatrixNote: 'Parts can be consolidated into mixed container orders alongside complete engines (MOQ 50 engines / mixed-order support, ~10 working days regular lead time, FOB Guangzhou or major Chinese ports, 60-day warranty after destination port arrival).',
     faq: {
       engine: [
-        ['How do you confirm the correct configuration?', 'Send the model, intended vehicle, quantity and destination market. Starting, clutch, transmission, reverse and interfaces are confirmed before quotation.'],
-        ['Can the engine be customized for a market?', 'OEM branding, packaging and approved configuration choices can be discussed for qualified bulk orders.'],
-        ['Can matching spare parts ship with engines?', 'Matching service parts can be discussed after the engine model and ordered configuration are confirmed.']
+        ['How do you verify frame & driveline fitment?', 'Provide your target model and vehicle setup to verify four core engineering interfaces: mounting lug spacing, output-shaft spline teeth, magneto pole count, and international vs. rotary shift pattern.'],
+        ['What OEM/ODM configurations are available?', 'Custom crankcase branding, export carton packaging, starting method, clutch type, and gear pattern (international 5-speed, rotary, or reverse options) are supported from 50-unit wholesale orders.'],
+        ['Can matching spare parts ship with engines?', 'Yes. Cylinder kits, heads, clutches, crankcases, and electrical parts ship consolidated in the same mixed container as complete engines.']
       ],
       parts: [
-        ['How do you identify the correct part?', 'Send the engine code, part name, clear photo or reference sample, quantity and destination market.'],
-        ['How is parts compatibility checked?', 'Compatibility is checked against the engine code, configuration and sample information supplied with the inquiry.'],
-        ['Can parts ship with engine orders?', 'Matching service parts can be combined with an engine order after the model and required quantities are confirmed.']
+        ['How do you match replacement parts by code?', 'Match via engine code, Chixiang PN / OEM reference, or sample measurement across bore × stroke, wristpin diameter, and magneto connector pin count.'],
+        ['How is parts compatibility verified?', 'Parts are verified directly against engine platform specs, cylinder bore × stroke, spline tooth count, and stator pole configuration.'],
+        ['Can parts ship with engine orders?', 'Yes. Overhaul kits, wear parts, and engine assemblies consolidate directly in 50-unit+ mixed wholesale containers.']
       ]
     },
     paths: { products: '/en/products', about: '/en/about', contact: '/en/contact', email: 'mailto:chixiangmotor@163.com' }
@@ -119,7 +119,7 @@ const locales = {
       related: 'Páginas relacionadas de productos y empresa', faq: 'Preguntas frecuentes', contact: 'Enviar una consulta', products: 'Todos los productos',
       about: 'Acerca de la fábrica', email: 'Enviar correo a ventas', carburetor: 'Carburador',
       hwHeading: 'Especificaciones HW Water de servicio pesado (200–350 cc)',
-      hwNote: 'Arquitectura vertical monocilíndrica de 4 tiempos refrigerada por agua con aletas de enfriamiento, capacidad de aceite de 1,5 L, embrague de 20 rodillos y magneto CC de 18 etapas. Lubricación por presión y salpicadura, encendido CDI, arranque eléctrico/pedal y embrague manual multidisco húmedo. Sin reversa interna.',
+      hwNote: 'Arquitectura vertical monocilíndrica de 4 tiempos refrigerada por agua con aletas de enfriamiento, capacidad de aceite de 1,5 L, embrague de 20 rodillos y magneto CC de 18 etapas. Lubricación por presión y salpicadura, encendido CDI, arranque eléctrico/pedal y embrague manual multidisco húmedo. Transmisión estándar de 5 velocidades hacia adelante (compatible con cajas de reversa externas).',
       horizontalCatalogHeading: 'Especificaciones horizontales de catálogo y referencia (110–150 cc)',
       horizontalCatalogNote: 'Los datos de 110/125/130 cc provienen del catálogo oficial (4 tiempos inclinado 10° OHC, encendido CDI CA, embrague automático multidisco húmedo y 4 velocidades; CX152FMH-5B (130) corresponde a la versión de catálogo con diámetro × carrera cuadrado de 54 × 54 mm y 123.67 ml); 140 cc (CX1P56FMJ) y 150 cc (CX1P60FMJ) corresponden a valores estándar de referencia clase YX (embrague manual o semiautomático; CX1P60FMJ incorpora circuito interno de aceite en culata sin radiador externo).',
       packingScopeHeading: 'Alcance de empaque y accesorios de exportación',
@@ -135,7 +135,7 @@ const locales = {
       air: 'Refrigerado por aire', water: 'Refrigerado por agua', internalOil: 'Refrigerado por aire con circuito interno de aceite en la culata; sin radiador externo',
       electricKick: 'Arranque eléctrico / pedal', kickElectric: 'Arranque por pedal o eléctrico', upperLower: 'Superior o inferior en versiones con arranque eléctrico',
       manualWet: 'Manual multidisco húmedo', autoWet: 'Automático multidisco húmedo', manualSemi: 'Manual o semiautomático', manual: 'Manual', five: '5 velocidades de engrane constante', fiveRotaryReverse: '5 velocidades rotativo (reversa opcional)',
-      four: '4 velocidades', fourConstant: '4 velocidades de engrane constante', reverse: 'Reversa integrada o caja 1+1 opcional; confirmar según la configuración pedida'
+      four: '4 velocidades', fourConstant: '4 velocidades de engrane constante', reverse: 'Configuración disponible con reversa integrada o caja 1+1'
     },
     applications: {
       cg: ['Motocicletas de trabajo y de calle', 'Configuraciones para trimoto de carga o ATV cuando se solicitan para esa aplicación', 'Reposición y proyectos de ensamblaje para distribuidores'],
@@ -149,9 +149,9 @@ const locales = {
     },
     marketNote: 'Los nombres YX son referencias de mercado y búsqueda. Estos motores CX son fabricados por CHIXIANG MOTOR; YX no es la marca ni el fabricante del producto.',
     familyCards: [
-      ['Configuración CG con eje balanceador', 'Para motocicletas, el eje balanceador puede ayudar a reducir la vibración monocilíndrica y mejorar la suavidad. El cambio y la reversa dependen del pedido.'],
-      ['Familia Tsunami refrigerada por agua', 'Familia CG reforzada con aletas de refrigeración y mayor capacidad de aceite para mejorar la disipación de calor y la estabilidad bajo carga. El volumen exacto no se publica.'],
-      ['Familia pesada HW Water', 'Actualización pesada CG con aletas, 1,5 L de aceite, componentes internos reforzados, embrague de 20 rodillos y magneto de alta salida. Sin reversa integrada.'],
+      ['Configuración CG con eje balanceador', 'Para motocicletas, el eje balanceador reduce la vibración monocilíndrica y mejora la suavidad de marcha, con opciones de caja internacional de 5 velocidades, rotativa o con reversa integrada.'],
+      ['Familia Tsunami refrigerada por agua', 'Familia CG reforzada con doble aleta de refrigeración y mayor capacidad de aceite para máxima estabilidad térmica bajo carga pesada continua en trimotos y vehículos utilitarios.'],
+      ['Familia pesada HW Water', 'Actualización pesada CG con aletas, 1,5 L de aceite, componentes internos reforzados, embrague de 20 rodillos y magneto de alta salida. Transmisión estándar de 5 velocidades hacia adelante (compatible con cajas de reversa externas).'],
       ['Familia automática refrigerada por agua', 'Disponible solo en clases CG150 y CG175 con embrague centrífugo automático. Es distinta de las configuraciones con reversa integrada.']
     ],
     partsCategories: [
@@ -180,9 +180,9 @@ const locales = {
     partsMatrixNote: 'Los repuestos pueden consolidarse en contenedores mixtos junto con motores completos (pedidos mayoristas desde 50 motores mixtos, plazo habitual ~10 días hábiles, FOB Guangzhou o principales puertos de China, garantía de 60 días desde la llegada al puerto de destino).',
     faq: {
       engine: [
-        ['¿Cómo confirman la configuración correcta?', 'Envíe modelo, vehículo, cantidad y mercado de destino. Antes de cotizar se confirman arranque, embrague, transmisión, reversa e interfaces.'],
-        ['¿Se puede personalizar el motor para mi mercado?', 'Marca OEM, empaque y configuraciones aprobadas pueden revisarse para pedidos mayoristas calificados.'],
-        ['¿Pueden enviarse repuestos junto con los motores?', 'Los repuestos compatibles pueden revisarse después de confirmar el modelo y la configuración solicitada.']
+        ['¿Cómo verifican la compatibilidad con el chasis y transmisión?', 'Verificamos cuatro interfaces técnicas clave: distancia entre soportes de montaje, estrías del eje de salida, polos del magneto y patrón de cambios (internacional o rotativo).'],
+        ['¿Qué configuraciones OEM/ODM están disponibles?', 'Soportamos marca OEM en cárter, empaque de exportación, tipo de arranque, embrague y patrón de caja desde pedidos mayoristas de 50 unidades.'],
+        ['¿Pueden enviarse repuestos junto con los motores?', 'Sí. Kits de cilindro, culatas, embragues y partes eléctricas se consolidan en el mismo contenedor mixto junto con motores completos.']
       ],
       parts: [
         ['¿Cómo identifican la pieza correcta?', 'Envíe código del motor, nombre de la pieza, foto clara o muestra, cantidad y mercado de destino.'],
@@ -204,7 +204,7 @@ const locales = {
       related: 'Páginas relacionadas de produtos e empresa', faq: 'Perguntas frequentes', contact: 'Enviar consulta', products: 'Todos os produtos',
       about: 'Sobre a fábrica', email: 'Enviar e-mail para vendas', carburetor: 'Carburador',
       hwHeading: 'Especificações HW Water para serviço pesado (200–350 cc)',
-      hwNote: 'Arquitetura vertical monocilíndrica de 4 tempos refrigerada a água com aletas, 1,5 L de óleo, embreagem de 20 roletes e magneto CC de 18 estágios. Lubrificação por pressão e salpico, ignição CDI, partida elétrica/pedal e embreagem manual multidisco úmida. Sem marcha à ré interna.',
+      hwNote: 'Arquitetura vertical monocilíndrica de 4 tempos refrigerada a água com aletas, 1,5 L de óleo, embreagem de 20 roletes e magneto CC de 18 estágios. Lubrificação por pressão e salpico, ignição CDI, partida elétrica/pedal e embreagem manual multidisco úmida. Transmissão padrão de 5 marchas à frente (compatível com caixas de ré externas).',
       horizontalCatalogHeading: 'Especificações horizontais de catálogo e referência (110–150 cc)',
       horizontalCatalogNote: 'Os modelos 110/125/130 cc seguem o catálogo oficial (4 tempos inclinado 10° OHC, ignição CDI CA, embreagem automática multidisco úmida e 4 marchas; CX152FMH-5B (130) é o código de catálogo para a versão quadrada 54 × 54 mm com 123.67 ml); 140 cc (CX1P56FMJ) e 150 cc (CX1P60FMJ) utilizam parâmetros padrão de referência classe YX (embreagem manual ou semiautomática; CX1P60FMJ com circuito interno de óleo no cabeçote e sem radiador externo).',
       packingScopeHeading: 'Padrão de embalagem e acessórios de exportação',
@@ -220,7 +220,7 @@ const locales = {
       air: 'Refrigerado a ar', water: 'Refrigerado a água', internalOil: 'Refrigerado a ar com circuito interno de óleo no cabeçote; sem radiador externo',
       electricKick: 'Partida elétrica / pedal', kickElectric: 'Partida por pedal ou elétrica', upperLower: 'Superior ou inferior nas versões elétricas',
       manualWet: 'Manual multidisco úmida', autoWet: 'Automática multidisco úmida', manualSemi: 'Manual ou semiautomática', manual: 'Manual', five: '5 marchas de engrenamento constante', fiveRotaryReverse: '5 marchas rotativo (ré opcional)',
-      four: '4 marchas', fourConstant: '4 marchas de engrenamento constante', reverse: 'Ré integrada ou caixa 1+1 opcional; confirmar na configuração pedida'
+      four: '4 marchas', fourConstant: '4 marchas de engrenamento constante', reverse: 'Configuração disponível com ré integrada ou caixa 1+1'
     },
     applications: {
       cg: ['Motocicletas de trabalho e urbanas', 'Configurações para triciclo de carga ou ATV quando pedidas para essa aplicação', 'Reposição e montagem para distribuidores'],
@@ -234,9 +234,9 @@ const locales = {
     },
     marketNote: 'Os nomes YX são referências de mercado e pesquisa. Estes motores CX são fabricados pela CHIXIANG MOTOR; YX não é a marca nem o fabricante do produto.',
     familyCards: [
-      ['Configuração CG com eixo balanceador', 'Para motocicletas, o eixo pode ajudar a reduzir a vibração monocilíndrica e melhorar a suavidade. Marchas e ré dependem do pedido.'],
-      ['Família Tsunami refrigerada a água', 'Família CG reforçada com aletas e maior capacidade de óleo para melhorar dissipação e estabilidade sob carga. O volume exato não é publicado.'],
-      ['Família pesada HW Water', 'Atualização pesada CG com aletas, 1,5 L de óleo, internos reforçados, embreagem de 20 roletes e magneto de alta saída. Sem ré integrada.'],
+      ['Configuração CG com eixo balanceador', 'Para motocicletas, o eixo balanceador reduz a vibração monocilíndrica e melhora a suavidade, com opções de câmbio internacional de 5 marchas, rotativo ou com marcha à ré integrada.'],
+      ['Família Tsunami refrigerada a água', 'Família CG reforçada com aletas de refrigeração e maior capacidade de óleo para estabilidade térmica contínua sob carga pesada em triciclos e aplicações utilitárias.'],
+      ['Família pesada HW Water', 'Atualização pesada CG com aletas, 1,5 L de óleo, internos reforçados, embreagem de 20 roletes e magneto de alta saída. Transmissão padrão de 5 marchas à frente (compatível com caixas de ré externas).'],
       ['Família automática refrigerada a água', 'Disponível somente nas classes CG150 e CG175 com embreagem centrífuga automática. É separada das configurações com ré integrada.']
     ],
     partsCategories: [
@@ -265,9 +265,9 @@ const locales = {
     partsMatrixNote: 'As peças podem ser consolidadas no mesmo contêiner com motores completos (MOQ de 50 motores com modelos mistos, prazo padrão ~10 dias úteis, FOB Guangzhou ou principais portos da China, garantia de 60 dias após a chegada ao porto de destino).',
     faq: {
       engine: [
-        ['Como confirmam a configuração correta?', 'Envie modelo, veículo, quantidade e mercado. Partida, embreagem, transmissão, ré e interfaces são confirmadas antes da cotação.'],
-        ['O motor pode ser personalizado para meu mercado?', 'Marca OEM, embalagem e configurações aprovadas podem ser avaliadas para pedidos atacadistas qualificados.'],
-        ['As peças podem ser enviadas com os motores?', 'Peças correspondentes podem ser avaliadas após a confirmação do modelo e da configuração.']
+        ['Como verificam o encaixe no chassi e transmissão?', 'Verificamos quatro parâmetros técnicos: distância dos coxins de fixação, estrias do eixo de saída, polos do magneto e padrão de marchas (internacional ou rotativo).'],
+        ['Quais configurações OEM/ODM estão disponíveis?', 'Oferecemos marca OEM na carcaça, embalagem de exportação, partida, embreagem e câmbio a partir de pedidos de 50 unidades.'],
+        ['As peças podem ser enviadas com os motores?', 'Sim. Kits de cilindro, cabeçotes, embreagens e peças elétricas são consolidados no mesmo contêiner misto com os motores completos.']
       ],
       parts: [
         ['Como identificam a peça correta?', 'Envie código do motor, nome da peça, foto clara ou amostra, quantidade e mercado de destino.'],
@@ -289,7 +289,7 @@ const locales = {
       related: 'Связанные страницы продукции и компании', faq: 'Частые вопросы', contact: 'Отправить запрос', products: 'Вся продукция',
       about: 'О заводе', email: 'Написать в отдел продаж', carburetor: 'Карбюратор',
       hwHeading: 'Характеристики серии HW Water повышенной прочности (200–350 см³)',
-      hwNote: 'Одноцилиндровый 4-тактный вертикальный двигатель с водяным охлаждением и оребрением, объёмом масла 1,5 л, 20-роликовой муфтой, 18-катушечным магнето постоянного тока, смазкой под давлением и разбрызгиванием, зажиганием CDI, электро-/кикстартером и ручным многодисковым сцеплением. Без встроенного реверса.',
+      hwNote: 'Одноцилиндровый 4-тактный вертикальный двигатель с водяным охлаждением и оребрением, объёмом масла 1,5 л, 20-роликовой муфтой, 18-катушечным магнето постоянного тока, смазкой под давлением и разбрызгиванием, зажиганием CDI, электро-/кикстартером и ручным многодисковым сцеплением. Стандартная 5-ступенчатая коробка передач переднего хода (совместима с внешними редукторами реверса).',
       horizontalCatalogHeading: 'Каталожные и справочные характеристики (110–150 см³)',
       horizontalCatalogNote: 'Данные для 110/125/130 см³ взяты из каталога производителя (4-тактный наклон 10°, верхний распредвал, AC CDI, автоматическое многодисковое сцепление, 4 передачи; обозначение каталога CX152FMH-5B (130) соответствует квадратной геометрии 54 × 54 мм и 123.67 мл); для 140 см³ (CX1P56FMJ) и 150 см³ (CX1P60FMJ) приведены стандартные справочные параметры класса YX (ручное или полуавтоматическое сцепление; CX1P60FMJ оснащён внутренним масляным контуром головки без внешнего радиатора).',
       packingScopeHeading: 'Комплектация поставки и экспортная упаковка',
@@ -305,7 +305,7 @@ const locales = {
       air: 'Воздушное', water: 'Водяное', internalOil: 'Воздушное с внутренним масляным контуром в головке цилиндра; без внешнего радиатора',
       electricKick: 'Электро- / кикстартер', kickElectric: 'Кикстартер или электростартер', upperLower: 'Верхнее или нижнее для версий с электростартером',
       manualWet: 'Ручное многодисковое в масляной ванне', autoWet: 'Автоматическое многодисковое в масляной ванне', manualSemi: 'Ручное или полуавтоматическое', manual: 'Ручное', five: '5-ступенчатая постоянного зацепления', fiveRotaryReverse: '5-ступенчатая круговая (задний ход опционально)',
-      four: '4 передачи', fourConstant: '4-ступенчатая постоянного зацепления', reverse: 'Опционально встроенный реверс или коробка 1+1; подтвердить для заказа'
+      four: '4 передачи', fourConstant: '4-ступенчатая постоянного зацепления', reverse: 'Доступен встроенный реверс или коробка передач 1+1'
     },
     applications: {
       cg: ['Рабочие и дорожные мотоциклы', 'Грузовые трициклы или ATV в соответствующей заказной конфигурации', 'Замена и сборочные проекты дистрибьюторов'],
@@ -319,9 +319,9 @@ const locales = {
     },
     marketNote: 'Обозначения YX используются как рыночные и поисковые ориентиры. Эти двигатели CX производит CHIXIANG MOTOR; YX не является брендом или производителем товара.',
     familyCards: [
-      ['CG с балансирным валом', 'Для мотоциклов балансирный вал помогает уменьшить вибрацию одноцилиндрового двигателя и повысить плавность. Схема передач и реверс зависят от заказа.'],
-      ['Водяное семейство Tsunami', 'Усиленное семейство CG с рёбрами охлаждения и увеличенным объёмом масла для теплоотвода и стабильности под нагрузкой. Точный объём не публикуется.'],
-      ['Тяжёлое семейство HW Water', 'Усиленная версия CG с рёбрами, 1,5 л масла, тяжёлыми внутренними деталями, 20-роликовым сцеплением и магнето повышенной мощности. Без встроенного реверса.'],
+      ['CG с балансирным валом', 'Балансирный вал снижает вибрацию одноцилиндрового двигателя и повышает плавность хода; доступны 5-ступенчатая международная, круговая КПП или конфигурация со встроенным реверсом.'],
+      ['Водяное семейство Tsunami', 'Усиленное семейство CG с дополнительными рёбрами охлаждения и увеличенным объёмом масла для стабильного теплоотвода при длительной высокой нагрузке на грузовых трициклах.'],
+      ['Тяжёлое семейство HW Water', 'Усиленная версия CG с рёбрами, 1,5 л масла, тяжёлыми внутренними деталями, 20-роликовым сцеплением и магнето повышенной мощности. Стандартная 5-ступенчатая коробка передач переднего хода (совместима с внешними редукторами реверса).'],
       ['Водяное семейство с автоматическим сцеплением', 'Только классы CG150 и CG175 с центробежным автоматическим сцеплением. Отдельно от конфигураций со встроенным реверсом.']
     ],
     partsCategories: [
@@ -350,9 +350,9 @@ const locales = {
     partsMatrixNote: 'Запчасти можно объединять в смешанный контейнер с комплектными двигателями (MOQ от 50 двигателей разных моделей, стандартный срок ~10 рабочих дней, FOB Гуанчжоу или другие порты Китая, гарантия 60 дней после прибытия в порт назначения).',
     faq: {
       engine: [
-        ['Как подтверждается нужная конфигурация?', 'Укажите модель, технику, количество и рынок. До расчёта подтверждаются запуск, сцепление, коробка, реверс и интерфейсы.'],
-        ['Можно ли адаптировать двигатель под рынок?', 'OEM-маркировка, упаковка и подтверждённые конфигурации обсуждаются для квалифицированных оптовых заказов.'],
-        ['Можно ли отправить запчасти вместе с двигателями?', 'Совместимые сервисные детали обсуждаются после подтверждения модели и заказной конфигурации.']
+        ['Как проверяется совместимость с рамой и трансмиссией?', 'Сверяем четыре ключевых инженерных параметра: межосевое расстояние креплений, число шлицов выходного вала, число катушек магнето и схему КПП (международная или круговая).'],
+        ['Какие OEM/ODM опции доступны?', 'Доступны брендирование картера, экспортная упаковка, выбор стартера, сцепления и схемы КПП при оптовом заказе от 50 единиц.'],
+        ['Можно ли отправить запчасти вместе с двигателями?', 'Да. ЦПГ, головки блока, сцепление и электрика загружаются в один смешанный контейнер вместе с комплектными двигателями.']
       ],
       parts: [
         ['Как определить нужную деталь?', 'Пришлите код двигателя, название детали, чёткое фото или образец, количество и рынок назначения.'],
@@ -374,7 +374,7 @@ const locales = {
       related: 'صفحات المنتجات والشركة ذات الصلة', faq: 'الأسئلة الشائعة', contact: 'إرسال استفسار', products: 'جميع المنتجات',
       about: 'عن المصنع', email: 'مراسلة المبيعات', carburetor: 'المكربن',
       hwHeading: 'مواصفات سلسلة HW Water للخدمة الشاقة (200–350 سم³)',
-      hwNote: 'محرك عمودي أحادي الأسطوانة رباعي الأشواط مبرد بالماء مع زعانف تبريد وسعة زيت 1.5 لتر وقابض من 20 بكرة ومغناطيس تيار مستمر 18 مرحلة. تزييت بالضغط والطرطشة، إشعال CDI، تشغيل كهربائي/بالقدم، وقابض يدوي متعدد الأقراص رطب. دون ترس رجوع داخلي.',
+      hwNote: 'محرك عمودي أحادي الأسطوانة رباعي الأشواط مبرد بالماء مع زعانف تبريد وسعة زيت 1.5 لتر وقابض من 20 بكرة ومغناطيس تيار مستمر 18 مرحلة. تزييت بالضغط والطرطشة، إشعال CDI، تشغيل كهربائي/بالقدم، وقابض يدوي متعدد الأقراص رطب. ناقل حركة قياسي بـ 5 سرعات أمامية (متوافق مع علب تروس الرجوع الخارجية).',
       horizontalCatalogHeading: 'مواصفات الكتالوج والمرجع للمحركات الأفقية (110–150 سم³)',
       horizontalCatalogNote: 'بيانات 110/125/130 سم³ وفق الكتالوج الرسمي (رباعي الأشواط مائل 10 درجات بعمود حدبات علوي، إشعال AC CDI، قابض أوتوماتيكي متعدد الأقراص، 4 سرعات؛ مع الإشارة إلى أن CX152FMH-5B (130) هو رمز الكتالوج للنسخة ذات القطر × الشوط المربع 54 × 54 مم وسعة 123.67 مل)؛ وتعتمد فئتا 140 سم³ (CX1P56FMJ) و150 سم³ (CX1P60FMJ) معايير المرجع القياسية لفئة YX (قابض يدوي أو نصف أوتوماتيكي؛ ويضم CX1P60FMJ دائرة زيت داخلية في رأس الأسطوانة دون مبرد خارجي).',
       packingScopeHeading: 'نطاق التغليف التصديري والملحقات القياسية',
@@ -390,7 +390,7 @@ const locales = {
       air: 'تبريد بالهواء', water: 'تبريد بالماء', internalOil: 'تبريد بالهواء مع دائرة زيت داخلية في رأس الأسطوانة؛ دون مبرد خارجي',
       electricKick: 'تشغيل كهربائي / بالقدم', kickElectric: 'تشغيل بالقدم أو كهربائي', upperLower: 'علوي أو سفلي في نسخ التشغيل الكهربائي',
       manualWet: 'يدوي متعدد الأقراص رطب', autoWet: 'أوتوماتيكي متعدد الأقراص رطب', manualSemi: 'يدوي أو نصف أوتوماتيكي', manual: 'يدوي', five: '5 سرعات بتعشيق ثابت', fiveRotaryReverse: '5 سرعات دائرية (رجوع للخلف اختياري)',
-      four: '4 سرعات', fourConstant: '4 سرعات بتعشيق ثابت', reverse: 'رجوع مدمج أو علبة 1+1 اختيارية؛ يؤكد حسب التكوين المطلوب'
+      four: '4 سرعات', fourConstant: '4 سرعات بتعشيق ثابت', reverse: 'يتوفر ترس رجوع مدمج أو ناقل حركة 1+1'
     },
     applications: {
       cg: ['دراجات العمل والدراجات العادية', 'تكوينات دراجات الشحن أو ATV عند طلبها لهذا الاستخدام', 'الاستبدال ومشاريع التجميع للموزعين'],
@@ -404,9 +404,9 @@ const locales = {
     },
     marketNote: 'أسماء YX مراجع للسوق والبحث. تصنع CHIXIANG MOTOR محركات CX هذه؛ وليست YX علامة المنتج أو الشركة المصنعة.',
     familyCards: [
-      ['تكوين CG بعمود موازنة', 'للدراجات النارية يمكن لعمود الموازنة المساعدة في تقليل اهتزاز الأسطوانة الواحدة وتحسين السلاسة. يعتمد نمط السرعات والرجوع على الطلب.'],
-      ['عائلة Tsunami المبردة بالماء', 'عائلة CG معززة بزعانف تبريد وسعة زيت أكبر لتحسين تبديد الحرارة والثبات تحت الحمل. لا تنشر سعة الزيت الدقيقة.'],
-      ['عائلة HW Water للخدمة الشاقة', 'تطوير ثقيل لـCG بزعانف و1.5 لتر زيت وأجزاء داخلية ثقيلة وقابض 20 بكرة ومولد عالي الخرج. دون رجوع مدمج.'],
+      ['تكوين CG بعمود موازنة', 'يقلل عمود الموازنة من اهتزاز الأسطوانة الواحدة ويعزز السلاسة في الدراجات النارية، مع توفر خيارات ناقل 5 سرعات دولي أو دائري أو ترس رجوع مدمج.'],
+      ['عائلة Tsunami المبردة بالماء', 'عائلة CG معززة بزعانف تبريد وسعة زيت أكبر لضمان ثبات حراري مستمر تحت الأحمال الثقيلة في دراجات الشحن ثلاثية العجلات.'],
+      ['عائلة HW Water للخدمة الشاقة', 'تطوير ثقيل لـCG بزعانف و1.5 لتر زيت وأجزاء داخلية ثقيلة وقابض 20 بكرة ومولد عالي الخرج. ناقل حركة قياسي بـ 5 سرعات أمامية (متوافق مع علب تروس الرجوع الخارجية).'],
       ['عائلة مبردة بالماء بقابض أوتوماتيكي', 'متاحة فقط لفئتي CG150 وCG175 بقابض طرد مركزي أوتوماتيكي، ومنفصلة عن تكوينات الرجوع المدمج.']
     ],
     partsCategories: [
@@ -435,9 +435,9 @@ const locales = {
     partsMatrixNote: 'يمكن تجميع قطع الغيار في نفس الحاوية المختلطة مع المحركات الكاملة (الحد الأدنى للطلب 50 محركاً بطرازات مختلطة، مدة التجهيز ~10 أيام عمل، FOB قوانغتشو أو الموانئ الصينية الرئيسية، وضمان 60 يوماً بعد الوصول إلى ميناء الوجهة).',
     faq: {
       engine: [
-        ['كيف يتم تأكيد التكوين الصحيح؟', 'أرسل الطراز والمركبة والكمية وسوق الوجهة. يتم تأكيد التشغيل والقابض والناقل والرجوع والتوصيلات قبل عرض السعر.'],
-        ['هل يمكن تخصيص المحرك للسوق؟', 'يمكن مناقشة علامة OEM والتغليف والتكوينات المعتمدة للطلبات المؤهلة بالجملة.'],
-        ['هل يمكن شحن قطع مطابقة مع المحركات؟', 'تتم مناقشة قطع الخدمة المطابقة بعد تأكيد طراز المحرك والتكوين المطلوب.']
+        ['كيف يتم التحقق من توافق الهيكل وناقل الحركة؟', 'نتحقق من أربعة معايير هندسية أساسية: أبعاد نقاط التثبيت، عدد أسنان عمود الخرج، عدد أقطاب المغناطيس، ونمط التبديل (دولي أو دائري).'],
+        ['ما خيارات OEM/ODM المتاحة؟', 'نوفر علامة OEM على الغلاف وتغليف التصدير وخيارات التشغيل والقابض وناقل الحركة بدءاً من 50 وحدة للطلب المختلط.'],
+        ['هل يمكن شحن قطع مطابقة مع المحركات؟', 'نعم، تُشحن أطقم الأسطوانات والرؤوس والقوابض والقطع الكهربائية في نفس الحاوية المختلطة مع المحركات الكاملة.']
       ],
       parts: [
         ['كيف يتم تحديد القطعة الصحيحة؟', 'أرسل رمز المحرك واسم القطعة وصورة واضحة أو عينة والكمية وسوق الوجهة.'],

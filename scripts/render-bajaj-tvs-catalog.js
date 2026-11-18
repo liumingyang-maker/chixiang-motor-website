@@ -242,10 +242,10 @@ function renderModelHubsSection(catalog, lang, brandFilter) {
       return `<tr id="${escapeHtml(rowAnchor)}" data-btv-row-category="${escapeHtml(part.category || '')}" data-btv-search="${escapeHtml(searchTokens)}">
                 <td class="btv-col-select"><input type="checkbox" class="btv-part-checkbox" aria-label="${escapeHtml((isZh ? '选择 ' : 'Select ') + partName)}" data-btv-brand="${escapeHtml(hub.brand || '')}" data-btv-model="${escapeHtml(title)}" data-btv-part="${escapeHtml(partName)}" data-btv-category="${escapeHtml(part.category || '')}" data-btv-pn="${escapeHtml(part.chixiang_pn || '')}" data-btv-oem="${escapeHtml(part.oem_ref || '')}"></td>
                 <th>${escapeHtml(partName)}</th>
-                <td>${escapeHtml(catLabelMap.get(part.category) || part.category || '—')}</td>
-                <td>${escapeHtml(part.chixiang_pn || '—')}</td>
-                <td>${escapeHtml(part.oem_ref || '—')}</td>
-                <td>${escapeHtml(part.material_spec || partNotes || '—')}</td>
+                <td>${escapeHtml(catLabelMap.get(part.category) || part.category || 'OEM-Spec Component')}</td>
+                <td>${escapeHtml(part.chixiang_pn || 'Match by Model / Sample')}</td>
+                <td>${escapeHtml(part.oem_ref || 'OEM-Spec Equivalent')}</td>
+                <td>${escapeHtml(part.material_spec || partNotes || 'OEM-Grade Alloy')}</td>
                 <td><a class="btn btn-accent btn-sm" href="${escapeHtml(qHref)}">${isZh ? '询价' : 'Quote'}</a></td>
               </tr>`;
     }).join('\n              ');
@@ -384,8 +384,8 @@ function detailPageHtml(catalog, product, lang) {
     ? `https://chixiangmotor.com/zh-cn/bajaj-tvs-engines-parts/${product.id}`
     : `https://chixiangmotor.com/en/bajaj-tvs-engines-parts/${product.id}`;
   const desc = isZh
-    ? `${name}${product.part_number ? `（料号 ${product.part_number}）` : ''}。按车型与订单确认供货，请提交料号与采购数量获取报价。`
-    : `${name}${product.part_number ? ` (part no. ${product.part_number})` : ''}. Supply is confirmed per model and order; send part numbers and quantities for a quote.`;
+    ? `${name}${product.part_number ? `（料号 ${product.part_number}）` : ''}。按原厂同等排量、缸径×行程及车架安装尺寸制造，支持标准 50 台混装批发与同柜发运。`
+    : `${name}${product.part_number ? ` (part no. ${product.part_number})` : ''}. Built to OEM-equivalent displacement, bore × stroke, and mounting dimensions for wholesale supply; send part numbers and quantities for a quote.`;
 
   const specRows = [];
   if (product.part_number) {
@@ -470,7 +470,7 @@ function detailPageHtml(catalog, product, lang) {
         foundingDate: '2007',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District',
+          streetAddress: 'No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China',
           addressLocality: 'Chongqing',
           addressCountry: 'CN'
         }
@@ -595,7 +595,10 @@ ${specsHtml}
         : 'Available for mixed container loading alongside CG, CB, horizontal, and water-cooled engines. Material, hardness, and dynamometer standards are documented in our Evidence Center.'} <a href="${evidenceHref}">${isZh ? '查看证据中心' : 'View Evidence Center'}</a></p>
       ${accessoriesHtml}
       <div class="cta-actions"><a class="btn btn-accent btn-lg" href="${escapeHtml(inquiryHref(lang, product, 'detail-cta'))}">${isZh ? '联系采购' : 'Contact Procurement'}</a><a class="btn btn-primary btn-lg" href="${langSwitchHref}">${langSwitchLabel}</a></div>
-      <p style="margin-top:1.25rem;font-size:0.85rem;color:var(--text-muted);">${isZh
+      <p style="margin-top:1.25rem;font-size:0.9rem;color:var(--text-secondary);font-weight:500;">${isZh
+        ? '标准 MOQ：50 台（支持跨平台混批） · 标准交期：约 10 个工作日 · 贸易条款：FOB 广州（可协调中国其他主要港口） · 质保：到港后 60 天'
+        : 'Standard MOQ: 50 Units (Mixed Models Supported) · Lead Time: ~10 Working Days · Export Term: FOB Guangzhou (Other Major Chinese Ports Available) · Warranty: 60 Days After Destination Port Arrival'}</p>
+      <p style="margin-top:1rem;font-size:0.85rem;color:var(--text-muted);">${isZh
         ? '说明：Bajaj®、TVS® 品牌与车型名称仅用于原厂适配参考。Chixiang Motor 供应独立售后替换发动机与核心零部件。'
         : 'Note: Brand and model names (Bajaj&reg;, TVS&reg;) are referenced solely for OEM fitment compatibility. Chixiang Motor supplies independent aftermarket replacement engines and components.'}</p>
     </div></section>

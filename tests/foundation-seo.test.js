@@ -158,7 +158,7 @@ test('shared product detail is a noindex utility and is absent from the sitemap'
     (attribute(robotsTag[0], 'content') || '').toLowerCase().replace(/\s+/g, ''),
     'noindex,follow'
   );
-  assert.equal(linkTags(html, 'canonical').length, 0, 'query utility must not claim one canonical');
+  assert.equal(canonicalHref(html), `${canonicalOrigin}/en/product-detail`);
   assert.doesNotMatch(read('sitemap.xml'), /product-detail/i);
 });
 

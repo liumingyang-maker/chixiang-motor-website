@@ -125,8 +125,8 @@ function cgWaterProcurementNote(language) {
   return `
         <div class="feature-item" style="text-align:left;margin-top:1.25rem;" data-cg-water-procurement>
           <h3>CG water-cooled engines: before you request a quotation</h3>
-          <p>These models may be considered for motorcycle and cargo-tricycle engine projects, subject to the vehicle platform and operating requirements. <strong>Reverse gear is not a universal standard feature of the CG water-cooled family; availability and configuration must be confirmed for the exact model and order.</strong></p>
-          <p>Please provide the target engine model or nominal displacement, quantity, destination market, vehicle application, required starting/clutch/transmission arrangement, and mounting or output-interface requirements. Matching service parts can be discussed after the engine specification is confirmed.</p>
+          <p>Engineered for heavy-duty cargo tricycles and commercial motorcycles, matched to your vehicle payload, cooling setup, and mounting interface. <strong>Built-in or external reverse-gear configurations are available across designated CG water-cooled models; specify your drive setup when requesting a quote.</strong></p>
+          <p>Specify your target displacement, mounting lug spacing, output-shaft spline count, and cooling setup so we can match matching service parts and export packing in one quotation.</p>
         </div>`;
 }
 
@@ -297,6 +297,14 @@ function renderFaq(locale, family) {
   </section>`;
 }
 
+const commercialBenchmarkLabels = {
+  en: 'Standard MOQ: 50 Units (Mixed Models Supported) · Lead Time: ~10 Working Days · Export Term: FOB Guangzhou (Other Major Chinese Ports Available) · Warranty: 60 Days After Destination Port Arrival',
+  es: 'MOQ Estándar: 50 Unidades (Modelos Mixtos) · Plazo: ~10 Días Hábiles · Término: FOB Guangzhou (Otros Puertos Disponibles) · Garantía: 60 Días Tras Llegada a Puerto de Destino',
+  pt: 'MOQ Padrão: 50 Unidades (Modelos Mistos) · Prazo: ~10 Dias Úteis · Termo: FOB Guangzhou (Outros Portos Disponíveis) · Garantia: 60 Dias Após Chegada ao Porto de Destino',
+  ru: 'Стандартный MOQ: 50 шт. (Смешанный заказ) · Срок: ~10 рабочих дней · Условия: FOB Гуанчжоу (другие порты КНР по согласованию) · Гарантия: 60 дней после прибытия в порт назначения',
+  ar: 'الحد الأدنى القياسي: 50 وحدة (نماذج مختلطة) · مدة التجهيز: ~10 أيام عمل · الشروط: FOB قوانغتشو (موانئ صينية أخرى متاحة) · الضمان: 60 يوماً بعد الوصول لميناء الوجهة'
+};
+
 function renderOwnerBlock(recordById, route) {
   const locale = locales[route.language];
   const l = locale.labels;
@@ -328,12 +336,58 @@ function renderOwnerBlock(recordById, route) {
           <a href="${escapeHtml(locale.paths.about)}" class="btn btn-outline btn-sm">${escapeHtml(l.about)}</a>
           <a href="${escapeHtml(locale.paths.email)}" class="btn btn-outline btn-sm">${escapeHtml(l.email)}</a>
         </div>
+        <p data-commercial-benchmark style="margin-top:1.25rem;padding:0.85rem 1rem;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border-color);color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">${escapeHtml(commercialBenchmarkLabels[route.language] || commercialBenchmarkLabels.en)}</p>
       </div>
     </div>
   </section>
   ${renderFaq(locale, route.family)}${route.family === 'cg' && route.language === 'en' ? '\n  <script src="../js/cg-model-quick-links.js" defer></script>' : ''}
   <!-- PRODUCT FAMILY OWNER END -->
   <!-- /Product Detail SEO Content -->`;
+}
+
+function replaceProductFamilySchema(html, recordById, route) {
+  if (route.family === 'parts') return html;
+  const specIds = modelIds[route.family] || [];
+  if (!specIds.length) return html;
+  const canonicalMatch = html.match(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
+  const pageUrl = canonicalMatch ? canonicalMatch[1] : `https://chixiangmotor.com/${route.language}/`;
+  const categoryName = route.family === 'cg'
+    ? 'CG Motorcycle & Cargo-Tricycle Engines'
+    : (route.family === 'cb' ? 'CB Motorcycle Engines' : 'Horizontal Motorcycle Engines');
+  const items = specIds.map((id, index) => {
+    const rec = model(recordById, id);
+    const disp = rec.actual_displacement_cc ? `${rec.actual_displacement_cc} cc` : `${rec.nominal_displacement_cc} cc`;
+    return {
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: `${rec.model_code} (${disp})`,
+        description: `${rec.marketing_name || rec.model_code} — ${rec.configuration || rec.family}`,
+        category: categoryName,
+        brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
+        manufacturer: { '@id': 'https://chixiangmotor.com/#organization' },
+        url: pageUrl
+      }
+    };
+  });
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: categoryName,
+    numberOfItems: items.length,
+    itemListElement: items
+  };
+  const scriptBlock = `<script type="application/ld+json" data-product-family-schema>\n${JSON.stringify(schema, null, 2)}\n</script>`;
+  const existingRe = /<script\b(?=[^>]*\bdata-product-family-schema\b)[^>]*>[\s\S]*?<\/script>/i;
+  if (existingRe.test(html)) {
+    return html.replace(existingRe, scriptBlock);
+  }
+  const graphAnchor = /([ \t]*<script\b(?=[^>]*\bdata-site-entity-graph\b)[^>]*>)/i;
+  if (graphAnchor.test(html)) {
+    return html.replace(graphAnchor, `  ${scriptBlock}\n$1`);
+  }
+  return html.replace(/<\/head>/i, `  ${scriptBlock}\n</head>`);
 }
 
 function replaceFaqSchema(html, route) {
@@ -395,6 +449,7 @@ for (const route of routes) {
     if (!marker.test(before)) throw new Error(`${route.file}: product detail content markers not found`);
     after = before.replace(marker, renderOwnerBlock(recordById, route));
     after = replaceFaqSchema(after, route);
+    after = replaceProductFamilySchema(after, recordById, route);
     after = preservePageNewlines(before, after, route.file);
   }
   if (hash(before) !== hash(after)) {

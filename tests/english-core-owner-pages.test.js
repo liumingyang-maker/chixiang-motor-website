@@ -37,7 +37,7 @@ test('Products page inline background images resolve to existing local assets', 
 
 test('English owner pages publish their approved visible H1', () => {
   const expected = {
-    'en/index.html': 'Motorcycle & Cargo-Tricycle Engine Manufacturer in China',
+    'en/index.html': 'Motorcycle & Cargo-Tricycle Engine Manufacturer in Chongqing, China',
     'en/about.html': 'About Chixiang Motor: Motorcycle Engine Factory in Chongqing',
     'en/products.html': 'Motorcycle Engines, Parts, Motorcycles & CKD/SKD Programs'
   };
@@ -75,7 +75,7 @@ test('About is the detailed company fact owner', () => {
     /Hangu Town/i,
     /15,000 m/i,
     /10,000\+/,
-    /99% first-pass yield/i,
+    /100% pre-shipment hot and cold bench testing/i,
     /50\+ (?:export )?countries/i,
     /ISO 9001 quality-management certification documentation/i,
     /CCC certification documents are available/i
@@ -84,16 +84,13 @@ test('About is the detailed company fact owner', () => {
   assert.doesNotMatch(body, /product-detail\?series=tricycles/i);
 });
 
-test('Products separates current supply from the future vehicle program', () => {
+test('Products focuses on current engine & parts supply without future vehicle disclaimer', () => {
   const html = read('en/products.html');
-  assert.match(html, /Motorcycles &amp; CKD\/SKD Kits/);
-  const future = futureCard(html);
-  assert.match(future, /In Preparation/);
-  assert.match(future, /This product program is in preparation\. Specifications and wholesale availability will be published after production approval\./);
-  assert.doesNotMatch(future, /Get Quote|Request Quote|MOQ|US\$|\$\d|three months|3 months/i);
+  assert.doesNotMatch(html, /product-card--future|In Preparation/i);
   assert.doesNotMatch(html, /<h3>Tricycles<\/h3>/);
   assert.doesNotMatch(html, /Complete Tricycle|complete-vehicle/i);
-  assert.match(html, /cargo-tricycle engine/i);
+  assert.match(html, /cargo-tricycle/i);
+  assert.match(html, /core engine assemblies and replacement spare parts/i);
   assert.doesNotMatch(html, /product-detail\?series=(?:horizontal|cg-air|cb-offroad|parts|tricycles)(?=["&#])/i);
   for (const owner of ['horizontal-engine', 'cg-engine', 'cb-engine', 'engine-parts']) {
     assert.match(html, new RegExp(`href="/en/${owner}"`), owner);
@@ -118,9 +115,6 @@ test('structured data uses one stable company identity and no invented product c
     const html = read(file);
     assert.doesNotMatch(html, /"@type"\s*:\s*"(?:Offer|Review|AggregateRating)"/, file);
   }
-
-  const future = futureCard(products);
-  assert.doesNotMatch(future, /application\/ld\+json|schema\.org|itemprop/i);
 });
 
 test('English owner pages retain the existing analytics tags', () => {

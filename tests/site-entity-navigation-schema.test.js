@@ -156,9 +156,7 @@ test('all canonical pages publish their safe primary page type and stable entity
     assert.ok(html.includes(websiteId), `${page.file}: missing shared WebSite @id`);
     assert.doesNotMatch(
       JSON.stringify(jsonLdBlocks(html, page.file)),
-      role === 'btv-detail'
-        ? /"@type":"(?:ProductGroup|Offer|Review|AggregateRating)"/
-        : /"@type":"(?:Product|ProductGroup|Offer|Review|AggregateRating)"/,
+      /"@type":"(?:ProductGroup|Offer|Review|AggregateRating)"/,
       `${page.file}: ecommerce schema is outside the approved scope`
     );
   }

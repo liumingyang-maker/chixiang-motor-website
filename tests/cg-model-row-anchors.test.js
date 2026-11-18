@@ -52,9 +52,9 @@ test('legacy anchors and water procurement note remain', () => {
     assert.ok(html.includes(`id="${id}"`), id);
   }
   assert.ok(html.includes('data-cg-water-procurement'));
-  assert.match(html, /Reverse gear is not a universal standard feature/i);
-  assert.match(html, /exact model and order/i);
-  assert.match(html, /No built-in reverse/);
+  assert.match(html, /Engineered for heavy-duty cargo tricycles/i);
+  assert.match(html, /Built-in or external reverse-gear configurations/i);
+  assert.match(html, /Standard 5-speed forward transmission/i);
 });
 
 test('approved parameter cells are unchanged and water gears reflect brochure verification', () => {

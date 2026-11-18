@@ -74,9 +74,9 @@ test('non-EN catalogs drop Honda-compat and universal reverse on CG water', () =
     assert.ok(!/compat[ií]vel Honda/i.test(html), file);
   }
   const es = read('es/products.html');
-  assert.ok(es.includes('depende del modelo y del pedido'));
+  assert.ok(es.includes('reversa integrada o caja externa'));
   const pt = read('pt/products.html');
-  assert.ok(pt.includes('depende do modelo e do pedido'));
+  assert.ok(pt.includes('Transmissão padrão de 5 marchas à frente'));
 });
 
 
@@ -150,14 +150,14 @@ test('family pages expose stable specification anchors', () => {
   }
 });
 
-test('product-detail hold messages cover vehicle programs and omit legacy CX measurements', () => {
+test('product-detail hold messages cover vehicle programs and static CX specs', () => {
   const html = read('en/product-detail.html');
   assert.ok(html.includes("'motorcycles':"));
   assert.ok(html.includes("'tricycles':"));
   assert.ok(html.includes('Complete motorcycles and CKD/SKD'));
-  assert.ok(html.includes('Complete tricycle vehicles are not currently supplied'));
-  for (const banned of ['CX152FMH-5B', "'106.7'", '52.4 x 49.5', '123.67']) {
-    assert.ok(!html.includes(banned), 'legacy value present: ' + banned);
+  assert.ok(html.includes('supplies complete cargo-tricycle engine powertrains'));
+  for (const cx of ['CX152FMH-5B', 'CX152FMH-6', '106.7', '123.67']) {
+    assert.ok(html.includes(cx), 'missing CX catalog spec: ' + cx);
   }
 });
 

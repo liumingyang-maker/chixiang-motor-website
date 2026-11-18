@@ -1,0 +1,123 @@
+# CHIXIANG MOTOR — Full Technical Specification & Product Cross-Reference (/llms-full.txt)
+
+> Official B2B engineering & procurement reference for CHIXIANG MOTOR (Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.), Chongqing, China.
+
+## 1. Company Identity, Factory Address & Quality Standards
+- Brand: CHIXIANG MOTOR
+- Legal Entity: Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (重庆驰翔摩托车制造有限公司)
+- Factory Address: No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China
+- Industry Experience: Since 2003 (Company registered in 2007)
+- Site & Capacity: 15,000 m² manufacturing facility · 10,000+ engines/month capacity
+- Quality Control: 100% pre-shipment hot and cold bench testing · Two testing laboratories with eddy-current dynamometers & exhaust gas analyzers · Incoming metallurgical/hardness checks
+- Certifications: ISO 9001 quality management system; CCC certification available for applicable engine models
+- Contact: Tel / WhatsApp +86 19008225410 · Email chixiangmotor@163.com
+- Official Channels: https://chixiangmotor.com/ · https://www.youtube.com/@chixiangmotor · https://www.linkedin.com/company/chixiang-motor/ · https://shop7p518ep539950.1688.com/
+
+## 2. Wholesale Export Terms
+- Standard MOQ: 50 Units (Mixed Models Supported across CG, CB, Horizontal, Water-Cooled, and Bajaj/TVS replacement lines)
+- Lead Time: ~10 Working Days for standard configurations after order confirmation
+- Export Term: FOB Guangzhou (Other Major Chinese Ports Available by Arrangement)
+- Warranty: 60 Days After Destination Port Arrival (verified manufacturing/assembly defects covered with free replacement parts shipped in the next container)
+- Export Execution: Export documentation and logistics are executed through Chixiang's designated export division.
+
+## 3. Complete Engine Specifications
+
+### 3.1 CG Air-Cooled Series (https://chixiangmotor.com/en/cg-engine#cg-air-cooled)
+| Model | Nominal | Actual | Bore × Stroke | Max Power | Max Torque | Compression | Net Weight | Dimensions | Cooling | Start | Clutch | Gears |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| CG125 (CX156FMI) | 125 cc | 124 cc | 56.5 × 49.5 mm | 7.5 kW @ 8,000 rpm | 8.6 N·m @ 7,000 rpm | 9.2 : 1 | 31 kg | 380 × 355 × 500 mm | Air-cooled | Electric / kick | Manual wet multi-plate | 5-speed constant mesh |
+| CG150 (CX162FMJ) | 150 cc | 149 cc | 62 × 49.5 mm | 8.5 kW @ 8,000 rpm | 10 N·m @ 7,500 rpm | 9.2 : 1 | 31.05 kg | 380 × 355 × 500 mm | Air-cooled | Electric / kick | Manual wet multi-plate | 5-speed constant mesh |
+| CG175 (CX162FMK) | 175 cc | 174 cc | 62 × 57.5 mm | 9.5 kW @ 8,000 rpm | 11.5 N·m @ 6,500 rpm | 8.6–9.3 : 1 | 31 kg | 380 × 355 × 500 mm | Air-cooled | Electric / kick | Manual wet multi-plate | 5-speed constant mesh |
+| CG200 (CX163FML) | 200 cc | 197 cc | 63.5 × 62.2 mm | 10 kW @ 7,500 rpm | 13.5 N·m @ 6,500 rpm | 8.5–9.3 : 1 | 31.3 kg | 380 × 355 × 500 mm | Air-cooled | Electric / kick | Manual wet multi-plate | 5-speed constant mesh |
+| CG250 (CX167FMM) | 250 cc | 229.5 cc | 67 × 65 mm | 10.5 kW @ 7,000 rpm | 16.5 N·m @ 5,000 rpm | 8.7 : 1 | 32 kg | 380 × 355 × 500 mm | Air-cooled | Electric / kick | Manual wet multi-plate | 5-speed constant mesh |
+
+### 3.2 CG Water-Cooled Series (https://chixiangmotor.com/en/cg-engine#cg-water-cooled)
+| Model | Nominal | Actual | Bore × Stroke | Max Power | Max Torque | Compression | Gross Weight (pkg) | Package Dimensions | Gears |
+|---|---|---|---|---|---|---|---|---|---|
+| CG150SB | 150 cc | 149.5 cc | 62 × 49.5 mm | 8.5 kW @ 8,500 rpm (±5%) | 10.0 N·m @ 7,500 rpm (±5%) | 10.0 : 1 | 31.2 kg | 425 × 385 × 530 mm | 5-speed rotary (optional built-in reverse) |
+| CG175SB | 175 cc | 173.6 cc | 62 × 57.5 mm | 9.5 kW @ 8,000 rpm (±5%) | 11.5 N·m @ 6,500 rpm (±5%) | 8.6–9.3 : 1 | 31.6 kg | 425 × 385 × 530 mm | 5-speed rotary (optional built-in reverse) |
+| CG200SB | 200 cc | 197 cc | 63.5 × 62.2 mm | 10.5 kW @ 7,500 rpm (±5%) | 15.0 N·m @ 6,000 rpm (±5%) | 9.2 : 1 | 33 kg | 425 × 385 × 530 mm | 5-speed constant mesh |
+| CG250SB | 250 cc | 246.3 cc | 70 × 64 mm | 11.5 kW @ 7,000 rpm (±5%) | 19.5 N·m @ 5,000 rpm (±5%) | 10.0–10.5 : 1 | 32.9 kg | 425 × 385 × 530 mm | 5-speed constant mesh |
+
+### 3.3 HW Water Heavy-Duty Cargo-Tricycle Series (https://chixiangmotor.com/en/cg-engine#hw-water-specifications)
+- Architecture: Cooling fins, 1.5 L oil capacity, 20-roller clutch, 18-stage DC magneto, PZ30 carburetor, standard 5-speed forward transmission (compatible with external reverse gearboxes).
+| Model | Nominal | Actual | Bore × Stroke | Max Power | Max Torque | Compression | Net Weight | Dimensions |
+|---|---|---|---|---|---|---|---|---|
+| HW200 | 200 cc | 197 ml | 63.5 × 62.2 mm | 10.5 kW @ 7,500 rpm | 15 N·m @ 6,000 rpm | 9.2 : 1 | 38 kg | 425 × 385 × 530 mm |
+| HW250 | 250 cc | 249 ml | 70 × 64 mm | 11.5 kW @ 7,000 rpm | 19.5 N·m @ 5,000 rpm | 10.1–10.5 : 1 | 38.1 kg | 425 × 385 × 530 mm |
+| HW300 | 300 cc | 300 ml | 74 × 64 mm | 12.5 kW @ 6,500 rpm | 21 N·m @ 4,500 rpm | 10.4 : 1 | 39 kg | 425 × 385 × 530 mm |
+| HW350 | 350 cc | 300.3 ml | 76 × 66.2 mm | 13 kW @ 6,500 rpm | 22.5 N·m @ 4,500 rpm | 10.4 : 1 | 40.4 kg | 425 × 385 × 530 mm |
+
+### 3.4 CB Series (https://chixiangmotor.com/en/cb-engine)
+| Model | Nominal | Actual | Max Power | Max Torque | Net Weight | Dimensions | Transmission |
+|---|---|---|---|---|---|---|---|
+| CB150 | 150 cc | 149 cc | 8.2 kW @ 8,500 rpm | 10.5 N·m @ 7,000 rpm | 29 kg | 385 × 355 × 452 mm | 5-speed constant mesh |
+| CB200-C | 200 cc | 197 cc | 10.2 kW @ 7,000 rpm | 13.5 N·m @ 6,000 rpm | 31 kg | 385 × 355 × 452 mm | 5-speed constant mesh |
+| CB250 | 250 cc | 223 cc | 12 kW @ 7,000 rpm | 17.5 N·m @ 5,500 rpm | 31 kg | 385 × 355 × 452 mm | 5-speed constant mesh |
+
+### 3.5 Horizontal CX Series (https://chixiangmotor.com/en/horizontal-engine)
+- Note: `CX152FMH-5B (130)` is the commercial catalog designation for the 54 × 54 mm square-bore 123.67 ml class; YX names are Russian-market references only.
+| Model | Nominal | Actual | Bore × Stroke | Max Power | Max Torque | Compression | Net Weight | Dimensions | Clutch |
+|---|---|---|---|---|---|---|---|---|---|
+| CX152FMH-5B | 110 cc | 106.7 ml | 52.4 × 49.5 mm | 4.7 kW @ 8,000 rpm | 6.7 N·m @ 6,000 rpm | 9.7 : 1 | 19 kg | 477 × 395 × 280 mm | Automatic wet multi-plate |
+| CX152FMH-6 | 125 cc | 107 ml | 52.4 × 49.5 mm | 4.9 kW @ 8,000 rpm | 6.9 N·m @ 6,000 rpm | 9.7 : 1 | 19 kg | 477 × 395 × 280 mm | Automatic wet multi-plate |
+| CX152FMH-5B (130) | 130 cc | 123.67 ml | 54 × 54 mm | 6.3 kW @ 7,500 rpm | 8.8 N·m @ 5,500 rpm | 9.0 : 1 | 23 kg | 450 × 280 × 277 mm | Automatic wet multi-plate |
+| CX1P56FMJ | 140 cc | 140 ml | 56 × 57 mm | 8.2 kW @ 8,000 rpm | 10.2 N·m @ 7,500 rpm | 9.8 : 1 | 21 kg | 460 × 300 × 260 mm | Manual or semi-automatic |
+| CX1P60FMJ | 150 cc | 149.8 ml | 60 × 53 mm | 10.2 kW @ 9,500 rpm | 11.2 N·m @ 8,000 rpm | 9.9 : 1 | 22 kg | 435 × 285 × 235 mm | Manual or semi-automatic (internal oil circuit, no external oil radiator) |
+
+### 3.6 AC320 (175MN) ATV/UTV Engine (https://chixiangmotor.com/en/ac320-atv-engine)
+- 287.2 cc liquid-cooled single-cylinder 4-stroke · 75 × 65 mm · CDI · CVT L-H-N-R with built-in reverse · Reinforced 5-jaw centrifugal clutch
+
+## 4. Bajaj & TVS Aftermarket Replacement Engines & OEM Cross-Reference
+- Complete engines built to OEM-equivalent displacement, bore × stroke, and mounting dimensions.
+
+### Bajaj Boxer CT100 / Boxer BM100 (99.27 cc (53.0 × 45.0 mm) / 102 cc (47.0 × 58.8 mm) opt. · CT100 / BM100 OHC (DU10 / DD10 / PF Ref.))
+| Part Name | Category | Chixiang PN | OEM Ref. | Material / Spec |
+|---|---|---|---|---|
+| Complete Replacement Engine Assembly (Kick Start, 4-Speed) | complete-engines | CX-BJ-CT100-ENG | DU10 Platform | 99.27 cc OHC · 1.0 L oil · 428-14T sprocket · Export ready |
+| Left & Right Crankcase Halves | crankcases | CX-BJ-CT100-CC | DU10 / DD70013N Ref. | ADC12 Die-Cast Aluminum · CNC Bearing Bores |
+| Clutch Cover Assembly (Right Engine Cover) | engine-covers | CX-BJ-CT100-RC | 36DU4079 / 52PF0761 | Die-Cast Aluminum · Mating Face Machined |
+| Magneto Cover Assembly (Left Stator Cover - Kick Start) | engine-covers | CX-BJ-CT100-LC | 52PF2129 / 52PF2124 | ADC12 Aluminum · Protective Stator & Sprocket Housing |
+| Cylinder Block & Piston Kit (53.0 mm) | cylinder-head-kits | CX-BJ-CT100-CY | DU101218 / 36DU4212 | Cast Alloy Liner + Piston & Ring Set (53.0 × 45.0 mm) |
+| Clutch Cover & Magneto Cover Gasket Set | overhaul-seals | CX-BJ-CT100-GK | DD101060 / JP541208 | Heat-Resistant Non-Asbestos Composite & Oil Seals |
+
+### Bajaj Boxer BM150 (144.8 cc (56.0 × 58.8 mm) · BM150 SOHC (36PF / JA Ref.))
+| Part Name | Category | Chixiang PN | OEM Ref. | Material / Spec |
+|---|---|---|---|---|
+| Complete Replacement Engine Assembly (144.8 cc, 4/5-Speed) | complete-engines | CX-BJ-BM150-ENG | 36PF0004 / 36PF0005 Ref. | 144.8 cc SOHC · 56.0 × 58.8 mm · Export pallet ready |
+| Left Crankcase Half Assembly | crankcases | CX-BJ-BM150-LH | 36PF0004 | ADC12 Die-Cast Aluminum · CNC Bearing Bores |
+| Right Crankcase Half Assembly | crankcases | CX-BJ-BM150-RH | 36PF0005 | ADC12 Die-Cast Aluminum · CNC Mating Faces |
+| Clutch Cover Assembly (Right Engine Cover) | engine-covers | CX-BJ-BM150-CC | 36PF0008 | Die-Cast Aluminum · Mating Face Precision Machined |
+| Magneto Cover Assembly (Left Stator Cover) | engine-covers | CX-BJ-BM150-MC | OEM-Spec Equivalent | ADC12 Aluminum · Protective Ignition & Sprocket Housing |
+| Cylinder Block & Piston Kit (56.0 mm) | cylinder-head-kits | CX-BJ-BM150-CY | 36PF / 36JA Series | Wear-Resistant Cast Liner + Piston, Rings & Pin |
+| Crankshaft & Connecting Rod Assembly | crankshaft-timing | CX-BJ-BM150-CS | OEM-Spec Equivalent | Forged Alloy Steel · Dynamic Balanced & Induction Hardened |
+| Clutch Plate Kit & Primary/Counter Shaft Gears | clutch-transmission | CX-BJ-BM150-TR | 36PF0009 / 36JZ | Heat-Treated 20CrMnTi Gears + Friction Plates |
+
+### Bajaj RE 4S / RE Compact (200cc 3-Wheeler) (198.88 cc (63.5 × 62.8 mm) · RE 4S / 200 DTS-i (4F+1R Reverse))
+| Part Name | Category | Chixiang PN | OEM Ref. | Material / Spec |
+|---|---|---|---|---|
+| Complete Replacement Engine Assembly (198.88 cc, 4F+1R Reverse) | complete-engines | CX-BJ-RE200-ENG | RE 4S / 200 DTS-i | 198.88 cc · Forced Air-Cooled Shroud · 4F+1R Reverse |
+| Crankcase Halves with Integrated Reverse Gear Chamber (LH/RH) | crankcases | CX-BJ-RE200-CC | OEM-Spec Equivalent | Heavy-Duty ADC12 Casting · CNC Reverse Chamber & Bearing Bores |
+| Reverse Gear Cluster & Shifter Fork Set | clutch-transmission | CX-BJ-RE200-RG | OEM-Spec Equivalent | Carburized Alloy Steel 20CrMnTi · Precision Ground Teeth |
+| Heavy-Duty Three-Wheeler Clutch Assembly | clutch-transmission | CX-BJ-RE200-CL | OEM-Spec Equivalent | Reinforced Basket + High-Friction Multi-Plate Pack |
+| Cylinder Block & Piston Kit (63.5 mm) | cylinder-head-kits | CX-BJ-RE200-CY | OEM-Spec Equivalent | 63.5 mm Bore Alloy Block + Forged/Cast Piston Rings |
+| Timing Chain, Tensioner & Overhaul Gasket Kit | crankshaft-timing | CX-BJ-RE200-TM | OEM-Spec Equivalent | High-Tensile Timing Chain + Heat-Resistant Gasket Kit |
+
+### TVS HLX 150 / HLX 125 (Ecothrust Utility) (147.49 cc (57.0 × 57.8 mm) / 124.53 cc · HLX 150 / 125 Ecothrust)
+| Part Name | Category | Chixiang PN | OEM Ref. | Material / Spec |
+|---|---|---|---|---|
+| Complete Replacement Engine Assembly (HLX 150 / HLX 125) | complete-engines | CX-TVS-HLX150-ENG | OEM-Spec Equivalent | 147.49 cc (57.0 × 57.8 mm) · 4/5-Speed · Export ready |
+| Left & Right Middle Crankcases (HLX 150 / 125) | crankcases | CX-TVS-HLX-CC | OEM-Spec Equivalent | ADC12 Die-Cast Aluminum · High-Precision Bearing Seats |
+| Clutch Cover, Magneto Cover & Cam Chain Cover | engine-covers | CX-TVS-HLX-CV | OEM-Spec Equivalent | Die-Cast Aluminum · Heat & Impact Resistant |
+| Crankshaft & Connecting Rod Assembly (57.8 mm Stroke) | crankshaft-timing | CX-TVS-HLX-CS | OEM-Spec Equivalent | Forged Steel Crankshaft · Reinforced Pin & Bearing |
+| Cylinder Head Assembly (57.0 mm Platform) | cylinder-head-kits | CX-TVS-HLX-HD | OEM-Spec Equivalent | Aluminum Alloy Cylinder Head · Pre-Assembled Valves Optional |
+| Gearshift Drum, Shifter Forks & Overhaul Gasket Kit | clutch-transmission | CX-TVS-HLX-TR | OEM-Spec Equivalent | Hardened Alloy Steel Shift Drum/Forks + Seal Kit |
+
+### TVS King Deluxe / GS 200 (3-Wheeler) (199.26 cc (62.0 × 66.0 mm) · TVS King 200 Duralife (4F+1R))
+| Part Name | Category | Chixiang PN | OEM Ref. | Material / Spec |
+|---|---|---|---|---|
+| Complete Replacement Engine Assembly (199.26 cc, 4F+1R Reverse) | complete-engines | CX-TVS-KING200-ENG | OEM-Spec Equivalent | 199.26 cc (62.0 × 66.0 mm) · Fine Oil Filter Gallery · 4F+1R |
+| Three-Wheeler Die-Cast Crankcases & Side Covers (w/ Oil Filter Gallery) | crankcases | CX-TVS-KING200-CC | OEM-Spec Equivalent | ADC12 High-Pressure Die-Casting · Precision Oil Passage Machining |
+| Heavy-Duty Clutch Assembly & Reverse Transmission Gears | clutch-transmission | CX-TVS-KING200-TR | OEM-Spec Equivalent | Wet Multi-Plate Clutch + Fork-and-Cam 4F+1R Gears |
+| Long-Stroke Crankshaft & Rocker Arm Kit (66.0 mm Stroke) | crankshaft-timing | CX-TVS-KING200-CS | OEM-Spec Equivalent | Forged Alloy Crankshaft + Hardened Valve Rocker Arms |
+| Complete Overhaul Gasket & Oil Seal Kit (TGP Spec) | overhaul-seals | CX-TVS-KING200-GK | OEM-Spec Equivalent | Crankcase Center + Cylinder Base/Head + Left/Right Cover Gaskets & Seals |

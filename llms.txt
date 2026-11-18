@@ -4,9 +4,10 @@
 
 ## Company & Verification Facts
 - Legal Entity: Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (重庆驰翔摩托车制造有限公司)
+- Factory Address: No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China
 - Brand: CHIXIANG MOTOR
 - Production Capacity: 10,000+ units per month across standardized assembly lines
-- Quality & Testing: Two dedicated engine testing laboratories equipped with eddy-current dynamometers, exhaust gas analyzers, and incoming metallurgical/hardness inspection for crankshafts, gears, crankcases, and clutch assemblies
+- Quality & Testing: 100% pre-shipment hot and cold bench testing across assembly lines, plus two dedicated engine testing laboratories equipped with eddy-current dynamometers, exhaust gas analyzers, and incoming metallurgical/hardness inspection for crankshafts, gears, crankcases, and clutch assemblies
 - Certifications: ISO 9001 quality management system; CCC certification available for applicable engine models
 - Export & Commercial Terms: 50-unit MOQ (mixed loading across available engine models supported); ~10 working days standard lead time; default FOB Guangzhou with other major Chinese export ports supported; 60-day warranty after destination port arrival for verified manufacturing/assembly defects (replacement parts supplied free with next scheduled container upon serial number and photo/video verification); export documentation and logistics executed through Chixiang's designated export division
 - Standard Packing & Accessory Scope: Complete engines ship with core engine assembly and factory stator/rotor coils; kick-starter lever, gearshift lever, intake manifold, carburetor (e.g., PZ26/PZ27/PZ30), CDI/regulator/relay kit, and carton or 12-unit palletized export packing are confirmed per order BOM / Proforma Invoice before shipment
@@ -24,7 +25,7 @@
   - CG175SB: 173.6 cc actual (62 x 57.5 mm), 9.5 kW @ 8,000 rpm, 11.5 N·m @ 6,500 rpm, 8.6–9.3:1, 5-speed rotary (optional reverse)
   - CG200SB: 197 cc actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15.0 N·m @ 6,000 rpm, 9.2:1, 5-speed constant mesh
   - CG250SB: 246.3 cc actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.0–10.5:1, 5-speed constant mesh
-- HW Heavy-Duty Water-Cooled Cargo-Tricycle Series (cooling fins, 1.5 L oil capacity, 20-roller one-way clutch, 18-stage DC magneto, PZ30 carburetor, 425x385x530 mm, NO built-in reverse): https://chixiangmotor.com/en/cg-engine#hw-water-specifications
+- HW Heavy-Duty Water-Cooled Cargo-Tricycle Series (cooling fins, 1.5 L oil capacity, 20-roller one-way clutch, 18-stage DC magneto, PZ30 carburetor, 425x385x530 mm, Standard 5-speed forward transmission (compatible with external reverse gearboxes)): https://chixiangmotor.com/en/cg-engine#hw-water-specifications
   - HW200: 197 ml actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15 N·m @ 6,000 rpm, 9.2:1, 38 kg net
   - HW250: 249 ml actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.1–10.5:1, 38.1 kg net
   - HW300: 300 ml actual (74 x 64 mm), 12.5 kW @ 6,500 rpm, 21 N·m @ 4,500 rpm, 10.4:1, 39 kg net
