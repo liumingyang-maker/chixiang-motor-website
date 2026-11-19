@@ -245,7 +245,20 @@ function renderSharedHead(engine) {
   <link rel="canonical" href="${escapeHtml(url)}">
   <link rel="alternate" hreflang="en" href="${escapeHtml(url)}">
   <link rel="alternate" hreflang="x-default" href="${escapeHtml(url)}">
-  <link rel="stylesheet" href="/css/style.css?v=20260527-bg">
+  <link rel="stylesheet" href="/css/style.css?v=20261119-flagship">
+  <style>
+    .flagship-page section[id] { scroll-margin-top: 124px; }
+    .flagship-anchor-bar { margin-top: var(--nav-height, 72px); position: sticky; top: var(--nav-height, 72px); z-index: 900; }
+    @media (max-width: 900px) {
+      .flagship-anchor-nav { display: flex; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; scrollbar-width: none; gap: 1rem; }
+      .flagship-anchor-nav::-webkit-scrollbar { display: none; }
+      .flagship-anchor-nav a { flex-shrink: 0; }
+    }
+    @media (max-width: 768px) {
+      .flagship-anchor-bar { margin-top: var(--nav-height, 64px); top: var(--nav-height, 64px); }
+      .flagship-page .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
   <script type="application/ld+json">
 ${JSON.stringify(orgSchema, null, 2)}
   </script>
@@ -328,7 +341,9 @@ function renderFooter(quoteHref) {
           <h4>Quick Links</h4>
           <a href="/en/products">Products</a><br>
           <a href="/en/cg-engine">CG Engine Series</a><br>
+          <a href="/en/cg-engine/cg150-air-cooled-engine">CG150 Flagship Engine</a><br>
           <a href="/en/cg-engine/cg200-air-cooled-engine">CG200 Flagship Engine</a><br>
+          <a href="/en/cg-engine/cg250sb-water-cooled-engine">CG250SB Flagship Engine</a><br>
           <a href="/en/cg-engine/hw300-water-cooled-engine">HW300 Flagship Engine</a><br>
           <a href="/en/engine-parts/hw-series">HW Series Parts Catalog</a><br>
           <a href="/en/contact">Contact</a>
