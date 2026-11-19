@@ -11,25 +11,25 @@
     "engine_variants": [
       {
         "id": "HW200",
-        "displacement": "200cc (197 ml)",
+        "displacement": "200cc Class (197.0 mL)",
         "bore_stroke": "63.5 × 62.2 mm",
         "cooling": "Water-Cooled with Cooling Fins"
       },
       {
         "id": "HW250",
-        "displacement": "250cc (249 ml)",
+        "displacement": "250cc Class (246.3 mL)",
         "bore_stroke": "70 × 64 mm",
         "cooling": "Water-Cooled with Cooling Fins"
       },
       {
         "id": "HW300",
-        "displacement": "300cc (300 ml)",
+        "displacement": "300cc Class (275.3 mL)",
         "bore_stroke": "74 × 64 mm",
         "cooling": "Water-Cooled with Cooling Fins"
       },
       {
         "id": "HW350",
-        "displacement": "350cc (300.3 ml)",
+        "displacement": "350cc Class (300.3 mL)",
         "bore_stroke": "76 × 66.2 mm",
         "cooling": "Water-Cooled with Cooling Fins"
       }

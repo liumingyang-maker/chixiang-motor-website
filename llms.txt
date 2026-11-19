@@ -26,10 +26,10 @@
   - CG200SB: 197 cc actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15.0 N·m @ 6,000 rpm, 9.2:1, 5-speed constant mesh
   - CG250SB: 246.3 cc actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.0–10.5:1, 5-speed constant mesh
 - HW Heavy-Duty Water-Cooled Cargo-Tricycle Series (cooling fins, 1.5 L oil capacity, 20-roller one-way clutch, 18-stage DC magneto, PZ30 carburetor, 425x385x530 mm, Standard 5-speed forward transmission (compatible with external reverse gearboxes)): https://chixiangmotor.com/en/cg-engine#hw-water-specifications
-  - HW200: 197 ml actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15 N·m @ 6,000 rpm, 9.2:1, 38 kg net
-  - HW250: 249 ml actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.1–10.5:1, 38.1 kg net
-  - HW300: 300 ml actual (74 x 64 mm), 12.5 kW @ 6,500 rpm, 21 N·m @ 4,500 rpm, 10.4:1, 39 kg net
-  - HW350: 300.3 ml actual (76 x 66.2 mm), 13 kW @ 6,500 rpm, 22.5 N·m @ 4,500 rpm, 10.4:1, 40.4 kg net
+  - HW200 (200cc Class): 197.0 mL actual (63.5 x 62.2 mm), 10.5 kW @ 7,500 rpm, 15 N·m @ 6,000 rpm, 9.2:1, 38 kg net
+  - HW250 (250cc Class): 246.3 mL actual (70 x 64 mm), 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 10.1–10.5:1, 38.1 kg net
+  - HW300 (300cc Class): 275.3 mL actual (74 x 64 mm), 12.5 kW @ 6,500 rpm, 21 N·m @ 4,500 rpm, 10.4:1, 39 kg net
+  - HW350 (350cc Class): 300.3 mL actual (76 x 66.2 mm), 13 kW @ 6,500 rpm, 22.5 N·m @ 4,500 rpm, 10.4:1, 40.4 kg net
 - CB OHC Air-Cooled Series (overhead camshaft chain-driven, 385x355x452 mm, 5-speed constant mesh, kick/electric start, manual wet multi-plate): https://chixiangmotor.com/en/cb-engine
   - CB150: 149 cc actual, 8.2 kW @ 8,500 rpm, 10.5 N·m @ 7,000 rpm, 29 kg net
   - CB200-C: 197 cc actual, 10.2 kW @ 7,000 rpm, 13.5 N·m @ 6,000 rpm, 31 kg net

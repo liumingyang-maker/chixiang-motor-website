@@ -43,10 +43,10 @@
 - Architecture: Cooling fins, 1.5 L oil capacity, 20-roller clutch, 18-stage DC magneto, PZ30 carburetor, standard 5-speed forward transmission (compatible with external reverse gearboxes).
 | Model | Nominal | Actual | Bore × Stroke | Max Power | Max Torque | Compression | Net Weight | Dimensions |
 |---|---|---|---|---|---|---|---|---|
-| HW200 | 200 cc | 197 ml | 63.5 × 62.2 mm | 10.5 kW @ 7,500 rpm | 15 N·m @ 6,000 rpm | 9.2 : 1 | 38 kg | 425 × 385 × 530 mm |
-| HW250 | 250 cc | 249 ml | 70 × 64 mm | 11.5 kW @ 7,000 rpm | 19.5 N·m @ 5,000 rpm | 10.1–10.5 : 1 | 38.1 kg | 425 × 385 × 530 mm |
-| HW300 | 300 cc | 300 ml | 74 × 64 mm | 12.5 kW @ 6,500 rpm | 21 N·m @ 4,500 rpm | 10.4 : 1 | 39 kg | 425 × 385 × 530 mm |
-| HW350 | 350 cc | 300.3 ml | 76 × 66.2 mm | 13 kW @ 6,500 rpm | 22.5 N·m @ 4,500 rpm | 10.4 : 1 | 40.4 kg | 425 × 385 × 530 mm |
+| HW200 | 200cc Class | 197.0 mL | 63.5 × 62.2 mm | 10.5 kW @ 7,500 rpm | 15 N·m @ 6,000 rpm | 9.2 : 1 | 38 kg | 425 × 385 × 530 mm |
+| HW250 | 250cc Class | 246.3 mL | 70 × 64 mm | 11.5 kW @ 7,000 rpm | 19.5 N·m @ 5,000 rpm | 10.1–10.5 : 1 | 38.1 kg | 425 × 385 × 530 mm |
+| HW300 | 300cc Class | 275.3 mL | 74 × 64 mm | 12.5 kW @ 6,500 rpm | 21 N·m @ 4,500 rpm | 10.4 : 1 | 39 kg | 425 × 385 × 530 mm |
+| HW350 | 350cc Class | 300.3 mL | 76 × 66.2 mm | 13 kW @ 6,500 rpm | 22.5 N·m @ 4,500 rpm | 10.4 : 1 | 40.4 kg | 425 × 385 × 530 mm |
 
 ### 3.4 CB Series (https://chixiangmotor.com/en/cb-engine)
 | Model | Nominal | Actual | Max Power | Max Torque | Net Weight | Dimensions | Transmission |
@@ -89,9 +89,9 @@
 | Right Crankcase Half Assembly | crankcases | CX-BJ-BM150-RH | 36PF0005 | ADC12 Die-Cast Aluminum · CNC Mating Faces |
 | Clutch Cover Assembly (Right Engine Cover) | engine-covers | CX-BJ-BM150-CC | 36PF0008 | Die-Cast Aluminum · Mating Face Precision Machined |
 | Magneto Cover Assembly (Left Stator Cover) | engine-covers | CX-BJ-BM150-MC | OEM-Spec Equivalent | ADC12 Aluminum · Protective Ignition & Sprocket Housing |
-| Cylinder Block & Piston Kit (56.0 mm) | cylinder-head-kits | CX-BJ-BM150-CY | 36PF / 36JA Series | Wear-Resistant Cast Liner + Piston, Rings & Pin |
+| Cylinder Block & Piston Kit (56.0 mm) | cylinder-head-kits | CX-BJ-BM150-CY | 36PF0002 | Wear-Resistant Cast Liner + Piston, Rings & Pin |
 | Crankshaft & Connecting Rod Assembly | crankshaft-timing | CX-BJ-BM150-CS | OEM-Spec Equivalent | Forged Alloy Steel · Dynamic Balanced & Induction Hardened |
-| Clutch Plate Kit & Primary/Counter Shaft Gears | clutch-transmission | CX-BJ-BM150-TR | 36PF0009 / 36JZ | Heat-Treated 20CrMnTi Gears + Friction Plates |
+| Clutch Plate Kit & Primary/Counter Shaft Gears | clutch-transmission | CX-BJ-BM150-TR | 36PF0009 (Clutch Plates) / OEM-Spec Equivalent (Gears) | Heat-Treated 20CrMnTi Gears + Friction Plates |
 
 ### Bajaj RE 4S / RE Compact (200cc 3-Wheeler) (198.88 cc (63.5 × 62.8 mm) · RE 4S / 200 DTS-i (4F+1R Reverse))
 | Part Name | Category | Chixiang PN | OEM Ref. | Material / Spec |
@@ -123,7 +123,7 @@
 | Complete Overhaul Gasket & Oil Seal Kit (TGP Spec) | overhaul-seals | CX-TVS-KING200-GK | OEM-Spec Equivalent | Crankcase Center + Cylinder Base/Head + Left/Right Cover Gaskets & Seals |
 
 ## 5. HW Water (Hanwei) Heavy-Duty Spare Parts Catalog (https://chixiangmotor.com/en/engine-parts/hw-series)
-- Platform Coverage: HW200 (197 ml, 63.5×62.2 mm), HW250 (249 ml, 70×64 mm), HW300 (300 ml, 74×64 mm), HW350 (300.3 ml, 76×66.2 mm).
+- Platform Coverage: HW200 (200cc Class, 197.0 mL, 63.5×62.2 mm), HW250 (250cc Class, 246.3 mL, 70×64 mm), HW300 (300cc Class, 275.3 mL, 74×64 mm), HW350 (350cc Class, 300.3 mL, 76×66.2 mm).
 - Engineering Commonality: ~80% of core components across HW250 & HW300 platforms (crankcases, 20-roller clutches, 5-speed transmission shafts, water pumps, high-output DC magnetos, and fastener kits) are interchangeable to reduce distributor inventory capital; cylinders, pistons, and crankshafts are matched by displacement (verify HW200/HW350 per engine code).
 - Pinned Category & 8 Assemblies: Leads with Factory-Matched Service Kits (Top-End Cylinder & Piston Kit, Cylinder Head & Valve Kit, Full Overhaul Gasket & Seal Kit, Heavy-Duty Clutch & Transmission Kit—factory-matched to CHIXIANG HW-series assembly specifications) across 8 Core Assembly Groups (Cylinder Head & Valve Train with Cylinder Head Assembly distinct from Cylinder Head Cover, Cylinder & Piston Kit, Crankshaft & Crankcase, Clutch Assembly, Transmission Shafts & Gears, Water Pump & Cooling System, Starting & Electrical System, Gasket/Seal & Fastener Kits).
 - Consolidation Terms: Parts consolidate with 50-unit+ complete-engine orders or are quoted per BOM (~10 working days regular lead time, FOB Guangzhou, 60-day warranty after destination port arrival).

@@ -117,7 +117,10 @@ test('managed family content publishes owner-supplied specs and avoids unapprove
     assert.match(block, /425 × 385 × 530 mm/);
     assert.match(block, /HW200/);
     assert.match(block, /HW350/);
-    assert.match(block, /300\.3 ml/);
+    assert.match(block, /197\.0 mL/);
+    assert.match(block, /246\.3 mL/);
+    assert.match(block, /275\.3 mL/);
+    assert.match(block, /300\.3 mL/);
     assert.match(block, /76 × 66\.2 mm/);
   }
   for (const cbFile of ['en/cb-engine.html', 'es/motor-cb.html', 'pt/motor-cb.html', 'ru/dvigatel-cb.html', 'ar/cb-engine.html']) {

@@ -248,7 +248,7 @@
           "part_name_zh": "套缸活塞总成（56.0 × 58.8 mm）",
           "category": "cylinder-head-kits",
           "chixiang_pn": "CX-BJ-BM150-CY",
-          "oem_ref": "36PF / 36JA Series",
+          "oem_ref": "36PF0002",
           "material_spec": "Wear-Resistant Cast Liner + Piston, Rings & Pin",
           "notes_en": "144.8 cc standard size kit.",
           "notes_zh": "144.8 cc 标准缸径套缸组件。"
@@ -268,7 +268,7 @@
           "part_name_zh": "离合器片组件与主副轴传动齿轮",
           "category": "clutch-transmission",
           "chixiang_pn": "CX-BJ-BM150-TR",
-          "oem_ref": "36PF0009 / 36JZ",
+          "oem_ref": "36PF0009 (Clutch Plates) / OEM-Spec Equivalent (Gears)",
           "material_spec": "Heat-Treated 20CrMnTi Gears + Friction Plates",
           "notes_en": "Clutch cover gasket ref.: JA541212.",
           "notes_zh": "配套离合盖密封垫参考 JA541212。"
