@@ -88,7 +88,7 @@ test('the paid page stays outside the SEO Foundation contract', () => {
   assert.ok(manifest.every((entry) => !/ads/.test(entry.pathname)), 'manifest must not classify the paid page');
   const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
   const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter((p) => p && p.is_flagship_page === true).length;
-  assert.equal(manifest.length, 80 + 2 * publicBtvCount + flagshipHwCount, 'the governed sitemap set matches baseline + public Bajaj/TVS + HW parts catalog pages');
+  assert.equal(manifest.length, 81 + 2 * publicBtvCount + flagshipHwCount, 'the governed sitemap set matches baseline + public Bajaj/TVS + HW parts catalog pages');
 });
 
 test('no organic page links to the paid page yet', () => {
