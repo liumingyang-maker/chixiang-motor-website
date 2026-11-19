@@ -23,7 +23,8 @@ const mutablePages = [
   'en/hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine.html',
   'en/bajaj-tvs-replacement-engine-fitment-checklist.html',
   'en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide.html',
-  'en/horizontal-motorcycle-engine-110cc-150cc-selection-guide.html'
+  'en/horizontal-motorcycle-engine-110cc-150cc-selection-guide.html',
+  'en/chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty.html'
 ];
 
 const contactPages = [
