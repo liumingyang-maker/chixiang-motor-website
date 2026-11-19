@@ -61,6 +61,8 @@
     var engineCode = bundleForm.getAttribute('data-engine-code') || model;
     var vehicle = bundleForm.getAttribute('data-vehicle') || model;
     var productInterest = bundleForm.getAttribute('data-product-interest') || 'cg';
+    var sourceForm = bundleForm.getAttribute('data-source-form') || 'flagship-engine-page';
+    var sourceCta = bundleForm.getAttribute('data-source-cta') || 'flagship-bundle';
     var qtyEl = document.getElementById('flagshipBundleQty');
     var countryEl = document.getElementById('flagshipBundleCountry');
     var qty = qtyEl ? qtyEl.value.trim() : '';
@@ -96,8 +98,8 @@
 
     var params = new URLSearchParams();
     params.set('product_interest', productInterest);
-    params.set('source_form', 'flagship-engine-page');
-    params.set('source_cta', 'flagship-bundle');
+    params.set('source_form', sourceForm);
+    params.set('source_cta', sourceCta);
     params.set('engine_code', engineCode);
     params.set('vehicle', vehicle);
     params.set('btv_items_storage', '1');

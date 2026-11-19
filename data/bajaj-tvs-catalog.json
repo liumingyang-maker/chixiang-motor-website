@@ -735,6 +735,157 @@
       "related_products": [
         "bajaj-boxer-ct100-bm100-complete-engine"
       ],
+      "flagship": {
+        "quick_verdict": "CHIXIANG CX-BJ-BM150-ENG is an independent aftermarket replacement engine built to 144.8 cc (56.0 × 58.8 mm) SOHC mounting and shaft tolerances for Bajaj Boxer BM150 commercial fleets, with 4-speed or 5-speed transmission options under 50-unit mixed-container MOQ. Brand and OEM numbers are referenced solely for mechanical interface compatibility, not OEM factory stock.",
+        "version_differences": [
+          {
+            "variant": "4-Speed International Mesh",
+            "application": "Early & utility Boxer BM150 commuter/boda-boda fleets",
+            "key_check": "Confirm 4-speed shift drum & crankcase prefix before order"
+          },
+          {
+            "variant": "5-Speed International Mesh",
+            "application": "Later Boxer BM150 / BM150X commercial highway & cargo duty",
+            "key_check": "Confirm 5-speed transmission ratio & ES/KS cover geometry"
+          },
+          {
+            "variant": "Single-Spark vs. Twin-Spark (DTS-i)",
+            "application": "Regional ignition & cylinder head configuration",
+            "key_check": "Verify CDI harness pinout & single/dual plug head before PI"
+          }
+        ],
+        "fitment_checklist": [
+          {
+            "step": "1. Engine Prefix & Case Code",
+            "detail": "Check stamped engine prefix (36PF / JA series reference) to match crankcase mounting ears and oil gallery layout."
+          },
+          {
+            "step": "2. 4-Speed vs. 5-Speed Gearbox",
+            "detail": "Specify 4-speed or 5-speed international constant-mesh gearbox in your order BOM prior to assembly."
+          },
+          {
+            "step": "3. Ignition & Stator Plug",
+            "detail": "Confirm single-spark vs. twin-spark head and verify stator connector pinout against your fleet wiring harness."
+          },
+          {
+            "step": "4. ES / KS Cover & Output Sprocket",
+            "detail": "Verify electric/kick-start magneto cover geometry and countershaft sprocket spline/chain pitch (428)."
+          },
+          {
+            "step": "5. Core Overhaul Spares",
+            "detail": "Consolidate LH/RH crankcases, clutch cover, cylinder kit, and clutch plates in the same container using the OEM cross-reference below."
+          }
+        ],
+        "spec_vs_oem_rows": [
+          {
+            "component": "Complete Replacement Engine Assembly",
+            "chixiang_pn": "CX-BJ-BM150-ENG",
+            "chixiang_spec": "144.8 cc SOHC · 56.0 × 58.8 mm · 4/5-Speed · Kick & Electric Start",
+            "oem_ref": "36PF0004 / 36PF0005 Ref."
+          },
+          {
+            "component": "Left Crankcase Half Assembly (LH)",
+            "chixiang_pn": "CX-BJ-BM150-LH",
+            "chixiang_spec": "ADC12 Die-Cast Aluminum · CNC Bearing Bores",
+            "oem_ref": "36PF0004"
+          },
+          {
+            "component": "Right Crankcase Half Assembly (RH)",
+            "chixiang_pn": "CX-BJ-BM150-RH",
+            "chixiang_spec": "ADC12 Die-Cast Aluminum · CNC Mating Faces",
+            "oem_ref": "36PF0005"
+          },
+          {
+            "component": "Clutch Cover Assembly (Right Cover)",
+            "chixiang_pn": "CX-BJ-BM150-CC",
+            "chixiang_spec": "Die-Cast Aluminum · Precision Machined (Gasket Ref.: JA541212)",
+            "oem_ref": "36PF0008"
+          },
+          {
+            "component": "Cylinder Block & Piston Kit (56.0 mm)",
+            "chixiang_pn": "CX-BJ-BM150-CY",
+            "chixiang_spec": "Wear-Resistant Cast Liner + 56.0 mm Piston, Rings & Pin",
+            "oem_ref": "36PF0002"
+          },
+          {
+            "component": "Clutch Plate Kit & Transmission Gears",
+            "chixiang_pn": "CX-BJ-BM150-TR",
+            "chixiang_spec": "Heat-Treated 20CrMnTi Gears + Friction Plates (Gasket Ref.: JA541212)",
+            "oem_ref": "36PF0009 (Clutch Plates) / OEM-Spec Equivalent (Gears)"
+          }
+        ],
+        "bundle_items": [
+          {
+            "pn": "CX-BJ-BM150-LH",
+            "oem": "36PF0004",
+            "name": "Left Crankcase Half Assembly (LH)",
+            "spec": "ADC12 Die-Cast Aluminum · CNC Bearing Bores"
+          },
+          {
+            "pn": "CX-BJ-BM150-RH",
+            "oem": "36PF0005",
+            "name": "Right Crankcase Half Assembly (RH)",
+            "spec": "ADC12 Die-Cast Aluminum · CNC Mating Faces"
+          },
+          {
+            "pn": "CX-BJ-BM150-CC",
+            "oem": "36PF0008",
+            "name": "Clutch Cover Assembly (Right Cover)",
+            "spec": "Precision Machined · Gasket Ref. JA541212"
+          },
+          {
+            "pn": "CX-BJ-BM150-CY",
+            "oem": "36PF0002",
+            "name": "Cylinder Block & Piston Kit (56.0 mm)",
+            "spec": "144.8 cc Standard Bore Liner + Piston & Rings"
+          },
+          {
+            "pn": "CX-BJ-BM150-TR",
+            "oem": "36PF0009 (Clutch Plates)",
+            "name": "Clutch Plate Kit & Transmission Gears",
+            "spec": "20CrMnTi Gears + Friction Plates · Gasket Ref. JA541212"
+          }
+        ],
+        "related_links": [
+          {
+            "title": "Bajaj & TVS 5-Point OEM Fitment Checklist Guide",
+            "url": "/en/bajaj-tvs-replacement-engine-fitment-checklist",
+            "description": "Step-by-step verification of engine prefix, mount spacing, sprocket spline, and stator harness."
+          },
+          {
+            "title": "Bajaj Boxer CT100 / BM100, BM150 & RE 4S Parts Hub",
+            "url": "/en/bajaj-engine-parts",
+            "description": "Browse all Bajaj replacement engines, crankcases, covers, cylinder kits, and overhaul gaskets."
+          },
+          {
+            "title": "Bajaj & TVS Full Engines & Parts Catalog",
+            "url": "/en/bajaj-tvs-engines-parts",
+            "description": "Compare BM150 alongside CT100/BM100, RE 4S 200, TVS HLX 150, and King 200."
+          }
+        ],
+        "faqs": [
+          {
+            "q": "Is CX-BJ-BM150-ENG an OEM Bajaj factory part or an aftermarket replacement?",
+            "a": "CX-BJ-BM150-ENG is an independent aftermarket replacement engine manufactured by CHIXIANG MOTOR to 144.8 cc (56.0 × 58.8 mm) OEM-equivalent mounting and shaft dimensions. Bajaj® and OEM numbers are referenced solely for mechanical compatibility."
+          },
+          {
+            "q": "How do I choose between the 4-speed and 5-speed BM150 replacement versions?",
+            "a": "Verify your fleet's existing transmission shift pattern and engine prefix (36PF / JA series reference) before ordering, and specify 4-speed or 5-speed international constant mesh plus single-spark or twin-spark ignition in your Proforma Invoice."
+          },
+          {
+            "q": "Which calibrated OEM reference numbers correspond to CHIXIANG BM150 core castings and kits?",
+            "a": "Core references include 36PF0004 (LH Crankcase CX-BJ-BM150-LH), 36PF0005 (RH Crankcase CX-BJ-BM150-RH), 36PF0008 (Clutch Cover CX-BJ-BM150-CC), 36PF0002 (Cylinder & Piston Kit CX-BJ-BM150-CY), 36PF0009 (Clutch Plates in CX-BJ-BM150-TR), and JA541212 (Clutch Cover Gasket reference)."
+          },
+          {
+            "q": "Can I combine BM150 complete engines with crankcases, cylinder kits, and Chinese CG/CB engines?",
+            "a": "Yes. Standard wholesale MOQ is 50 units with mixed-container loading supported across BM150 engines, BM150 overhaul castings/kits, and CHIXIANG CG/CB/HW engine models."
+          },
+          {
+            "q": "What testing and warranty apply to BM150 replacement engines?",
+            "a": "Every complete engine undergoes 100% pre-shipment hot and cold bench testing in Chongqing (~10 working days regular lead time, FOB Guangzhou) and carries a 60-day warranty after destination port arrival for verified manufacturing or assembly defects."
+          }
+        ]
+      },
       "public": true
     },
     {

@@ -208,10 +208,16 @@ function renderCg(recordById, locale, language) {
   const waterQuickLinks = withEnglishRowAnchors
     ? modelQuickLinks(water.map((record, index) => [waterRowIds[index], record.model_code]), 'Choose CG water-cooled engine model')
     : '';
-  const enAirDetailLinks = withEnglishRowAnchors ? { CG200: '/en/cg-engine/cg200-air-cooled-engine' } : null;
+  const enAirDetailLinks = withEnglishRowAnchors ? {
+    CG150: '/en/cg-engine/cg150-air-cooled-engine',
+    CG200: '/en/cg-engine/cg200-air-cooled-engine'
+  } : null;
+  const enWaterDetailLinks = withEnglishRowAnchors ? {
+    CG250SB: '/en/cg-engine/cg250sb-water-cooled-engine'
+  } : null;
   const enHwDetailLinks = withEnglishRowAnchors ? { HW300: '/en/cg-engine/hw300-water-cooled-engine' } : null;
   const airTableOptions = withEnglishRowAnchors ? { rowIds: airRowIds, rowHeaderScope: true, rowDetailLinks: enAirDetailLinks } : undefined;
-  const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true } : undefined;
+  const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true, rowDetailLinks: enWaterDetailLinks } : undefined;
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
   const hwColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.carburetor, l.cooling, l.start, l.clutch];

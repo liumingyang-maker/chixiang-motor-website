@@ -505,11 +505,93 @@ function detailPageHtml(catalog, product, lang) {
       }
     ]
   };
+  const flagship = !isZh && product.flagship ? product.flagship : null;
+  const faqSchema = flagship && Array.isArray(flagship.faqs) && flagship.faqs.length
+    ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: flagship.faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a }
+      }))
+    }
+    : null;
 
   const ogImage = (product.photos || [])[0] && (product.photos || [])[0].src
     ? `https://chixiangmotor.com/${product.photos[0].src}`
     : 'https://chixiangmotor.com/images/parts.webp';
   const detailTitle = `${escapeHtml(name)}${isZh ? '｜Bajaj / TVS 发动机与配件｜CHIXIANG MOTOR' : ' | Bajaj & TVS Engine Parts | CHIXIANG MOTOR'}`;
+
+  const flagshipHtml = flagship ? `
+    <section class="section" style="padding-top:1.5rem;padding-bottom:1.5rem;">
+      <div class="container">
+        <div class="flagship-verdict" style="margin-top:0;">
+          <p class="flagship-verdict__label">Quick Engineering Verdict · Aftermarket Compatibility Reference</p>
+          <p style="margin:0;color:var(--text-primary);line-height:1.65;">${escapeHtml(flagship.quick_verdict)}</p>
+        </div>
+        <h2 class="section-title" style="margin-top:2rem;">4-Speed vs. 5-Speed Version Differences &amp; 5-Point Interface Checklist</h2>
+        <div class="responsive-table-wrap" tabindex="0" style="margin-top:1rem;">
+          <table class="specs-table catalog-spec-table">
+            <thead><tr><th>BM150 Configuration</th><th>Fleet Application</th><th>Pre-Order Verification</th></tr></thead>
+            <tbody>${(flagship.version_differences || []).map((v) => `<tr><th scope="row">${escapeHtml(v.variant)}</th><td>${escapeHtml(v.application)}</td><td>${escapeHtml(v.key_check)}</td></tr>`).join('')}</tbody>
+          </table>
+        </div>
+        <div class="features-grid" style="margin-top:1.5rem;">
+          ${(flagship.fitment_checklist || []).map((c) => `<div class="feature-item" style="text-align:left;"><h3>${escapeHtml(c.step)}</h3><p>${escapeHtml(c.detail)}</p></div>`).join('')}
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--bg-surface,#f8fafc);">
+      <div class="container">
+        <h2 class="section-title">CHIXIANG Actual Supply Spec vs. Calibrated OEM Reference</h2>
+        <div class="responsive-table-wrap" tabindex="0" style="margin-top:1.25rem;">
+          <table class="specs-table catalog-spec-table">
+            <thead><tr><th>Component</th><th>Chixiang PN</th><th>Actual Supply Specification</th><th>OEM Reference Number</th></tr></thead>
+            <tbody>${(flagship.spec_vs_oem_rows || []).map((r) => `<tr><th scope="row">${escapeHtml(r.component)}</th><td>${escapeHtml(r.chixiang_pn)}</td><td>${escapeHtml(r.chixiang_spec)}</td><td>${escapeHtml(r.oem_ref)}</td></tr>`).join('')}</tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="bundle-quote">
+      <div class="container">
+        <h2 class="section-title">BM150 Replacement Engine + Core Spares Consolidation Quote</h2>
+        <p class="section-subtitle">Select the complete BM150 replacement engine and matching crankcases, covers, cylinder kit, or clutch kit to prefill a consolidated inquiry.</p>
+        <form id="flagshipBundleForm" class="flagship-bundle-card" data-model="Bajaj Boxer BM150" data-engine-code="BM150 SOHC (36PF / JA Ref.)" data-vehicle="Bajaj Boxer BM150 (144.8 cc)" data-engine-sku="${escapeHtml(product.part_number)}" data-product-interest="parts" data-source-form="bajaj-tvs-catalog" data-source-cta="bm150-bundle">
+          <div class="flagship-bundle-grid">
+            <div class="flagship-bundle-field">
+              <label for="flagshipBundleQty">Estimated Quantity (Engines / Spares Lot)</label>
+              <input type="text" id="flagshipBundleQty" placeholder="e.g. 50 engines + 50 crankcase pairs" value="50 units">
+            </div>
+            <div class="flagship-bundle-field">
+              <label for="flagshipBundleCountry">Destination Country / Market</label>
+              <input type="text" id="flagshipBundleCountry" placeholder="e.g. Nigeria, Kenya, Uganda, Peru">
+            </div>
+          </div>
+          <div class="flagship-bundle-list">
+            <label class="flagship-bundle-item">
+              <input type="checkbox" data-bundle-item data-part-name="Complete Replacement Engine for Bajaj Boxer BM150 (144.8 cc)" data-part-pn="${escapeHtml(product.part_number)}" data-part-oem="36PF0004 / 36PF0005 Ref." checked>
+              <span><strong>Complete Replacement Engine (144.8 cc, 4/5-Speed)</strong><br><span style="font-size:0.84rem;color:var(--text-secondary);">PN: ${escapeHtml(product.part_number)} · OEM Ref: 36PF0004 / 36PF0005 Ref.</span></span>
+            </label>
+            ${(flagship.bundle_items || []).map((b, idx) => `<label class="flagship-bundle-item"><input type="checkbox" data-bundle-item data-part-name="${escapeHtml(b.name)}" data-part-pn="${escapeHtml(b.pn)}" data-part-oem="${escapeHtml(b.oem)}" ${idx < 2 ? 'checked' : ''}><span><strong>${escapeHtml(b.name)}</strong><br><span style="font-size:0.84rem;color:var(--text-secondary);">PN: ${escapeHtml(b.pn)} · OEM Ref: ${escapeHtml(b.oem)}</span></span></label>`).join('')}
+          </div>
+          <div class="cta-actions" style="justify-content:flex-start;">
+            <button type="submit" class="btn btn-accent">Proceed to Prefilled Quote Form &rarr;</button>
+          </div>
+        </form>
+        <div class="features-grid" style="margin-top:2rem;">
+          ${(flagship.related_links || []).map((l) => `<div class="feature-item" style="text-align:left;"><h3><a href="${escapeHtml(l.url)}">${escapeHtml(l.title)}</a></h3><p>${escapeHtml(l.description)}</p></div>`).join('')}
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:var(--bg-surface,#f8fafc);">
+      <div class="container">
+        <h2 class="section-title">Bajaj Boxer BM150 Replacement FAQ</h2>
+        <div class="features-grid" style="margin-top:1.5rem;">
+          ${(flagship.faqs || []).map((f) => `<div class="feature-item" style="text-align:left;"><h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p></div>`).join('')}
+        </div>
+      </div>
+    </section>` : '';
 
   return `<!DOCTYPE html>
 ${DETAIL_MARKER}
@@ -546,7 +628,7 @@ ${DETAIL_MARKER}
   <link rel="stylesheet" href="/css/style.css?v=20261119-hero">
   <script type="application/ld+json">
 ${JSON.stringify(productGraph, null, 2)}
-  </script>
+  </script>${faqSchema ? `\n  <script type="application/ld+json">\n${JSON.stringify(faqSchema, null, 2)}\n  </script>` : ''}
   <script type="application/ld+json" data-site-entity-graph>
 ${JSON.stringify(entityGraph, null, 2)}
   </script>
@@ -588,6 +670,7 @@ ${JSON.stringify(entityGraph, null, 2)}
     </div></section>
 ${photosHtml}
 ${specsHtml}
+${flagshipHtml}
     <section class="cta-section"><div class="container">
       <h2>${isZh ? '提交料号与采购数量，获取报价' : 'Send part numbers and quantities for a quote'}</h2>
       <p style="color:var(--text-secondary);max-width:680px;margin:0 auto 1rem;line-height:1.7;">${isZh
@@ -616,7 +699,7 @@ ${specsHtml}
     </div>
   </footer>
   <script src="/js/main.js" defer></script>
-  <script src="/js/core-menu-accessibility.js" defer></script>
+  <script src="/js/core-menu-accessibility.js" defer></script>${flagship ? '\n  <script src="/js/flagship-engine-page.js" defer></script>' : ''}
 </body>
 </html>
 `;

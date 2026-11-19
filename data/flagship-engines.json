@@ -457,13 +457,13 @@
     },
     {
       "slug": "cg150-air-cooled-engine",
-      "published": false,
+      "published": true,
       "family": "CG Air-Cooled Series",
       "family_url": "/en/cg-engine",
       "model": "CG150",
-      "alias": "150cc Air-Cooled",
+      "alias": "CX162FMJ",
       "nominal_class": "150cc Class",
-      "actual_displacement": "149.0 cc",
+      "actual_displacement": "149 cc",
       "bore_stroke": "62 × 49.5 mm",
       "power": "8.5 kW @ 8,000 rpm",
       "torque": "10 N·m @ 7,500 rpm",
@@ -478,42 +478,210 @@
       "dimensions": "380 × 355 × 500 mm",
       "weight": "31.05 kg",
       "sku": "CX-CG150-AC",
-      "vehicle_context": "CG150 149 cc Air-Cooled Motorcycle Engine",
-      "quick_verdict": "The CHIXIANG CG150 delivers 149 cc actual displacement (62 × 49.5 mm) with 8.5 kW @ 8,000 rpm and 10 N·m @ 7,500 rpm in a 31.05 kg air-cooled package, engineered for commuter motorcycles and fleet maintenance under 50-unit mixed-container MOQ.",
+      "vehicle_context": "CG150 (CX162FMJ) 149 cc Air-Cooled Motorcycle & Fleet Engine",
+      "quick_verdict": "The CHIXIANG CG150 (CX162FMJ) delivers 149 cc actual displacement (62 × 49.5 mm) with 8.5 kW @ 8,000 rpm and 10 N·m @ 7,500 rpm in a 31.05 kg, 380 × 355 × 500 mm air-cooled OHV pushrod package. Built for utility commuter motorcycles and fleet maintenance under 50-unit mixed-container MOQ.",
       "gallery_images": [
         {
           "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
-          "alt": "CHIXIANG MOTOR CG150 air-cooled 149 cc vertical motorcycle engine",
-          "caption": "CG150 Air-Cooled Engine (Pending Model-Specific Shoot)"
+          "alt": "CHIXIANG MOTOR CG150 air-cooled 149 cc vertical motorcycle engine front-three-quarter view",
+          "caption": "CG150 (CX162FMJ) Air-Cooled Complete Engine Assembly"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-02.webp",
+          "alt": "CHIXIANG MOTOR CG150 air-cooled engine left magneto cover side",
+          "caption": "Left Magneto Cover & Countershaft Sprocket Side"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-03.webp",
+          "alt": "CHIXIANG MOTOR CG150 air-cooled engine right clutch cover and kick-start assembly",
+          "caption": "Right Clutch Cover & Kick-Start Shaft"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-04.webp",
+          "alt": "CHIXIANG MOTOR CG150 air-cooled cylinder fins and OHV pushrod head",
+          "caption": "Air-Cooled Cylinder Fins & OHV Pushrod Head"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-05.webp",
+          "alt": "CHIXIANG MOTOR CG150 electric starter motor and rear frame mounting lugs",
+          "caption": "Electric Starter & Frame Mounting Interface"
         }
       ],
       "standard_vs_optional_configs": [
         {
-          "item": "Base Engine & Ignition Stator",
-          "standard": "Complete engine assembly with factory-installed magneto stator/rotor",
-          "optional": "Market-specific stator winding per order BOM"
+          "item": "Base Engine & Ignition Magneto",
+          "standard": "Complete CG150 engine assembly with factory-installed magneto stator/rotor",
+          "optional": "High-output magneto coil winding matched to regional lighting load"
+        },
+        {
+          "item": "Starting Method",
+          "standard": "Electric start + foot kick start",
+          "optional": "Kick-only or reinforced starter motor configuration per order BOM"
+        },
+        {
+          "item": "Transmission & Shift Pattern",
+          "standard": "5-speed constant mesh forward gearbox",
+          "optional": "International or rotary shift pattern; optional reverse per model"
+        },
+        {
+          "item": "Balance Shaft",
+          "standard": "Standard non-balance CG150 pushrod architecture",
+          "optional": "CG balance-shaft configuration for smoother commuter riding"
+        },
+        {
+          "item": "Carburetor & Intake Manifold",
+          "standard": "Confirmed per order BOM and Proforma Invoice",
+          "optional": "PZ26 / PZ27 carburetor and matched intake pipe"
+        },
+        {
+          "item": "External Levers & Electrical Kit",
+          "standard": "Engine assembly scope (confirm levers/CDI/rectifier in PI)",
+          "optional": "Kick lever, gear shift lever, CDI, voltage regulator, and relay pack"
+        },
+        {
+          "item": "Export Packaging",
+          "standard": "380 × 355 × 500 mm export carton or 12-unit pallet",
+          "optional": "Mixed-model container loading with CG200, CB, and water-cooled units"
         }
       ],
       "mounting_interface_notes": [
         {
+          "label": "Frame Mounting Lugs",
+          "detail": "Vertical CG pushrod engine hanger pattern. Confirm front, rear, and top head-stay lug clearances against your commuter or delivery frame."
+        },
+        {
+          "label": "Output Shaft & Chain Pitch",
+          "detail": "Confirm countershaft spline tooth count and 428/520 sprocket compatibility before batch production."
+        },
+        {
+          "label": "Carburetor & Stator Plug",
+          "detail": "Specify PZ26 or PZ27 intake manifold orientation and verify stator wire plug pinout against your main harness."
+        },
+        {
           "label": "Factory Dimension Drawings",
-          "detail": "Factory installation dimension drawings are provided with formal quotation."
+          "detail": "Factory installation dimension drawings are supplied with formal quotation and order BOM confirmation."
         }
       ],
-      "comparison_models": [],
+      "comparison_models": [
+        {
+          "model": "CG125",
+          "url": "/en/cg-engine#cg-air-125",
+          "nominal": "125 cc",
+          "actual": "124 cc",
+          "bore_stroke": "56.5 × 49.5 mm",
+          "power": "7.5 kW @ 8,000 rpm",
+          "torque": "8.6 N·m @ 7,000 rpm",
+          "weight": "31 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        },
+        {
+          "model": "CG150 (This Page)",
+          "url": "/en/cg-engine/cg150-air-cooled-engine",
+          "current": true,
+          "nominal": "150 cc",
+          "actual": "149 cc",
+          "bore_stroke": "62 × 49.5 mm",
+          "power": "8.5 kW @ 8,000 rpm",
+          "torque": "10 N·m @ 7,500 rpm",
+          "weight": "31.05 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        },
+        {
+          "model": "CG200",
+          "url": "/en/cg-engine/cg200-air-cooled-engine",
+          "nominal": "200 cc",
+          "actual": "197.0 cc",
+          "bore_stroke": "63.5 × 62.2 mm",
+          "power": "10 kW @ 7,500 rpm",
+          "torque": "13.5 N·m @ 6,500 rpm",
+          "weight": "31.3 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        }
+      ],
       "linked_parts_source": null,
-      "bundled_kits": [],
-      "related_guides": [],
-      "faqs": [],
+      "bundled_kits": [
+        {
+          "slug": "cg150-top-end-kit",
+          "pn": "CX-CG150-TOP",
+          "name": "CG150 Top-End Cylinder & Piston Kit (62.0 mm Bore)",
+          "spec": "62.0 mm cylinder block, piston, rings, wristpin & circlips matched to 149 cc CG150",
+          "fitment": "CG150 (CX162FMJ)"
+        },
+        {
+          "slug": "cg150-gasket-seal-kit",
+          "pn": "CX-CG150-GSK",
+          "name": "CG150 Full Overhaul Gasket & Oil Seal Kit",
+          "spec": "Cylinder head, base, crankcase center, clutch/magneto cover gaskets & oil seals",
+          "fitment": "CG150 (CX162FMJ)"
+        },
+        {
+          "slug": "cg150-clutch-assembly-kit",
+          "pn": "CX-CG150-CLT",
+          "name": "CG150 Manual Wet Multi-Plate Clutch Kit",
+          "spec": "Friction plates, steel plates, pressure plate & springs for 149 cc CG150",
+          "fitment": "CG150 (CX162FMJ)"
+        },
+        {
+          "slug": "cg150-electrical-ignition-kit",
+          "pn": "CX-CG150-ELC",
+          "name": "CG150 Stator, CDI & Rectifier Service Pack",
+          "spec": "High-output magneto stator coil, CDI ignition unit, voltage regulator & relay",
+          "fitment": "CG150 (CX162FMJ)"
+        }
+      ],
+      "related_guides": [
+        {
+          "title": "CG Motorcycle Engine Series Matrix (125cc–250cc)",
+          "url": "/en/cg-engine",
+          "description": "Compare all air-cooled and water-cooled CG models side by side."
+        },
+        {
+          "title": "CG Pushrod OHV vs CB Chain-Driven OHC Comparison",
+          "url": "/en/cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison",
+          "description": "Compare CG150 (8.5 kW / 31.05 kg) against CB150 (8.2 kW / 29 kg) for fleet builds."
+        },
+        {
+          "title": "Export Packaging Dimensions & MOQ 50 Mixed-Order Guide",
+          "url": "/en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide",
+          "description": "Review 380 × 355 × 500 mm carton sizing, palletization, and container mixing rules."
+        },
+        {
+          "title": "Chongqing Factory QA, Bench Testing & 60-Day Warranty",
+          "url": "/en/chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty",
+          "description": "Verify 100% pre-shipment bench testing and post-arrival warranty terms."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What are the verified displacement, power, and weight of the CHIXIANG CG150?",
+          "a": "The CG150 (CX162FMJ) has an actual displacement of 149 cc (62 × 49.5 mm bore and stroke), delivering 8.5 kW @ 8,000 rpm and 10 N·m @ 7,500 rpm with a 9.2 : 1 compression ratio and 31.05 kg net weight."
+        },
+        {
+          "q": "Can I order the CG150 with a PZ26 or PZ27 carburetor and high-output magneto?",
+          "a": "Yes. Carburetor specification (PZ26 or PZ27) and high-output magneto stator windings are confirmed in the order BOM and Proforma Invoice prior to assembly."
+        },
+        {
+          "q": "Is a balance-shaft version available for the CG150?",
+          "a": "Yes. Standard CG150 uses the non-balance pushrod architecture, and a CG balance-shaft configuration can be specified for commuter motorcycle applications requiring lower vibration."
+        },
+        {
+          "q": "How does CG150 compare to CB150 for commercial fleet assembly?",
+          "a": "CG150 uses an OHV pushrod valve train (8.5 kW, 31.05 kg) prized for straightforward field maintenance and low-RPM work durability, whereas CB150 uses a chain-driven OHC layout (8.2 kW, 29 kg) for higher-revving street agility."
+        },
+        {
+          "q": "What is the MOQ and mixed-loading policy for CG150?",
+          "a": "Standard wholesale MOQ is 50 complete engines, supporting mixed loading with CG200, CB, horizontal, or water-cooled engines plus overhaul kits under FOB Guangzhou terms (~10 working days regular lead time, 60-day post-arrival warranty)."
+        }
+      ],
       "seo": {
-        "title": "CG150 Air-Cooled 149cc Motorcycle Engine | CHIXIANG MOTOR",
-        "description": "Factory-direct CG150 149 cc air-cooled motorcycle engine: 62 × 49.5 mm, 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, 31.05 kg.",
-        "h1": "CG150 Air-Cooled 149 cc Motorcycle Engine"
+        "title": "CG150 Air-Cooled 149cc Motorcycle Engine (CX162FMJ) | CHIXIANG MOTOR",
+        "description": "Factory-direct CG150 (CX162FMJ) 149 cc air-cooled vertical engine: 62 × 49.5 mm, 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, 31.05 kg. MOQ 50 mixed loading, FOB Guangzhou.",
+        "h1": "CG150 Air-Cooled 149 cc Motorcycle Engine (CX162FMJ)"
       }
     },
     {
       "slug": "cg250sb-water-cooled-engine",
-      "published": false,
+      "published": true,
       "family": "CG Water-Cooled Series",
       "family_url": "/en/cg-engine#cg-water-cooled",
       "model": "CG250SB",
@@ -525,49 +693,219 @@
       "torque": "19.5 N·m @ 5,000 rpm (±5%)",
       "compression": "10.0–10.5 : 1",
       "cooling": "Water-cooled",
+      "cooling_clutch": "Water-cooled · Manual wet multi-plate",
       "transmission": "5-speed constant mesh",
       "starting": "Electric / kick start",
       "clutch": "Manual wet multi-plate",
       "ignition": "CDI",
       "dimensions_weight": "425 × 385 × 530 mm · 32.9 kg (gross pkg)",
       "dimensions": "425 × 385 × 530 mm",
-      "weight": "32.9 kg",
+      "weight": "32.9 kg (gross pkg)",
       "sku": "CX-CG250SB-WC",
       "vehicle_context": "CG250SB 246.3 cc Water-Cooled Cargo-Tricycle Engine",
-      "quick_verdict": "The CHIXIANG CG250SB delivers 246.3 cc actual displacement (70 × 64 mm) with 11.5 kW @ 7,000 rpm and 19.5 N·m @ 5,000 rpm in a 32.9 kg package, built for mainstream cargo-tricycle assembly under 50-unit mixed-container MOQ.",
+      "quick_verdict": "The CHIXIANG CG250SB delivers 246.3 cc actual displacement (70 × 64 mm) with 11.5 kW @ 7,000 rpm (±5%) and 19.5 N·m @ 5,000 rpm (±5%) in a 425 × 385 × 530 mm, 32.9 kg (gross pkg) water-cooled package—engineered for cargo tricycles needing thermal stability under 50-unit MOQ.",
       "gallery_images": [
         {
           "src": "images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
-          "alt": "CHIXIANG MOTOR CG250SB standard water-cooled cargo-tricycle engine",
-          "caption": "CG250SB Standard Water-Cooled Assembly"
+          "alt": "CHIXIANG MOTOR CG250SB standard water-cooled 246.3 cc cargo-tricycle engine front view",
+          "caption": "CG250SB Water-Cooled Complete Engine Assembly"
         },
         {
           "src": "images/standard-water-cooled/chixiang-standard-water-cooled-02.webp",
-          "alt": "CHIXIANG MOTOR CG250SB water-cooled engine side view",
-          "caption": "CG250SB Crankcase & Clutch Cover View"
+          "alt": "CHIXIANG MOTOR CG250SB water-cooled engine right clutch cover and water pump side",
+          "caption": "Right Clutch Cover & Coolant Housing Side"
+        },
+        {
+          "src": "images/standard-water-cooled/chixiang-standard-water-cooled-03.webp",
+          "alt": "CHIXIANG MOTOR CG250SB water-cooled engine left magneto cover and output shaft",
+          "caption": "Left Magneto Cover & Output Shaft Interface"
+        },
+        {
+          "src": "images/standard-water-cooled/chixiang-standard-water-cooled-04.webp",
+          "alt": "CHIXIANG MOTOR CG250SB water-cooled cylinder jacket and coolant port detail",
+          "caption": "Water-Cooled Cylinder Jacket & Coolant Ports"
+        },
+        {
+          "src": "images/standard-water-cooled/chixiang-standard-water-cooled-05.webp",
+          "alt": "CHIXIANG MOTOR CG250SB electric starter and rear chassis mounting lugs",
+          "caption": "Electric Starter & Cargo-Tricycle Mounting Lugs"
         }
       ],
       "standard_vs_optional_configs": [
         {
-          "item": "Base Engine & Cooling Architecture",
-          "standard": "Standard CG water-cooled vertical engine assembly",
-          "optional": "Built-in or external reverse configuration per model and order"
+          "item": "Base Water-Cooled Architecture",
+          "standard": "CG250SB vertical water-cooled engine assembly (70 × 64 mm, 246.3 cc)",
+          "optional": "Upgrade path to HW250 / HW300 for 1.5 L sump and 20-roller clutch"
+        },
+        {
+          "item": "Transmission & Reverse",
+          "standard": "5-speed constant mesh forward transmission",
+          "optional": "Built-in or external reverse configuration confirmed by model and order"
+        },
+        {
+          "item": "Starting & Clutch",
+          "standard": "Electric / kick start · manual wet multi-plate clutch",
+          "optional": "Heavy-duty clutch friction plate service kit in same shipment"
+        },
+        {
+          "item": "Cooling Circuit Accessories",
+          "standard": "Engine-mounted water pump housing and coolant inlet/outlet ports",
+          "optional": "Radiator, cooling fan, and hose kit confirmed per order BOM"
+        },
+        {
+          "item": "Carburetor & Electrical Kit",
+          "standard": "Confirmed per order BOM and Proforma Invoice",
+          "optional": "PZ30 carburetor, CDI, voltage regulator, and starter relay pack"
+        },
+        {
+          "item": "Export Packaging",
+          "standard": "425 × 385 × 530 mm carton (32.9 kg gross pkg) or 12-unit pallet",
+          "optional": "Mixed loading with CG200, HW250, HW300, and service kits"
         }
       ],
       "mounting_interface_notes": [
         {
+          "label": "Package & Chassis Cradle",
+          "detail": "425 × 385 × 530 mm overall package. Confirm cargo-tricycle frame cradle spacing and upper/lower mounting lugs before batch order."
+        },
+        {
+          "label": "Reverse Configuration Verification",
+          "detail": "Built-in or external reverse configurations are model- and order-specific. Specify your rear axle / reverse-box shaft spline before PI confirmation."
+        },
+        {
+          "label": "Cooling & Radiator Connections",
+          "detail": "Verify coolant hose diameter and thermostat/bypass routing against your tricycle radiator assembly."
+        },
+        {
           "label": "Factory Dimension Drawings",
-          "detail": "Factory installation dimension drawings are provided with formal quotation."
+          "detail": "Factory installation dimension drawings are supplied with formal quotation so engineering teams can verify every mounting point."
         }
       ],
-      "comparison_models": [],
+      "comparison_models": [
+        {
+          "model": "CG200 (Air-Cooled)",
+          "url": "/en/cg-engine/cg200-air-cooled-engine",
+          "nominal": "200 cc",
+          "actual": "197.0 cc",
+          "bore_stroke": "63.5 × 62.2 mm",
+          "power": "10 kW @ 7,500 rpm",
+          "torque": "13.5 N·m @ 6,500 rpm",
+          "weight": "31.3 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        },
+        {
+          "model": "CG250SB (This Page)",
+          "url": "/en/cg-engine/cg250sb-water-cooled-engine",
+          "current": true,
+          "nominal": "250 cc",
+          "actual": "246.3 cc",
+          "bore_stroke": "70 × 64 mm",
+          "power": "11.5 kW @ 7,000 rpm (±5%)",
+          "torque": "19.5 N·m @ 5,000 rpm (±5%)",
+          "weight": "32.9 kg (gross pkg)",
+          "dimensions": "425 × 385 × 530 mm"
+        },
+        {
+          "model": "HW250 (250cc Class)",
+          "url": "/en/cg-engine#hw-250",
+          "nominal": "250cc Class",
+          "actual": "246.3 mL",
+          "bore_stroke": "70 × 64 mm",
+          "power": "11.5 kW @ 7,000 rpm",
+          "torque": "19.5 N·m @ 5,000 rpm",
+          "weight": "38.1 kg",
+          "dimensions": "425 × 385 × 530 mm"
+        },
+        {
+          "model": "HW300 (300cc Class)",
+          "url": "/en/cg-engine/hw300-water-cooled-engine",
+          "nominal": "300cc Class",
+          "actual": "275.3 mL",
+          "bore_stroke": "74 × 64 mm",
+          "power": "12.5 kW @ 6,500 rpm",
+          "torque": "21 N·m @ 4,500 rpm",
+          "weight": "39 kg",
+          "dimensions": "425 × 385 × 530 mm"
+        }
+      ],
       "linked_parts_source": null,
-      "bundled_kits": [],
-      "related_guides": [],
-      "faqs": [],
+      "bundled_kits": [
+        {
+          "slug": "cg250sb-top-end-kit",
+          "pn": "CX-CG250SB-TOP",
+          "name": "CG250SB Water-Cooled Cylinder & Piston Kit (70.0 mm)",
+          "spec": "70.0 mm water-cooled cylinder block, piston, rings & wristpin for 246.3 cc CG250SB",
+          "fitment": "CG250SB"
+        },
+        {
+          "slug": "cg250sb-gasket-seal-kit",
+          "pn": "CX-CG250SB-GSK",
+          "name": "CG250SB Full Water-Cooled Overhaul Gasket & Seal Kit",
+          "spec": "Head gasket, base gasket, water pump seals, crankcase & cover gaskets",
+          "fitment": "CG250SB"
+        },
+        {
+          "slug": "cg250sb-water-pump-kit",
+          "pn": "CX-CG250SB-WPK",
+          "name": "CG250SB Water Pump Impeller & Mechanical Seal Kit",
+          "spec": "Impeller shaft, bearing, mechanical seal & housing gasket for CG250SB",
+          "fitment": "CG250SB"
+        },
+        {
+          "slug": "cg250sb-clutch-plate-kit",
+          "pn": "CX-CG250SB-CLT",
+          "name": "CG250SB Manual Wet Multi-Plate Clutch Kit",
+          "spec": "Heavy-duty friction plates, steel plates & springs for 246.3 cc cargo duty",
+          "fitment": "CG250SB"
+        }
+      ],
+      "related_guides": [
+        {
+          "title": "CG250SB vs HW250 vs HW300 Cargo-Tricycle Buyer Guide",
+          "url": "/en/hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine",
+          "description": "Compare standard CG250SB (32.9 kg pkg) against heavy-duty HW250 and HW300."
+        },
+        {
+          "title": "CG & HW Water-Cooled Family Matrix",
+          "url": "/en/cg-engine#cg-water-cooled",
+          "description": "Review CG150SB, CG175SB, CG200SB, and CG250SB specifications."
+        },
+        {
+          "title": "Air-Cooled vs Water-Cooled Motorcycle Engine Selection",
+          "url": "/en/air-cooled-vs-water-cooled-motorcycle-engine",
+          "description": "Evaluate thermal stability under hot-climate cargo-tricycle operation."
+        },
+        {
+          "title": "Export Packaging Dimensions & MOQ 50 Mixed-Order Guide",
+          "url": "/en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide",
+          "description": "Review 425 × 385 × 530 mm carton sizing and mixed-container consolidation."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How is CG250SB (246.3 cc) different from air-cooled CG250 (229.5 cc)?",
+          "a": "CG250SB is a 70 × 64 mm water-cooled engine (246.3 cc actual, 11.5 kW, 19.5 N·m, 425 × 385 × 530 mm), whereas air-cooled CG250 uses a 67 × 65 mm bore and stroke (229.5 cc actual, 10.5 kW, 16.5 N·m, 380 × 355 × 500 mm). Always specify CG250SB by exact model code when ordering."
+        },
+        {
+          "q": "When should a buyer choose CG250SB vs HW250 or HW300?",
+          "a": "Choose CG250SB (32.9 kg gross package) for mainstream cargo-tricycle builds prioritizing lighter dry weight and lower unit cost; choose HW250 or HW300 for sustained extreme payloads requiring a 1.5 L oil sump, 20-roller clutch, and ~80% HW250/HW300 spare-parts commonality."
+        },
+        {
+          "q": "Is reverse gear standard on the CG250SB?",
+          "a": "Reverse is not automatically included across all CG water-cooled models. Built-in or external reverse-gear configurations are available across designated CG water-cooled models and must be specified in your order BOM."
+        },
+        {
+          "q": "What is the export carton size and package weight of CG250SB?",
+          "a": "CG250SB ships in a 425 × 385 × 530 mm export carton with 32.9 kg gross package weight, or on 12-unit export pallets for mixed-container loading."
+        },
+        {
+          "q": "What are the MOQ, lead time, and warranty terms for CG250SB?",
+          "a": "Standard MOQ is 50 complete engines (mixed models and water-cooled service kits supported), regular lead time is ~10 working days under FOB Guangzhou terms, and every unit includes 100% pre-shipment hot/cold bench testing plus a 60-day post-arrival warranty."
+        }
+      ],
       "seo": {
         "title": "CG250SB Water-Cooled 246.3cc Cargo-Tricycle Engine | CHIXIANG MOTOR",
-        "description": "Factory-direct CG250SB 246.3 cc water-cooled vertical engine: 70 × 64 mm, 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm.",
+        "description": "Factory-direct CG250SB 246.3 cc water-cooled vertical engine: 70 × 64 mm, 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm, 425 × 385 × 530 mm. MOQ 50 mixed loading, FOB Guangzhou.",
         "h1": "CG250SB Water-Cooled 246.3 cc Cargo-Tricycle Engine"
       }
     }

@@ -4373,6 +4373,11 @@ body:has(.about-page-header) .section-subtitle {
     display: none;
   }
 }
+@media (max-width: 768px) {
+  .flagship-page .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 560px) {
   .flagship-spec-grid {
     grid-template-columns: 1fr;

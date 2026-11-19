@@ -433,7 +433,7 @@ function renderEnginePage(engine) {
     : '';
 
   return `${renderSharedHead(engine)}
-<body>
+<body class="flagship-page">
   ${GENERATED_MARKER}
 ${renderNav(quoteHref)}
 

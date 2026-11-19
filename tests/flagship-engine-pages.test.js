@@ -9,18 +9,20 @@ const read = rel => fs.readFileSync(path.join(root, rel), 'utf8');
 
 const BANNED_RE = /\b(?:18-pole|99%|Top 10|#1|Euro 5|within 24 hours|in stock now|patented|universal fit)\b/i;
 
-test('flagship-engines.json publishes Batch 1 (CG200, HW300) and reserves CG150 & CG250SB', () => {
+test('flagship-engines.json publishes Batch 1 + Batch 2 (CG200, HW300, CG150, CG250SB)', () => {
   const data = JSON.parse(read('data/flagship-engines.json'));
   const published = data.engines.filter(e => e.published === true).map(e => e.slug);
   const reserved = data.engines.filter(e => e.published === false).map(e => e.slug);
-  assert.deepEqual(published, ['cg200-air-cooled-engine', 'hw300-water-cooled-engine']);
-  assert.deepEqual(reserved, ['cg150-air-cooled-engine', 'cg250sb-water-cooled-engine']);
+  assert.deepEqual(published, [
+    'cg200-air-cooled-engine',
+    'hw300-water-cooled-engine',
+    'cg150-air-cooled-engine',
+    'cg250sb-water-cooled-engine'
+  ]);
+  assert.deepEqual(reserved, []);
 
   for (const slug of published) {
     assert.ok(fs.existsSync(path.join(root, 'en', 'cg-engine', `${slug}.html`)), `${slug}.html must exist`);
-  }
-  for (const slug of reserved) {
-    assert.ok(!fs.existsSync(path.join(root, 'en', 'cg-engine', `${slug}.html`)), `${slug}.html must not be published yet`);
   }
 });
 
@@ -62,9 +64,6 @@ test('published flagship pages have clean URLs, local images, no empty cells, no
 
     assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), `sitemap.xml missing ${canonical}`);
   }
-
-  assert.ok(!sitemap.includes('/en/cg-engine/cg150-air-cooled-engine'), 'sitemap must not include unpublished CG150');
-  assert.ok(!sitemap.includes('/en/cg-engine/cg250sb-water-cooled-engine'), 'sitemap must not include unpublished CG250SB');
 });
 
 test('bidirectional internal links connect family, products hub, HW parts hub, and flagship pages', () => {
@@ -73,10 +72,15 @@ test('bidirectional internal links connect family, products hub, HW parts hub, a
   const hwPartsHtml = read('en/engine-parts/hw-series.html');
   const hw300Html = read('en/cg-engine/hw300-water-cooled-engine.html');
 
+  assert.ok(cgHtml.includes('href="/en/cg-engine/cg150-air-cooled-engine"'));
   assert.ok(cgHtml.includes('href="/en/cg-engine/cg200-air-cooled-engine"'));
+  assert.ok(cgHtml.includes('href="/en/cg-engine/cg250sb-water-cooled-engine"'));
   assert.ok(cgHtml.includes('href="/en/cg-engine/hw300-water-cooled-engine"'));
+  assert.ok(productsHtml.includes('href="/en/cg-engine/cg150-air-cooled-engine"'));
   assert.ok(productsHtml.includes('href="/en/cg-engine/cg200-air-cooled-engine"'));
+  assert.ok(productsHtml.includes('href="/en/cg-engine/cg250sb-water-cooled-engine"'));
   assert.ok(productsHtml.includes('href="/en/cg-engine/hw300-water-cooled-engine"'));
+  assert.ok(productsHtml.includes('href="/en/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine"'));
   assert.ok(hwPartsHtml.includes('href="/en/cg-engine/hw300-water-cooled-engine"'));
   assert.ok(hw300Html.includes('href="/en/engine-parts/hw-series"'));
   assert.ok(hw300Html.includes('Water-cooled w/ fins · 20-roller clutch'));
@@ -86,6 +90,16 @@ test('bidirectional internal links connect family, products hub, HW parts hub, a
   assert.ok(cg200Html.includes('8.5 kW @ 8,000 rpm'));
   assert.ok(cg200Html.includes('10 N·m @ 7,500 rpm'));
   assert.ok(cg200Html.includes('31.05 kg'));
+
+  const bm150Html = read('en/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine.html');
+  assert.ok(bm150Html.includes('Quick Engineering Verdict'));
+  assert.ok(bm150Html.includes('data-source-form="bajaj-tvs-catalog"'));
+  assert.ok(!bm150Html.includes('36JZ'), 'BM150 must not contain deleted 36JZ code');
+  assert.ok(bm150Html.includes('36PF0002'));
+  assert.ok(bm150Html.includes('36PF0009'));
+  assert.ok(bm150Html.includes('href="/en/bajaj-tvs-replacement-engine-fitment-checklist"'));
+  assert.ok(bm150Html.includes('href="/en/bajaj-engine-parts"'));
+  assert.equal((bm150Html.match(/<h1\b/gi) || []).length, 1);
 });
 
 test('render-flagship-engines.js --check reports zero drift', () => {
