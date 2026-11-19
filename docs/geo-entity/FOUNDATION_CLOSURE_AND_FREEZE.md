@@ -1,4 +1,6 @@
-# Chixiang Motor Foundation 最终收口与冻结
+# Chixiang Motor Foundation 最终收口与冻结（v1.0 历史归档）
+
+> **重要说明（2026-11-19 v2.0 升级）**：本文件完整保留 2026-08-01 初代 Foundation 收口（v1.0）的历史审计记录。当前最新有效协作规则与唯一事实口径已升级至仓库根目录 [`AGENTS.md`](../../AGENTS.md)（`FOUNDATION_CONTRACT: v2.0 (SSOT + GEO_GROWTH_ENABLED)`），涉及 `10,000+` 月产能、`100% pre-shipment hot and cold bench testing`、标准化 50 台 MOQ/10 工作日交期/60 天质保、`CX152FMH` 系列公开规格以及 GEO 结构化数据增长策略等，均以 **v2.0 契约及主事实源 CSV** 为准。
 
 **日期：** 2026-08-01
 

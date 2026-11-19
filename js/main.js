@@ -271,12 +271,19 @@
     });
 
     // --- Active nav link highlight ---
-    const currentPath = window.location.pathname;
-    document.querySelectorAll('.nav-links a').forEach(function(link) {
+    const normalizeNavPath = function(p) {
+      return (p || '/').replace(/\/index\.html$/, '').replace(/\.html$/, '').replace(/\/+$/, '') || '/';
+    };
+    const currentPath = normalizeNavPath(window.location.pathname);
+    document.querySelectorAll('.nav-links > li > a').forEach(function(link) {
       const href = link.getAttribute('href');
-      if (href && currentPath.includes(href.replace(/\/$/, '').split('/').pop())) {
-        link.classList.add('active');
-      }
+      if (!href || href.charAt(0) === '#') return;
+      try {
+        const linkPath = normalizeNavPath(new URL(href, window.location.href).pathname);
+        if (linkPath === currentPath) {
+          link.classList.add('active');
+        }
+      } catch (e) {}
     });
 
     // --- Lead form submission ---

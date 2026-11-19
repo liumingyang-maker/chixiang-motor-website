@@ -543,7 +543,7 @@ ${DETAIL_MARKER}
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${escapeHtml(ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css?v=20261119-hero">
   <script type="application/ld+json">
 ${JSON.stringify(productGraph, null, 2)}
   </script>
@@ -576,7 +576,7 @@ ${JSON.stringify(entityGraph, null, 2)}
       <a href="${home}" class="nav-logo"><span class="logo-icon"><img src="/images/logo.webp" alt="CHIXIANG MOTOR" width="36" height="36" decoding="async"></span><span class="logo-text">CHIXIANG MOTOR</span></a>
       <ul class="nav-links" role="navigation" aria-label="Main navigation">${isZh
         ? `<li><a href="/zh-cn/">首页</a></li><li><a href="/zh-cn/products">发动机产品</a></li><li><a href="/zh-cn/bajaj-tvs-engines-parts" class="active" aria-current="page">Bajaj / TVS 配件</a></li><li><a href="/zh-cn/evidence">证据中心</a></li><li><a href="/zh-cn/contact/">联系询价</a></li>`
-        : `<li><a href="/en/">Home</a></li><li><a href="/en/products">Products</a></li><li><a href="/en/bajaj-tvs-engines-parts" class="active" aria-current="page">Bajaj / TVS Parts</a></li><li><a href="/en/evidence">Evidence</a></li><li><a href="/en/about">About Us</a></li><li><a href="/en/news">News</a></li><li><a href="/en/contact">Contact</a></li>`}</ul>
+        : `<li><a href="/en/">Home</a></li><li><a href="/en/products">Products</a></li><li class="nav-item-dropdown"><a href="/en/engine-parts" class="active">Engine Parts <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><ul class="nav-dropdown"><li><a href="/en/engine-parts">All Engine Parts</a></li><li><a href="/en/engine-parts/hw-series">HW200–HW350 Kits &amp; Parts</a></li><li><a href="/en/bajaj-tvs-engines-parts" aria-current="page">Bajaj / TVS Engines &amp; Parts</a></li></ul></li><li><a href="/en/evidence">Evidence</a></li><li><a href="/en/about">About Us</a></li><li><a href="/en/news">News</a></li><li><a href="/en/contact">Contact</a></li>`}</ul>
       <div class="nav-right"><a href="${escapeHtml(inquiryHref(lang, product, 'detail-page'))}" class="btn btn-accent btn-sm">${quoteLabel}</a><button class="menu-toggle" aria-label="${isZh ? '打开菜单' : 'Toggle menu'}"><span></span><span></span><span></span></button></div>
     </div>
   </nav>

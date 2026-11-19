@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
-const { routes, locales } = require('./product-family-owner-manifest');
+const { routes, schemaOnlyRoutes, locales } = require('./product-family-owner-manifest');
 
 const root = path.join(__dirname, '..');
 const checkOnly = process.argv.includes('--check');
@@ -13,7 +13,8 @@ const modelIds = {
     'model-cg150sb', 'model-cg175sb', 'model-cg200sb', 'model-cg250sb'
   ],
   cb: ['model-cb150', 'model-cb200-c', 'model-cb250'],
-  horizontal: ['model-152fmh', 'model-153fmi', 'model-154fmi', 'model-1p56fmj', 'model-1p60fmj']
+  horizontal: ['model-152fmh', 'model-153fmi', 'model-154fmi', 'model-1p56fmj', 'model-1p60fmj'],
+  ac320: ['model-ac320-175mn']
 };
 
 const familyFactIds = [
@@ -142,8 +143,26 @@ const brochureModelMetrics = {
   'model-cg250sb': { maxPower: '11.5 kW @ 7,000 rpm (±5%)', maxTorque: '19.5 N·m @ 5,000 rpm (±5%)', compression: '10.0–10.5 : 1', weight: '32.9 kg', dimensions: '425 × 385 × 530 mm', gearsConfirmed: true },
   'model-cb150': { maxPower: '8.2 kW @ 8,500 rpm', maxTorque: '10.5 N·m @ 7,000 rpm', weight: '29 kg', dimensions: '385 × 355 × 452 mm' },
   'model-cb200-c': { maxPower: '10.2 kW @ 7,000 rpm', maxTorque: '13.5 N·m @ 6,000 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' },
-  'model-cb250': { maxPower: '12 kW @ 7,000 rpm', maxTorque: '17.5 N·m @ 5,500 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' }
+  'model-cb250': { maxPower: '12 kW @ 7,000 rpm', maxTorque: '17.5 N·m @ 5,500 rpm', weight: '31 kg', dimensions: '385 × 355 × 452 mm' },
+  'model-152fmh': { maxPower: '4.7 kW @ 8,000 rpm', maxTorque: '6.7 N·m @ 6,000 rpm', compression: '9.7 : 1', weight: '19 kg', dimensions: '477 × 395 × 280 mm' },
+  'model-1p56fmj': { maxPower: '8.2 kW @ 8,000 rpm', maxTorque: '10.2 N·m @ 7,500 rpm', compression: '9.8 : 1', weight: '21 kg', dimensions: '460 × 300 × 260 mm' },
+  'model-1p60fmj': { maxPower: '10.2 kW @ 9,500 rpm', maxTorque: '11.2 N·m @ 8,000 rpm', compression: '9.9 : 1', weight: '22 kg', dimensions: '435 × 285 × 235 mm' }
 };
+
+const hwWaterModels = [
+  ['HW200', '200 cc', '197 ml', '63.5 × 62.2 mm', '10.5 kW @ 7,500 rpm', '15 N·m @ 6,000 rpm', '9.2 : 1', '38 kg', '425 × 385 × 530 mm', 'PZ30'],
+  ['HW250', '250 cc', '249 ml', '70 × 64 mm', '11.5 kW @ 7,000 rpm', '19.5 N·m @ 5,000 rpm', '10.1–10.5 : 1', '38.1 kg', '425 × 385 × 530 mm', 'PZ30'],
+  ['HW300', '300 cc', '300 ml', '74 × 64 mm', '12.5 kW @ 6,500 rpm', '21 N·m @ 4,500 rpm', '10.4 : 1', '39 kg', '425 × 385 × 530 mm', 'PZ30'],
+  ['HW350', '350 cc', '300.3 ml', '76 × 66.2 mm', '13 kW @ 6,500 rpm', '22.5 N·m @ 4,500 rpm', '10.4 : 1', '40.4 kg', '425 × 385 × 530 mm', 'PZ30']
+];
+
+const horizontalCatalogModels = [
+  { code: 'CX152FMH-5B', nominal: '110 cc', actual: '106.7 ml', boreStroke: '52.4 × 49.5 mm', maxPower: '4.7 kW @ 8,000 rpm', maxTorque: '6.7 N·m @ 6,000 rpm', compression: '9.7 : 1', weight: '19 kg', dimensions: '477 × 395 × 280 mm', coolingKey: 'air', clutchKey: 'autoWet' },
+  { code: 'CX152FMH-6', nominal: '125 cc', actual: '107 ml', boreStroke: '52.4 × 49.5 mm', maxPower: '4.9 kW @ 8,000 rpm', maxTorque: '6.9 N·m @ 6,000 rpm', compression: '9.7 : 1', weight: '19 kg', dimensions: '477 × 395 × 280 mm', coolingKey: 'air', clutchKey: 'autoWet' },
+  { code: 'CX152FMH-5B (130)', nominal: '130 cc', actual: '123.67 ml', boreStroke: '54 × 54 mm', maxPower: '6.3 kW @ 7,500 rpm', maxTorque: '8.8 N·m @ 5,500 rpm', compression: '9.0 : 1', weight: '23 kg', dimensions: '450 × 280 × 277 mm', coolingKey: 'air', clutchKey: 'autoWet' },
+  { code: 'CX1P56FMJ', nominal: '140 cc', actual: '140 ml', boreStroke: '56 × 57 mm', maxPower: '8.2 kW @ 8,000 rpm', maxTorque: '10.2 N·m @ 7,500 rpm', compression: '9.8 : 1', weight: '21 kg', dimensions: '460 × 300 × 260 mm', coolingKey: 'air', clutchKey: 'manualSemi' },
+  { code: 'CX1P60FMJ', nominal: '150 cc', actual: '149.8 ml', boreStroke: '60 × 53 mm', maxPower: '10.2 kW @ 9,500 rpm', maxTorque: '11.2 N·m @ 8,000 rpm', compression: '9.9 : 1', weight: '22 kg', dimensions: '435 × 285 × 235 mm', coolingKey: 'internalOil', clutchKey: 'manualSemi' }
+];
 
 function renderCg(recordById, locale, language) {
   const l = locale.labels;
@@ -186,12 +205,6 @@ function renderCg(recordById, locale, language) {
   const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true } : undefined;
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
-  const hwWaterModels = [
-    ['HW200', '200 cc', '197 ml', '63.5 × 62.2 mm', '10.5 kW @ 7,500 rpm', '15 N·m @ 6,000 rpm', '9.2 : 1', '38 kg', '425 × 385 × 530 mm', 'PZ30'],
-    ['HW250', '250 cc', '249 ml', '70 × 64 mm', '11.5 kW @ 7,000 rpm', '19.5 N·m @ 5,000 rpm', '10.1–10.5 : 1', '38.1 kg', '425 × 385 × 530 mm', 'PZ30'],
-    ['HW300', '300 cc', '300 ml', '74 × 64 mm', '12.5 kW @ 6,500 rpm', '21 N·m @ 4,500 rpm', '10.4 : 1', '39 kg', '425 × 385 × 530 mm', 'PZ30'],
-    ['HW350', '350 cc', '300.3 ml', '76 × 66.2 mm', '13 kW @ 6,500 rpm', '22.5 N·m @ 4,500 rpm', '10.4 : 1', '40.4 kg', '425 × 385 × 530 mm', 'PZ30']
-  ];
   const hwColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.carburetor, l.cooling, l.start, l.clutch];
   const hwRows = hwWaterModels.map(item => [...item, v.water, v.electricKick, v.manualWet]);
   const hwRowIds = withEnglishRowAnchors ? ['hw-200', 'hw-250', 'hw-300', 'hw-350'] : undefined;
@@ -209,7 +222,7 @@ function renderCg(recordById, locale, language) {
       <div class="catalog-table-block" id="hw-water-specifications" style="margin-top:2rem;">
         <h3>${escapeHtml(l.hwHeading)}</h3>
         ${hwTable}
-        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(l.hwNote)}</p>
+        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(l.hwNote)}</p>${language === 'en' ? '\n        <p style="margin-top:0.75rem;color:var(--text-secondary);">Need spare parts for HW200–HW350 engines? <a href="/en/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Browse the HW Series Parts Catalog &rarr;</a></p>' : ''}
       </div>`;
 }
 
@@ -253,15 +266,11 @@ function renderHorizontal(recordById, locale) {
     v.four,
     v.reverse
   ]);
-  const catalogModels = [
-    ['CX152FMH-5B', '110 cc', '106.7 ml', '52.4 × 49.5 mm', '4.7 kW @ 8,000 rpm', '6.7 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm', v.air, v.autoWet],
-    ['CX152FMH-6', '125 cc', '107 ml', '52.4 × 49.5 mm', '4.9 kW @ 8,000 rpm', '6.9 N·m @ 6,000 rpm', '9.7 : 1', '19 kg', '477 × 395 × 280 mm', v.air, v.autoWet],
-    ['CX152FMH-5B (130)', '130 cc', '123.67 ml', '54 × 54 mm', '6.3 kW @ 7,500 rpm', '8.8 N·m @ 5,500 rpm', '9.0 : 1', '23 kg', '450 × 280 × 277 mm', v.air, v.autoWet],
-    ['CX1P56FMJ', '140 cc', '140 ml', '56 × 57 mm', '8.2 kW @ 8,000 rpm', '10.2 N·m @ 7,500 rpm', '9.8 : 1', '21 kg', '460 × 300 × 260 mm', v.air, v.manualSemi],
-    ['CX1P60FMJ', '150 cc', '149.8 ml', '60 × 53 mm', '10.2 kW @ 9,500 rpm', '11.2 N·m @ 8,000 rpm', '9.9 : 1', '22 kg', '435 × 285 × 235 mm', v.internalOil, v.manualSemi]
-  ];
   const catalogColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.cooling, l.start, l.clutch, l.gears];
-  const catalogRows = catalogModels.map(([m, nom, act, bs, pwr, trq, comp, wt, dim, cool, clu]) => [m, nom, act, bs, pwr, trq, comp, wt, dim, cool, v.electricKick, clu, v.fourConstant]);
+  const catalogRows = horizontalCatalogModels.map(item => [
+    item.code, item.nominal, item.actual, item.boreStroke, item.maxPower, item.maxTorque,
+    item.compression, item.weight, item.dimensions, v[item.coolingKey], v.electricKick, v[item.clutchKey], v.fourConstant
+  ]);
   return `<div class="catalog-table-block" id="cx-models">
         ${table(l, [l.model, l.nominal, l.marketReference, l.cooling, l.start, l.starterPosition, l.clutch, l.gears, l.options], rows)}
       </div>
@@ -345,6 +354,27 @@ function renderOwnerBlock(recordById, route) {
   <!-- /Product Detail SEO Content -->`;
 }
 
+function buildPropertyValues(pairs) {
+  return pairs
+    .filter(([, value]) => value && value !== '—')
+    .map(([name, value]) => ({ '@type': 'PropertyValue', name, value: String(value) }));
+}
+
+function buildProductNode({ name, description, category, pageUrl, modelNumber, properties }) {
+  const node = {
+    '@type': 'Product',
+    name,
+    description,
+    category,
+    brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
+    manufacturer: { '@id': 'https://chixiangmotor.com/#organization' },
+    url: pageUrl
+  };
+  if (modelNumber) node.model = modelNumber;
+  if (properties && properties.length) node.additionalProperty = properties;
+  return node;
+}
+
 function replaceProductFamilySchema(html, recordById, route) {
   if (route.family === 'parts') return html;
   const specIds = modelIds[route.family] || [];
@@ -353,24 +383,96 @@ function replaceProductFamilySchema(html, recordById, route) {
   const pageUrl = canonicalMatch ? canonicalMatch[1] : `https://chixiangmotor.com/${route.language}/`;
   const categoryName = route.family === 'cg'
     ? 'CG Motorcycle & Cargo-Tricycle Engines'
-    : (route.family === 'cb' ? 'CB Motorcycle Engines' : 'Horizontal Motorcycle Engines');
-  const items = specIds.map((id, index) => {
+    : (route.family === 'cb'
+      ? 'CB Motorcycle Engines'
+      : (route.family === 'ac320' ? 'AC320 ATV / UTV Liquid-Cooled Engines' : 'Horizontal Motorcycle Engines'));
+
+  const productNodes = specIds.map(id => {
     const rec = model(recordById, id);
+    const metrics = brochureModelMetrics[id] || {};
     const disp = rec.actual_displacement_cc ? `${rec.actual_displacement_cc} cc` : `${rec.nominal_displacement_cc} cc`;
-    return {
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': 'Product',
-        name: `${rec.model_code} (${disp})`,
-        description: `${rec.marketing_name || rec.model_code} — ${rec.configuration || rec.family}`,
-        category: categoryName,
-        brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
-        manufacturer: { '@id': 'https://chixiangmotor.com/#organization' },
-        url: pageUrl
-      }
-    };
+    const boreStroke = rec.bore_mm && rec.stroke_mm ? `${rec.bore_mm} × ${rec.stroke_mm} mm` : '';
+    return buildProductNode({
+      name: `${rec.model_code} (${disp})`,
+      description: `${rec.marketing_name || rec.model_code} — ${rec.configuration || rec.family}`,
+      category: categoryName,
+      pageUrl,
+      modelNumber: rec.model_code,
+      properties: buildPropertyValues([
+        ['Nominal Displacement', rec.nominal_displacement_cc ? `${rec.nominal_displacement_cc} cc` : ''],
+        ['Actual Displacement', rec.actual_displacement_cc ? `${rec.actual_displacement_cc} cc` : ''],
+        ['Bore × Stroke', boreStroke],
+        ['Max Power', metrics.maxPower],
+        ['Max Torque', metrics.maxTorque],
+        ['Compression Ratio', metrics.compression],
+        ['Cooling System', rec.cooling],
+        ['Starting Method', rec.start_method],
+        ['Clutch Type', rec.clutch],
+        ['Transmission', rec.gear_pattern],
+        ['Net / Package Weight', metrics.weight],
+        ['Dimensions', metrics.dimensions],
+        ['Reverse Configuration', rec.reverse_configuration]
+      ])
+    });
   });
+
+  if (route.family === 'cg') {
+    for (const [code, nominal, actual, boreStroke, maxPower, maxTorque, compression, weight, dimensions, carb] of hwWaterModels) {
+      productNodes.push(buildProductNode({
+        name: `${code} (${nominal} HW Heavy-Duty Water-Cooled)`,
+        description: `${code} — Heavy-duty CG water-cooled engine with cooling fins, 1.5 L oil capacity, 20-roller clutch, and high-output DC magneto`,
+        category: categoryName,
+        pageUrl: `${pageUrl}#hw-water-specifications`,
+        modelNumber: code,
+        properties: buildPropertyValues([
+          ['Nominal Displacement', nominal],
+          ['Actual Displacement', actual],
+          ['Bore × Stroke', boreStroke],
+          ['Max Power', maxPower],
+          ['Max Torque', maxTorque],
+          ['Compression Ratio', compression],
+          ['Cooling System', 'Water-cooled with cooling fins'],
+          ['Oil Capacity', '1.5 L'],
+          ['Clutch Type', '20-roller clutch (manual wet multi-plate)'],
+          ['Transmission', 'Standard 5-speed forward transmission (external reverse compatible)'],
+          ['Carburetor', carb],
+          ['Net Weight', weight],
+          ['Dimensions', dimensions]
+        ])
+      }));
+    }
+  }
+
+  if (route.family === 'horizontal') {
+    for (const variant of horizontalCatalogModels.slice(0, 3)) {
+      productNodes.push(buildProductNode({
+        name: `${variant.code} (${variant.nominal} Horizontal Engine)`,
+        description: `${variant.code} — Horizontal 10° inclined OHC 4-stroke engine (${variant.actual})`,
+        category: categoryName,
+        pageUrl: `${pageUrl}#horizontal-catalog-specs`,
+        modelNumber: variant.code,
+        properties: buildPropertyValues([
+          ['Nominal Class', variant.nominal],
+          ['Actual Displacement', variant.actual],
+          ['Bore × Stroke', variant.boreStroke],
+          ['Max Power', variant.maxPower],
+          ['Max Torque', variant.maxTorque],
+          ['Compression Ratio', variant.compression],
+          ['Cooling System', 'Air-cooled'],
+          ['Clutch Type', 'Automatic wet multi-plate'],
+          ['Transmission', '4-speed constant mesh'],
+          ['Net Weight', variant.weight],
+          ['Dimensions', variant.dimensions]
+        ])
+      }));
+    }
+  }
+
+  const items = productNodes.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item
+  }));
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -438,12 +540,13 @@ const recordById = new Map(records.map(record => [record.spec_id, record]));
 for (const id of [...Object.values(modelIds).flat(), ...familyFactIds]) approvedPublic(recordById, id);
 
 const changed = [];
-for (const route of routes) {
+for (const route of [...routes, ...schemaOnlyRoutes.map(item => ({ ...item, schemaOnly: true }))]) {
   const file = path.join(root, route.file);
   const before = fs.readFileSync(file, 'utf8');
   let after;
-  if (route.protected) {
-    after = before;
+  if (route.protected || route.schemaOnly) {
+    after = replaceProductFamilySchema(before, recordById, route);
+    after = preservePageNewlines(before, after, route.file);
   } else {
     const marker = /<!-- Product Detail SEO Content -->[\s\S]*?<!-- \/Product Detail SEO Content -->/;
     if (!marker.test(before)) throw new Error(`${route.file}: product detail content markers not found`);

@@ -71,10 +71,12 @@ test('all 16 public English pages enforce unified nav, footer, entity schema, an
   for (const rel of PUBLIC_EN_PAGES) {
     const html = read(rel);
 
-    const navMatch = html.match(/<ul class="nav-links"[\s\S]*?<\/ul>/);
-    assert.ok(navMatch, `${rel}: missing .nav-links`);
-    assert.ok(navMatch[0].includes('href="/en/bajaj-tvs-engines-parts"'), `${rel}: nav-links missing Bajaj / TVS`);
-    assert.ok(navMatch[0].includes('href="/en/evidence"'), `${rel}: nav-links missing Evidence`);
+    const navMatch = html.match(/<nav class="navbar">[\s\S]*?<\/nav>/);
+    assert.ok(navMatch, `${rel}: missing .navbar`);
+    assert.ok(navMatch[0].includes('href="/en/engine-parts"'), `${rel}: navbar missing Engine Parts`);
+    assert.ok(navMatch[0].includes('href="/en/engine-parts/hw-series"'), `${rel}: navbar missing HW200-HW350 Parts`);
+    assert.ok(navMatch[0].includes('href="/en/bajaj-tvs-engines-parts"'), `${rel}: navbar missing Bajaj / TVS`);
+    assert.ok(navMatch[0].includes('href="/en/evidence"'), `${rel}: navbar missing Evidence`);
 
     const mnavMatch = html.match(/<ul class="mobile-nav-list"[\s\S]*?<\/ul>/);
     assert.ok(mnavMatch, `${rel}: missing .mobile-nav-list`);

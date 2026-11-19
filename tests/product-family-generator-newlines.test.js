@@ -8,7 +8,7 @@ const root = path.join(__dirname, '..');
 const generatorFile = path.join(root, 'scripts', 'apply-product-family-owner-content.js');
 const manifestFile = path.join(root, 'scripts', 'product-family-owner-manifest.js');
 const generatorSource = fs.readFileSync(generatorFile, 'utf8');
-const { routes, locales } = require(manifestFile);
+const { routes, schemaOnlyRoutes, locales } = require(manifestFile);
 
 function toCrlf(text) {
   return text.replace(/\r?\n/g, '\r\n');
@@ -22,7 +22,7 @@ function memoryFiles(overrides = {}, normalizePage = toCrlf) {
   const files = new Map();
   const factFile = path.join(root, 'docs', 'geo-entity', 'fact-calibration', 'ENGINE_SPEC_MASTER.csv');
   files.set(path.resolve(factFile), fs.readFileSync(factFile, 'utf8'));
-  for (const route of routes) {
+  for (const route of [...routes, ...schemaOnlyRoutes]) {
     const file = path.resolve(root, route.file);
     files.set(file, normalizePage(fs.readFileSync(file, 'utf8')));
   }
@@ -56,7 +56,7 @@ function runGenerator(files, { checkOnly = false } = {}) {
     ['node:fs', controlledFs],
     ['node:path', path],
     ['node:crypto', require('node:crypto')],
-    ['./product-family-owner-manifest', { routes, locales }]
+    ['./product-family-owner-manifest', { routes, schemaOnlyRoutes, locales }]
   ]);
   const controlledRequire = request => {
     if (!allowedModules.has(request)) throw new Error(`Blocked module request: ${request}`);

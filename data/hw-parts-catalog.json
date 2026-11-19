@@ -1,0 +1,418 @@
+{
+  "version": 1,
+  "updated": "2026-11-19",
+  "note": "HW Water (Hanwei / 捍卫) 发动机配件系统单一数据源。支持发动机型号↔配件 SKU 多对多映射、80% 跨排量通用率标注与旗舰单品页自动渲染。未传入单品实拍图前 is_flagship_page 默认 false。",
+  "series": {
+    "id": "hw-series",
+    "name_en": "HW Water-Cooled Series (200cc–350cc)",
+    "name_zh": "HW 捍卫重载水冷系列 (200cc–350cc)",
+    "market_aliases": ["HW Water", "Hanwei", "捍卫"],
+    "interchangeability_note_en": "Factory-matched to CHIXIANG HW-series assembly drawings and tolerances: approximately 80% of core assemblies across HW250 and HW300 heavy-duty cargo-tricycle platforms (crankcases, 20-roller clutches, transmission shafts, water pumps, high-output DC magnetos, and fastener kits) are interchangeable, reducing distributor spare-parts capital while enabling consolidated loading alongside complete engine orders.",
+    "engine_variants": [
+      {
+        "id": "HW200",
+        "displacement": "200cc (197 ml)",
+        "bore_stroke": "63.5 × 62.2 mm",
+        "cooling": "Water-Cooled with Cooling Fins"
+      },
+      {
+        "id": "HW250",
+        "displacement": "250cc (249 ml)",
+        "bore_stroke": "70 × 64 mm",
+        "cooling": "Water-Cooled with Cooling Fins"
+      },
+      {
+        "id": "HW300",
+        "displacement": "300cc (300 ml)",
+        "bore_stroke": "74 × 64 mm",
+        "cooling": "Water-Cooled with Cooling Fins"
+      },
+      {
+        "id": "HW350",
+        "displacement": "350cc (300.3 ml)",
+        "bore_stroke": "76 × 66.2 mm",
+        "cooling": "Water-Cooled with Cooling Fins"
+      }
+    ]
+  },
+  "assemblies": [
+    {
+      "id": "factory-matched-kits",
+      "name_en": "Factory-Matched Service Kits",
+      "name_zh": "原厂配套维修套件",
+      "description_en": "Pre-bundled overhaul and service kits built to CHIXIANG HW250 / HW300 assembly drawings and tolerances, designed for consolidated loading with complete engines to simplify importer after-sales parts matching."
+    },
+    {
+      "id": "cylinder-head",
+      "name_en": "Cylinder Head & Valve Train",
+      "name_zh": "缸头与配气机构",
+      "description_en": "Water-cooled cylinder head castings, valve sets, rocker assemblies, and cylinder head covers engineered for sustained heavy-duty cargo-tricycle thermal loads."
+    },
+    {
+      "id": "cylinder-piston",
+      "name_en": "Cylinder & Piston Kit",
+      "name_zh": "缸体及活塞",
+      "description_en": "Displacement-matched water-cooled cylinder blocks, pistons, rings, and wristpin assemblies calibrated for HW200, HW250, HW300, and HW350 bore specifications."
+    },
+    {
+      "id": "crankshaft-crankcase",
+      "name_en": "Crankshaft & Crankcase",
+      "name_zh": "曲轴与箱体",
+      "description_en": "Heavy-duty left/right crankcases (1.5 L oil sump architecture) with shared HW250/HW300 housing commonality and displacement-matched crankshaft & connecting-rod assemblies."
+    },
+    {
+      "id": "clutch",
+      "name_en": "Clutch Assembly",
+      "name_zh": "离合器总成",
+      "description_en": "20-roller one-way clutches and reinforced manual wet multi-plate friction/steel plate packs engineered for heavy-cargo start-up torque."
+    },
+    {
+      "id": "transmission",
+      "name_en": "Transmission Shafts & Gears",
+      "name_zh": "主副轴及变速齿轮",
+      "description_en": "Heavy-duty 5-speed forward main and countershaft gear trains compatible with external cargo-tricycle reverse gearboxes."
+    },
+    {
+      "id": "cooling",
+      "name_en": "Water Pump & Cooling System",
+      "name_zh": "水泵及冷却系统",
+      "description_en": "Water pump housings, impellers, mechanical seals, and coolant circuit fittings supporting continuous water-cooled thermal stability."
+    },
+    {
+      "id": "electrical",
+      "name_en": "Starting & Electrical System",
+      "name_zh": "启动和电器系统",
+      "description_en": "High-output DC magneto stator coils, flywheels, and electric starter motors built for high-load ignition stability and lighting demand."
+    },
+    {
+      "id": "gaskets-fasteners",
+      "name_en": "Gasket, Seal & Fastener Kits",
+      "name_zh": "大修垫片及全机紧固件套装",
+      "description_en": "Full-engine overhaul gasket packs, crankcase oil seals, and standardized bolt/nut fastener kits for maintenance consolidation."
+    }
+  ],
+  "parts": [
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-factory-kit-top-end-cylinder-piston",
+      "is_flagship_page": false,
+      "product_name_en": "Factory-Matched Top-End Cylinder & Piston Kit",
+      "product_name_zh": "原厂配套上缸体与活塞维修套件",
+      "assembly_id": "factory-matched-kits",
+      "specifications": {
+        "material": "OEM-Grade Finned Alloy Cylinder + Piston & Ring Set",
+        "key_spec": "Factory-matched to CHIXIANG HW assembly tolerances (displacement-matched bore: 63.5 / 70 / 74 / 76 mm) with piston pin & top gaskets",
+        "unit": "Kit"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW200", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW250", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW300", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW350", "fitment_type": "displacement_specific" }
+      ],
+      "public_aliases": ["HW Top-End Overhaul Kit", "Factory-Matched Cylinder Kit"],
+      "internal_aliases": ["捍卫原厂配套缸体活塞套件"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-factory-kit-cylinder-head-valve",
+      "is_flagship_page": false,
+      "product_name_en": "Factory-Matched Cylinder Head & Valve Kit",
+      "product_name_zh": "原厂配套水冷缸头与气门套件",
+      "assembly_id": "factory-matched-kits",
+      "specifications": {
+        "material": "OEM-Grade Aluminum Alloy Head + Hardened Intake/Exhaust Valves",
+        "key_spec": "Pre-matched water-jacketed cylinder head, valve set, springs & rocker assembly built to CHIXIANG HW tolerances (excludes Cylinder Head Cover unless specified)",
+        "unit": "Kit"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW300", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Cylinder Head Service Kit", "Factory-Matched Head & Valve Set"],
+      "internal_aliases": ["捍卫原厂配套缸头气门套件"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-factory-kit-full-overhaul-gasket-seal",
+      "is_flagship_page": false,
+      "product_name_en": "Factory-Matched Full Overhaul Gasket & Seal Kit",
+      "product_name_zh": "原厂配套全机大修垫片与油封套件",
+      "assembly_id": "factory-matched-kits",
+      "specifications": {
+        "material": "OEM-Spec Non-Asbestos Composite & Viton/NBR Oil Seals",
+        "key_spec": "Complete crankcase, water-jacket head/base, and cover gaskets + shaft oil seals matched to CHIXIANG HW assembly specs",
+        "unit": "Kit"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Complete Seal & Gasket Overhaul Pack", "Factory-Matched Gasket Kit"],
+      "internal_aliases": ["捍卫原厂配套大修垫片油封套件"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-factory-kit-clutch-transmission",
+      "is_flagship_page": false,
+      "product_name_en": "Factory-Matched Heavy-Duty Clutch & Transmission Kit",
+      "product_name_zh": "原厂配套重载离合器与变速齿轮套件",
+      "assembly_id": "factory-matched-kits",
+      "specifications": {
+        "material": "Carburized Alloy Steel Shafts + 20-Roller One-Way Clutch Pack",
+        "key_spec": "Factory-matched 20-roller clutch & 5-speed constant-mesh main/countershaft kit engineered to HW250/HW300 assembly tolerances",
+        "unit": "Kit"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Driveline & Clutch Service Kit", "20-Roller Clutch & Gearbox Kit"],
+      "internal_aliases": ["捍卫原厂配套离合主副轴套件"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-water-cylinder-head-assembly",
+      "is_flagship_page": false,
+      "product_name_en": "Water-Cooled Cylinder Head Assembly",
+      "product_name_zh": "水冷缸头总成",
+      "assembly_id": "cylinder-head",
+      "specifications": {
+        "material": "OEM-Grade Heat-Treated Aluminum Alloy",
+        "key_spec": "Water-jacketed head casting with intake/exhaust valve seats & rocker assembly (distinct from Cylinder Head Cover)",
+        "unit": "Set"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW300", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Water Cylinder Head", "Hanwei Head Assembly", "250cc/300cc Water-Cooled Head"],
+      "internal_aliases": ["捍卫水冷缸头总成"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-cylinder-head-cover",
+      "is_flagship_page": false,
+      "product_name_en": "Cylinder Head Cover",
+      "product_name_zh": "缸盖",
+      "assembly_id": "cylinder-head",
+      "specifications": {
+        "material": "Die-Cast Aluminum Alloy",
+        "key_spec": "Upper rocker valve cover (distinct from Cylinder Head Assembly) with breather interface",
+        "unit": "Piece"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Valve Cover", "Rocker Cover", "Upper Cylinder Head Cover"],
+      "internal_aliases": ["捍卫缸盖"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-water-cylinder-piston-kit",
+      "is_flagship_page": false,
+      "product_name_en": "Water-Cooled Cylinder Block & Piston Kit",
+      "product_name_zh": "水冷缸体及活塞套装",
+      "assembly_id": "cylinder-piston",
+      "specifications": {
+        "material": "Finned Alloy Block / Aluminum Alloy Piston",
+        "key_spec": "Matched strictly by bore: HW200 (63.5mm), HW250 (70mm), HW300 (74mm), HW350 (76mm)",
+        "unit": "Kit"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW200", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW250", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW300", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW350", "fitment_type": "displacement_specific" }
+      ],
+      "public_aliases": ["HW Cylinder & Piston Set", "Finned Water-Cooled Barrel Kit"],
+      "internal_aliases": ["捍卫水冷中缸活塞套装"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-crankshaft-connecting-rod",
+      "is_flagship_page": false,
+      "product_name_en": "Crankshaft & Connecting Rod Assembly",
+      "product_name_zh": "曲轴连杆总成",
+      "assembly_id": "crankshaft-crankcase",
+      "specifications": {
+        "material": "Forged Alloy Steel",
+        "key_spec": "Matched by stroke: 62.2 mm (HW200), 64.0 mm (HW250/HW300), 66.2 mm (HW350)",
+        "unit": "Assembly"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW200", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW250", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW300", "fitment_type": "displacement_specific" },
+        { "variant_id": "HW350", "fitment_type": "displacement_specific" }
+      ],
+      "public_aliases": ["HW Crankshaft Assembly", "Heavy-Duty Connecting Rod Crank"],
+      "internal_aliases": ["捍卫曲轴连杆总成"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-left-right-crankcase-set",
+      "is_flagship_page": false,
+      "product_name_en": "Heavy-Duty Left & Right Crankcase Set",
+      "product_name_zh": "重载左右曲轴箱体总成",
+      "assembly_id": "crankshaft-crankcase",
+      "specifications": {
+        "material": "High-Strength Aluminum Alloy Casting",
+        "key_spec": "Cooling-fin crankcase architecture sized for 1.5 L oil sump capacity",
+        "unit": "Set"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Engine Crankcase Housing", "1.5L Sump Crankcase Pair"],
+      "internal_aliases": ["捍卫左右曲轴箱体"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-20-roller-clutch-assembly",
+      "is_flagship_page": false,
+      "product_name_en": "20-Roller One-Way & Heavy-Duty Clutch Assembly",
+      "product_name_zh": "20滚子超越离合及重载离合器总成",
+      "assembly_id": "clutch",
+      "specifications": {
+        "material": "Alloy Steel Housing & Friction Composite",
+        "key_spec": "20-roller one-way starter clutch paired with manual wet multi-plate assembly",
+        "unit": "Assembly"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW 20-Roller Clutch", "Hanwei One-Way Clutch Assembly"],
+      "internal_aliases": ["捍卫20滚子超越离合器"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-transmission-main-countershaft-set",
+      "is_flagship_page": false,
+      "product_name_en": "Heavy-Duty Transmission Main & Countershaft Gear Set",
+      "product_name_zh": "重载主副轴及变速齿轮总成",
+      "assembly_id": "transmission",
+      "specifications": {
+        "material": "Carburized Alloy Steel",
+        "key_spec": "Standard 5-speed forward constant-mesh shafts; compatible with external reverse gearboxes",
+        "unit": "Set"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW 5-Speed Main & Counter Shaft", "Cargo-Tricycle Gearbox Shafts"],
+      "internal_aliases": ["捍卫主副轴总成"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-water-pump-assembly",
+      "is_flagship_page": false,
+      "product_name_en": "Water Pump & Cooling Impeller Assembly",
+      "product_name_zh": "水泵总成及冷却叶轮",
+      "assembly_id": "cooling",
+      "specifications": {
+        "material": "Die-Cast Aluminum Housing & Mechanical Seal",
+        "key_spec": "Complete water pump cover, impeller shaft, and seal kit for closed-loop coolant circulation",
+        "unit": "Assembly"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Water Pump Assembly", "Tricycle Engine Water Pump"],
+      "internal_aliases": ["捍卫水泵总成"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-high-output-magneto-starter",
+      "is_flagship_page": false,
+      "product_name_en": "High-Output DC Magneto Stator & Electric Starter Motor",
+      "product_name_zh": "18级直流磁电机线圈及启动电机",
+      "assembly_id": "electrical",
+      "specifications": {
+        "material": "Copper Winding & Silicon Steel Core",
+        "key_spec": "High-output DC stator coil & starter motor assembly for heavy cargo-tricycle electrical demand",
+        "unit": "Set"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW High-Output Magneto Coil", "18-Stage DC Stator & Starter"],
+      "internal_aliases": ["捍卫18级直流磁电机", "捍卫启动电机"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    },
+    {
+      "sku": "Match by Model / BOM",
+      "slug": "hw-overhaul-gasket-fastener-kit",
+      "is_flagship_page": false,
+      "product_name_en": "Full-Engine Overhaul Gasket, Oil Seal & Fastener Bolt Kit",
+      "product_name_zh": "全机大修垫片包及全机紧固件套装",
+      "assembly_id": "gaskets-fasteners",
+      "specifications": {
+        "material": "OEM-Spec Composite, Viton/NBR Seals & Grade-8.8+ Steel",
+        "key_spec": "Crankcase/cover/cylinder gaskets, shaft oil seals, and standardized engine fastener set (confirm bore gasket for displacement)",
+        "unit": "Kit"
+      },
+      "compatible_variants": [
+        { "variant_id": "HW250", "fitment_type": "shared" },
+        { "variant_id": "HW300", "fitment_type": "shared" },
+        { "variant_id": "HW200", "fitment_type": "verify_by_variant" },
+        { "variant_id": "HW350", "fitment_type": "verify_by_variant" }
+      ],
+      "public_aliases": ["HW Complete Gasket & Seal Kit", "Full-Engine Bolt & Fastener Pack"],
+      "internal_aliases": ["捍卫大修垫片包", "捍卫全机螺丝螺帽套装"],
+      "oem_ref": "OEM-Spec Equivalent",
+      "images": []
+    }
+  ]
+}

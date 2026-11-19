@@ -223,6 +223,7 @@ h4 { font-size: 1.1rem; }
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  overflow: visible;
 }
 
 .nav-logo {
@@ -276,7 +277,7 @@ h4 { font-size: 1.1rem; }
   color: #111;
 }
 
-.nav-links a::after {
+.nav-links > li > a::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -287,9 +288,97 @@ h4 { font-size: 1.1rem; }
   transition: width var(--transition-fast);
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-links > li > a:hover::after,
+.nav-links > li > a.active::after {
   width: 100%;
+}
+
+.nav-item-dropdown {
+  position: relative;
+}
+
+.nav-item-dropdown > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -12px;
+  min-width: 245px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  padding: 0.45rem;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+  z-index: 1010;
+}
+
+.nav-item-dropdown:hover .nav-dropdown,
+.nav-item-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 0.52rem 0.75rem;
+  border-radius: 7px;
+  font-size: 0.875rem;
+  color: #334155;
+  white-space: nowrap;
+}
+
+.nav-dropdown li a:hover,
+.nav-dropdown li a[aria-current="page"] {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.parts-dual-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.parts-hub-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.65rem;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border-color, #e2e8f0);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.parts-hub-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.parts-hub-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
 }
 
 .nav-right {
@@ -3117,7 +3206,6 @@ body:has(.about-page-header) .section-subtitle {
   .btv-quote-basket {
     bottom: 4.5rem;
   }
-}
 
   .variant-card {
     min-width: 0;
@@ -4000,6 +4088,9 @@ body:has(.about-page-header) .section-subtitle {
   text-decoration: none;
   border-bottom: 3px solid var(--accent-color, #e63946);
 }
+.product-card > .btv-spec-banner {
+  aspect-ratio: 1 / 1;
+}
 .btv-spec-banner__eyebrow {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -4015,4 +4106,47 @@ body:has(.about-page-header) .section-subtitle {
 .btv-spec-banner__note {
   font-size: 0.82rem;
   color: #cbd5e1;
+}
+
+.hw-ai-capsule {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 10px;
+  background: var(--bg-secondary, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-left: 4px solid var(--accent-color, #e63946);
+  text-align: left;
+  line-height: 1.75;
+}
+.hw-ai-capsule h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.hw-fitment-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.hw-fitment-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.hw-fitment-badge--shared {
+  background: #e6f4ea;
+  color: #137333;
+  border: 1px solid #bce2c8;
+}
+.hw-fitment-badge--specific {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+.hw-fitment-badge--verify {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
 }

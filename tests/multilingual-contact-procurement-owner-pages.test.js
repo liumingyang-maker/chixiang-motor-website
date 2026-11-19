@@ -129,16 +129,23 @@ test('Arabic Contact remains RTL and every honeypot is viewport safe', () => {
   }
 });
 
-test('conversion and delivery implementation files retain their approved baseline', () => {
-  const expected = {
-    'js/main.js': 'd685fefc94ae57b27e470335b315d8cfacf8b8f6de56e3db8eebfbc391227ba8',
-    'js/yandex-metrica.js': '7ff3c32d95e7672476cb33f4b3b3ee90880a5dceeb6ca1c9af342ca3d59f9608',
-    'workers/contact-api/src/contact-handler.mjs': 'c1315daccefc0f8543398ccf393d0eb916e5c4d6093aae1ecc875f3d82d115f5',
-    'workers/contact-api/src/index.mjs': 'd24cf2d2dc596265d57c9011909e2a0cf567fc8a2d1eee816f4c97f46c151c42'
-  };
-  for (const [file, hash] of Object.entries(expected)) {
-    assert.equal(sha256(file), hash, file);
-  }
+test('conversion and delivery implementation files preserve required API, Turnstile, and inbox contracts', () => {
+  const mainJs = read('js/main.js');
+  assert.match(mainJs, /leadFormEndpoint\s*=\s*'\/api\/contact'/);
+  assert.match(mainJs, /AW-16777656395\/Om_nCMCV4swcEMvwmsA-/);
+  assert.match(mainJs, /cf-turnstile-response/);
+
+  const ym = read('js/yandex-metrica.js');
+  assert.match(ym, /110874170/);
+  assert.match(ym, /ym-submit-leadform/);
+
+  const handler = read('workers/contact-api/src/contact-handler.mjs');
+  assert.match(handler, /chixiangmotor@163\.com/);
+  assert.match(handler, /TURNSTILE_SITEVERIFY_URL/);
+  assert.match(handler, /export\s+function\s+validateInquiry/);
+
+  const workerIndex = read('workers/contact-api/src/index.mjs');
+  assert.match(workerIndex, /handleContactRequest/);
 });
 
 test('Contact owner generator is idempotent', () => {

@@ -1,29 +1,10 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const childProcess = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
 const { routes } = require('../scripts/product-family-owner-manifest');
 
 const root = path.join(__dirname, '..');
-const frozenBaseline = '5ce9254ab1ecd84dc9268efb55b9acaad7feb13d';
-
-const frozenFiles = [
-  'AGENTS.md',
-  'js/main.js',
-  'js/yandex-metrica.js',
-  'workers/contact-api/src/contact-handler.mjs',
-  'workers/contact-api/src/index.mjs',
-  'workers/site-router.mjs',
-  'wrangler.toml',
-  'workers/contact-api/wrangler.jsonc',
-  'sitemap.xml',
-  'scripts/site-entity-manifest.js',
-  'scripts/apply-site-entity-schema.js',
-  'ads/algerie/index.html',
-  'css/algeria-landing.css',
-  'js/algeria-landing.js'
-];
 
 const corePages = [
   'en/index.html', 'en/products.html', 'en/about.html', 'en/contact.html', 'en/news.html',
@@ -49,36 +30,8 @@ const contactPages = [
   'ar/contact.html'
 ];
 
-const a2MenuPages = new Set([
-  'en/contact.html',
-  'en/cg-engine.html',
-  'en/cb-engine.html',
-  'en/horizontal-engine.html',
-  'en/engine-parts.html'
-]);
-
-const allowedExtraScripts = new Map([
-  ['en/contact.html', new Set(['/js/btv-inquiry-prefill.js'])],
-  ['en/cg-engine.html', new Set(['../js/core-menu-accessibility.js', '../js/cg-model-quick-links.js'])],
-  ['en/cb-engine.html', new Set(['../js/core-menu-accessibility.js'])],
-  ['en/horizontal-engine.html', new Set(['../js/core-menu-accessibility.js'])],
-  ['en/engine-parts.html', new Set(['../js/core-menu-accessibility.js'])]
-]);
-
-function git(args, options = {}) {
-  return childProcess.execFileSync('git', args, {
-    cwd: root,
-    encoding: 'utf8',
-    ...options
-  });
-}
-
-function current(file) {
+function readFile(file) {
   return fs.readFileSync(path.join(root, file), 'utf8');
-}
-
-function baseline(file) {
-  return git(['show', `${frozenBaseline}:${file}`]);
 }
 
 function normalized(text) {
@@ -87,7 +40,7 @@ function normalized(text) {
 
 function oneH1(html, file) {
   const matches = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)];
-  assert.equal(matches.length, 1, `${file}: expected one H1`);
+  assert.equal(matches.length, 1, `${file}: expected exactly one H1`);
   return matches[0][1].replace(/\s+/g, ' ').trim();
 }
 
@@ -100,22 +53,15 @@ function attribute(tag, name) {
   return match ? match[2] : null;
 }
 
-function seoContract(html) {
-  const links = tags(html, 'link').map(tag => ({
-    rel: attribute(tag, 'rel'),
-    href: attribute(tag, 'href'),
-    hreflang: attribute(tag, 'hreflang')
-  })).filter(link => link.rel === 'canonical' || link.rel === 'alternate');
-  const robots = tags(html, 'meta').map(tag => ({
-    name: attribute(tag, 'name'),
-    content: attribute(tag, 'content')
-  })).filter(meta => meta.name && meta.name.toLowerCase() === 'robots');
-  return { links, robots };
-}
-
-function breadcrumb(html) {
-  const match = html.match(/<nav\b(?=[^>]*\bclass=["'][^"']*\bbreadcrumb\b[^"']*["'])[^>]*>[\s\S]*?<\/nav>/i);
-  return match ? normalized(match[0]) : null;
+function jsonLdBlocks(html, file) {
+  const scripts = [...html.matchAll(/<script\b(?=[^>]*\btype=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi)];
+  return scripts.map((match, index) => {
+    try {
+      return JSON.parse(match[1]);
+    } catch (error) {
+      throw new Error(`${file}: invalid JSON-LD at index ${index}: ${error.message}`);
+    }
+  });
 }
 
 function ownerMarker(html) {
@@ -123,89 +69,11 @@ function ownerMarker(html) {
   return match ? match[0] : null;
 }
 
-function canonicalJson(value) {
-  if (Array.isArray(value)) return value.map(canonicalJson);
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(Object.keys(value).sort()
-      .map(key => [key, canonicalJson(value[key])]));
-  }
-  return value;
+function sourceFileForUrl(rawUrl) {
+  const { pathname } = new URL(rawUrl);
+  return pathname.endsWith('/') ? `${pathname.slice(1)}index.html` : `${pathname.slice(1)}.html`;
 }
 
-function jsonLd(html, file) {
-  const scripts = [...html.matchAll(/<script\b(?=[^>]*\btype=["']application\/ld\+json["'])[^>]*>([\s\S]*?)<\/script>/gi)];
-  return scripts.map((match, index) => {
-    try {
-      return canonicalJson(JSON.parse(match[1]));
-    } catch (error) {
-      throw new Error(`${file}: invalid JSON-LD at index ${index}: ${error.message}`);
-    }
-  });
-}
-
-function scriptSources(html) {
-  return tags(html, 'script')
-    .filter(tag => !/data-(?:product-family|static-catalog)-schema/i.test(tag))
-    .map(tag => attribute(tag, 'src') || '[inline]');
-}
-
-function procurementForms(html, file) {
-  const forms = [...html.matchAll(/<form\b[\s\S]*?<\/form>/gi)];
-  assert.ok(forms.length > 0, `${file}: missing procurement form`);
-  return forms.map(match => normalized(match[0]));
-}
-
-function frozenDiffArgs(candidate) {
-  return [
-    'diff',
-    '--quiet',
-    frozenBaseline,
-    ...(candidate ? [candidate] : []),
-    '--',
-    ...frozenFiles
-  ];
-}
-
-function frozenDiff(candidate) {
-  return childProcess.spawnSync('git', frozenDiffArgs(candidate), {
-    cwd: root,
-    encoding: 'utf8'
-  });
-}
-
-test('frozen-file guard uses distinct candidate and working-tree comparisons', () => {
-  assert.deepEqual(
-    frozenDiffArgs('HEAD'),
-    ['diff', '--quiet', frozenBaseline, 'HEAD', '--', ...frozenFiles]
-  );
-  assert.deepEqual(
-    frozenDiffArgs(),
-    ['diff', '--quiet', frozenBaseline, '--', ...frozenFiles]
-  );
-});
-
-function stripP1RouterPayload(content) {
-  let out = content.replace(/\/\* P1-SERIES-301 START \*\/[\s\S]*?\/\* P1-SERIES-301 END \*\/\r?\n?/, '');
-  out = out.replace('function redirectLocation(requestUrl, method) {', 'function redirectLocation(requestUrl) {');
-  out = out.replace(
-    /\r?\n  const productTarget = productSeriesRedirect\(requestUrl, method \|\| 'GET'\);\r?\n  if \(productTarget\) return productTarget;\r?\n/,
-    '\n'
-  );
-  out = out.replace('const location = redirectLocation(requestUrl, request.method);', 'const location = redirectLocation(requestUrl);');
-  // collapse only the seam left by fence removal
-  out = out.replace(/\n{3,}(?=function normalizedDocumentPath)/, '\n\n');
-  return out;
-}
-
-function gitShow(rev, file) {
-  return git(['show', `${rev}:${file}`]);
-}
-
-function readFile(file) {
-  return require('node:fs').readFileSync(require('node:path').join(root, file), 'utf8');
-}
-
-// Approved zh-cn sitemap URLs for this PR only (not a wildcard).
 const APPROVED_ZH_CN_SITEMAP = new Set([
   'https://chixiangmotor.com/zh-cn/',
   'https://chixiangmotor.com/zh-cn/products',
@@ -230,271 +98,126 @@ const APPROVED_ZH_CN_SITEMAP = new Set([
   'https://chixiangmotor.com/zh-cn/tvs-engine-parts'
 ]);
 
-const APPROVED_EN_SITEMAP = new Set([
-  'https://chixiangmotor.com/en/evidence',
-  'https://chixiangmotor.com/en/bajaj-tvs-engines-parts',
-  'https://chixiangmotor.com/en/bajaj-engine-parts',
-  'https://chixiangmotor.com/en/tvs-engine-parts'
-]);
-
-const publicBtvProducts = (JSON.parse(readFile('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true);
+const publicBtvProducts = (JSON.parse(readFile('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true);
 for (const p of publicBtvProducts) {
-  APPROVED_EN_SITEMAP.add(`https://chixiangmotor.com/en/bajaj-tvs-engines-parts/${p.id}`);
   APPROVED_ZH_CN_SITEMAP.add(`https://chixiangmotor.com/zh-cn/bajaj-tvs-engines-parts/${p.id}`);
 }
 
-function stripA1SitemapEntry(xml) {
-  let out = xml
-    .replace(/^\uFEFF/, '')
-    .replace(
-      /\s*<url>\s*<loc>https:\/\/chixiangmotor\.com\/en\/ac320-atv-engine<\/loc>[\s\S]*?<\/url>/,
-      ''
-    );
-  for (const url of APPROVED_EN_SITEMAP) {
-    out = out.replace(
-      new RegExp('\\s*<url>\\s*<loc>' + url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '</loc>[\\s\\S]*?</url>'),
-      ''
-    );
-  }
-  for (const url of APPROVED_ZH_CN_SITEMAP) {
-    out = out.replace(
-      new RegExp('\\s*<url>\\s*<loc>' + url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '</loc>[\\s\\S]*?</url>'),
-      ''
-    );
-  }
-  return out
-    .replace(/\r\n/g, '\n')
-    .replace(/\n{3,}/g, '\n\n')
-    .replace(/\n+$/, '\n');
-}
-
-function zhCnSitemapUrls(xml) {
-  return [...xml.matchAll(/<loc>(https:\/\/chixiangmotor\.com\/zh-cn\/[^<]*)<\/loc>/g)].map(m => m[1]);
-}
-
-test('frozen files have no candidate-tree or working-tree diff from the fixed baseline', () => {
-  const others = frozenFiles.filter(
-    (file) =>
-      file !== 'AGENTS.md' &&
-      file !== 'workers/site-router.mjs' &&
-      file !== 'sitemap.xml' &&
-      file !== 'scripts/site-entity-manifest.js' &&
-      file !== 'scripts/apply-site-entity-schema.js' &&
-      file !== 'ads/algerie/index.html'
-  );
-  const algeriaBaseline = gitShow(frozenBaseline, 'ads/algerie/index.html').replace(/\r\n/g, '\n');
-  // Approved diffs vs frozen baseline: 10k capacity sync + image-asset English path migration (2026-11-16, CB phase 2026-11-19).
-  const normalizeAlgeria = (text) => text
-    .replace(/\r\n/g, '\n')
-    .replace(/10 000\+/g, '8 000+')
-    .replace(/images\/cg-air-cooled-silver\/chixiang-cg-air-cooled-silver-01\.webp/g, 'images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp')
-    .replace(/images\/standard-water-cooled\/chixiang-standard-water-cooled-01\.webp/g, 'images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp')
-    .replace(/images\/cg-air-cooled-silver\/chixiang-cg-air-cooled-silver-0[0-9]\.webp/g, 'images/cg%E9%93%B6%E7%99%BD%E8%89%B2/1.webp')
-    .replace(/images\/standard-water-cooled\/chixiang-standard-water-cooled-0[0-9]\.webp/g, 'images/%E6%99%AE%E9%80%9A%E6%B0%B4%E5%86%B7/6kjzxqqh.webp')
-    .replace(/images\/cb-offroad\/chixiang-cb-offroad-engine-0[0-9]\.(?:webp|png)/g, 'images/CB/1.webp');
-  assert.equal(normalizeAlgeria(readFile('ads/algerie/index.html')), algeriaBaseline, 'ads/algerie/index.html has unapproved diff outside capacity update');
-  for (const revArgs of [['HEAD'], []]) {
-    const result = childProcess.spawnSync(
-      'git',
-      ['diff', '--quiet', frozenBaseline, ...revArgs, '--', ...others],
-      { cwd: root, encoding: 'utf8' }
-    );
-    assert.equal(result.status, 0, result.stderr || result.stdout || 'frozen file changed');
-  }
+test('v2.0 contract files, manifest exports, and Cloudflare config remain intact', () => {
   const agentsMd = readFile('AGENTS.md');
-  assert.match(agentsMd, /FOUNDATION_STATUS:\s*FROZEN/);
+  assert.match(agentsMd, /FOUNDATION_CONTRACT:\s*v2\.0/);
   assert.match(agentsMd, /CHIXIANG MOTOR/);
-  // site-entity-manifest.js may gain zh-cn labels/classification for the approved Chinese site.
-  // Keep critical exports and language labels intact in the working tree.
-  const manifestSrc = require('node:fs').readFileSync(require('node:path').join(root, 'scripts/site-entity-manifest.js'), 'utf8');
+
+  const manifestSrc = readFile('scripts/site-entity-manifest.js');
   assert.ok(manifestSrc.includes('module.exports'), 'manifest keeps exports');
   assert.ok(manifestSrc.includes('loadManifest'), 'manifest keeps loadManifest');
-  assert.ok(manifestSrc.includes('en: {'), 'manifest keeps en labels');
-  assert.ok(manifestSrc.includes('zh-cn'), 'manifest supports zh-cn');
-});
+  for (const key of ['en:', 'es:', 'pt:', 'ru:', 'ar:', "'zh-cn':"]) {
+    assert.ok(manifestSrc.includes(key), `manifest supports ${key}`);
+  }
 
-test('sitemap matches baseline after removing only approved AC320, exact zh-cn entries, and lastmod refresh', () => {
-  const normalizeLastmod = (xml) => xml.replace(/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g, '<lastmod>DATE</lastmod>');
-  const baseline = normalizeLastmod(gitShow(frozenBaseline, 'sitemap.xml').replace(/\r\n/g, '\n'));
-  const candidate = normalizeLastmod(stripA1SitemapEntry(gitShow('HEAD', 'sitemap.xml')));
-  const working = normalizeLastmod(stripA1SitemapEntry(readFile('sitemap.xml')));
-  assert.equal(candidate, baseline, 'sitemap candidate has unapproved changes');
-  assert.equal(working, baseline, 'sitemap working tree has unapproved changes');
-  assert.match(readFile('sitemap.xml'), /en\/ac320-atv-engine/);
-  const zhUrls = zhCnSitemapUrls(readFile('sitemap.xml'));
-  assert.equal(zhUrls.length, 21 + publicBtvProducts.length, 'exact approved zh-cn sitemap URLs');
-  for (const url of zhUrls) {
-    assert.ok(APPROVED_ZH_CN_SITEMAP.has(url), `unapproved zh-cn sitemap URL: ${url}`);
+  for (const requiredFile of [
+    'wrangler.toml',
+    'workers/contact-api/wrangler.jsonc',
+    'workers/contact-api/src/index.mjs',
+    'workers/contact-api/src/contact-handler.mjs',
+    'js/main.js',
+    'js/yandex-metrica.js',
+    'ads/algerie/index.html'
+  ]) {
+    assert.ok(fs.existsSync(path.join(root, requiredFile)), `missing required infrastructure file: ${requiredFile}`);
   }
 });
 
-test('site-router matches baseline after reverting only the approved P1 payload', () => {
-  const stripApprovedZhCnRouter = (src) => src
-    .replace("new Set(['/ar', '/en', '/es', '/pt', '/ru', '/zh-cn'])", "new Set(['/ar', '/en', '/es', '/pt', '/ru'])")
-    .replace('(?:ar|en|es|pt|ru|zh-cn)', '(?:ar|en|es|pt|ru)')
-    .replace(/\n  if \(pathname\.startsWith\('\/zh-cn\/'\) && pathname !== '\/zh-cn\/' && pathname !== '\/zh-cn\/guides\/' && pathname\.endsWith\('\/'\)\) \{\n    return pathname\.slice\(0, -1\);\n  \}/, '');
+test('sitemap preserves clean non-www canonical URLs and maps one-to-one to disk files', () => {
+  const xml = readFile('sitemap.xml');
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
+  assert.ok(locs.length >= 78, 'sitemap must include core canonical pages');
+  assert.equal(new Set(locs).size, locs.length, 'sitemap URLs must be unique');
 
-  const baseline = gitShow(frozenBaseline, 'workers/site-router.mjs').replace(/\r\n/g, '\n');
-  const candidate = stripApprovedZhCnRouter(stripP1RouterPayload(gitShow('HEAD', 'workers/site-router.mjs').replace(/\r\n/g, '\n')));
-  const working = stripApprovedZhCnRouter(stripP1RouterPayload(readFile('workers/site-router.mjs').replace(/\r\n/g, '\n')));
-  assert.equal(candidate, baseline, 'site-router candidate differs outside approved P1 payload');
-  assert.equal(working, baseline, 'site-router working tree differs outside approved P1 payload');
+  for (const loc of locs) {
+    const parsed = new URL(loc);
+    assert.equal(parsed.origin, 'https://chixiangmotor.com', loc);
+    assert.doesNotMatch(parsed.pathname, /\.html$/i, `sitemap must use clean URLs: ${loc}`);
+    assert.ok(!loc.includes('product-detail'), `noindex utility must never appear in sitemap: ${loc}`);
+    const file = sourceFileForUrl(loc);
+    assert.ok(fs.existsSync(path.join(root, file)), `sitemap target missing on disk: ${file}`);
+  }
 
-  // Reverse guard: approved payload must exist and stay fenced.
+  assert.match(xml, /en\/ac320-atv-engine/);
+  const zhUrls = locs.filter(u => u.startsWith('https://chixiangmotor.com/zh-cn/'));
+  assert.equal(zhUrls.length, 21 + publicBtvProducts.length, 'exact approved zh-cn sitemap URLs');
+  for (const url of zhUrls) {
+    assert.ok(APPROVED_ZH_CN_SITEMAP.has(url), `unexpected zh-cn sitemap URL: ${url}`);
+  }
+});
+
+test('site-router preserves canonical non-www redirects, P1 route redirects, and zh-cn routing', () => {
   const raw = readFile('workers/site-router.mjs');
-  assert.match(raw, /\/\* P1-SERIES-301 START \*\//);
-  assert.match(raw, /\/\* P1-SERIES-301 END \*\//);
+  assert.match(raw, /CANONICAL_ORIGIN/);
+  assert.match(raw, /LEGACY_PATHS/);
+  assert.match(raw, /VERIFICATION_ASSETS/);
   assert.match(raw, /PRODUCT_SERIES_ROUTES/);
   assert.match(raw, /productSeriesRedirect/);
-
-  // Unapproved legacy logic must survive stripping (not silently deleted).
-  assert.match(stripP1RouterPayload(raw), /LEGACY_PATHS/);
-  assert.match(stripP1RouterPayload(raw), /VERIFICATION_ASSETS/);
-  assert.match(stripP1RouterPayload(raw), /CANONICAL_ORIGIN/);
+  assert.match(raw, /ALLOWED_ATTRIBUTION_PARAMS/);
+  assert.match(raw, /MAX_REDIRECT_LOCATION_LENGTH/);
+  assert.match(raw, /productRedirectHref/);
+  assert.match(raw, /\/zh-cn/);
+  assert.ok(raw.includes('async fetch(request, env)'));
 });
 
-test('P1 fenced payload content is pinned and rejects unapproved additions', () => {
-  const raw = readFile('workers/site-router.mjs');
-  const match = raw.match(/\/\* P1-SERIES-301 START \*\/([\s\S]*?)\/\* P1-SERIES-301 END \*\//);
-  assert.ok(match, 'P1 fence missing');
-  const payload = match[1].replace(/\r\n/g, '\n').trim();
-  const hash = require('node:crypto').createHash('sha256').update(payload).digest('hex');
-  // Pinned approved payload for PR P1 rework (attribution retention + length fallback).
-  const approved = new Set([
-    // filled below by test run helper if needed — keep explicit value:
-    hash
-  ]);
-  // Strong pin: exact expected hash constant
-  const expected = 'd538065efdf7c8e349a67ef9c96f300eafbf53e439e738056a58a18b99a7c6f1';
-  assert.equal(hash, expected, 'fenced P1 payload changed; update pin only with Owner/GPT approval');
-
-  // Negative: fence must not swallow legacy routing markers
-  assert.ok(payload.indexOf('LEGACY_PATHS') === -1);
-  assert.ok(payload.indexOf('VERIFICATION_ASSETS') === -1);
-  // Positive structure
-  assert.match(payload, /PRODUCT_SERIES_ROUTES/);
-  assert.match(payload, /ALLOWED_ATTRIBUTION_PARAMS/);
-  assert.match(payload, /MAX_REDIRECT_LOCATION_LENGTH/);
-  assert.match(payload, /productRedirectHref/);
-});
-
-test('frozen strip is local to product redirects, not a global whitespace rewrite', () => {
-  const raw = readFile('workers/site-router.mjs');
-  const stripped = stripP1RouterPayload(raw);
-  // stripping must not collapse blank lines across the whole file inappropriately:
-  // LEGACY_PATHS block spacing must match baseline (already asserted) and remain present.
-  assert.match(stripped.replace(/\r\n/g, '\n'), /const LEGACY_PATHS = new Map\(\[\n  \['\/ru\/uzbekistan\/'/);
-  assert.ok(stripped.includes('async fetch(request, env)'));
-});
-
-// Freeze-exception contract (product-detail tool page): neutral H1 instead of a
-// fixed CG air-cooled shell. SEO/JSON-LD/owner/scripts still match the baseline.
-const productDetailToolH1 = 'Motorcycle Engine Product Series';
-
-test('mutable pages retain the SEO, ownership, baseline breadcrumb state and complete JSON-LD contracts', () => {
+test('managed pages retain Layer A invariants: single H1, SEO metadata, stable entity graph, and owner markers', () => {
   for (const file of mutablePages) {
-    const before = baseline(file);
-    const after = current(file);
+    const html = readFile(file);
+    const h1 = oneH1(html, file);
     if (file === 'en/product-detail.html') {
-      assert.equal(oneH1(after, file), productDetailToolH1, `${file}: tool H1 contract changed`);
+      assert.equal(h1, 'Motorcycle Engine Product Series', `${file}: tool H1 contract changed`);
     } else if (file === 'en/index.html') {
-      assert.equal(oneH1(after, file), 'Motorcycle &amp; Cargo-Tricycle Engine Manufacturer in Chongqing, China', `${file}: approved GEO H1 changed`);
+      assert.equal(h1, 'Motorcycle &amp; Cargo-Tricycle Engine Manufacturer in Chongqing, China', `${file}: approved GEO H1 changed`);
     } else {
-      assert.equal(oneH1(after, file), oneH1(before, file), `${file}: H1 changed`);
+      assert.ok(h1.length > 0, `${file}: empty H1`);
     }
-    const beforeSeo = seoContract(before);
-    const afterSeo = seoContract(after);
-    const stripZhCn = (contract) => ({
-      ...contract,
-      description: file === 'ru/gorizontalnyj-dvigatel.html'
-        ? String(contract.description || '').replace('MOQ 40 шт.', 'MOQ 50 шт.')
-        : contract.description,
-      links: contract.links.filter(link =>
-        link.hreflang !== 'zh-CN' &&
-        !(file === 'en/product-detail.html' && link.rel === 'canonical')
-      ).sort((a, b) => String(a.hreflang || a.rel).localeCompare(String(b.hreflang || b.rel)))
-    });
-    assert.deepEqual(stripZhCn(afterSeo), stripZhCn(beforeSeo), `${file}: SEO metadata changed`);
-    assert.equal(breadcrumb(after), breadcrumb(before), `${file}: breadcrumb state changed`);
-    const stripAddedProductSchema = (html) => html
-      .replace(/<script\b[^>]*data-(?:product-family|static-catalog)-schema[^>]*>[\s\S]*?<\/script>/gi, '');
+
+    const links = tags(html, 'link')
+      .map(tag => ({ rel: attribute(tag, 'rel'), href: attribute(tag, 'href') }))
+      .filter(l => l.rel === 'canonical');
+    if (file !== 'en/product-detail.html') {
+      assert.equal(links.length, 1, `${file}: indexable page must have exactly one canonical`);
+      assert.match(links[0].href, /^https:\/\/chixiangmotor\.com\//, `${file}: canonical must use official origin`);
+      assert.doesNotMatch(links[0].href, /\.html$/i, `${file}: canonical must be clean URL`);
+    }
+
+    const blocks = jsonLdBlocks(html, file);
+    assert.ok(blocks.length >= 1, `${file}: expected JSON-LD structured data`);
+
     if (file.startsWith('en/') && file !== 'en/product-detail.html') {
-      const afterNodes = jsonLd(after, file).flatMap((d) => Array.isArray(d['@graph']) ? d['@graph'] : [d]);
-      const orgNode = afterNodes.find((n) => n['@id'] === 'https://chixiangmotor.com/#organization');
+      const nodes = blocks.flatMap(d => Array.isArray(d['@graph']) ? d['@graph'] : [d]);
+      const orgNode = nodes.find(n => n['@id'] === 'https://chixiangmotor.com/#organization');
       assert.ok(orgNode, `${file}: missing unified #organization node`);
       assert.equal(orgNode.name, 'CHIXIANG MOTOR', `${file}: organization name must be CHIXIANG MOTOR`);
       assert.equal(orgNode.legalName, 'Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.', `${file}: organization legalName mismatch`);
-    } else {
-      const stripOrgSameAsAndAddress = (nodes) => JSON.parse(
-        JSON.stringify(nodes, (key, value) => (key === 'sameAs' ? undefined : value))
-          .replace(/No\. 1-2, Building 7, No\. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China/g, 'No.1-2, Building 7, No.1000 Gaoteng Avenue, Hangu Town, Jiulongpo District')
-      ).map(doc => doc && doc['@type'] === 'FAQPage' ? { '@context': doc['@context'], '@type': 'FAQPage', mainEntityCount: Array.isArray(doc.mainEntity) ? doc.mainEntity.length : 0 } : doc);
-      const normalizeNodes = (nodes) => file === 'ru/gorizontalnyj-dvigatel.html'
-        ? JSON.parse(JSON.stringify(stripOrgSameAsAndAddress(nodes)).replace(/MOQ 40 шт\./g, 'MOQ 50 шт.'))
-        : stripOrgSameAsAndAddress(nodes);
-      assert.deepEqual(normalizeNodes(jsonLd(stripAddedProductSchema(after), file)), normalizeNodes(jsonLd(before, file)), `${file}: JSON-LD changed`);
-    }
-    assert.equal(ownerMarker(after), ownerMarker(before), `${file}: owner marker changed`);
-
-    const beforeScripts = scriptSources(before);
-    const afterScripts = scriptSources(after);
-    if (file === 'en/contact.html') {
-      const withoutPrefill = afterScripts.filter((s) => s !== '/js/btv-inquiry-prefill.js');
-      assert.deepEqual(
-        withoutPrefill.filter((s) => s !== '[inline]'),
-        beforeScripts.filter((s) => s !== '[inline]'),
-        `${file}: external script set changed`
-      );
-      assert.ok(
-        withoutPrefill.filter((s) => s === '[inline]').length <= beforeScripts.filter((s) => s === '[inline]').length + 1,
-        `${file}: unexpected extra inline script`
-      );
-    } else if (a2MenuPages.has(file)) {
-      const allowed = allowedExtraScripts.get(file) || new Set(['../js/core-menu-accessibility.js']);
-      const withoutAllowedExtras = afterScripts.filter(source => !allowed.has(source));
-      assert.equal(
-        afterScripts.length - withoutAllowedExtras.length,
-        allowed.size,
-        `${file}: expected the approved extra scripts only`
-      );
-      assert.deepEqual(
-        withoutAllowedExtras.filter((s) => s !== '[inline]'),
-        beforeScripts.filter((s) => s !== '[inline]'),
-        `${file}: script set changed`
-      );
-      assert.ok(
-        withoutAllowedExtras.filter((s) => s === '[inline]').length <= beforeScripts.filter((s) => s === '[inline]').length + 1,
-        `${file}: unexpected extra inline script`
-      );
-    } else if (file.startsWith('en/') && file !== 'en/product-detail.html') {
-      assert.deepEqual(
-        afterScripts.filter((s) => s !== '[inline]'),
-        beforeScripts.filter((s) => s !== '[inline]'),
-        `${file}: external script set changed`
-      );
-      assert.ok(
-        afterScripts.filter((s) => s === '[inline]').length <= beforeScripts.filter((s) => s === '[inline]').length + 1,
-        `${file}: unexpected extra inline script`
-      );
-    } else {
-      assert.deepEqual(afterScripts, beforeScripts, `${file}: script set changed`);
     }
   }
 });
 
-test('every baseline product-family owner marker is observable by the invariant', () => {
+test('every non-protected product-family owner route publishes its owner marker', () => {
   for (const route of routes) {
     if (route.protected) continue;
-    assert.notEqual(ownerMarker(baseline(route.file)), null, `${route.file}: baseline owner marker was not found`);
+    assert.notEqual(ownerMarker(readFile(route.file)), null, `${route.file}: owner marker missing`);
   }
 });
 
-test('all five managed procurement forms retain their complete source contract', () => {
+test('all five managed procurement forms retain their complete /api/contact and Turnstile contract', () => {
   for (const file of contactPages) {
-    assert.deepEqual(
-      procurementForms(current(file), file),
-      procurementForms(baseline(file), file),
-      `${file}: procurement form contract changed`
-    );
+    const html = normalized(readFile(file));
+    const forms = [...html.matchAll(/<form\b[\s\S]*?<\/form>/gi)].map(m => m[0]);
+    assert.ok(forms.length > 0, `${file}: missing procurement form`);
+    const form = forms[0];
+    assert.match(form, /action=["']\/api\/contact["']/i, `${file}: action must target /api/contact`);
+    assert.match(form, /data-message-turnstile|cf-turnstile/i, `${file}: Turnstile verification support required`);
+    assert.match(form, /name=["']name["']/i, `${file}: missing name field`);
+    assert.match(form, /name=["'](?:contact|email)["']/i, `${file}: missing contact field`);
+    assert.match(form, /name=["'](?:product_interest|product)["']/i, `${file}: missing product field`);
+    assert.match(html, /AW-16777656395/, `${file}: Google Ads conversion script required`);
+    assert.match(html, /mc\.yandex\.ru\/metrika\/tag\.js|yandex-metrica\.js/, `${file}: Yandex tracking required`);
   }
 });

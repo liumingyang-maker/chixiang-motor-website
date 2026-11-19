@@ -449,4 +449,12 @@ const locales = {
   }
 };
 
-module.exports = { routes, locales };
+const schemaOnlyRoutes = [
+  { file: 'en/ac320-atv-engine.html', language: 'en', family: 'ac320' },
+  { file: 'zh-cn/cg-engine.html', language: 'zh-cn', family: 'cg' },
+  { file: 'zh-cn/cb-engine.html', language: 'zh-cn', family: 'cb' },
+  { file: 'zh-cn/horizontal-engine.html', language: 'zh-cn', family: 'horizontal' },
+  { file: 'zh-cn/ac320-atv-engine.html', language: 'zh-cn', family: 'ac320' }
+];
+
+module.exports = { routes, schemaOnlyRoutes, locales };

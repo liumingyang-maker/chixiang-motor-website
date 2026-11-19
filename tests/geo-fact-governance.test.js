@@ -71,16 +71,16 @@ test('HW family keeps the owner terminology and approved all-model configuration
   assert.doesNotMatch(hw.candidate_master_values, /18-pole|18极/i);
 });
 
-test('horizontal models use approved CX codes and YX market-reference aliases', () => {
+test('horizontal models use approved CX codes, YX market-reference aliases, and v2.0 SSOT measurements', () => {
   const expected = {
-    'model-152fmh': ['CX152FMH', /YX152FMH/, /YX110-class/, '110'],
-    'model-153fmi': ['CX153FMI', /YX153FMI/, /YX125-class/, '125'],
-    'model-154fmi': ['CX154FMI', /YX154FMI/, /YX125-class/, '125'],
-    'model-1p56fmj': ['CX1P56FMJ', /YX1P56FMJ/, /YX140-class/, '140'],
-    'model-1p60fmj': ['CX1P60FMJ', /YX1P60FMJ/, /YX150-class.*W150-2/, '150']
+    'model-152fmh': ['CX152FMH', /YX152FMH/, /YX110-class/, '110', { actual: '106.7', bore: '52.4', stroke: '49.5' }],
+    'model-153fmi': ['CX153FMI', /YX153FMI/, /YX125-class/, '125', { actual: '', bore: '', stroke: '' }],
+    'model-154fmi': ['CX154FMI', /YX154FMI/, /YX125-class/, '125', { actual: '', bore: '', stroke: '' }],
+    'model-1p56fmj': ['CX1P56FMJ', /YX1P56FMJ/, /YX140-class/, '140', { actual: '140', bore: '56', stroke: '57' }],
+    'model-1p60fmj': ['CX1P60FMJ', /YX1P60FMJ/, /YX150-class.*W150-2/, '150', { actual: '149.8', bore: '60', stroke: '53' }]
   };
 
-  for (const [id, [modelCode, aliasCode, aliasClass, nominal]] of Object.entries(expected)) {
+  for (const [id, [modelCode, aliasCode, aliasClass, nominal, dims]] of Object.entries(expected)) {
     const record = records.find(item => item.spec_id === id);
     assert.ok(record, id);
     assert.equal(record.model_code, modelCode, id);
@@ -90,10 +90,16 @@ test('horizontal models use approved CX codes and YX market-reference aliases', 
     assert.equal(record.approval_status, 'APPROVED_PUBLIC', id);
     assert.equal(record.visibility, 'PUBLIC', id);
     assert.match(record.evidence_sources, /owner-confirmation:2026-07-30/, id);
-    for (const field of ['actual_displacement_cc', 'bore_mm', 'stroke_mm']) {
-      assert.equal(record[field], '', `${id}:${field}`);
-    }
+    assert.equal(record.actual_displacement_cc, dims.actual, `${id}:actual_displacement_cc`);
+    assert.equal(record.bore_mm, dims.bore, `${id}:bore_mm`);
+    assert.equal(record.stroke_mm, dims.stroke, `${id}:stroke_mm`);
   }
+
+  const cg200 = records.find(item => item.spec_id === 'model-cg200');
+  assert.ok(cg200);
+  assert.match(cg200.candidate_master_values, /10 kW @ 7,500 rpm/);
+  assert.match(cg200.candidate_master_values, /13\.5 N·m @ 6,500 rpm/);
+  assert.doesNotMatch(cg200.candidate_master_values, /10\.8\s*kW|14\.2\s*N/i);
 });
 
 test('horizontal model configurations separate start method from electric-starter position', () => {

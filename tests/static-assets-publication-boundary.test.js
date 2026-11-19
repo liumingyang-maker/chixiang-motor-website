@@ -161,9 +161,10 @@ test('the Worker entry point is untouched while its source stops being an asset'
 test('this hardening touches no governed Foundation file', () => {
   const sitemap = read('sitemap.xml');
   const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
-  const expectedCanonical = 78 + 2 * publicBtvCount;
-  // 53 baseline + 21 approved zh-cn pages + /en/evidence + 3 EN Bajaj/TVS pages + public Bajaj/TVS detail pages
-  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches baseline + approved zh-cn, evidence, and Bajaj/TVS pages');
+  const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter((p) => p && p.is_flagship_page === true).length;
+  const expectedCanonical = 79 + 2 * publicBtvCount + flagshipHwCount;
+  // 53 baseline + 21 approved zh-cn + /en/evidence + 3 EN Bajaj/TVS + /en/engine-parts/hw-series + dynamic flagship/detail pages
+  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches baseline + approved zh-cn, evidence, Bajaj/TVS, and HW parts pages');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
   assert.ok(!/ads/.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);

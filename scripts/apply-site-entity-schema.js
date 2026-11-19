@@ -139,7 +139,7 @@ function pageNode(entry) {
   }
   if (entry.role === 'about') node.mainEntity = { '@id': organizationId };
   if (entry.role === 'article') node.mainEntity = { '@id': `${entry.url}#article` };
-  if (entry.role === 'btv-detail') node.mainEntity = { '@id': `${entry.url}#product` };
+  if (entry.role === 'btv-detail' || entry.role === 'hw-detail') node.mainEntity = { '@id': `${entry.url}#product` };
   return node;
 }
 
@@ -165,7 +165,7 @@ function entityGraph(entry) {
       url: `${canonicalOrigin}/`,
       name: 'CHIXIANG MOTOR',
       publisher: { '@id': organizationId },
-      inLanguage: ['en', 'es', 'pt', 'ru', 'ar']
+      inLanguage: ['en', 'es', 'pt', 'ru', 'ar', 'zh-CN']
     });
   }
   graph.push(pageNode(entry));

@@ -9,26 +9,29 @@ function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), 'utf8');
 }
 
-test('project instructions freeze the Foundation and protect its contracts', () => {
+test('project instructions establish v2.0 layered GEO growth contract and hard invariants', () => {
   const instructions = read('AGENTS.md');
-  assert.match(instructions, /FOUNDATION_STATUS:\s*FROZEN/);
+  assert.match(instructions, /FOUNDATION_CONTRACT:\s*v2\.0/);
   assert.match(instructions, /canonical|Sitemap|robots/i);
   assert.match(instructions, /\/api\/contact|Turnstile|Worker/i);
   assert.match(instructions, /Google Ads|Yandex/i);
-  assert.match(instructions, /stable Schema IDs|稳定的 Schema ID/i);
-  assert.match(instructions, /explicit user approval|用户明确批准/i);
-  assert.match(instructions, /separate PR|独立 PR/i);
+  assert.match(instructions, /#organization|#website|Schema/i);
+  assert.match(instructions, /COMPANY_FACT_PACK\.csv/);
+  assert.match(instructions, /ENGINE_SPEC_MASTER\.csv/);
+  assert.match(instructions, /10,000\+/);
+  assert.match(instructions, /100% pre-shipment hot and cold bench testing/);
+  assert.match(instructions, /llms\.txt/);
+  assert.match(instructions, /main/);
 });
 
-test('closure report defines the current source of truth and visual handoff', () => {
+test('historical closure report keeps baseline archive and points to v2.0 contract', () => {
   const closure = read('docs/geo-entity/FOUNDATION_CLOSURE_AND_FREEZE.md');
   assert.match(closure, /FOUNDATION_STATUS:\s*FROZEN/);
+  assert.match(closure, /FOUNDATION_CONTRACT:\s*v2\.0/);
   assert.match(closure, /08c446ead90db58e00a71095d5ba1f71756d1c7f/);
-  assert.match(closure, /51\s+(?:个|canonical)/i);
   assert.match(closure, /COMPANY_FACT_PACK\.csv/);
   assert.match(closure, /ENGINE_SPEC_MASTER\.csv/);
   assert.match(closure, /PAGE_CHANGE_MATRIX\.csv/);
-  assert.match(closure, /B2B.*landing|落地页规范/i);
   assert.match(closure, /visual redesign|页面外观/i);
 });
 

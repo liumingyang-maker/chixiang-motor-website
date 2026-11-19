@@ -62,6 +62,8 @@ function pageRole(page) {
   if (/^\/zh-cn\/guides\//.test(page.pathname)) return 'article';
   if (/^\/zh-cn\/(?:factory|evidence|domestic-wholesale)$/.test(page.pathname)) return 'about';
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(page.pathname)) return 'market';
+  if (page.pathname === '/en/engine-parts/hw-series') return 'hw-hub';
+  if (/^\/en\/engine-parts\/hw-series\/.+/.test(page.pathname)) return 'hw-detail';
   if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(page.pathname)) return 'btv-detail';
   return 'family';
 }
@@ -75,6 +77,8 @@ function expectedPageType(role) {
     news: 'CollectionPage',
     article: 'WebPage',
     market: 'WebPage',
+    'hw-hub': 'CollectionPage',
+    'hw-detail': 'ItemPage',
     'btv-detail': 'ItemPage',
     family: 'CollectionPage'
   }[role];
@@ -84,7 +88,15 @@ function expectedTrail(page) {
   const role = pageRole(page);
   if (role === 'home') return [];
   const trail = [`${origin}/${page.language}/`];
-  if (role === 'family' || role === 'market' || role === 'btv-detail') trail.push(`${origin}/${page.language}/products`);
+  if (role === 'family' || role === 'market' || role === 'btv-detail' || role === 'hw-hub' || role === 'hw-detail') {
+    trail.push(`${origin}/${page.language}/products`);
+  }
+  if (role === 'hw-hub' || role === 'hw-detail') {
+    trail.push(`${origin}/${page.language}/engine-parts`);
+  }
+  if (role === 'hw-detail') {
+    trail.push(`${origin}/${page.language}/engine-parts/hw-series`);
+  }
   if (role === 'btv-detail') trail.push(`${origin}/${page.language}/bajaj-tvs-engines-parts`);
   if (role === 'article') {
     trail.push(page.language === 'zh-cn' ? `${origin}/zh-cn/guides/` : `${origin}/${page.language}/news`);
@@ -111,7 +123,8 @@ function breadcrumbUrls(node) {
 }
 
 const expectedPublicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true).length;
-const expectedCanonicalTotal = 78 + 2 * expectedPublicBtvCount;
+const expectedFlagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter(p => p && p.is_flagship_page === true).length;
+const expectedCanonicalTotal = 79 + 2 * expectedPublicBtvCount + expectedFlagshipHwCount;
 
 test('sitemap manifest contains exactly the expected canonical source pages', () => {
   const pages = sitemapPages();

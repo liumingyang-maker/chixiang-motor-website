@@ -25,16 +25,19 @@
 
     hubBlocks.forEach(function (block) {
       var hubId = block.getAttribute('data-btv-model-hub') || '';
-      var modelMatch = !modelVal || hubId === modelVal;
+      var hubVariants = (block.getAttribute('data-btv-hub-variants') || '').split(',').filter(Boolean);
+      var modelMatch = !modelVal || hubId === modelVal || hubVariants.indexOf(modelVal) !== -1;
       var rows = Array.prototype.slice.call(block.querySelectorAll('tbody tr'));
       var blockVisible = 0;
 
       rows.forEach(function (row) {
         var rowCat = row.getAttribute('data-btv-row-category') || '';
+        var rowVariants = (row.getAttribute('data-btv-row-variants') || '').split(',').filter(Boolean);
         var rowText = (row.getAttribute('data-btv-search') || row.textContent || '').toLowerCase();
+        var variantMatch = !modelVal || hubId === modelVal || !rowVariants.length || rowVariants.indexOf(modelVal) !== -1;
         var catMatch = !catVal || rowCat === catVal;
         var textMatch = !query || rowText.indexOf(query) !== -1;
-        var show = modelMatch && catMatch && textMatch;
+        var show = modelMatch && variantMatch && catMatch && textMatch;
         row.hidden = !show;
         if (show) {
           blockVisible += 1;
@@ -99,9 +102,10 @@
       var items = selectedItems();
       if (!items.length) return;
       var contactPath = isZh ? '/zh-cn/contact' : '/en/contact';
+      var sourceForm = hubsRoot.getAttribute('data-source-form') || 'bajaj-tvs-catalog';
       var params = new URLSearchParams();
       params.set('product_interest', 'parts');
-      params.set('source_form', 'bajaj-tvs-catalog');
+      params.set('source_form', sourceForm);
       params.set('source_cta', 'batch-quote');
 
       var brands = [];

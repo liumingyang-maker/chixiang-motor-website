@@ -11,7 +11,14 @@ const officialSameAs = [
 ];
 
 const labels = {
-  en: { home: 'Home', products: 'Products', news: 'News', btvHub: 'Bajaj / TVS Engines & Parts' },
+  en: {
+    home: 'Home',
+    products: 'Products',
+    news: 'News',
+    partsHub: 'Engine Parts',
+    hwHub: 'HW200–HW350 (Hanwei) Water-Cooled Engine Spare Parts Catalog',
+    btvHub: 'Bajaj / TVS Engines & Parts'
+  },
   es: { home: 'Inicio', products: 'Productos', news: 'Noticias' },
   pt: { home: 'Início', products: 'Produtos', news: 'Notícias' },
   ru: { home: 'Главная', products: 'Продукты', news: 'Новости' },
@@ -69,6 +76,12 @@ function classify(pathname) {
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(pathname)) {
     return { role: 'market', schemaType: 'WebPage' };
   }
+  if (pathname === '/en/engine-parts/hw-series') {
+    return { role: 'hw-hub', schemaType: 'CollectionPage' };
+  }
+  if (/^\/en\/engine-parts\/hw-series\/.+/.test(pathname)) {
+    return { role: 'hw-detail', schemaType: 'ItemPage' };
+  }
   if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(pathname)) {
     return { role: 'btv-detail', schemaType: 'ItemPage' };
   }
@@ -96,8 +109,14 @@ function breadcrumbFor(entry) {
   if (entry.role === 'home') return [];
   const languageLabels = labels[entry.language];
   const trail = [{ name: languageLabels.home, item: `${canonicalOrigin}/${entry.language}/` }];
-  if (entry.role === 'family' || entry.role === 'market' || entry.role === 'btv-detail') {
+  if (entry.role === 'family' || entry.role === 'market' || entry.role === 'btv-detail' || entry.role === 'hw-hub' || entry.role === 'hw-detail') {
     trail.push({ name: languageLabels.products, item: `${canonicalOrigin}/${entry.language}/products` });
+  }
+  if (entry.role === 'hw-hub' || entry.role === 'hw-detail') {
+    trail.push({ name: languageLabels.partsHub, item: `${canonicalOrigin}/${entry.language}/engine-parts` });
+  }
+  if (entry.role === 'hw-detail') {
+    trail.push({ name: languageLabels.hwHub, item: `${canonicalOrigin}/${entry.language}/engine-parts/hw-series` });
   }
   if (entry.role === 'btv-detail') {
     trail.push({ name: languageLabels.btvHub, item: `${canonicalOrigin}/${entry.language}/bajaj-tvs-engines-parts` });
