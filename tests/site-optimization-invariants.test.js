@@ -21,7 +21,8 @@ const mutablePages = [
   'en/how-to-choose-motorcycle-engine-manufacturer-china.html',
   'en/air-cooled-vs-water-cooled-motorcycle-engine.html',
   'en/hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine.html',
-  'en/bajaj-tvs-replacement-engine-fitment-checklist.html'
+  'en/bajaj-tvs-replacement-engine-fitment-checklist.html',
+  'en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide.html'
 ];
 
 const contactPages = [

@@ -56,7 +56,7 @@ function pageRole(page) {
   if (/\/(?:products)$/.test(page.pathname)) return 'products';
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(page.pathname)) return 'contact';
   if (/\/news$/.test(page.pathname)) return 'news';
-  if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|bajaj-tvs-replacement-engine-fitment-checklist|how-to-choose-motorcycle-engine-manufacturer-china|hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine)$/.test(page.pathname)) return 'article';
+  if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|bajaj-tvs-replacement-engine-fitment-checklist|how-to-choose-motorcycle-engine-manufacturer-china|hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine|motorcycle-engine-export-packaging-moq-50-mixed-loading-guide)$/.test(page.pathname)) return 'article';
   if (page.pathname === '/es/guia/que-es-un-motor-cg/') return 'article';
   if (/^\/zh-cn\/guides\/?$/.test(page.pathname)) return 'about';
   if (/^\/zh-cn\/guides\//.test(page.pathname)) return 'article';
@@ -124,7 +124,7 @@ function breadcrumbUrls(node) {
 
 const expectedPublicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true).length;
 const expectedFlagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter(p => p && p.is_flagship_page === true).length;
-const expectedCanonicalTotal = 81 + 2 * expectedPublicBtvCount + expectedFlagshipHwCount;
+const expectedCanonicalTotal = 82 + 2 * expectedPublicBtvCount + expectedFlagshipHwCount;
 
 test('sitemap manifest contains exactly the expected canonical source pages', () => {
   const pages = sitemapPages();
