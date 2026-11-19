@@ -24,7 +24,8 @@ const mutablePages = [
   'en/bajaj-tvs-replacement-engine-fitment-checklist.html',
   'en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide.html',
   'en/horizontal-motorcycle-engine-110cc-150cc-selection-guide.html',
-  'en/chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty.html'
+  'en/chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty.html',
+  'en/cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison.html'
 ];
 
 const contactPages = [
