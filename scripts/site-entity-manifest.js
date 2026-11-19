@@ -65,7 +65,7 @@ function classify(pathname) {
   if (/\/products$/.test(pathname)) return { role: 'products', schemaType: 'CollectionPage' };
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(pathname)) return { role: 'contact', schemaType: 'ContactPage' };
   if (/\/news$/.test(pathname)) return { role: 'news', schemaType: 'CollectionPage' };
-  if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|bajaj-tvs-replacement-engine-fitment-checklist|how-to-choose-motorcycle-engine-manufacturer-china|hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine|motorcycle-engine-export-packaging-moq-50-mixed-loading-guide)$/.test(pathname)) {
+  if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|bajaj-tvs-replacement-engine-fitment-checklist|horizontal-motorcycle-engine-110cc-150cc-selection-guide|how-to-choose-motorcycle-engine-manufacturer-china|hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine|motorcycle-engine-export-packaging-moq-50-mixed-loading-guide)$/.test(pathname)) {
     return { role: 'article', schemaType: 'WebPage' };
   }
   if (pathname === '/es/guia/que-es-un-motor-cg/') {

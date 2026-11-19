@@ -162,7 +162,7 @@ test('this hardening touches no governed Foundation file', () => {
   const sitemap = read('sitemap.xml');
   const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
   const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter((p) => p && p.is_flagship_page === true).length;
-  const expectedCanonical = 82 + 2 * publicBtvCount + flagshipHwCount;
+  const expectedCanonical = 83 + 2 * publicBtvCount + flagshipHwCount;
   // 53 baseline + 21 approved zh-cn + /en/evidence + 3 EN Bajaj/TVS + /en/engine-parts/hw-series + dynamic flagship/detail pages
   assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches baseline + approved zh-cn, evidence, Bajaj/TVS, and HW parts pages');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
