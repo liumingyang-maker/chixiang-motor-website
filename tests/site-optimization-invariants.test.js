@@ -19,7 +19,8 @@ const mutablePages = [
   ...routes.map(route => route.file),
   'en/product-detail.html',
   'en/how-to-choose-motorcycle-engine-manufacturer-china.html',
-  'en/air-cooled-vs-water-cooled-motorcycle-engine.html'
+  'en/air-cooled-vs-water-cooled-motorcycle-engine.html',
+  'en/hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine.html'
 ];
 
 const contactPages = [

@@ -23,7 +23,8 @@ const PUBLIC_EN_PAGES = [
   'en/bajaj-engine-parts.html',
   'en/tvs-engine-parts.html',
   'en/air-cooled-vs-water-cooled-motorcycle-engine.html',
-  'en/how-to-choose-motorcycle-engine-manufacturer-china.html'
+  'en/how-to-choose-motorcycle-engine-manufacturer-china.html',
+  'en/hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine.html'
 ];
 
 test('llms.txt exists with unified entity and 10,000+ capacity', () => {
