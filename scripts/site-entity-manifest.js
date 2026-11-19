@@ -17,7 +17,8 @@ const labels = {
     news: 'News',
     partsHub: 'Engine Parts',
     hwHub: 'HW200–HW350 (Hanwei) Water-Cooled Engine Spare Parts Catalog',
-    btvHub: 'Bajaj / TVS Engines & Parts'
+    btvHub: 'Bajaj / TVS Engines & Parts',
+    cgSeries: 'CG Engine Series'
   },
   es: { home: 'Inicio', products: 'Productos', news: 'Noticias' },
   pt: { home: 'Início', products: 'Produtos', news: 'Notícias' },
@@ -85,6 +86,9 @@ function classify(pathname) {
   if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(pathname)) {
     return { role: 'btv-detail', schemaType: 'ItemPage' };
   }
+  if (/^\/en\/cg-engine\/.+/.test(pathname)) {
+    return { role: 'flagship-engine', schemaType: 'ItemPage' };
+  }
   return { role: 'family', schemaType: 'CollectionPage' };
 }
 
@@ -120,6 +124,9 @@ function breadcrumbFor(entry) {
   }
   if (entry.role === 'btv-detail') {
     trail.push({ name: languageLabels.btvHub, item: `${canonicalOrigin}/${entry.language}/bajaj-tvs-engines-parts` });
+  }
+  if (entry.role === 'flagship-engine') {
+    trail.push({ name: languageLabels.cgSeries, item: `${canonicalOrigin}/${entry.language}/cg-engine` });
   }
   if (entry.role === 'article') {
     trail.push({ name: languageLabels.news, item: entry.language === 'zh-cn' ? `${canonicalOrigin}/zh-cn/guides/` : `${canonicalOrigin}/${entry.language}/news` });

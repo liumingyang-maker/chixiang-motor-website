@@ -139,7 +139,7 @@ function pageNode(entry) {
   }
   if (entry.role === 'about') node.mainEntity = { '@id': organizationId };
   if (entry.role === 'article') node.mainEntity = { '@id': `${entry.url}#article` };
-  if (entry.role === 'btv-detail' || entry.role === 'hw-detail') node.mainEntity = { '@id': `${entry.url}#product` };
+  if (entry.role === 'btv-detail' || entry.role === 'hw-detail' || entry.role === 'flagship-engine') node.mainEntity = { '@id': `${entry.url}#product` };
   return node;
 }
 

@@ -516,6 +516,7 @@ ${renderSharedNav(quoteHref)}
           <a href="#assembly-factory-matched-kits" class="btn btn-accent btn-sm">Browse Factory-Matched Service Kits</a>
           <a href="${escapeHtml(quoteHref)}" class="btn btn-outline btn-sm">Request Parts Quotation</a>
           <a href="/en/cg-engine#hw-water-specifications" class="btn btn-primary btn-sm">View Complete HW200–HW350 Engines &rarr;</a>
+          <a href="/en/cg-engine/hw300-water-cooled-engine" class="btn btn-outline btn-sm">HW300 Flagship Engine Specs &rarr;</a>
         </div>
       </div>
     </div></section>

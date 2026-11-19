@@ -65,6 +65,7 @@ function pageRole(page) {
   if (page.pathname === '/en/engine-parts/hw-series') return 'hw-hub';
   if (/^\/en\/engine-parts\/hw-series\/.+/.test(page.pathname)) return 'hw-detail';
   if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(page.pathname)) return 'btv-detail';
+  if (/^\/en\/cg-engine\/.+/.test(page.pathname)) return 'flagship-engine';
   return 'family';
 }
 
@@ -80,6 +81,7 @@ function expectedPageType(role) {
     'hw-hub': 'CollectionPage',
     'hw-detail': 'ItemPage',
     'btv-detail': 'ItemPage',
+    'flagship-engine': 'ItemPage',
     family: 'CollectionPage'
   }[role];
 }
@@ -98,6 +100,7 @@ function expectedTrail(page) {
     trail.push(`${origin}/${page.language}/engine-parts/hw-series`);
   }
   if (role === 'btv-detail') trail.push(`${origin}/${page.language}/bajaj-tvs-engines-parts`);
+  if (role === 'flagship-engine') trail.push(`${origin}/${page.language}/cg-engine`);
   if (role === 'article') {
     trail.push(page.language === 'zh-cn' ? `${origin}/zh-cn/guides/` : `${origin}/${page.language}/news`);
   }
@@ -124,7 +127,8 @@ function breadcrumbUrls(node) {
 
 const expectedPublicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true).length;
 const expectedFlagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter(p => p && p.is_flagship_page === true).length;
-const expectedCanonicalTotal = 85 + 2 * expectedPublicBtvCount + expectedFlagshipHwCount;
+const expectedFlagshipEngineCount = (JSON.parse(read('data/flagship-engines.json')).engines || []).filter(e => e && e.published === true).length;
+const expectedCanonicalTotal = 85 + 2 * expectedPublicBtvCount + expectedFlagshipHwCount + expectedFlagshipEngineCount;
 
 test('sitemap manifest contains exactly the expected canonical source pages', () => {
   const pages = sitemapPages();

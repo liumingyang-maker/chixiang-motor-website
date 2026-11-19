@@ -1,0 +1,572 @@
+{
+  "version": 1,
+  "updated": "2026-11-19",
+  "note": "CHIXIANG MOTOR 明星发动机单品系统 V1 单一数据源。Batch 1 上线 CG200 与 HW300；CG150 与 CG250SB 预留未发布配置（published: false）。",
+  "engines": [
+    {
+      "slug": "cg200-air-cooled-engine",
+      "published": true,
+      "family": "CG Air-Cooled Series",
+      "family_url": "/en/cg-engine",
+      "model": "CG200",
+      "alias": "CX163FML",
+      "nominal_class": "200cc Class",
+      "actual_displacement": "197.0 cc",
+      "bore_stroke": "63.5 × 62.2 mm",
+      "power": "10 kW @ 7,500 rpm",
+      "torque": "13.5 N·m @ 6,500 rpm",
+      "compression": "8.5–9.3 : 1",
+      "cooling": "Natural air-cooled",
+      "transmission": "5-speed constant mesh",
+      "starting": "Electric / foot start",
+      "clutch": "Manual wet multi-plate",
+      "ignition": "CDI",
+      "dimensions_weight": "380 × 355 × 500 mm · 31.3 kg",
+      "dimensions": "380 × 355 × 500 mm",
+      "weight": "31.3 kg",
+      "sku": "CX-CG200-AC",
+      "vehicle_context": "CG200 (CX163FML) 197.0 cc Air-Cooled Motorcycle & Utility Engine",
+      "quick_verdict": "The CHIXIANG CG200 (CX163FML) delivers 197.0 cc actual displacement (63.5 × 62.2 mm) with 10 kW @ 7,500 rpm and 13.5 N·m @ 6,500 rpm in a 31.3 kg, 380 × 355 × 500 mm air-cooled package. Built for high-mileage commuter motorcycles and light utility platforms, it ships under 50-unit mixed-container MOQ on FOB Guangzhou terms.",
+      "gallery_images": [
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "alt": "CHIXIANG MOTOR CG200 air-cooled 197.0 cc vertical motorcycle engine front-three-quarter view",
+          "caption": "CG200 (CX163FML) Air-Cooled Complete Engine Assembly"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-02.webp",
+          "alt": "CHIXIANG MOTOR CG200 air-cooled engine left crankcase and magneto cover side",
+          "caption": "Left Magneto Cover & Output Sprocket Side"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-03.webp",
+          "alt": "CHIXIANG MOTOR CG200 air-cooled engine right clutch cover and kick-start shaft",
+          "caption": "Right Clutch Cover & Kick-Start Assembly"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-04.webp",
+          "alt": "CHIXIANG MOTOR CG200 air-cooled cylinder head fin geometry and exhaust port",
+          "caption": "Deep-Fin Air-Cooled Cylinder & OHV Pushrod Head"
+        },
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-05.webp",
+          "alt": "CHIXIANG MOTOR CG200 air-cooled engine rear mounting lugs and electric starter motor",
+          "caption": "Electric Starter & Frame Mounting Interface"
+        }
+      ],
+      "standard_vs_optional_configs": [
+        {
+          "item": "Base Engine & Ignition Stator",
+          "standard": "Complete engine assembly with factory-installed magneto stator/rotor",
+          "optional": "Market-specific DC/AC stator coil winding per order BOM"
+        },
+        {
+          "item": "Starting Method",
+          "standard": "Electric start + foot kick start",
+          "optional": "Kick-only or reinforced starter motor option"
+        },
+        {
+          "item": "Transmission & Reverse",
+          "standard": "5-speed constant mesh forward gearbox",
+          "optional": "International or rotary shift pattern; built-in reverse per model"
+        },
+        {
+          "item": "Balance Shaft",
+          "standard": "Standard non-balance CG200 architecture",
+          "optional": "CG balance-shaft configuration for lower single-cylinder vibration"
+        },
+        {
+          "item": "Carburetor & Intake Pipe",
+          "standard": "Confirmed per order BOM and Proforma Invoice",
+          "optional": "PZ30 / PZ27 carburetor and matched intake manifold"
+        },
+        {
+          "item": "External Levers & Electrical Kit",
+          "standard": "Engine assembly scope (confirm levers/CDI/rectifier in PI)",
+          "optional": "Kick lever, gear shift lever, CDI, rectifier, and starter relay pack"
+        },
+        {
+          "item": "Crankcase Finish",
+          "standard": "Industrial silver die-cast finish",
+          "optional": "Two-tone black/gold or custom OEM color finish on batch orders"
+        },
+        {
+          "item": "Export Packaging",
+          "standard": "Heavy-duty export carton or 12-unit wooden/steel pallet",
+          "optional": "Custom distributor carton marking and mixed-model container loading"
+        }
+      ],
+      "mounting_interface_notes": [
+        {
+          "label": "Frame Mounting Lugs",
+          "detail": "Vertical CG pushrod engine hanger pattern. Confirm front, rear, and top head-stay lug clearances against your chassis before batch production."
+        },
+        {
+          "label": "Output Shaft & Sprocket",
+          "detail": "Confirm countershaft spline profile and chain pitch (428 / 520) matched to your rear wheel or cargo axle ratio."
+        },
+        {
+          "label": "Electrical Connector Pinout",
+          "detail": "Verify stator wire color coding and regulator/CDI plug type against your vehicle main wiring harness."
+        },
+        {
+          "label": "Factory Dimension Drawings",
+          "detail": "Detailed factory installation dimension drawings and mounting CAD/PDF sheets are supplied with formal quotation and order confirmation."
+        }
+      ],
+      "comparison_models": [
+        {
+          "model": "CG150",
+          "url": "/en/cg-engine#cg-air-150",
+          "nominal": "150 cc",
+          "actual": "149 cc",
+          "bore_stroke": "62 × 49.5 mm",
+          "power": "8.2 kW @ 8,000 rpm",
+          "torque": "10.5 N·m @ 6,500 rpm",
+          "weight": "31 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        },
+        {
+          "model": "CG175",
+          "url": "/en/cg-engine#cg-air-175",
+          "nominal": "175 cc",
+          "actual": "174 cc",
+          "bore_stroke": "62 × 57.5 mm",
+          "power": "9.5 kW @ 8,000 rpm",
+          "torque": "11.5 N·m @ 6,500 rpm",
+          "weight": "31 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        },
+        {
+          "model": "CG200 (This Page)",
+          "url": "/en/cg-engine/cg200-air-cooled-engine",
+          "current": true,
+          "nominal": "200 cc",
+          "actual": "197.0 cc",
+          "bore_stroke": "63.5 × 62.2 mm",
+          "power": "10 kW @ 7,500 rpm",
+          "torque": "13.5 N·m @ 6,500 rpm",
+          "weight": "31.3 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        },
+        {
+          "model": "CG250",
+          "url": "/en/cg-engine#cg-air-250",
+          "nominal": "250 cc",
+          "actual": "229.5 cc",
+          "bore_stroke": "67 × 65 mm",
+          "power": "10.5 kW @ 7,000 rpm",
+          "torque": "16.5 N·m @ 5,000 rpm",
+          "weight": "32 kg",
+          "dimensions": "380 × 355 × 500 mm"
+        }
+      ],
+      "linked_parts_source": null,
+      "bundled_kits": [
+        {
+          "slug": "cg200-top-end-kit",
+          "pn": "CX-CG200-TOP",
+          "name": "CG200 Top-End Cylinder & Piston Kit (63.5 mm Bore)",
+          "spec": "63.5 mm cylinder block, piston, rings, wristpin & circlips matched to 197.0 cc CG200",
+          "fitment": "CG200 (CX163FML)"
+        },
+        {
+          "slug": "cg200-gasket-seal-kit",
+          "pn": "CX-CG200-GSK",
+          "name": "CG200 Full Overhaul Gasket & Oil Seal Kit",
+          "spec": "Cylinder head, base, crankcase center, clutch/magneto cover gaskets & oil seals",
+          "fitment": "CG200 (CX163FML)"
+        },
+        {
+          "slug": "cg200-clutch-assembly-kit",
+          "pn": "CX-CG200-CLT",
+          "name": "CG200 Manual Wet Multi-Plate Clutch Kit",
+          "spec": "Friction plates, steel plates, pressure plate & springs for 197.0 cc CG200",
+          "fitment": "CG200 (CX163FML)"
+        },
+        {
+          "slug": "cg200-electrical-ignition-kit",
+          "pn": "CX-CG200-ELC",
+          "name": "CG200 Stator, CDI & Rectifier Service Pack",
+          "spec": "Matched stator coil, CDI ignition unit, voltage regulator & starter relay",
+          "fitment": "CG200 (CX163FML)"
+        }
+      ],
+      "related_guides": [
+        {
+          "title": "CG Motorcycle Engine Series Matrix (125cc–250cc)",
+          "url": "/en/cg-engine",
+          "description": "Compare all air-cooled and water-cooled CG models side by side."
+        },
+        {
+          "title": "CG Pushrod OHV vs CB Chain-Driven OHC Comparison",
+          "url": "/en/cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison",
+          "description": "Evaluate low-RPM torque, field serviceability, and spare-parts structure."
+        },
+        {
+          "title": "Air-Cooled vs Water-Cooled Motorcycle Engine Selection",
+          "url": "/en/air-cooled-vs-water-cooled-motorcycle-engine",
+          "description": "Determine when natural air-cooled CG200 fits best versus water-cooled CG200SB."
+        },
+        {
+          "title": "Export Packaging Dimensions & MOQ 50 Mixed-Order Guide",
+          "url": "/en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide",
+          "description": "Review 380 × 355 × 500 mm carton sizing, palletization, and container mixing rules."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What is the exact displacement, power, and torque of the CHIXIANG CG200?",
+          "a": "The CG200 (CX163FML) has an actual displacement of 197.0 cc with a 63.5 × 62.2 mm bore and stroke. Rated max power is 10 kW @ 7,500 rpm and max torque is 13.5 N·m @ 6,500 rpm, with an 8.5–9.3 : 1 compression ratio."
+        },
+        {
+          "q": "What is the difference between air-cooled CG200 and water-cooled CG200SB?",
+          "a": "Both share a 63.5 × 62.2 mm bore and stroke (197.0 cc), but the CG200 uses natural air cooling (31.3 kg, 380 × 355 × 500 mm) for lower complexity and lighter commuter or utility builds, whereas the CG200SB uses liquid cooling (425 × 385 × 530 mm, 10.5 kW / 15.0 N·m) for sustained heavy-load cargo duty."
+        },
+        {
+          "q": "Can CG200 engines be ordered with a balance shaft or reverse gearbox?",
+          "a": "Yes. Standard CG200 ships with a 5-speed constant-mesh forward transmission. Balance-shaft configurations and model-matched reverse gearboxes can be specified per order BOM before Proforma Invoice confirmation."
+        },
+        {
+          "q": "What is the minimum order quantity and standard export packaging for CG200?",
+          "a": "Standard wholesale MOQ is 50 complete engines, and you can mix CG200 with CG150, CB, horizontal, or water-cooled models plus spare parts in one container. Regular production lead time is approximately 10 working days under FOB Guangzhou terms (other major Chinese ports by arrangement)."
+        },
+        {
+          "q": "Are engine mounting dimensions and warranty terms provided?",
+          "a": "Yes. Factory installation dimension drawings are supplied with your quotation so your engineering team can verify frame lugs, output shaft spline, and wiring plugs. Every engine undergoes 100% pre-shipment hot and cold bench testing and carries a 60-day warranty after destination port arrival for verified manufacturing or assembly defects."
+        }
+      ],
+      "seo": {
+        "title": "CG200 Air-Cooled 197cc Motorcycle Engine (CX163FML) | CHIXIANG MOTOR",
+        "description": "Factory-direct CG200 (CX163FML) 197.0 cc air-cooled vertical engine: 63.5 × 62.2 mm, 10 kW @ 7,500 rpm, 13.5 N·m @ 6,500 rpm, 31.3 kg. MOQ 50 mixed loading, FOB Guangzhou.",
+        "h1": "CG200 Air-Cooled 197.0 cc Motorcycle Engine (CX163FML)"
+      }
+    },
+    {
+      "slug": "hw300-water-cooled-engine",
+      "published": true,
+      "family": "HW Water Heavy-Duty Series",
+      "family_url": "/en/cg-engine#hw-water-specifications",
+      "model": "HW300",
+      "alias": "HW Water / Hanwei 300cc Class",
+      "nominal_class": "300cc Class",
+      "actual_displacement": "275.3 mL",
+      "bore_stroke": "74 × 64 mm",
+      "power": "12.5 kW @ 6,500 rpm",
+      "torque": "21 N·m @ 4,500 rpm",
+      "compression": "10.4 : 1",
+      "cooling": "Water-cooled with cooling fins",
+      "transmission": "Standard 5-speed forward transmission (compatible with external reverse gearboxes)",
+      "starting": "Electric / kick start",
+      "clutch": "20-roller one-way clutch (manual wet multi-plate)",
+      "ignition": "CDI · High-output DC magneto",
+      "oil_capacity": "1.5 L",
+      "carburetor": "PZ30",
+      "dimensions_weight": "425 × 385 × 530 mm · 39 kg",
+      "dimensions": "425 × 385 × 530 mm",
+      "weight": "39 kg",
+      "sku": "CX-HW300-WC",
+      "vehicle_context": "HW300 (300cc Class · 275.3 mL) Heavy-Duty Water-Cooled Cargo-Tricycle Engine",
+      "quick_verdict": "The CHIXIANG HW300 (300cc Class) delivers 275.3 mL actual displacement (74 × 64 mm) with 12.5 kW @ 6,500 rpm and 21 N·m @ 4,500 rpm in a 39 kg, 425 × 385 × 530 mm heavy-duty water-cooled package. Equipped with a 1.5 L oil sump, 20-roller clutch, and high-output magneto, it shares ~80% core parts commonality with HW250.",
+      "gallery_images": [
+        {
+          "src": "images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "alt": "CHIXIANG MOTOR HW300 heavy-duty water-cooled cargo-tricycle engine front view",
+          "caption": "HW300 Heavy-Duty Water-Cooled Engine Assembly"
+        },
+        {
+          "src": "images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-02.webp",
+          "alt": "CHIXIANG MOTOR HW300 water-cooled cylinder with auxiliary cooling fins",
+          "caption": "Finned Water-Cooled Cylinder & High-Capacity Sump"
+        },
+        {
+          "src": "images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-03.webp",
+          "alt": "CHIXIANG MOTOR HW300 crankcase and 20-roller clutch housing side",
+          "caption": "Reinforced Crankcase & 20-Roller Clutch Side"
+        },
+        {
+          "src": "images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-04.webp",
+          "alt": "CHIXIANG MOTOR HW300 water pump and cooling port assembly",
+          "caption": "Integrated Water Pump & Coolant Routing Ports"
+        },
+        {
+          "src": "images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-05.webp",
+          "alt": "CHIXIANG MOTOR HW300 output shaft and external reverse gearbox interface",
+          "caption": "5-Speed Forward Output & External Reverse Interface"
+        }
+      ],
+      "standard_vs_optional_configs": [
+        {
+          "item": "Crankcase & Lubrication Sump",
+          "standard": "Heavy-duty finned water-cooled architecture with 1.5 L oil sump",
+          "optional": "Matched spare left/right crankcase sets (~80% HW250/HW300 commonality)"
+        },
+        {
+          "item": "Clutch & Starting System",
+          "standard": "20-roller one-way clutch + manual wet multi-plate clutch; electric & kick start",
+          "optional": "Pre-bundled heavy-duty clutch overhaul service kit"
+        },
+        {
+          "item": "Magneto & Electrical Output",
+          "standard": "High-output DC magneto with CDI ignition",
+          "optional": "Complete CDI, regulator/rectifier, and starter relay accessory pack"
+        },
+        {
+          "item": "Transmission & Reverse",
+          "standard": "Standard 5-speed forward constant-mesh transmission",
+          "optional": "Compatible with external cargo-tricycle reverse gearboxes (specify shaft spline)"
+        },
+        {
+          "item": "Carburetor & Intake",
+          "standard": "PZ30 carburetor interface specification",
+          "optional": "Factory-supplied PZ30 carburetor and intake manifold per order BOM"
+        },
+        {
+          "item": "Cooling Circuit Accessories",
+          "standard": "Engine-mounted water pump housing and coolant ports",
+          "optional": "Matching radiator fan, reservoir, and hose kits confirmed per vehicle"
+        },
+        {
+          "item": "Spare Parts Consolidation",
+          "standard": "Direct cross-matching with HW Series Parts Catalog",
+          "optional": "Consolidated top-end, gasket, water pump, and clutch kits in same container"
+        },
+        {
+          "item": "Export Packaging",
+          "standard": "425 × 385 × 530 mm export carton or 12-unit heavy-duty pallet",
+          "optional": "Mixed loading with HW200/HW250/CG250SB engines and service kits"
+        }
+      ],
+      "mounting_interface_notes": [
+        {
+          "label": "Chassis Mounting & Footprint",
+          "detail": "425 × 385 × 530 mm overall package. Confirm cargo-tricycle cradle spacing and front/rear engine hanger bolts before production."
+        },
+        {
+          "label": "External Reverse Gearbox Spline",
+          "detail": "HW300 features a standard 5-speed forward transmission without built-in reverse and pairs with external reverse gearboxes—verify output spline tooth count and diameter."
+        },
+        {
+          "label": "Coolant Port & Radiator Routing",
+          "detail": "Verify water pump inlet/outlet hose diameters and radiator fan electrical connector against your tricycle cooling frame."
+        },
+        {
+          "label": "Factory Dimension Drawings",
+          "detail": "Factory installation dimension drawings and HW250/HW300 spare-parts BOM cross-reference sheets are issued with formal quotation."
+        }
+      ],
+      "comparison_models": [
+        {
+          "model": "HW200 (200cc Class)",
+          "url": "/en/cg-engine#hw-200",
+          "nominal": "200cc Class",
+          "actual": "197.0 mL",
+          "bore_stroke": "63.5 × 62.2 mm",
+          "power": "10.5 kW @ 7,500 rpm",
+          "torque": "15 N·m @ 6,000 rpm",
+          "weight": "38 kg",
+          "dimensions": "425 × 385 × 530 mm"
+        },
+        {
+          "model": "HW250 (250cc Class)",
+          "url": "/en/cg-engine#hw-250",
+          "nominal": "250cc Class",
+          "actual": "246.3 mL",
+          "bore_stroke": "70 × 64 mm",
+          "power": "11.5 kW @ 7,000 rpm",
+          "torque": "19.5 N·m @ 5,000 rpm",
+          "weight": "38.1 kg",
+          "dimensions": "425 × 385 × 530 mm"
+        },
+        {
+          "model": "HW300 (300cc Class) (This Page)",
+          "url": "/en/cg-engine/hw300-water-cooled-engine",
+          "current": true,
+          "nominal": "300cc Class",
+          "actual": "275.3 mL",
+          "bore_stroke": "74 × 64 mm",
+          "power": "12.5 kW @ 6,500 rpm",
+          "torque": "21 N·m @ 4,500 rpm",
+          "weight": "39 kg",
+          "dimensions": "425 × 385 × 530 mm"
+        },
+        {
+          "model": "HW350 (350cc Class)",
+          "url": "/en/cg-engine#hw-350",
+          "nominal": "350cc Class",
+          "actual": "300.3 mL",
+          "bore_stroke": "76 × 66.2 mm",
+          "power": "13 kW @ 6,500 rpm",
+          "torque": "22.5 N·m @ 4,500 rpm",
+          "weight": "40.4 kg",
+          "dimensions": "425 × 385 × 530 mm"
+        }
+      ],
+      "linked_parts_source": "data/hw-parts-catalog.json",
+      "related_guides": [
+        {
+          "title": "HW200–HW350 (Hanwei) Spare Parts Catalog",
+          "url": "/en/engine-parts/hw-series",
+          "description": "Browse factory-matched service kits and all 8 core HW assemblies."
+        },
+        {
+          "title": "CG250SB vs HW250 vs HW300 Cargo-Tricycle Buyer Guide",
+          "url": "/en/hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine",
+          "description": "Compare thermal margin, 1.5 L sump, 20-roller clutch, and ~80% parts commonality."
+        },
+        {
+          "title": "CG & HW Water-Cooled Family Specification Matrix",
+          "url": "/en/cg-engine#hw-water-specifications",
+          "description": "View complete CG150SB–CG250SB and HW200–HW350 specification tables."
+        },
+        {
+          "title": "Export Packaging Dimensions & MOQ 50 Mixed-Order Guide",
+          "url": "/en/motorcycle-engine-export-packaging-moq-50-mixed-loading-guide",
+          "description": "Review 425 × 385 × 530 mm packaging, 12-unit palletization, and container consolidation."
+        }
+      ],
+      "faqs": [
+        {
+          "q": "What is the actual displacement and torque of the CHIXIANG HW300?",
+          "a": "The HW300 (300cc Class) has a 74 × 64 mm bore and stroke, yielding an actual geometric displacement of 275.3 mL. It delivers 12.5 kW @ 6,500 rpm and 21 N·m @ 4,500 rpm with a 10.4 : 1 compression ratio."
+        },
+        {
+          "q": "How does the HW300 differ from standard water-cooled CG250SB engines?",
+          "a": "HW300 is built on the heavy-duty HW Water architecture with auxiliary cylinder cooling fins, a 1.5 L crankcase oil capacity, a 20-roller one-way clutch, and a high-output DC magneto—designed for sustained heavy cargo loads and steep gradients."
+        },
+        {
+          "q": "Which spare parts are shared between HW250 and HW300?",
+          "a": "Approximately 80% of core assemblies—including left/right crankcases, 20-roller clutches, 5-speed transmission shafts, water pumps, high-output DC magnetos, and fastener kits—are shared across HW250 and HW300, reducing distributor spare-parts inventory capital."
+        },
+        {
+          "q": "Does the HW300 include a built-in reverse gear?",
+          "a": "No. The HW300 uses a standard 5-speed forward transmission without built-in reverse and is engineered to pair with external cargo-tricycle reverse gearboxes."
+        },
+        {
+          "q": "Can I consolidate HW300 complete engines with HW service kits in one container?",
+          "a": "Yes. Standard wholesale MOQ is 50 complete engines (mixed HW200–HW350 and CG/CB models supported), and factory-matched HW service kits or core assemblies can be loaded in the same container under FOB Guangzhou terms (~10 working days regular lead time, 60-day post-arrival warranty)."
+        }
+      ],
+      "seo": {
+        "title": "HW300 Water-Cooled 300cc Class Cargo-Tricycle Engine | CHIXIANG MOTOR",
+        "description": "Heavy-duty HW300 (300cc Class, 275.3 mL actual) water-cooled cargo-tricycle engine: 74 × 64 mm, 12.5 kW, 21 N·m, 1.5 L oil sump, 20-roller clutch, ~80% HW250/HW300 parts commonality.",
+        "h1": "HW300 Water-Cooled Heavy-Duty Cargo-Tricycle Engine (300cc Class)"
+      }
+    },
+    {
+      "slug": "cg150-air-cooled-engine",
+      "published": false,
+      "family": "CG Air-Cooled Series",
+      "family_url": "/en/cg-engine",
+      "model": "CG150",
+      "alias": "150cc Air-Cooled",
+      "nominal_class": "150cc Class",
+      "actual_displacement": "149.0 cc",
+      "bore_stroke": "62 × 49.5 mm",
+      "power": "8.2 kW @ 8,000 rpm",
+      "torque": "10.5 N·m @ 6,500 rpm",
+      "compression": "9.0 : 1",
+      "cooling": "Natural air-cooled",
+      "transmission": "5-speed constant mesh",
+      "starting": "Electric / foot start",
+      "clutch": "Manual wet multi-plate",
+      "ignition": "CDI",
+      "dimensions_weight": "380 × 355 × 500 mm · 31 kg",
+      "dimensions": "380 × 355 × 500 mm",
+      "weight": "31 kg",
+      "sku": "CX-CG150-AC",
+      "vehicle_context": "CG150 149 cc Air-Cooled Motorcycle Engine",
+      "quick_verdict": "The CHIXIANG CG150 delivers 149 cc actual displacement (62 × 49.5 mm) with 8.2 kW @ 8,000 rpm and 10.5 N·m @ 6,500 rpm in a 31 kg air-cooled package, engineered for commuter motorcycles and fleet maintenance under 50-unit mixed-container MOQ.",
+      "gallery_images": [
+        {
+          "src": "images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "alt": "CHIXIANG MOTOR CG150 air-cooled 149 cc vertical motorcycle engine",
+          "caption": "CG150 Air-Cooled Engine (Pending Model-Specific Shoot)"
+        }
+      ],
+      "standard_vs_optional_configs": [
+        {
+          "item": "Base Engine & Ignition Stator",
+          "standard": "Complete engine assembly with factory-installed magneto stator/rotor",
+          "optional": "Market-specific stator winding per order BOM"
+        }
+      ],
+      "mounting_interface_notes": [
+        {
+          "label": "Factory Dimension Drawings",
+          "detail": "Factory installation dimension drawings are provided with formal quotation."
+        }
+      ],
+      "comparison_models": [],
+      "linked_parts_source": null,
+      "bundled_kits": [],
+      "related_guides": [],
+      "faqs": [],
+      "seo": {
+        "title": "CG150 Air-Cooled 149cc Motorcycle Engine | CHIXIANG MOTOR",
+        "description": "Factory-direct CG150 149 cc air-cooled motorcycle engine: 62 × 49.5 mm, 8.2 kW @ 8,000 rpm, 10.5 N·m @ 6,500 rpm, 31 kg.",
+        "h1": "CG150 Air-Cooled 149 cc Motorcycle Engine"
+      }
+    },
+    {
+      "slug": "cg250sb-water-cooled-engine",
+      "published": false,
+      "family": "CG Water-Cooled Series",
+      "family_url": "/en/cg-engine#cg-water-cooled",
+      "model": "CG250SB",
+      "alias": "250cc Standard Water-Cooled",
+      "nominal_class": "250cc Class",
+      "actual_displacement": "246.3 cc",
+      "bore_stroke": "70 × 64 mm",
+      "power": "11.5 kW @ 7,000 rpm (±5%)",
+      "torque": "19.5 N·m @ 5,000 rpm (±5%)",
+      "compression": "10.0–10.5 : 1",
+      "cooling": "Water-cooled",
+      "transmission": "5-speed constant mesh",
+      "starting": "Electric / kick start",
+      "clutch": "Manual wet multi-plate",
+      "ignition": "CDI",
+      "dimensions_weight": "425 × 385 × 530 mm · 32.9 kg (gross pkg)",
+      "dimensions": "425 × 385 × 530 mm",
+      "weight": "32.9 kg",
+      "sku": "CX-CG250SB-WC",
+      "vehicle_context": "CG250SB 246.3 cc Water-Cooled Cargo-Tricycle Engine",
+      "quick_verdict": "The CHIXIANG CG250SB delivers 246.3 cc actual displacement (70 × 64 mm) with 11.5 kW @ 7,000 rpm and 19.5 N·m @ 5,000 rpm in a 32.9 kg package, built for mainstream cargo-tricycle assembly under 50-unit mixed-container MOQ.",
+      "gallery_images": [
+        {
+          "src": "images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+          "alt": "CHIXIANG MOTOR CG250SB standard water-cooled cargo-tricycle engine",
+          "caption": "CG250SB Standard Water-Cooled Assembly"
+        },
+        {
+          "src": "images/standard-water-cooled/chixiang-standard-water-cooled-02.webp",
+          "alt": "CHIXIANG MOTOR CG250SB water-cooled engine side view",
+          "caption": "CG250SB Crankcase & Clutch Cover View"
+        }
+      ],
+      "standard_vs_optional_configs": [
+        {
+          "item": "Base Engine & Cooling Architecture",
+          "standard": "Standard CG water-cooled vertical engine assembly",
+          "optional": "Built-in or external reverse configuration per model and order"
+        }
+      ],
+      "mounting_interface_notes": [
+        {
+          "label": "Factory Dimension Drawings",
+          "detail": "Factory installation dimension drawings are provided with formal quotation."
+        }
+      ],
+      "comparison_models": [],
+      "linked_parts_source": null,
+      "bundled_kits": [],
+      "related_guides": [],
+      "faqs": [],
+      "seo": {
+        "title": "CG250SB Water-Cooled 246.3cc Cargo-Tricycle Engine | CHIXIANG MOTOR",
+        "description": "Factory-direct CG250SB 246.3 cc water-cooled vertical engine: 70 × 64 mm, 11.5 kW @ 7,000 rpm, 19.5 N·m @ 5,000 rpm.",
+        "h1": "CG250SB Water-Cooled 246.3 cc Cargo-Tricycle Engine"
+      }
+    }
+  ]
+}

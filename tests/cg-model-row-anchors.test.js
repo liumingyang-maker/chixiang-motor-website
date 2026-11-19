@@ -60,7 +60,7 @@ test('legacy anchors and water procurement note remain', () => {
 test('approved parameter cells are unchanged and water gears reflect brochure verification', () => {
   const html = read('en/cg-engine.html');
   for (const [code, actual, bore] of approvedSpecs) {
-    assert.ok(html.includes(`>${code}</th>`), code);
+    assert.match(html, new RegExp(`<th scope="row">${code}(?:<br><a [^>]+>[^<]+</a>)?</th>`), code);
     assert.ok(html.includes(`>${actual}</td>`), `${code} actual`);
     assert.ok(html.includes(bore), `${code} bore`);
   }

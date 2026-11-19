@@ -85,12 +85,19 @@ function list(items) {
 function table(labels, columns, rows, options = {}) {
   const rowIds = Array.isArray(options.rowIds) ? options.rowIds : null;
   const rowHeaderScope = options.rowHeaderScope === true;
+  const rowDetailLinks = options.rowDetailLinks || null;
   const body = rows.map((row, rowIndex) => {
     const idAttr = rowIds && rowIds[rowIndex] ? ` id="${escapeHtml(rowIds[rowIndex])}"` : '';
-    const cells = row.map((cell, index) => index === 0
-      ? (rowHeaderScope ? `<th scope="row">${escapeHtml(cell)}</th>` : `<th>${escapeHtml(cell)}</th>`)
-      : `<td>${escapeHtml(cell)}</td>`
-    ).join('');
+    const cells = row.map((cell, index) => {
+      if (index === 0) {
+        const detailHref = rowDetailLinks && rowDetailLinks[cell];
+        const inner = detailHref
+          ? `${escapeHtml(cell)}<br><a href="${escapeHtml(detailHref)}" style="font-size:0.82rem;font-weight:600;color:var(--accent-color);white-space:nowrap;">View Details &rarr;</a>`
+          : escapeHtml(cell);
+        return rowHeaderScope ? `<th scope="row">${inner}</th>` : `<th>${inner}</th>`;
+      }
+      return `<td>${escapeHtml(cell)}</td>`;
+    }).join('');
     return `<tr${idAttr}>${cells}</tr>`;
   }).join('');
   return `<div class="responsive-table-wrap" tabindex="0">
@@ -201,14 +208,16 @@ function renderCg(recordById, locale, language) {
   const waterQuickLinks = withEnglishRowAnchors
     ? modelQuickLinks(water.map((record, index) => [waterRowIds[index], record.model_code]), 'Choose CG water-cooled engine model')
     : '';
-  const airTableOptions = withEnglishRowAnchors ? { rowIds: airRowIds, rowHeaderScope: true } : undefined;
+  const enAirDetailLinks = withEnglishRowAnchors ? { CG200: '/en/cg-engine/cg200-air-cooled-engine' } : null;
+  const enHwDetailLinks = withEnglishRowAnchors ? { HW300: '/en/cg-engine/hw300-water-cooled-engine' } : null;
+  const airTableOptions = withEnglishRowAnchors ? { rowIds: airRowIds, rowHeaderScope: true, rowDetailLinks: enAirDetailLinks } : undefined;
   const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true } : undefined;
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
   const hwColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.carburetor, l.cooling, l.start, l.clutch];
   const hwRows = hwWaterModels.map(item => [...item, v.water, v.electricKick, v.manualWet]);
   const hwRowIds = withEnglishRowAnchors ? ['hw-200', 'hw-250', 'hw-300', 'hw-350'] : undefined;
-  const hwTable = table(l, hwColumns, hwRows, { rowIds: hwRowIds, rowHeaderScope: true });
+  const hwTable = table(l, hwColumns, hwRows, { rowIds: hwRowIds, rowHeaderScope: true, rowDetailLinks: enHwDetailLinks });
   return `<div class="catalog-table-block" id="cg-air-cooled">
         <h3>CG Air-Cooled</h3>
         ${airQuickLinks}${table(l, airColumns, rows(air), airTableOptions)}

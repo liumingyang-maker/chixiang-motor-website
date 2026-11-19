@@ -48,6 +48,10 @@
 | HW300 | 300cc Class | 275.3 mL | 74 × 64 mm | 12.5 kW @ 6,500 rpm | 21 N·m @ 4,500 rpm | 10.4 : 1 | 39 kg | 425 × 385 × 530 mm |
 | HW350 | 350cc Class | 300.3 mL | 76 × 66.2 mm | 13 kW @ 6,500 rpm | 22.5 N·m @ 4,500 rpm | 10.4 : 1 | 40.4 kg | 425 × 385 × 530 mm |
 
+### 3.3a Flagship Engine Product Pages (V1)
+- CG200 Air-Cooled 197.0 cc (CX163FML): https://chixiangmotor.com/en/cg-engine/cg200-air-cooled-engine
+- HW300 Water-Cooled 300cc Class (275.3 mL actual): https://chixiangmotor.com/en/cg-engine/hw300-water-cooled-engine
+
 ### 3.4 CB Series (https://chixiangmotor.com/en/cb-engine)
 | Model | Nominal | Actual | Max Power | Max Torque | Net Weight | Dimensions | Transmission |
 |---|---|---|---|---|---|---|---|

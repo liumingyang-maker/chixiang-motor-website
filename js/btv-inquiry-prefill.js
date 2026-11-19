@@ -53,6 +53,14 @@
   if (productSelect && params.get('product_interest')) {
     productSelect.value = params.get('product_interest');
   }
+  var qtyInput = form.querySelector('[name="quantity"]');
+  if (qtyInput && params.get('quantity') && !qtyInput.value) {
+    qtyInput.value = params.get('quantity');
+  }
+  var countryInput = form.querySelector('[name="country"]');
+  if (countryInput && params.get('country') && !countryInput.value) {
+    countryInput.value = params.get('country');
+  }
 
   var batchItems = [];
   var rawItems = params.get('btv_items') || '';
