@@ -117,7 +117,7 @@ function resolveBundledParts(engine) {
     const isKit = part.assembly_id === 'factory-matched-kits';
     if (isKit || items.length < 8) {
       items.push({
-        pn: part.part_number,
+        pn: part.sku || part.part_number || '',
         name: part.product_name_en,
         spec: part.specifications && part.specifications.key_spec ? part.specifications.key_spec : '',
         oem: part.oem_ref || ''
@@ -407,11 +407,14 @@ function renderEnginePage(engine) {
     return `<tr><th scope="row">${modelCell}</th><td>${escapeHtml(row.nominal)}</td><td>${escapeHtml(row.actual)}</td><td>${escapeHtml(row.bore_stroke)}</td><td>${escapeHtml(row.power)}</td><td>${escapeHtml(row.torque)}</td><td>${escapeHtml(row.weight)}</td><td>${escapeHtml(row.dimensions)}</td></tr>`;
   }).join('\n            ');
 
-  const bundleItemsHtml = bundledParts.map((part, idx) => `
+  const bundleItemsHtml = bundledParts.map((part, idx) => {
+    const meta = [part.pn ? `PN: ${part.pn}` : '', part.spec || ''].filter(Boolean).join(' · ');
+    return `
             <label class="flagship-bundle-item">
               <input type="checkbox" data-bundle-item data-part-name="${escapeHtml(part.name)}" data-part-pn="${escapeHtml(part.pn)}" data-part-oem="${escapeHtml(part.oem)}" ${idx < 2 ? 'checked' : ''}>
-              <span><strong>${escapeHtml(part.name)}</strong><br><span style="font-size:0.84rem;color:var(--text-secondary);">PN: ${escapeHtml(part.pn)}${part.spec ? ' · ' + escapeHtml(part.spec) : ''}</span></span>
-            </label>`).join('');
+              <span><strong>${escapeHtml(part.name)}</strong>${meta ? `<br><span style="font-size:0.84rem;color:var(--text-secondary);">${escapeHtml(meta)}</span>` : ''}</span>
+            </label>`;
+  }).join('');
 
   const relatedGuidesHtml = (engine.related_guides || []).map(g => `
           <div class="feature-item" style="text-align:left;">
@@ -476,7 +479,7 @@ ${renderNav(quoteHref)}
               <div class="flagship-spec-card"><dt>Bore × Stroke</dt><dd>${escapeHtml(engine.bore_stroke)}</dd></div>
               <div class="flagship-spec-card"><dt>Max Power</dt><dd>${escapeHtml(engine.power)}</dd></div>
               <div class="flagship-spec-card"><dt>Max Torque</dt><dd>${escapeHtml(engine.torque)}</dd></div>
-              <div class="flagship-spec-card"><dt>Cooling &amp; Clutch</dt><dd>${escapeHtml(engine.cooling)}</dd></div>
+              <div class="flagship-spec-card"><dt>Cooling &amp; Clutch</dt><dd>${escapeHtml(engine.cooling_clutch || `${engine.cooling} · ${engine.clutch}`)}</dd></div>
               <div class="flagship-spec-card"><dt>Dimensions &amp; Weight</dt><dd>${escapeHtml(engine.dimensions_weight)}</dd></div>
             </dl>
 

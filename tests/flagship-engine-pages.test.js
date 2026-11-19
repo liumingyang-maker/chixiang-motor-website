@@ -36,6 +36,8 @@ test('published flagship pages have clean URLs, local images, no empty cells, no
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}">`), `${rel}: canonical missing`);
     assert.ok(!/href="[^"]*\.html(?:[?#][^"]*)?"/i.test(html), `${rel}: internal link leaks .html`);
     assert.ok(!html.includes('<td>—</td>'), `${rel}: empty <td>—</td> cell found`);
+    assert.ok(!/PN:\s*·/.test(html), `${rel}: blank PN placeholder found`);
+    assert.equal((html.match(/<h1\b/gi) || []).length, 1, `${rel}: exactly one <h1> required`);
     assert.doesNotMatch(html, BANNED_RE, `${rel}: contains banned phrase`);
 
     const imgMatches = [...html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/gi)].map(m => m[1]);
@@ -77,6 +79,13 @@ test('bidirectional internal links connect family, products hub, HW parts hub, a
   assert.ok(productsHtml.includes('href="/en/cg-engine/hw300-water-cooled-engine"'));
   assert.ok(hwPartsHtml.includes('href="/en/cg-engine/hw300-water-cooled-engine"'));
   assert.ok(hw300Html.includes('href="/en/engine-parts/hw-series"'));
+  assert.ok(hw300Html.includes('Water-cooled w/ fins · 20-roller clutch'));
+  assert.ok(hw300Html.includes('PN: Match by Model / BOM'));
+  const cg200Html = read('en/cg-engine/cg200-air-cooled-engine.html');
+  assert.ok(cg200Html.includes('Natural air-cooled · Manual wet multi-plate'));
+  assert.ok(cg200Html.includes('8.5 kW @ 8,000 rpm'));
+  assert.ok(cg200Html.includes('10 N·m @ 7,500 rpm'));
+  assert.ok(cg200Html.includes('31.05 kg'));
 });
 
 test('render-flagship-engines.js --check reports zero drift', () => {
