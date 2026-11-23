@@ -105,6 +105,88 @@
     const langDropdown = document.querySelector('.lang-dropdown');
     const langSwitcher = document.querySelector('.lang-switcher');
 
+    // Ensure every page exposes all 7 full-matrix languages with clean route mapping & root fallback
+    (function ensureFullLangSwitcher() {
+      if (!langDropdown) return;
+      var norm = (window.location.pathname || '/').replace(/\/index\.html$/, '/').replace(/\.html$/, '') || '/';
+      if (norm !== '/' && !/^\/(?:en|es|pt|ru|ar|zh-cn|fr)\/$/.test(norm)) {
+        norm = norm.replace(/\/+$/, '');
+      }
+      var MATRIX_GROUPS = [
+        { en: '/en/', fr: '/fr/', es: '/es/', pt: '/pt/', ru: '/ru/', ar: '/ar/', 'zh-cn': '/zh-cn/' },
+        { en: '/en/products', fr: '/fr/products', es: '/es/products', pt: '/pt/products', ru: '/ru/products', ar: '/ar/products', 'zh-cn': '/zh-cn/products' },
+        { en: '/en/about', fr: '/fr/about', es: '/es/about', pt: '/pt/about', ru: '/ru/about', ar: '/ar/about', 'zh-cn': '/zh-cn/about' },
+        { en: '/en/evidence', fr: '/fr/evidence', es: '/es/evidence', pt: '/pt/evidence', ru: '/ru/evidence', ar: '/ar/evidence', 'zh-cn': '/zh-cn/evidence' },
+        { en: '/en/news', fr: '/fr/news', es: '/es/news', pt: '/pt/news', ru: '/ru/news', ar: '/ar/news', 'zh-cn': '/zh-cn/guides/' },
+        { en: '/en/contact', fr: '/fr/contact', es: '/es/contacto', pt: '/pt/contato', ru: '/ru/kontakty', ar: '/ar/contact', 'zh-cn': '/zh-cn/contact' },
+        { en: '/en/cg-engine', fr: '/fr/cg-engine', es: '/es/motor-cg', pt: '/pt/motor-cg', ru: '/ru/dvigatel-cg', ar: '/ar/cg-engine', 'zh-cn': '/zh-cn/cg-engine' },
+        { en: '/en/cb-engine', fr: '/fr/cb-engine', es: '/es/motor-cb', pt: '/pt/motor-cb', ru: '/ru/dvigatel-cb', ar: '/ar/cb-engine', 'zh-cn': '/zh-cn/cb-engine' },
+        { en: '/en/horizontal-engine', fr: '/fr/horizontal-engine', es: '/es/motor-horizontal', pt: '/pt/motor-horizontal', ru: '/ru/gorizontalnyj-dvigatel', ar: '/ar/horizontal-engine', 'zh-cn': '/zh-cn/horizontal-engine' },
+        { en: '/en/ac320-atv-engine', fr: '/fr/ac320-atv-engine', es: '/es/ac320-atv-engine', pt: '/pt/ac320-atv-engine', ru: '/ru/ac320-atv-engine', ar: '/ar/ac320-atv-engine', 'zh-cn': '/zh-cn/ac320-atv-engine' },
+        { en: '/en/engine-parts', fr: '/fr/engine-parts', es: '/es/repuestos-motor', pt: '/pt/pecas-de-motor', ru: '/ru/zapchasti-dvigatelya', ar: '/ar/engine-parts', 'zh-cn': '/zh-cn/engine-parts' },
+        { en: '/en/engine-parts/hw-series', fr: '/fr/engine-parts/hw-series', es: '/es/engine-parts/hw-series', pt: '/pt/engine-parts/hw-series', ru: '/ru/engine-parts/hw-series', ar: '/ar/engine-parts/hw-series', 'zh-cn': '/zh-cn/engine-parts/hw-series' },
+        { en: '/en/bajaj-tvs-engines-parts', fr: '/fr/bajaj-tvs-engines-parts', es: '/es/bajaj-tvs-engines-parts', pt: '/pt/bajaj-tvs-engines-parts', ru: '/ru/bajaj-tvs-engines-parts', ar: '/ar/bajaj-tvs-engines-parts', 'zh-cn': '/zh-cn/bajaj-tvs-engines-parts' },
+        { en: '/en/bajaj-engine-parts', fr: '/fr/bajaj-engine-parts', es: '/es/bajaj-engine-parts', pt: '/pt/bajaj-engine-parts', ru: '/ru/bajaj-engine-parts', ar: '/ar/bajaj-engine-parts', 'zh-cn': '/zh-cn/bajaj-engine-parts' },
+        { en: '/en/tvs-engine-parts', fr: '/fr/tvs-engine-parts', es: '/es/tvs-engine-parts', pt: '/pt/tvs-engine-parts', ru: '/ru/tvs-engine-parts', ar: '/ar/tvs-engine-parts', 'zh-cn': '/zh-cn/tvs-engine-parts' }
+      ];
+      var sharedPrefixes = [
+        '/cg-engine/cg150-air-cooled-engine',
+        '/cg-engine/cg200-air-cooled-engine',
+        '/cg-engine/cg250sb-water-cooled-engine',
+        '/cg-engine/hw300-water-cooled-engine',
+        '/bajaj-tvs-engines-parts/bajaj-boxer-ct100-bm100-complete-engine',
+        '/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine',
+        '/bajaj-tvs-engines-parts/bajaj-re-4s-200-complete-engine',
+        '/bajaj-tvs-engines-parts/tvs-hlx-150-complete-engine',
+        '/bajaj-tvs-engines-parts/tvs-king-200-complete-engine'
+      ];
+      var activeGroup = null;
+      for (var i = 0; i < MATRIX_GROUPS.length; i++) {
+        var grp = MATRIX_GROUPS[i];
+        var keys = Object.keys(grp);
+        for (var j = 0; j < keys.length; j++) {
+          var candidate = grp[keys[j]].replace(/\/+$/, '') || '/';
+          var testNorm = norm === '/' ? '/' : norm.replace(/\/+$/, '');
+          if (grp[keys[j]] === norm || candidate === testNorm) {
+            activeGroup = grp;
+            break;
+          }
+        }
+        if (activeGroup) break;
+      }
+      if (!activeGroup) {
+        for (var s = 0; s < sharedPrefixes.length; s++) {
+          if (norm.indexOf(sharedPrefixes[s]) !== -1) {
+            var pfx = sharedPrefixes[s];
+            activeGroup = { en: '/en' + pfx, fr: '/fr' + pfx, es: '/es' + pfx, pt: '/pt' + pfx, ru: '/ru' + pfx, ar: '/ar' + pfx, 'zh-cn': '/zh-cn' + pfx };
+            break;
+          }
+        }
+      }
+      var ALL_LANGS = [
+        { key: 'en', hreflang: 'en', label: 'English', fallback: '/en/' },
+        { key: 'fr', hreflang: 'fr', label: 'Français', fallback: '/fr/' },
+        { key: 'es', hreflang: 'es', label: 'Español', fallback: '/es/' },
+        { key: 'pt', hreflang: 'pt', label: 'Português', fallback: '/pt/' },
+        { key: 'ru', hreflang: 'ru', label: 'Русский', fallback: '/ru/' },
+        { key: 'ar', hreflang: 'ar', label: 'العربية', fallback: '/ar/' },
+        { key: 'zh-cn', hreflang: 'zh-CN', label: '简体中文', fallback: '/zh-cn/' }
+      ];
+      ALL_LANGS.forEach(function(item) {
+        var existing = langDropdown.querySelector('a[href^="/' + item.key + '/"], a[href="/' + item.key + '"]');
+        var targetHref = (activeGroup && activeGroup[item.key]) ? activeGroup[item.key] : item.fallback;
+        if (existing) {
+          if (activeGroup && activeGroup[item.key]) existing.setAttribute('href', targetHref);
+          return;
+        }
+        var link = document.createElement('a');
+        link.href = targetHref;
+        link.setAttribute('hreflang', item.hreflang);
+        link.textContent = item.label;
+        langDropdown.appendChild(link);
+      });
+    })();
+
     if (langCurrent && langDropdown) {
       langCurrent.setAttribute('aria-expanded', 'false');
 
@@ -391,31 +473,40 @@
     }
 
     function buildWhatsAppText(form) {
-      const isSpanish = (document.documentElement.lang || '').toLowerCase().indexOf('es') === 0;
-      const labels = isSpanish ? {
-        title: 'Solicitud desde el sitio web de Chixiang', name: 'Nombre', contact: 'Contacto', email: 'Email', country: 'País', company: 'Empresa', product: 'Motor', quantity: 'Cantidad', application: 'Aplicación', message: 'Detalles', page: 'Página'
-      } : {
-        title: 'New inquiry from Chixiang website', name: 'Name', contact: 'Contact', email: 'Email', country: 'Country', company: 'Company', product: 'Product', quantity: 'Quantity', application: 'Application', message: 'Message', page: 'Page'
+      var docLang = (document.documentElement.lang || '').toLowerCase();
+      var langKey = docLang.indexOf('zh') === 0 ? 'zh' : docLang.slice(0, 2);
+      var LABELS = {
+        es: { title: 'Solicitud desde el sitio web de Chixiang', name: 'Nombre', contact: 'Contacto', email: 'Email', country: 'País', company: 'Empresa', product: 'Motor', quantity: 'Cantidad', application: 'Aplicación', message: 'Detalles', page: 'Página' },
+        fr: { title: 'Nouvelle demande depuis le site Chixiang', name: 'Nom', contact: 'Contact', email: 'Email', country: 'Pays', company: 'Société', product: 'Produit', quantity: 'Quantité', application: 'Application', message: 'Détails', page: 'Page' },
+        pt: { title: 'Nova solicitação pelo site Chixiang', name: 'Nome', contact: 'Contato', email: 'Email', country: 'País', company: 'Empresa', product: 'Motor', quantity: 'Quantidade', application: 'Aplicação', message: 'Detalhes', page: 'Página' },
+        ru: { title: 'Новый запрос с сайта Chixiang', name: 'Имя', contact: 'Контакт', email: 'Email', country: 'Страна', company: 'Компания', product: 'Двигатель', quantity: 'Количество', application: 'Применение', message: 'Детали', page: 'Страница' },
+        ar: { title: 'استفسار جديد من موقع تشيشيانغ', name: 'الاسم', contact: 'التواصل', email: 'البريد', country: 'البلد', company: 'الشركة', product: 'المحرك', quantity: 'الكمية', application: 'التطبيق', message: 'التفاصيل', page: 'الصفحة' },
+        zh: { title: '来自驰翔官网的采购询盘', name: '姓名', contact: '联系方式', email: '邮箱', country: '地区', company: '公司', product: '产品系列', quantity: '数量', application: '用途', message: '需求详情', page: '页面' },
+        en: { title: 'New inquiry from Chixiang website', name: 'Name', contact: 'Contact', email: 'Email', country: 'Country', company: 'Company', product: 'Product', quantity: 'Quantity', application: 'Application', message: 'Message', page: 'Page' }
       };
-      const lines = [
-        labels.title,
-        labels.name + ': ' + getFieldValue(form, ['[name="name"]']),
-        labels.contact + ': ' + getFieldValue(form, ['[name="contact"]', '[name="email"]']),
-        labels.email + ': ' + getFieldValue(form, ['[name="email"]']),
-        labels.country + ': ' + getFieldValue(form, ['[name="country"]']),
-        labels.company + ': ' + getFieldValue(form, ['[name="company"]']),
-        labels.product + ': ' + getFieldValue(form, ['[name="product_interest"]', '[name="product"]']),
-        labels.quantity + ': ' + getFieldValue(form, ['[name="quantity"]']),
-        labels.application + ': ' + getFieldValue(form, ['[name="application"]']),
-        labels.message + ': ' + getFieldValue(form, ['[name="message"]', '[name="requirements"]']),
-        labels.page + ': ' + window.location.href
+      var labels = LABELS[langKey] || LABELS.en;
+      var pairs = [
+        [labels.name, getFieldValue(form, ['[name="name"]'])],
+        [labels.contact, getFieldValue(form, ['[name="contact"]', '[name="email"]'])],
+        [labels.email, getFieldValue(form, ['[name="email"]'])],
+        [labels.country, getFieldValue(form, ['[name="country"]'])],
+        [labels.company, getFieldValue(form, ['[name="company"]'])],
+        [labels.product, getFieldValue(form, ['[name="product_interest"]', '[name="product"]'])],
+        [labels.quantity, getFieldValue(form, ['[name="quantity"]'])],
+        [labels.application, getFieldValue(form, ['[name="application"]'])],
+        [labels.message, getFieldValue(form, ['[name="message"]', '[name="requirements"]'])],
+        [labels.page, window.location.href]
       ];
-      return lines.filter(function(line) {
-        return line.split(': ').pop();
-      }).join('\n');
+      return [labels.title].concat(
+        pairs.filter(function(p) { return p[1]; }).map(function(p) { return p[0] + ': ' + p[1]; })
+      ).join('\n');
     }
 
-    document.querySelectorAll('.contact-form form, form.p5-form').forEach(function(contactForm) {
+    var contactForms = Array.prototype.slice.call(document.querySelectorAll('.contact-form form, form.p5-form'));
+    document.querySelectorAll('form.contact-form').forEach(function(extraForm) {
+      if (contactForms.indexOf(extraForm) === -1) contactForms.push(extraForm);
+    });
+    contactForms.forEach(function(contactForm) {
       if (contactForm.dataset.chixiangFormInitialized === '1') {
         return;
       }

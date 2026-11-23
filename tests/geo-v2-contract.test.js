@@ -142,19 +142,19 @@ test('all 6-locale engine family pages publish Product + PropertyValue engineeri
   }
 });
 
-test('all six language homepages synchronize Hero CSS cache version and full 6-locale WebSite inLanguage list', () => {
-  for (const file of ['en/index.html', 'es/index.html', 'pt/index.html', 'ru/index.html', 'ar/index.html', 'zh-cn/index.html', 'en/ac320-atv-engine.html']) {
+test('all six active language homepages synchronize Hero CSS cache version and full 6-locale WebSite inLanguage list', () => {
+  for (const file of ['en/index.html', 'fr/index.html', 'es/index.html', 'pt/index.html', 'ru/index.html', 'ar/index.html', 'en/ac320-atv-engine.html']) {
     const html = read(file);
-    assert.match(html, /href=["']\.\.\/css\/style\.css\?v=20261119-hero["']/, `${file}: outdated style.css cache version`);
+    assert.match(html, /href=["'](?:\.\.|)\/css\/style\.css\?v=20261119-hero["']/, `${file}: outdated style.css cache version`);
   }
 
-  for (const file of ['en/index.html', 'es/index.html', 'pt/index.html', 'ru/index.html', 'ar/index.html', 'zh-cn/index.html']) {
+  for (const file of ['en/index.html', 'fr/index.html', 'es/index.html', 'pt/index.html', 'ru/index.html', 'ar/index.html']) {
     const html = read(file);
     const graphMatch = html.match(/<script\b[^>]*data-site-entity-graph[^>]*>([\s\S]*?)<\/script>/i);
     assert.ok(graphMatch, `${file}: missing data-site-entity-graph`);
     const graph = JSON.parse(graphMatch[1])['@graph'] || [];
     const website = graph.find(n => n['@id'] === 'https://chixiangmotor.com/#website');
     assert.ok(website, `${file}: missing WebSite node`);
-    assert.deepEqual(website.inLanguage, ['en', 'es', 'pt', 'ru', 'ar', 'zh-CN'], `${file}: WebSite.inLanguage mismatch`);
+    assert.deepEqual([...website.inLanguage].sort(), ['ar', 'en', 'es', 'fr', 'pt', 'ru'], `${file}: WebSite.inLanguage mismatch`);
   }
 });

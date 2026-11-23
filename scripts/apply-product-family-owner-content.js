@@ -86,13 +86,14 @@ function table(labels, columns, rows, options = {}) {
   const rowIds = Array.isArray(options.rowIds) ? options.rowIds : null;
   const rowHeaderScope = options.rowHeaderScope === true;
   const rowDetailLinks = options.rowDetailLinks || null;
+  const detailLinkText = options.detailLinkText || 'View Details';
   const body = rows.map((row, rowIndex) => {
     const idAttr = rowIds && rowIds[rowIndex] ? ` id="${escapeHtml(rowIds[rowIndex])}"` : '';
     const cells = row.map((cell, index) => {
       if (index === 0) {
         const detailHref = rowDetailLinks && rowDetailLinks[cell];
         const inner = detailHref
-          ? `${escapeHtml(cell)}<br><a href="${escapeHtml(detailHref)}" style="font-size:0.82rem;font-weight:600;color:var(--accent-color);white-space:nowrap;">View Details &rarr;</a>`
+          ? `${escapeHtml(cell)}<br><a href="${escapeHtml(detailHref)}" style="font-size:0.82rem;font-weight:600;color:var(--accent-color);white-space:nowrap;">${escapeHtml(detailLinkText)} &rarr;</a>`
           : escapeHtml(cell);
         return rowHeaderScope ? `<th scope="row">${inner}</th>` : `<th>${inner}</th>`;
       }
@@ -129,6 +130,14 @@ function model(recordById, specId) {
 }
 
 function cgWaterProcurementNote(language) {
+  if (language === 'fr') {
+    return `
+        <div class="feature-item" style="text-align:left;margin-top:1.25rem;" data-cg-water-procurement>
+          <h3>Moteurs CG refroidis par eau pour tricycle cargo : avant votre demande de devis</h3>
+          <p>Conçus pour le tricycle cargo et le tricycle 250/300cc à eau à forte charge, avec sélection adaptée au châssis et au refroidissement. <strong>Des versions à marche arrière intégrée ou compatibles boîte de marche arrière externe sont disponibles selon le modèle ; précisez votre transmission lors du devis.</strong></p>
+          <p>Indiquez la cylindrée souhaitée, l'entraxe de fixation, le nombre de cannelures de l'arbre de sortie et les besoins en kit de réfection moteur refroidi par eau afin d'intégrer moteurs complets et pièces détachées dans un même conteneur.</p>
+        </div>`;
+  }
   if (language !== 'en') return '';
   return `
         <div class="feature-item" style="text-align:left;margin-top:1.25rem;" data-cg-water-procurement>
@@ -174,7 +183,7 @@ const horizontalCatalogModels = [
 function renderCg(recordById, locale, language) {
   const l = locale.labels;
   const v = locale.values;
-  const withEnglishRowAnchors = language === 'en';
+  const withRowAnchors = language === 'en' || language === 'fr';
   const airSpecIds = modelIds.cg.slice(0, 5);
   const waterSpecIds = modelIds.cg.slice(5);
   const air = airSpecIds.map(id => model(recordById, id));
@@ -200,36 +209,60 @@ function renderCg(recordById, locale, language) {
       gearText
     ];
   });
-  const airRowIds = withEnglishRowAnchors ? airSpecIds.map(id => cgModelRowAnchors[id]) : null;
-  const waterRowIds = withEnglishRowAnchors ? waterSpecIds.map(id => cgModelRowAnchors[id]) : null;
-  const airQuickLinks = withEnglishRowAnchors
-    ? modelQuickLinks(air.map((record, index) => [airRowIds[index], record.model_code]), 'Choose CG air-cooled engine model')
+  const airRowIds = withRowAnchors ? airSpecIds.map(id => cgModelRowAnchors[id]) : null;
+  const waterRowIds = withRowAnchors ? waterSpecIds.map(id => cgModelRowAnchors[id]) : null;
+  const airQuickLinks = withRowAnchors
+    ? modelQuickLinks(air.map((record, index) => [airRowIds[index], record.model_code]), language === 'fr' ? 'Choisir un modèle CG refroidi par air' : 'Choose CG air-cooled engine model')
     : '';
-  const waterQuickLinks = withEnglishRowAnchors
-    ? modelQuickLinks(water.map((record, index) => [waterRowIds[index], record.model_code]), 'Choose CG water-cooled engine model')
+  const waterQuickLinks = withRowAnchors
+    ? modelQuickLinks(water.map((record, index) => [waterRowIds[index], record.model_code]), language === 'fr' ? 'Choisir un modèle CG refroidi par eau' : 'Choose CG water-cooled engine model')
     : '';
-  const enAirDetailLinks = withEnglishRowAnchors ? {
-    CG150: '/en/cg-engine/cg150-air-cooled-engine',
-    CG200: '/en/cg-engine/cg200-air-cooled-engine'
-  } : null;
-  const enWaterDetailLinks = withEnglishRowAnchors ? {
-    CG250SB: '/en/cg-engine/cg250sb-water-cooled-engine'
-  } : null;
-  const enHwDetailLinks = withEnglishRowAnchors ? { HW300: '/en/cg-engine/hw300-water-cooled-engine' } : null;
-  const airTableOptions = withEnglishRowAnchors ? { rowIds: airRowIds, rowHeaderScope: true, rowDetailLinks: enAirDetailLinks } : undefined;
-  const waterTableOptions = withEnglishRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true, rowDetailLinks: enWaterDetailLinks } : undefined;
+  const airDetailLinks = {
+    CG150: `/${language}/cg-engine/cg150-air-cooled-engine`,
+    CG200: `/${language}/cg-engine/cg200-air-cooled-engine`
+  };
+  const waterDetailLinks = {
+    CG250SB: `/${language}/cg-engine/cg250sb-water-cooled-engine`
+  };
+  const hwDetailLinks = {
+    HW300: `/${language}/cg-engine/hw300-water-cooled-engine`
+  };
+  const detailLinkLabels = {
+    en: 'View Details',
+    fr: 'Voir la fiche',
+    es: 'Ver ficha técnica',
+    pt: 'Ver ficha técnica',
+    ru: 'Подробнее',
+    ar: 'عرض التفاصيل'
+  };
+  const detailLinkText = detailLinkLabels[language] || 'View Details';
+  const airTableOptions = withRowAnchors ? { rowIds: airRowIds, rowHeaderScope: true, rowDetailLinks: airDetailLinks, detailLinkText } : { rowDetailLinks: airDetailLinks, detailLinkText };
+  const waterTableOptions = withRowAnchors ? { rowIds: waterRowIds, rowHeaderScope: true, rowDetailLinks: waterDetailLinks, detailLinkText } : { rowDetailLinks: waterDetailLinks, detailLinkText };
   const familyCardAnchors = ['cg-balance-shaft', 'tsunami', 'hw-water', 'auto-clutch'];
   const cards = locale.familyCards.map(([heading, body], index) => `<div class="feature-item" style="text-align:left;" id="${familyCardAnchors[index] || `family-option-${index}`}"><h3>${escapeHtml(heading)}</h3><p>${escapeHtml(body)}</p></div>`).join('');
   const hwColumns = [l.model, l.nominal, l.actual, l.boreStroke, l.maxPower, l.maxTorque, l.compression, l.netWeight, l.dimensions, l.carburetor, l.cooling, l.start, l.clutch];
   const hwRows = hwWaterModels.map(item => [...item, v.water, v.electricKick, v.manualWet]);
-  const hwRowIds = withEnglishRowAnchors ? ['hw-200', 'hw-250', 'hw-300', 'hw-350'] : undefined;
-  const hwTable = table(l, hwColumns, hwRows, { rowIds: hwRowIds, rowHeaderScope: true, rowDetailLinks: enHwDetailLinks });
+  const hwRowIds = withRowAnchors ? ['hw-200', 'hw-250', 'hw-300', 'hw-350'] : undefined;
+  const hwTable = table(l, hwColumns, hwRows, { rowIds: hwRowIds, rowHeaderScope: true, rowDetailLinks: hwDetailLinks, detailLinkText });
+  const cgAirHeading = language === 'fr' ? 'Série CG refroidie par air (125–250 cc)' : 'CG Air-Cooled';
+  const cgWaterHeading = language === 'fr' ? 'Série CG refroidie par eau (150–250 cc)' : 'CG Water-Cooled';
+  const hwCatalogLabels = {
+    en: 'Need spare parts for HW200–HW350 engines? <a href="/en/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Browse the HW Series Parts Catalog &rarr;</a>',
+    fr: 'Besoin d\'un kit de réfection moteur refroidi par eau ou de pièces HW200–HW350 ? <a href="/fr/cg-engine/hw300-water-cooled-engine" style="color:var(--accent-color);font-weight:600;">Voir la fiche HW300 &rarr;</a> · <a href="/fr/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Catalogue complet pièces HW &rarr;</a>',
+    es: '¿Necesita repuestos para cargueros HW200–HW350? <a href="/es/cg-engine/hw300-water-cooled-engine" style="color:var(--accent-color);font-weight:600;">Ver ficha HW300 &rarr;</a> · <a href="/es/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Catálogo de repuestos HW &rarr;</a>',
+    pt: 'Precisa de peças para triciclos HW200–HW350? <a href="/pt/cg-engine/hw300-water-cooled-engine" style="color:var(--accent-color);font-weight:600;">Ver ficha HW300 &rarr;</a> · <a href="/pt/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Catálogo de peças HW &rarr;</a>',
+    ru: 'Нужны запчасти для водяных HW200–HW350? <a href="/ru/cg-engine/hw300-water-cooled-engine" style="color:var(--accent-color);font-weight:600;">Страница HW300 &rarr;</a> · <a href="/ru/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Каталог запчастей HW &rarr;</a>',
+    ar: 'هل تحتاج قطع غيار لمحركات HW200–HW350؟ <a href="/ar/cg-engine/hw300-water-cooled-engine" style="color:var(--accent-color);font-weight:600;">عرض HW300 &larr;</a> · <a href="/ar/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">كتالوج قطع HW &larr;</a>'
+  };
+  const hwCatalogLink = hwCatalogLabels[language]
+    ? `\n        <p style="margin-top:0.75rem;color:var(--text-secondary);">${hwCatalogLabels[language]}</p>`
+    : '';
   return `<div class="catalog-table-block" id="cg-air-cooled">
-        <h3>CG Air-Cooled</h3>
+        <h3>${escapeHtml(cgAirHeading)}</h3>
         ${airQuickLinks}${table(l, airColumns, rows(air), airTableOptions)}
       </div>
       <div class="catalog-table-block" id="cg-water-cooled">
-        <h3>CG Water-Cooled</h3>
+        <h3>${escapeHtml(cgWaterHeading)}</h3>
         ${waterQuickLinks}${table(l, waterColumns, rows(water), waterTableOptions)}${cgWaterProcurementNote(language)}
       </div>
       <h3 class="section-title" style="margin-top:2.5rem;">${escapeHtml(l.familyOptions)}</h3>
@@ -237,7 +270,7 @@ function renderCg(recordById, locale, language) {
       <div class="catalog-table-block" id="hw-water-specifications" style="margin-top:2rem;">
         <h3>${escapeHtml(l.hwHeading)}</h3>
         ${hwTable}
-        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(l.hwNote)}</p>${language === 'en' ? '\n        <p style="margin-top:0.75rem;color:var(--text-secondary);">Need spare parts for HW200–HW350 engines? <a href="/en/engine-parts/hw-series" style="color:var(--accent-color);font-weight:600;">Browse the HW Series Parts Catalog &rarr;</a></p>' : ''}
+        <p style="margin-top:0.85rem;color:var(--text-secondary);line-height:1.7;">${escapeHtml(l.hwNote)}</p>${hwCatalogLink}
       </div>`;
 }
 
@@ -310,7 +343,7 @@ function renderParts(locale) {
 }
 
 function renderFaq(locale, family) {
-  const items = family === 'parts' ? locale.faq.parts : locale.faq.engine;
+  const items = locale.faq[family] || (family === 'parts' ? locale.faq.parts : locale.faq.engine);
   return `<section class="section" style="background:var(--bg-secondary);" data-product-family-owner-faq="${family}">
     <div class="container">
       <h2 class="section-title">${escapeHtml(locale.labels.faq)}</h2>
@@ -326,7 +359,8 @@ const commercialBenchmarkLabels = {
   es: 'MOQ Estándar: 50 Unidades (Modelos Mixtos) · Plazo: ~10 Días Hábiles · Término: FOB Guangzhou (Otros Puertos Disponibles) · Garantía: 60 Días Tras Llegada a Puerto de Destino',
   pt: 'MOQ Padrão: 50 Unidades (Modelos Mistos) · Prazo: ~10 Dias Úteis · Termo: FOB Guangzhou (Outros Portos Disponíveis) · Garantia: 60 Dias Após Chegada ao Porto de Destino',
   ru: 'Стандартный MOQ: 50 шт. (Смешанный заказ) · Срок: ~10 рабочих дней · Условия: FOB Гуанчжоу (другие порты КНР по согласованию) · Гарантия: 60 дней после прибытия в порт назначения',
-  ar: 'الحد الأدنى القياسي: 50 وحدة (نماذج مختلطة) · مدة التجهيز: ~10 أيام عمل · الشروط: FOB قوانغتشو (موانئ صينية أخرى متاحة) · الضمان: 60 يوماً بعد الوصول لميناء الوجهة'
+  ar: 'الحد الأدنى القياسي: 50 وحدة (نماذج مختلطة) · مدة التجهيز: ~10 أيام عمل · الشروط: FOB قوانغتشو (موانئ صينية أخرى متاحة) · الضمان: 60 يوماً بعد الوصول لميناء الوجهة',
+  fr: 'MOQ standard : 50 moteurs (commande mixte de plusieurs modèles et moteurs complets et pièces détachées dans un même conteneur) · Délai : ~10 jours ouvrables · Conditions : FOB Guangzhou, Chine (autres ports chinois sur demande) · Ports cibles : Abidjan, Douala, Cotonou, Dakar (transit pays enclavé à préciser) · Documents : facture, colisage, numéros de série moteur, certificat d\'origine sur demande (BSC / BESC coordonné par l\'importateur et son transitaire) · Garantie : 60 jours après arrivée au port'
 };
 
 function renderOwnerBlock(recordById, route) {
@@ -364,7 +398,7 @@ function renderOwnerBlock(recordById, route) {
       </div>
     </div>
   </section>
-  ${renderFaq(locale, route.family)}${route.family === 'cg' && route.language === 'en' ? '\n  <script src="../js/cg-model-quick-links.js" defer></script>' : ''}
+  ${renderFaq(locale, route.family)}${route.family === 'cg' && (route.language === 'en' || route.language === 'fr') ? '\n  <script src="../js/cg-model-quick-links.js" defer></script>' : ''}
   <!-- PRODUCT FAMILY OWNER END -->
   <!-- /Product Detail SEO Content -->`;
 }
@@ -509,7 +543,7 @@ function replaceProductFamilySchema(html, recordById, route) {
 
 function replaceFaqSchema(html, route) {
   const locale = locales[route.language];
-  const faq = route.family === 'parts' ? locale.faq.parts : locale.faq.engine;
+  const faq = locale.faq[route.family] || (route.family === 'parts' ? locale.faq.parts : locale.faq.engine);
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

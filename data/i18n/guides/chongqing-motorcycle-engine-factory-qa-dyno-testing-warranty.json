@@ -1,0 +1,474 @@
+{
+  "slug": "chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/factory-showcase/factory-2.webp",
+  "quoteInterest": "multiple",
+  "waModel": "Factory QA / Dyno Audit & Mixed Order",
+  "figures": [
+    {
+      "src": "/images/factory-showcase/factory-2.webp",
+      "cover": true,
+      "alt": {
+        "en": "CHIXIANG MOTOR standardized motorcycle engine assembly line in Chongqing",
+        "fr": "Ligne d'assemblage standardisée CHIXIANG MOTOR à Hangu, Chongqing",
+        "es": "Línea de ensamble estandarizada CHIXIANG MOTOR en Chongqing",
+        "pt": "Linha de montagem padronizada CHIXIANG MOTOR em Chongqing",
+        "ru": "Сборочная линия двигателей CHIXIANG MOTOR в Чунцине",
+        "ar": "خط التجميع القياسي لمحركات CHIXIANG MOTOR في تشونغتشينغ"
+      },
+      "caption": {
+        "fr": "Chaîne d'assemblage standardisée à Hangu (Chongqing, capacité 10 000+ unités/mois) avec contrôle aux postes.",
+        "es": "Línea estandarizada en Hangu, Chongqing (10,000+ unidades/mes) con tableros de inspección.",
+        "pt": "Linha padronizada em Hangu, Chongqing (10.000+ unidades/mês) com inspeção por estação.",
+        "ru": "Стандартизованная линия сборки в Ханьгу, Чунцин (10 000+ шт./мес) с постовым контролем.",
+        "ar": "خط تجميع قياسي في هانغو بتشونغتشينغ (+10,000 وحدة/شهر) مع نقاط فحص مرحلية."
+      }
+    },
+    {
+      "src": "/images/factory-showcase/factory-4.webp",
+      "cover": true,
+      "alt": {
+        "en": "Component dimensional and hardness inspection station at CHIXIANG MOTOR",
+        "fr": "Station de contrôle dimensionnel et dureté composants CHIXIANG MOTOR",
+        "es": "Estación de inspección dimensional y dureza de componentes CHIXIANG",
+        "pt": "Estação de inspeção dimensional e dureza de componentes CHIXIANG",
+        "ru": "Участок входного размерного контроля и твёрдости деталей CHIXIANG",
+        "ar": "محطة فحص الأبعاد والصلابة للمكونات في مصنع CHIXIANG"
+      },
+      "caption": {
+        "fr": "Poste d'inspection métallurgique et dimensionnelle pour vilebrequins, pignons, embrayages et carters.",
+        "es": "Inspección de entrada para cigüeñales, piñones de caja, embragues y cárteres.",
+        "pt": "Inspeção de entrada em virabrequins, engrenagens, embreagens e carcaças.",
+        "ru": "Входной контроль коленвалов, шестерён КПП, сцеплений и картеров.",
+        "ar": "فحص الكرنك وتروس الجير والكلتش والكارتيرة قبل خط التجميع."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "Comment vérifier la qualité des moteurs à Chongqing : banc 100 %, labos & garantie | CHIXIANG",
+      "description": "Protocole QA usine en 4 étapes à Chongqing : contrôle métallurgique entrant, test au banc chaud/froid à 100 %, double laboratoire dynamométrique, dossiers publics et garantie 60 jours.",
+      "h1": "Vérifier la qualité d'un moteur à Chongqing : test au banc 100 %, double laboratoire & garantie 60 jours",
+      "metaLine": "Publié : Novembre 2026 · Audit Usine & Assurance Qualité B2B — CHIXIANG MOTOR",
+      "verdictLabel": "4 preuves à exiger avant acompte",
+      "verdictHtml": "Avant d'importer depuis Chongqing, exigez quatre éléments vérifiables : <strong>enregistrement public d'usine</strong>, <strong>contrôle métallurgique entrant</strong>, <strong>test au banc à froid et à chaud à 100 %</strong> avant emballage, et <strong>procédure écrite de garantie 60 jours</strong>. Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (<strong>10 000+ unités/mois</strong>) documente chaque étape avec double laboratoire dynamométrique et systèmes ISO 9001.",
+      "sections": [
+        {
+          "heading": "1. Flux d'assurance qualité en 4 étapes",
+          "paragraphs": [
+            "Sur le cluster de Chongqing, deux carters d'apparence identique peuvent cacher de grands écarts de traitement thermique. Sur notre site de Hangu Town (<a href=\"{about}\">À propos de l'usine</a>), chaque commande suit quatre filtres (<a href=\"{products}\">voir le catalogue</a>) :"
+          ],
+          "table": {
+            "headers": ["Étape QA", "Cible & Périmètre", "Équipement / Méthode", "Défauts prévenus"],
+            "rows": [
+              ["1. Contrôle entrant métallurgie & dureté", "Vilebrequins, pignons de boîte, carters, embrayages", "Instruments métallographiques et duromètres", "Piqûres de pignons, voilage vilebrequin, casse carter, patinage embrayage"],
+              ["2. Assemblage ligne standardisée", "Montage complet (capacité 10 000+ unités/mois)", "Postes dynamométriques & gravure numéro de série", "Dévissage boulons, tambour mal indexé, perte de traçabilité"],
+              ["3. Banc d'essai chaud & froid à 100 %", "Chaque moteur complet avant mise en caisse", "Bancs d'entraînement à froid et mise en route à chaud", "Baisse compression, suintement huile, vitesses dures, défaut charge stator"],
+              ["4. Double labo dyno & gaz d'échappement", "Validation technique & prélèvements par lot", "2 laboratoires avec dynamomètres à courants de Foucault & analyseurs de gaz", "Dérive de couple, instabilité thermique, anomalies d'émissions"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Audit documentaire : intermédiaire vs véritable usine à Chongqing",
+          "paragraphs": [
+            "Vous pouvez contrôler nos dossiers officiels directement dans notre <a href=\"{evidence}\">Centre de preuves publiques</a> :"
+          ],
+          "table": {
+            "headers": ["Critère d'audit", "Intermédiaire non vérifiable", "Usine vérifiable (Référentiel CHIXIANG)"],
+            "rows": [
+              ["Entité légale & registre public", "Nom commercial sans site industriel vérifiable", "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (Hangu, Jiulongpo ; exp. 2003, enregistrée 2007) — avis public gxq.cq.gov.cn"],
+              ["Management qualité & certificats", "Promesses globales « toute la gamme certifiée »", "Système ISO 9001 ; CCC disponible par modèle éligible (vérification par référence sur demande)"],
+              ["Brevet & dossiers techniques", "Aucun dépôt public rattaché à l'entité", "Brevet d'utilité publié CN221406869U consultable sur Google Patents"],
+              ["Présence opérationnelle", "Site anonyme sans historique", "Boutique officielle 1688, YouTube, LinkedIn vérifiés au Centre de preuves"],
+              ["Logistique & export", "Sous-traitance floue sans suivi de série", "Documents export via la division export désignée de Chixiang ; MOQ 50 mixte, ~10 j ouvrables FOB Guangzhou"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Protocole garantie 60 jours après arrivée au port",
+          "bullets": [
+            "<strong>Étape 1 — Relevé du numéro de série</strong> : Relevez le numéro gravé sur le carter et rapprochez-le de la liste de colisage.",
+            "<strong>Étape 2 — Preuve photo & vidéo</strong> : Envoyez des clichés/vidéo clairs du défaut de fabrication ou d'assemblage.",
+            "<strong>Étape 3 — Validation ingénierie</strong> : Transmettez le dossier via notre <a href=\"{contact}\">page contact export</a> dans les 60 jours suivant l'arrivée au port.",
+            "<strong>Étape 4 — Remplacement gratuit</strong> : Une fois confirmé, les pièces de remplacement sont jointes gratuitement dans votre conteneur suivant."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Traçabilité douanière & sérénité importateur (BSC / BESC)",
+        "items": [
+          "Chaque caisse s'accompagne d'un fichier Excel/PDF des numéros de série moteur gravés pour faciliter le contrôle portuaire (Abidjan, Douala, Cotonou, Dakar) et le suivi du bordereau <strong>BSC / BESC</strong> par votre transitaire."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Comment vérifier que CHIXIANG MOTOR est bien un fabricant réel à Chongqing ?",
+          "a": "Vérifiez Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (enregistrée 2007 à Hangu, Jiulongpo) sur gxq.cq.gov.cn, le brevet CN221406869U sur Google Patents et nos canaux officiels au Centre de preuves."
+        },
+        {
+          "q": "Testez-vous 100 % des moteurs ou seulement des échantillons ?",
+          "a": "100 % des moteurs complets passent au banc à chaud et à froid avant emballage, en plus de nos deux laboratoires dynamométriques et du contrôle métallurgique entrant."
+        },
+        {
+          "q": "Les certificats ISO 9001 et CCC couvrent-ils tous les modèles ?",
+          "a": "L'usine opère sous système ISO 9001 ; le CCC s'applique uniquement aux modèles homologués concernés et doit être vérifié par référence avant commande."
+        },
+        {
+          "q": "Comment s'applique la garantie de 60 jours après arrivée ?",
+          "a": "Sur présentation du numéro de série gravé et de preuves photo/vidéo d'un défaut avéré de fabrication dans les 60 jours après arrivée, les pièces neuves partent gratuitement dans le conteneur suivant."
+        },
+        {
+          "q": "Qui gère les documents export et quel est le MOQ ?",
+          "a": "La division export désignée de Chixiang exécute les documents et la logistique. MOQ 50 moteurs en commande mixte, ~10 jours ouvrables FOB Guangzhou."
+        }
+      ],
+      "ctaCard": {
+        "title": "Demander les dossiers d'audit ou lancer une commande d'essai",
+        "body": "Consultez nos enregistrements au Centre de preuves ou envoyez votre liste de modèles pour recevoir une Proforma.",
+        "primaryBtn": "Contacter l'équipe qualité / export",
+        "secondaryBtn": "Ouvrir le Centre de preuves"
+      }
+    },
+    "es": {
+      "title": "Cómo Verificar la Calidad de Motores en Chongqing: Banco 100 %, Labos y Garantía | CHIXIANG",
+      "description": "Control de calidad en 4 etapas en Chongqing: metalurgia de entrada, prueba 100 % en banco frío y caliente, doble laboratorio con dinamómetro, registros públicos y garantía 60 días.",
+      "h1": "Cómo Verifican los Importadores B2B la Calidad en Chongqing: Banco 100 %, Dinamómetros y Garantía de 60 Días",
+      "metaLine": "Publicado: Noviembre 2026 · Auditoría Fabril B2B — CHIXIANG MOTOR",
+      "verdictLabel": "4 pruebas clave antes de enviar depósito",
+      "verdictHtml": "Antes de importar motores desde Chongqing verifique cuatro hechos: <strong>registro público de fábrica</strong>, <strong>inspección metalúrgica de entrada</strong>, <strong>prueba 100 % en banco frío y caliente</strong> antes del embalaje y <strong>protocolo de garantía por 60 días</strong>. Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (<strong>10,000+ unidades/mes</strong>) respalda cada envío con doble laboratorio ISO 9001.",
+      "sections": [
+        {
+          "heading": "1. Flujo de control de calidad en 4 etapas",
+          "paragraphs": [
+            "En el clúster de Chongqing (<a href=\"{about}\">Sobre CHIXIANG</a>), dos cárteres iguales por fuera pueden variar en tratamiento térmico interno. Nuestra planta aplica cuatro filtros para toda la línea (<a href=\"{products}\">ver catálogo</a>):"
+          ],
+          "table": {
+            "headers": ["Etapa", "Alcance e inspección", "Equipo / Método", "Fallas prevenidas"],
+            "rows": [
+              ["1. Metalurgia y dureza de entrada", "Cigüeñales, piñones de caja, cárteres y embragues", "Durómetros e inspección metalográfica", "Picado prematuro de piñones, pandeo, carcasas frágiles"],
+              ["2. Ensamble en línea estandarizada", "Armado completo (10,000+ motores/mes)", "Estaciones con control de torque y grabado de serie", "Aflojamiento de pernos, pérdida de trazabilidad"],
+              ["3. Prueba 100 % en banco frío/caliente", "Cada motor completo antes de empacar", "Bancos de arrastre en frío y encendido en caliente", "Baja compresión, fugas de aceite, cambios duros, fallas de estator"],
+              ["4. Doble laboratorio dino y gases", "Validación de ingeniería y muestreo de lote", "2 laboratorios con dinamómetros de corrientes parásitas y analizadores", "Caída de torque, sobrecalentamiento, anomalías de combustión"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Auditoría documental: intermediario vs fábrica real en Chongqing",
+          "paragraphs": [
+            "Audite los registros oficiales directamente en nuestro <a href=\"{evidence}\">Centro de Evidencia</a>:"
+          ],
+          "table": {
+            "headers": ["Criterio", "Intermediario sin respaldo", "Fábrica verificable (Estándar CHIXIANG)"],
+            "rows": [
+              ["Entidad legal y registro oficial", "Razón comercial sin registro fabril verificable", "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (Hangu, Jiulongpo; exp. 2003, reg. 2007) verificable en gxq.cq.gov.cn"],
+              ["ISO 9001 y CCC por modelo", "Promesas generales sin alcance por SKU", "Sistema ISO 9001; CCC disponible para modelos aplicables verificable bajo solicitud"],
+              ["Patente pública", "Sin registros técnicos a nombre de la fábrica", "Patente de utilidad CN221406869U pública en Google Patents"],
+              ["Canales operativos", "Sitio anónimo con fotos de archivo", "Tienda oficial 1688, YouTube y LinkedIn enlazados en Centro de Evidencia"],
+              ["Logística y exportación", "Tercerización informal sin trazabilidad", "División de exportación designada de Chixiang; MOQ 50 mixto, ~10 días hábiles FOB Guangzhou"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Protocolo paso a paso de garantía 60 días post-arribo",
+          "bullets": [
+            "<strong>Paso 1 — Registro de serie</strong>: Ubique el número de serie grabado en el cárter y coteje con el packing list.",
+            "<strong>Paso 2 — Evidencia visual</strong>: Tome fotos claras y video breve mostrando el defecto de fabricación o ensamble.",
+            "<strong>Paso 3 — Envío de reclamo</strong>: Remítalo a través de nuestra <a href=\"{contact}\">página de contacto</a> dentro de los 60 días posteriores al arribo al puerto.",
+            "<strong>Paso 4 — Reposición sin costo</strong>: Tras validación técnica, enviamos los repuestos gratuitos dentro de su próximo contenedor."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Control de series para aduanas Perú / Colombia (SUNAT / DIAN)",
+        "items": [
+          "Entregamos relación completa de números de serie grabados y certificación de mercancía 100 % nueva para agilizar nacionalización en Callao, Buenaventura o Guayaquil."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Cómo confirmo que CHIXIANG MOTOR es fabricante real en Chongqing?",
+          "a": "Puede verificar la entidad en gxq.cq.gov.cn, consultar la patente CN221406869U en Google Patents y revisar nuestros perfiles oficiales en el Centro de Evidencia."
+        },
+        {
+          "q": "¿Prueban el 100 % de los motores o solo muestras?",
+          "a": "Cada motor completo pasa prueba 100 % en banco frío y caliente antes de empacarse, además de pruebas en nuestros dos laboratorios de dinamómetro."
+        },
+        {
+          "q": "¿ISO 9001 y CCC aplican a todos los modelos?",
+          "a": "La fábrica opera bajo ISO 9001 y el CCC aplica únicamente a modelos homologados específicos verificables por código antes del pedido."
+        },
+        {
+          "q": "¿Cómo opera la garantía de 60 días tras llegada a puerto?",
+          "a": "Enviando número de serie y foto/video de un defecto fabricativo confirmado dentro de 60 días post-arribo, reponemos las piezas sin cargo en el siguiente contenedor."
+        },
+        {
+          "q": "¿Quién gestiona los documentos de exportación y cuál es el MOQ?",
+          "a": "La división exportadora designada de Chixiang; MOQ 50 unidades mixtas y plazo ~10 días hábiles FOB Guangzhou."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar registros de auditoría o pedido de prueba",
+        "body": "Revise nuestros registros públicos o envíe su listado de motores para cotización FOB Guangzhou.",
+        "primaryBtn": "Contactar equipo QA / Exportación",
+        "secondaryBtn": "Ver Centro de Evidencia"
+      }
+    },
+    "pt": {
+      "title": "Como Verificar a Qualidade em Chongqing: Bancada 100 %, Dinamômetro e Garantia | CHIXIANG",
+      "description": "Controle de qualidade em 4 etapas: metalurgia na entrada, teste 100 % em bancada a frio/quente, 2 laboratórios com dinamômetro, registros públicos e garantia 60 dias.",
+      "h1": "Como Importadores Verificam a Qualidade de Motores em Chongqing: Bancada 100 %, Dinamômetros e Garantia de 60 Dias",
+      "metaLine": "Publicado: Novembro 2026 · Auditoria Fabril B2B — CHIXIANG MOTOR",
+      "verdictLabel": "4 pontos críticos antes do pagamento",
+      "verdictHtml": "Antes de importar motores de Chongqing, confira quatro evidências: <strong>registro público da fábrica</strong>, <strong>inspeção metalúrgica de entrada</strong>, <strong>teste 100 % em bancada a frio e quente</strong> e <strong>garantia escrita de 60 dias</strong>. A Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (<strong>10.000+ unidades/mês</strong>) opera com 2 laboratórios próprios e sistema ISO 9001.",
+      "sections": [
+        {
+          "heading": "1. Fluxo de qualidade em 4 etapas",
+          "paragraphs": [
+            "Na unidade de Hangu Town (<a href=\"{about}\">Sobre a Fábrica</a>), todas as linhas (<a href=\"{products}\">catálogo completo</a>) passam por quatro barreiras técnicas:"
+          ],
+          "table": {
+            "headers": ["Etapa", "Escopo de inspeção", "Método / Equipamento", "Falhas evitadas"],
+            "rows": [
+              ["1. Metalurgia & dureza", "Virabrequins, engrenagens, carcaças e embreagens", "Durômetros e metalografia na entrada", "Desgaste precoce de engrenagens, trincas em carcaça"],
+              ["2. Montagem padronizada", "Linhas de montagem (10.000+ un./mês)", "Torque controlado e gravação de número de série", "Folgas irregulares e perda de rastreabilidade"],
+              ["3. Bancada 100 % frio/quente", "Cada motor completo antes da embalagem", "Bancadas de acionamento a frio e partida a quente", "Baixa compressão, vazamento de óleo, falhas no estator"],
+              ["4. 2 laboratórios dyno & gases", "Validação de engenharia e amostragem", "Dinamômetros de correntes parasitas e analisadores de gases", "Queda de torque e instabilidade térmica"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Auditoria documental: intermediário vs fabricante real",
+          "paragraphs": [
+            "Confira diretamente os registros no nosso <a href=\"{evidence}\">Centro de Evidências</a>:"
+          ],
+          "table": {
+            "headers": ["Critério", "Intermediário sem fábrica", "Fabricante verificável (CHIXIANG)"],
+            "rows": [
+              ["Registro público oficial", "Nome comercial sem planta registrada", "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (exp. 2003, reg. 2007) — registro em gxq.cq.gov.cn"],
+              ["ISO 9001 e CCC por modelo", "Alegação genérica para toda a linha", "ISO 9001 fabril; CCC aplicável apenas aos modelos homologados"],
+              ["Patente pública", "Sem registros técnicos vinculados", "Patente de utilidade CN221406869U pública no Google Patents"],
+              ["Canais oficiais", "Site anônimo", "Loja oficial 1688, YouTube e LinkedIn verificados"],
+              ["Estrutura de exportação", "Repasse informal", "Divisão de exportação designada da Chixiang; MOQ 50 misto, ~10 dias úteis FOB Guangzhou"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Protocolo de garantia de 60 dias pós-chegada",
+          "bullets": [
+            "<strong>1) Número de série gravado</strong> na carcaça comparado ao packing list.",
+            "<strong>2) Foto e vídeo</strong> nítidos comprovando defeito fabril ou de montagem.",
+            "<strong>3) Envio via <a href=\"{contact}\">página de contato</a></strong> dentro de 60 dias após chegada ao porto.",
+            "<strong>4) Reposição gratuita</strong> embarcada no próximo contêiner do distribuidor."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Suporte documental para Luanda & Maputo (CNCA / ARCCLA)",
+        "items": [
+          "Fornecemos relação completa dos números de série gravados, fatura comercial e packing list compatíveis com a emissão do certificado <strong>CNCA / ARCCLA</strong> pelo importador."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Como confirmar que a CHIXIANG MOTOR é fabricante real em Chongqing?",
+          "a": "Verifique a empresa em gxq.cq.gov.cn, consulte a patente CN221406869U no Google Patents e confira nossos canais no Centro de Evidências."
+        },
+        {
+          "q": "Todos os motores são testados ou apenas amostras?",
+          "a": "100 % dos motores passam por bancada a frio e quente antes da embalagem, com apoio de dois laboratórios com dinamômetro."
+        },
+        {
+          "q": "ISO 9001 e CCC cobrem todos os modelos?",
+          "a": "Operamos sob ISO 9001; o CCC aplica-se apenas aos modelos aplicáveis verificados por código."
+        },
+        {
+          "q": "Como funciona a garantia de 60 dias?",
+          "a": "Mediante número de série e foto/vídeo dentro de 60 dias pós-chegada ao porto, as peças substitutas seguem sem custo no próximo contêiner."
+        },
+        {
+          "q": "Quem executa a documentação de exportação e qual o MOQ?",
+          "a": "A divisão de exportação designada da Chixiang; MOQ de 50 unidades mistas e prazo de ~10 dias úteis FOB Guangzhou."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar dossiê de auditoria ou pedido inicial",
+        "body": "Consulte o Centro de Evidências ou envie sua relação de modelos para cotação FOB Guangzhou.",
+        "primaryBtn": "Falar com engenharia / exportação",
+        "secondaryBtn": "Abrir Centro de Evidências"
+      }
+    },
+    "ru": {
+      "title": "Как проверить качество двигателей в Чунцине: стенд 100 %, дино-лаборатория и гарантия | CHIXIANG",
+      "description": "4-ступенчатый контроль качества на заводе в Чунцине: входная металлургия, 100 % холодная и горячая обкатка, 2 лаборатории с диностендами, госреестры и гарантия 60 дней.",
+      "h1": "Как оптовикам проверить качество моторов в Чунцине: стенд 100 %, диностенды и гарантия 60 дней",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Аудит производства B2B — CHIXIANG MOTOR",
+      "verdictLabel": "4 факта для проверки до предоплаты",
+      "verdictHtml": "Перед оплатой партии в Чунцине проверьте 4 пункта: <strong>публичную регистрацию завода</strong>, <strong>входной контроль металла и твёрдости</strong>, <strong>100 % холодную и горячую стендовую обкатку</strong> каждого мотора и <strong>письменный регламент гарантии 60 дней</strong>. Завод Chongqing Chixiang (<strong>10 000+ моторов/мес</strong>) объединяет 2 дино-лаборатории и стандарт ISO 9001.",
+      "sections": [
+        {
+          "heading": "1. Четыре этапа заводского контроля качества",
+          "paragraphs": [
+            "На площадке в Ханьгу (<a href=\"{about}\">О заводе</a>) одинаковые внешне отливки проверяются по внутренней металлургии на всех линиях (<a href=\"{products}\">каталог</a>):"
+          ],
+          "table": {
+            "headers": ["Этап", "Объект контроля", "Оборудование / Метод", "Какие риски снимает"],
+            "rows": [
+              ["1. Входной контроль металла", "Коленвалы (КШМ), шестерни КПП, картеры, сцепления", "Твердомеры и металлография", "Выкрашивание шестерён, биение КШМ, хрупкость литья"],
+              ["2. Сборочная линия", "Серийная сборка (10 000+ шт./мес)", "Моментный инструмент и набивка номера на картере", "Откручивание крепежа, потеря прослеживаемости партии"],
+              ["3. 100 % стендовая обкатка", "Каждый собранный двигатель до упаковки", "Холодная прокрутка и горячий пуск под нагрузкой", "Падение компрессии, течи масла, тугая КПП, отказ статора"],
+              ["4. 2 лаборатории (дино и газы)", "Ресурсные тесты и аудит партий", "Вихретоковые диностенды и газоанализаторы", "Отклонение мощности/момента, перегрев"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Проверка контрагента: перекупщик против реального завода",
+          "paragraphs": [
+            "Сверьте официальные данные в нашем <a href=\"{evidence}\">Центре доказательств</a>:"
+          ],
+          "table": {
+            "headers": ["Критерий", "Непроверенный посредник", "Прямой завод (Стандарт CHIXIANG)"],
+            "rows": [
+              ["Юрлицо и госреестр", "Торговая прокладка без площадки", "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (опыт 2003, рег. 2007) на gxq.cq.gov.cn"],
+              ["ISO 9001 и CCC по моделям", "Голословная сертификация «на всё»", "ISO 9001 на производстве; CCC на применимые модели по запросу"],
+              ["Опубликованный патент", "Нет технических заявок", "Патент CN221406869U на Google Patents"],
+              ["Официальные площадки", "Анонимный лендинг", "Официальный 1688, YouTube и LinkedIn"],
+              ["Экспортный контур", "Серая логистика", "Уполномоченное экспортное подразделение Chixiang; MOQ 50 микс, ~10 раб. дней FOB Гуанчжоу"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Порядок гарантийной замены (60 дней после порта)",
+          "bullets": [
+            "<strong>Шаг 1 — Серийный номер</strong>: Зафиксируйте номер на картере и сверьте с упаковочным листом.",
+            "<strong>Шаг 2 — Фото и видео</strong>: Снимите чёткое подтверждение производственного дефекта.",
+            "<strong>Шаг 3 — Заявка</strong>: Отправьте материалы через <a href=\"{contact}\">страницу контактов</a> в течение 60 дней после прибытия в порт.",
+            "<strong>Шаг 4 — Бесплатная отгрузка</strong>: Детали на замену бесплатно вкладываются в следующий контейнер."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Прослеживаемость для таможни РФ и ЕАЭС",
+        "items": [
+          "К каждой партии прилагается полный реестр выбитых серийных номеров картера для корректного таможенного оформления."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "Как убедиться, что CHIXIANG MOTOR — реальный завод в Чунцине?",
+          "a": "Проверьте запись юрлица на gxq.cq.gov.cn, патент CN221406869U в Google Patents и официальные ссылки в Центре доказательств."
+        },
+        {
+          "q": "Обкатывается каждый двигатель или только выборка?",
+          "a": "100 % двигателей проходят холодную и горячую обкатку на стенде до упаковки, а также выборочные испытания в двух дино-лабораториях."
+        },
+        {
+          "q": "Относятся ли ISO 9001 и CCC ко всем без исключения моделям?",
+          "a": "Система ISO 9001 действует на заводе, а сертификат CCC оформляется только на конкретные применимые модели."
+        },
+        {
+          "q": "Как действует гарантия 60 дней после прибытия?",
+          "a": "При подтверждении брака по серийному номеру и фото/видео в течение 60 дней после порта запчасти бесплатно отправляются со следующим контейнером."
+        },
+        {
+          "q": "Кто оформляет экспортные документы и каков MOQ?",
+          "a": "Уполномоченное экспортное подразделение Chixiang; MOQ 50 моторов в миксе, ~10 рабочих дней FOB Гуанчжоу."
+        }
+      ],
+      "ctaCard": {
+        "title": "Запросить аудит-досье или пробную партию",
+        "body": "Изучите Центр доказательств или отправьте список моделей для подготовки инвойса FOB Гуанчжоу.",
+        "primaryBtn": "Связаться с отделом экспорта",
+        "secondaryBtn": "Центр доказательств"
+      }
+    },
+    "ar": {
+      "title": "كيف يتحقق المستورد من جودة المحركات في تشونغتشينغ: الفحص 100% والداينو والضمان | CHIXIANG",
+      "description": "نظام الجودة من 4 مراحل في تشونغتشينغ: فحص المعادن والصلابة، اختبار 100% بارد وساخن، معملان للداينو، السجلات الرسمية وضمان 60 يوماً بعد الوصول للميناء.",
+      "h1": "كيف يتحقق المستوردون من جودة مصنع المحركات في تشونغتشينغ: اختبار المنصة 100% ومعامل الداينو وضمان 60 يوماً",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل التدقيق والجودة B2B — CHIXIANG MOTOR",
+      "verdictLabel": "4 أدلة مطلوبة قبل التحويل المالي",
+      "verdictHtml": "قبل الاستيراد من تشونغتشينغ تحقق من أربع نقاط موثقة: <strong>السجل الحكومي للمصنع</strong>، <strong>فحص المعادن والصلابة</strong>، <strong>الاختبار البارد والساخن 100%</strong> قبل التعبئة، و<strong>بروتوكول ضمان 60 يوماً</strong>. تدعم شركة Chongqing Chixiang (+10,000 محرك/شهر) كل شحنة بمعملين للداينومتر ونظام ISO 9001.",
+      "sections": [
+        {
+          "heading": "1. مراحل الفحص وضبط الجودة الأربع",
+          "paragraphs": [
+            "في مصنعنا ببلدة هانغو (<a href=\"{about}\">عن المصنع</a>)، تخضع جميع خطوط الإنتاج (<a href=\"{products}\">الكتالوج</a>) لأربع بوابات تحقق:"
+          ],
+          "table": {
+            "headers": ["المرحلة", "نطاق الفحص", "الأداة / المنهج", "الأعطال التي يتم منعها"],
+            "rows": [
+              ["1. فحص المعادن والصلابة", "الكرنك، تروس الجير، الكارتيرة، الكلتش", "أجهزة قياس الصلابة وفحص المعادن", "تآكل التروس، التواء الكرنك، ضعف السبائك"],
+              ["2. التجميع القياسي بالخط", "تجميع كامل (+10,000 محرك/شهر)", "ربط بعزم محدد وحفر الرقم التسلسلي", "فك المسامير، فقدان التتبع"],
+              ["3. اختبار منصة 100% بارد وساخن", "كل محرك كامل قبل التغليف", "منصات تدوير بارد وتشغيل ساخن فعلي", "ضعف الكبس، تسريب الزيت، صعوبة الغيارات، ضعف الشحن"],
+              ["4. معملا الداينو والانبعاثات", "اعتماد هندسي وسحب عينات", "دينامومتر تيارات دوامية ومحللات غاز", "تذبذب العزم، ارتفاع الحرارة"]
+            ]
+          }
+        },
+        {
+          "heading": "2. مقارنة التدقيق: وسيط تجاري مقابل مصنع موثق",
+          "paragraphs": [
+            "يمكنك مراجعة السجلات مباشرة في <a href=\"{evidence}\">مركز الأدلة</a>:"
+          ],
+          "table": {
+            "headers": ["المعيار", "وسيط غير موثق", "مصنع حقيقي (CHIXIANG)"],
+            "rows": [
+              ["الكيان القانوني والسجل العام", "اسم تصديري بلا مصنع مسجل", "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (خبرة 2003، مسجلة 2007) في gxq.cq.gov.cn"],
+              ["ISO 9001 و CCC حسب الطراز", "ادعاءات عامة شاملة", "نظام ISO 9001؛ شهادة CCC للطرازات المؤهلة عند الطلب"],
+              ["براءة اختراع منشورة", "لا توجد براءات باسم الشركة", "براءة المنفعة CN221406869U منشورة على Google Patents"],
+              ["القنوات الرسمية", "موقع مجهول", "متجر 1688 الرسمي وقناة يوتيوب ولينكدإن"],
+              ["التوثيق والتصدير", "شحن غير منضبط", "قسم التصدير المعتمد لدى Chixiang؛ MOQ 50 مختلط، ~10 أيام عمل FOB قوانغتشو"]
+            ]
+          }
+        },
+        {
+          "heading": "3. خطوات المطالبة بالضمان خلال 60 يوماً بعد الوصول",
+          "bullets": [
+            "<strong>1) توثيق الرقم التسلسلي</strong> المحفور على الكارتيرة ومطابقته بقائمة التعبئة.",
+            "<strong>2) تصوير واضح (صور وفيديو)</strong> للعيب التصنيعي.",
+            "<strong>3) إرسال الطلب</strong> عبر <a href=\"{contact}\">صفحة التواصل</a> خلال 60 يوماً من الوصول للميناء.",
+            "<strong>4) شحن القطع البديلة مجاناً</strong> داخل الحاوية التالية بعد المراجعة الفنية."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "توثيق CargoX / ACID لجمارك مصر",
+        "items": [
+          "نوفر قائمة الأرقام التسلسلية كاملة وفواتير منظمة تدعم مطابقة المستورد لمتطلبات <strong>CargoX و ACID</strong> في الموانئ المصرية."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "كيف أتأكد أن CHIXIANG MOTOR مصنع حقيقي في تشونغتشينغ؟",
+          "a": "راجع السجل الحكومي على gxq.cq.gov.cn وبراءة الاختراع CN221406869U على Google Patents والقنوات الموثقة في مركز الأدلة."
+        },
+        {
+          "q": "هل تفحصون كل محرك أم عينات عشوائية فقط؟",
+          "a": "كل محرك كامل يمر باختبار 100% بارد وساخن قبل التعبئة، إضافة إلى معملي الداينو وفحص الصلابة."
+        },
+        {
+          "q": "هل تشمل شهادات ISO 9001 و CCC جميع الموديلات؟",
+          "a": "المصنع يعمل وفق ISO 9001، بينما شهادة CCC تخص الطرازات المؤهلة فقط وتُراجع حسب الطلب."
+        },
+        {
+          "q": "كيف يعمل ضمان الـ 60 يوماً بعد الوصول؟",
+          "a": "بتقديم الرقم التسلسلي والصور أو الفيديو خلال 60 يوماً من الوصول، تُرسل القطع البديلة مجاناً مع الحاوية التالية."
+        },
+        {
+          "q": "من يتولى مستندات التصدير وما هو الحد الأدنى للطلب؟",
+          "a": "قسم التصدير المعتمد لدى Chixiang؛ الحد الأدنى 50 محركاً مختلطاً خلال ~10 أيام عمل FOB قوانغتشو."
+        }
+      ],
+      "ctaCard": {
+        "title": "اطلب ملفات الفحص أو جهّز طلبية تجربة مختلطة",
+        "body": "استعرض مركز الأدلة أو أرسل قائمة المحركات المطلوبة لإعداد عرض FOB قوانغتشو.",
+        "primaryBtn": "تواصل مع قسم الجودة والتصدير",
+        "secondaryBtn": "فتح مركز الأدلة"
+      }
+    }
+  }
+}

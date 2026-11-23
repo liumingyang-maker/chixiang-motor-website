@@ -158,13 +158,12 @@ test('C14 CKD/vehicle program is not offered as stock', () => {
 
 test('zh homepage links to evidence and products', () => {
   const html = read('zh-cn/index.html');
-  assert.ok(html.includes('href="/zh-cn/products/"'));
-  assert.ok(html.includes('href="/zh-cn/evidence/"'));
-  assert.ok(html.includes('href="/zh-cn/contact/"'));
+  assert.ok(html.includes('href="/zh-cn/products"'));
+  assert.ok(html.includes('href="/zh-cn/evidence"'));
+  assert.ok(html.includes('href="/zh-cn/contact"'));
 });
 
-test('sitemap contains zh-cn home and evidence', () => {
+test('zh-cn pages remain archived on disk but completely excluded from public sitemap.xml', () => {
   const xml = read('sitemap.xml');
-  assert.ok(xml.includes('https://chixiangmotor.com/zh-cn/'));
-  assert.ok(xml.includes('https://chixiangmotor.com/zh-cn/evidence'));
+  assert.ok(!xml.includes('/zh-cn'));
 });

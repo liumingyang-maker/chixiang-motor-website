@@ -37,6 +37,8 @@ const redirectCases = [
   ['https://chixiangmotor.com/', 'https://chixiangmotor.com/en/'],
   ['https://chixiangmotor.com/index.html', 'https://chixiangmotor.com/en/'],
   ['https://chixiangmotor.com/en', 'https://chixiangmotor.com/en/'],
+  ['https://chixiangmotor.com/fr', 'https://chixiangmotor.com/fr/'],
+  ['https://chixiangmotor.com/fr/index.html', 'https://chixiangmotor.com/fr/'],
   ['https://chixiangmotor.com/en/index.html', 'https://chixiangmotor.com/en/'],
   ['https://chixiangmotor.com/en/about.html', 'https://chixiangmotor.com/en/about'],
   ['https://chixiangmotor.com/en/about.html?ref=legacy', 'https://chixiangmotor.com/en/about?ref=legacy'],
@@ -122,8 +124,30 @@ test('keeps fallback redirect destinations canonical and loop-free', () => {
 
   assert.match(redirects, /^\/en \/en\/ 301$/m);
   assert.match(redirects, /^\/es \/es\/ 301$/m);
+  assert.match(redirects, /^\/fr \/fr\/ 301$/m);
   assert.match(redirects, /^\/pt \/pt\/ 301$/m);
   assert.match(redirects, /^\/ru \/ru\/ 301$/m);
   assert.match(redirects, /^\/ar \/ar\/ 301$/m);
+  assert.doesNotMatch(redirects, /^\/zh-cn\b/m);
   assert.doesNotMatch(redirects, /\/index\.html(?:\s|$)/);
+});
+
+test('returns 410 Gone with noindex for hidden /zh-cn routes', async () => {
+  const router = await loadRouter();
+  const calls = [];
+  const env = {
+    ASSETS: {
+      fetch(req) {
+        calls.push(req);
+        return new Response('should-not-serve', { status: 200 });
+      }
+    }
+  };
+
+  for (const pathName of ['/zh-cn', '/zh-cn/', '/zh-cn/contact']) {
+    const res = await router.fetch(new Request(`https://chixiangmotor.com${pathName}`), env);
+    assert.equal(res.status, 410, `${pathName} must return 410 Gone`);
+    assert.equal(res.headers.get('X-Robots-Tag'), 'noindex, nofollow, noarchive');
+  }
+  assert.equal(calls.length, 0);
 });

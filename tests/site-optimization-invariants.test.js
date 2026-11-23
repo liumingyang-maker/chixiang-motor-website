@@ -94,6 +94,11 @@ const APPROVED_ZH_CN_SITEMAP = new Set([
   'https://chixiangmotor.com/zh-cn/cb-engine',
   'https://chixiangmotor.com/zh-cn/ac320-atv-engine',
   'https://chixiangmotor.com/zh-cn/engine-parts',
+  'https://chixiangmotor.com/zh-cn/engine-parts/hw-series',
+  'https://chixiangmotor.com/zh-cn/cg-engine/cg150-air-cooled-engine',
+  'https://chixiangmotor.com/zh-cn/cg-engine/cg200-air-cooled-engine',
+  'https://chixiangmotor.com/zh-cn/cg-engine/cg250sb-water-cooled-engine',
+  'https://chixiangmotor.com/zh-cn/cg-engine/hw300-water-cooled-engine',
   'https://chixiangmotor.com/zh-cn/guides/',
   'https://chixiangmotor.com/zh-cn/guides/cg250-water-cooled-selection',
   'https://chixiangmotor.com/zh-cn/guides/horizontal-engine-buying-checklist',
@@ -117,7 +122,7 @@ test('v2.0 contract files, manifest exports, and Cloudflare config remain intact
   const manifestSrc = readFile('scripts/site-entity-manifest.js');
   assert.ok(manifestSrc.includes('module.exports'), 'manifest keeps exports');
   assert.ok(manifestSrc.includes('loadManifest'), 'manifest keeps loadManifest');
-  for (const key of ['en:', 'es:', 'pt:', 'ru:', 'ar:', "'zh-cn':"]) {
+  for (const key of ['en:', 'fr:', 'es:', 'pt:', 'ru:', 'ar:']) {
     assert.ok(manifestSrc.includes(key), `manifest supports ${key}`);
   }
 
@@ -150,11 +155,8 @@ test('sitemap preserves clean non-www canonical URLs and maps one-to-one to disk
   }
 
   assert.match(xml, /en\/ac320-atv-engine/);
-  const zhUrls = locs.filter(u => u.startsWith('https://chixiangmotor.com/zh-cn/'));
-  assert.equal(zhUrls.length, 21 + publicBtvProducts.length, 'exact approved zh-cn sitemap URLs');
-  for (const url of zhUrls) {
-    assert.ok(APPROVED_ZH_CN_SITEMAP.has(url), `unexpected zh-cn sitemap URL: ${url}`);
-  }
+  const zhUrls = locs.filter(u => u.includes('/zh-cn'));
+  assert.equal(zhUrls.length, 0, 'archived zh-cn routes must not appear in sitemap.xml');
 });
 
 test('site-router preserves canonical non-www redirects, P1 route redirects, and zh-cn routing', () => {

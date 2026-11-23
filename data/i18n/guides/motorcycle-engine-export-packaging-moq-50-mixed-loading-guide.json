@@ -1,0 +1,476 @@
+{
+  "slug": "motorcycle-engine-export-packaging-moq-50-mixed-loading-guide",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/factory-showcase/factory-5.webp",
+  "quoteInterest": "multiple",
+  "waModel": "MOQ 50 Mixed Container FOB Guangzhou",
+  "figures": [
+    {
+      "src": "/images/factory-showcase/factory-5.webp",
+      "cover": true,
+      "alt": {
+        "en": "CHIXIANG MOTOR engines staged for export testing and packing",
+        "fr": "Moteurs CHIXIANG MOTOR préparés pour essai banc et emballage export",
+        "es": "Motores CHIXIANG MOTOR listos para pruebas y embalaje de exportación",
+        "pt": "Motores CHIXIANG MOTOR preparados para teste e embalagem de exportação",
+        "ru": "Двигатели CHIXIANG MOTOR перед стендовой обкаткой и экспортной упаковкой",
+        "ar": "محركات CHIXIANG MOTOR جاهزة للفحص والتعبئة للتصدير"
+      },
+      "caption": {
+        "fr": "Assemblages moteurs prêts avant test au banc à 100 % et mise en carton individuel ou palette export de 12 unités.",
+        "es": "Motores en racks de producción antes de prueba 100 % y empaque en caja individual o tarima de 12 unidades.",
+        "pt": "Motores em racks antes do teste 100 % e embalagem em caixa individual ou palete de 12 unidades.",
+        "ru": "Двигатели на стеллажах перед 100 % обкаткой и упаковкой в короба или паллеты по 12 шт.",
+        "ar": "المحركات قبل الاختبار 100% والتعبئة في كراتين منفردة أو طبليات تصدير بـ 12 وحدة."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "Dimensions caisses export, périmètre standard & commande mixte MOQ 50 FOB Guangzhou | CHIXIANG",
+      "description": "Cotes exactes de cartons export (CG, HW, CB, Horizontaux), pièces incluses vs confirmées sur Facture Proforma, palettes 12 unités et règles MOQ 50 FOB Guangzhou.",
+      "h1": "Emballage export, périmètre standard d'accessoires & commande mixte MOQ 50 (FOB Guangzhou)",
+      "metaLine": "Publié : Novembre 2026 · Guide Logistique & Facture Proforma — CHIXIANG MOTOR",
+      "verdictLabel": "Essentiel logistique",
+      "verdictHtml": "CHIXIANG MOTOR exporte ses moteurs CG, HW, CB et horizontaux avec un <strong>MOQ de 50 moteurs complets</strong> en <strong>commande mixte de plusieurs modèles et pièces détachées</strong>. Expédition en ~<strong>10 jours ouvrables</strong> par défaut <strong>FOB Guangzhou</strong>, en cartons individuels ou palettes de 12 unités après test au banc 100 % chaud/froid.",
+      "sections": [
+        {
+          "heading": "1. Cotes exactes d'emballage & poids par série moteur",
+          "paragraphs": [
+            "Calculez votre fret et vos contraintes routières locales à partir des cotes vérifiées de notre <a href=\"{products}\">catalogue complet</a> et de la <a href=\"{cg}\">gamme CG / HW</a> :"
+          ],
+          "table": {
+            "headers": ["Série moteur", "Cylindrée", "Cotes caisse/carton (L × l × H)", "Volume dérivé", "Poids vérifié", "Format de colisage"],
+            "rows": [
+              ["CG Refroidi par air", "125–250 cc", "380 × 355 × 500 mm (carton)", "~0,067 m³", "31–32 kg net", "Carton individuel ou palette 12 unités"],
+              ["CG Refroidi par eau (CG150SB–CG250SB)", "150–250 cc", "425 × 385 × 530 mm (colis)", "~0,087 m³", "31,2–33 kg colis", "Carton individuel ou palette 12 unités"],
+              ["HW Eau Lourd (HW200–HW350)", "200–350 (classe)", "425 × 385 × 530 mm", "~0,087 m³", "38–40,4 kg net", "Carton individuel ou palette 12 unités"],
+              ["CB OHC Air (CB150–CB250)", "150–250 cc", "385 × 355 × 452 mm", "~0,062 m³", "29–31 kg net", "Carton individuel ou palette 12 unités"],
+              ["Horizontal CX152FMH-5B / -6", "110–125 (classe)", "477 × 395 × 280 mm", "~0,053 m³", "19 kg", "Carton individuel ou palette 12 unités"],
+              ["Horizontal CX152FMH-5B (130)", "Série 130", "450 × 280 × 277 mm", "~0,035 m³", "23 kg", "Carton individuel ou palette 12 unités"],
+              ["Horizontal CX1P56FMJ", "Classe 140 cc", "460 × 300 × 260 mm", "~0,036 m³", "21 kg", "Carton individuel ou palette 12 unités"],
+              ["Horizontal CX1P60FMJ", "Classe 150 cc", "435 × 285 × 235 mm", "~0,029 m³", "22 kg", "Carton individuel ou palette 12 unités"]
+            ]
+          },
+          "bullets": [
+            "<strong>Calcul de conteneur sur BOM réel</strong> : Nous n'annonçons pas un chiffre unique fixe par 20GP/40HQ car le chargement varie entre cartons en vrac et palettes de 12 unités, le poids des HW300 (39 kg net), la hauteur mixte (235 vs 530 mm) et le volume de pièces détachées."
+          ]
+        },
+        {
+          "heading": "2. Périmètre inclus d'office vs accessoires confirmés sur BOM / PI",
+          "table": {
+            "headers": ["Catégorie", "Élément", "Statut commercial", "Vérification sur Proforma (PI)"],
+            "rows": [
+              ["Inclus d'usine", "Bloc moteur complet assemblé", "Inclus par défaut", "Conforme à la cylindrée, au refroidissement et à la boîte commandés"],
+              ["Inclus d'usine", "Bobines stator & rotor montées", "Inclus par défaut", "Montées dans le carter ; sortie magnéto adaptée"],
+              ["Confirmé sur BOM / PI", "Pédale de kick & sélecteur vitesses", "À préciser sur BOM", "Profil cannelure et sélecteur simple ou talon/pointe"],
+              ["Confirmé sur BOM / PI", "Pipe d'admission & cale isolante", "À préciser sur BOM", "Angle et entraxe de fixation carburateur"],
+              ["Confirmé sur BOM / PI", "Carburateur (PZ26 / PZ27 / PZ30)", "À préciser sur BOM", "Diamètre venturi et type de starter (câble ou levier)"],
+              ["Confirmé sur BOM / PI", "Kit électrique (CDI, régulateur, relais)", "À préciser sur BOM", "Allumage AC ou DC et brochage faisceau"],
+              ["Confirmé sur BOM / PI", "Format d'emballage export", "À préciser sur BOM", "Cartons individuels ou palettes de 12 unités + marquage"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Structurer votre commande mixte 50+ unités & garantie",
+          "bullets": [
+            "<strong>Panachez 50 moteurs complets + kits d'entretien</strong> (<a href=\"{parts}\">catalogue pièces</a> : kits cylindre-piston, culasses, vilebrequins, carters Bajaj/TVS).",
+            "<strong>Contrôle & délai</strong> : Banc 100 % chaud/froid (<a href=\"{evidence}\">Preuves</a>), ~10 jours ouvrables FOB Guangzhou et garantie 60 jours après arrivée."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Dédouanement & BSC / BESC (Abidjan · Douala · Cotonou · Dakar)",
+        "items": [
+          "CHIXIANG fournit facture commerciale, liste de colisage détaillée, mention de vidange d'huile transport et relevé complet des numéros de série moteur gravés.",
+          "Le bordereau <strong>BSC / BESC</strong> est coordonné par l'importateur et son transitaire sur la base de nos documents d'usine."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Peut-on mélanger plusieurs séries et des pièces pour atteindre le MOQ de 50 unités ?",
+          "a": "Oui. Le MOQ porte sur 50 moteurs complets toutes séries confondues (CG, HW, CB, horizontaux, Bajaj/TVS), avec ajout libre de pièces et kits."
+        },
+        {
+          "q": "Pourquoi CHIXIANG ne publie-t-il pas un chiffre fixe unique par conteneur 20GP/40HQ ?",
+          "a": "La capacité dépend du choix cartons vs palettes de 12 unités, du ratio moteurs horizontaux vs HW lourds, du stock de pièces et des limites de poids routier du pays d'arrivée."
+        },
+        {
+          "q": "Les carburateurs (PZ26/PZ27/PZ30) et boîtiers CDI sont-ils toujours fournis d'office ?",
+          "a": "Non. Le moteur complet inclut l'ensemble moteur et le stator/rotor interne. Le carburateur, le kick, le sélecteur, la pipe et le kit CDI/régulateur/relais sont confirmés explicitement sur le BOM et la Facture Proforma."
+        },
+        {
+          "q": "Faut-il choisir cartons individuels ou palettes export de 12 unités ?",
+          "a": "Les cartons individuels optimisent le volume et le déchargement manuel sans chariot ; les palettes de 12 unités accélèrent la manutention par engin au port et en entrepôt."
+        },
+        {
+          "q": "Quels sont le délai, le port par défaut et la procédure de garantie ?",
+          "a": "~10 jours ouvrables FOB Guangzhou (autres ports chinois sur demande), et garantie 60 jours après arrivée sur numéro de série + photo/vidéo avec pièces expédiées au conteneur suivant."
+        }
+      ],
+      "ctaCard": {
+        "title": "Recevoir un plan de chargement BOM et une Proforma FOB Guangzhou",
+        "body": "Indiquez votre liste de moteurs, votre préférence carton vs palette 12 unités, les accessoires souhaités et le port d'arrivée.",
+        "primaryBtn": "Demander un devis logistique",
+        "secondaryBtn": "Centre de preuves usine"
+      }
+    },
+    "es": {
+      "title": "Dimensiones de Embalaje, Alcance Estándar y Pedido Mixto MOQ 50 FOB Guangzhou | CHIXIANG",
+      "description": "Medidas de cajas export (CG, HW, CB, Horizontales), accesorios incluidos vs confirmados en Factura Proforma (PI), tarimas de 12 unidades y reglas MOQ 50 FOB Guangzhou.",
+      "h1": "Embalaje de Exportación, Accesorios Estándar y Guía de Pedido Mixto MOQ 50 (FOB Guangzhou)",
+      "metaLine": "Publicado: Noviembre 2026 · Guía Logística B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Resumen logístico",
+      "verdictHtml": "CHIXIANG MOTOR exporta motores CG, HW, CB y horizontales con <strong>MOQ de 50 motores completos</strong> en <strong>carga mixta de modelos y repuestos</strong>. Plazo estándar ~<strong>10 días hábiles FOB Guangzhou</strong> en cajas individuales o tarimas de 12 unidades tras prueba 100 % en banco.",
+      "sections": [
+        {
+          "heading": "1. Dimensiones y pesos verificados de embalaje por serie",
+          "paragraphs": [
+            "Calcule flete marítimo y cubicaje sobre medidas reales de nuestro <a href=\"{products}\">catálogo completo</a> y la <a href=\"{cg}\">línea CG / HW</a>:"
+          ],
+          "table": {
+            "headers": ["Serie de motor", "Cilindrada", "Dimensiones de caja (L × A × H)", "Volumen aprox.", "Peso verificado", "Opciones de empaque"],
+            "rows": [
+              ["CG Enfriado por aire", "125–250 cc", "380 × 355 × 500 mm (cartón)", "~0.067 m³", "31–32 kg neto", "Caja individual o tarima de 12 unidades"],
+              ["CG Enfriado por agua", "150–250 cc", "425 × 385 × 530 mm (paq.)", "~0.087 m³", "31.2–33 kg paq.", "Caja individual o tarima de 12 unidades"],
+              ["HW Agua Pesado (HW200–HW350)", "200–350 (clase)", "425 × 385 × 530 mm", "~0.087 m³", "38–40.4 kg neto", "Caja individual o tarima de 12 unidades"],
+              ["CB OHC Aire (CB150–CB250)", "150–250 cc", "385 × 355 × 452 mm", "~0.062 m³", "29–31 kg neto", "Caja individual o tarima de 12 unidades"],
+              ["Horizontal CX152FMH-5B / -6", "110–125 (clase)", "477 × 395 × 280 mm", "~0.053 m³", "19 kg", "Caja individual o tarima de 12 unidades"],
+              ["Horizontal CX152FMH-5B (130)", "Serie 130", "450 × 280 × 277 mm", "~0.035 m³", "23 kg", "Caja individual o tarima de 12 unidades"],
+              ["Horizontal CX1P56FMJ", "Clase 140 cc", "460 × 300 × 260 mm", "~0.036 m³", "21 kg", "Caja individual o tarima de 12 unidades"],
+              ["Horizontal CX1P60FMJ", "Clase 150 cc", "435 × 285 × 235 mm", "~0.029 m³", "22 kg", "Caja individual o tarima de 12 unidades"]
+            ]
+          },
+          "bullets": [
+            "<strong>Cubicaje calculado sobre BOM real</strong>: Calculamos el total exacto por 20GP o 40HQ según proporción de cajas sueltas vs tarimas de 12 unidades, peso de HW300 (39 kg), repuestos adicionales y límite de peso en puerto destino."
+          ]
+        },
+        {
+          "heading": "2. Alcance incluido de serie vs accesorios confirmados en BOM / PI",
+          "table": {
+            "headers": ["Categoría", "Componente / Empaque", "Estado comercial", "Notas para Factura Proforma"],
+            "rows": [
+              ["Alcance estándar", "Motor completo ensamblado", "Incluido por defecto", "Probado conforme a cilindrada y caja solicitada"],
+              ["Alcance estándar", "Bobinas de estator y rotor de fábrica", "Incluido por defecto", "Instaladas internamente en el cárter"],
+              ["Confirmado en BOM / PI", "Pata de arranque y palanca de cambios", "Especificar en BOM", "Tipo de estrías y estilo para moto o carguero"],
+              ["Confirmado en BOM / PI", "Tubo de admisión y aislante", "Especificar en BOM", "Ángulo de entrada y distancia de pernos"],
+              ["Confirmado en BOM / PI", "Carburador (PZ26 / PZ27 / PZ30)", "Especificar en BOM", "Venturi acorde a cilindrada y tipo de ahogador"],
+              ["Confirmado en BOM / PI", "Kit eléctrico (CDI, regulador, relé)", "Especificar en BOM", "Encendido AC/DC y conectores de arnés"],
+              ["Confirmado en BOM / PI", "Formato de empaque", "Especificar en BOM", "Cajas sueltas o tarimas de 12 unidades + marcas"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Cómo armar un pedido mixto de 50+ unidades y respaldo fabril",
+          "bullets": [
+            "<strong>Mezcle motores y repuestos</strong> (<a href=\"{parts}\">directorio de repuestos</a>) cumpliendo mínimo 50 motores completos.",
+            "<strong>Calidad y garantía</strong>: Prueba 100 % en banco frío/caliente (<a href=\"{evidence}\">Evidencia</a>), ~10 días hábiles FOB Guangzhou y garantía de 60 días."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Despacho ante SUNAT (Perú) y DIAN (Colombia)",
+        "items": [
+          "Los motores salen drenados y sellados con relación de números de serie grabados y partida comercial clara para despacho de mercancía 100 % nueva en Callao o Buenaventura."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Puedo mezclar diferentes series y repuestos para llegar al MOQ de 50 unidades?",
+          "a": "Sí. El MOQ de 50 motores completos admite combinar CG, HW, CB, horizontales y Bajaj/TVS junto con repuestos y kits."
+        },
+        {
+          "q": "¿Por qué no listan un número fijo único de motores para un contenedor 20GP o 40HQ?",
+          "a": "Cambia según cajas sueltas vs tarimas de 12 unidades, proporción de horizontales ligeros vs HW pesados, volumen de repuestos y límites de peso vial."
+        },
+        {
+          "q": "¿Los carburadores (PZ26/PZ27/PZ30) y kits CDI vienen incluidos por defecto?",
+          "a": "No. El motor estándar incluye el conjunto motor y bobinas estator/rotor; palancas, pipa, carburador y kit CDI se confirman explícitamente en el BOM y la Factura Proforma."
+        },
+        {
+          "q": "¿Conviene pedir cajas individuales o tarimas de 12 unidades?",
+          "a": "Cajas individuales maximizan el cubicaje y facilitan descarga manual; tarimas de 12 unidades agilizan maniobras con montacargas en puerto y bodega."
+        },
+        {
+          "q": "¿Cuál es el plazo estándar, puerto y proceso de garantía?",
+          "a": "~10 días hábiles FOB Guangzhou y 60 días de garantía tras arribo mediante número de serie y foto/video con reposición en el siguiente contenedor."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar cálculo de carga según BOM y Factura Proforma",
+        "body": "Envíe su mezcla de modelos, preferencia caja vs tarima, accesorios y puerto de destino.",
+        "primaryBtn": "Solicitar cálculo FOB",
+        "secondaryBtn": "Ver Centro de Evidencia"
+      }
+    },
+    "pt": {
+      "title": "Dimensões de Embalagem, Escopo Padrão e Pedido Misto MOQ 50 FOB Guangzhou | CHIXIANG",
+      "description": "Medidas de caixas de exportação (CG, HW, CB, Horizontais), itens padrão vs confirmados em Fatura Proforma (PI), paletes de 12 unidades e regras MOQ 50 FOB Guangzhou.",
+      "h1": "Embalagem de Exportação, Escopo Padrão & Pedido Misto MOQ 50 (FOB Guangzhou)",
+      "metaLine": "Publicado: Novembro 2026 · Guia Logístico B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Resumo logístico",
+      "verdictHtml": "A CHIXIANG MOTOR exporta motores CG, HW, CB e horizontais com <strong>MOQ de 50 motores completos</strong> em <strong>carga mista com peças de reposição</strong>. Prazo padrão ~<strong>10 dias úteis FOB Guangzhou</strong>, em caixas individuais ou paletes de 12 unidades após bancada 100 %.",
+      "sections": [
+        {
+          "heading": "1. Medidas e pesos verificados de embalagem",
+          "paragraphs": [
+            "Planeje o frete marítimo com base nas dimensões reais do nosso <a href=\"{products}\">catálogo completo</a> e da <a href=\"{cg}\">linha CG / HW</a>:"
+          ],
+          "table": {
+            "headers": ["Série", "Cilindrada", "Dimensões da caixa (C × L × A)", "Volume aprox.", "Peso verificado", "Formato de embalagem"],
+            "rows": [
+              ["CG Ar", "125–250 cc", "380 × 355 × 500 mm (caixa)", "~0,067 m³", "31–32 kg líquido", "Caixa individual ou palete 12 unid."],
+              ["CG Água", "150–250 cc", "425 × 385 × 530 mm (emb.)", "~0,087 m³", "31,2–33 kg emb.", "Caixa individual ou palete 12 unid."],
+              ["HW Água Pesado (HW200–HW350)", "200–350 (classe)", "425 × 385 × 530 mm", "~0,087 m³", "38–40,4 kg líquido", "Caixa individual ou palete 12 unid."],
+              ["CB OHC Ar (CB150–CB250)", "150–250 cc", "385 × 355 × 452 mm", "~0,062 m³", "29–31 kg líquido", "Caixa individual ou palete 12 unid."],
+              ["Horizontal CX152FMH-5B / -6", "110–125 (classe)", "477 × 395 × 280 mm", "~0,053 m³", "19 kg", "Caixa individual ou palete 12 unid."],
+              ["Horizontal CX152FMH-5B (130)", "Série 130", "450 × 280 × 277 mm", "~0,035 m³", "23 kg", "Caixa individual ou palete 12 unid."],
+              ["Horizontal CX1P56FMJ", "Classe 140 cc", "460 × 300 × 260 mm", "~0,036 m³", "21 kg", "Caixa individual ou palete 12 unid."],
+              ["Horizontal CX1P60FMJ", "Classe 150 cc", "435 × 285 × 235 mm", "~0,029 m³", "22 kg", "Caixa individual ou palete 12 unid."]
+            ]
+          },
+          "bullets": [
+            "<strong>Plano de carga calculado por BOM</strong>: Calculamos a ocupação exata de 20GP/40HQ conforme opção caixas vs paletes de 12 unidades, mistura de motores e peso das peças extras."
+          ]
+        },
+        {
+          "heading": "2. Itens inclusos de fábrica vs opcionais confirmados na Proforma (PI)",
+          "table": {
+            "headers": ["Categoria", "Item / Acessório", "Status", "Notas para BOM / PI"],
+            "rows": [
+              ["Escopo padrão", "Conjunto completo do motor", "Incluso por padrão", "Testado conforme cilindrada e câmbio"],
+              ["Escopo padrão", "Bobinas de estator e rotor", "Incluso por padrão", "Montadas internamente na carcaça"],
+              ["Confirmado em BOM / PI", "Pedal de partida e pedal de câmbio", "Definir no BOM", "Estria e formato para moto ou triciclo"],
+              ["Confirmado em BOM / PI", "Coletor de admissão e isolador", "Definir no BOM", "Ângulo e distância dos prisioneiros"],
+              ["Confirmado em BOM / PI", "Carburador (PZ26 / PZ27 / PZ30)", "Definir no BOM", "Medida do venturi e afogador"],
+              ["Confirmado em BOM / PI", "Kit elétrico (CDI, regulador, relé)", "Definir no BOM", "Ignição AC/DC e conectores"],
+              ["Confirmado em BOM / PI", "Formato de embalagem", "Definir no BOM", "Caixas individuais ou paletes de 12 unidades"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Estrutura de pedido misto 50+ unidades & garantia",
+          "bullets": [
+            "<strong>Misture motores e kits de serviço</strong> (<a href=\"{parts}\">peças de reposição</a>) mantendo o mínimo de 50 motores completos.",
+            "<strong>Bancada 100 % & prazo</strong>: ~10 dias úteis FOB Guangzhou (<a href=\"{evidence}\">Evidências</a>) e garantia de 60 dias pós-chegada."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Conformidade de embarque Angola & Moçambique (CNCA / ARCCLA)",
+        "items": [
+          "Entregamos fatura, packing list e lista completa de números de série gravados para que o importador/despachante emita o certificado <strong>CNCA (ARCCLA)</strong> sem atrasos."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Posso misturar diferentes séries e peças para fechar o MOQ de 50 unidades?",
+          "a": "Sim, o MOQ de 50 motores completos permite combinar todas as séries e incluir peças e kits."
+        },
+        {
+          "q": "Por que não há um número fixo único para contêiner 20GP ou 40HQ?",
+          "a": "Varia conforme caixas soltas vs paletes de 12 unidades, mistura entre horizontais leves e HW pesados, volume de peças e limite de peso rodoviário."
+        },
+        {
+          "q": "Carburadores (PZ26/PZ27/PZ30) e kits CDI vêm sempre inclusos?",
+          "a": "Não. O padrão inclui motor completo e estator/rotor interno; pedais, coletor, carburador e kit CDI são confirmados em BOM e Fatura Proforma."
+        },
+        {
+          "q": "Melhor escolher caixas individuais ou paletes de 12 unidades?",
+          "a": "Caixas individuais maximizam volume e descarga manual; paletes de 12 unidades agilizam movimentação com empilhadeira."
+        },
+        {
+          "q": "Qual o prazo padrão, porto e garantia?",
+          "a": "~10 dias úteis FOB Guangzhou e garantia de 60 dias após chegada mediante número de série e foto/vídeo."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar cálculo de contêiner por BOM e Fatura Proforma",
+        "body": "Envie seu mix de motores, preferência caixa vs palete, acessórios e porto de destino.",
+        "primaryBtn": "Solicitar cálculo FOB",
+        "secondaryBtn": "Centro de Evidências"
+      }
+    },
+    "ru": {
+      "title": "Габариты экспортной тары, комплектация и смешанный заказ MOQ 50 FOB Гуанчжоу | CHIXIANG",
+      "description": "Размеры коробов по всем сериям (CG, HW, CB, горизонтальные), базовая комплектация против заказа по PI, паллеты по 12 шт. и условия MOQ 50 FOB Гуанчжоу.",
+      "h1": "Габариты экспортной упаковки, базовая комплектация и смешанный заказ MOQ 50 (FOB Гуанчжоу)",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Логистический гид B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Главное по логистике",
+      "verdictHtml": "CHIXIANG MOTOR отгружает моторы CG, HW, CB и горизонтальной серии с <strong>MOQ 50 комплектных двигателей</strong> в <strong>смешанном контейнере с запчастями</strong>. Стандартный срок ~<strong>10 рабочих дней FOB Гуанчжоу</strong> в индивидуальных коробах или на экспортных паллетах по 12 штук после 100 % стендовой обкатки.",
+      "sections": [
+        {
+          "heading": "1. Проверенные габариты и вес упаковки по сериям",
+          "paragraphs": [
+            "Точные размеры и масса тары для расчёта логистики по всему <a href=\"{products}\">каталогу</a> и <a href=\"{cg}\">линейке CG / HW</a>:"
+          ],
+          "table": {
+            "headers": ["Серия двигателя", "Объём", "Размеры короба (Д × Ш × В)", "Расчётный объём", "Вес", "Формат упаковки"],
+            "rows": [
+              ["CG Воздушный", "125–250 см³", "380 × 355 × 500 мм (короб)", "~0,067 м³", "31–32 кг нетто", "Короб или паллет 12 шт."],
+              ["CG Водяной (CG150SB–CG250SB)", "150–250 см³", "425 × 385 × 530 мм (уп.)", "~0,087 м³", "31,2–33 кг брутто", "Короб или паллет 12 шт."],
+              ["HW Вода Тяжёлая (HW200–HW350)", "200–350 (класс)", "425 × 385 × 530 мм", "~0,087 м³", "38–40,4 кг нетто", "Короб или паллет 12 шт."],
+              ["CB OHC Воздушный (CB150–CB250)", "150–250 см³", "385 × 355 × 452 мм", "~0,062 м³", "29–31 кг нетто", "Короб или паллет 12 шт."],
+              ["Горизонтальный CX152FMH-5B / -6", "110–125 (класс)", "477 × 395 × 280 мм", "~0,053 м³", "19 кг", "Короб или паллет 12 шт."],
+              ["Горизонтальный CX152FMH-5B (130)", "Серия 130", "450 × 280 × 277 мм", "~0,035 м³", "23 кг", "Короб или паллет 12 шт."],
+              ["Горизонтальный CX1P56FMJ", "Класс 140 см³", "460 × 300 × 260 мм", "~0,036 м³", "21 кг", "Короб или паллет 12 шт."],
+              ["Горизонтальный CX1P60FMJ", "Класс 150 см³", "435 × 285 × 235 мм", "~0,029 м³", "22 кг", "Короб или паллет 12 шт."]
+            ]
+          },
+          "bullets": [
+            "<strong>Расчёт 20GP / 40HQ по спецификации BOM</strong>: Мы рассчитываем точную загрузку под ваш состав моделей, выбор коробов или паллет по 12 шт., объём запчастей и весовые ограничения маршрута."
+          ]
+        },
+        {
+          "heading": "2. Базовый комплект против позиций по спецификации (BOM / PI)",
+          "table": {
+            "headers": ["Категория", "Узел / комплектация", "Статус", "Уточнение в PI"],
+            "rows": [
+              ["Базовый объём", "Двигатель в сборе", "Включено по умолчанию", "Соответствует заказанной кубатуре и КПП"],
+              ["Базовый объём", "Заводские катушки статора и ротора", "Включено по умолчанию", "Установлены в картере"],
+              ["По BOM / PI", "Лапка кикстартера и лапка КПП", "Указывается в BOM", "Шлиц и исполнение под мото или трицикл"],
+              ["По BOM / PI", "Впускной патрубок и проставка", "Указывается в BOM", "Угол и крепление под карбюратор"],
+              ["По BOM / PI", "Карбюратор (PZ26 / PZ27 / PZ30)", "Указывается в BOM", "Диаметр диффузора и привод обогатителя"],
+              ["По BOM / PI", "Электрика (CDI, реле-регулятор, реле стартера)", "Указывается в BOM", "AC/DC зажигание и разъёмы"],
+              ["По BOM / PI", "Экспортная тара", "Указывается в BOM", "Индивидуальные короба или паллеты 12 шт."]
+            ]
+          }
+        },
+        {
+          "heading": "3. Смешанная партия 50+ и подтверждение качества",
+          "bullets": [
+            "<strong>Микс моторов и запчастей</strong> (<a href=\"{parts}\">каталог ЦПГ/ГБЦ/КШМ</a>) при заказе от 50 комплектных двигателей.",
+            "<strong>Сроки и гарантия</strong>: ~10 раб. дней FOB Гуанчжоу, 100 % стенд (<a href=\"{evidence}\">Доказательства</a>) и гарантия 60 дней."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Оформление под требования ЕАЭС / СНГ",
+        "items": [
+          "К отгрузке передаются слитые и опечатанные моторы, коммерческий инвойс, упаковочный лист и полный реестр выбитых серийных номеров картера."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "Можно ли комбинировать разные серии и запчасти в рамках MOQ 50?",
+          "a": "Да. Минимальный заказ — 50 комплектных двигателей в любом сочетании серий CG, HW, CB, горизонтальных и Bajaj/TVS с добавлением запчастей."
+        },
+        {
+          "q": "Почему нет единой жёсткой цифры штук на 20GP или 40HQ?",
+          "a": "Вместимость зависит от выбора коробов или паллет по 12 шт., доли тяжёлых HW, объёма запчастей и дорожных весовых лимитов."
+        },
+        {
+          "q": "Идут ли карбюраторы (PZ26/PZ27/PZ30) и CDI в комплекте с каждым мотором по умолчанию?",
+          "a": "Нет. В базу входят сам двигатель в сборе и внутренний статор/ротор; лапки, патрубок, карбюратор и комплект CDI/реле прописываются в BOM и PI."
+        },
+        {
+          "q": "Что выбрать: индивидуальные короба или паллеты по 12 штук?",
+          "a": "Индивидуальные короба дают максимальную загрузку и удобны для ручной выгрузки; паллеты по 12 шт. ускоряют работу погрузчиком."
+        },
+        {
+          "q": "Каковы сроки, базовый порт и гарантийная процедура?",
+          "a": "~10 рабочих дней FOB Гуанчжоу; по 60-дневной гарантии после порта достаточно серийного номера и фото/видео для бесплатной отправки деталей со следующим контейнером."
+        }
+      ],
+      "ctaCard": {
+        "title": "Получить расчёт загрузки по BOM и инвойс FOB Гуанчжоу",
+        "body": "Отправьте планируемый микс моделей, формат упаковки, список комплектующих и порт назначения.",
+        "primaryBtn": "Запросить расчёт логистики",
+        "secondaryBtn": "Центр доказательств"
+      }
+    },
+    "ar": {
+      "title": "أبعاد التعبئة القياسية ونطاق الملحقات وطلب MOQ 50 المختلط FOB قوانغتشو | CHIXIANG",
+      "description": "مقاسات كراتين التصدير المعتمدة (CG و HW و CB والأفقية)، الملحقات الأساسية مقابل بنود الفاتورة المبدئية (PI)، الطبليات بـ 12 وحدة وشروط MOQ 50 FOB قوانغتشو.",
+      "h1": "أبعاد التعبئة للتصدير ونطاق الملحقات ودليل الطلب المختلط MOQ 50 (FOB قوانغتشو)",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل اللوجستيات B2B — CHIXIANG MOTOR",
+      "verdictLabel": "الخلاصة اللوجستية",
+      "verdictHtml": "تصدّر CHIXIANG محركات CG و HW و CB والأفقية بحد أدنى <strong>50 محركاً كاملاً</strong> في <strong>حاوية مختلطة مع قطع الغيار</strong>، بزمن تجهيز ~<strong>10 أيام عمل FOB قوانغتشو</strong> داخل كراتين منفردة أو طبليات بـ 12 وحدة بعد الاختبار 100%.",
+      "sections": [
+        {
+          "heading": "1. أبعاد الكراتين والأوزان المعتمدة لكل فئة",
+          "paragraphs": [
+            "احسب الشحن البحري وفق المقاسات الموثقة في <a href=\"{products}\">الكتالوج الكامل</a> و<a href=\"{cg}\">فئة CG / HW</a>:"
+          ],
+          "table": {
+            "headers": ["فئة المحرك", "السعة", "أبعاد الصندوق (طول × عرض × ارتفاع)", "الحجم التقريبي", "الوزن المعتمد", "خيار التعبئة"],
+            "rows": [
+              ["CG تبريد هواء", "125–250 سي سي", "380 × 355 × 500 مم (كرتون)", "~0.067 م³", "31–32 كجم صافي", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["CG تبريد ماء (CG150SB–CG250SB)", "150–250 سي سي", "425 × 385 × 530 مم (عبوة)", "~0.087 م³", "31.2–33 كجم عبوة", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["HW تبريد ماء ثقيل (HW200–HW350)", "200–350 (فئة)", "425 × 385 × 530 مم", "~0.087 م³", "38–40.4 كجم صافي", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["CB كاتينة (CB150–CB250)", "150–250 سي سي", "385 × 355 × 452 مم", "~0.062 م³", "29–31 كجم صافي", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["أفقي CX152FMH-5B / -6", "110–125 (فئة)", "477 × 395 × 280 مم", "~0.053 م³", "19 كجم", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["أفقي CX152FMH-5B (130)", "فئة 130", "450 × 280 × 277 مم", "~0.035 م³", "23 كجم", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["أفقي CX1P56FMJ", "فئة 140", "460 × 300 × 260 مم", "~0.036 م³", "21 كجم", "كرتون منفرد أو طبلية 12 وحدة"],
+              ["أفقي CX1P60FMJ", "فئة 150", "435 × 285 × 235 مم", "~0.029 م³", "22 كجم", "كرتون منفرد أو طبلية 12 وحدة"]
+            ]
+          },
+          "bullets": [
+            "<strong>حساب سعة الحاوية 20GP / 40HQ حسب فاتورة الطلب</strong>: يعتمد العدد الفعلي على اختيار الكراتين مقابل طبليات الـ 12 وحدة ونسبة محركات HW الثقيلة وحجم قطع الغيار."
+          ]
+        },
+        {
+          "heading": "2. الملحقات القياسية مقابل بنود الطلب في الفاتورة المبدئية (PI)",
+          "table": {
+            "headers": ["الفئة", "البند / الملحق", "الحالة التجارية", "ملاحظات BOM / PI"],
+            "rows": [
+              ["قياسي افتراضياً", "المحرك الكامل المجمع", "مشمول افتراضياً", "مختبر حسب السعة والجير المطلوب"],
+              ["قياسي افتراضياً", "ملفات الستاتور والروتور الداخلية", "مشمول افتراضياً", "مركبة داخل الكارتيرة"],
+              ["حسب BOM / PI", "دواسة المنافيلا وعصا الغيارات", "يُحدد في BOM", "شكل المشرشر ونمط الدراجة أو التروسيكل"],
+              ["حسب BOM / PI", "كوع السحب والعازل", "يُحدد في BOM", "زاوية السحب وتثبيت الكاربوراتير"],
+              ["حسب BOM / PI", "الكاربوراتير (PZ26 / PZ27 / PZ30)", "يُحدد في BOM", "مقاس الفتحة ونظام الشفاط"],
+              ["حسب BOM / PI", "طقم الكهرباء (CDI، منظم، ريليه)", "يُحدد في BOM", "توافق AC/DC وفيش الضفيرة"],
+              ["حسب BOM / PI", "أسلوب التعبئة", "يُحدد في BOM", "كراتين منفردة أو طبليات 12 وحدة"]
+            ]
+          }
+        },
+        {
+          "heading": "3. تنسيق طلبية مختلطة 50+ وحدة والضمان",
+          "bullets": [
+            "<strong>دمج المحركات مع قطع الصيانة</strong> (<a href=\"{parts}\">دليل القطع</a>) ضمن حد أدنى 50 محركاً كاملاً.",
+            "<strong>التنفيذ والضمان</strong>: ~10 أيام عمل FOB قوانغتشو بعد فحص 100% (<a href=\"{evidence}\">الأدلة</a>) مع ضمان 60 يوماً."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "تجهيز الشحنات لمتطلبات ACI / ACID و CargoX",
+        "items": [
+          "نوفر الفاتورة التجارية وقائمة التعبئة وكشف الأرقام التسلسلية كاملة لتمكين المستورد من ربط رقم <strong>ACID</strong> واستلام المستندات إلكترونياً عبر منصة <strong>CargoX</strong> قبل إبحار الشحنة."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "هل يمكن خلط عدة فئات وقطع غيار للوصول إلى حد الـ 50 محركاً؟",
+          "a": "نعم، يشمل الحد الأدنى 50 محركاً كاملاً مع إمكانية دمج فئات CG و HW و CB والأفقية وبدائل باجاج و TVS وقطع الغيار."
+        },
+        {
+          "q": "لماذا لا يُذكر رقم ثابت وحيد لعدد المحركات في حاوية 20GP أو 40HQ؟",
+          "a": "يختلف العدد باختلاف التعبئة (كراتين أم طبليات 12 وحدة) ونسبة الموديلات الثقيلة وكمية قطع الغيار وحدود الأوزان في ميناء الوصول."
+        },
+        {
+          "q": "هل الكاربوراتيرات (PZ26/PZ27/PZ30) وأطقم CDI مشمولة دائماً تلقائياً؟",
+          "a": "لا. يشمل السعر الأساسي المحرك الكامل والستاتور/الروتور الداخلي، بينما تُدرج المنافيلا والكوع والكاربوراتير وطقم CDI صراحةً في الفاتورة المبدئية."
+        },
+        {
+          "q": "أيهما أفضل: الكراتين المنفردة أم طبليات التصدير بـ 12 وحدة؟",
+          "a": "الكراتين المنفردة تستغل حجم الحاوية وتسهّل التفريغ اليدوي؛ والطبليات بـ 12 وحدة تسرّع المناولة بالرافعة الشوكية في الميناء والمستودع."
+        },
+        {
+          "q": "ما هي مدة التجهيز والميناء الافتراضي وخطوات الضمان؟",
+          "a": "~10 أيام عمل FOB قوانغتشو، وضمان 60 يوماً بعد الوصول عبر الرقم التسلسلي والصور أو الفيديو مع شحن البديل مجاناً في الحاوية التالية."
+        }
+      ],
+      "ctaCard": {
+        "title": "اطلب حساب تحميل الحاوية وفاتورة مبدئية FOB قوانغتشو",
+        "body": "أرسل تشكيلة الموديلات المطلوبة وتفضيل التعبئة والملحقات وميناء الوصول.",
+        "primaryBtn": "اطلب عرض سعر لوجستي",
+        "secondaryBtn": "مركز الأدلة"
+      }
+    }
+  }
+}

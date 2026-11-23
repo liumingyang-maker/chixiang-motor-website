@@ -1,0 +1,1584 @@
+{
+  "fr": {
+    "home": {
+      "title": "Fabricant de moteurs moto CG, CB et tricycles | CHIXIANG",
+      "description": "Moteurs CG à tiges de culbuteurs, CB à chaîne, horizontaux (Jakarta / Cub), quad AC320, tricycles HW300 à eau et moteurs/pièces adaptables Bajaj & TVS. Vente en gros dès 50 unités, FOB Guangzhou.",
+      "eyebrow": "CHIXIANG MOTOR · Usine Chongqing (expérience depuis 2003)",
+      "h1": "Fabricant de moteurs pour motos et tricycles cargo en Chine",
+      "lead": "Usine de Chongqing spécialisée dans les moteurs complets CG refroidis par air/eau, CB à distribution par chaîne, moteurs horizontaux 110–150 cm³ (applications Jakarta / Cub compatibles), tricycles cargo HW200–HW350 à refroidissement liquide (eau) et moteurs/pièces adaptables Bajaj Boxer & TVS HLX. Test au banc chaud/froid à 100 %, commande mixte de plusieurs modèles dès 50 unités FOB Guangzhou.",
+      "ctaPrimary": "Découvrir tout le catalogue",
+      "ctaSecondary": "Demander un devis FOB Guangzhou",
+      "ctaWa": "WhatsApp Export",
+      "trustItems": [
+        ["Depuis 2003", "Expérience industrielle moteur depuis 2003 · Société enregistrée en 2007 à Chongqing"],
+        ["10 000+ / mois", "Capacité de production mensuelle standardisée pour lots distributeurs"],
+        ["Banc 100 %", "Test au banc à chaud et à froid à 100 % avant expédition + double laboratoire"],
+        ["MOQ 50 & Mix", "Commande mixte de plusieurs modèles et pièces détachées dans un même conteneur"]
+      ],
+      "matrixHeading": "Gamme complète Afrique francophone — moteurs complets & pièces détachées",
+      "matrixSub": "Sélectionnez votre famille technique ou accédez directement aux modèles phares pour moto-taxis, tricycles cargo et ateliers de maintenance.",
+      "cards": [
+        {
+          "role": "cg",
+          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "badge": "Best-seller Afrique · Tiges de culbuteurs",
+          "title": "Moteurs CG125 à CG250 (Air & Eau)",
+          "desc": "Moteurs complets à tiges de culbuteurs (CG125, CG150, CG200 10 kW / 13,5 N·m, CG250SB) et gammes tricycles à eau HW200–HW350 avec arbre d'équilibrage et démarreur électrique / au kick.",
+          "links": [
+            ["Voir toute la gamme CG", "cg"],
+            ["CG200 Air (CX163FML)", "cg200-air-cooled-engine"],
+            ["HW300 Tricycle à Eau", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "cb",
+          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "badge": "Distribution par chaîne (OHC)",
+          "title": "Moteurs CB 125 à 250 cm³ (OHC)",
+          "desc": "Moteur CB à arbre à cames en tête (distribution par chaîne) pour motos routières, utilitaires et tout-terrain à régime soutenu et vibrations réduites.",
+          "links": [
+            ["Voir les moteurs CB OHC", "cb"]
+          ]
+        },
+        {
+          "role": "horizontal",
+          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "badge": "Cub & Jakarta compatibles",
+          "title": "Moteurs Horizontaux 110–150 cm³",
+          "desc": "Moteurs horizontaux pour motos de type Cub et applications Jakarta compatibles : CX152FMH-5B (106,7 ml), CX152FMH-5B (130) (123,67 ml), CX1P56FMJ (140 ml) et CX1P60FMJ (149,8 ml).",
+          "links": [
+            ["Voir la gamme Horizontale", "horizontal"]
+          ]
+        },
+        {
+          "role": "btv-hub",
+          "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+          "badge": "Flottes moto-taxis & 3 roues",
+          "title": "Moteurs & Pièces Adaptables Bajaj / TVS",
+          "desc": "Moteurs complets et pièces de rechange adaptables (culasse complète, kit cylindre-piston, vilebrequin, demi-carters, pochettes de joints) pour Bajaj Boxer BM150, CT100, RE 4S et TVS HLX 125/150 & King 200.",
+          "links": [
+            ["Catalogue & Réf. OEM", "btv-hub"],
+            ["Fiche Bajaj Boxer BM150", "bajaj-boxer-bm150-complete-engine"]
+          ]
+        },
+        {
+          "role": "hw-series",
+          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "badge": "Tricycle cargo 250/300cc à eau",
+          "title": "Kits de Réfection & Pièces HW200–HW350",
+          "desc": "Kit de réfection moteur refroidi par eau, culasse, kit cylindre-piston, pompe à eau, boîte de marche arrière et ~80 % de pièces communes HW250 / HW300 (275,3 mL réels).",
+          "links": [
+            ["Catalogue pièces HW", "hw-series"],
+            ["Fiche HW300 complète", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "ac320",
+          "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+          "badge": "CVT L-H-N-R + Marche arrière",
+          "title": "Moteur Quad / UTV AC320 (287,2 cc)",
+          "desc": "Moteur monocylindre 4 temps refroidi par liquide (75 × 65 mm, 287,2 cc réels) avec transmission automatique CVT, marche arrière intégrée et embrayage centrifuge 5 mâchoires.",
+          "links": [
+            ["Spécifications AC320", "ac320"]
+          ]
+        }
+      ],
+      "spotlightHeading": "Modèles phares les plus importés en Afrique de l'Ouest & Centrale",
+      "spotlights": [
+        {
+          "role": "hw300-water-cooled-engine",
+          "title": "HW300 Tricycle Cargo Refroidi par Eau (275,3 mL)",
+          "desc": "Classe commerciale 300cc (cylindrée réelle 275,3 mL) · 12,5 kW · 21 N·m · Carter d'huile 1,5 L · Roue libre 20 rouleaux · 5 vitesses avant + marche arrière externe."
+        },
+        {
+          "role": "cg200-air-cooled-engine",
+          "title": "CG200 Refroidi par Air (CX163FML — 197,0 cc)",
+          "desc": "10 kW @ 7 500 tr/min · 13,5 N·m @ 6 500 tr/min · Tiges de culbuteurs · Option arbre d'équilibrage pour motos utilitaires et tricycles légers."
+        },
+        {
+          "role": "cg150-air-cooled-engine",
+          "title": "CG150 Classique & Moto-Taxi (149,5 cc)",
+          "desc": "Architecture à tiges de culbuteurs robuste, entretien atelier simplifié et pièces standardisées disponibles en conteneur mixte."
+        },
+        {
+          "role": "bajaj-boxer-bm150-complete-engine",
+          "title": "Bajaj Boxer BM150 Adaptable (144,8 cc)",
+          "desc": "Moteur complet de remplacement 4 ou 5 vitesses + demi-carters moteur gauche/droite (36PF0004/36PF0005), kit cylindre-piston et pochettes de joints."
+        }
+      ],
+      "exportHeading": "Conditions export Afrique (Abidjan · Douala · Cotonou · Dakar)",
+      "exportCards": [
+        ["MOQ 50 & Commande Mixte", "Dès 50 moteurs complets en commande mixte de plusieurs modèles : moteurs complets et pièces détachées dans un même conteneur pour optimiser votre trésorerie."],
+        ["FOB Guangzhou & Ports Afrique", "FOB Guangzhou par défaut (~10 jours ouvrables pour configurations courantes) ; expédition vers Abidjan, Douala, Cotonou, Dakar ou transit pays enclavés (Mali, Burkina, Niger, Tchad)."],
+        ["Documents & Bordereau BSC / BESC", "Facture commerciale, liste de colisage et relevé complet des numéros de série moteur gravés fournis. Le suivi BSC / BESC est coordonné par l'importateur et son transitaire avec nos documents d'usine."],
+        ["Preuves Labo & Garantie 60 Jours", "Test au banc chaud/froid à 100 % et double laboratoire (dynamomètre / gaz / métallurgie). Garantie 60 jours après arrivée au port sur pièces validées par numéro de série et photos/vidéos."]
+      ]
+    },
+    "products": {
+      "title": "Catalogue complet moteurs moto, tricycles & pièces | CHIXIANG MOTOR",
+      "description": "Gammes complètes : moteurs CG125–CG250, CB OHC, moteurs horizontaux 110–150 cm³ (Cub/Jakarta), quad AC320, tricycles à eau HW200–HW350 et moteurs/pièces adaptables Bajaj & TVS.",
+      "h1": "Catalogue complet de moteurs et pièces de rechange CHIXIANG",
+      "lead": "Toutes nos familles de moteurs complets et pièces détachées sont préparées à Chongqing avec commande mixte dès 50 unités FOB Guangzhou et test au banc chaud/froid à 100 %.",
+      "cta": "Voir la fiche / gamme →",
+      "sections": [
+        {
+          "id": "families",
+          "title": "6 lignes principales d'usine",
+          "cards": [
+            {
+              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "badge": "CG125 – CG250 & Eau",
+              "title": "Moteurs CG à tiges de culbuteurs & Tricycles à eau",
+              "desc": "CG125, CG150, CG200 (10 kW / 13,5 N·m), CG250, CG150SB–CG250SB et série lourde HW200–HW350 (dont HW300 275,3 mL) avec option marche arrière.",
+              "role": "cg"
+            },
+            {
+              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "badge": "CB125 – CB250 OHC",
+              "title": "Moteurs CB à arbre à cames en tête (chaîne)",
+              "desc": "Distribution par chaîne silencieuse, arbres d'équilibrage et prise de régime fluide pour motos routières et tout-terrain.",
+              "role": "cb"
+            },
+            {
+              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "badge": "Cub & Jakarta 107–150",
+              "title": "Moteurs Horizontaux (CX152FMH-5B à CX1P60FMJ)",
+              "desc": "Pour motos de type Cub et applications Jakarta compatibles : 106,7 ml, 107 ml, 123,67 ml (série 130), 140 ml et 149,8 ml.",
+              "role": "horizontal"
+            },
+            {
+              "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+              "badge": "287,2 cc · CVT + Marche arrière",
+              "title": "Moteur Quad / UTV AC320 (175MN)",
+              "desc": "Refroidissement liquide (eau), 75 × 65 mm, variateur CVT L-H-N-R avec marche arrière intégrée et embrayage centrifuge 5 mâchoires.",
+              "role": "ac320"
+            },
+            {
+              "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+              "badge": "Boxer / RE 4S / HLX / King",
+              "title": "Moteurs complets & pièces adaptables Bajaj / TVS",
+              "desc": "Moteurs complets et pièces de rechange adaptables (demi-carters, culasse complète, kit cylindre-piston, vilebrequin, pochettes de joints) aux cotes OEM.",
+              "role": "btv-hub"
+            },
+            {
+              "img": "/images/parts.webp",
+              "badge": "Série HW & Composants OEM",
+              "title": "Pièces moteur & kits de réfection HW200–HW350",
+              "desc": "Sous-ensembles d'origine CHIXIANG pour révision complète de moteurs refroidis par eau, carters ADC12 et pignons de transmission.",
+              "role": "hw-series"
+            }
+          ]
+        },
+        {
+          "id": "flagships",
+          "title": "Fiches techniques modèles phares & remplacement direct",
+          "cards": [
+            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275,3 mL réels", "title": "HW300 Tricycle à Eau", "desc": "12,5 kW · 21 N·m · Carter 1,5 L · Roue libre 20 rouleaux · 5F + marche arrière externe.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246,3 mL", "title": "CG250SB Refroidi par Eau", "desc": "11,5 kW · 19,5 N·m · Plateforme CG refroidissement liquide pour tricycle standard.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197,0 cc · 10 kW", "title": "CG200 Refroidi par Air (CX163FML)", "desc": "10 kW @ 7 500 tr/min · 13,5 N·m @ 6 500 tr/min · Moto utilitaire et cargo léger.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149,5 cc", "title": "CG150 Air (Moto-Taxi)", "desc": "Tiges de culbuteurs éprouvées, maintenance atelier facile et haute rotation de pièces.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144,8 cc · 4/5 Vit.", "title": "Bajaj Boxer BM150 Adaptable", "desc": "Moteur complet adaptable + carters 36PF0004/36PF0005 et kit réfection atelier.", "role": "bajaj-boxer-bm150-complete-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198,88 cc · 4F+1R", "title": "Bajaj RE 4S 200 Tricycle Adaptable", "desc": "Refroidissement par air forcé, marche arrière 4F+1R et pièces de carter associées.", "role": "bajaj-re-4s-200-complete-engine" }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "title": "À propos de CHIXIANG MOTOR | Usine Chongqing depuis 2003",
+      "description": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. : expérience moteur depuis 2003, enregistrée en 2007 à Chongqing. Capacité 10 000+ unités/mois, banc d'essai 100 %.",
+      "h1": "Usine CHIXIANG MOTOR — Fabrication de moteurs à Chongqing",
+      "lead": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. conçoit et assemble des moteurs de motos et tricycles cargo pour l'exportation B2B en Afrique, Amérique latine et Asie centrale.",
+      "blocks": [
+        ["Historique & Implantation", "Expérience industrielle moteur depuis 2003 et entité juridique enregistrée à Chongqing en 2007. Usine située au No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, Chine."],
+        ["Capacité 10 000+ unités/mois", "Lignes d'assemblage dédiées aux gammes CG à tiges de culbuteurs, CB à distribution par chaîne, moteurs horizontaux de type Cub, tricycles lourds à eau HW et moteurs/carters adaptables Bajaj & TVS."],
+        ["Double Laboratoire & Contrôle 100 %", "Deux laboratoires d'essais équipés de bancs dynamométriques à courants de Foucault, d'analyseurs de gaz d'échappement et de contrôle métallurgique. Chaque moteur subit un test au banc à chaud et à froid à 100 % avant emballage."],
+        ["Logistique Export & Traçabilité", "Chaque moteur est gravé et répertorié par numéro de série sur les listes d'expédition. Les documents d'exportation et la logistique sont exécutés via la division export désignée de Chixiang, sous terme FOB Guangzhou par défaut."]
+      ]
+    },
+    "news": {
+      "title": "Guides d'importation & fiches techniques Afrique | CHIXIANG MOTOR",
+      "description": "8 guides techniques et commerciaux pour importateurs et grossistes en Afrique francophone : CG vs CB, tricycle HW300 à eau, horizontaux 110–150, Bajaj Boxer & TVS HLX, QA Chongqing, MOQ 50 FOB Guangzhou et BSC/BESC.",
+      "h1": "Guides techniques & logistiques pour importateurs en Afrique",
+      "lead": "Références techniques vérifiées pour choisir les bonnes configurations moteur, consolider vos conteneurs mixtes et sécuriser le dédouanement à Abidjan (Adjamé), Douala (Akwa), Cotonou (Dantokpa) et Dakar.",
+      "ctaCard": "Lire le guide complet →",
+      "guides": [
+        {
+          "tag": "Comparatif CG vs CB",
+          "title": "Moteur CG à tiges de culbuteurs vs CB à chaîne (OHC) 125–250 cm³",
+          "body": "Comparatif atelier et fiche technique (124–229,5 cc vs 149–223 cc) : couple à bas régime, facilité de réfection sur motos-taxis vs compacité et rendement OHC des gammes CB.",
+          "role": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison"
+        },
+        {
+          "tag": "Tricycle cargo à eau",
+          "title": "HW250 & HW300 (275,3 mL réels) vs CG250SB : sélection & ~80 % de pièces communes",
+          "body": "Pourquoi le HW250 pèse 5,2 kg de plus que le CG250SB (carter 1,5 L, roue libre 20 rouleaux, ailettes cylindre, boîte 5 vitesses avant pour marche arrière externe) et comment mutualiser les kits de réfection.",
+          "role": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine"
+        },
+        {
+          "tag": "Air vs Refroidissement liquide",
+          "title": "Moteur refroidi par air ou refroidi par eau : que choisir selon l'usage ?",
+          "body": "Arbitrage coût d'achat, entretien atelier de brousse et stabilité thermique sous forte chaleur pour motos utilitaires et tricycles moto-cargo.",
+          "role": "air-cooled-vs-water-cooled-motorcycle-engine"
+        },
+        {
+          "tag": "Bajaj Boxer & TVS HLX / King",
+          "title": "Moteurs & pièces adaptables Bajaj / TVS : liste de contrôle OEM avant commande",
+          "body": "Matrice Boxer CT100/BM100, BM150 (36PF0004/36PF0005), Bajaj RE 4S et TVS HLX 150 / King 200 : pignon de sortie, faisceau, marche arrière 4F+1R et conteneur mixte.",
+          "role": "bajaj-tvs-replacement-engine-fitment-checklist"
+        },
+        {
+          "tag": "Horizontaux Cub & Jakarta",
+          "title": "Moteurs horizontaux 110–150 cm³ (CX152FMH, CX1P56FMJ & CX1P60FMJ)",
+          "body": "Cylindrées réelles (106,7 à 149,8 ml), repères marché, embrayage automatique/manuel, démarreur haut/bas et circuit d'huile interne en culasse sur CX1P60FMJ.",
+          "role": "horizontal-motorcycle-engine-110cc-150cc-selection-guide"
+        },
+        {
+          "tag": "Qualité usine & Garantie 60 j",
+          "title": "Comment vérifier la qualité des moteurs à Chongqing : banc 100 %, labo & garantie",
+          "body": "Contrôle métallurgique entrant, test au banc chaud/froid à 100 %, double laboratoire dynamométrique, dossiers publics vérifiables et protocole garantie 60 jours après arrivée.",
+          "role": "chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty"
+        },
+        {
+          "tag": "Emballage & MOQ 50 Mixte",
+          "title": "Dimensions caisses export, périmètre standard & conteneur mixte MOQ 50 FOB Guangzhou",
+          "body": "Cotes exactes des cartons CG/HW/CB/Horizontaux, pièces incluses vs confirmées sur PI, palettes de 12 unités, liste des numéros de série et coordination BESC/BSC.",
+          "role": "motorcycle-engine-export-packaging-moq-50-mixed-loading-guide"
+        },
+        {
+          "tag": "Audit fournisseur Chine",
+          "title": "Comment choisir un fabricant de moteurs moto fiable en Chine",
+          "body": "8 critères pour distinguer une vraie usine de Chongqing d'un simple intermédiaire : expérience depuis 2003, lignes multiples, contrôle qualité par lot et suivi pièces détachées.",
+          "role": "how-to-choose-motorcycle-engine-manufacturer-china"
+        }
+      ]
+    },
+    "cbShell": {
+      "title": "Moteurs CB 125–250 cm³ (distribution par chaîne OHC) | CHIXIANG",
+      "description": "Moteur CB à arbre à cames en tête (distribution par chaîne) de 125 à 250 cm³ avec arbre d'équilibrage optionnel pour motos routières et tout-terrain. MOQ 50, FOB Guangzhou.",
+      "h1": "Moteurs CB à arbre à cames en tête (distribution par chaîne)"
+    },
+    "partsShell": {
+      "title": "Pièces détachées moteur moto & kits de réfection | CHIXIANG",
+      "description": "Pièces de rechange moteur OEM-grade : demi-carters, culasse complète, kit cylindre-piston, vilebrequin, embrayage, kits HW200–HW350 et références adaptables Bajaj / TVS.",
+      "h1": "Pièces détachées moteur & kits d'entretien en conteneur mixte"
+    }
+  },
+  "es": {
+    "home": {
+      "title": "Fabricante de motores para motocicletas y triciclos cargueros | CHIXIANG MOTOR",
+      "description": "Motores varilleros CG, cadenilleros CB (OHC), horizontales 110–150 cc, ATV AC320, cargueros HW300 enfriados por agua y reemplazos Bajaj & TVS. Mayoreo MOQ 50 FOB Guangzhou.",
+      "eyebrow": "CHIXIANG MOTOR · Fábrica Chongqing (23+ años de fabricación desde 2003)",
+      "h1": "Fabricante de motores para motocicletas y triciclos de carga en China",
+      "lead": "Fábrica directa en Chongqing especializada en motores varilleros CG (aire y agua), cadenilleros CB con cadena de distribución (OHC), horizontales 110–150 cc, cargueros pesados HW200–HW350 enfriados por agua y reemplazos equivalentes para Bajaj Boxer, Torito RE 4S y TVS HLX/King. Prueba 100 % en banco frío/caliente y contenedor mixto desde 50 unidades FOB Guangzhou.",
+      "ctaPrimary": "Ver catálogo completo",
+      "ctaSecondary": "Solicitar cotización FOB Guangzhou",
+      "ctaWa": "WhatsApp Exportación",
+      "trustItems": [
+        ["23+ años de fabricación", "Experiencia industrial desde 2003 · Empresa registrada en 2007 en Chongqing"],
+        ["10,000+ / mes", "Capacidad mensual estandarizada para distribuidores y ensambladoras"],
+        ["Banco 100 %", "Prueba al 100 % en banco frío y caliente antes de embarque + doble laboratorio"],
+        ["MOQ 50 Mixto", "Mezcle modelos completos y repuestos críticos en el mismo contenedor"]
+      ],
+      "matrixHeading": "Línea completa Latinoamérica — motores varilleros, cadenilleros, cargueros y reemplazos",
+      "matrixSub": "Seleccione su arquitectura o revise directamente las fichas de modelos líderes en Perú, Colombia, Ecuador y Centroamérica.",
+      "cards": [
+        {
+          "role": "cg",
+          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "badge": "Motor Varillero OHV · Aire y Agua",
+          "title": "Motores CG125 a CG250 y Cargueros HW",
+          "desc": "Motores varilleros (CG125, CG150, CG200 10 kW / 13.5 N·m, CG250SB) y cargueros pesados HW200–HW350 con opción de eje balanceador y caja externa.",
+          "links": [
+            ["Ver línea CG completa", "cg"],
+            ["CG200 Aire (CX163FML)", "cg200-air-cooled-engine"],
+            ["HW300 Carguero Agua", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "cb",
+          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "badge": "Motor Cadenillero (OHC)",
+          "title": "Motores CB 150 a 250 cc (Cadenilla OHC)",
+          "desc": "Motor cadenillero con árbol de levas en culata (149 / 197 / 223 cc: CB150, CB200-C, CB250 de 12 kW) para doble propósito, todo terreno y calle con menor altura (452 mm).",
+          "links": [
+            ["Ver motores CB OHC", "cb"]
+          ]
+        },
+        {
+          "role": "horizontal",
+          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "badge": "110–150 cc · CX152FMH a CX1P60FMJ",
+          "title": "Motores Horizontales 110–150 cc",
+          "desc": "Motores horizontales de 4 velocidades (106.7 ml, 107 ml, 123.67 ml serie 130, 140 ml y 149.8 ml CX1P60FMJ con circuito interno de aceite en culata).",
+          "links": [
+            ["Ver motores Horizontales", "horizontal"]
+          ]
+        },
+        {
+          "role": "btv-hub",
+          "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+          "badge": "Flotas Mototaxi, Torito y Boxer",
+          "title": "Motores y Repuestos Reemplazo Bajaj / TVS",
+          "desc": "Motores completos y repuestos de reemplazo equivalente (cárteres, culata, cilindro y pistón, cigüeñal, juegos de empaques) para Bajaj Boxer CT100/BM150, Torito RE 4S y TVS HLX/King.",
+          "links": [
+            ["Catálogo y Cruce OEM", "btv-hub"],
+            ["Ficha Boxer BM150", "bajaj-boxer-bm150-complete-engine"]
+          ]
+        },
+        {
+          "role": "hw-series",
+          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "badge": "Carguero pesado 250/300 cc",
+          "title": "Kits y Repuestos HW200–HW350 (HW Water)",
+          "desc": "Kits de reparación, bomba de agua, embrague unidireccional de 20 rodillos, magneto de alta salida, cárter de 1,5 L y ~80 % de piezas compartidas entre HW250 y HW300 (275.3 mL).",
+          "links": [
+            ["Catálogo repuestos HW", "hw-series"],
+            ["Ficha HW300 completa", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "ac320",
+          "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+          "badge": "CVT L-H-N-R + Reversa",
+          "title": "Motor Cuatrimoto / ATV & UTV AC320",
+          "desc": "Monocilíndrico 4T enfriado por líquido de 287.2 cc reales (75 × 65 mm, alias 175MN) con variador CVT automático, reversa integrada y embrague centrífugo de 5 zapatas.",
+          "links": [
+            ["Especificaciones AC320", "ac320"]
+          ]
+        }
+      ],
+      "spotlightHeading": "Modelos insignia de mayor demanda en Latinoamérica",
+      "spotlights": [
+        {
+          "role": "hw300-water-cooled-engine",
+          "title": "HW300 Carguero Enfriado por Agua (275.3 mL reales)",
+          "desc": "Clase 300cc (275.3 mL reales) · 12.5 kW · 21 N·m · Cárter 1.5 L · Embrague 20 rodillos · 5 marchas adelante + reversa externa."
+        },
+        {
+          "role": "cg200-air-cooled-engine",
+          "title": "CG200 Varillero Enfriado por Aire (CX163FML — 197.0 cc)",
+          "desc": "10 kW @ 7,500 rpm · 13.5 N·m @ 6,500 rpm · Opción con eje balanceador para trabajo diario y carga ligera."
+        },
+        {
+          "role": "cg150-air-cooled-engine",
+          "title": "CG150 Varillero Clásico (149.5 cc)",
+          "desc": "Arquitectura OHV probada, servicio mecánico rápido sin cadenilla y alta rotación de empaques y cilindros."
+        },
+        {
+          "role": "bajaj-boxer-bm150-complete-engine",
+          "title": "Reemplazo Bajaj Boxer BM150 (144.8 cc)",
+          "desc": "Motor completo 4 o 5 velocidades + mitades de cárter (36PF0004/36PF0005), kit cilindro-pistón y juegos de empaques."
+        }
+      ],
+      "exportHeading": "Condiciones de exportación (Callao · Buenaventura · Manzanillo · Guayaquil)",
+      "exportCards": [
+        ["MOQ 50 & Carga Mixta", "MOQ estándar desde 50 unidades combinando modelos CG varilleros, CB cadenilleros, horizontales, cargueros HW y repuestos críticos en un solo contenedor."],
+        ["FOB Guangzhou y Plazo", "Término estándar FOB Guangzhou (~10 días hábiles para configuraciones regulares); coordinación con puertos principales de China según pedido."],
+        ["Aduana SUNAT / DIAN (Solo Nuevo)", "Factura comercial, packing list detallado y relación oficial de números de serie grabados para despacho de motores y repuestos 100 % nuevos."],
+        ["Doble Laboratorio y Garantía 60 Días", "Prueba al 100 % en banco frío/caliente y doble laboratorio (dinamómetro/gases/metalurgia). Garantía de 60 días tras arribo con reposición por serie y foto/video."]
+      ]
+    },
+    "products": {
+      "title": "Catálogo completo de motores, cargueros y repuestos | CHIXIANG MOTOR",
+      "description": "Catálogo completo de CHIXIANG MOTOR: varilleros CG125–CG250, cadenilleros CB OHC, horizontales 110–150 cc, ATV AC320, cargueros pesados HW200–HW350 enfriados por agua y reemplazos Bajaj & TVS.",
+      "h1": "Motores, cargueros y repuestos de fábrica CHIXIANG",
+      "lead": "Todas nuestras familias actuales se producen en Chongqing con MOQ de 50 unidades en contenedor mixto FOB Guangzhou y prueba 100 % en banco frío y caliente.",
+      "cta": "Ver ficha / familia →",
+      "sections": [
+        {
+          "id": "families",
+          "title": "6 líneas principales de fabricación",
+          "cards": [
+            {
+              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "badge": "CG125–CG250 y Agua",
+              "title": "Motores Varilleros CG (Aire y Agua)",
+              "desc": "CG125, CG150, CG200 (10 kW / 13.5 N·m), CG250 y CG150SB–CG250SB enfriados por agua (con reversa integrada o caja externa según modelo confirmado en pedido).",
+              "role": "cg"
+            },
+            {
+              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "badge": "CB150–CB250 OHC",
+              "title": "Motores Cadenilleros CB (Árbol de levas en culata)",
+              "desc": "Distribución por cadenilla silenciosa, altura compacta de 452 mm y entrega hasta 12 kW en CB250 para todo terreno y calle.",
+              "role": "cb"
+            },
+            {
+              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "badge": "110–150 cc (CX152FMH–CX1P60FMJ)",
+              "title": "Motores Horizontales 4 Velocidades",
+              "desc": "Cilindradas verificadas: 106.7 ml, 107 ml, 123.67 ml (código 130), 140 ml y 149.8 ml (CX1P60FMJ con circuito interno de aceite en culata).",
+              "role": "horizontal"
+            },
+            {
+              "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+              "badge": "287.2 cc · CVT + Reversa",
+              "title": "Motor Cuatrimoto / ATV & UTV AC320 (175MN)",
+              "desc": "Enfriado por agua, 75 × 65 mm, variador automático CVT L-H-N-R con reversa integrada y embrague centrífugo de 5 zapatas.",
+              "role": "ac320"
+            },
+            {
+              "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+              "badge": "Boxer / Torito RE 4S / HLX / King",
+              "title": "Motores y Repuestos Equivalentes Bajaj / TVS",
+              "desc": "Motores completos de reemplazo y repuestos (cárteres, culata, cilindro y pistón, cigüeñal, empaques) para flotas de mototaxis y mensajería.",
+              "role": "btv-hub"
+            },
+            {
+              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "badge": "HW Water Heavy-Duty",
+              "title": "Motores y Kits HW Water (HW200–HW350)",
+              "desc": "Arquitectura HW Water reforzada para cargueros: capacidad de aceite de 1,5 L, embrague unidireccional de 20 rodillos, magneto de alta salida, carburador PZ30 y caja de 5 velocidades compatible con cajas de reversa externas.",
+              "role": "hw-series"
+            }
+          ]
+        },
+        {
+          "id": "flagships",
+          "title": "Fichas técnicas de modelos insignia y reemplazo directo",
+          "cards": [
+            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275.3 mL reales", "title": "HW300 Carguero Enfriado por Agua", "desc": "12.5 kW · 21 N·m · Cárter 1.5 L · 20 rodillos · 5F + reversa externa.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246.3 cc", "title": "CG250SB Enfriado por Agua", "desc": "11.5 kW · 19.5 N·m · Plataforma CG estándar para carguero.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197.0 cc · 10 kW", "title": "CG200 Varillero Aire (CX163FML)", "desc": "10 kW @ 7,500 rpm · 13.5 N·m @ 6,500 rpm · Trabajo y transporte.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149.5 cc", "title": "CG150 Clásico Varillero", "desc": "Servicio sencillo en taller y alta disponibilidad de repuestos.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144.8 cc · 4/5 Vel.", "title": "Reemplazo Bajaj Boxer BM150", "desc": "Motor completo equivalente + cárteres 36PF0004/36PF0005.", "role": "bajaj-boxer-bm150-complete-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198.88 cc · 4F+1R", "title": "Reemplazo Bajaj RE 4S 200 Mototaxi", "desc": "Aire forzado, cámara de reversa 4F+1R y cárteres de reemplazo.", "role": "bajaj-re-4s-200-complete-engine" }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "title": "Sobre CHIXIANG MOTOR | Fábrica de motores en Chongqing desde 2003",
+      "description": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: experiencia en el sector desde 2003 y empresa registrada en 2007 en Chongqing. Capacidad 10,000+ motores/mes y prueba 100 % en banco.",
+      "h1": "Sobre la fábrica CHIXIANG MOTOR en Chongqing",
+      "lead": "CHIXIANG MOTOR es la marca de Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. La empresa trabaja en la industria de motores para motocicletas desde 2003 y la entidad jurídica actual se registró en 2007.",
+      "blocks": [
+        ["Historia y planta verificable", "Contamos con experiencia en el sector desde 2003 y empresa registrada en 2007 en Chongqing. Nuestra fábrica está ubicada en No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China."],
+        ["Capacidad 10,000+ unidades al mes", "Líneas dedicadas a motores varilleros CG, cadenilleros CB OHC, horizontales, cargueros pesados HW enfriados por agua y reemplazos Bajaj & TVS en contenedores mixtos."],
+        ["Doble laboratorio, ISO 9001 y CCC", "Operamos bajo sistema de gestión de calidad ISO 9001 con certificación CCC disponible según modelo aprobado. Dos laboratorios internos con dinamómetros y analizadores de gases respaldan la prueba 100 % en banco frío y caliente."],
+        ["Logística de exportación directa", "Cada motor sale grabado con su número de serie. Los documentos de exportación y la logística se ejecutan a través de la división de exportación designada de Chixiang bajo términos FOB Guangzhou."]
+      ]
+    },
+    "news": {
+      "title": "Guías técnicas de compra y exportación para Latinoamérica | CHIXIANG MOTOR",
+      "description": "8 guías especializadas para importadores en Perú, Colombia y Latinoamérica: varillero vs cadenillero, carguero HW300, reemplazos Bajaj/TVS, calidad Chongqing y FOB Guangzhou.",
+      "h1": "Guías técnicas y de importación para compradores B2B",
+      "lead": "Material técnico de referencia sobre motores varilleros, cadenilleros, cargueros refrigerados por agua, repuestos Bajaj/TVS y embarques consolidados FOB Guangzhou.",
+      "ctaCard": "Leer guía completa →",
+      "guides": [
+        {
+          "tag": "Varillero vs Cadenillero",
+          "title": "Motor CG varillero (OHV) vs CB cadenillero (OHC) de 125 a 250 cc",
+          "body": "Comparación completa de potencia, torque, altura (500 vs 452 mm), mantenimiento de balancines vs cadenilla y verificación de chasis.",
+          "role": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison"
+        },
+        {
+          "tag": "Carguero HW vs CG250",
+          "title": "HW250 y HW300 vs CG250SB enfriados por agua: ~80 % de piezas compartidas",
+          "body": "Por qué el HW250 pesa 5.2 kg más (cárter de 1,5 L, 20 rodillos, magneto de alta salida) y cómo combinar stock HW250/HW300 en cargueros pesados.",
+          "role": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine"
+        },
+        {
+          "tag": "Aire vs Agua",
+          "title": "Motores enfriados por aire vs agua: cuál conviene según ruta y carga",
+          "body": "Guía práctica para distribuidores entre economía de taller en moto de trabajo diario y estabilidad térmica en triciclos cargueros.",
+          "role": "air-cooled-vs-water-cooled-motorcycle-engine"
+        },
+        {
+          "tag": "Bajaj Boxer / Torito & TVS",
+          "title": "Motores de reemplazo Bajaj y TVS: lista técnica OEM de 5 puntos",
+          "body": "Matriz de cruce Boxer CT100/BM150, Torito RE 4S (4F+1R gasolina/GNV) y TVS HLX/King 200 para consolidar en contenedor mixto.",
+          "role": "bajaj-tvs-replacement-engine-fitment-checklist"
+        },
+        {
+          "tag": "Horizontales 110–150 cc",
+          "title": "Motores horizontales CX152FMH, CX1P56FMJ y CX1P60FMJ: guía de selección",
+          "body": "Cilindradas reales (106.7 a 149.8 ml), tipos de embrague, posición de arrancador arriba/abajo y lubricación interna de culata en CX1P60FMJ.",
+          "role": "horizontal-motorcycle-engine-110cc-150cc-selection-guide"
+        },
+        {
+          "tag": "Auditoría y Garantía 60 d",
+          "title": "Cómo verificar una fábrica en Chongqing: prueba 100 % en banco, dino y garantía",
+          "body": "Flujo de control en 4 etapas, registros públicos verificables en China y protocolo paso a paso de reclamos a 60 días post-arribo.",
+          "role": "chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty"
+        },
+        {
+          "tag": "Empaque y MOQ 50 Mixto",
+          "title": "Dimensiones de embalaje, accesorios de línea y pedido mixto MOQ 50 FOB Guangzhou",
+          "body": "Medidas de cajas, pesos, alcance estándar vs BOM en Factura Proforma, tarimas de 12 unidades y criterios aduaneros SUNAT/DIAN.",
+          "role": "motorcycle-engine-export-packaging-moq-50-mixed-loading-guide"
+        },
+        {
+          "tag": "Selección de Fábrica",
+          "title": "Cómo elegir un fabricante confiable de motores de motocicleta en China",
+          "body": "8 criterios técnicos y comerciales para evaluar experiencia fabril, suministro continuo de repuestos y soporte OEM/ODM.",
+          "role": "how-to-choose-motorcycle-engine-manufacturer-china"
+        }
+      ],
+      "extraCards": [
+        {
+          "tag": "Guía técnica",
+          "title": "¿Qué es un motor CG? Diferencias con CB y cómo elegirlo",
+          "body": "Guía técnica introductoria sobre la familia CG: cilindradas, enfriamiento, diferencias con el CB y qué confirmar antes de elegir.",
+          "href": "/es/guia/que-es-un-motor-cg/"
+        }
+      ]
+    }
+  },
+  "pt": {
+    "home": {
+      "title": "Fabricante de motores para motocicletas e triciclos de carga | CHIXIANG MOTOR",
+      "description": "Motores de vareta CG, OHC CB com corrente de distribuição, horizontais 110–150 cc, ATV AC320, triciclos a água HW300 e reposição Bajaj & TVS. Atacado MOQ 50 FOB Guangzhou.",
+      "eyebrow": "CHIXIANG MOTOR · Fábrica Chongqing (experiência desde 2003)",
+      "h1": "Fabricante de motores para motocicletas e triciclos de carga na China",
+      "lead": "Fábrica direta em Chongqing especializada em motores de vareta CG (ar e água), CB com corrente de comando (OHC), horizontais 110–150 cc, triciclos pesados HW200–HW350 refrigerados a água e motores/peças compatíveis Bajaj Boxer & TVS HLX. Teste 100 % em bancada a frio/quente e contêiner misto a partir de 50 unidades FOB Guangzhou.",
+      "ctaPrimary": "Ver catálogo completo",
+      "ctaSecondary": "Solicitar cotação FOB Guangzhou",
+      "ctaWa": "WhatsApp Exportação",
+      "trustItems": [
+        ["Desde 2003", "Experiência industrial desde 2003 · Empresa registrada em 2007 em Chongqing"],
+        ["10.000+ / mês", "Capacidade mensal padronizada para distribuidores e montadoras"],
+        ["Bancada 100 %", "Teste 100 % em bancada a frio e quente pré-embarque + 2 laboratórios"],
+        ["MOQ 50 Misto", "Combine modelos completos e kits de peças no mesmo contêiner"]
+      ],
+      "matrixHeading": "Linha completa Angola, Moçambique & mercados lusófonos",
+      "matrixSub": "Selecione a família de motores ou acesse diretamente os modelos campeões para frotas de kupapata, mototáxis e triciclos de carga.",
+      "cards": [
+        {
+          "role": "cg",
+          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "badge": "Motor de Vareta OHV · Ar e Água",
+          "title": "Motores CG125 a CG250 e Triciclos HW",
+          "desc": "Motores de vareta (CG125, CG150, CG200 10 kW / 13,5 N·m, CG250SB) e linha pesada a água HW200–HW350 com opção de eixo balanceador.",
+          "links": [
+            ["Ver toda a linha CG", "cg"],
+            ["CG200 Ar (CX163FML)", "cg200-air-cooled-engine"],
+            ["HW300 Triciclo a Água", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "cb",
+          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "badge": "Corrente de Distribuição (OHC)",
+          "title": "Motores CB 150 a 250 cc (OHC)",
+          "desc": "Comando no cabeçote com corrente de distribuição silenciosa (149 / 197 / 223 cc) para motos urbanas e trilha, altura compacta (452 mm) e até 12 kW no CB250.",
+          "links": [
+            ["Ver motores CB OHC", "cb"]
+          ]
+        },
+        {
+          "role": "horizontal",
+          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "badge": "110–150 cc · CX152FMH a CX1P60FMJ",
+          "title": "Motores Horizontais 110–150 cc",
+          "desc": "Motores horizontais de 4 marchas (106,7 ml, 107 ml, 123,67 ml série 130, 140 ml e 149,8 ml CX1P60FMJ com circuito de óleo interno no cabeçote).",
+          "links": [
+            ["Ver linha Horizontal", "horizontal"]
+          ]
+        },
+        {
+          "role": "btv-hub",
+          "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+          "badge": "Frotas Kupapata, Mototáxi & 3 Rodas",
+          "title": "Motores e Peças Compatíveis Bajaj / TVS",
+          "desc": "Motores completos e peças de reposição (carcaças, cabeçote, cilindro e pistão, virabrequim, jogo de juntas) para Bajaj Boxer CT100/BM150, RE 4S e TVS HLX/King.",
+          "links": [
+            ["Catálogo & Referências OEM", "btv-hub"],
+            ["Ficha Boxer BM150", "bajaj-boxer-bm150-complete-engine"]
+          ]
+        },
+        {
+          "role": "hw-series",
+          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "badge": "Triciclo carga 250/300 cc a água",
+          "title": "Kits e Peças HW200–HW350 (HW Water)",
+          "desc": "Kits de revisão, bomba d'água, embreagem de 20 roletes, magneto de alta saída, cárter de 1,5 L e ~80 % de peças compartilhadas entre HW250 e HW300 (275,3 mL).",
+          "links": [
+            ["Catálogo peças HW", "hw-series"],
+            ["Ficha HW300 completa", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "ac320",
+          "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+          "badge": "CVT L-H-N-R + Marcha Ré",
+          "title": "Motor Quadriciclo / ATV & UTV AC320",
+          "desc": "Monocilíndrico 4T refrigerado a água de 287,2 cc reais (75 × 65 mm, alias 175MN) com câmbio automático CVT, marcha ré integrada e embreagem de 5 sapatas.",
+          "links": [
+            ["Especificações AC320", "ac320"]
+          ]
+        }
+      ],
+      "spotlightHeading": "Modelos líderes de importação em Angola & Moçambique",
+      "spotlights": [
+        {
+          "role": "hw300-water-cooled-engine",
+          "title": "HW300 Triciclo de Carga a Água (275,3 mL reais)",
+          "desc": "Classe 300cc (275,3 mL) · 12,5 kW · 21 N·m · Cárter 1,5 L · 20 roletes · 5 marchas à frente + ré externa."
+        },
+        {
+          "role": "cg200-air-cooled-engine",
+          "title": "CG200 Vareta Ar (CX163FML — 197,0 cc)",
+          "desc": "10 kW @ 7.500 rpm · 13,5 N·m @ 6.500 rpm · Robusto para kupapata, entregas e uso comercial."
+        },
+        {
+          "role": "cg150-air-cooled-engine",
+          "title": "CG150 Vareta Clássico (149,5 cc)",
+          "desc": "Mecânica simples de oficina sem corrente de comando e alto giro de peças de reposição."
+        },
+        {
+          "role": "bajaj-boxer-bm150-complete-engine",
+          "title": "Reposição Bajaj Boxer BM150 (144,8 cc)",
+          "desc": "Motor completo 4 ou 5 marchas + carcaças 36PF0004/36PF0005 e kit de cilindro."
+        }
+      ],
+      "exportHeading": "Condições de exportação (Luanda · Maputo · Santos)",
+      "exportCards": [
+        ["MOQ 50 & Contêiner Misto", "MOQ padrão a partir de 50 unidades misturando linhas CG vareta, CB OHC, horizontais, triciclos HW e peças de manutenção no mesmo embarque."],
+        ["FOB Guangzhou & Prazo", "Termo padrão FOB Guangzhou (~10 dias úteis para configurações regulares), com coordenação para outros portos chineses sob consulta."],
+        ["Documentação & CNCA / ARCCLA", "Fatura comercial, packing list e relação dos números de série gravados no bloco. O certificado CNCA via ARCCLA para Angola é coordenado pelo importador/despachante."],
+        ["Laboratórios & Garantia 60 Dias", "Teste 100 % em bancada a frio/quente e 2 laboratórios (dinamômetro/gases/metalurgia). Garantia de 60 dias após chegada ao porto via série + foto/vídeo."]
+      ]
+    },
+    "products": {
+      "title": "Catálogo completo de motores, triciclos e peças | CHIXIANG MOTOR",
+      "description": "Catálogo atual da CHIXIANG MOTOR: motores CG125–CG250 vareta, CB OHC, horizontais 110–150 cc, ATV AC320, linha pesada refrigerada a água HW200–HW350 e reposição Bajaj & TVS.",
+      "h1": "Motores completos e peças de reposição CHIXIANG",
+      "lead": "Todas as famílias são produzidas em Chongqing com MOQ de 50 unidades em contêiner misto FOB Guangzhou e teste 100 % em bancada a frio e quente.",
+      "cta": "Ver ficha / linha →",
+      "sections": [
+        {
+          "id": "families",
+          "title": "6 linhas principais de fábrica",
+          "cards": [
+            {
+              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "badge": "CG125–CG250 & Água",
+              "title": "Motores CG de Vareta (Ar e Água)",
+              "desc": "CG125, CG150, CG200 (10 kW / 13,5 N·m), CG250 e série CG150SB–CG250SB refrigerada a água para motos e triciclos utilitários.",
+              "role": "cg"
+            },
+            {
+              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "badge": "CB150–CB250 OHC",
+              "title": "Motores CB com Corrente de Comando",
+              "desc": "Arquitetura OHC silenciosa, altura reduzida de 452 mm e até 12 kW no CB250 para motos urbanas e off-road.",
+              "role": "cb"
+            },
+            {
+              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "badge": "110–150 cc (CX152FMH–CX1P60FMJ)",
+              "title": "Motores Horizontais 4 Marchas",
+              "desc": "Cilindradas reais divulgadas: 106,7 ml, 107 ml, 123,67 ml (código 130), 140 ml e 149,8 ml (CX1P60FMJ sem radiador externo de óleo).",
+              "role": "horizontal"
+            },
+            {
+              "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+              "badge": "287,2 cc · CVT + Ré",
+              "title": "Motor Quadriciclo / ATV & UTV AC320 (175MN)",
+              "desc": "Refrigerado a água, 75 × 65 mm, transmissão automática CVT L-H-N-R com marcha ré integrada e embreagem de 5 sapatas.",
+              "role": "ac320"
+            },
+            {
+              "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+              "badge": "Boxer / RE 4S / HLX / King",
+              "title": "Motores e Peças Compatíveis Bajaj / TVS",
+              "desc": "Motores completos equivalentes e peças de reposição (carcaças, cabeçote, kit cilindro, virabrequim, juntas) para frotas de kupapata e mototáxi.",
+              "role": "btv-hub"
+            },
+            {
+              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "badge": "HW Water Heavy-Duty",
+              "title": "Motores e Kits HW Water (HW200–HW350)",
+              "desc": "Série HW Water para triciclo de carga: capacidade de óleo de 1,5 L, embreagem de 20 roletes, magneto de alta saída, carburador PZ30 e Transmissão padrão de 5 marchas à frente compatível com caixas de ré externas.",
+              "role": "hw-series"
+            }
+          ]
+        },
+        {
+          "id": "flagships",
+          "title": "Fichas técnicas dos modelos principais",
+          "cards": [
+            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275,3 mL reais", "title": "HW300 Triciclo a Água", "desc": "12,5 kW · 21 N·m · Cárter 1,5 L · 20 roletes · 5F + ré externa.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246,3 cc", "title": "CG250SB Refrigerado a Água", "desc": "11,5 kW · 19,5 N·m · Plataforma CG padrão para triciclos.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197,0 cc · 10 kW", "title": "CG200 Vareta Ar (CX163FML)", "desc": "10 kW @ 7.500 rpm · 13,5 N·m @ 6.500 rpm · Uso comercial.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149,5 cc", "title": "CG150 Vareta Clássico", "desc": "Manutenção simples e alta disponibilidade de kits de reposição.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144,8 cc · 4/5 Marchas", "title": "Reposição Bajaj Boxer BM150", "desc": "Motor completo equivalente + carcaças 36PF0004/36PF0005.", "role": "bajaj-boxer-bm150-complete-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198,88 cc · 4F+1R", "title": "Reposição Bajaj RE 4S 200", "desc": "Ar forçado, câmara de ré 4F+1R e carcaças compatíveis.", "role": "bajaj-re-4s-200-complete-engine" }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "title": "Sobre a CHIXIANG MOTOR | Fábrica em Chongqing desde 2003",
+      "description": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: experiência no setor desde 2003 e empresa registrada em 2007 em Chongqing. Capacidade de 10.000+ motores/mês e teste 100 % em bancada.",
+      "h1": "Sobre a fábrica CHIXIANG MOTOR em Chongqing",
+      "lead": "CHIXIANG MOTOR é a marca da Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. A empresa atua no setor de motores para motocicletas desde 2003, e a atual entidade jurídica foi registrada em 2007.",
+      "blocks": [
+        ["Histórico e unidade industrial", "Com experiência no setor desde 2003 e empresa registrada em 2007 em Chongqing, operamos em No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China."],
+        ["Capacidade de 10.000+ motores/mês", "Linhas padronizadas para motores CG de vareta, CB OHC, horizontais 110–150 cc, triciclos pesados a água HW e reposição Bajaj & TVS em contêiner misto."],
+        ["Dois laboratórios, ISO 9001 e CCC", "Sistema de gestão da qualidade ISO 9001 e documentação CCC conforme modelo aplicável. Dois laboratórios próprios com dinamômetros e analisadores de gases sustentam o teste 100 % em bancada a frio e quente."],
+        ["Exportação e rastreabilidade", "Cada motor é gravado com número de série único. Documentação de exportação e logística são executadas pela divisão de exportação designada da Chixiang sob termo FOB Guangzhou."]
+      ]
+    },
+    "news": {
+      "title": "Guias técnicos de compra e importação (Angola & Moçambique) | CHIXIANG MOTOR",
+      "description": "8 guias técnicos para importadores lusófonos: motor de vareta vs corrente de distribuição, triciclo HW300, reposição Bajaj/TVS, qualidade Chongqing, MOQ 50 FOB Guangzhou e CNCA.",
+      "h1": "Guias técnicos e de importação para compradores B2B",
+      "lead": "Referências técnicas verificadas para escolher motores de kupapata, motos utilitárias e triciclos de carga, consolidar contêineres mistos e preparar embarques com CNCA / ARCCLA.",
+      "ctaCard": "Ler guia completo →",
+      "guides": [
+        {
+          "tag": "Vareta vs Corrente",
+          "title": "Motor CG de vareta (OHV) vs CB corrente de distribuição (OHC) 125–250 cc",
+          "body": "Comparação de potência, torque, altura (500 vs 452 mm), facilidade de oficina em kupapata/mototáxi e verificação de chassi.",
+          "role": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison"
+        },
+        {
+          "tag": "Triciclo HW vs CG250",
+          "title": "HW250 e HW300 vs CG250SB a água: seleção e ~80 % de peças compartilhadas",
+          "body": "Por que o HW250 pesa 5,2 kg a mais (cárter 1,5 L, 20 roletes, caixa externa de ré) e como reduzir o estoque de peças entre 250 e 300 cc.",
+          "role": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine"
+        },
+        {
+          "tag": "Ar vs Água",
+          "title": "Motores refrigerados a ar vs água: qual escolher para sua frota",
+          "body": "Decisão entre menor custo de manutenção em motos diárias e controle térmico sob carga contínua em triciclos de carga.",
+          "role": "air-cooled-vs-water-cooled-motorcycle-engine"
+        },
+        {
+          "tag": "Bajaj Boxer & TVS HLX",
+          "title": "Motores de reposição Bajaj e TVS: checklist de compatibilidade OEM",
+          "body": "Matriz Boxer CT100/BM150, RE 4S e TVS HLX 150 / King 200: pinhão, chicote, marcha ré 4F+1R e mistura no contêiner.",
+          "role": "bajaj-tvs-replacement-engine-fitment-checklist"
+        },
+        {
+          "tag": "Horizontais 110–150 cc",
+          "title": "Motores horizontais CX152FMH, CX1P56FMJ e CX1P60FMJ: guia técnico",
+          "body": "Cilindradas reais (106,7 a 149,8 ml), embreagem automática vs manual, motor de arranque superior/inferior e circuito interno de óleo no CX1P60FMJ.",
+          "role": "horizontal-motorcycle-engine-110cc-150cc-selection-guide"
+        },
+        {
+          "tag": "Qualidade & Garantia 60 d",
+          "title": "Como auditar uma fábrica em Chongqing: bancada 100 %, dinamômetro e garantia",
+          "body": "Controle metalúrgico de entrada, 2 laboratórios próprios, registros públicos verificáveis e protocolo de garantia de 60 dias pós-chegada.",
+          "role": "chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty"
+        },
+        {
+          "tag": "Embalagem & CNCA",
+          "title": "Dimensões de embalagem, escopo padrão e pedido misto MOQ 50 FOB Guangzhou",
+          "body": "Medidas das caixas, itens padrão vs PI, paletes de 12 unidades, lista de números de série e suporte documental para CNCA / ARCCLA.",
+          "role": "motorcycle-engine-export-packaging-moq-50-mixed-loading-guide"
+        },
+        {
+          "tag": "Escolha de Fábrica",
+          "title": "Como escolher um fabricante confiável de motores na China",
+          "body": "8 critérios práticos para avaliar experiência industrial desde 2003, estabilidade de lote e fornecimento contínuo de peças.",
+          "role": "how-to-choose-motorcycle-engine-manufacturer-china"
+        }
+      ]
+    }
+  },
+  "ru": {
+    "home": {
+      "title": "Производитель двигателей для мотоциклов и грузовых трициклов | CHIXIANG MOTOR",
+      "description": "Штанговые двигатели CG, цепные моторы CB (OHC), горизонтальные 139FMB/152FMH/1P56FMJ/1P60FMJ для Альфа/Дельта/питбайков, водяные HW300 под трицикл и аналоги Bajaj & TVS. Опт от 50 шт. FOB Гуанчжоу.",
+      "eyebrow": "CHIXIANG MOTOR · Завод в Чунцине (опыт с 2003 года)",
+      "h1": "Производитель двигателей для мотоциклов и грузовых трициклов в Китае",
+      "lead": "Завод-производитель в Чунцине: штанговые моторы CG, верхневальные цепные CB (OHC), горизонтальные цепные двигатели 110–150 см³ (152FMH, 1P56FMJ, 1P60FMJ с механической КПП или полуавтоматом), грузовые водянки HW200–HW350 под внешний реверс-редуктор, квадроциклетные AC320 CVT и аналоги Bajaj & TVS. 100 % обкатка на стенде, смешанный контейнер от 50 моторов FOB Гуанчжоу.",
+      "ctaPrimary": "Открыть весь каталог",
+      "ctaSecondary": "Запросить расчёт FOB Гуанчжоу",
+      "ctaWa": "WhatsApp Экспорт",
+      "trustItems": [
+        ["С 2003 года", "Опыт в отрасли с 2003 года · Юрлицо зарегистрировано в 2007 году в Чунцине"],
+        ["10 000+ / мес", "Серийная производственная мощность для оптовых партий и сборочных заводов"],
+        ["100 % обкатка", "Холодный и горячий стендовый тест каждого мотора + 2 лаборатории с диностендом"],
+        ["MOQ 50 микс", "Смешанная загрузка разных моделей и запчастей (ЦПГ, ГБЦ, КШМ) в одном контейнере"]
+      ],
+      "matrixHeading": "Полная линейка для России, Казахстана, Узбекистана и СНГ",
+      "matrixSub": "Выберите серию двигателей или перейдите сразу к карточкам флагманских моделей для мотоциклов, мопедов Альфа/Дельта и грузовых трициклов.",
+      "cards": [
+        {
+          "role": "cg",
+          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "badge": "Штанговые CG и водянка HW",
+          "title": "Двигатели CG125–CG250 и водяные HW под трицикл",
+          "desc": "Штанговые моторы (CG125, CG150, CG200 10 кВт / 13,5 Н·м, CG250SB) и серия водяного охлаждения HW200–HW350 под внешний реверс-редуктор.",
+          "links": [
+            ["Вся серия CG и HW", "cg"],
+            ["CG200 Воздух (CX163FML)", "cg200-air-cooled-engine"],
+            ["HW300 Водяной трицикл", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "cb",
+          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "badge": "Цепные OHC (верхневальные)",
+          "title": "Цепные двигатели CB 150–250 см³ (ГРМ)",
+          "desc": "Верхневальная цепь ГРМ, меньший вес (29–31 кг) и высота 452 мм — до 12 кВт на CB250 для эндуро, кросса и дорожных мотоциклов.",
+          "links": [
+            ["Смотреть серию CB OHC", "cb"]
+          ]
+        },
+        {
+          "role": "horizontal",
+          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "badge": "110cc-150cc · Альфа / Дельта / Актив / Питбайк",
+          "title": "Горизонтальные моторы 110–150 см³",
+          "desc": "CX152FMH-5B (106,7 мл), CX152FMH-6 (107 мл), CX152FMH-5B 130 (123,67 мл), CX1P56FMJ (140 мл) и CX1P60FMJ (149,8 мл): механика или полуавтомат.",
+          "links": [
+            ["Все горизонтальные моторы", "horizontal"]
+          ]
+        },
+        {
+          "role": "btv-hub",
+          "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+          "badge": "Прямая замена Bajaj / TVS",
+          "title": "Двигатели и запчасти аналоги Bajaj / TVS",
+          "desc": "Двигатели в сборе и запчасти (половинки картера, ГБЦ, ЦПГ, коленвалы, прокладки) по посадочным OEM для Bajaj Boxer CT100/BM150, RE 4S и TVS HLX/King.",
+          "links": [
+            ["Каталог и OEM-кросс", "btv-hub"],
+            ["Карточка Boxer BM150", "bajaj-boxer-bm150-complete-engine"]
+          ]
+        },
+        {
+          "role": "hw-series",
+          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "badge": "Трициклы 250/300 см³ с водянкой",
+          "title": "Запчасти и ремкомплекты HW200–HW350 (HW Water)",
+          "desc": "Поршневые группы (ЦПГ), помпы, обгонная муфта на 20 роликов, картер 1,5 л, ~80 % общих деталей между HW250 и HW300 (275,3 мл).",
+          "links": [
+            ["Каталог запчастей HW", "hw-series"],
+            ["Спецификация HW300", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "ac320",
+          "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+          "badge": "Вариатор CVT L-H-N-R + Реверс",
+          "title": "Квадроциклетный мотор AC320 (287,2 см³)",
+          "desc": "Жидкостное охлаждение 287,2 см³ (75 × 65 мм, индекс 175MN), вариатор CVT с понижающей передачей и встроенным задним ходом.",
+          "links": [
+            ["Спецификация AC320", "ac320"]
+          ]
+        }
+      ],
+      "spotlightHeading": "Ключевые экспортные модели для рынка РФ и СНГ",
+      "spotlights": [
+        {
+          "role": "hw300-water-cooled-engine",
+          "title": "HW300 Водяной мотор под грузовой трицикл (275,3 мл)",
+          "desc": "Класс 300cc (факт 275,3 мл) · 12,5 кВт · 21 Н·м · Картер 1,5 л · Муфта 20 роликов · 5 вперёд + внешний реверс-редуктор."
+        },
+        {
+          "role": "cg200-air-cooled-engine",
+          "title": "CG200 Воздушный штанговый (CX163FML — 197,0 см³)",
+          "desc": "10 кВт при 7 500 об/мин · 13,5 Н·м при 6 500 об/мин · Версии с баланс-валом для дорожных и лёгких грузовых моделей."
+        },
+        {
+          "role": "cg150-air-cooled-engine",
+          "title": "CG150 Базовый штанговый (149,5 см³)",
+          "desc": "Простая конструкция на штангах толкателей, лёгкий ремонт в полевых условиях и высокая взаимозаменяемость ЦПГ."
+        },
+        {
+          "role": "bajaj-boxer-bm150-complete-engine",
+          "title": "Аналог Bajaj Boxer BM150 в сборе (144,8 см³)",
+          "desc": "4- или 5-ступенчатая КПП, половинки картера 36PF0004/36PF0005, ЦПГ и полные наборы прокладок."
+        }
+      ],
+      "exportHeading": "Условия оптовых поставок в РФ, Казахстан и Узбекистан",
+      "exportCards": [
+        ["MOQ 50 и микс в контейнере", "Минимальный заказ от 50 моторов: комбинируйте горизонтальные моторы для Альфа/Дельта, CG/CB, водяные HW под трицикл и запчасти ЦПГ/ГБЦ."],
+        ["FOB Гуанчжоу и срок ~10 дней", "Базовый базис FOB Гуанчжоу (~10 рабочих дней на типовые конфигурации) и согласование иных портов отгрузки под маршрут ЕАЭС."],
+        ["Реестр номеров и таможня", "На каждый картер нанесён серийный номер; передаём инвойс, упаковочный лист и полный перечень номеров моторов под таможенное оформление."],
+        ["2 лаборатории и гарантия 60 дней", "100 % холодный и горячий стендовый тест + 2 лаборатории с диностендами. Гарантия 60 дней после прибытия в порт по фото/видео и серийному номеру."]
+      ]
+    },
+    "products": {
+      "title": "Каталог двигателей для мотоциклов, трициклов и запчастей | CHIXIANG MOTOR",
+      "description": "Полный каталог CHIXIANG MOTOR: штанговые CG125–CG250, цепные CB OHC, горизонтальные 110–150 см³, ATV AC320, водяная серия HW200–HW350 и аналоги Bajaj & TVS.",
+      "h1": "Каталог двигателей и запчастей завода CHIXIANG",
+      "lead": "Все серийные линейки выпускаются в Чунцине с отгрузкой от 50 моторов в смешанном контейнере FOB Гуанчжоу и 100 % стендовой обкаткой.",
+      "cta": "Открыть раздел / карточку →",
+      "sections": [
+        {
+          "id": "families",
+          "title": "6 основных производственных линеек",
+          "cards": [
+            {
+              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "badge": "CG125–CG250 и Вода",
+              "title": "Штанговые двигатели CG (воздух / вода)",
+              "desc": "CG125, CG150, CG200 (10 кВт / 13,5 Н·м), CG250 и водяные CG150SB–CG250SB для мотоциклов и лёгких трициклов.",
+              "role": "cg"
+            },
+            {
+              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "badge": "CB150–CB250 OHC",
+              "title": "Цепные двигатели CB (верхневальный ГРМ)",
+              "desc": "Тихая цепь ГРМ, высота 452 мм, 29–31 кг и отдача до 12 кВт на CB250 для эндуро и дорожных мотоциклов.",
+              "role": "cb"
+            },
+            {
+              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "badge": "Альфа / Дельта / Питбайк 110–150",
+              "title": "Горизонтальные моторы CX (4 КПП)",
+              "desc": "Точные кубатуры: 106,7 мл, 107 мл, 123,67 мл (код 130), 140 мл (YX140 ориентир) и 149,8 мл (CX1P60FMJ со встроенным маслоканалом ГБЦ), механика или полуавтомат.",
+              "role": "horizontal"
+            },
+            {
+              "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+              "badge": "287,2 см³ · CVT + Реверс",
+              "title": "Двигатель для квадроцикла AC320 (175MN)",
+              "desc": "Жидкостное охлаждение 75 × 65 мм, вариатор CVT L-H-N-R со встроенным задним ходом и 5-кулачковым сцеплением.",
+              "role": "ac320"
+            },
+            {
+              "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+              "badge": "Boxer / RE 4S / HLX / King",
+              "title": "Моторы и запчасти аналоги Bajaj / TVS",
+              "desc": "Двигатели в сборе, половинки картера, ГБЦ, поршневые группы (ЦПГ) и комплекты прокладок по OEM-геометрии.",
+              "role": "btv-hub"
+            },
+            {
+              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "badge": "HW Water Heavy-Duty",
+              "title": "Серия HW Water для трициклов и запчасти",
+              "desc": "Тяжёлая серия HW Water под грузовые трициклы: объём масла 1,5 л, с 20-роликовой обгонной муфтой, магнето повышенной мощности, карбюратор PZ30 и совместимость с внешними редукторами реверса.",
+              "role": "hw-series"
+            }
+          ]
+        },
+        {
+          "id": "flagships",
+          "title": "Карточки флагманских моделей и прямых аналогов",
+          "cards": [
+            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275,3 мл факт", "title": "HW300 Водяной трицикл", "desc": "12,5 кВт · 21 Н·м · Картер 1,5 л · 20 роликов · под реверс-редуктор.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246,3 см³", "title": "CG250SB Водяное охлаждение", "desc": "11,5 кВт · 19,5 Н·м · Стандартная платформа CG для трициклов.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197,0 см³ · 10 кВт", "title": "CG200 Воздушный (CX163FML)", "desc": "10 кВт при 7 500 об/мин · 13,5 Н·м при 6 500 об/мин · с баланс-валом или без.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149,5 см³", "title": "CG150 Штанговый воздух", "desc": "Надёжная базовая модель для дорожных и коммерческих мотоциклов.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144,8 см³ · 4/5 КПП", "title": "Аналог Bajaj Boxer BM150", "desc": "Двигатель в сборе + картеры 36PF0004/36PF0005 и ЦПГ.", "role": "bajaj-boxer-bm150-complete-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198,88 см³ · 4F+1R", "title": "Аналог Bajaj RE 4S 200", "desc": "Принудительное воздушное охлаждение и встроенный реверс 4F+1R.", "role": "bajaj-re-4s-200-complete-engine" }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "title": "О заводе CHIXIANG MOTOR | Производство двигателей в Чунцине с 2003 года",
+      "description": "Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: опыт работы в отрасли с 2003 года, компания зарегистрирована в 2007 году. Мощность 10 000+ двигателей/мес, 100 % обкатка на стенде.",
+      "h1": "О заводе CHIXIANG MOTOR в Чунцине",
+      "lead": "CHIXIANG MOTOR — бренд компании Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. Компания работает в отрасли мотоциклетных двигателей с 2003 года, а нынешнее юридическое лицо зарегистрировано в 2007 году.",
+      "blocks": [
+        ["История и адрес завода", "Опыт работы в отрасли с 2003 года, компания зарегистрирована в 2007 году. Производство расположено по адресу: No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China."],
+        ["Мощность более 10 000 моторов в месяц", "Стандартизованные линии сборки штанговых CG, цепных CB OHC, горизонтальных двигателей (Альфа/Дельта/питбайк), водяных HW для трициклов и аналогов Bajaj & TVS."],
+        ["2 лаборатории, ISO 9001 и CCC", "Система менеджмента качества ISO 9001 и сертификация CCC по конкретным применимым моделям. Две лаборатории с диностендами и газоанализаторами обеспечивают 100 % холодный и горячий стендовый тест."],
+        ["Прямой экспорт и отслеживаемость", "Каждый двигатель имеет серийный номер на картере. Экспортные документы и логистика выполняются через уполномоченное экспортное подразделение Chixiang на условиях FOB Гуанчжоу."]
+      ]
+    },
+    "news": {
+      "title": "Руководства по подбору и импорту двигателей из Китая | CHIXIANG MOTOR",
+      "description": "8 инженерных и закупочных гидов для импортёров РФ и СНГ: штанговые CG vs цепные CB, водяные трициклы HW300, горизонтальные моторы Альфа/Дельта, аналоги Bajaj/TVS и MOQ 50 FOB Гуанчжоу.",
+      "h1": "Технические руководства для оптовых закупщиков РФ и СНГ",
+      "lead": "Проверенные таблицы характеристик, схемы подбора КПП (механика vs полуавтомат), совместимость ЦПГ и условия смешанной отгрузки из Чунцина.",
+      "ctaCard": "Читать руководство полностью →",
+      "guides": [
+        {
+          "tag": "Штанговый CG vs Цепной CB",
+          "title": "Сравнение двигателей CG (OHV штанги) и CB (OHC цепь ГРМ) 125–250 см³",
+          "body": "Разбор мощности, крутящего момента, высоты (500 против 452 мм), простоты ремонта и посадочных размеров на раму.",
+          "role": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison"
+        },
+        {
+          "tag": "Трицикл HW vs CG250",
+          "title": "Водяные моторы HW250 и HW300 против CG250SB: ~80 % общих деталей",
+          "body": "Откуда лишние 5,2 кг у HW250 (картер 1,5 л, обгонная муфта на 20 роликов, внешний реверс-редуктор) и как сократить склад ЦПГ/ГБЦ.",
+          "role": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine"
+        },
+        {
+          "tag": "Воздух vs Водянка",
+          "title": "Воздушное или водяное охлаждение мотоциклетного двигателя: что выбрать?",
+          "body": "Практический разбор под коммерческие мотоциклы, летнюю жару, крутые подъёмы и тяжёлые грузовые трициклы.",
+          "role": "air-cooled-vs-water-cooled-motorcycle-engine"
+        },
+        {
+          "tag": "Аналоги Bajaj & TVS",
+          "title": "Двигатели замены Bajaj и TVS: 5-пунктовый чек-лист OEM перед заказом",
+          "body": "Кросс-таблица Boxer CT100/BM150, RE 4S и TVS HLX 150 / King 200: шлицы, звёзды, жгут проводов и смешанный контейнер.",
+          "role": "bajaj-tvs-replacement-engine-fitment-checklist"
+        },
+        {
+          "tag": "Горизонтальные 110–150",
+          "title": "Горизонтальные моторы 152FMH, 1P56FMJ и 1P60FMJ (Альфа / Дельта / Питбайк)",
+          "body": "Реальные кубатуры (106,7–149,8 мл), ориентиры YX140/W150-2, механика против полуавтомата, верхний/нижний стартер и внутренний маслоканал ГБЦ.",
+          "role": "horizontal-motorcycle-engine-110cc-150cc-selection-guide"
+        },
+        {
+          "tag": "Аудит и Гарантия 60 дн.",
+          "title": "Как проверить качество моторов из Чунцина: стенд 100 %, дино-лаборатория и гарантия",
+          "body": "4 этапа заводского контроля, проверка госреестров и патента CN221406869U и порядок рекламации за 60 дней после порта.",
+          "role": "chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty"
+        },
+        {
+          "tag": "Упаковка и MOQ 50 микс",
+          "title": "Габариты экспортной тары, комплектация и смешанный заказ MOQ 50 FOB Гуанчжоу",
+          "body": "Размеры коробов по всем сериям, базовый объём vs заказ по спецификации PI, паллеты по 12 шт. и реестр номеров под таможню.",
+          "role": "motorcycle-engine-export-packaging-moq-50-mixed-loading-guide"
+        },
+        {
+          "tag": "Выбор завода в Китае",
+          "title": "Как выбрать надёжного производителя мотоциклетных двигателей в Китае",
+          "body": "8 критериев отбора прямого завода в Чунцине: опыт с 2003 года, стабильность партий и долгосрочная поставка запчастей.",
+          "role": "how-to-choose-motorcycle-engine-manufacturer-china"
+        }
+      ]
+    }
+  },
+  "ar": {
+    "home": {
+      "title": "مصنع محركات الدراجات النارية ودراجات الشحن ثلاثية العجلات | CHIXIANG MOTOR",
+      "description": "محركات أسياخ CG، محركات كاتينة CB (OHC)، محركات أفقية 110–150 سي سي، ATV AC320، تروسيكل تبريد مياه HW300 وبدائل باجاج و TVS. جملة من 50 وحدة FOB قوانغتشو.",
+      "eyebrow": "CHIXIANG MOTOR · مصنع تشونغتشينغ (خبرة منذ عام 2003)",
+      "h1": "مصنع محركات الدراجات النارية ودراجات الشحن ثلاثية العجلات في الصين",
+      "lead": "مصنع مباشر في تشونغتشينغ متخصص في محركات الأسياخ CG (تبريد هواء وماء)، محركات الكاتينة CB (OHC)، المحركات الأفقية 110–150 سي سي، محركات التروسيكل الثقيلة بتبريد المياه HW200–HW350 وبدائل باجاج بوكسر وتوك توك RE 4S و TVS HLX. اختبار بارد وساخن 100% على المنصة وتجميع حاويات مختلطة من 50 وحدة FOB قوانغتشو.",
+      "ctaPrimary": "تصفح الكتالوج الكامل",
+      "ctaSecondary": "اطلب عرض سعر FOB قوانغتشو",
+      "ctaWa": "واتساب التصدير",
+      "trustItems": [
+        ["منذ عام 2003", "خبرة تصنيعية منذ 2003 · الشركة مسجلة رسمياً في تشونغتشينغ عام 2007"],
+        ["+10,000 / شهر", "طاقة إنتاجية شهرية ثابتة لتلبية طلبات المستوردين وخطوط التجميع"],
+        ["فحص 100%", "اختبار منصة بارد وساخن 100% قبل الشحن + معملان للداينو والانبعاثات"],
+        ["MOQ 50 مختلط", "ادمج الموديلات الكاملة وقطع الغيار الأساسية داخل حاوية واحدة"]
+      ],
+      "matrixHeading": "التشكيلة الكاملة لمصر والسودان وشمال أفريقيا والشرق الأوسط",
+      "matrixSub": "اختر فئة المحرك أو انتقل مباشرة إلى مواصفات الطرازات الأكثر طلباً في أسواق التوفيقية والرصيف باء وموزعي التروسيكلات والتوك توك.",
+      "cards": [
+        {
+          "role": "cg",
+          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "badge": "موتور أسياخ OHV · هواء وماء",
+          "title": "محركات CG125 إلى CG250 وتروسيكلات HW",
+          "desc": "محركات أسياخ عملية (CG125، CG150، CG200 بقدرة 10 كيلوواط / 13.5 نيوتن·متر، CG250SB) وسلسلة التبريد المائي الثقيلة HW200–HW350 مع خيار عمود التوازن.",
+          "links": [
+            ["تصفح فئة CG بالكامل", "cg"],
+            ["CG200 هواء (CX163FML)", "cg200-air-cooled-engine"],
+            ["HW300 تروسيكل مياه", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "cb",
+          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "badge": "موتور كاتينة (OHC)",
+          "title": "محركات كاتينة CB من 150 إلى 250 سي سي",
+          "desc": "عمود كامات علوي بجنزير كاتينة هادئ (125cc إلى 250cc)، ارتفاع مدمج 452 مم، وعزم أعلى لدراجات الطرق والصحراء حتى 12 كيلوواط في طراز CB250.",
+          "links": [
+            ["استعرض محركات CB OHC", "cb"]
+          ]
+        },
+        {
+          "role": "horizontal",
+          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "badge": "110cc إلى 150cc · CX152FMH إلى CX1P60FMJ",
+          "title": "المحركات الأفقية 110–150 سي سي",
+          "desc": "سعات فعلية دقيقة: 106.7 مل، 107 مل، 123.67 مل (فئة 130)، 140 مل و149.8 مل (CX1P60FMJ بدائرة زيت داخلية بالسلندر دون مبرد خارجي).",
+          "links": [
+            ["تصفح المحركات الأفقية", "horizontal"]
+          ]
+        },
+        {
+          "role": "btv-hub",
+          "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+          "badge": "أساطيل باجاج بوكسر وتوك توك و TVS",
+          "title": "محركات وقطع غيار بديلة لـ Bajaj / TVS",
+          "desc": "محركات كاملة وقطع غيار مطابقة لمقاسات OEM (فخذتين كارتيرة، وش سلندر، سلندر وشنبر، كرنك، طقم جوانات) لباجاج بوكسر CT100/BM150 و RE 4S و TVS HLX/King.",
+          "links": [
+            ["الكتالوج والمقارنة OEM", "btv-hub"],
+            ["مواصفات بوكسر BM150", "bajaj-boxer-bm150-complete-engine"]
+          ]
+        },
+        {
+          "role": "hw-series",
+          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "badge": "تروسيكل تبريد مياه 250/300 سي سي",
+          "title": "أطقم وقطع صيانة HW200–HW350 (HW Water)",
+          "desc": "سلندرات تبريد مياه، طلمبة مياه، كلتش حر 20 بكرة، كارتيرة زيت 1.5 لتر وتشابه قطع بنحو 80% بين طرازي HW250 و HW300 (سعة 275.3 مل).",
+          "links": [
+            ["كتالوج قطع HW", "hw-series"],
+            ["مواصفات HW300 الكاملة", "hw300-water-cooled-engine"]
+          ]
+        },
+        {
+          "role": "ac320",
+          "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+          "badge": "CVT L-H-N-R + ترس رجوع",
+          "title": "محرك باجي / ATV & UTV طراز AC320",
+          "desc": "أسطوانة واحدة 4 أشواط بتبريد مائي 287.2 سي سي فعلياً (75 × 65 مم، رمز 175MN) مع ناقل CVT أوتوماتيكي وترس رجوع مدمج وكلتش 5 فكوك.",
+          "links": [
+            ["مواصفات AC320", "ac320"]
+          ]
+        }
+      ],
+      "spotlightHeading": "أبرز المحركات المطلوبة في مصر والشرق الأوسط وأفريقيا",
+      "spotlights": [
+        {
+          "role": "hw300-water-cooled-engine",
+          "title": "HW300 تروسيكل تبريد مياه للخدمة الشاقة (275.3 مل فعلي)",
+          "desc": "فئة 300 سي سي (275.3 مل) · 12.5 كيلوواط · 21 نيوتن·متر · زيت 1.5 لتر · كلتش 20 بكرة · 5 أمامي + صندوق رجوع خارجي."
+        },
+        {
+          "role": "cg200-air-cooled-engine",
+          "title": "CG200 موتور أسياخ تبريد هواء (CX163FML — 197.0 سي سي)",
+          "desc": "10 كيلوواط عند 7,500 لفة · 13.5 نيوتن·متر عند 6,500 لفة · متاح بعمود توازن للدراجات النفعية."
+        },
+        {
+          "role": "cg150-air-cooled-engine",
+          "title": "CG150 أسياخ كلاسيك (149.5 سي سي)",
+          "desc": "تصميم عملي سهل الصيانة في الورش المحلية مع وفرة شنابر وجوانات وش السلندر."
+        },
+        {
+          "role": "bajaj-boxer-bm150-complete-engine",
+          "title": "بديل باجاج بوكسر BM150 كامل (144.8 سي سي)",
+          "desc": "جيربوكس 4 أو 5 سرعات + فخذتين الكارتيرة (36PF0004/36PF0005) وطقم السلندر والشنابر."
+        }
+      ],
+      "exportHeading": "شروط التصدير والتخليص الجمركي (الإسكندرية · بورتسودان · الجزائر · جدة)",
+      "exportCards": [
+        ["MOQ 50 وحاوية مختلطة", "الحد الأدنى للطلب 50 محركاً كاملاً مع إمكانية دمج محركات الأسياخ CG والكاتينة CB والتروسيكل HW وقطع الغيار داخل نفس الحاوية."],
+        ["FOB قوانغتشو ومدة ~10 أيام عمل", "شروط التصدير القياسية FOB قوانغتشو (مع دعم الموانئ الصينية الرئيسية حسب الاتفاق) وزمن تجهيز ~10 أيام عمل للمواصفات المعتادة."],
+        ["مستندات الشحن ودعم ACID / CargoX", "تجهيز الفاتورة التجارية وقائمة التعبئة وكشف الأرقام التسلسلية للمحركات، مع رفع مستندات الشحن الإلكترونية عبر CargoX لرقم ACID الصادر من المستورد."],
+        ["معملان للفحص وضمان 60 يوماً", "اختبار بارد وساخن 100% ومعملا داينو وفحص صلابة. ضمان 60 يوماً بعد الوصول للميناء مع شحن القطع البديلة مجاناً بالحاوية التالية بعد تحقق الرقم التسلسلي."]
+      ]
+    },
+    "products": {
+      "title": "الكتالوج الكامل للمحركات والتروسيكلات وقطع الغيار | CHIXIANG MOTOR",
+      "description": "الكتالوج الكامل من CHIXIANG MOTOR: محركات أسياخ CG125–CG250، كاتينة CB OHC، أفقية 110–150 سي سي، باجي AC320، سلسلة HW200–HW350 بتبريد المياه وبدائل باجاج و TVS.",
+      "h1": "كتالوج المحركات وقطع الغيار من مصنع CHIXIANG",
+      "lead": "جميع خطوط المحركات وقطع الغيار تُجهز في تشونغتشينغ بحد أدنى 50 وحدة (شحن مختلط FOB قوانغتشو) مع اختبار 100% بارد وساخن.",
+      "cta": "عرض المواصفات والفئة ←",
+      "sections": [
+        {
+          "id": "families",
+          "title": "6 خطوط إنتاج رئيسية في المصنع",
+          "cards": [
+            {
+              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "badge": "CG125–CG250 هواء وماء",
+              "title": "محركات الأسياخ CG والتروسيكلات المائية",
+              "desc": "CG125 و CG150 و CG200 (10 كيلوواط / 13.5 نيوتن·متر) و CG250، إضافة إلى فئة CG150SB–CG250SB بتبريد المياه.",
+              "role": "cg"
+            },
+            {
+              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "badge": "CB150–CB250 OHC",
+              "title": "محركات الكاتينة CB (جنزير كاتينة علوي)",
+              "desc": "عمود كامات علوي هادئ الأداء وارتفاع 452 مم مع قدرة تصل إلى 12 كيلوواط في طراز CB250 للدراجات الرياضية والطرق.",
+              "role": "cb"
+            },
+            {
+              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "badge": "110–150 سي سي",
+              "title": "المحركات الأفقية CX152FMH إلى CX1P60FMJ",
+              "desc": "سعات فعلية دقيقة: 106.7 مل، 107 مل، 123.67 مل (فئة 130)، 140 مل و149.8 مل (دائرة زيت داخلية بالسلندر في CX1P60FMJ).",
+              "role": "horizontal"
+            },
+            {
+              "img": "/images/atv/chixiang-ac320-atv-engine-01.webp",
+              "badge": "287.2 سي سي · CVT + رجوع",
+              "title": "محرك باجي / ATV & UTV طراز AC320 (175MN)",
+              "desc": "تبريد مائي، 75 × 65 مم، ناقل CVT أوتوماتيكي L-H-N-R مع ترس رجوع مدمج وكلتش 5 فكوك.",
+              "role": "ac320"
+            },
+            {
+              "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+              "badge": "Boxer / RE 4S / HLX / King",
+              "title": "محركات وقطع بديلة لـ Bajaj و TVS",
+              "desc": "محركات كاملة وقطع غيار (فخذتين كارتيرة، وش سلندر، سلندر وشنبر، كرنك، جوانات) مطابقة لمقاسات المصنع الأصلي.",
+              "role": "btv-hub"
+            },
+            {
+              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "badge": "HW Water للخدمة الشاقة",
+              "title": "سلسلة HW Water للتروسيكلات وقطع الغيار",
+              "desc": "محركات HW Water الثقيلة للتروسيكلات: سعة زيت 1.5 لتر، قابض أحادي الاتجاه بـ 20 بكرة، ماغنيتو عالي الخرج، كاربوراتير PZ30، وناقل 5 سرعات أمامية متوافق مع صناديق الرجوع الخارجية.",
+              "role": "hw-series"
+            }
+          ]
+        },
+        {
+          "id": "flagships",
+          "title": "مواصفات الموديلات الرئيسية والبدائل المباشرة",
+          "cards": [
+            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275.3 مل فعلي", "title": "HW300 تروسيكل تبريد مياه", "desc": "12.5 كيلوواط · 21 نيوتن·متر · زيت 1.5 لتر · 20 بكرة · صندوق رجوع خارجي.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246.3 سي سي", "title": "CG250SB تبريد مائي", "desc": "11.5 كيلوواط · 19.5 نيوتن·متر · منصة CG القياسية للتروسيكلات.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197.0 سي سي · 10 كيلوواط", "title": "CG200 أسياخ تبريد هواء", "desc": "10 كيلوواط عند 7,500 لفة · 13.5 نيوتن·متر عند 6,500 لفة · للاستخدام اليومي.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149.5 سي سي", "title": "CG150 أسياخ كلاسيك", "desc": "سهولة الصيانة ووفرة قطع الغيار في الورش.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144.8 سي سي · 4/5 سرعات", "title": "بديل باجاج بوكسر BM150", "desc": "محرك كامل مع فخذتين 36PF0004/36PF0005 وطقم سلندر وشنبر.", "role": "bajaj-boxer-bm150-complete-engine" },
+            { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198.88 سي سي · 4F+1R", "title": "بديل باجاج RE 4S 200", "desc": "تبريد هواء قسري مع رجوع مدمج 4F+1R وقطع الكارتيرة.", "role": "bajaj-re-4s-200-complete-engine" }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "title": "عن مصنع CHIXIANG MOTOR | خبرة تصنيع المحركات منذ 2003",
+      "description": "شركة Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: خبرة في القطاع منذ عام 2003 وتم تسجيل الشركة رسميًا عام 2007 في تشونغتشينغ بطاقة +10,000 محرك شهرياً.",
+      "h1": "عن مصنع CHIXIANG MOTOR في تشونغتشينغ",
+      "lead": "CHIXIANG MOTOR هي العلامة التجارية لشركة Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. تعمل الشركة في صناعة محركات الدراجات النارية منذ عام 2003، وتم تسجيل الكيان القانوني الحالي في عام 2007.",
+      "blocks": [
+        ["الخبرة وموقع المصنع", "خبرة في القطاع منذ عام 2003، وتم تسجيل الشركة رسميًا عام 2007 في تشونغتشينغ. عنوان المصنع: No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China."],
+        ["طاقة تتجاوز 10,000 محرك شهرياً", "خطوط تجميع مخصصة لمحركات الأسياخ CG والكاتينة CB والمحركات الأفقية وتروسيكلات التبريد المائي HW وبدائل باجاج و TVS."],
+        ["معملان للاختبار ونظام ISO 9001 و CCC", "نطبق نظام إدارة الجودة ISO 9001 وتتوفر شهادة CCC للطرازات المؤهلة. يجتاز كل محرك اختبار منصة بارد وساخن 100% مدعوماً بمعملين للداينومتر وتحليل الغازات والمعادن."],
+        ["التصدير المباشر وتتبع الأرقام التسلسلية", "يحمل كل محرك رقماً تسلسلياً محفوراً على الكارتيرة، وتُنفَّذ وثائق التصدير والخدمات اللوجستية عبر قسم التصدير المعتمد لدى Chixiang وفق شرط FOB قوانغتشو."]
+      ]
+    },
+    "news": {
+      "title": "أدلة الشراء والهندسة لمستوردي المحركات بالشرق الأوسط وأفريقيا | CHIXIANG MOTOR",
+      "description": "8 أدلة هندسية وتجارية لمستوردي التوفيقية والشرق الأوسط: موتور أسياخ مقابل كاتينة، تروسيكل تبريد مياه HW300، بدائل باجاج و TVS، فحص الجودة وإجراءات ACI/ACID و FOB قوانغتشو.",
+      "h1": "الأدلة الهندسية والتجارية لمستوردي المحركات وقطع الغيار",
+      "lead": "مراجع تقنية معتمدة لاختيار المحركات المناسبة، تقليل مخزون الصيانة، وفهم متطلبات الشحن المختلط من 50 وحدة والتخليص الجمركي.",
+      "ctaCard": "اقرأ الدليل الكامل ←",
+      "guides": [
+        {
+          "tag": "أسياخ CG مقابل كاتينة CB",
+          "title": "مقارنة موتور الأسياخ CG (OHV) وموتور الكاتينة CB (OHC) من 125 إلى 250 سي سي",
+          "body": "فروق القدرة والعزم والارتفاع (500 مقابل 452 مم) وسهولة صيانة الأسياخ مقابل هدوء جنزير الكاتينة والشدادات.",
+          "role": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison"
+        },
+        {
+          "tag": "تروسيكل HW مقابل CG250",
+          "title": "HW250 و HW300 مقابل CG250SB للتروسيكل تبريد المياه: تشابه ~80% في القطع",
+          "body": "لماذا يزيد وزن HW250 بمقدار 5.2 كجم (كارتيرة 1.5 لتر، 20 بكرة، صندوق رجوع خارجي) وكيف توحّد مخزون الريداتير والطلمبة والسلندر.",
+          "role": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine"
+        },
+        {
+          "tag": "تبريد الهواء مقابل المياه",
+          "title": "المحرك المبرد بالهواء مقابل المبرد بالمياه (الريداتير): أيهما أنسب لسوقك؟",
+          "body": "دليل اختيار عملي بين دراجات التوصيل اليومية وتروسيكلات الشحن الثقيلة في المناخ الحار.",
+          "role": "air-cooled-vs-water-cooled-motorcycle-engine"
+        },
+        {
+          "tag": "بدائل باجاج و TVS",
+          "title": "قائمة التحقق الهندسية لمحركات باجاج بوكسر وتوك توك RE 4S و TVS HLX/King",
+          "body": "مصفوفة المطابقة OEM، فحص الترس والضفيرة والوقود (بنزين مقابل غاز)، ودمج الكارتيرة والسلندرات في حاوية واحدة.",
+          "role": "bajaj-tvs-replacement-engine-fitment-checklist"
+        },
+        {
+          "tag": "المحركات الأفقية 110–150",
+          "title": "دليل اختيار المحركات الأفقية CX152FMH و CX1P56FMJ و CX1P60FMJ",
+          "body": "السعات الفعلية (106.7–149.8 مل)، خيارات الكلتش وموقع المارش، ودائرة الزيت الداخلية بالسلندر دون مبرد خارجي.",
+          "role": "horizontal-motorcycle-engine-110cc-150cc-selection-guide"
+        },
+        {
+          "tag": "جودة تشونغتشينغ وضمان 60 يوماً",
+          "title": "كيف يتحقق المستورد من جودة المصنع: الفحص 100%، الداينو وضمان 60 يوماً",
+          "body": "أربع مراحل لفحص الصلابة والمنصة والانبعاثات، السجلات الحكومية وبراءة الاختراع CN221406869U، وخطوات المطالبة بالضمان.",
+          "role": "chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty"
+        },
+        {
+          "tag": "التعبئة و MOQ 50 و ACID",
+          "title": "أبعاد التعبئة القياسية ونطاق الملحقات وطلب MOQ 50 المختلط FOB قوانغتشو",
+          "body": "مقاسات الكراتين، الملحقات المحددة في فاتورة PI، الطبليات (12 وحدة)، وتنسيق مستندات CargoX / ACID.",
+          "role": "motorcycle-engine-export-packaging-moq-50-mixed-loading-guide"
+        },
+        {
+          "tag": "اختيار المصنع بالصين",
+          "title": "كيف تختار مصنع محركات دراجات نارية موثوقاً في الصين؟",
+          "body": "8 معايير لتقييم المصنع المباشر في تشونغتشينغ، ثبات جودة الشحنات المتكررة وتوافر قطع الغيار.",
+          "role": "how-to-choose-motorcycle-engine-manufacturer-china"
+        }
+      ]
+    }
+  },
+  "evidence": {
+    "fr": {
+      "title": "Centre de preuves d'ingénierie, banc d'essai & dossiers publics | CHIXIANG MOTOR",
+      "description": "Preuves vérifiables de Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. : capacité 10 000+ unités/mois, double laboratoire dynamomètre, test au banc chaud/froid à 100 %, brevets et dossiers publics.",
+      "eyebrow": "CHIXIANG MOTOR · Chongqing, Chine",
+      "h1": "Centre de preuves d'ingénierie & qualité",
+      "lead": "Capacité de fabrication vérifiable, essais sur banc dynamométrique en laboratoire, normes matériaux et dureté, protocoles de chargement en conteneur et dossiers publics de Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "mfgTitle": "Vérification industrielle & contrôle qualité",
+      "mfgSub": "Normes opérationnelles, essais en laboratoire et procédures export appliquées dans notre usine de Chongqing.",
+      "mfgCards": [
+        ["10 000+ unités par mois (capacité)", "Lignes d'assemblage standardisées à Hangu Town (Chongqing) couvrant les séries CG, CB, horizontales, tricycles à refroidissement liquide (eau) et quad/ATV AC320 pour livrer les commandes de gros."],
+        ["Test au banc 100 % chaud/froid & double laboratoire", "Deux laboratoires dédiés équipés de dynamomètres à courants de Foucault et d'analyseurs de gaz d'échappement réalisent le test au banc à chaud et à froid à 100 % avant expédition, ainsi que les courbes couple/puissance par lot (ex. CG200 : 10 kW @ 7 500 tr/min, 13,5 N·m @ 6 500 tr/min)."],
+        ["Métallurgie, usinage CNC & dureté", "Contrôle dimensionnel entrant et mesures de dureté Rockwell/Vickers et profondeur de cémentation sur vilebrequins, pignons de boîte, cylindres, arbres à cames, demi-carters ADC12 et embrayages."],
+        ["Chargement conteneur, FOB Guangzhou & garantie 60 jours", "Vidange/scellage export, caisses bois sans fumigation ou cartons renforcés avec relevé des numéros de série moteur gravés. MOQ 50 moteurs en commande mixte de plusieurs modèles, délai ~10 jours ouvrables, FOB Guangzhou (Abidjan, Douala, Cotonou, Dakar ; suivi BSC / BESC coordonné par l'importateur/transitaire), garantie 60 jours après arrivée au port."]
+      ],
+      "recTitle": "Dossiers publics & enregistrements tiers",
+      "recSub": "Sources publiques indépendantes, annuaires sectoriels et brevets liés à Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "records": [
+        ["Dossier A : Avis public Chongqing High-Tech Zone (2024)", ["Source : Comité administratif de la Zone High-Tech de Chongqing", "Date : 2024-06-28", "Entité : 重庆驰翔摩托车制造有限公司 (Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.)", "Portée : Liste approuvée dans l'avis d'attribution d'aide aux entreprises technologiques."], "https://gxq.cq.gov.cn/ggtz/202406/t20240628_13334163.html", "Consulter l'avis officiel"],
+        ["Dossier B : 86e Foire nationale moto & pièces de Guangzhou (2023)", ["Source : Annuaire exposants Mopei8 (Guangzhou, 2023)", "Date : 2023-10-29", "Entité : 重庆驰翔摩托车制造有限公司", "Portée : Exposant enregistré au stand 2T85 dans la catégorie moteurs de motos."], "https://www.mopei8.com/news/zhanhui/4853.html", "Voir la fiche exposant"],
+        ["Dossier C : Brevet d'utilité publié (CN221406869U)", ["Source : Index Google Patents des dépôts chinois", "N° brevet : CN221406869U (publié le 2024-07-23)", "Objet : Câblage moteur haute dissipation thermique", "Portée : Dépôt technique public associé à Chongqing Chixiang (ne constitue pas une certification globale de toute la gamme)."], "https://patents.google.com/patent/CN221406869U/en", "Consulter le brevet"],
+        ["Canaux officiels & vérification fournisseur", ["Site officiel : https://chixiangmotor.com/", "Chaîne YouTube : youtube.com/@chixiangmotor", "Page LinkedIn : linkedin.com/company/chixiang-motor/", "Boutique domestique 1688 : shop7p518ep539950.1688.com"], "", "Profils directs gérés sous CHIXIANG MOTOR."]
+      ],
+      "qualTitle": "Documentation qualité & conformité",
+      "isoTitle": "Gestion qualité ISO 9001",
+      "isoDesc": "Des procédures documentées encadrent l'inspection entrante, le montage et l'essai final. Les justificatifs applicables sont vérifiables lors de l'audit fournisseur sur demande.",
+      "cccTitle": "Dossiers CCC par modèle",
+      "cccDesc": "Les dossiers CCC s'appliquent uniquement aux modèles et sociétés concernés ; ils ne couvrent pas automatiquement toute la gamme ni tous les pays de destination.",
+      "ctaBtn": "Demander un dossier d'inspection / devis",
+      "aboutBtn": "Découvrir l'usine CHIXIANG"
+    },
+    "es": {
+      "title": "Centro de Evidencia de Ingeniería, Dinamómetro y Registros | CHIXIANG MOTOR",
+      "description": "Pruebas verificables de Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: 10,000+ motores/mes, doble laboratorio con dinamómetro, prueba 100 % frío/caliente, patentes y registros públicos.",
+      "eyebrow": "CHIXIANG MOTOR · Chongqing, China",
+      "h1": "Centro de Evidencia de Ingeniería y Calidad",
+      "lead": "Capacidad fabril verificable, pruebas en dinamómetro de laboratorio, estándares de dureza y metalurgia, embalaje en contenedor y registros públicos de Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "mfgTitle": "Verificación de manufactura e ingeniería",
+      "mfgSub": "Estándares operativos, de laboratorio y exportación ejecutados en nuestra planta de Chongqing.",
+      "mfgCards": [
+        ["Capacidad mensual superior a 10,000 unidades", "Líneas de ensamble estandarizadas en Hangu Town, Chongqing para motores varilleros CG, cadenilleros CB, horizontales Cub, cargueros enfriados por agua HW y ATV AC320."],
+        ["Prueba 100 % en banco frío/caliente y doble laboratorio", "Dos laboratorios de pruebas con dinamómetros de corrientes parásitas y analizadores de gases ejecutan prueba al 100 % preembarque junto con curvas reales de torque/potencia (ej. CG200: 10 kW @ 7,500 rpm, 13.5 N·m @ 6,500 rpm)."],
+        ["Metalurgia, CNC y dureza de componentes", "Inspección de entrada para verificar aleación, profundidad de tratamiento térmico y dureza Rockwell/Vickers en cigüeñales, piñones de caja, cilindros, cárteres ADC12 y embragues."],
+        ["Carga mixta en contenedor, FOB Guangzhou y garantía 60 días", "Motores drenados/sellados, embalaje en cartón reforzado o jaba sin fumigación con lista de números de serie grabados para aduanas Latam (Callao, Buenaventura, Manzanillo, Guayaquil). MOQ 50 unidades (contenedor mixto), plazo ~10 días hábiles, garantía 60 días tras arribo."]
+      ],
+      "recTitle": "Registros públicos de terceros",
+      "recSub": "Registros gubernamentales, feriales y de patentes vinculados a Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "records": [
+        ["Registro A: Aviso público Zona High-Tech Chongqing (2024)", ["Fuente: Comité Administrativo de la Zona High-Tech de Chongqing", "Publicado: 2024-06-28", "Entidad: 重庆驰翔摩托车制造有限公司", "Alcance: Aprobación registrada en el listado público de subsidios para empresas tecnológicas."], "https://gxq.cq.gov.cn/ggtz/202406/t20240628_13334163.html", "Ver aviso oficial"],
+        ["Registro B: 86.ª Feria Nacional de Motopartes Guangzhou (2023)", ["Fuente: Directorio de expositores Mopei8 (Guangzhou, 2023)", "Publicado: 2023-10-29", "Entidad: 重庆驰翔摩托车制造有限公司", "Alcance: Expositor listado en Stand 2T85 bajo motores de motocicleta."], "https://www.mopei8.com/news/zhanhui/4853.html", "Ver registro ferial"],
+        ["Registro C: Patente de modelo de utilidad (CN221406869U)", ["Fuente: Índice Google Patents de solicitudes en China", "Patente: CN221406869U (Publicada 2024-07-23)", "Título: Estructura de cableado de motor de alta disipación térmica", "Alcance: Registro técnico público asociado a Chongqing Chixiang."], "https://patents.google.com/patent/CN221406869U/en", "Ver patente"],
+        ["Canales digitales y comerciales oficiales", ["Sitio web: https://chixiangmotor.com/", "YouTube: youtube.com/@chixiangmotor", "LinkedIn: linkedin.com/company/chixiang-motor/", "Tienda 1688 (China): shop7p518ep539950.1688.com"], "", "Perfiles oficiales operados directamente por CHIXIANG MOTOR."]
+      ],
+      "qualTitle": "Documentación de calidad y cumplimiento",
+      "isoTitle": "Gestión de calidad ISO 9001",
+      "isoDesc": "Procedimientos documentados regulan la inspección de piezas, control de línea y pruebas finales; registros disponibles bajo auditoría B2B.",
+      "cccTitle": "Documentación CCC por modelo",
+      "cccDesc": "Los registros CCC aplican únicamente a modelos y entidades específicas; no equivalen a certificación universal para toda la línea o país de destino.",
+      "ctaBtn": "Solicitar expedientes de calidad y cotización",
+      "aboutBtn": "Sobre la fábrica CHIXIANG"
+    },
+    "pt": {
+      "title": "Centro de Evidências de Engenharia, Dinamômetro e Registros | CHIXIANG MOTOR",
+      "description": "Evidências verificáveis da Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: capacidade 10.000+ motores/mês, 2 laboratórios com dinamômetro, teste 100 % a frio e quente e registros públicos.",
+      "eyebrow": "CHIXIANG MOTOR · Chongqing, China",
+      "h1": "Centro de Evidências de Engenharia e Qualidade",
+      "lead": "Capacidade produtiva verificável, ensaios em dinamômetro de laboratório, padrões de dureza e metalurgia, embalagem para exportação e registros públicos da Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "mfgTitle": "Verificação fabril e de engenharia",
+      "mfgSub": "Padrões operacionais, laboratoriais e de exportação executados na unidade de Chongqing.",
+      "mfgCards": [
+        ["Capacidade mensal acima de 10.000 unidades", "Linhas padronizadas em Hangu Town, Chongqing para motores vareta CG, OHC CB, horizontais tipo Cub, triciclos a água HW e ATV AC320."],
+        ["Teste 100 % em bancada a frio/quente e 2 laboratórios", "Dois laboratórios dedicados com dinamômetros de correntes parasitas e analisadores de gases realizam teste 100 % pré-embarque e curvas de torque/potência (ex. CG200: 10 kW @ 7.500 rpm, 13,5 N·m @ 6.500 rpm)."],
+        ["Metalurgia, usinagem CNC e dureza Rockwell/Vickers", "Inspeção de entrada em virabrequins, engrenagens, cilindros, carcaças ADC12 e embreagens para garantir profundidade de tratamento térmico e tolerâncias."],
+        ["Contêiner misto, FOB Guangzhou e garantia de 60 dias", "Embalagem reforçada com listagem de números de série gravados para despacho aduaneiro (Luanda, Maputo, Santos; suporte documental a CNCA / ARCCLA via importador). MOQ 50 unidades, prazo ~10 dias úteis, garantia de 60 dias após chegada."]
+      ],
+      "recTitle": "Registros públicos de terceiros",
+      "recSub": "Registros oficiais, feiras do setor e patentes públicas vinculadas à Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "records": [
+        ["Registro A: Aviso público Zona High-Tech Chongqing (2024)", ["Fonte: Comitê Administrativo da Zona High-Tech de Chongqing", "Publicado: 2024-06-28", "Entidade: 重庆驰翔摩托车制造有限公司", "Escopo: Aprovação listada em edital de incentivo a empresas de base tecnológica."], "https://gxq.cq.gov.cn/ggtz/202406/t20240628_13334163.html", "Ver aviso oficial"],
+        ["Registro B: 86.ª Feira Nacional de Motopeças de Guangzhou (2023)", ["Fonte: Diretório de expositores Mopei8 (Guangzhou, 2023)", "Publicado: 2023-10-29", "Entidade: 重庆驰翔摩托车制造有限公司", "Escopo: Expositor registrado no Estande 2T85 na categoria motores de motocicleta."], "https://www.mopei8.com/news/zhanhui/4853.html", "Ver registro da feira"],
+        ["Registro C: Patente de modelo de utilidade (CN221406869U)", ["Fonte: Índice Google Patents", "Patente: CN221406869U (Publicada em 2024-07-23)", "Título: Estrutura de cablagem de motor de alta dissipação térmica", "Escopo: Registro técnico público associado à Chongqing Chixiang."], "https://patents.google.com/patent/CN221406869U/en", "Ver patente"],
+        ["Canais digitais oficiais verificados", ["Site oficial: https://chixiangmotor.com/", "YouTube: youtube.com/@chixiangmotor", "LinkedIn: linkedin.com/company/chixiang-motor/", "Loja 1688 (China): shop7p518ep539950.1688.com"], "", "Perfis oficiais operados diretamente pela CHIXIANG MOTOR."]
+      ],
+      "qualTitle": "Documentação de qualidade e conformidade",
+      "isoTitle": "Gestão da qualidade ISO 9001",
+      "isoDesc": "Procedimentos documentados regem inspeção de recebimento, controle de montagem e ensaio final, verificáveis em auditoria B2B.",
+      "cccTitle": "Documentação CCC por modelo",
+      "cccDesc": "Registros CCC aplicam-se apenas a modelos e entidades específicas, não representando certificação universal para toda a linha.",
+      "ctaBtn": "Solicitar dossiê de inspeção e cotação",
+      "aboutBtn": "Sobre a fábrica CHIXIANG"
+    },
+    "ru": {
+      "title": "Центр доказательств: стендовые испытания, лаборатории и реестры | CHIXIANG MOTOR",
+      "description": "Подтверждённые данные Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: мощность 10 000+ моторов/мес, 2 испытательные лаборатории с диностендом, 100 % горячая и холодная обкатка, патенты и госреестры.",
+      "eyebrow": "CHIXIANG MOTOR · Чунцин, Китай",
+      "h1": "Центр инженерных и качественных доказательств",
+      "lead": "Подтверждённые производственные мощности, лабораторные диностендовые испытания, контроль твёрдости и металлургии, экспортная упаковка с реестром номеров и публичные записи Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "mfgTitle": "Проверка производства и лабораторного контроля",
+      "mfgSub": "Операционные, испытательные и экспортные стандарты, применяемые на заводе в Чунцине.",
+      "mfgCards": [
+        ["Мощность более 10 000 двигателей в месяц", "Стандартизованные сборочные линии в районе Цзюлунпо (Ханьгу, Чунцин) для штанговых CG, цепных OHC CB, горизонтальных моторов для Альфы/Дельты/питбайков, водяных HW и ATV AC320."],
+        ["100 % горячая/холодная обкатка и 2 лаборатории", "Две испытательные лаборатории с вихретоковыми диностендами и газоанализаторами выполняют 100 % предпродажный стендовый тест каждого мотора (пример замера CG200: 10 кВт при 7 500 об/мин, 13,5 Н·м при 6 500 об/мин)."],
+        ["Металлургия, ЧПУ и контроль твёрдости", "Входной контроль сплавов, глубины термообработки и твёрдости по Роквеллу/Виккерсу на коленвалах, шестернях КПП, цилиндрах, картерах ADC12 и сцеплении."],
+        ["Смешанный контейнер, FOB Гуанчжоу и гарантия 60 дней", "Опечатанные моторы в усиленных коробах/обрешётке с полным перечнем выбитых серийных номеров для таможни РФ и СНГ. MOQ 50 штук (смешанный заказ), срок ~10 рабочих дней, гарантия 60 дней после прибытия в порт."]
+      ],
+      "recTitle": "Публичные записи и сторонние реестры",
+      "recSub": "Независимые государственные уведомления, выставочные каталоги и патенты Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "records": [
+        ["Запись A: Публичное уведомление зоны High-Tech Чунцина (2024)", ["Источник: Административный комитет зоны высокотехнологичного развития Чунцина", "Дата: 2024-06-28", "Юрлицо: 重庆驰翔摩托车制造有限公司", "Суть: Включение в утверждённый список субсидий для технологических предприятий."], "https://gxq.cq.gov.cn/ggtz/202406/t20240628_13334163.html", "Открыть гос. источник"],
+        ["Запись B: 86-я выставка мотозапчастей в Гуанчжоу (2023)", ["Источник: Каталог участников Mopei8 (Гуанчжоу, 2023)", "Дата: 2023-10-29", "Юрлицо: 重庆驰翔摩托车制造有限公司", "Суть: Экспонент, стенд 2T85, раздел «Двигатели для мотоциклов»."], "https://www.mopei8.com/news/zhanhui/4853.html", "Открыть каталог выставки"],
+        ["Запись C: Патент на полезную модель (CN221406869U)", ["Источник: Индекс Google Patents", "Патент: CN221406869U (опубл. 2024-07-23)", "Название: Жгут/кабель двигателя с повышенным теплоотводом", "Суть: Публичная техническая заявка, связанная с Chongqing Chixiang."], "https://patents.google.com/patent/CN221406869U/en", "Открыть патент"],
+        ["Официальные цифровые каналы", ["Официальный сайт: https://chixiangmotor.com/", "YouTube: youtube.com/@chixiangmotor", "LinkedIn: linkedin.com/company/chixiang-motor/", "Магазин 1688 (Китай): shop7p518ep539950.1688.com"], "", "Официальные аккаунты под управлением CHIXIANG MOTOR."]
+      ],
+      "qualTitle": "Документация по качеству и соответствию",
+      "isoTitle": "Система менеджмента качества ISO 9001",
+      "isoDesc": "Документированные процедуры регламентируют входной контроль, сборку и стендовые испытания; сведения предоставляются при аудите поставщика.",
+      "cccTitle": "Сертификация CCC по конкретным моделям",
+      "cccDesc": "Записи CCC относятся только к отдельным моделям и не означают автоматической сертификации всей линейки или требований всех стран экспорта.",
+      "ctaBtn": "Запросить протоколы и расчёт",
+      "aboutBtn": "О заводе CHIXIANG"
+    },
+    "ar": {
+      "title": "مركز الأدلة الهندسية واختبارات الداينو والسجلات الرسمية | CHIXIANG MOTOR",
+      "description": "أدلة موثقة لشركة Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.: طاقة +10,000 محرك شهرياً، معملان لاختبار الداينو والغازات، فحص بارد وساخن 100%، وبراءات وسجلات رسمية.",
+      "eyebrow": "CHIXIANG MOTOR · تشونغتشينغ، الصين",
+      "h1": "مركز الأدلة الهندسية وضبط الجودة",
+      "lead": "طاقة تصنيعية موثقة، اختبارات داينومتر في المختبر، معايير المعادن والصلابة، بروتوكولات الشحن بالحاويات، والسجلات الحكومية وبراءات الاختراع المرتبطة بشركة Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "mfgTitle": "التحقق الصناعي والهندسي في المصنع",
+      "mfgSub": "معايير التشغيل والفحص المعملي والتصدير المطبقة في منشأة تشونغتشينغ.",
+      "mfgCards": [
+        ["طاقة إنتاجية تتجاوز 10,000 محرك شهرياً", "خطوط تجميع قياسية في بلدة هانغو بتشونغتشينغ لتغطية فئات CG أسياخ وCB كاتينة والمحركات الأفقية وتروسيكلات التبريد المائي HW ومحرك ATV AC320."],
+        ["اختبار بارد وساخن 100% ومعملان للداينو والانبعاثات", "معملان مجهزان بدينامومتر التيارات الدوامية ومحللات غاز العادم لتنفيذ اختبار 100% على المنصة لكل محرك والتحقق من منحنيات العزم والقدرة (مثل CG200: 10 كيلوواط عند 7,500 لفة، 13.5 نيوتن·متر عند 6,500 لفة)."],
+        ["معايير الخامات والصلابة والتشغيل CNC", "فحص معملي لسبائك الكرنك وتروس الجير والسلندرات وفخذتين الكارتيرة ADC12 وقياس صلابة روكويل/فيكرز قبل دخول خط التجميع."],
+        ["الشحن المختلط FOB قوانغتشو وضمان 60 يوماً", "تفريغ وإغلاق المحركات في عبوات معززة مع كشف الأرقام التسلسلية لدعم مستندات الجمارك والـ ACID/CargoX عبر المستورد. حد أدنى 50 وحدة بموديلات مختلطة، تجهيز ~10 أيام عمل، ضمان 60 يوماً بعد الوصول للميناء."]
+      ],
+      "recTitle": "السجلات الرسمية وبراءات الاختراع العامة",
+      "recSub": "مصادر حكومية ومعارض متخصصة وسجلات براءات مرتبطة بشركة Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.",
+      "records": [
+        ["السجل أ: إشعار منطقة تشونغتشينغ للتكنولوجيا الفائقة (2024)", ["المصدر: اللجنة الإدارية لمنطقة التنمية التكنولوجية بتشونغتشينغ", "التاريخ: 2024-06-28", "الكيان: 重庆驰翔摩托车制造有限公司", "النطاق: إدراج معتمد في منحة المؤسسات القائمة على التكنولوجيا."], "https://gxq.cq.gov.cn/ggtz/202406/t20240628_13334163.html", "عرض الإشعار الرسمي"],
+        ["السجل ب: دليل معرض قوانغتشو الوطني الـ 86 للدراجات (2023)", ["المصدر: دليل العارضين Mopei8 (قوانغتشو، 2023)", "التاريخ: 2023-10-29", "الكيان: 重庆驰翔摩托车制造有限公司", "النطاق: عارض مسجل بالجناح 2T85 تحت فئة محركات الدراجات النارية."], "https://www.mopei8.com/news/zhanhui/4853.html", "عرض سجل المعرض"],
+        ["السجل ج: براءة منفعة منشورة (CN221406869U)", ["المصدر: فهرس Google Patents لبراءات الاختراع الصينية", "رقم البراءة: CN221406869U (نُشرت 2024-07-23)", "الموضوع: هيكل كابل محرك عالي تبديد الحرارة", "النطاق: إيداع تقني عام مرتبط بتشونغتشينغ تشيشيانغ."], "https://patents.google.com/patent/CN221406869U/en", "عرض سجل البراءة"],
+        ["القنوات الرقمية والتجارية الرسمية", ["الموقع الرسمي: https://chixiangmotor.com/", "قناة يوتيوب: youtube.com/@chixiangmotor", "لينكدإن: linkedin.com/company/chixiang-motor/", "متجر 1688 (الصين): shop7p518ep539950.1688.com"], "", "حسابات رسمية تديرها CHIXIANG MOTOR مباشرة."]
+      ],
+      "qualTitle": "وثائق الجودة والاعتماد",
+      "isoTitle": "إدارة الجودة ISO 9001",
+      "isoDesc": "تخضع عمليات الاستلام والتجميع والاختبار النهائي لإجراءات جودة موثقة تُراجع عند تأهيل الموردين.",
+      "cccTitle": "وثائق CCC الخاصة بالطرازات",
+      "cccDesc": "تنطبق سجلات CCC فقط على الطرازات والكيانات المحددة ولا تعني شمولاً تلقائياً لجميع الفئات أو متطلبات كل دولة مستوردة.",
+      "ctaBtn": "اطلب ملفات الفحص وعرض السعر",
+      "aboutBtn": "عن مصنع CHIXIANG"
+    }
+  },
+  "ac320": {
+    "fr": {
+      "title": "Moteur Quad / ATV & UTV AC320 (287,2 cc liquide CVT + marche arrière) | CHIXIANG",
+      "description": "Moteur AC320 (code usine 175MN) de CHIXIANG MOTOR : monocylindre 4 temps 287,2 cc refroidissement liquide (eau), 75 × 65 mm, variateur CVT L-H-N-R avec marche arrière intégrée.",
+      "name": "Moteur Quad / UTV AC320 (287,2 cc CVT)",
+      "lead": "Le modèle usine AC320 (référence 175MN) est un moteur vertical 4 temps à refroidissement liquide (eau) de 287,2 cc (75 × 65 mm) équipé d'une transmission CVT (L-H-N-R) avec marche arrière intégrée et embrayage centrifuge renforcé à 5 mâchoires.",
+      "tags": ["Quad / UTV", "287,2 cc réels", "Refroidissement liquide (eau)", "CVT L-H-N-R + Marche arrière"],
+      "specTitle": "Spécifications techniques vérifiées",
+      "headers": ["Paramètre", "Valeur"],
+      "rows": [
+        ["Modèle usine", "AC320"],
+        ["Alias technique", "175MN"],
+        ["Architecture", "Monocylindre, 4 temps, vertical, refroidissement liquide (eau)"],
+        ["Classe nominale", "287 cc"],
+        ["Cylindrée réelle", "287,2 cc"],
+        ["Alésage × Course", "75 × 65 mm"],
+        ["Refroidissement", "Refroidissement liquide (eau)"],
+        ["Embrayage", "Embrayage centrifuge renforcé à 5 mâchoires"],
+        ["Transmission", "CVT (L-H-N-R)"],
+        ["Marche arrière", "Marche arrière intégrée"],
+        ["Allumage", "CDI"]
+      ],
+      "appTitle": "Applications Quad & Véhicules utilitaires",
+      "appBody": "Conçu pour quads agricoles/loisirs, buggies de plage et utilitaires légers UTV exigeant une transmission automatique CVT fiable avec gamme courte (L) et marche arrière intégrée.",
+      "noteTitle": "Points à confirmer avant commande FOB Guangzhou",
+      "noteBody": "Confirmez les entraxes de fixation châssis, le type d'arbre de sortie (chaîne ou cardan), le kit radiateur/ventilateur et le faisceau CDI avec notre bureau technique. Commande mixte possible dès 50 unités avec vos moteurs CG, CB ou tricycles HW300.",
+      "ctaBtn": "Demander un devis AC320",
+      "waModel": "AC320 (175MN) 287.2cc CVT"
+    },
+    "es": {
+      "title": "Motor ATV / UTV Cuatrimoto AC320 (287.2 cc líquido CVT + reversa) | CHIXIANG",
+      "description": "Motor AC320 (alias 175MN) de CHIXIANG MOTOR: monocilíndrico 4 tiempos 287.2 cc enfriado por líquido, 75 × 65 mm, caja automática CVT L-H-N-R con reversa integrada.",
+      "name": "Motor ATV / Cuatrimoto AC320 (287.2 cc CVT)",
+      "lead": "El modelo de fábrica AC320 (alias 175MN) es un motor vertical monocilíndrico de 4 tiempos enfriado por agua de 287.2 cc (75 × 65 mm) con variador automático CVT (L-H-N-R), reversa integrada y embrague centrífugo reforzado de 5 zapatas.",
+      "tags": ["ATV / UTV / Cuatrimoto", "287.2 cc reales", "Enfriado por agua", "CVT L-H-N-R + Reversa"],
+      "specTitle": "Especificaciones técnicas verificadas",
+      "headers": ["Parámetro", "Valor"],
+      "rows": [
+        ["Modelo de fábrica", "AC320"],
+        ["Alias técnico", "175MN"],
+        ["Configuración", "Monocilíndrico, 4 tiempos, vertical, enfriado por agua"],
+        ["Cilindrada nominal", "287 cc"],
+        ["Cilindrada real", "287.2 cc"],
+        ["Diámetro × Carrera", "75 × 65 mm"],
+        ["Refrigeración", "Enfriado por agua (líquido)"],
+        ["Embrague", "Embrague centrífugo reforzado de 5 zapatas"],
+        ["Transmisión", "CVT (L-H-N-R)"],
+        ["Reversa", "Reversa integrada"],
+        ["Encendido", "CDI"]
+      ],
+      "appTitle": "Aplicaciones en cuatrimotos y UTV de trabajo",
+      "appBody": "Diseñado para cuatrimotos de campo/playa, buggies y vehículos UTV que requieren tracción automática CVT con marcha baja (L) y reversa integrada de serie.",
+      "noteTitle": "Verificación previa a cotización FOB Guangzhou",
+      "noteBody": "Confirme soportes de chasis, salida de transmisión, radiador y arnés eléctrico con ingeniería antes de cerrar Proforma. Combinable en contenedor mixto desde 50 unidades con motores CG, CB o cargueros HW300.",
+      "ctaBtn": "Cotizar motor AC320",
+      "waModel": "AC320 (175MN) 287.2cc CVT"
+    },
+    "pt": {
+      "title": "Motor Quadriciclo / ATV & UTV AC320 (287,2 cc água CVT + ré) | CHIXIANG",
+      "description": "Motor AC320 (alias 175MN) da CHIXIANG MOTOR: monocilíndrico 4 tempos 287,2 cc refrigerado a água, 75 × 65 mm, transmissão CVT L-H-N-R com marcha ré integrada.",
+      "name": "Motor Quadriciclo / UTV AC320 (287,2 cc CVT)",
+      "lead": "O modelo de fábrica AC320 (alias 175MN) é um motor vertical de 4 tempos refrigerado a água com 287,2 cc reais (75 × 65 mm), transmissão automática CVT (L-H-N-R), marcha ré integrada e embreagem centrífuga reforçada de 5 sapatas.",
+      "tags": ["Quadriciclo / ATV / UTV", "287,2 cc reais", "Refrigerado a água", "CVT L-H-N-R + Ré"],
+      "specTitle": "Especificações técnicas verificadas",
+      "headers": ["Parâmetro", "Valor"],
+      "rows": [
+        ["Modelo de fábrica", "AC320"],
+        ["Alias técnico", "175MN"],
+        ["Configuração", "Monocilíndrico, 4 tempos, vertical, refrigerado a água"],
+        ["Cilindrada nominal", "287 cc"],
+        ["Cilindrada real", "287,2 cc"],
+        ["Diâmetro × Curso", "75 × 65 mm"],
+        ["Refrigeração", "Refrigerado a água (líquido)"],
+        ["Embreagem", "Embreagem centrífuga reforçada de 5 sapatas"],
+        ["Transmissão", "CVT (L-H-N-R)"],
+        ["Marcha ré", "Ré integrada"],
+        ["Ignição", "CDI"]
+      ],
+      "appTitle": "Aplicações em quadriciclos e UTV",
+      "appBody": "Projetado para quadriciclos utilitários, buggies de praia e veículos UTV que exigem câmbio automático CVT com reduzida (L) e marcha ré integrada.",
+      "noteTitle": "Confirmação antes da cotação FOB Guangzhou",
+      "noteBody": "Valide suportes de quadro, eixo de saída, conjunto de radiador e chicote CDI antes do pedido. Disponível em contêiner misto a partir de 50 unidades junto com linhas CG, CB ou HW300.",
+      "ctaBtn": "Solicitar cotação AC320",
+      "waModel": "AC320 (175MN) 287.2cc CVT"
+    },
+    "ru": {
+      "title": "Двигатель для квадроцикла ATV / UTV AC320 (287,2 см³ жидкостный CVT + реверс) | CHIXIANG",
+      "description": "Двигатель AC320 (175MN) от CHIXIANG MOTOR: 1 цилиндр, 4 такта, 287,2 см³, жидкостное охлаждение, 75 × 65 мм, вариатор CVT L-H-N-R со встроенным реверсом.",
+      "name": "Двигатель ATV / UTV AC320 (287,2 см³ CVT)",
+      "lead": "Заводская модель AC320 (обозначение 175MN) — вертикальный 4-тактный двигатель жидкостного охлаждения рабочим объёмом 287,2 см³ (75 × 65 мм) с клиноремённым вариатором CVT (L-H-N-R), встроенным задним ходом и усиленным 5-кулачковым центробежным сцеплением.",
+      "tags": ["Квадроцикл ATV / UTV", "287,2 см³", "Жидкостное охлаждение", "CVT L-H-N-R + Реверс"],
+      "specTitle": "Проверенные технические характеристики",
+      "headers": ["Параметр", "Значение"],
+      "rows": [
+        ["Заводская модель", "AC320"],
+        ["Индекс двигателя", "175MN"],
+        ["Компоновка", "Одноцилиндровый, 4-тактный, вертикальный, жидкостное охлаждение"],
+        ["Номинальный объём", "287 см³"],
+        ["Фактический объём", "287,2 см³"],
+        ["Диаметр × Ход поршня", "75 × 65 мм"],
+        ["Охлаждение", "Жидкостное (водяное)"],
+        ["Сцепление", "Усиленное 5-кулачковое центробежное"],
+        ["Трансмиссия", "Вариатор CVT (L-H-N-R)"],
+        ["Задний ход", "Встроенный реверс"],
+        ["Зажигание", "CDI"]
+      ],
+      "appTitle": "Применение на квадроциклах и багги UTV",
+      "appBody": "Предназначен для утилитарных и прогулочных квадроциклов, багги и UTV с пониженной передачей (L) и встроенным реверсом.",
+      "noteTitle": "Что согласовать перед заказом FOB Гуанчжоу",
+      "noteBody": "Уточните кронштейны рамы, выходной вал/кардан, радиатор охлаждения и распиновку CDI. Возможна отгрузка в смешанном контейнере от 50 моторов с линейками CG, CB и HW300.",
+      "ctaBtn": "Запросить цену на AC320",
+      "waModel": "AC320 (175MN) 287.2cc CVT"
+    },
+    "ar": {
+      "title": "محرك دراجات رباعية ATV / UTV طراز AC320 (287.2 سي سي تبريد مائي CVT) | CHIXIANG",
+      "description": "محرك AC320 (رمز 175MN) من CHIXIANG MOTOR: أسطوانة واحدة 4 أشواط بسعة فعلية 287.2 سي سي، تبريد مائي، 75 × 65 مم، ناقل حركة CVT L-H-N-R مع ترس رجوع للخلف مدمج.",
+      "name": "محرك باجي و ATV / UTV طراز AC320 (287.2 سي سي CVT)",
+      "lead": "طراز المصنع AC320 (المعروف بـ 175MN) هو محرك عمودي 4 أشواط بتبريد مائي بسعة فعلية 287.2 سي سي (75 × 65 مم)، مجهز بناقل حركة أوتوماتيكي CVT (L-H-N-R) وترس رجوع مدمج وكلتش طرد مركزي مقوّى بـ 5 فكوك.",
+      "tags": ["دراجات رباعية ATV / UTV", "287.2 سي سي فعلي", "تبريد مائي", "CVT L-H-N-R + رجوع"],
+      "specTitle": "المواصفات الهندسية المعتمدة",
+      "headers": ["البند", "القيمة"],
+      "rows": [
+        ["طراز المصنع", "AC320"],
+        ["الرمز البديل", "175MN"],
+        ["التكوين", "أسطوانة واحدة، 4 أشواط، عمودي، تبريد مائي"],
+        ["السعة الاسمية", "287 سي سي"],
+        ["السعة الفعلية", "287.2 سي سي"],
+        ["القطر × الشوط", "75 × 65 مم"],
+        ["نظام التبريد", "تبريد مائي (سائل)"],
+        ["القابض (الكلتش)", "كلتش طرد مركزي مقوّى 5 فكوك"],
+        ["ناقل الحركة", "CVT (L-H-N-R)"],
+        ["الرجوع للخلف", "مدمج بالمحرك"],
+        ["الإشعال", "CDI"]
+      ],
+      "appTitle": "التطبيقات في الباجي والمركبات الصحراوية",
+      "appBody": "مصمم لمركبات الـ ATV والـ UTV وباجي الشواطئ التي تتطلب عزماً مستمراً مع سرعة ثقيلة (L) ورجوعاً مدمجاً للخلف.",
+      "noteTitle": "نقاط المراجعة قبل عرض السعر FOB قوانغتشو",
+      "noteBody": "تأكد من نقاط التثبيت بالشاسيه وعمود الخرج ومنظومة الردياتير وضفيرة CDI قبل تأكيد الطلب. متاح الدمج داخل حاوية مختلطة من 50 محركاً مع فئات CG و HW300.",
+      "ctaBtn": "اطلب عرض سعر AC320",
+      "waModel": "AC320 (175MN) 287.2cc CVT"
+    }
+  }
+}

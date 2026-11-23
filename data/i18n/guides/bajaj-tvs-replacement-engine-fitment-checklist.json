@@ -1,0 +1,462 @@
+{
+  "slug": "bajaj-tvs-replacement-engine-fitment-checklist",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+  "quoteInterest": "parts",
+  "waModel": "Bajaj Boxer CT100/BM150 / RE 4S / TVS HLX/King",
+  "figures": [
+    {
+      "src": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp",
+      "alt": {
+        "en": "Bajaj Boxer CT100 / BM100 aftermarket replacement engine",
+        "fr": "Moteur complet adaptable Bajaj Boxer CT100 / BM100",
+        "es": "Motor de reemplazo compatible Bajaj Boxer CT100 / BM100",
+        "pt": "Motor de reposição compatível Bajaj Boxer CT100 / BM100",
+        "ru": "Двигатель замены Bajaj Boxer CT100 / BM100",
+        "ar": "محرك بديل لباجاج بوكسر CT100 / BM100"
+      },
+      "caption": {
+        "fr": "<strong>Adaptable Bajaj Boxer CT100 / BM100</strong> : 99,27 cc SOHC (53,0 × 45,0 mm), 4 vitesses kick, 1,0 L d'huile, pignon 428-14T.",
+        "es": "<strong>Reemplazo Bajaj Boxer CT100 / BM100</strong>: 99.27 cc SOHC (53.0 × 45.0 mm), 4 vel. arranque a patada, 1.0 L aceite, piñón 428-14T.",
+        "pt": "<strong>Reposição Bajaj Boxer CT100 / BM100</strong>: 99,27 cc SOHC (53,0 × 45,0 mm), 4 marchas pedal, 1,0 L óleo, pinhão 428-14T.",
+        "ru": "<strong>Замена Bajaj Boxer CT100 / BM100</strong>: 99,27 см³ SOHC (53,0 × 45,0 мм), 4 КПП кик-стартер, 1,0 л масла, звезда 428-14T.",
+        "ar": "<strong>بديل باجاج بوكسر CT100 / BM100</strong>: سعة 99.27 سي سي (53.0 × 45.0 مم)، 4 سرعات، 1.0 لتر زيت، ترس أمامي 428-14T."
+      }
+    },
+    {
+      "src": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp",
+      "alt": {
+        "en": "Bajaj RE 4S / Compact 200 replacement engine",
+        "fr": "Moteur adaptable tricycle Bajaj RE 4S / Compact 200",
+        "es": "Motor reemplazo mototaxi Bajaj Torito RE 4S / Compact 200",
+        "pt": "Motor reposição triciclo Bajaj RE 4S / Compact 200",
+        "ru": "Двигатель замены трицикла Bajaj RE 4S / Compact 200",
+        "ar": "محرك بديل لتوك توك باجاج RE 4S / Compact 200"
+      },
+      "caption": {
+        "fr": "<strong>Adaptable Bajaj RE 4S / Compact 200</strong> : 198,88 cc refroidissement air forcé avec boîte intégrée 4F+1R.",
+        "es": "<strong>Reemplazo Bajaj RE 4S / Compact 200 (Torito)</strong>: 198.88 cc aire forzado con cámara de reversa 4F+1R.",
+        "pt": "<strong>Reposição Bajaj RE 4S / Compact 200</strong>: 198,88 cc ar forçado com caixa integrada 4F+1R.",
+        "ru": "<strong>Замена Bajaj RE 4S / Compact 200</strong>: 198,88 см³ принудительное охлаждение, встроенный реверс 4F+1R.",
+        "ar": "<strong>بديل باجاج RE 4S / Compact 200</strong>: سعة 198.88 سي سي تبريد هواء قسري مع رجوع مدمج 4F+1R."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "Moteurs & pièces adaptables Bajaj Boxer, RE 4S & TVS HLX/King : checklist | CHIXIANG",
+      "description": "Matrice OEM à titre d'identification et checklist 5 points pour importer moteurs complets et demi-carters adaptables Bajaj Boxer CT100/BM150, RE 4S, TVS HLX 150 et TVS King 200.",
+      "h1": "Moteurs & pièces adaptables Bajaj Boxer CT100/BM150, RE 4S et TVS HLX/King : checklist avant commande",
+      "metaLine": "Publié : Novembre 2026 · Guide Fitment & Sourcing B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Verdict rapide",
+      "verdictHtml": "CHIXIANG MOTOR fabrique des moteurs complets, demi-carters et pièces de rechange <strong>adaptables (aftermarket indépendant)</strong> compatibles en cotes et interfaces avec les flottes Bajaj Boxer CT100/BM100, BM150, RE 4S/Compact 200, TVS HLX 125/150 et TVS King 200 — testés au banc 100 % et livrés en conteneur mixte dès 50 unités FOB Guangzhou.",
+      "sections": [
+        {
+          "heading": "1. Matrice technique & références OEM (à titre d'identification)",
+          "paragraphs": [
+            "Avant de passer commande dans notre <a href=\"{btv-hub}\">catalogue adaptables Bajaj & TVS</a>, vérifiez la cylindrée exacte, les rapports et les cotes d'alésage :"
+          ],
+          "table": {
+            "headers": ["Plateforme cible", "Cylindrée & Refroidissement", "Alésage × Course", "Puissance & Couple réf.", "Compression & Boîte", "Graissage & Sortie", "Références OEM (identification)"],
+            "rows": [
+              ["Bajaj Boxer CT100 / BM100 (2 roues)", "99,27 cc SOHC air (option 102 cc)", "53,0 × 45,0 mm (option 47,0 × 58,8)", "6,03 kW @ 7 500 tr/min ; 8,05 N·m @ 4 500", "9,5:1 ; 4 vitesses kick", "1,0 L huile ; pignon 428-14T", "DU10, DU101218, 36DU4079, 52PF2129"],
+              ["Bajaj Boxer BM150 (2 roues)", "144,8 cc air", "56,0 × 58,8 mm", "Conforme cote plateforme 36PF", "5 ou 4 vitesses selon préfixe", "Carters & couvercles appairés", "36PF0004, 36PF0005, 36PF0008, JA541212"],
+              ["Bajaj RE 4S / Compact 200 (3 roues)", "198,88 cc air forcé", "63,5 × 62,8 mm", "~7,6 kW @ 5 000 ; 14,5–17,0 N·m @ 3 500", "9,7:1 (essence) / GNC-GPL ; 4F+1R", "Chambre marche arrière intégrée ; volute", "RE 4S / 200 DTS-i (selon préfixe)"],
+              ["TVS HLX 150 / 125 Ecothrust (2 roues)", "147,49 cc & 124,53 cc air", "HLX 150 : 57,0 × 57,8 mm", "HLX 150 : 8,9 kW @ 7 500 ; 12,3 N·m @ 5 000", "9,7 ± 0,3 : 1 ; 4 ou 5 vitesses", "Fixations & stator dédiés", "TVS HLX 150 / 125 Ecothrust"],
+              ["TVS King Deluxe / GS 200 (3 roues)", "199,26 cc Duralife", "62,0 × 66,0 mm", "6,7–7,5 kW ; 13,0–15,5 N·m", "9,6 ± 0,3 : 1 (essence / GNC-GPL) ; 4F+1R", "Marche arrière intégrée ; galerie filtre fin", "TVS King Deluxe / GS 200"]
+            ]
+          },
+          "bullets": [
+            "<strong>Gamme <a href=\"{btv-bajaj}\">Bajaj adaptable</a></strong> : Moteurs complets + demi-carters moteur gauche/droite (36PF0004, 36PF0005), couvercles 36PF0008, culasse complète, kit cylindre-piston et pochettes de joints.",
+            "<strong>Gamme <a href=\"{btv-tvs}\">TVS adaptable</a></strong> : Assemblages complets HLX 150 (8,9 kW) / HLX 125 et TVS King 200 (4F+1R)."
+          ]
+        },
+        {
+          "heading": "2. Checklist d'interface en 5 points avant lancement usine",
+          "bullets": [
+            "<strong>1) Préfixe moteur & fonderie</strong> : Relevez les codes gravés (ex. 99,27 vs 102 cc sur CT100 ; 124,53 vs 147,49 cc sur HLX).",
+            "<strong>2) Carburant essence vs GNC/GPL</strong> : Sur RE 4S 200 et TVS King 200, précisez le carburant pour adapter culasse et sièges de soupapes.",
+            "<strong>3) Pignon de sortie & arbre de renvoi</strong> : Vérifiez le pas 428-14T sur Boxer, la cannelure du sélecteur (4 vs 5 vitesses) et les brides différentielles sur 3 roues.",
+            "<strong>4) Faisceau électrique & allumage</strong> : Contrôlez les broches CDI, l'indicateur de rapport et la sortie stator / magnéto.",
+            "<strong>5) Chambre de marche arrière & graissage</strong> : Confirmez les tringleries 4F+1R et la capacité d'huile (1,0 L sur CT100) avant validation."
+          ]
+        },
+        {
+          "heading": "3. Conteneur mixte dès 50 unités & contrôle qualité usine",
+          "bullets": [
+            "<strong>Panachage libre</strong> : Combinez moteurs complets et pièces adaptables Bajaj/TVS avec des moteurs CG, CB, horizontaux et tricycles HW dans un même conteneur dès 50 moteurs complets.",
+            "<strong>Banc 100 % chaud/froid & double laboratoire</strong> : Compression, passage de vitesses, marche arrière 4F+1R, charge stator et étanchéité vérifiés sur chaque unité (<a href=\"{evidence}\">Centre de preuves</a>).",
+            "<strong>Délai & garantie</strong> : ~10 jours ouvrables FOB Guangzhou ; garantie 60 jours après arrivée sur pièces confirmées par numéro de série et photo/vidéo."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Rotation flotte moto-taxi en Afrique francophone",
+        "items": [
+          "Les pièces les plus demandées à combiner avec vos moteurs complets Boxer BM150 / TVS HLX150 sont les <strong>demi-carters moteur (36PF0004/36PF0005), la culasse complète, le kit cylindre-piston, le vilebrequin et les pochettes de joints</strong>.",
+          "CHIXIANG précise toujours qu'il s'agit de pièces <strong>adaptables de remplacement</strong> (et non d'origine constructeur), avec références citées à titre d'identification technique et facturation export conforme pour BSC/BESC."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Les moteurs CHIXIANG pour Bajaj et TVS sont-ils des pièces d'origine constructeur ?",
+          "a": "Non. CHIXIANG MOTOR fabrique des moteurs et pièces de remplacement adaptables indépendants conçus aux cotes OEM. Les numéros OEM servent uniquement à l'identification de compatibilité."
+        },
+        {
+          "q": "Peut-on panacher moteurs Bajaj/TVS avec des moteurs CG ou tricycles HW dans un conteneur ?",
+          "a": "Oui. Le MOQ de 50 moteurs complets permet de combiner librement moteurs/carters adaptables Bajaj & TVS et séries CG, CB, horizontales ou HW à eau."
+        },
+        {
+          "q": "Que vérifier avant de commander des moteurs 3 roues Bajaj RE 4S ou TVS King 200 ?",
+          "a": "Confirmez le carburant (essence vs GNC/GPL), l'orientation de commande 4F+1R, les cannelures de sortie et les connecteurs du faisceau."
+        },
+        {
+          "q": "Comment CHIXIANG contrôle-t-il ces moteurs avant expédition ?",
+          "a": "Chaque moteur passe un test au banc à chaud et à froid à 100 % (compression, vitesses, marche arrière, tension magnéto, étanchéité) dans notre usine de Chongqing."
+        },
+        {
+          "q": "Comment fonctionne la garantie de 60 jours pour les distributeurs ?",
+          "a": "En cas de défaut de fabrication vérifié dans les 60 jours suivant l'arrivée au port via numéro de série et photos/vidéo, les pièces de rechange sont fournies gratuitement dans le conteneur suivant."
+        }
+      ],
+      "ctaCard": {
+        "title": "Valider vos références OEM & demander un devis mixte",
+        "body": "Transmettez vos références de carter, modèles Bajaj/TVS et port de destination pour recevoir confirmation technique et Proforma.",
+        "primaryBtn": "Demander un devis Bajaj / TVS",
+        "secondaryBtn": "Centre de preuves usine"
+      }
+    },
+    "es": {
+      "title": "Motores de Reemplazo Bajaj Boxer, Torito RE 4S y TVS HLX/King: Checklist OEM | CHIXIANG",
+      "description": "Matriz técnica y lista de 5 puntos para importar motores completos y repuestos equivalentes Bajaj Boxer CT100/BM150, Torito RE 4S, TVS HLX 150 y TVS King 200.",
+      "h1": "Motores de Reemplazo Bajaj Boxer CT100/BM150, Bajaj RE 4S y TVS HLX/King: Checklist de Compatibilidad OEM",
+      "metaLine": "Publicado: Noviembre 2026 · Guía de Compatibilidad B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Veredicto rápido",
+      "verdictHtml": "CHIXIANG MOTOR fabrica motores completos, cárteres y repuestos <strong>equivalentes de mercado independiente (aftermarket)</strong> compatibles con las plataformas Bajaj Boxer CT100/BM100, BM150, Bajaj Torito RE 4S/Compact 200, TVS HLX 125/150 y TVS King 200 — con prueba 100 % en banco frío/caliente y carga mixta desde 50 unidades FOB Guangzhou.",
+      "sections": [
+        {
+          "heading": "1. Matriz de especificaciones y cruce de códigos OEM",
+          "paragraphs": [
+            "Antes de confirmar su pedido en nuestro <a href=\"{btv-hub}\">catálogo de reemplazos Bajaj y TVS</a>, valide cilindrada real, relación y referencias de fundición:"
+          ],
+          "table": {
+            "headers": ["Plataforma objetivo", "Cilindrada y Enfriamiento", "Diámetro × Carrera", "Potencia y Torque ref.", "Compresión y Caja", "Lubricación y Salida", "Códigos OEM de referencia"],
+            "rows": [
+              ["Bajaj Boxer CT100 / BM100 (2 ruedas)", "99.27 cc SOHC aire (opción 102 cc)", "53.0 × 45.0 mm (102 cc: 47.0 × 58.8)", "6.03 kW @ 7,500 rpm; 8.05 N·m @ 4,500", "9.5:1; 4 vel. patada", "1.0 L aceite; piñón 428-14T", "DU10, DU101218, 36DU4079, 52PF2129"],
+              ["Bajaj Boxer BM150 (2 ruedas)", "144.8 cc aire", "56.0 × 58.8 mm", "Acorde a plataforma 36PF", "4 o 5 vel. según prefijo", "Cárteres y tapas emparejados", "36PF0004, 36PF0005, 36PF0008, JA541212"],
+              ["Bajaj RE 4S / Compact 200 (Mototaxi)", "198.88 cc aire forzado", "63.5 × 62.8 mm", "~7.6 kW @ 5,000; 14.5–17.0 N·m @ 3,500", "9.7:1 (gasolina) / GNV-GLP; 4F+1R", "Cámara reversa integrada; turbina", "RE 4S / 200 DTS-i (según prefijo)"],
+              ["TVS HLX 150 / 125 Ecothrust (2 ruedas)", "147.49 cc y 124.53 cc aire", "HLX 150: 57.0 × 57.8 mm", "HLX 150: 8.9 kW @ 7,500; 12.3 N·m @ 5,000", "9.7 ± 0.3 : 1; 4 o 5 vel.", "Anclajes y estator dedicados", "TVS HLX 150 / 125 Ecothrust"],
+              ["TVS King Deluxe / GS 200 (Mototaxi)", "199.26 cc Duralife", "62.0 × 66.0 mm", "6.7–7.5 kW; 13.0–15.5 N·m", "9.6 ± 0.3 : 1 (gasolina / GNV-GLP); 4F+1R", "Reversa integrada; filtro fino", "TVS King Deluxe / GS 200"]
+            ]
+          },
+          "bullets": [
+            "<strong>Línea <a href=\"{btv-bajaj}\">reemplazos Bajaj</a></strong>: Motores completos, mitades de cárter 36PF0004 / 36PF0005, tapas 36PF0008, culata, cilindro y pistón, y juegos de empaques.",
+            "<strong>Línea <a href=\"{btv-tvs}\">reemplazos TVS</a></strong>: Ensambles completos HLX 150 (8.9 kW) / HLX 125 y TVS King 200 (4F+1R)."
+          ]
+        },
+        {
+          "heading": "2. Lista de verificación técnica en 5 puntos",
+          "bullets": [
+            "<strong>1) Prefijo y código de cárter</strong>: Distinga 99.27 vs 102 cc en CT100 y 124.53 vs 147.49 cc en HLX.",
+            "<strong>2) Combustible (Gasolina vs GNV/GLP)</strong>: En Torito RE 4S y TVS King 200 especifique gasolina o gas para ajustar cámara de combustión y válvulas.",
+            "<strong>3) Piñón, estrías y brida de salida</strong>: Valide paso 428-14T en Boxer, eje de cambios y acoplamiento diferencial en 3 ruedas.",
+            "<strong>4) Conectores de arnés y magneto</strong>: Confirme pines de CDI/ECU, neutro/indicador de marcha y carga del estator.",
+            "<strong>5) Cámara de reversa y lubricación</strong>: Revise varillaje 4F+1R y volumen de aceite (1.0 L en CT100)."
+          ]
+        },
+        {
+          "heading": "3. Contenedor mixto y control de calidad Chongqing",
+          "bullets": [
+            "<strong>MOQ 50 mixto</strong>: Combine motores Bajaj/TVS y cárteres con líneas CG, CB, horizontales y cargueros HW.",
+            "<strong>Prueba 100 % en banco frío/caliente</strong>: Verificación de compresión, cambios, reversa 4F+1R, magneto y sellado (<a href=\"{evidence}\">Evidencia</a>).",
+            "<strong>Entrega y garantía</strong>: ~10 días hábiles FOB Guangzhou y 60 días de garantía post-arribo."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Flotas de mototaxi Torito Bajaj & TVS en Perú y Colombia",
+        "items": [
+          "Los talleres de <strong>mototaxi / motocar</strong> en Perú y Colombia rotan intensivamente cárteres 4F+1R, culatas, cilindros, cigüeñales y juegos de empaques; consolidarlos junto a motores completos optimiza flete y aranceles ante <strong>SUNAT / DIAN</strong>.",
+          "Todos los códigos OEM se citan estrictamente como referencia técnica de compatibilidad para piezas de reemplazo independientes."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Los motores de reemplazo Bajaj y TVS de CHIXIANG son unidades originales de marca OEM?",
+          "a": "No. CHIXIANG MOTOR fabrica motores, cárteres y repuestos independientes de reemplazo diseñados conforme a las dimensiones e interfaces de Bajaj y TVS; los códigos OEM se usan solo para referencia técnica."
+        },
+        {
+          "q": "¿Podemos mezclar estos motores con CG o cargueros de agua en un contenedor?",
+          "a": "Sí, desde nuestro MOQ estándar de 50 motores completos es habitual combinar reemplazos Bajaj/TVS con líneas CG, CB, horizontales y HW."
+        },
+        {
+          "q": "¿Qué datos confirmar antes de pedir motores de mototaxi RE 4S o TVS King 200?",
+          "a": "Confirme tipo de combustible (gasolina vs GNV/GLP), orientación de palanca 4F+1R, estrías de brida de salida y pines de arnés."
+        },
+        {
+          "q": "¿Cómo verifica CHIXIANG la calidad antes del embarque?",
+          "a": "Cada unidad pasa prueba 100 % en banco frío y caliente verificando compresión, cambios, reversa, carga de magneto y estanqueidad."
+        },
+        {
+          "q": "¿Cómo funciona la garantía de 60 días?",
+          "a": "Dentro de los 60 días posteriores al arribo al puerto, enviando número de serie y foto/video del defecto fabricativo, despachamos los repuestos sin costo en el siguiente contenedor."
+        }
+      ],
+      "ctaCard": {
+        "title": "Validar cruce OEM y cotizar contenedor mixto",
+        "body": "Envíe sus modelos objetivo, códigos de referencia y puerto de destino para recibir Factura Proforma.",
+        "primaryBtn": "Cotizar Bajaj / TVS",
+        "secondaryBtn": "Ver Centro de Evidencia"
+      }
+    },
+    "pt": {
+      "title": "Motores de Reposição Bajaj Boxer, RE 4S & TVS HLX/King: Checklist OEM | CHIXIANG",
+      "description": "Matriz técnica e checklist em 5 pontos para importar motores completos e carcaças compatíveis Bajaj Boxer CT100/BM150, RE 4S, TVS HLX 150 e TVS King 200.",
+      "h1": "Motores de Reposição Bajaj Boxer CT100/BM150, RE 4S & TVS HLX/King: Checklist de Compatibilidade OEM",
+      "metaLine": "Publicado: Novembro 2026 · Guia Técnico B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Resumo rápido",
+      "verdictHtml": "A CHIXIANG MOTOR fabrica motores completos, carcaças e peças de <strong>reposição aftermarket independente</strong> compatíveis em dimensões e interfaces com Bajaj Boxer CT100/BM100, BM150, RE 4S/Compact 200, TVS HLX 125/150 e TVS King 200 — testados 100 % em bancada e enviados em contêiner misto desde 50 unidades FOB Guangzhou.",
+      "sections": [
+        {
+          "heading": "1. Matriz de especificações e referência cruzada OEM",
+          "paragraphs": [
+            "Consulte nosso <a href=\"{btv-hub}\">catálogo compatível Bajaj e TVS</a> e valide cilindrada, diâmetro × curso e códigos de fundição antes do pedido:"
+          ],
+          "table": {
+            "headers": ["Plataforma", "Cilindrada & Refrigeração", "Diâmetro × Curso", "Potência & Torque ref.", "Compressão & Câmbio", "Lubrificação & Saída", "Códigos OEM de referência"],
+            "rows": [
+              ["Bajaj Boxer CT100 / BM100", "99,27 cc SOHC ar (opção 102 cc)", "53,0 × 45,0 mm (47,0 × 58,8)", "6,03 kW @ 7.500; 8,05 N·m @ 4.500", "9,5:1; 4 marchas pedal", "1,0 L óleo; pinhão 428-14T", "DU10, DU101218, 36DU4079, 52PF2129"],
+              ["Bajaj Boxer BM150", "144,8 cc ar", "56,0 × 58,8 mm", "Padrão 36PF", "4 ou 5 marchas conforme prefixo", "Carcaças e tampas pareadas", "36PF0004, 36PF0005, 36PF0008, JA541212"],
+              ["Bajaj RE 4S / Compact 200 (3 rodas)", "198,88 cc ar forçado", "63,5 × 62,8 mm", "~7,6 kW @ 5.000; 14,5–17,0 N·m @ 3.500", "9,7:1 (gasolina) / GNV-GLP; 4F+1R", "Câmara de ré integrada; ventoinha", "RE 4S / 200 DTS-i"],
+              ["TVS HLX 150 / 125 Ecothrust", "147,49 cc & 124,53 cc ar", "HLX 150: 57,0 × 57,8 mm", "HLX 150: 8,9 kW @ 7.500; 12,3 N·m @ 5.000", "9,7 ± 0,3 : 1; 4 ou 5 marchas", "Suportes e estator dedicados", "TVS HLX 150 / 125 Ecothrust"],
+              ["TVS King Deluxe / GS 200 (3 rodas)", "199,26 cc Duralife", "62,0 × 66,0 mm", "6,7–7,5 kW; 13,0–15,5 N·m", "9,6 ± 0,3 : 1 (gasolina / GNV-GLP); 4F+1R", "Ré integrada; galeria filtro fino", "TVS King Deluxe / GS 200"]
+            ]
+          },
+          "bullets": [
+            "<strong>Linha <a href=\"{btv-bajaj}\">reposição Bajaj</a></strong>: Motores completos, meias-carcaças 36PF0004 / 36PF0005, tampas, cabeçote, cilindro e juntas.",
+            "<strong>Linha <a href=\"{btv-tvs}\">reposição TVS</a></strong>: Conjuntos completos HLX 150 / 125 e TVS King 200."
+          ]
+        },
+        {
+          "heading": "2. Checklist técnico em 5 pontos antes da produção",
+          "bullets": [
+            "<strong>1) Prefixo do motor</strong>: Confirme 99,27 vs 102 cc (CT100) e 124,53 vs 147,49 cc (HLX).",
+            "<strong>2) Combustível</strong>: Para RE 4S e TVS King 200, informe gasolina vs GNV/GLP.",
+            "<strong>3) Pinhão & flange de saída</strong>: Confira 428-14T (Boxer), estrias de eixo e flange diferencial nos 3 rodas.",
+            "<strong>4) Chicote elétrico</strong>: Valide conectores CDI, sensor de marchas e saída do estator.",
+            "<strong>5) Câmara de ré & óleo</strong>: Confirme haste 4F+1R e volume de óleo (1,0 L no CT100)."
+          ]
+        },
+        {
+          "heading": "3. Contêiner misto & controle de qualidade",
+          "bullets": [
+            "<strong>MOQ 50 misto</strong>: Misture Bajaj/TVS com linhas CG, CB, horizontais e HW a água em ~10 dias úteis FOB Guangzhou.",
+            "<strong>Bancada 100 % frio/quente</strong>: Teste completo em cada motor antes da embalagem (<a href=\"{evidence}\">Evidências</a>) e garantia de 60 dias."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Frotas de mototáxi / kupapata em Angola & Moçambique",
+        "items": [
+          "Distribuidores em Luanda e Maputo combinam motores completos Boxer BM150 / TVS HLX com carcaças 36PF0004/36PF0005, kits cilindro e juntas para atendimento rápido de frotas.",
+          "Todos os códigos OEM são citados apenas como referência técnica de compatibilidade para peças independentes, com documentação completa para <strong>CNCA / ARCCLA</strong>."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Os motores Bajaj e TVS da CHIXIANG são peças originais da fábrica indiana?",
+          "a": "Não. Fabricamos motores e peças de reposição independentes projetados com as mesmas dimensões e interfaces de montagem; os códigos OEM servem apenas para conferência de encaixe."
+        },
+        {
+          "q": "Posso misturar motores Bajaj/TVS com linhas CG ou triciclos a água no contêiner?",
+          "a": "Sim, nosso MOQ padrão de 50 motores permite combinar livremente todas as linhas e peças."
+        },
+        {
+          "q": "O que confirmar antes de pedir motores de 3 rodas RE 4S ou TVS King 200?",
+          "a": "Combustível (gasolina vs GNV/GLP), lado da alavanca 4F+1R, estrias da flange de saída e conectores do chicote."
+        },
+        {
+          "q": "Como a CHIXIANG testa a qualidade antes do embarque?",
+          "a": "Todos os motores passam por teste 100 % em bancada a frio e quente para compressão, marchas, ré, carga elétrica e vedação."
+        },
+        {
+          "q": "Como funciona a garantia de 60 dias?",
+          "a": "Defeitos de fabricação comprovados dentro de 60 dias após chegada ao porto (por número de série e foto/vídeo) recebem peças de reposição gratuitas no próximo contêiner."
+        }
+      ],
+      "ctaCard": {
+        "title": "Validar códigos OEM e solicitar cotação mista",
+        "body": "Envie sua lista de modelos, códigos OEM e porto de destino para confirmarmos o chicote e o encaixe.",
+        "primaryBtn": "Cotar Bajaj / TVS",
+        "secondaryBtn": "Ver Centro de Evidências"
+      }
+    },
+    "ru": {
+      "title": "Двигатели замены Bajaj Boxer, RE 4S и TVS HLX/King: чек-лист OEM | CHIXIANG",
+      "description": "Таблица совместимости и 5-пунктовый чек-лист для заказа аналогов Bajaj Boxer CT100/BM150, RE 4S, TVS HLX 150 и TVS King 200 оптом.",
+      "h1": "Двигатели замены Bajaj Boxer CT100/BM150, RE 4S и TVS HLX/King: чек-лист OEM-совместимости",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Технический гид B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Краткий ответ",
+      "verdictHtml": "CHIXIANG MOTOR производит независимые <strong>двигатели, картеры и запчасти замены</strong> с геометрией посадки Bajaj Boxer CT100/BM100, BM150, RE 4S/Compact 200, TVS HLX 125/150 и TVS King 200 — со 100 % стендовой обкаткой и смешанной отгрузкой от 50 моторов FOB Гуанчжоу.",
+      "sections": [
+        {
+          "heading": "1. Сводная матрица характеристик и OEM-кодов",
+          "paragraphs": [
+            "Перед заказом в нашем <a href=\"{btv-hub}\">каталоге аналогов Bajaj и TVS</a> проверьте точную кубатуру, ЦПГ и отливки картера:"
+          ],
+          "table": {
+            "headers": ["Платформа", "Объём и охлаждение", "Диаметр × Ход", "Мощность и момент", "Сжатие и КПП", "Смазка и привод", "OEM-коды для сверки"],
+            "rows": [
+              ["Bajaj Boxer CT100 / BM100", "99,27 см³ SOHC воздух (опц. 102 см³)", "53,0 × 45,0 мм (47,0 × 58,8)", "6,03 кВт @ 7 500; 8,05 Н·м @ 4 500", "9,5:1; 4 КПП кик", "1,0 л масла; звезда 428-14T", "DU10, DU101218, 36DU4079, 52PF2129"],
+              ["Bajaj Boxer BM150", "144,8 см³ воздух", "56,0 × 58,8 мм", "По спецификации 36PF", "4 или 5 КПП по индексу", "Подобранные картеры и крышки", "36PF0004, 36PF0005, 36PF0008, JA541212"],
+              ["Bajaj RE 4S / Compact 200 (3 кол.)", "198,88 см³ принудительное", "63,5 × 62,8 мм", "~7,6 кВт @ 5 000; 14,5–17,0 Н·м @ 3 500", "9,7:1 (бензин) / газ; 4F+1R", "Встроенный реверс; кожух обдува", "RE 4S / 200 DTS-i"],
+              ["TVS HLX 150 / 125 Ecothrust", "147,49 и 124,53 см³ воздух", "HLX 150: 57,0 × 57,8 мм", "HLX 150: 8,9 кВт @ 7 500; 12,3 Н·м @ 5 000", "9,7 ± 0,3 : 1; 4 или 5 КПП", "Штатные кронштейны и статор", "TVS HLX 150 / 125 Ecothrust"],
+              ["TVS King Deluxe / GS 200 (3 кол.)", "199,26 см³ Duralife", "62,0 × 66,0 мм", "6,7–7,5 кВт; 13,0–15,5 Н·м", "9,6 ± 0,3 : 1 (бензин/газ); 4F+1R", "Встроенный реверс; маслоканал", "TVS King Deluxe / GS 200"]
+            ]
+          },
+          "bullets": [
+            "<strong>Раздел <a href=\"{btv-bajaj}\">запчастей Bajaj</a></strong>: Моторы в сборе, половинки картера 36PF0004/36PF0005, крышки, ГБЦ, ЦПГ и комплекты прокладок.",
+            "<strong>Раздел <a href=\"{btv-tvs}\">запчастей TVS</a></strong>: Двигатели в сборе HLX 150 / 125 и TVS King 200."
+          ]
+        },
+        {
+          "heading": "2. Чек-лист из 5 инженерных пунктов перед заказом",
+          "bullets": [
+            "<strong>1) Индекс двигателя и отливки</strong>: Уточняйте 99,27 против 102 см³ на CT100 и 124,53 против 147,49 см³ на HLX.",
+            "<strong>2) Тип топлива (бензин / пропан-метан)</strong>: Для RE 4S и TVS King 200 указывайте топливо заранее.",
+            "<strong>3) Ведущая звезда и шлицы</strong>: Проверьте шаг 428-14T, шлиц вала КПП и фланец привода 3-колёсных моделей.",
+            "<strong>4) Проводка и зажигание</strong>: Сверьте разъёмы CDI, датчика передач и катушек магнето.",
+            "<strong>5) Камера реверса и смазка</strong>: Подтвердите тяги 4F+1R и объём масла (1,0 л на CT100)."
+          ]
+        },
+        {
+          "heading": "3. Смешанный контейнер и заводская проверка",
+          "bullets": [
+            "<strong>MOQ 50 микс</strong>: Объединяйте аналоги Bajaj/TVS с линейками CG, CB, горизонтальными моторами и водяными HW.",
+            "<strong>100 % обкатка и гарантия 60 дней</strong>: Контроль компрессии, КПП, реверса и герметичности (<a href=\"{evidence}\">Доказательства</a>); отгрузка за ~10 раб. дней FOB Гуанчжоу."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Совет по комплектации для дистрибьюторов",
+        "items": [
+          "В смешанный контейнер целесообразно добавлять наиболее ходовые половинки картера (36PF0004/36PF0005), ЦПГ, коленвалы и прокладки — все OEM-артикулы указаны исключительно для технической сверки."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "Являются ли двигатели CHIXIANG для Bajaj и TVS оригиналом индийских заводов?",
+          "a": "Нет, это независимые запчасти и двигатели замены по OEM-размерам. OEM-артикулы приводятся строго для сверки совместимости."
+        },
+        {
+          "q": "Можно ли смешать их в одном контейнере с CG или водяными моторами?",
+          "a": "Да, стандартный MOQ 50 моторов допускает любые комбинации серий и запчастей."
+        },
+        {
+          "q": "Что нужно уточнить перед заказом RE 4S или TVS King 200?",
+          "a": "Топливо (бензин или газ), геометрию тяги 4F+1R, шлиц выходного фланца и распиновку жгута."
+        },
+        {
+          "q": "Как проверяется качество перед отправкой?",
+          "a": "100 % холодный и горячий стендовый тест компрессии, КПП, реверса, магнето и герметичности картера."
+        },
+        {
+          "q": "Как работает гарантия 60 дней?",
+          "a": "При подтверждённом производственном дефекте в течение 60 дней после прибытия в порт (по серийному номеру и фото/видео) бесплатная замена отправляется в следующем контейнере."
+        }
+      ],
+      "ctaCard": {
+        "title": "Проверить OEM-артикулы и получить расчёт контейнера",
+        "body": "Отправьте список моделей, OEM-номера и порт назначения для технической сверки.",
+        "primaryBtn": "Запросить расчёт Bajaj / TVS",
+        "secondaryBtn": "Центр доказательств"
+      }
+    },
+    "ar": {
+      "title": "قائمة التحقق لمحركات بديل باجاج بوكسر و RE 4S و TVS HLX/King | CHIXIANG",
+      "description": "مصفوفة المطابقة الهندسية و5 نقاط مراجعة قبل استيراد محركات وقطع غيار باجاج بوكسر CT100/BM150 وتوك توك RE 4S و TVS HLX 150 / King 200.",
+      "h1": "محركات وقطع غيار بديل باجاج بوكسر و RE 4S و TVS HLX/King: قائمة التحقق OEM",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل المطابقة الهندسية B2B — CHIXIANG MOTOR",
+      "verdictLabel": "الملخص السريع",
+      "verdictHtml": "تصنّع CHIXIANG MOTOR محركات كاملة وفخذتين كارتيرة وقطع غيار <strong>بديلة مستقلة (Aftermarket)</strong> مطابقة لأبعاد ومواصفات باجاج بوكسر CT100/BM100 و BM150 وتوك توك RE 4S و TVS HLX 125/150 و TVS King 200 — باختبار 100% بارد وساخن وشحن مختلط من 50 محركاً FOB قوانغتشو.",
+      "sections": [
+        {
+          "heading": "1. مصفوفة المواصفات ومطابقة أرقام OEM المرجعية",
+          "paragraphs": [
+            "قبل تأكيد الطلب في <a href=\"{btv-hub}\">كتالوج بدائل باجاج و TVS</a>، راجع السعات الفعلية وأرقام الصب:"
+          ],
+          "table": {
+            "headers": ["الفئة المستهدفة", "السعة والتبريد", "القطر × الشوط", "القدرة والعزم", "الانضغاط والجير", "التزييت والخرج", "أكواد OEM المرجعية"],
+            "rows": [
+              ["باجاج بوكسر CT100 / BM100", "99.27 سي سي هواء (خيار 102)", "53.0 × 45.0 مم (47.0 × 58.8)", "6.03 كيلوواط @ 7,500؛ 8.05 نيوتن·متر @ 4,500", "9.5:1؛ 4 سرعات منافيلا", "1.0 لتر زيت؛ ترس 428-14T", "DU10, DU101218, 36DU4079, 52PF2129"],
+              ["باجاج بوكسر BM150", "144.8 سي سي هواء", "56.0 × 58.8 مم", "مطابق لفئة 36PF", "4 أو 5 سرعات حسب الكود", "فخذتين كارتيرة وأغطية مطابقة", "36PF0004, 36PF0005, 36PF0008, JA541212"],
+              ["باجاج RE 4S / توك توك 200", "198.88 سي سي هواء قسري", "63.5 × 62.8 مم", "~7.6 كيلوواط @ 5,000؛ 14.5–17.0 نيوتن·متر", "9.7:1 (بنزين/غاز)؛ 4F+1R", "غرفة رجوع مدمجة؛ تبريد قسري", "RE 4S / 200 DTS-i"],
+              ["TVS HLX 150 / 125", "147.49 و 124.53 سي سي هواء", "HLX 150: 57.0 × 57.8 مم", "8.9 كيلوواط @ 7,500؛ 12.3 نيوتن·متر @ 5,000", "9.7 ± 0.3 : 1؛ 4 أو 5 سرعات", "قواعد وستاتور مطابق", "TVS HLX 150 / 125 Ecothrust"],
+              ["TVS King 200 (توك توك)", "199.26 سي سي Duralife", "62.0 × 66.0 مم", "6.7–7.5 كيلوواط؛ 13.0–15.5 نيوتن·متر", "9.6 ± 0.3 : 1 (بنزين/غاز)؛ 4F+1R", "رجوع مدمج؛ فلتر زيت دقيق", "TVS King Deluxe / GS 200"]
+            ]
+          },
+          "bullets": [
+            "<strong>قسم <a href=\"{btv-bajaj}\">قطع باجاج</a></strong>: محركات كاملة، فخذتين الكارتيرة 36PF0004/36PF0005، أغطية، وش سلندر، سلندر وشنبر، وطقم جوانات.",
+            "<strong>قسم <a href=\"{btv-tvs}\">قطع TVS</a></strong>: محركات HLX 150/125 و TVS King 200."
+          ]
+        },
+        {
+          "heading": "2. قائمة التحقق الهندسية من 5 نقاط",
+          "bullets": [
+            "<strong>1) الكود المطبوع على الكارتيرة</strong>: التمييز بين 99.27 و102 سي سي في CT100 وبين 124.53 و147.49 سي سي في HLX.",
+            "<strong>2) نوع الوقود (بنزين أم غاز طبيعي)</strong>: ضروري لتوك توك RE 4S و TVS King 200.",
+            "<strong>3) الترس الأمامي وعمود الدوران</strong>: التأكد من ترس 428-14T وفلانشة الدفرنس في التوك توك.",
+            "<strong>4) فيش الضفيرة والماغنيتو</strong>: مراجعة أطراف CDI ومبين الغيارات.",
+            "<strong>5) غرفة الرجوع وسعة الزيت</strong>: تأكيد ذراع 4F+1R وحجم الزيت (1.0 لتر في CT100)."
+          ]
+        },
+        {
+          "heading": "3. الشحن المختلط وفحص الجودة",
+          "bullets": [
+            "<strong>MOQ 50 مختلط</strong>: دمج بدائل باجاج و TVS مع فئات CG و CB والتروسيكلات المائية HW خلال ~10 أيام عمل FOB قوانغتشو.",
+            "<strong>اختبار 100% بارد وساخن</strong>: فحص الضغط والغيارات والرجوع وشحن الكهرباء (<a href=\"{evidence}\">الأدلة</a>) مع ضمان 60 يوماً."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "إرشادات مستوردي التوفيقية وسوق التوك توك",
+        "items": [
+          "دمج فخذتين الكارتيرة (36PF0004/36PF0005) والسلندر والشنابر وطقم الجوانات مع المحركات الكاملة يلبي احتياج ورش التوك توك والموتوسيكلات، مع رفع مستندات الشحن عبر <strong>CargoX / ACID</strong>."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "هل محركات باجاج و TVS من CHIXIANG هي وحدات أصلية من المصنع الهندي؟",
+          "a": "لا، نحن نصنع محركات وقطع غيار بديلة مستقلة مطابقة للمقاسات والأبعاد الهندسية، وتُذكر أرقام OEM لغرض المطابقة الفنية فقط."
+        },
+        {
+          "q": "هل يمكن دمجها مع محركات CG أو تروسيكلات المياه في حاوية واحدة؟",
+          "a": "نعم، الحد الأدنى 50 محركاً يسمح بدمج كافة الفئات وقطع الغيار."
+        },
+        {
+          "q": "ما البيانات المطلوبة قبل طلب محرك RE 4S أو TVS King 200؟",
+          "a": "نوع الوقود (بنزين أم غاز)، اتجاه ذراع الرجوع 4F+1R، عدد أسنان الفلانشة، وفيش الضفيرة."
+        },
+        {
+          "q": "كيف تتحقق CHIXIANG من الجودة قبل الشحن؟",
+          "a": "عبر اختبار 100% بارد وساخن لكل محرك للتحقق من الانضغاط والغيارات والرجوع والكهرباء ومنع التسريب."
+        },
+        {
+          "q": "كيف يعمل ضمان الـ 60 يوماً للموزعين؟",
+          "a": "عند ثبوت عيب تصنيع خلال 60 يوماً من الوصول عبر الرقم التسلسلي والصور أو الفيديو، تُشحن قطع الغيار البديلة مجاناً في الحاوية التالية."
+        }
+      ],
+      "ctaCard": {
+        "title": "تحقق من أرقام OEM واطلب عرض سعر حاوية مختلطة",
+        "body": "أرسل قائمة الطرازات والأكواد المرجعية وميناء الوصول لتأكيد الضفيرة والمقاسات.",
+        "primaryBtn": "اطلب عرض سعر باجاج / TVS",
+        "secondaryBtn": "تصفح مركز الأدلة"
+      }
+    }
+  }
+}

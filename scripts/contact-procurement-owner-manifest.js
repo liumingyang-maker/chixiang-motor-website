@@ -6,7 +6,8 @@ const products = [
       es: '/es/motor-horizontal',
       pt: '/pt/motor-horizontal',
       ru: '/ru/gorizontalnyj-dvigatel',
-      ar: '/ar/horizontal-engine'
+      ar: '/ar/horizontal-engine',
+      fr: '/fr/horizontal-engine'
     }
   },
   {
@@ -16,7 +17,8 @@ const products = [
       es: '/es/motor-cg',
       pt: '/pt/motor-cg',
       ru: '/ru/dvigatel-cg',
-      ar: '/ar/cg-engine'
+      ar: '/ar/cg-engine',
+      fr: '/fr/cg-engine'
     }
   },
   {
@@ -26,7 +28,8 @@ const products = [
       es: '/es/motor-cb',
       pt: '/pt/motor-cb',
       ru: '/ru/dvigatel-cb',
-      ar: '/ar/cb-engine'
+      ar: '/ar/cb-engine',
+      fr: '/fr/cb-engine'
     }
   },
   {
@@ -36,7 +39,8 @@ const products = [
       es: '/es/repuestos-motor',
       pt: '/pt/pecas-de-motor',
       ru: '/ru/zapchasti-dvigatelya',
-      ar: '/ar/engine-parts'
+      ar: '/ar/engine-parts',
+      fr: '/fr/engine-parts'
     }
   },
   { value: 'multiple', owner: null }
@@ -47,7 +51,8 @@ const routes = [
   { file: 'es/contacto.html', language: 'es', path: '/es/contacto', sourceForm: 'contact_owner_es', dir: 'ltr' },
   { file: 'pt/contato.html', language: 'pt', path: '/pt/contato', sourceForm: 'contact_owner_pt', dir: 'ltr' },
   { file: 'ru/kontakty.html', language: 'ru', path: '/ru/kontakty', sourceForm: 'contact_owner_ru', dir: 'ltr' },
-  { file: 'ar/contact.html', language: 'ar', path: '/ar/contact', sourceForm: 'contact_owner_ar', dir: 'rtl' }
+  { file: 'ar/contact.html', language: 'ar', path: '/ar/contact', sourceForm: 'contact_owner_ar', dir: 'rtl' },
+  { file: 'fr/contact.html', language: 'fr', path: '/fr/contact', sourceForm: 'contact_owner_fr', dir: 'ltr' }
 ];
 
 const locales = {
@@ -349,6 +354,73 @@ const locales = {
       turnstile: 'يرجى إكمال التحقق الأمني.',
       spam: 'تعذر قبول الإرسال.',
       fallback: 'تعذر إرسال النموذج. تم الاحتفاظ بالبيانات. حاول مرة أخرى أو راسل chixiangmotor@163.com.'
+    }
+  },
+  fr: {
+    title: 'Demande de devis B2B moteurs moto & tricycles | CHIXIANG MOTOR',
+    description: 'Envoyez une demande de devis B2B FOB Guangzhou pour moteurs CG, tricycles à eau HW300, moteurs horizontaux et moteurs/pièces adaptables Bajaj & TVS.',
+    h1: 'Demander un devis B2B (Export & Vente en gros)',
+    home: 'Accueil',
+    breadcrumbLabel: 'Fil d\'Ariane',
+    pageLead: 'Indiquez votre société, pays ou port de destination (Abidjan, Douala, Cotonou, Dakar), modèle et quantité prévue.',
+    procurementHeading: 'Informations utiles pour préparer votre devis',
+    procurementIntro: 'CHIXIANG MOTOR fournit en gros des moteurs CG refroidis par air et par eau, des moteurs horizontaux, des moteurs pour tricycle cargo et des moteurs complets et pièces de rechange adaptables Bajaj / TVS, avec chargement mixte en conteneur depuis Chongqing.',
+    checklistHeading: 'Éléments à préciser',
+    checklist: [
+      'Nom de la société, pays et port de destination (ex. Abidjan, Douala, Cotonou, Dakar ; pour les pays enclavés en transit, indiquez le pays final)',
+      'Famille de moteur, référence de modèle ou numéro OEM à titre d\'identification',
+      'Application du véhicule (moto commerciale, tricycle cargo) et quantité (MOQ 50 unités)',
+      'Configuration souhaitée : démarrage, embrayage, boîte de vitesses, refroidissement ou marche arrière'
+    ],
+    productLinksLabel: 'Gammes de produits en français',
+    commercialHeading: 'Conditions commerciales, exportation Afrique de l\'Ouest / Centrale & garantie',
+    commercialTerms: [
+      { label: 'Quantité minimale (MOQ)', value: '50 moteurs minimum (commande mixte de plusieurs modèles et moteurs complets et pièces détachées dans un même conteneur)' },
+      { label: 'Délai standard de préparation', value: 'Environ 10 jours ouvrables pour les configurations courantes après confirmation de commande' },
+      { label: 'Conditions & Ports d\'exportation', value: 'FOB Guangzhou, Chine par défaut (autres grands ports chinois négociables selon le dossier). Le transport maritime et le dédouanement à l\'arrivée sont assurés par l\'acheteur et son transitaire ; ports courants : Abidjan, Douala, Cotonou, Dakar (merci de préciser le pays de destination finale en transit si pays enclavé).' },
+      { label: 'Documents & suivi BSC / BESC', value: 'Facture commerciale, liste de colisage et liste des modèles et numéros de série moteur gravés fournis selon contrat ; certificat d\'origine confirmé sur demande. Le bordereau BSC / BESC est coordonné par l\'importateur et son transitaire selon les exigences du port de destination, avec appui documentaire de l\'usine.' },
+      { label: 'Garantie après-vente', value: 'Garantie de 60 jours après arrivée au port de destination couvrant les défauts vérifiés de fabrication ou d\'assemblage (numéro de série moteur et photos/vidéos requis ; les pièces validées sont expédiées gratuitement dans votre prochain conteneur programmé, hors pièces d\'usure normale ou mauvaise lubrification/refroidissement/installation).' }
+    ],
+    channelHeading: 'Canaux de contact directs',
+    formHeading: 'Formulaire de demande de devis export',
+    formLead: 'Le formulaire est la voie prioritaire pour chiffrer votre commande. Nous vérifions les configurations techniques avant d\'établir la facture proforma.',
+    fields: {
+      name: 'Votre nom', company: 'Société', contact: 'Contact principal (WhatsApp / Tél / Email)', email: 'Email (optionnel)',
+      country: 'Pays & port de destination', product: 'Famille de produits', quantity: 'Quantité estimée',
+      application: 'Application', requirements: 'Modèles, pièces détachées, port et remarques'
+    },
+    placeholders: {
+      name: 'Nom complet', company: 'Raison sociale', contact: 'WhatsApp (+225 / +237...), téléphone ou email',
+      email: 'nom@societe.com', country: 'Ex. Côte d\'Ivoire (Abidjan), Cameroun (Douala)...', quantity: 'Ex. 50 moteurs + kit pièces',
+      requirements: 'Modèles (CG150, CG200, HW300, BM150, horizontal 110/125...), démarrage, boîte/marche arrière, pièces détachées ou transit pays enclavé'
+    },
+    products: {
+      horizontal: 'Moteurs horizontaux (110–150 cm³)', cg: 'Moteurs CG & Tricycle à eau', cb: 'Moteurs CB (distribution par chaîne)',
+      parts: 'Moteurs & Pièces Bajaj / TVS et pièces détachées', multiple: 'Commande mixte (moteurs + pièces détachées)'
+    },
+    ownerLinkLabels: {
+      horizontal: 'Moteurs horizontaux',
+      cg: 'Moteurs CG & Tricycle à eau',
+      cb: 'Moteurs CB (Chaîne)',
+      parts: 'Pièces moteur & Bajaj / TVS'
+    },
+    applications: {
+      motorcycle: 'Moto commerciale / moto-taxi', cargoTricycle: 'Tricycle cargo (refroidissement liquide / air)', atvOffroad: 'Quad / tout-terrain (ATV)',
+      replacement: 'Marché de la rechange & grossiste', assembly: 'Ligne d\'assemblage locale', other: 'Autre projet B2B'
+    },
+    selectProduct: 'Sélectionnez une gamme',
+    selectApplication: 'Sélectionnez une application',
+    channels: { email: 'Email', wechat: 'WeChat', whatsapp: 'WhatsApp', phone: 'Téléphone' },
+    channelOrder: ['whatsapp', 'email', 'wechat', 'phone'],
+    wechatQrAlt: 'Code QR WeChat CHIXIANG MOTOR',
+    actions: { submit: 'Envoyer la demande de devis', form: 'Formulaire', email: 'Email' },
+    messages: {
+      sending: 'Envoi de votre demande en cours...',
+      success: 'Votre demande de devis a bien été envoyée. Notre équipe export l\'analysera et vous répondra.',
+      validation: 'Veuillez remplir tous les champs obligatoires.',
+      turnstile: 'Veuillez valider la vérification de sécurité.',
+      spam: 'L\'envoi n\'a pas pu être accepté.',
+      fallback: 'L\'envoi du formulaire a échoué. Vos données ont été conservées. Réessayez ou écrivez à chixiangmotor@163.com.'
     }
   }
 };

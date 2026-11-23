@@ -113,8 +113,8 @@ test('hub and brand pages carry the approved hero copy and CTAs', () => {
     assert.ok(html.includes('id="engine-covers"'), `${page.file}: engine covers anchor`);
     assert.ok(html.includes('id="complete-engines"'), `${page.file}: complete engines anchor`);
     assert.ok(html.includes('id="brands"'), `${page.file}: brand entries`);
-    assert.ok(html.includes('/en/bajaj-engine-parts') || html.includes('/zh-cn/bajaj-engine-parts/'), `${page.file}: bajaj entry`);
-    assert.ok(html.includes('/en/tvs-engine-parts') || html.includes('/zh-cn/tvs-engine-parts/'), `${page.file}: tvs entry`);
+    assert.ok(html.includes('/en/bajaj-engine-parts') || html.includes('/zh-cn/bajaj-engine-parts'), `${page.file}: bajaj entry`);
+    assert.ok(html.includes('/en/tvs-engine-parts') || html.includes('/zh-cn/tvs-engine-parts'), `${page.file}: tvs entry`);
   }
 });
 
@@ -196,16 +196,19 @@ test('existing engine-parts pages keep their contract and add only the new entry
 
   const zh = read('zh-cn/engine-parts.html');
   assert.ok(zh.includes('id="bajaj-tvs-parts"'), 'zh bajaj-tvs entry');
-  assert.ok(zh.includes('/zh-cn/bajaj-tvs-engines-parts/'), 'zh hub link');
+  assert.ok(zh.includes('/zh-cn/bajaj-tvs-engines-parts'), 'zh hub link');
   assert.equal((zh.match(/<h1/g) || []).length, 1, 'zh single H1');
 });
 
-test('sitemap registers the six new canonical URLs once each', () => {
+test('sitemap registers the public EN canonical URLs once each and excludes zh-cn', () => {
   const sitemap = read('sitemap.xml');
-  for (const page of ALL_PAGES) {
+  for (const page of ALL_PAGES.filter((p) => p.lang === 'en')) {
     const needle = `<loc>${page.canonical}</loc>`;
     const count = sitemap.split(needle).length - 1;
     assert.equal(count, 1, `sitemap ${page.canonical} count ${count}`);
+  }
+  for (const page of ALL_PAGES.filter((p) => p.lang !== 'en')) {
+    assert.equal(sitemap.includes(page.canonical), false, `archived ${page.canonical} excluded from sitemap`);
   }
 });
 
@@ -213,14 +216,14 @@ test('home and product centers expose a minimal Bajaj/TVS entry without reorderi
   const enHome = read('en/index.html');
   assert.ok(enHome.includes('/en/bajaj-tvs-engines-parts'), 'en home entry');
   const zhHome = read('zh-cn/index.html');
-  assert.ok(zhHome.includes('/zh-cn/bajaj-tvs-engines-parts/'), 'zh home entry');
+  assert.ok(zhHome.includes('/zh-cn/bajaj-tvs-engines-parts'), 'zh home entry');
   const enProducts = read('en/products.html');
   assert.ok(enProducts.includes('/en/bajaj-tvs-engines-parts'), 'en products entry');
   const zhProducts = read('zh-cn/products.html');
-  assert.ok(zhProducts.includes('/zh-cn/bajaj-tvs-engines-parts/'), 'zh products entry');
+  assert.ok(zhProducts.includes('/zh-cn/bajaj-tvs-engines-parts'), 'zh products entry');
   // Existing nav labels remain the primary product families.
   assert.ok(enHome.includes('/en/cg-engine') && enHome.includes('/en/cb-engine'));
-  assert.ok(zhHome.includes('/zh-cn/cg-engine/') && zhHome.includes('/zh-cn/cb-engine/'));
+  assert.ok(zhHome.includes('/zh-cn/cg-engine') && zhHome.includes('/zh-cn/cb-engine'));
 });
 
 test('Bajaj/TVS pages avoid banned commercial and fabricated-fact patterns', () => {

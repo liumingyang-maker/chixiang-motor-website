@@ -1,0 +1,542 @@
+{
+  "slug": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+  "quoteInterest": "cg",
+  "waModel": "CG250SB / HW250 / HW300 Water-Cooled",
+  "figures": [
+    {
+      "src": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+      "alt": {
+        "en": "CHIXIANG HW Water heavy-duty water-cooled cargo-tricycle engine",
+        "fr": "Moteur tricycle cargo lourd CHIXIANG HW refroidi par eau",
+        "es": "Motor carguero pesado CHIXIANG serie HW enfriado por agua",
+        "pt": "Motor pesado CHIXIANG linha HW refrigerado a água para triciclo de carga",
+        "ru": "Тяжёлый водяной двигатель CHIXIANG серии HW для грузового трицикла",
+        "ar": "محرك تروسيكل تبريد مياه للخدمة الشاقة CHIXIANG فئة HW"
+      },
+      "caption": {
+        "fr": "<strong>Série HW Water (HW250 / HW300)</strong> : cylindre aileté à refroidissement liquide (eau), carter d'huile 1,5 L, roue libre 20 rouleaux et compatibilité marche arrière externe.",
+        "es": "<strong>Serie HW Water (HW250 / HW300)</strong>: cilindro con aletas y camisa de agua, cárter 1.5 L, embrague de 20 rodillos y salida para reversa externa.",
+        "pt": "<strong>Série HW Water (HW250 / HW300)</strong>: cilindro com aletas e camisa d'água, cárter de 1,5 L, embreagem de 20 roletes e compatibilidade com caixa de ré externa.",
+        "ru": "<strong>Серия HW Water (HW250 / HW300)</strong>: оребрённый цилиндр водяного охлаждения, картер 1,5 л, обгонная муфта 20 роликов и внешний реверс-редуктор.",
+        "ar": "<strong>فئة HW Water (HW250 / HW300)</strong>: سلندر بزعانف تبريد مائي، كارتيرة 1.5 لتر، كلتش حر 20 بكرة وتوافق مع صندوق الرجوع الخارجي."
+      }
+    },
+    {
+      "src": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+      "alt": {
+        "en": "CHIXIANG CG250SB standard water-cooled engine",
+        "fr": "Moteur standard CHIXIANG CG250SB refroidi par eau",
+        "es": "Motor estándar CHIXIANG CG250SB enfriado por agua",
+        "pt": "Motor padrão CHIXIANG CG250SB refrigerado a água",
+        "ru": "Стандартный водяной двигатель CHIXIANG CG250SB",
+        "ar": "محرك التبريد المائي القياسي CHIXIANG CG250SB"
+      },
+      "caption": {
+        "fr": "<strong>CG250SB Standard Eau</strong> : 246,3 cc (70 × 64 mm), configuration CG refroidie par eau pour tricycles utilitaires standards.",
+        "es": "<strong>CG250SB Agua Estándar</strong>: 246.3 cc (70 × 64 mm), configuración CG enfriada por agua para cargueros estándar.",
+        "pt": "<strong>CG250SB Água Padrão</strong>: 246,3 cc (70 × 64 mm), plataforma CG padrão para triciclos utilitários.",
+        "ru": "<strong>CG250SB Стандарт Водяной</strong>: 246,3 см³ (70 × 64 мм), классическая база CG для грузовых трициклов.",
+        "ar": "<strong>CG250SB تبريد مائي قياسي</strong>: سعة 246.3 سي سي (70 × 64 مم) لتروسيكلات الشحن القياسية."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "HW250 & HW300 vs CG250SB refroidis par eau pour tricycle cargo | CHIXIANG",
+      "description": "Comparatif technique tricycles à eau : CG250SB (246,3 cc) vs HW250 (246,3 mL) et HW300 (classe 300cc, 275,3 mL réels). Carter 1,5 L, roue libre 20 rouleaux et ~80 % de pièces communes.",
+      "h1": "HW250 & HW300 vs CG250SB : choisir son moteur tricycle à eau & mutualiser ~80 % des pièces",
+      "metaLine": "Publié : Novembre 2026 · Guide Ingénierie Tricycle Cargo — CHIXIANG MOTOR",
+      "verdictLabel": "Verdict de sélection rapide",
+      "verdictHtml": "Choisissez le <a href=\"{cg250sb}\"><strong>CG250SB</strong></a> (246,3 cc, 32,9 kg colis) pour les tricycles cargo standards recherchant un poids moindre et un coût unitaire réduit. Choisissez le <strong>HW250</strong> (246,3 mL, 38,1 kg net) ou le <a href=\"{hw300}\"><strong>HW300</strong></a> (classe 300cc, <strong>275,3 mL réels</strong>, 12,5 kW / 21 N·m, 39 kg net) pour les lourdes charges, fortes pentes, le carter <strong>1,5 L</strong>, la roue libre <strong>20 rouleaux</strong> et <strong>~80 % de pièces partagées</strong>.",
+      "sections": [
+        {
+          "heading": "1. Fiche comparative vérifiée : CG250SB vs HW250 vs HW300",
+          "paragraphs": [
+            "Sur un banc à vide, un 70 × 64 mm standard et un HW250 semblent proches. Mais sous forte chaleur en Afrique de l'Ouest et Centrale, le volume d'huile, la roue libre et l'architecture de marche arrière décident de la longévité de vos flottes moto-cargo et de votre stock de <a href=\"{hw-series}\">kits de réfection HW</a>."
+          ],
+          "table": {
+            "headers": ["Paramètre", "CG250SB (Eau Standard)", "HW250 (HW Water)", "HW300 (HW Water)", "HW350 (Réf. HW)"],
+            "rows": [
+              ["Classe / Cylindrée réelle", "250 cc / 246,3 cc", "Classe 250cc / 246,3 mL", "Classe 300cc / 275,3 mL", "Classe 350cc / 300,3 mL"],
+              ["Alésage × Course", "70 × 64 mm", "70 × 64 mm", "74 × 64 mm", "76 × 66,2 mm"],
+              ["Puissance max.", "11,5 kW @ 7 000 tr/min (±5%)", "11,5 kW @ 7 000 tr/min", "12,5 kW @ 6 500 tr/min", "13 kW @ 6 500 tr/min"],
+              ["Couple max.", "19,5 N·m @ 5 000 tr/min (±5%)", "19,5 N·m @ 5 000 tr/min", "21 N·m @ 4 500 tr/min", "22,5 N·m @ 4 500 tr/min"],
+              ["Rapport volumétrique", "10,0–10,5 : 1", "10,1–10,5 : 1", "10,4 : 1", "10,4 : 1"],
+              ["Masse moteur", "32,9 kg (poids colis)", "38,1 kg net", "39 kg net", "40,4 kg net"],
+              ["Lubrification", "Barbotage sous pression", "Carter 1,5 L d'huile", "Carter 1,5 L d'huile", "Carter 1,5 L d'huile"],
+              ["Embrayage & Magnéto", "Multidisque humide manuel", "Roue libre 20 rouleaux + magnéto haut débit", "Roue libre 20 rouleaux + magnéto haut débit", "Roue libre 20 rouleaux + magnéto haut débit"],
+              ["Boîte & Marche arrière", "5 vitesses (marche arrière intégrée en option selon code)", "5 vitesses avant (pour boîte de marche arrière externe)", "5 vitesses avant (pour boîte de marche arrière externe)", "5 vitesses avant (pour boîte de marche arrière externe)"],
+              ["Carton export", "425 × 385 × 530 mm", "425 × 385 × 530 mm (PZ30)", "425 × 385 × 530 mm (PZ30)", "425 × 385 × 530 mm (PZ30)"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Pourquoi le HW250 pèse 5,2 kg de plus que le CG250SB",
+          "bullets": [
+            "<strong>Double tampon thermique + carter 1,5 L</strong> : Chemise d'eau + ailettes cylindre + capacité d'huile portée à <strong>1,5 L</strong> pour limiter la dégradation thermique à basse vitesse en embouteillage ou côte raide.",
+            "<strong>Roue libre de démarreur à 20 rouleaux</strong> : Répartit l'effort de démarrage à chaud et limite le patinage.",
+            "<strong>Magnéto haute puissance & carburation PZ30</strong> : Alimente le ventilateur de radiateur, les phares de charge et assure un ralenti stable.",
+            "<strong>Boîte 5 vitesses avant + marche arrière externe</strong> : Protège les pignons principaux dans le carter tout en facilitant la maintenance sur la boîte de renvoi externe."
+          ]
+        },
+        {
+          "heading": "3. L'atout ~80 % de pièces communes entre HW250 et HW300",
+          "paragraphs": [
+            "Les importateurs gérant à la fois les classes 250cc et 300cc immobilisent trop de trésorerie sur des pièces doubles. Entre <strong>HW250</strong> et <strong>HW300</strong>, environ <strong>80 % des composants clés sont interchangeables</strong> (<a href=\"{hw-series}\">voir le catalogue pièces HW200–HW350</a>)."
+          ],
+          "table": {
+            "headers": ["Groupe de pièces", "Compatibilité HW250 / HW300", "Impact entrepôt distributeur"],
+            "rows": [
+              ["Demi-carters (1,5 L), roue libre 20 rouleaux, arbres & pignons 5 vitesses", "Partagé (~80 % base commune)", "Un seul stock de bas moteur couvre HW250 et HW300."],
+              ["Pompe à eau, joints mécaniques, magnéto haut débit, démarreur & visserie", "Partagé (~80 % base commune)", "Rotation accélérée des pièces électriques et de circuit d'eau (vase d'expansion, durites)."],
+              ["Kit cylindre-piston/segments (70 mm vs 74 mm), vilebrequin/bielle & culasse adaptée", "Spécifique cylindrée (~20 %)", "Stockage séparé strictement par alésage (246,3 mL vs 275,3 mL) via kits appairés usine."]
+            ]
+          }
+        },
+        {
+          "heading": "4. Checklist de décision & conditions d'achat usine",
+          "bullets": [
+            "<strong>Prenez CG250SB</strong> pour les routes plates et la maîtrise du coût unitaire (32,9 kg colis).",
+            "<strong>Prenez HW250</strong> pour la robustesse HW (1,5 L, 20 rouleaux, boîte externe) tout en restant en classe 250cc.",
+            "<strong>Prenez HW300</strong> pour le transport lourd agricole ou BTP exigeant <strong>21 N·m @ 4 500 tr/min</strong>.",
+            "<strong>Approvisionnement Chongqing</strong> : MOQ 50 moteurs (panachage CG250SB, HW250, HW300 et kits de réfection moteur refroidi par eau), ~10 jours ouvrables FOB Guangzhou, banc d'essai 100 % chaud/froid (<a href=\"{evidence}\">Centre de preuves</a>) et garantie 60 jours."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Usage terrain tricycle à eau en Afrique francophone (tchktchk / moto-cargo)",
+        "items": [
+          "Pour les ateliers desservant les <strong>moto-cargo / tchktchk</strong> en zone chaude, inclure dans le même conteneur des kits de <strong>joints de culasse, pompe à eau, vase d'expansion et disques d'embrayage renforcés</strong> garantit une immobilisation minimale.",
+          "Toutes les déclarations douanières et bordereaux <strong>BSC / BESC</strong> mentionnent les cylindrées réelles vérifiées : 246,3 mL (HW250) et 275,3 mL (HW300, classe commerciale 300cc)."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Quelle différence principale entre HW250 et CG250SB ?",
+          "a": "Les deux partagent 70 × 64 mm (11,5 kW / 19,5 N·m), mais le HW250 pèse 38,1 kg net (contre 32,9 kg colis) avec ailettes de cylindre, carter d'huile 1,5 L, roue libre 20 rouleaux, magnéto haut débit, PZ30 et boîte 5 vitesses avant pour marche arrière externe."
+        },
+        {
+          "q": "Quel taux de pièces communes existe entre HW250 et HW300 ?",
+          "a": "Environ 80 % des pièces principales (demi-carters, roue libre 20 rouleaux, boîte 5 vitesses, pompe à eau, magnéto, démarreur) sont interchangeables entre HW250 et HW300 ; seuls cylindre, piston, vilebrequin/bielle et culasse diffèrent par alésage."
+        },
+        {
+          "q": "Le HW250 ou le HW300 intègre-t-il une marche arrière interne ?",
+          "a": "Non. Toute la série HW Water (HW200–HW350) reçoit une boîte 5 vitesses avant renforcée prévue pour fonctionner avec une boîte de marche arrière externe. Sur CG250SB, la marche arrière est confirmée selon le code moteur."
+        },
+        {
+          "q": "Peut-on panacher CG250SB, HW250, HW300 et kits de réfection dans un seul conteneur ?",
+          "a": "Oui. Le MOQ est de 50 moteurs complets avec commande mixte de plusieurs modèles et kits d'entretien HW en FOB Guangzhou (~10 jours ouvrables)."
+        },
+        {
+          "q": "Comment ces moteurs refroidis par eau sont-ils testés avant exportation ?",
+          "a": "Chaque moteur passe un test au banc à chaud et à froid à 100 %, appuyé par deux laboratoires dynamométriques et le contrôle métallurgique entrant, avec garantie de 60 jours après arrivée."
+        }
+      ],
+      "ctaCard": {
+        "title": "Obtenir un tarif conteneur mixte CG250SB, HW250 & HW300",
+        "body": "Précisez le type de boîte de marche arrière externe, la répartition 250/300cc et le port d'arrivée pour recevoir votre devis FOB Guangzhou.",
+        "primaryBtn": "Demander un devis HW / CG",
+        "secondaryBtn": "Consulter le Centre de preuves"
+      }
+    },
+    "es": {
+      "title": "HW250 y HW300 vs CG250SB Enfriados por Agua para Carguero | CHIXIANG",
+      "description": "Comparativa para cargueros y motocarros: CG250SB (246.3 cc) vs HW250 (246.3 mL) y HW300 (275.3 mL reales). Cárter 1.5 L, 20 rodillos, reversa externa y ~80 % de piezas compartidas.",
+      "h1": "HW250 y HW300 vs CG250SB Enfriados por Agua: Selección de Carguero y ~80 % de Repuestos Comunes",
+      "metaLine": "Publicado: Noviembre 2026 · Guía de Ingeniería para Cargueros — CHIXIANG MOTOR",
+      "verdictLabel": "Veredicto rápido de selección",
+      "verdictHtml": "Elija <a href=\"{cg250sb}\"><strong>CG250SB</strong></a> (246.3 cc, 32.9 kg empaque) para cargueros estándar con menor peso y costo inicial; elija <strong>HW250</strong> (246.3 mL, 38.1 kg neto) o <a href=\"{hw300}\"><strong>HW300</strong></a> (clase 300cc, <strong>275.3 mL reales</strong>, 12.5 kW / 21 N·m, 39 kg neto) para cargas pesadas, pendientes fuertes, cárter de <strong>1.5 L</strong>, embrague de <strong>20 rodillos</strong> y <strong>~80 % de piezas compartidas</strong>.",
+      "sections": [
+        {
+          "heading": "1. Comparativa de especificaciones: CG250SB vs HW250 vs HW300",
+          "paragraphs": [
+            "En rutas exigentes de Perú, Colombia y Ecuador, los ensambladores de <strong>cargueros</strong> comprueban que el volumen de aceite, el embrague de arranque y el sistema de reversa marcan la diferencia real frente al sobrecalentamiento. Consulte también nuestro <a href=\"{hw-series}\">catálogo de repuestos HW200–HW350</a>."
+          ],
+          "table": {
+            "headers": ["Especificación", "CG250SB (Agua Estándar)", "HW250 (HW Water)", "HW300 (HW Water)", "HW350 (Ref. HW)"],
+            "rows": [
+              ["Clase / Cilindrada real", "250 cc / 246.3 cc", "Clase 250cc / 246.3 mL", "Clase 300cc / 275.3 mL", "Clase 350cc / 300.3 mL"],
+              ["Diámetro × Carrera", "70 × 64 mm", "70 × 64 mm", "74 × 64 mm", "76 × 66.2 mm"],
+              ["Potencia máxima", "11.5 kW @ 7,000 rpm (±5%)", "11.5 kW @ 7,000 rpm", "12.5 kW @ 6,500 rpm", "13 kW @ 6,500 rpm"],
+              ["Torque máximo", "19.5 N·m @ 5,000 rpm (±5%)", "19.5 N·m @ 5,000 rpm", "21 N·m @ 4,500 rpm", "22.5 N·m @ 4,500 rpm"],
+              ["Compresión", "10.0–10.5 : 1", "10.1–10.5 : 1", "10.4 : 1", "10.4 : 1"],
+              ["Peso del motor", "32.9 kg (empaque)", "38.1 kg neto", "39 kg neto", "40.4 kg neto"],
+              ["Lubricación", "Cárter estándar", "Capacidad 1.5 L aceite", "Capacidad 1.5 L aceite", "Capacidad 1.5 L aceite"],
+              ["Embrague y Magneto", "Multidisco húmedo manual", "20 rodillos + magneto de alta salida", "20 rodillos + magneto de alta salida", "20 rodillos + magneto de alta salida"],
+              ["Caja y Reversa", "5 velocidades (reversa opcional según código)", "5 marchas adelante (para caja externa)", "5 marchas adelante (para caja externa)", "5 marchas adelante (para caja externa)"],
+              ["Caja exportación", "425 × 385 × 530 mm", "425 × 385 × 530 mm (PZ30)", "425 × 385 × 530 mm (PZ30)", "425 × 385 × 530 mm (PZ30)"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Por qué HW250 pesa 5.2 kg más que CG250SB",
+          "bullets": [
+            "<strong>Doble disipación + cárter 1.5 L</strong>: Camisa de agua más aletas externas en cilindro y 1.5 L de aceite que retardan la fatiga térmica en subidas largas.",
+            "<strong>Embrague unidireccional de 20 rodillos</strong>: Soporta arranques en caliente con mayor superficie de contacto.",
+            "<strong>Magneto de alta salida y carburador PZ30</strong>: Alimenta electroventilador, luces de trabajo y mantiene mezcla estable bajo carga.",
+            "<strong>Reversa externa independiente</strong>: Toda la línea HW conserva 5 marchas adelante reforzadas y trabaja con caja de reversa externa fácil de reparar en el eje trasero."
+          ]
+        },
+        {
+          "heading": "3. Ventaja de ~80 % de repuestos compartidos entre HW250 y HW300",
+          "paragraphs": [
+            "Aproximadamente el <strong>80 % de los componentes centrales son intercambiables entre HW250 y HW300</strong> (<a href=\"{hw-series}\">catálogo de kits HW</a>), reduciendo capital inmovilizado en almacén:"
+          ],
+          "table": {
+            "headers": ["Grupo de componentes", "Compatibilidad HW250 / HW300", "Impacto en inventario"],
+            "rows": [
+              ["Cárteres (1.5 L), embrague 20 rodillos, ejes y piñones 5 vel.", "Compartido (~80 % base)", "Un solo stock cubre reparaciones de HW250 y HW300."],
+              ["Bomba de agua, sellos mecánicos, magneto, arrancador y pernos", "Compartido (~80 % base)", "Mismos repuestos eléctricos y de enfriamiento en taller."],
+              ["Cilindro, pistón/anillos (70 vs 74 mm), cigüeñal y culata", "Específico (~20 %)", "Se pide por cilindrada (246.3 mL vs 275.3 mL) en kits emparejados de fábrica."]
+            ]
+          }
+        },
+        {
+          "heading": "4. Lista de decisión y consolidación en contenedor",
+          "bullets": [
+            "<strong>Elija CG250SB</strong> para rutas planas o menor costo por unidad.",
+            "<strong>Elija HW250</strong> si necesita cilindrada 250cc con cárter de 1.5 L y 20 rodillos.",
+            "<strong>Elija HW300</strong> cuando el carguero sube trochas o transporta peso máximo (21 N·m @ 4,500 rpm).",
+            "<strong>Garantía y prueba 100 %</strong>: MOQ 50 motores mixtos, ~10 días hábiles FOB Guangzhou, prueba 100 % en banco frío/caliente (<a href=\"{evidence}\">Evidencia</a>) y garantía de 60 días."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Notas de taller y aduana en Perú y Colombia",
+        "items": [
+          "Para aduana <strong>SUNAT / DIAN</strong>, declaramos cilindradas exactas (246.3 mL y 275.3 mL) y listado completo de números de serie grabados; repuestos y motores son 100 % nuevos.",
+          "Incluir en el mismo pedido bombas de agua, juegos de empaques de culata, cilindros de 70/74 mm y discos de embrague minimiza paradas en temporada de cosecha o construcción."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Cuál es la diferencia principal entre HW250 y CG250SB?",
+          "a": "Ambos usan 70 × 64 mm (11.5 kW / 19.5 N·m), pero HW250 pesa 38.1 kg netos (vs 32.9 kg empaque) con aletas en cilindro, 1.5 L de aceite, embrague de 20 rodillos, magneto de alta salida, PZ30 y caja 5 marchas adelante para reversa externa."
+        },
+        {
+          "q": "¿Cuánto comparten en repuestos HW250 y HW300?",
+          "a": "Alrededor del 80 % de piezas centrales (cárteres, embrague 20 rodillos, ejes de caja, bomba de agua, magneto y arrancador); cilindro, pistón y cigüeñal varían según cilindrada."
+        },
+        {
+          "q": "¿El HW250 o HW300 trae reversa integrada en el cárter?",
+          "a": "No. Toda la serie HW Water utiliza transmisión estándar de 5 marchas adelante diseñada para cajas de reversa externas. En CG250SB la reversa se confirma por modelo y pedido."
+        },
+        {
+          "q": "¿Se pueden mezclar CG250SB, HW250, HW300 y kits HW en un contenedor?",
+          "a": "Sí, desde el MOQ estándar de 50 motores completos con entrega regular en ~10 días hábiles FOB Guangzhou."
+        },
+        {
+          "q": "¿Cómo se prueban antes del embarque?",
+          "a": "Cada motor pasa prueba 100 % en banco frío y caliente, respaldada por dos laboratorios de dinamómetro y metalurgia, con garantía de 60 días tras arribo a puerto."
+        }
+      ],
+      "ctaCard": {
+        "title": "Cotizar contenedor mixto CG250SB, HW250 y HW300",
+        "body": "Indíquenos carga prevista, tipo de caja de reversa externa y puerto de destino para calcular su Factura Proforma FOB Guangzhou.",
+        "primaryBtn": "Solicitar cotización HW",
+        "secondaryBtn": "Ver Centro de Evidencia"
+      }
+    },
+    "pt": {
+      "title": "HW250 e HW300 vs CG250SB Refrigerados a Água para Triciclos | CHIXIANG",
+      "description": "Comparativo para triciclos de carga em Angola e Moçambique: CG250SB (246,3 cc) vs HW250 (246,3 mL) e HW300 (275,3 mL reais). Cárter 1,5 L, 20 roletes e ~80 % de peças compartilhadas.",
+      "h1": "HW250 e HW300 vs CG250SB Refrigerados a Água: Escolha & ~80 % de Peças Compartilhadas",
+      "metaLine": "Publicado: Novembro 2026 · Guia de Engenharia para Triciclos de Carga — CHIXIANG MOTOR",
+      "verdictLabel": "Decisão rápida para importadores",
+      "verdictHtml": "Escolha o <a href=\"{cg250sb}\"><strong>CG250SB</strong></a> (246,3 cc, 32,9 kg embalagem) para triciclos padrão com menor peso e preço; escolha o <strong>HW250</strong> (246,3 mL, 38,1 kg líquidos) ou <a href=\"{hw300}\"><strong>HW300</strong></a> (classe 300cc, <strong>275,3 mL reais</strong>, 12,5 kW / 21 N·m, 39 kg) para carga pesada, subidas, cárter de <strong>1,5 L</strong>, embreagem de <strong>20 roletes</strong> e <strong>~80 % de peças compartilhadas</strong>.",
+      "sections": [
+        {
+          "heading": "1. Comparação técnica verificada: CG250SB vs HW250 vs HW300",
+          "paragraphs": [
+            "Em operações severas com <strong>triciclos de carga</strong>, o volume de óleo no cárter, a robustez da embreagem de partida e a refrigeração definem a vida útil da frota. Confira também nosso <a href=\"{hw-series}\">catálogo de peças HW200–HW350</a>."
+          ],
+          "table": {
+            "headers": ["Especificação", "CG250SB (Água Padrão)", "HW250 (HW Water)", "HW300 (HW Water)", "HW350 (Ref. HW)"],
+            "rows": [
+              ["Classe / Cilindrada real", "250 cc / 246,3 cc", "Classe 250cc / 246,3 mL", "Classe 300cc / 275,3 mL", "Classe 350cc / 300,3 mL"],
+              ["Diâmetro × Curso", "70 × 64 mm", "70 × 64 mm", "74 × 64 mm", "76 × 66,2 mm"],
+              ["Potência máx.", "11,5 kW @ 7.000 rpm (±5%)", "11,5 kW @ 7.000 rpm", "12,5 kW @ 6.500 rpm", "13 kW @ 6.500 rpm"],
+              ["Torque máx.", "19,5 N·m @ 5.000 rpm (±5%)", "19,5 N·m @ 5.000 rpm", "21 N·m @ 4.500 rpm", "22,5 N·m @ 4.500 rpm"],
+              ["Compressão", "10,0–10,5 : 1", "10,1–10,5 : 1", "10,4 : 1", "10,4 : 1"],
+              ["Peso do motor", "32,9 kg (embalagem)", "38,1 kg líquido", "39 kg líquido", "40,4 kg líquido"],
+              ["Lubrificação", "Cárter padrão", "Capacidade 1,5 L óleo", "Capacidade 1,5 L óleo", "Capacidade 1,5 L óleo"],
+              ["Embreagem & Magneto", "Multidisco úmido manual", "20 roletes + magneto de alta saída", "20 roletes + magneto de alta saída", "20 roletes + magneto de alta saída"],
+              ["Câmbio & Ré", "5 marchas (ré opcional por código)", "5 marchas à frente (para caixa de ré externa)", "5 marchas à frente (para caixa de ré externa)", "5 marchas à frente (para caixa de ré externa)"],
+              ["Caixa exportação", "425 × 385 × 530 mm", "425 × 385 × 530 mm (PZ30)", "425 × 385 × 530 mm (PZ30)", "425 × 385 × 530 mm (PZ30)"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Por que o HW250 pesa 5,2 kg a mais que o CG250SB",
+          "bullets": [
+            "<strong>Refrigeração mista + cárter de 1,5 L</strong>: Aletas externas no cilindro somadas à camisa d'água e 1,5 L de óleo protegem contra superaquecimento em baixa velocidade.",
+            "<strong>Embreagem unidirecional de 20 roletes</strong>: Maior área de contato nas partidas a quente.",
+            "<strong>Magneto de alta saída e PZ30</strong>: Sustenta ventoinha do radiador e iluminação pesada.",
+            "<strong>Caixa externa de marcha ré</strong>: Transmissão de 5 marchas à frente reforçada no cárter, pareada com caixa de ré externa de fácil manutenção."
+          ]
+        },
+        {
+          "heading": "3. A vantagem de ~80 % de peças comuns entre HW250 e HW300",
+          "paragraphs": [
+            "Cerca de <strong>80 % das peças internas são intercambiáveis entre HW250 e HW300</strong> (<a href=\"{hw-series}\">catálogo de kits HW</a>), permitindo estoque enxuto:"
+          ],
+          "table": {
+            "headers": ["Grupo de peças", "Compatibilidade HW250 / HW300", "Impacto em estoque"],
+            "rows": [
+              ["Carcaças (1,5 L), embreagem 20 roletes, eixos e engrenagens 5 marchas", "Compartilhado (~80 %)", "Mesmo estoque atende manutenção de HW250 e HW300."],
+              ["Bomba d'água, selo mecânico, magneto, motor de partida e parafusos", "Compartilhado (~80 %)", "Reposição imediata de elétrica e arrefecimento."],
+              ["Cilindro, pistão/anéis (70 vs 74 mm), virabrequim e cabeçote", "Por cilindrada (~20 %)", "Estoque separado por medida (246,3 vs 275,3 mL) em kits pareados."]
+            ]
+          }
+        },
+        {
+          "heading": "4. Checklist de decisão e condições comerciais",
+          "bullets": [
+            "<strong>CG250SB</strong> para rotas planas e menor peso/custo.",
+            "<strong>HW250</strong> para robustez HW (1,5 L, 20 roletes) mantendo classe 250cc.",
+            "<strong>HW300</strong> para carga máxima em obras e agricultura (21 N·m @ 4.500 rpm).",
+            "<strong>Termos FOB Guangzhou</strong>: MOQ 50 unidades mistas, ~10 dias úteis, bancada 100 % frio/quente (<a href=\"{evidence}\">Evidências</a>) e garantia de 60 dias."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Operação em Angola e Moçambique (Triciclos & CNCA)",
+        "items": [
+          "Para distribuidores de Luanda e Maputo que atendem frotas de carga (<strong>chapa / lambreta / triciclo de carga</strong>), combinar HW300 + kits de cilindro 74 mm + bombas d'água no mesmo contêiner reduz drasticamente o tempo de oficina.",
+          "Nos documentos de embarque, listamos as cilindradas reais (246,3 mL e 275,3 mL) e os números de série gravados para agilizar o processo <strong>CNCA / ARCCLA</strong> junto ao despachante."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Qual a principal diferença entre HW250 e CG250SB?",
+          "a": "Ambos usam 70 × 64 mm (11,5 kW / 19,5 N·m), mas o HW250 pesa 38,1 kg líquidos com aletas no cilindro, 1,5 L de óleo, 20 roletes, magneto de alta saída, PZ30 e transmissão 5 marchas à frente compatível com caixa de ré externa."
+        },
+        {
+          "q": "Qual o percentual de peças comuns entre HW250 e HW300?",
+          "a": "Cerca de 80 % (carcaças, embreagem 20 roletes, câmbio, bomba d'água, magneto e motor de partida); apenas cilindro, pistão, virabrequim e cabeçote variam por cilindrada."
+        },
+        {
+          "q": "O HW250 ou HW300 tem marcha ré interna?",
+          "a": "Não. Toda a linha HW Water fornece transmissão padrão de 5 marchas à frente para acoplamento a caixas de ré externas."
+        },
+        {
+          "q": "Posso misturar CG250SB, HW250, HW300 e kits no mesmo pedido?",
+          "a": "Sim, MOQ de 50 motores completos com mistura de modelos e kits em ~10 dias úteis FOB Guangzhou."
+        },
+        {
+          "q": "Como os motores são testados antes da exportação?",
+          "a": "100 % em bancada a frio e quente + 2 laboratórios de dinamômetro e metalurgia, com garantia de 60 dias pós-chegada."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar cotação mista CG250SB, HW250 & HW300",
+        "body": "Envie a proporção de modelos, tipo de caixa de ré externa e porto de destino para receber sua Proforma FOB Guangzhou.",
+        "primaryBtn": "Solicitar cotação HW",
+        "secondaryBtn": "Ver Centro de Evidências"
+      }
+    },
+    "ru": {
+      "title": "HW250 и HW300 против CG250SB водяного охлаждения для трицикла | CHIXIANG",
+      "description": "Сравнение двигателей для грузовых трициклов: CG250SB (246,3 см³) против HW250 (246,3 мл) и HW300 (275,3 мл). Картер 1,5 л, муфта 20 роликов, внешний реверс-редуктор и ~80 % общих деталей.",
+      "h1": "Водяные двигатели HW250 и HW300 против CG250SB для грузовых трициклов (~80 % общих деталей)",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Гид для производителей и оптовиков трициклов — CHIXIANG MOTOR",
+      "verdictLabel": "Краткая рекомендация",
+      "verdictHtml": "Выбирайте <a href=\"{cg250sb}\"><strong>CG250SB</strong></a> (246,3 см³, 32,9 кг в таре) для стандартных грузовых трициклов с меньшей массой и ценой; выбирайте <strong>HW250</strong> (246,3 мл, 38,1 кг нетто) или <a href=\"{hw300}\"><strong>HW300</strong></a> (класс 300cc, факт <strong>275,3 мл</strong>, 12,5 кВт / 21 Н·м, 39 кг нетто) для тяжёлых грузов, подъёмов, картера <strong>1,5 л</strong>, муфты на <strong>20 роликов</strong> и <strong>~80 % унификации запчастей</strong>.",
+      "sections": [
+        {
+          "heading": "1. Сводная таблица характеристик: CG250SB vs HW250 vs HW300",
+          "paragraphs": [
+            "При тяжёлой эксплуатации трицикла на низкой скорости ресурс определяют объём масла в картере, обгонная муфта и конструкция реверса. Детали для обслуживания смотрите в <a href=\"{hw-series}\">каталоге запчастей HW200–HW350</a>."
+          ],
+          "table": {
+            "headers": ["Параметр", "CG250SB (Стандарт Вода)", "HW250 (HW Water)", "HW300 (HW Water)", "HW350 (Справочно HW)"],
+            "rows": [
+              ["Класс / Факт. объём", "250 см³ / 246,3 см³", "Класс 250cc / 246,3 мл", "Класс 300cc / 275,3 мл", "Класс 350cc / 300,3 мл"],
+              ["Диаметр × Ход", "70 × 64 мм", "70 × 64 мм", "74 × 64 мм", "76 × 66,2 мм"],
+              ["Макс. мощность", "11,5 кВт @ 7 000 (±5%)", "11,5 кВт @ 7 000", "12,5 кВт @ 6 500", "13 кВт @ 6 500"],
+              ["Макс. момент", "19,5 Н·м @ 5 000 (±5%)", "19,5 Н·м @ 5 000", "21 Н·м @ 4 500", "22,5 Н·м @ 4 500"],
+              ["Степень сжатия", "10,0–10,5 : 1", "10,1–10,5 : 1", "10,4 : 1", "10,4 : 1"],
+              ["Масса мотора", "32,9 кг (брутто-тара)", "38,1 кг нетто", "39 кг нетто", "40,4 кг нетто"],
+              ["Смазка", "Стандартный поддон", "Объём масла 1,5 л", "Объём масла 1,5 л", "Объём масла 1,5 л"],
+              ["Муфта и магнето", "Многодисковое в масле", "20-роликовая муфта + магнето повышенной мощности", "20-роликовая муфта + магнето повышенной мощности", "20-роликовая муфта + магнето повышенной мощности"],
+              ["КПП и Реверс", "5 передач (опция реверс по коду)", "5 передач вперёд (под внешний реверс-редуктор)", "5 передач вперёд (под внешний реверс-редуктор)", "5 передач вперёд (под внешний реверс-редуктор)"],
+              ["Габариты тары", "425 × 385 × 530 мм", "425 × 385 × 530 мм (PZ30)", "425 × 385 × 530 мм (PZ30)", "425 × 385 × 530 мм (PZ30)"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Почему HW250 тяжелее CG250SB на 5,2 кг",
+          "bullets": [
+            "<strong>Двойной теплоотвод + 1,5 л масла</strong>: Рубашка охлаждения с внешними рёбрами цилиндра и увеличенный картер на 1,5 л защищают масло от перегрева.",
+            "<strong>20-роликовая обгонная муфта</strong>: Устойчивее к проскальзыванию при горячем запуске.",
+            "<strong>Магнето повышенной мощности и PZ30</strong>: Уверенный запас под вентилятор радиатора и освещение.",
+            "<strong>Внешний реверс-редуктор</strong>: Вся серия HW идёт с 5 передачами вперёд под внешний редуктор заднего хода, упрощая ремонт реверса без разборки КПП."
+          ]
+        },
+        {
+          "heading": "3. ~80 % общих запчастей между HW250 и HW300",
+          "paragraphs": [
+            "Около <strong>80 % основных узлов взаимозаменяемы между HW250 и HW300</strong> (<a href=\"{hw-series}\">ремкомплекты HW</a>), что резко снижает складские остатки:"
+          ],
+          "table": {
+            "headers": ["Группа деталей", "Совместимость HW250 / HW300", "Эффект для оптового склада"],
+            "rows": [
+              ["Половинки картера (1,5 л), муфта 20 роликов, валы и шестерни КПП", "Общие (~80 %)", "Единый резерв низа мотора на 250 и 300cc."],
+              ["Помпа охлаждения, сальники, магнето, электростартер, крепёж", "Общие (~80 %)", "Быстрая замена электрики и контура охлаждения."],
+              ["ЦПГ (цилиндр и поршень 70 / 74 мм), КШМ (коленвал) и ГБЦ", "Под кубатуру (~20 %)", "Поставляются заводскими ремонтными комплектами 246,3 / 275,3 мл."]
+            ]
+          }
+        },
+        {
+          "heading": "4. Что выбрать и условия отгрузки",
+          "bullets": [
+            "<strong>CG250SB</strong> — для равнин и снижения себестоимости единицы.",
+            "<strong>HW250</strong> — если нужна строгая кубатура 250 см³ при усиленном ресурсе (1,5 л, 20 роликов).",
+            "<strong>HW300</strong> — для максимальной грузоподъёмности и крутых подъёмов (21 Н·м @ 4 500 об/мин).",
+            "<strong>Отгрузка и гарантия</strong>: MOQ 50 шт. (смешанный контейнер), ~10 раб. дней FOB Гуанчжоу, 100 % обкатка (<a href=\"{evidence}\">Доказательства</a>), гарантия 60 дней."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Рекомендации для сборочных цехов и оптовиков РФ / СНГ",
+        "items": [
+          "При заказе <strong>водянок под трицикл</strong> в том же контейнере выгодно заложить ЦПГ на 70 и 74 мм, ремкомплекты помпы, шестерни реверс-редуктора и прокладки ГБЦ.",
+          "Для таможенного декларирования в счёте и упаковочном листе указываются фактические объёмы 246,3 мл и 275,3 мл и полный реестр номеров картера."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "В чём главное отличие HW250 от CG250SB?",
+          "a": "При одинаковых 70 × 64 мм (11,5 кВт / 19,5 Н·м) HW250 весит 38,1 кг нетто, имеет рёбра охлаждения на цилиндре, 1,5 л масла, муфту на 20 роликов, магнето повышенной мощности, PZ30 и 5 передач вперёд под внешний реверс-редуктор."
+        },
+        {
+          "q": "Сколько процентов деталей совпадает у HW250 и HW300?",
+          "a": "Порядка 80 % ключевых узлов (картеры, муфта, валы КПП, помпа, магнето, стартер); различаются только ЦПГ (70/74 мм), коленвал и ГБЦ."
+        },
+        {
+          "q": "Есть ли встроенный задний ход в HW250 и HW300?",
+          "a": "Нет. Серия HW Water комплектуется усиленной 5-ступенчатой КПП вперёд для работы с внешними редукторами реверса."
+        },
+        {
+          "q": "Можно ли скомбинировать CG250SB, HW250, HW300 и запчасти в одной партии?",
+          "a": "Да, стандартный MOQ 50 двигателей допускает смешанную загрузку, срок готовности ~10 рабочих дней FOB Гуанчжоу."
+        },
+        {
+          "q": "Как проверяются водяные двигатели перед отправкой?",
+          "a": "100 % холодный и горячий стендовый тест + 2 лаборатории с диностендами и проверкой твёрдости металла; гарантия 60 дней после прибытия в порт."
+        }
+      ],
+      "ctaCard": {
+        "title": "Запросить расчёт на партию CG250SB, HW250 и HW300",
+        "body": "Укажите требуемое соотношение моделей, тип внешнего реверс-редуктора и порт назначения для расчёта FOB Гуанчжоу.",
+        "primaryBtn": "Запросить цену HW",
+        "secondaryBtn": "Открыть Центр доказательств"
+      }
+    },
+    "ar": {
+      "title": "مقارنة HW250 و HW300 مقابل CG250SB لتروسيكل تبريد المياه | CHIXIANG",
+      "description": "مقارنة هندسية للتروسيكلات: CG250SB (246.3 سي سي) مقابل HW250 (246.3 مل) و HW300 (275.3 مل فعلياً). زيت 1.5 لتر، كلتش 20 بكرة وتشابه ~80% في قطع الغيار.",
+      "h1": "مقارنة HW250 و HW300 مقابل CG250SB لتروسيكل تبريد المياه وميزة توحيد ~80% من القطع",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل هندسة التروسيكلات — CHIXIANG MOTOR",
+      "verdictLabel": "الاختيار السريع للتروسيكلات",
+      "verdictHtml": "اختر <a href=\"{cg250sb}\"><strong>CG250SB</strong></a> (246.3 سي سي، وزن تغليف 32.9 كجم) للتروسيكلات القياسية ذات التكلفة والوزن الأقل؛ واختر <strong>HW250</strong> (246.3 مل، 38.1 كجم صافي) أو <a href=\"{hw300}\"><strong>HW300</strong></a> (فئة 300 سي سي، <strong>275.3 مل فعلياً</strong>، 12.5 كيلوواط / 21 نيوتن·متر) للأحمال الثقيلة والمطالع وسعة زيت <strong>1.5 لتر</strong> وكلتش <strong>20 بكرة</strong> وتوافق <strong>~80% من قطع الغيار</strong>.",
+      "sections": [
+        {
+          "heading": "1. مقارنة المواصفات المعتمدة: CG250SB مقابل HW250 مقابل HW300",
+          "paragraphs": [
+            "تحت حرارة الصيف والأحمال التجارية في مصر والسودان، يحدد حجم الزيت وكلتش المارش ونظام الرجوع كلفة الصيانة الفعلية. راجع أيضاً <a href=\"{hw-series}\">كتالوج قطع HW200–HW350</a>."
+          ],
+          "table": {
+            "headers": ["المواصفة", "CG250SB (تبريد مائي قياسي)", "HW250 (HW Water)", "HW300 (HW Water)", "HW350 (مرجعي HW)"],
+            "rows": [
+              ["الفئة / السعة الفعلية", "250 سي سي / 246.3 سي سي", "فئة 250 / 246.3 مل", "فئة 300 / 275.3 مل", "فئة 350 / 300.3 مل"],
+              ["القطر × الشوط", "70 × 64 مم", "70 × 64 مم", "74 × 64 مم", "76 × 66.2 مم"],
+              ["أقصى قدرة", "11.5 كيلوواط @ 7,000 (±5%)", "11.5 كيلوواط @ 7,000", "12.5 كيلوواط @ 6,500", "13 كيلوواط @ 6,500"],
+              ["أقصى عزم", "19.5 نيوتن·متر @ 5,000 (±5%)", "19.5 نيوتن·متر @ 5,000", "21 نيوتن·متر @ 4,500", "22.5 نيوتن·متر @ 4,500"],
+              ["نسبة الانضغاط", "10.0–10.5 : 1", "10.1–10.5 : 1", "10.4 : 1", "10.4 : 1"],
+              ["الوزن", "32.9 كجم (وزن عبوة)", "38.1 كجم صافي", "39 كجم صافي", "40.4 كجم صافي"],
+              ["التزييت وسعة الزيت", "حوض زيت قياسي", "سعة زيت 1.5 لتر", "سعة زيت 1.5 لتر", "سعة زيت 1.5 لتر"],
+              ["الكلتش والماغنيتو", "كلتش مبلل يدوي", "كلتش 20 بكرة + ماغنيتو عالي الخرج", "كلتش 20 بكرة + ماغنيتو عالي الخرج", "كلتش 20 بكرة + ماغنيتو عالي الخرج"],
+              ["الجيربوكس والرجوع", "5 سرعات (خيار رجوع حسب الطراز)", "5 سرعات أمامية (لصندوق رجوع خارجي)", "5 سرعات أمامية (لصندوق رجوع خارجي)", "5 سرعات أمامية (لصندوق رجوع خارجي)"],
+              ["أبعاد الصندوق", "425 × 385 × 530 مم", "425 × 385 × 530 مم (PZ30)", "425 × 385 × 530 مم (PZ30)", "425 × 385 × 530 مم (PZ30)"]
+            ]
+          }
+        },
+        {
+          "heading": "2. لماذا يزيد وزن HW250 بـ 5.2 كجم عن CG250SB؟",
+          "bullets": [
+            "<strong>تبريد مزدوج + كارتيرة 1.5 لتر</strong>: قميص مياه مع زعانف تبريد خارجية للسلندر وسعة زيت 1.5 لتر تحمي المحرك عند انخفاض سرعة التروسيكل في الزحام.",
+            "<strong>كلتش حر بـ 20 بكرة</strong>: يوزع حمل التشغيل الساخن ويقلل انزلاق بلية المارش.",
+            "<strong>ماغنيتو عالي الخرج وكاربوراتير PZ30</strong>: يغذي مروحة الريداتير والإضاءة الثقيلة بثبات.",
+            "<strong>صندوق رجوع خارجي مستقل</strong>: تحافظ سلسلة HW على 5 سرعات أمامية مع صندوق رجوع خارجي أسهل في الصيانة."
+          ]
+        },
+        {
+          "heading": "3. ميزة تشابه ~80% من القطع بين HW250 و HW300",
+          "paragraphs": [
+            "نحو <strong>80% من القطع الأساسية مشتركة بين HW250 و HW300</strong> (<a href=\"{hw-series}\">أطقم صيانة HW</a>)، ما يخفض رأس المال المجمد في المخزن:"
+          ],
+          "table": {
+            "headers": ["مجموعة القطع", "التوافق بين HW250 / HW300", "الأثر على مستودع المستورد"],
+            "rows": [
+              ["فخذتين الكارتيرة (1.5 لتر)، كلتش 20 بكرة، أعمدة وتروس الجيربوكس", "مشتركة (~80%)", "مخزون واحد يغطي عمرات الكارتيرة والجير للفئتين."],
+              ["طلمبة المياه، أويل سيل، الماغنيتو، المارش والمسامير", "مشتركة (~80%)", "توفر سريع لقطع الريداتير والكهرباء."],
+              ["السلندر والشنابر (70 مقابل 74 مم)، الكرنك ووش السلندر", "خاصة بالسعة (~20%)", "تُطلب حسب القطر (246.3 أو 275.3 مل) في أطقم مصنعية مطابقة."]
+            ]
+          }
+        },
+        {
+          "heading": "4. دليل الاختيار وشروط الاستيراد",
+          "bullets": [
+            "<strong>CG250SB</strong>: للطرق المستوية وتكلفة الشراء الاقتصادية.",
+            "<strong>HW250</strong>: للالتزام بسعة 250 سي سي مع تحمل الخدمة الشاقة (1.5 لتر، 20 بكرة).",
+            "<strong>HW300</strong>: لأقصى حمولة ومطالع قوية (21 نيوتن·متر @ 4,500 لفة).",
+            "<strong>الضمان والفحص 100%</strong>: حد أدنى 50 محركاً مختلطاً، ~10 أيام عمل FOB قوانغتشو، فحص بارد وساخن 100% (<a href=\"{evidence}\">الأدلة</a>) وضمان 60 يوماً."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "نصائح الصيانة وسوق التوفيقية لتروسيكلات تبريد المياه (الريداتير)",
+        "items": [
+          "يفضل مستوردو التروسيكلات ضم قطع <strong>طلمبة المياه، قِرب المياه، خراطيم الريداتير، جوان وش السلندر</strong> وأطقم السلندر 70/74 مم داخل نفس الحاوية لتلبية طلبات الورش فوراً.",
+          "تُثبت السعات الفعلية (246.3 مل و275.3 مل) والأرقام التسلسلية في الفاتورة والمستندات المرفوعة عبر <strong>CargoX / ACID</strong>."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "ما الفرق الأساسي بين HW250 و CG250SB؟",
+          "a": "كلاهما 70 × 64 مم (11.5 كيلوواط / 19.5 نيوتن·متر)، لكن HW250 يزن 38.1 كجم صافي بزعانف سلندر وسعة زيت 1.5 لتر وكلتش 20 بكرة وماغنيتو عالي الخرج وناقل 5 سرعات أمامية لصندوق رجوع خارجي."
+        },
+        {
+          "q": "ما نسبة القطع المشتركة بين HW250 و HW300؟",
+          "a": "حوالي 80% من القطع الأساسية (الكارتيرة، كلتش 20 بكرة، الجير، طلمبة المياه، الماغنيتو، المارش)؛ يختلف السلندر والشنبر والكرنك ووش السلندر فقط حسب السعة."
+        },
+        {
+          "q": "هل يحتوي HW250 أو HW300 على ترس رجوع داخلي؟",
+          "a": "لا، فئة HW Water تأتي بناقل 5 سرعات أمامية قياسي يعمل مع صندوق رجوع خارجي لتروسيكلات الشحن."
+        },
+        {
+          "q": "هل يمكن دمج CG250SB و HW250 و HW300 وأطقم الصيانة في طلب واحد؟",
+          "a": "نعم، بدءاً من 50 محركاً كاملاً بتجهيز خلال ~10 أيام عمل FOB قوانغتشو."
+        },
+        {
+          "q": "كيف يتم اختبار محركات التبريد المائي قبل التصدير؟",
+          "a": "اختبار 100% بارد وساخن على المنصة مدعوماً بمعملين للداينو وفحص المعادن، مع ضمان 60 يوماً بعد الوصول للميناء."
+        }
+      ],
+      "ctaCard": {
+        "title": "اطلب عرض سعر حاوية مختلطة لـ CG250SB و HW250 و HW300",
+        "body": "أرسل توزيع الكميات ونوع صندوق الرجوع الخارجي وميناء الوصول لتجهيز عرض FOB قوانغتشو.",
+        "primaryBtn": "اطلب عرض سعر HW",
+        "secondaryBtn": "تصفح مركز الأدلة"
+      }
+    }
+  }
+}

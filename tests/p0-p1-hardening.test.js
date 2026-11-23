@@ -49,28 +49,24 @@ test('robots.txt explicitly allows approved AI crawlers and declares sitemap', (
   assert.match(robots, /Sitemap:\s*https:\/\/chixiangmotor\.com\/sitemap\.xml/i);
 });
 
-test('zh-cn/evidence.html publishes reciprocal EN/zh-CN hreflangs only', () => {
-  const html = read('zh-cn/evidence.html');
-  assert.match(html, /hreflang="en"\s+href="https:\/\/chixiangmotor\.com\/en\/evidence"/);
-  assert.match(html, /hreflang="zh-CN"\s+href="https:\/\/chixiangmotor\.com\/zh-cn\/evidence"/);
+test('fr/evidence.html publishes reciprocal 6-language hreflangs without zh-CN', () => {
+  const html = read('fr/evidence.html');
+  for (const [hl, lang] of [['en', 'en'], ['fr', 'fr'], ['es', 'es'], ['pt', 'pt'], ['ru', 'ru'], ['ar', 'ar']]) {
+    assert.match(html, new RegExp(`hreflang="${hl}"\\s+href="https://chixiangmotor\\.com/${lang}/evidence"`));
+  }
+  assert.doesNotMatch(html, /hreflang="zh-CN"/i);
   assert.match(html, /hreflang="x-default"\s+href="https:\/\/chixiangmotor\.com\/en\/evidence"/);
-  assert.doesNotMatch(html, /<link\s+rel="alternate"[^>]*hreflang="(?:ru|es|pt|ar)"/);
 });
 
-test('site-router normalizes /zh-cn root and trailing slashes on zh-cn sub-routes', async () => {
+test('site-router returns 410 Gone and noindex for hidden /zh-cn routes', async () => {
   const mod = await import(pathToFileURL(path.join(root, 'workers/site-router.mjs')).href);
   const env = { ASSETS: { fetch: async (req) => new Response(`asset:${new URL(req.url).pathname}`, { status: 200 }) } };
 
-  const resRoot = await mod.default.fetch(new Request('https://chixiangmotor.com/zh-cn'), env);
-  assert.equal(resRoot.status, 301);
-  assert.equal(resRoot.headers.get('Location'), 'https://chixiangmotor.com/zh-cn/');
-
-  const resSubSlash = await mod.default.fetch(new Request('https://chixiangmotor.com/zh-cn/bajaj-tvs-engines-parts/'), env);
-  assert.equal(resSubSlash.status, 301);
-  assert.equal(resSubSlash.headers.get('Location'), 'https://chixiangmotor.com/zh-cn/bajaj-tvs-engines-parts');
-
-  const resGuides = await mod.default.fetch(new Request('https://chixiangmotor.com/zh-cn/guides/'), env);
-  assert.equal(resGuides.status, 200);
+  for (const p of ['/zh-cn', '/zh-cn/', '/zh-cn/bajaj-tvs-engines-parts/', '/zh-cn/guides/']) {
+    const res = await mod.default.fetch(new Request(`https://chixiangmotor.com${p}`), env);
+    assert.equal(res.status, 410, `${p}: expected 410 Gone`);
+    assert.equal(res.headers.get('X-Robots-Tag'), 'noindex, nofollow, noarchive');
+  }
 });
 
 test('all 16 public English pages enforce unified nav, footer, entity schema, and clean copy', () => {
@@ -96,7 +92,7 @@ test('all 16 public English pages enforce unified nav, footer, entity schema, an
     assert.ok(!html.includes('8,000+'), `${rel}: stale 8,000+ capacity claim present`);
     assert.ok(!html.includes('>8K<'), `${rel}: stale 8K capacity badge present`);
     assert.ok(!/confirm per order|subject to configuration/i.test(html), `${rel}: defensive copy present`);
-    assert.doesNotMatch(html, /href="(?:https:\/\/chixiangmotor\.com)?\/zh-cn\/[^"]+\/"/, `${rel}: trailing slash on non-root /zh-cn/ link`);
+    assert.doesNotMatch(html, /href="(?:https:\/\/chixiangmotor\.com)?\/zh-cn\/(?!guides\/")[^"]+\/"/, `${rel}: trailing slash on non-root /zh-cn/ link`);
 
     const jsonLdMatches = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)];
     const allNodes = jsonLdMatches.flatMap((m) => {

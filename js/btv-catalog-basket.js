@@ -9,7 +9,26 @@
   var hubsRoot = document.getElementById('model-hubs');
   if (!hubsRoot) return;
 
-  var isZh = document.documentElement.lang && document.documentElement.lang.toLowerCase().indexOf('zh') === 0;
+  var docLang = (document.documentElement.lang || '').toLowerCase();
+  var langKey = docLang.indexOf('zh') === 0 ? 'zh' : docLang.slice(0, 2);
+  var CONTACT_PATHS = {
+    zh: '/zh-cn/contact',
+    fr: '/fr/contact',
+    es: '/es/contacto',
+    pt: '/pt/contato',
+    ru: '/ru/kontakty',
+    ar: '/ar/contact',
+    en: '/en/contact'
+  };
+  var COUNT_FORMATTERS = {
+    zh: function (n) { return '显示 ' + n + ' 项配件'; },
+    fr: function (n) { return n + ' pièce(s) affichée(s)'; },
+    es: function (n) { return 'Mostrando ' + n + ' repuesto(s)'; },
+    pt: function (n) { return 'Exibindo ' + n + ' peça(s)'; },
+    ru: function (n) { return 'Показано позиций: ' + n; },
+    ar: function (n) { return 'عرض ' + n + ' قطعة مطابقة'; },
+    en: function (n) { return 'Showing ' + n + ' matching part(s)'; }
+  };
   var modelSelect = hubsRoot.querySelector('[data-btv-filter-model]');
   var categorySelect = hubsRoot.querySelector('[data-btv-filter-category]');
   var searchInput = hubsRoot.querySelector('[data-btv-filter-search]');
@@ -49,9 +68,8 @@
     });
 
     if (countEl) {
-      countEl.textContent = isZh
-        ? '显示 ' + visibleRows + ' 项配件'
-        : 'Showing ' + visibleRows + ' matching part(s)';
+      var fmt = COUNT_FORMATTERS[langKey] || COUNT_FORMATTERS.en;
+      countEl.textContent = fmt(visibleRows);
     }
   }
 
@@ -101,7 +119,7 @@
     basketSubmit.addEventListener('click', function () {
       var items = selectedItems();
       if (!items.length) return;
-      var contactPath = isZh ? '/zh-cn/contact' : '/en/contact';
+      var contactPath = CONTACT_PATHS[langKey] || CONTACT_PATHS.en;
       var sourceForm = hubsRoot.getAttribute('data-source-form') || 'bajaj-tvs-catalog';
       var params = new URLSearchParams();
       params.set('product_interest', 'parts');

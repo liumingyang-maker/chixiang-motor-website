@@ -44,13 +44,19 @@
 
 ---
 
-## 第三层：允许演进与 GEO / SEO 主动增长准则
+## 第三层：允许演进与 GEO / SEO 主动增长准则（v2.1 国际 6 语全矩阵与中文归档规范）
 
 在严格满足第一层与第二层的前提下，鼓励按分支与验收门禁持续推进：
 
-1. **GEO 机器可读层深化**：持续完善 `Product` + `PropertyValue`（`additionalProperty`）工程规格、`FAQPage`、`Article`/`TechArticle` 结构化数据，以及 `llms.txt` / `llms-full.txt` 与全站英语核心参数/条款的自动化一致性校验。
-2. **Visual Redesign 与 B2B 转化体验**：允许全面升级视觉层级、产品矩阵排版、移动端规格表交互及“选中型号一键带参跳转询盘”，每批外观调整先本地/Preview 多端验收后再发布。
-3. **高意图内容与多语种同步扩张**：允许基于真实搜索/业务需求新增高价值对比指南、区域市场或细分机型专页（禁止批量空壳复制；新页面须具备唯一核心词、差异化参数与证据，并自动闭环 `sitemap.xml` 与 `hreflang`）；主站重要事实或样式版本升级须按 `EN / ES / PT / RU / AR / ZH-CN` 协同对齐。
+1. **有效公开语言矩阵与 `/zh-cn/` 隐藏归档政策**：
+   - 网站公开面向全球 B2B 出口的活跃语种严格为 **6 语种：`EN / FR / ES / PT / RU / AR`**。
+   - `/zh-cn/` 中文目录已退出公开展示与搜索引擎索引（通过 `.assetsignore` 禁止上传 CDN 静态资源、`workers/site-router.mjs` 对 `/zh-cn` 与 `/zh-cn/*` 返回 `410 Gone` + `X-Robots-Tag: noindex, nofollow, noarchive`、并从 `sitemap.xml`、`hreflang`、语言切换器与 `llms.txt` 全量移除）；本地保留作历史存档，未经用户明确指令不得重新公开。
+2. **英文主改动的全语种区域化同步硬规则（EN-First Regionalized Transcreation Gate）**：
+   - 凡在 `/en/` 新增页面或实质性修改产品参数、买家指南、证据/质检页及核心转化模块，**必须在同一变更批次内同步更新并适配其余全部 5 个语种（`FR / ES / PT / RU / AR`）**，保持 6 语种 **100% 页面对等（Parity）**、双向 `hreflang`（含 `x-default` 指向 `/en/`）及 `sitemap.xml` 同步闭环。
+   - **严禁直译/机翻**：每轮多语种同步必须参照 `data/i18n/regional-slang-glossary.json`（及必要时的实时地区术语检索），将文案**区域化改写（Transcreation）**为目标市场汽摩配维修店、进口商与港口清关惯用行话（如 FR `moto-cargo / tricycle à eau / tiges de culbuteurs / Adjamé / BESC`、ES `varillero / cadenillero / carguero / SUNAT-DIAN`、PT `motor de vareta / kupapata / CNCA-ARCCLA`、RU `штанговый / цепные моторы / Альфа-Дельта / полуавтомат / под трицикл`、AR `موتور أسياخ / موتور كاتينة / تروسيكل تبريد مياه / التوفيقية / ACID-CargoX`），同时保证底层工程数值与批发条款 100% 锁定不变。
+3. **GEO 机器可读层深化**：持续完善 `Product` + `PropertyValue`（`additionalProperty`）工程规格、`FAQPage`、`Article`/`TechArticle` 结构化数据，以及 `llms.txt` / `llms-full.txt` 与全站 6 语种核心参数/条款的自动化一致性校验。
+4. **Visual Redesign 与 B2B 转化体验**：允许全面升级视觉层级、产品矩阵排版、移动端规格表交互及“选中型号一键带参跳转询盘”，每批外观调整先本地/Preview 多端验收后再发布。
+5. **高意图内容持续扩张**：允许基于真实搜索/业务需求在 `EN` 发起高价值对比指南、区域市场或细分机型专页并同步覆盖 `FR / ES / PT / RU / AR`（禁止批量空壳复制；新页面须具备唯一核心词、差异化参数与证据，并自动闭环 `sitemap.xml` 与 `hreflang`）。
 
 ## 协作与发布纪律
 

@@ -1,0 +1,434 @@
+{
+  "slug": "horizontal-motorcycle-engine-110cc-150cc-selection-guide",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+  "quoteInterest": "horizontal",
+  "waModel": "Horizontal CX152FMH / CX1P56FMJ / CX1P60FMJ",
+  "figures": [
+    {
+      "src": "/images/russia-landing-engines/chixiang-horizontal-110-upper-starter-render-01.webp",
+      "alt": {
+        "en": "Upper-mount electric starter horizontal engine",
+        "fr": "Moteur horizontal à démarreur électrique monté en haut",
+        "es": "Motor horizontal con arrancador eléctrico superior",
+        "pt": "Motor horizontal com arranque elétrico superior",
+        "ru": "Горизонтальный двигатель с верхним электростартером",
+        "ar": "محرك أفقي بمارش كهربائي علوي"
+      },
+      "caption": {
+        "fr": "<strong>Démarreur électrique supérieur</strong> : format compact pour cyclomoteurs Cub / Jakarta et cadres exigeant une garde au sol libre.",
+        "es": "<strong>Arrancador superior</strong>: diseño compacto para motonetas/cubs con despeje inferior libre.",
+        "pt": "<strong>Arranque superior</strong>: formato compacto para ciclomotores e quadros com vão livre inferior.",
+        "ru": "<strong>Верхний электростартер</strong>: компактная компоновка для мопедов Альфа, Дельта, Актив с защитой снизу.",
+        "ar": "<strong>مارش كهربائي علوي</strong>: تصميم مدمج للدراجات الأفقية التي تتطلب خلوصاً أرضياً."
+      }
+    },
+    {
+      "src": "/images/russia-landing-engines/chixiang-horizontal-140-lower-starter-render-05.webp",
+      "alt": {
+        "en": "Lower-mount starter 140cc-150cc horizontal engine",
+        "fr": "Moteur horizontal 140–150 cm³ à démarreur inférieur",
+        "es": "Motor horizontal 140–150 cc con arrancador inferior",
+        "pt": "Motor horizontal 140–150 cc com arranque inferior",
+        "ru": "Горизонтальный мотор 140–150 см³ с нижним стартером",
+        "ar": "محرك أفقي 140–150 سي سي بمارش سفلي"
+      },
+      "caption": {
+        "fr": "<strong>Démarreur inférieur / gamme 140–150 cm³</strong> : préserve l'espace supérieur pour l'admission et le carburateur.",
+        "es": "<strong>Arrancador inferior (140–150 cc)</strong>: libera espacio superior para admisión y carburador en pit-bikes.",
+        "pt": "<strong>Arranque inferior (140–150 cc)</strong>: preserva folga superior para admissão e carburador.",
+        "ru": "<strong>Нижний стартер (140–150 см³)</strong>: освобождает верхнюю зону под впуск и карбюратор на питбайках.",
+        "ar": "<strong>مارش سفلي (140–150 سي سي)</strong>: يوفر مساحة علوية للسحب والكاربوراتير."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "Moteurs horizontaux 110–150 cm³ (CX152FMH, CX1P56FMJ & CX1P60FMJ) | CHIXIANG",
+      "description": "Comparez 5 moteurs horizontaux CHIXIANG (106,7 à 149,8 ml) pour applications Cub & Jakarta compatibles : cotes, embrayage automatique/manuel, démarreur haut/bas et CX1P60FMJ.",
+      "h1": "Moteurs horizontaux 110–150 cm³ (CX152FMH, CX1P56FMJ & CX1P60FMJ) : guide de sélection",
+      "metaLine": "Publié : Novembre 2026 · Guide Technique Moteurs Horizontaux — CHIXIANG MOTOR",
+      "verdictLabel": "Sélection rapide",
+      "verdictHtml": "CHIXIANG MOTOR produit cinq moteurs horizontaux 4 vitesses de <strong>106,7 ml à 149,8 ml</strong> avec embrayage automatique, semi-automatique ou manuel. Choisissez les versions <strong>CX152FMH</strong> pour cyclomoteurs utilitaires (applications de type Cub et Jakarta compatibles), le <strong>CX1P56FMJ</strong> (140 ml, réf. YX140) et le <strong>CX1P60FMJ</strong> (149,8 ml, réf. W150-2) à <strong>circuit d'huile interne en culasse</strong>.",
+      "sections": [
+        {
+          "heading": "1. Comparatif complet des 5 modèles horizontaux CX",
+          "paragraphs": [
+            "Avant d'importer notre <a href=\"{horizontal}\">gamme horizontale CX</a>, vérifiez la cylindrée réelle face aux appellations commerciales (ex. 125 cc ou 130) :"
+          ],
+          "table": {
+            "headers": ["Modèle & Repère marché", "Cylindrée réelle & Cotes", "Puissance", "Couple max.", "Compression", "Poids & Carton", "Embrayage & Boîte"],
+            "rows": [
+              ["CX152FMH-5B (classe 110 cc)", "106,7 ml (52,4 × 49,5 mm)", "4,7 kW @ 8 000 tr/min", "6,7 N·m @ 6 000 tr/min", "9,7:1", "19 kg (477 × 395 × 280 mm)", "Embrayage humide auto ; 4 vitesses (option 1+1)"],
+              ["CX152FMH-6 (classe 125 cc)", "107 ml (52,4 × 49,5 mm)", "4,9 kW @ 8 000 tr/min", "6,9 N·m @ 6 000 tr/min", "9,7:1", "19 kg (477 × 395 × 280 mm)", "Embrayage humide auto ; 4 vitesses (option 1+1)"],
+              ["CX152FMH-5B (130) (alésage carré)", "123,67 ml (54 × 54 mm)", "6,3 kW @ 7 500 tr/min", "8,8 N·m @ 5 500 tr/min", "9,0:1", "23 kg (450 × 280 × 277 mm)", "Embrayage humide auto ; 4 vitesses (option 1+1)"],
+              ["CX1P56FMJ (140 cc / réf. YX140)", "140 ml (56 × 57 mm)", "8,2 kW @ 8 000 tr/min", "10,2 N·m @ 7 500 tr/min", "9,8:1", "21 kg (460 × 300 × 260 mm)", "Embrayage manuel ou semi-auto ; 4 vitesses"],
+              ["CX1P60FMJ (150 cc / réf. W150-2)", "149,8 ml (60 × 53 mm)", "10,2 kW @ 9 500 tr/min", "11,2 N·m @ 8 000 tr/min", "9,9:1", "22 kg (435 × 285 × 235 mm)", "Manuel ou semi-auto ; 4 vit. ; circuit d'huile interne en culasse"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Pourquoi le circuit d'huile interne en culasse du CX1P60FMJ simplifie le montage",
+          "paragraphs": [
+            "Sur les moteurs 150 cm³ classiques montant à 9 500 tr/min, les assembleurs ajoutent souvent un radiateur d'huile externe avec flexibles. Le <strong>CX1P60FMJ</strong> (149,8 ml) est refroidi par air avec un <strong>passage d'huile interne intégré en culasse</strong> — aucun radiateur d'huile externe requis :"
+          ],
+          "bullets": [
+            "<strong>Moins de risques de fuite</strong> : Suppression des flexibles externes et raccords banjo exposés aux chocs.",
+            "<strong>Aucune patte à souder sur le cadre</strong> : Conserve la géométrie avant dans un carton compact de 435 × 285 × 235 mm.",
+            "<strong>Coût BOM et stock pièces réduit</strong> : Moins de quincaillerie et aucune casse d'ailettes de refroidisseur d'huile derrière la roue avant."
+          ]
+        },
+        {
+          "heading": "3. Checklist embrayage, option marche arrière 1+1 & démarreur haut/bas",
+          "bullets": [
+            "<strong>Type d'embrayage</strong> : CX152FMH utilise un embrayage automatique (sans levier au guidon, apprécié sur Jakarta / Cub) ; CX1P56FMJ et CX1P60FMJ proposent manuel ou semi-automatique.",
+            "<strong>Séquence boîte & marche arrière 1+1</strong> : Vérifiez N-1-2-3-4 rotative vs 1-N-2-3-4 ; option 1+1 disponible sur modèles utilitaires/quads sur demande.",
+            "<strong>Position du démarreur & conditions</strong> : Confirmez démarreur supérieur, inférieur ou kick seul. MOQ 50 unités mixtes (<a href=\"{parts}\">pièces détachées incluses</a>), ~10 jours ouvrables FOB Guangzhou, banc 100 % (<a href=\"{evidence}\">Preuves</a>) et garantie 60 jours."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Repère Afrique de l'Ouest : marchés Cub / Jakarta compatibles",
+        "items": [
+          "Pour les ateliers de Côte d'Ivoire, du Bénin et du Togo assemblant ou remplaçant des moteurs de type <strong>Cub / Jakarta compatibles</strong>, les références <strong>CX152FMH-5B (106,7 ml)</strong>, <strong>CX152FMH-6 (107 ml)</strong> et <strong>CX152FMH-5B 130 (123,67 ml)</strong> se combinent directement dans un conteneur mixte avec les moteurs CG."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Pourquoi CX152FMH-6 et CX152FMH-5B (130) affichent-ils 107 ml et 123,67 ml réels ?",
+          "a": "125 cc et (130) sont des appellations commerciales de série ; CHIXIANG publie les cotes exactes (52,4 × 49,5 mm = 107 ml et 54 × 54 mm = 123,67 ml) pour garantir vos déclarations douanières et pièces cylindre."
+        },
+        {
+          "q": "Les modèles CX1P56FMJ et CX1P60FMJ sont-ils fabriqués par YX ?",
+          "a": "Non, ils sont fabriqués par Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. ; YX140 et W150-2 servent uniquement de repères marché."
+        },
+        {
+          "q": "Le CX1P60FMJ (149,8 ml) nécessite-t-il un radiateur d'huile externe ?",
+          "a": "Non, son refroidissement par air intègre un circuit d'huile interne dans la culasse."
+        },
+        {
+          "q": "Quels modèles offrent un embrayage manuel ou une marche arrière 1+1 ?",
+          "a": "CX1P56FMJ et CX1P60FMJ existent en embrayage manuel ou semi-automatique ; l'option 1+1 est disponible sur certains modèles utilitaires/quads sur demande."
+        },
+        {
+          "q": "Que vérifier sur le démarreur, le MOQ et la garantie ?",
+          "a": "Validez démarreur haut ou bas selon votre châssis. MOQ 50 unités mixtes, ~10 jours ouvrables FOB Guangzhou et garantie 60 jours."
+        }
+      ],
+      "ctaCard": {
+        "title": "Demander les cotes d'installation moteurs horizontaux",
+        "body": "Indiquez vos cylindrées, l'emplacement du démarreur et le type d'embrayage pour recevoir plans et devis FOB Guangzhou.",
+        "primaryBtn": "Demander un devis Horizontal",
+        "secondaryBtn": "Centre de preuves usine"
+      }
+    },
+    "es": {
+      "title": "Motores Horizontales 110–150 cc (CX152FMH, CX1P56FMJ y CX1P60FMJ) | CHIXIANG",
+      "description": "Compare 5 motores horizontales CHIXIANG (106.7–149.8 ml): diámetros reales, referencias YX140 y W150-2, embrague automático vs manual, arrancador arriba/abajo y CX1P60FMJ.",
+      "h1": "Motores Horizontales 110–150 cc (CX152FMH, CX1P56FMJ y CX1P60FMJ): Guía de Selección",
+      "metaLine": "Publicado: Noviembre 2026 · Guía Técnica Motores Horizontales — CHIXIANG MOTOR",
+      "verdictLabel": "Veredicto rápido",
+      "verdictHtml": "CHIXIANG MOTOR fabrica cinco motores horizontales de 4 velocidades desde <strong>106.7 ml hasta 149.8 ml</strong>. Elija <strong>CX152FMH</strong> para motonetas/semiautomáticas y cuadrones utilitarios, <strong>CX1P56FMJ</strong> (140 ml, ref. YX140) y <strong>CX1P60FMJ</strong> (149.8 ml, ref. W150-2) con <strong>circuito interno de aceite en culata sin radiador externo</strong>.",
+      "sections": [
+        {
+          "heading": "1. Comparativa de los 5 modelos horizontales",
+          "paragraphs": [
+            "Consulte nuestra <a href=\"{horizontal}\">línea horizontal CX</a> y confirme cilindradas reales más allá del código comercial:"
+          ],
+          "table": {
+            "headers": ["Modelo y Referencia", "Cilindrada real y Medidas", "Potencia", "Torque máximo", "Compresión", "Peso y Caja", "Embrague y Caja"],
+            "rows": [
+              ["CX152FMH-5B (clase 110 cc)", "106.7 ml (52.4 × 49.5 mm)", "4.7 kW @ 8,000 rpm", "6.7 N·m @ 6,000 rpm", "9.7:1", "19 kg (477 × 395 × 280 mm)", "Automático húmedo; 4 vel. (opción 1+1)"],
+              ["CX152FMH-6 (clase 125 cc)", "107 ml (52.4 × 49.5 mm)", "4.9 kW @ 8,000 rpm", "6.9 N·m @ 6,000 rpm", "9.7:1", "19 kg (477 × 395 × 280 mm)", "Automático húmedo; 4 vel. (opción 1+1)"],
+              ["CX152FMH-5B (130) (código 130)", "123.67 ml (54 × 54 mm)", "6.3 kW @ 7,500 rpm", "8.8 N·m @ 5,500 rpm", "9.0:1", "23 kg (450 × 280 × 277 mm)", "Automático húmedo; 4 vel. (opción 1+1)"],
+              ["CX1P56FMJ (140 cc / ref. YX140)", "140 ml (56 × 57 mm)", "8.2 kW @ 8,000 rpm", "10.2 N·m @ 7,500 rpm", "9.8:1", "21 kg (460 × 300 × 260 mm)", "Manual o semiautomático; 4 vel."],
+              ["CX1P60FMJ (150 cc / ref. W150-2)", "149.8 ml (60 × 53 mm)", "10.2 kW @ 9,500 rpm", "11.2 N·m @ 8,000 rpm", "9.9:1", "22 kg (435 × 285 × 235 mm)", "Manual o semiautomático; circuito interno de aceite en culata"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Ventajas del circuito interno de aceite en culata del CX1P60FMJ",
+          "paragraphs": [
+            "El <strong>CX1P60FMJ</strong> (149.8 ml) incorpora lubricación interna dentro de la culata, eliminando el radiador de aceite externo y mangueras:"
+          ],
+          "bullets": [
+            "<strong>Sin mangueras expuestas</strong>: Evita fugas por vibración o golpes de piedras.",
+            "<strong>Sin soldar soportes al chasis</strong>: Conserva el espacio compacto de 435 × 285 × 235 mm y reduce costo de piezas."
+          ]
+        },
+        {
+          "heading": "3. Checklist de embrague, reversa 1+1 y arrancador arriba/abajo",
+          "bullets": [
+            "<strong>Embrague</strong>: Automático en CX152FMH; manual con palanca o semiautomático en CX1P56FMJ y CX1P60FMJ.",
+            "<strong>Arrancador arriba vs abajo</strong>: Confirme despeje inferior o superior en su cuadro antes de fabricar.",
+            "<strong>Condiciones</strong>: MOQ 50 unidades mixtas (<a href=\"{parts}\">con repuestos</a>), ~10 días hábiles FOB Guangzhou, banco 100 % (<a href=\"{evidence}\">Evidencia</a>) y garantía 60 días."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Aduana y declaración exacta en Perú / Colombia",
+        "items": [
+          "Publicamos cilindrada exacta (106.7, 107, 123.67, 140 y 149.8 ml) para evitar discrepancias de partida arancelaria ante <strong>SUNAT / DIAN</strong> y asegurar calce exacto de pistones y cilindros."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Por qué CX152FMH-6 y CX152FMH-5B (130) declaran 107 ml y 123.67 ml reales?",
+          "a": "Son códigos comerciales de serie; informamos las medidas exactas (52.4 × 49.5 mm y 54 × 54 mm) para transparencia aduanera y de repuestos."
+        },
+        {
+          "q": "¿CX1P56FMJ y CX1P60FMJ son fabricados por YX?",
+          "a": "No. Son fabricados por Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.; YX140 y W150-2 son solo referencias comerciales de segmento."
+        },
+        {
+          "q": "¿El CX1P60FMJ requiere enfriador externo de aceite?",
+          "a": "No, es enfriado por aire con circuito interno de aceite en culata."
+        },
+        {
+          "q": "¿Qué modelos ofrecen embrague manual o reversa 1+1?",
+          "a": "CX1P56FMJ y CX1P60FMJ están disponibles con embrague manual o semiautomático; reversa 1+1 opcional en modelos aplicables."
+        },
+        {
+          "q": "¿Qué revisar sobre arrancador, MOQ y garantía?",
+          "a": "Confirme arrancador superior/inferior; MOQ 50 unidades mixtas, ~10 días hábiles FOB Guangzhou y garantía 60 días."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar planos y cotización de motores horizontales",
+        "body": "Indique mezcla de modelos, posición de arrancador y puerto para recibir Factura Proforma.",
+        "primaryBtn": "Cotizar Horizontales",
+        "secondaryBtn": "Centro de Evidencia"
+      }
+    },
+    "pt": {
+      "title": "Motores Horizontais 110–150 cc (CX152FMH, CX1P56FMJ e CX1P60FMJ) | CHIXIANG",
+      "description": "Compare 5 motores horizontais CHIXIANG (106,7 a 149,8 ml): diâmetro × curso, embreagem automática vs manual, arranque superior/inferior e CX1P60FMJ.",
+      "h1": "Motores Horizontais 110–150 cc (CX152FMH, CX1P56FMJ e CX1P60FMJ): Guia de Seleção",
+      "metaLine": "Publicado: Novembro 2026 · Guia Técnico Motores Horizontais — CHIXIANG MOTOR",
+      "verdictLabel": "Resumo técnico",
+      "verdictHtml": "A CHIXIANG MOTOR produz cinco motores horizontais de 4 marchas de <strong>106,7 ml a 149,8 ml</strong>. Escolha <strong>CX152FMH</strong> para ciclomotores e quadriciclos leves, <strong>CX1P56FMJ</strong> (140 ml, ref. YX140) e <strong>CX1P60FMJ</strong> (149,8 ml, ref. W150-2) com <strong>circuito interno de óleo no cabeçote</strong>.",
+      "sections": [
+        {
+          "heading": "1. Comparativo completo dos 5 motores horizontais",
+          "paragraphs": [
+            "Confira as especificações reais na <a href=\"{horizontal}\">linha horizontal CX</a>:"
+          ],
+          "table": {
+            "headers": ["Modelo & Referência", "Cilindrada real & Medidas", "Potência", "Torque máx.", "Compressão", "Peso & Caixa", "Embreagem & Câmbio"],
+            "rows": [
+              ["CX152FMH-5B (classe 110 cc)", "106,7 ml (52,4 × 49,5 mm)", "4,7 kW @ 8.000 rpm", "6,7 N·m @ 6.000 rpm", "9,7:1", "19 kg (477 × 395 × 280 mm)", "Automática úmida; 4 marchas (opção 1+1)"],
+              ["CX152FMH-6 (classe 125 cc)", "107 ml (52,4 × 49,5 mm)", "4,9 kW @ 8.000 rpm", "6,9 N·m @ 6.000 rpm", "9,7:1", "19 kg (477 × 395 × 280 mm)", "Automática úmida; 4 marchas (opção 1+1)"],
+              ["CX152FMH-5B (130) (código 130)", "123,67 ml (54 × 54 mm)", "6,3 kW @ 7.500 rpm", "8,8 N·m @ 5.500 rpm", "9,0:1", "23 kg (450 × 280 × 277 mm)", "Automática úmida; 4 marchas (opção 1+1)"],
+              ["CX1P56FMJ (140 cc / ref. YX140)", "140 ml (56 × 57 mm)", "8,2 kW @ 8.000 rpm", "10,2 N·m @ 7.500 rpm", "9,8:1", "21 kg (460 × 300 × 260 mm)", "Manual ou semiautomática; 4 marchas"],
+              ["CX1P60FMJ (150 cc / ref. W150-2)", "149,8 ml (60 × 53 mm)", "10,2 kW @ 9.500 rpm", "11,2 N·m @ 8.000 rpm", "9,9:1", "22 kg (435 × 285 × 235 mm)", "Manual/semiauto; circuito interno de óleo no cabeçote"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Por que o circuito interno de óleo no cabeçote do CX1P60FMJ facilita a montagem",
+          "bullets": [
+            "<strong>Menos vazamentos</strong>: Elimina mangueiras externas e radiador de óleo adicional.",
+            "<strong>Chassi limpo</strong>: Dispensa suportes soldados mantendo caixa de 435 × 285 × 235 mm."
+          ]
+        },
+        {
+          "heading": "3. Checklist de embreagem, ré 1+1 e posição do arranque",
+          "bullets": [
+            "<strong>Embreagem</strong>: Automática em CX152FMH; manual ou semiautomática em CX1P56FMJ e CX1P60FMJ.",
+            "<strong>Arranque superior vs inferior</strong>: Confira folga no quadro antes de produzir.",
+            "<strong>Condições</strong>: MOQ 50 unidades mistas (<a href=\"{parts}\">com peças</a>), ~10 dias úteis FOB Guangzhou e garantia de 60 dias (<a href=\"{evidence}\">Evidências</a>)."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Transparência para desembaraço (CNCA / ARCCLA)",
+        "items": [
+          "Listamos cilindradas reais (106,7 a 149,8 ml) para evitar divergências documentais em Angola e Moçambique."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Por que CX152FMH-6 e (130) listam 107 ml e 123,67 ml reais?",
+          "a": "125 cc e 130 são designações comerciais; divulgamos diâmetro e curso reais (52,4 × 49,5 e 54 × 54 mm) para precisão aduaneira e de peças."
+        },
+        {
+          "q": "CX1P56FMJ e CX1P60FMJ são fabricados pela YX?",
+          "a": "Não, são fabricados pela Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.; YX140 e W150-2 são apenas referências de mercado."
+        },
+        {
+          "q": "O CX1P60FMJ precisa de radiador de óleo externo?",
+          "a": "Não, possui circuito interno de óleo no cabeçote."
+        },
+        {
+          "q": "Quais modelos têm embreagem manual ou marcha ré 1+1?",
+          "a": "CX1P56FMJ e CX1P60FMJ oferecem manual ou semiautomática; opção 1+1 sob encomenda em modelos utilitários/quad."
+        },
+        {
+          "q": "O que confirmar sobre arranque, MOQ e garantia?",
+          "a": "Arranque superior vs inferior; MOQ 50 unidades mistas, ~10 dias úteis FOB Guangzhou e garantia de 60 dias."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar desenhos e cotação de motores horizontais",
+        "body": "Envie sua mistura de cilindradas e posição do arranque para receber Proforma FOB Guangzhou.",
+        "primaryBtn": "Cotar Horizontais",
+        "secondaryBtn": "Ver Centro de Evidências"
+      }
+    },
+    "ru": {
+      "title": "Горизонтальные цепные моторы 110–150 см³ (152FMH, 1P56FMJ, 1P60FMJ) для Альфа/Дельта/Питбайк | CHIXIANG",
+      "description": "Сравнение 5 горизонтальных моторов CHIXIANG (106,7–149,8 мл): механика или полуавтомат (с выжимом сцепления или без), ориентиры YX140/W150-2, верхний/нижний стартер и 1P60FMJ.",
+      "h1": "Горизонтальные моторы 110–150 см³ (CX152FMH, CX1P56FMJ, CX1P60FMJ) для Альфа, Дельта, Актив и питбайков",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Технический гид РФ / СНГ — CHIXIANG MOTOR",
+      "verdictLabel": "Краткий разбор",
+      "verdictHtml": "Завод CHIXIANG выпускает 5 горизонтальных 4-ступенчатых цепных моторов от <strong>106,7 до 149,8 мл</strong>: линейка <strong>CX152FMH</strong> — на мопеды <strong>Альфа, Дельта, Актив</strong> и лёгкие ATV; <strong>CX1P56FMJ</strong> (140 мл, ориентир YX140) и <strong>CX1P60FMJ</strong> (149,8 мл, ориентир W150-2) с <strong>внутренним масляным каналом ГБЦ без внешнего маслорадиатора</strong>.",
+      "sections": [
+        {
+          "heading": "1. Сравнение 5 горизонтальных моделей CX (реальные кубатуры)",
+          "paragraphs": [
+            "В <a href=\"{horizontal}\">каталоге горизонтальных двигателей CX</a> всегда указаны реальные миллилитры вместо одних лишь торговых наклеек:"
+          ],
+          "table": {
+            "headers": ["Модель и ориентир рынка", "Факт. объём и ЦПГ", "Мощность", "Момент", "Сжатие", "Масса и короб", "Сцепление (механика / автомат) и КПП"],
+            "rows": [
+              ["CX152FMH-5B (класс 110)", "106,7 мл (52,4 × 49,5 мм)", "4,7 кВт @ 8 000", "6,7 Н·м @ 6 000", "9,7:1", "19 кг (477 × 395 × 280)", "Автомат в масле; 4 КПП (опц. 1+1)"],
+              ["CX152FMH-6 (класс 125)", "107 мл (52,4 × 49,5 мм)", "4,9 кВт @ 8 000", "6,9 Н·м @ 6 000", "9,7:1", "19 кг (477 × 395 × 280)", "Автомат в масле; 4 КПП (опц. 1+1)"],
+              ["CX152FMH-5B (130) (квадрат)", "123,67 мл (54 × 54 мм)", "6,3 кВт @ 7 500", "8,8 Н·м @ 5 500", "9,0:1", "23 кг (450 × 280 × 277)", "Автомат в масле; 4 КПП (опц. 1+1)"],
+              ["CX1P56FMJ (140 / ор. YX140)", "140 мл (56 × 57 мм)", "8,2 кВт @ 8 000", "10,2 Н·м @ 7 500", "9,8:1", "21 кг (460 × 300 × 260)", "Механика или полуавтомат; 4 КПП"],
+              ["CX1P60FMJ (150 / ор. W150-2)", "149,8 мл (60 × 53 мм)", "10,2 кВт @ 9 500", "11,2 Н·м @ 8 000", "9,9:1", "22 кг (435 × 285 × 235)", "Механика или полуавтомат; внутренний маслоканал ГБЦ"]
+            ]
+          }
+        },
+        {
+          "heading": "2. Почему внутренний маслоканал ГБЦ на CX1P60FMJ упрощает установку",
+          "bullets": [
+            "<strong>Без внешних шлангов и радиатора</strong>: Убирает подтекание штуцеров и риск пробить маслорадиатор за передним колесом.",
+            "<strong>Компактный блок 435 × 285 × 235 мм</strong>: Не требует приварки кронштейнов на раму питбайка или мопеда."
+          ]
+        },
+        {
+          "heading": "3. Механическая КПП против полуавтомата, реверс 1+1 и расположение стартера",
+          "bullets": [
+            "<strong>С выжимом сцепления или без</strong>: Линейка CX152FMH идёт с автоматическим сцеплением; CX1P56FMJ и CX1P60FMJ поставляются с <strong>механической КПП</strong> (рычаг сцепления) или <strong>полуавтоматом</strong>.",
+            "<strong>Верхний vs нижний стартер</strong>: Заранее согласуйте зазор под трубу рамы и карбюратор.",
+            "<strong>Условия</strong>: MOQ 50 шт. в микс-контейнере (<a href=\"{parts}\">вместе с ЦПГ</a>), ~10 раб. дней FOB Гуанчжоу, 100 % обкатка (<a href=\"{evidence}\">Доказательства</a>) и гарантия 60 дней."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Подбор под мопеды Альфа / Дельта / Актив в РФ и СНГ",
+        "items": [
+          "Большинство оптовиков РФ/СНГ берут в одном контейнере моторы <strong>CX152FMH-5B (106,7 мл)</strong> и <strong>CX152FMH-5B 130 (123,67 мл)</strong> для Альфа/Дельта/Актив в паре с <strong>CX1P56FMJ (140 мл)</strong> для питбайков и полным реестром серийных номеров."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "Почему у CX152FMH-6 и (130) указан реальный объём 107 мл и 123,67 мл?",
+          "a": "125 и (130) — коммерческие названия серий; мы открыто указываем точные диаметры × ход (52,4 × 49,5 и 54 × 54 мм) для таможни и подбора поршневых групп (ЦПГ)."
+        },
+        {
+          "q": "Являются ли CX1P56FMJ и CX1P60FMJ продукцией YX?",
+          "a": "Нет, оба мотора производятся заводом Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.; YX140 и W150-2 указаны только как рыночные ориентиры класса."
+        },
+        {
+          "q": "Нужен ли внешний маслорадиатор для CX1P60FMJ (149,8 мл)?",
+          "a": "Нет, двигатель оснащён воздушным охлаждением со встроенным масляным каналом в ГБЦ."
+        },
+        {
+          "q": "На каких моделях ставится ручное сцепление или реверс 1+1?",
+          "a": "Механика и полуавтомат доступны на CX1P56FMJ и CX1P60FMJ; встроенный реверс 1+1 — на применимых моделях ATV под заказ."
+        },
+        {
+          "q": "Что уточнить по стартеру, MOQ и гарантии?",
+          "a": "Верхний/нижний стартер под раму; MOQ 50 моторов, срок ~10 раб. дней FOB Гуанчжоу и гарантия 60 дней."
+        }
+      ],
+      "ctaCard": {
+        "title": "Запросить чертежи и расчёт горизонтальных двигателей",
+        "body": "Укажите желаемое распределение 110/130/140/150, тип сцепления (механика/полуавтомат) и расположение стартера.",
+        "primaryBtn": "Запросить расчёт",
+        "secondaryBtn": "Центр доказательств"
+      }
+    },
+    "ar": {
+      "title": "دليل اختيار المحركات الأفقية 110–150 سي سي (CX152FMH و CX1P56FMJ و CX1P60FMJ) | CHIXIANG",
+      "description": "مقارنة 5 محركات أفقية من CHIXIANG (106.7–149.8 مل): السعة الفعلية، نوع الكلتش أوتوماتيك مقابل يدوي، موقع المارش العلوي/السفلي ودائرة الزيت الداخلية في CX1P60FMJ.",
+      "h1": "المحركات الأفقية 110–150 سي سي (CX152FMH و CX1P56FMJ و CX1P60FMJ): دليل الاختيار",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل المحركات الأفقية — CHIXIANG MOTOR",
+      "verdictLabel": "الاختيار السريع",
+      "verdictHtml": "تنتج CHIXIANG خمسة محركات أفقية بـ 4 سرعات من <strong>106.7 إلى 149.8 مل</strong>: فئة <strong>CX152FMH</strong> بكلتش أوتوماتيكي للدراجات الخفيفة والباجي، و <strong>CX1P56FMJ</strong> (140 مل) و <strong>CX1P60FMJ</strong> (149.8 مل) بدائرة زيت داخلية بـوش السلندر بدون مبرد زيت خارجي.",
+      "sections": [
+        {
+          "heading": "1. مقارنة كاملة للموديلات الأفقية الخمسة",
+          "paragraphs": [
+            "راجع <a href=\"{horizontal}\">فئة المحركات الأفقية CX</a> مع السعات الفعلية المعتمدة:"
+          ],
+          "table": {
+            "headers": ["الطراز والمرجع", "السعة الفعلية والأبعاد", "القدرة", "العزم", "الانضغاط", "الوزن والصندوق", "الكلتش والجير"],
+            "rows": [
+              ["CX152FMH-5B (فئة 110)", "106.7 مل (52.4 × 49.5 مم)", "4.7 كيلوواط @ 8,000", "6.7 نيوتن·متر @ 6,000", "9.7:1", "19 كجم (477 × 395 × 280)", "كلتش أوتوماتيك؛ 4 سرعات (خيار 1+1)"],
+              ["CX152FMH-6 (فئة 125)", "107 مل (52.4 × 49.5 مم)", "4.9 كيلوواط @ 8,000", "6.9 نيوتن·متر @ 6,000", "9.7:1", "19 كجم (477 × 395 × 280)", "كلتش أوتوماتيك؛ 4 سرعات (خيار 1+1)"],
+              ["CX152FMH-5B (130)", "123.67 مل (54 × 54 مم)", "6.3 كيلوواط @ 7,500", "8.8 نيوتن·متر @ 5,500", "9.0:1", "23 كجم (450 × 280 × 277)", "كلتش أوتوماتيك؛ 4 سرعات (خيار 1+1)"],
+              ["CX1P56FMJ (140 / مرجع YX140)", "140 مل (56 × 57 مم)", "8.2 كيلوواط @ 8,000", "10.2 نيوتن·متر @ 7,500", "9.8:1", "21 كجم (460 × 300 × 260)", "كلتش يدوي أو نصف أوتوماتيك؛ 4 سرعات"],
+              ["CX1P60FMJ (150 / مرجع W150-2)", "149.8 مل (60 × 53 مم)", "10.2 كيلوواط @ 9,500", "11.2 نيوتن·متر @ 8,000", "9.9:1", "22 كجم (435 × 285 × 235)", "يدوي/نصف أوتوماتيك؛ دائرة زيت داخلية بالسلندر"]
+            ]
+          }
+        },
+        {
+          "heading": "2. ميزة دائرة الزيت الداخلية في CX1P60FMJ",
+          "bullets": [
+            "<strong>تقليل نقاط التسريب</strong>: الاستغناء عن خراطيم ومبرد الزيت الخارجي يمنع تهريب الزيت وتلف المبرد على الطرق الوعرة.",
+            "<strong>حجم مدمج 435 × 285 × 235 مم</strong>: لا يتطلب لحام قواعد إضافية على الشاسيه."
+          ]
+        },
+        {
+          "heading": "3. الكلتش والرجوع 1+1 وموقع المارش",
+          "bullets": [
+            "<strong>نوع الكلتش</strong>: أوتوماتيك في CX152FMH، ويدوي أو نصف أوتوماتيك في CX1P56FMJ و CX1P60FMJ.",
+            "<strong>المارش العلوي مقابل السفلي</strong>: يجب تأكيد خلوص الشاسيه قبل الإنتاج.",
+            "<strong>الشروط التجارية</strong>: حد أدنى 50 محركاً مختلطاً (<a href=\"{parts}\">مع قطع الغيار</a>)، ~10 أيام عمل FOB قوانغتشو، فحص 100% (<a href=\"{evidence}\">الأدلة</a>) وضمان 60 يوماً."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "ملاحظات التصدير والجمارك",
+        "items": [
+          "نوثق السعات الفعلية (106.7–149.8 مل) في جميع المستندات لضمان تطابق بيانات الجمارك و CargoX / ACID وطلبات الشنابر والسلندر."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "لماذا تذكر CX152FMH-6 و (130) سعة فعلية 107 مل و123.67 مل؟",
+          "a": "هذه رموز فئات تجارية بينما نوضح القطر × الشوط الفعليين (52.4 × 49.5 و54 × 54 مم) لدقة الجمارك وقطع الغيار."
+        },
+        {
+          "q": "هل طرازا CX1P56FMJ و CX1P60FMJ من تصنيع YX؟",
+          "a": "لا، يتم تصنيعهما في مصنع تشونغتشينغ تشيشيانغ، وتُذكر YX140 و W150-2 كمرجع فئة فقط."
+        },
+        {
+          "q": "هل يحتاج CX1P60FMJ إلى مبرد زيت خارجي؟",
+          "a": "لا، فهو مبرد بالهواء مع دائرة زيت داخلية مدمجة في وش السلندر."
+        },
+        {
+          "q": "أي الموديلات توفر كلتش يدوي أو ترس رجوع 1+1؟",
+          "a": "يتوفر اليدوي ونصف الأوتوماتيك في CX1P56FMJ و CX1P60FMJ، ويتاح خيار 1+1 لبعض موديلات الباجي."
+        },
+        {
+          "q": "ما النقاط الواجب تأكيدها حول المارش والحد الأدنى والضمان؟",
+          "a": "حدد موقع المارش العلوي أو السفلي؛ الحد الأدنى 50 وحدة مختلطة، التجهيز ~10 أيام عمل FOB قوانغتشو وضمان 60 يوماً."
+        }
+      ],
+      "ctaCard": {
+        "title": "اطلب رسومات المحركات الأفقية وعرض السعر",
+        "body": "أرسل التشكيلة المطلوبة وموقع المارش ونوع الكلتش لتأكيد المطابقة وإصدار فاتورة FOB قوانغتشو.",
+        "primaryBtn": "اطلب عرض سعر أفقي",
+        "secondaryBtn": "مركز الأدلة"
+      }
+    }
+  }
+}

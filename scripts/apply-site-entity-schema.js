@@ -6,6 +6,7 @@ const {
   organizationId,
   websiteId,
   officialSameAs,
+  entryForHtml,
   loadManifest
 } = require('./site-entity-manifest');
 
@@ -165,7 +166,7 @@ function entityGraph(entry) {
       url: `${canonicalOrigin}/`,
       name: 'CHIXIANG MOTOR',
       publisher: { '@id': organizationId },
-      inLanguage: ['en', 'es', 'pt', 'ru', 'ar', 'zh-CN']
+      inLanguage: ['en', 'fr', 'es', 'pt', 'ru', 'ar']
     });
   }
   graph.push(pageNode(entry));
@@ -189,6 +190,12 @@ function hash(value) {
   return crypto.createHash('sha256').update(value).digest('hex');
 }
 
+function applyToHtml(html, url) {
+  const entry = entryForHtml(html, url);
+  const afterBreadcrumb = insertVisibleBreadcrumb(html, entry);
+  return insertEntityGraph(afterBreadcrumb, entry);
+}
+
 function updatePage(entry) {
   const file = path.join(root, entry.file);
   const before = fs.readFileSync(file, 'utf8');
@@ -200,11 +207,15 @@ function updatePage(entry) {
   return true;
 }
 
-const changed = loadManifest(root).filter(updatePage);
-if (checkOnly && changed.length) {
-  console.error(`${changed.length} canonical pages are not synchronized.`);
-  for (const entry of changed) console.error(`- ${entry.file}`);
-  process.exitCode = 1;
-} else {
-  console.log(`${changed.length} canonical pages ${checkOnly ? 'need updates' : 'updated'}.`);
+if (require.main === module) {
+  const changed = loadManifest(root).filter(updatePage);
+  if (checkOnly && changed.length) {
+    console.error(`${changed.length} canonical pages are not synchronized.`);
+    for (const entry of changed) console.error(`- ${entry.file}`);
+    process.exitCode = 1;
+  } else {
+    console.log(`${changed.length} canonical pages ${checkOnly ? 'need updates' : 'updated'}.`);
+  }
 }
+
+module.exports = { applyToHtml };

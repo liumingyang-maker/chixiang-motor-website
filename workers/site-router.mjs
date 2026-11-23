@@ -1,6 +1,6 @@
 const CANONICAL_ORIGIN = 'https://chixiangmotor.com';
 const CUSTOM_HOSTS = new Set(['chixiangmotor.com', 'www.chixiangmotor.com']);
-const LANGUAGE_ROOTS = new Set(['/ar', '/en', '/es', '/pt', '/ru', '/zh-cn']);
+const LANGUAGE_ROOTS = new Set(['/ar', '/en', '/es', '/fr', '/pt', '/ru']);
 const VERIFICATION_ASSETS = new Map([
   ['/yandex_68b52fccf05e4a88.html', '/yandex_68b52fccf05e4a88'],
   ['/yandex_8a3590afcb928a95.html', '/yandex_8a3590afcb928a95'],
@@ -111,13 +111,10 @@ function normalizedDocumentPath(pathname) {
   if (LEGACY_PATHS.has(pathname)) return LEGACY_PATHS.get(pathname);
   if (pathname === '/' || pathname === '/index.html') return '/en/';
   if (LANGUAGE_ROOTS.has(pathname)) return `${pathname}/`;
-  if (/^\/(?:ar|en|es|pt|ru|zh-cn)\/index\.html$/.test(pathname)) {
+  if (/^\/(?:ar|en|es|fr|pt|ru)\/index\.html$/.test(pathname)) {
     return pathname.replace(/index\.html$/, '');
   }
   if (pathname.endsWith('.html')) return pathname.slice(0, -5);
-  if (pathname.startsWith('/zh-cn/') && pathname !== '/zh-cn/' && pathname !== '/zh-cn/guides/' && pathname.endsWith('/')) {
-    return pathname.slice(0, -1);
-  }
   return pathname;
 }
 
@@ -161,6 +158,17 @@ export default {
 
     if (verificationAsset) {
       return verificationResponse(request, env, requestUrl, verificationAsset);
+    }
+
+    if (requestUrl.pathname === '/zh-cn' || requestUrl.pathname.startsWith('/zh-cn/')) {
+      return new Response('Gone', {
+        status: 410,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'X-Robots-Tag': 'noindex, nofollow, noarchive',
+          'Cache-Control': 'public, max-age=300'
+        }
+      });
     }
 
     const location = redirectLocation(requestUrl, request.method);

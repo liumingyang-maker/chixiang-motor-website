@@ -47,7 +47,7 @@ test('page matrix covers every canonical sitemap URL exactly once', () => {
   const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true).length;
   const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter(p => p && p.is_flagship_page === true).length;
   const flagshipEngineCount = (JSON.parse(read('data/flagship-engines.json')).engines || []).filter(e => e && e.published === true).length;
-  const expectedCount = 85 + 2 * publicBtvCount + flagshipHwCount + flagshipEngineCount;
+  const expectedCount = 143 + 6 * publicBtvCount + flagshipHwCount + 6 * flagshipEngineCount;
   assert.equal(rows.length, expectedCount);
   assert.equal(new Set(rows.map(row => row.url)).size, expectedCount);
   assert.deepEqual([...rows.map(row => row.url)].sort(), [...sitemapUrls].sort());

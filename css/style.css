@@ -934,6 +934,13 @@ h4 { font-size: 1.1rem; }
 .page-header.products-page-header .container {
   position: relative;
   z-index: 1;
+  width: 100%;
+}
+
+.page-header.products-page-header .breadcrumb {
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
 }
 
 .page-header.products-page-header .breadcrumb,
@@ -995,6 +1002,7 @@ h4 { font-size: 1.1rem; }
 .about-page-header .container {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .about-page-header-content {
@@ -1263,7 +1271,7 @@ body:has(.about-page-header) .section-subtitle {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #1a1a1a;
+  background-color: #f4f6f8;
   border-radius: 8px;
 }
 
@@ -1285,7 +1293,7 @@ body:has(.about-page-header) .section-subtitle {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #1a1a1a;
+  background-color: #f4f6f8;
 }
 
 .product-card .product-badge {
@@ -2764,13 +2772,16 @@ body:has(.about-page-header) .section-subtitle {
   }
 
   .hero-cta .btn {
-    flex: 1;
+    flex: 1 1 220px;
     min-width: 130px;
     justify-content: center;
-    padding: 0.7rem 0.75rem;
+    padding: 0.7rem 0.85rem;
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: 8px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
   }
 
   .hero-brand-since {
@@ -2808,7 +2819,7 @@ body:has(.about-page-header) .section-subtitle {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #1a1a1a;
+    background-color: #f4f6f8;
   }
 
   .category-card .card-info {
@@ -2866,7 +2877,7 @@ body:has(.about-page-header) .section-subtitle {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #1a1a1a;
+    background-color: #f4f6f8;
   }
 
   .product-card .product-info {
@@ -3764,8 +3775,12 @@ body:has(.about-page-header) .section-subtitle {
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
-.product-card .product-img {
-  background: #f0f0f3;
+.product-card .product-img,
+.product-card .product-img[style*="background-image"],
+.product-card .product-img.has-img,
+.category-card .card-img,
+.variant-card .variant-thumb {
+  background-color: #f4f6f8;
 }
 
 /* Specs table 鈥?light */
@@ -4395,3 +4410,61 @@ body:has(.about-page-header) .section-subtitle {
     aspect-ratio: auto;
   }
 }
+
+/* RTL Layout Safeguards for Arabic Full Matrix */
+[dir="rtl"] .page-header.about-page-header {
+  text-align: right;
+  background-image: linear-gradient(270deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/factory-1.webp');
+}
+[dir="rtl"] .about-page-header .eyebrow {
+  unicode-bidi: plaintext;
+}
+[dir="rtl"] .about-page-header h1,
+[dir="rtl"] .about-page-header p {
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+[dir="rtl"] .nav-logo .logo-icon {
+  margin-right: 0;
+  margin-left: 0.6rem;
+}
+[dir="rtl"] .flagship-verdict {
+  border-left: none;
+  border-right: 4px solid var(--primary-color, #0f3d7a);
+}
+[dir="rtl"] .hw-ai-capsule {
+  text-align: right;
+  border-left: 1px solid var(--border-color, #e2e8f0);
+  border-right: 4px solid var(--accent-color, #e63946);
+}
+[dir="rtl"] .btv-echo-card {
+  border-left: 1px solid #cbd5e1;
+  border-right: 4px solid var(--accent-blue);
+  text-align: right;
+}
+[dir="rtl"] .specs-table th,
+[dir="rtl"] .specs-table td,
+[dir="rtl"] .spec-table th,
+[dir="rtl"] .spec-table td,
+[dir="rtl"] .feature-item[style*="text-align:left"] {
+  text-align: right !important;
+}
+[dir="rtl"] .flagship-summary,
+[dir="rtl"] .flagship-bundle-card,
+[dir="rtl"] .btv-quote-basket,
+[dir="rtl"] .entity-breadcrumb {
+  text-align: right;
+}
+[dir="rtl"] .nav-item-dropdown .nav-dropdown {
+  left: auto;
+  right: 0;
+  text-align: right;
+}
+[dir="rtl"] .btv-model-hub-head,
+[dir="rtl"] .btv-quote-basket {
+  flex-direction: row-reverse;
+}
+[dir="rtl"] .mobile-nav-list a .mnav-arrow {
+  transform: scaleX(-1);
+}
+

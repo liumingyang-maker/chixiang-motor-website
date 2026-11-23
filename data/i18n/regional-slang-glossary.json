@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "description": "Verified regional motorcycle/tricycle mechanics slang, wholesale market hubs, and customs clearance terminology for EN->Locale transcreation.",
+    "policy": "Never machine-translate EN copy word-for-word. Use verified local trade terms while keeping SSOT engineering specs locked."
+  },
+  "fr": {
+    "markets": "Côte d'Ivoire (Abidjan), Cameroun (Douala), Bénin (Cotonou), Sénégal (Dakar), Guinée, Togo, Mali, Burkina Faso, Niger, Tchad",
+    "wholesaleHubs": ["Adjamé (Abidjan)", "Akwa / Brazzaville / Koumassi (Douala)", "Dantokpa (Cotonou)"],
+    "customsTerms": ["BESC / BSC (Bordereau Électronique de Suivi des Cargaisons, coordonné par l'importateur et son transitaire)"],
+    "terminology": {
+      "cg_pushrod": "moteur type CG à tiges de culbuteurs (distribution par tiges)",
+      "cb_ohc": "moteur CB à arbre à cames en tête / distribution par chaîne (OHC)",
+      "horizontal": "moteurs horizontaux 110–150 cm³ (applications de type Cub et Jakarta compatibles)",
+      "cargo_tricycle": "moto-cargo / tricycle cargo / tchktchk / tricycle à refroidissement liquide (tricycle à eau)",
+      "parts": ["culasse complète", "kit cylindre-piston", "vilebrequin", "demi-carters moteur", "pochette de joints", "pompe à eau", "vase d'expansion", "disques d'embrayage renforcés", "roue libre 20 rouleaux"]
+    },
+    "strictScopeRules": [
+      "Le terme 'Jakarta' est strictement limité aux pages de moteurs horizontaux (CX) et vues d'ensemble catalogue.",
+      "Ne jamais écrire 'd'origine Bajaj/TVS' — utiliser 'adaptable' / 'remplacement équivalent'."
+    ]
+  },
+  "es": {
+    "markets": "Perú, Colombia, Ecuador, América Central y el Caribe",
+    "wholesaleHubs": ["Lima / Callao", "Bogotá / Medellín / Cali / Buenaventura"],
+    "customsTerms": ["SUNAT (Perú) / DIAN (Colombia) — repuestos y motores nuevos únicamente, con número de serie grabado y partida arancelaria exacta"],
+    "terminology": {
+      "cg_pushrod": "motor varillero (CG OHV)",
+      "cb_ohc": "motor cadenillero / cadenero (CB OHC)",
+      "horizontal": "motores horizontales 110–150 cc para motonetas/semiatomáticas y pit-bikes",
+      "cargo_tricycle": "carguero / motocarro / triciclo de carga enfriado por agua / mototaxi / Torito Bajaj (2T vs 4T)",
+      "parts": ["culata completa", "cilindro y pistón", "cigüeñal", "cadenilla de distribución", "guías de caucho", "tensor", "juego de empaques", "bomba de agua"]
+    },
+    "strictScopeRules": [
+      "Distinguir claramente 'varillero' (CG) vs 'cadenillero' (CB)."
+    ]
+  },
+  "pt": {
+    "markets": "Angola (Luanda), Moçambique (Maputo), Cabo Verde, Guiné-Bissau, América do Sul",
+    "wholesaleHubs": ["Luanda", "Maputo"],
+    "customsTerms": ["CNCA (Conselho Nacional de Carregadores de Angola / certificado obrigatório de carga emitido via ARCCLA para embarques marítimos a Angola)"],
+    "terminology": {
+      "cg_pushrod": "motor de vareta (CG OHV)",
+      "cb_ohc": "motor com corrente de distribuição / corrente de comando (CB OHC)",
+      "horizontal": "motores horizontais 110–150 cc para ciclomotores/utilitárias",
+      "cargo_tricycle": "triciclo de carga refrigerado a água / kupapata (mototáxi) / chapa / lambreta / ongando",
+      "parts": ["cabeçote completo", "kit cilindro e pistão", "virabrequim", "corrente de comando", "jogo de juntas", "bomba d'água", "embreagem de 20 roletes"]
+    },
+    "strictScopeRules": [
+      "Mencionar CNCA / ARCCLA como requisito de embarque coordenado pelo importador e despachante com documentos da fábrica."
+    ]
+  },
+  "ru": {
+    "markets": "Россия, Казахстан, Узбекистан, Кыргызстан, СНГ",
+    "wholesaleHubs": ["Москва", "Екатеринбург", "Ростов-на-Дону", "Владивосток", "Алматы / Ташкент"],
+    "customsTerms": ["Декларирование и таможенная очистка с реестром серийных номеров картера под требования ЕАЭС / СНГ"],
+    "terminology": {
+      "cg_pushrod": "штанговый двигатель (нижневальный CG OHV)",
+      "cb_ohc": "цепной мотор (верхневальный CB OHC с цепью ГРМ)",
+      "horizontal": "горизонтальные цепные моторы (139FMB / 152FMH / 153FMI / 1P56FMJ / 1P60FMJ для Альфа, Дельта, Актив, питбайков) с механической КПП или полуавтоматом",
+      "cargo_tricycle": "двигатель с водяным охлаждением под грузовой трицикл и внешний реверс-редуктор (задняя передача)",
+      "parts": ["ЦПГ (цилиндро-поршневая группа)", "ГБЦ (головка блока цилиндров)", "КШМ (коленвал в сборе)", "цепь ГРМ", "реверс-редуктор", "обгонная муфта 20 роликов"]
+    },
+    "strictScopeRules": [
+      "Указывать отличия механической КПП (с выжимом сцепления) и полуавтомата (без рычага сцепления) на моторах типа Альфа/Дельта."
+    ]
+  },
+  "ar": {
+    "markets": "مصر، السودان، العراق، اليمن، شمال أفريقيا والخليج",
+    "wholesaleHubs": ["التوفيقية (القاهرة)", "الرصيف باء"],
+    "customsTerms": ["نظام التسجيل المسبق للشحنات ACI / رقم ACID عبر نافذة وبوابة CargoX للاستيراد إلى مصر"],
+    "terminology": {
+      "cg_pushrod": "موتور أسياخ (CG OHV)",
+      "cb_ohc": "موتور كاتينة / جنزير الكاتينة (CB OHC)",
+      "horizontal": "محركات أفقية 110–150 سي سي",
+      "cargo_tricycle": "تروسيكل تبريد مياه (الريداتير) / توك توك باجاج / تروسيكل شحن ثقيل",
+      "parts": ["جوان وش سلندر", "سلندر", "شنبر / شنابر", "طلمبة مياه", "قِرب مياه", "خراطيم تبريد", "جنزير الكاتينة", "شدادات", "تروس", "عزم الشد"]
+    },
+    "strictScopeRules": [
+      "جميع الصفحات العربية تستخدم dir=\"rtl\" وتوضيح أن نظام ACID/CargoX يُستخرج عبر المستورد المصري ومستندات المصنع."
+    ]
+  }
+}

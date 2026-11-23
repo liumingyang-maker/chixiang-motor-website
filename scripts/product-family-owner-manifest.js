@@ -18,7 +18,11 @@ const routes = [
   { file: 'ar/cg-engine.html', language: 'ar', family: 'cg', dir: 'rtl' },
   { file: 'ar/cb-engine.html', language: 'ar', family: 'cb', dir: 'rtl' },
   { file: 'ar/horizontal-engine.html', language: 'ar', family: 'horizontal', dir: 'rtl' },
-  { file: 'ar/engine-parts.html', language: 'ar', family: 'parts', dir: 'rtl' }
+  { file: 'ar/engine-parts.html', language: 'ar', family: 'parts', dir: 'rtl' },
+  { file: 'fr/cg-engine.html', language: 'fr', family: 'cg' },
+  { file: 'fr/cb-engine.html', language: 'fr', family: 'cb' },
+  { file: 'fr/horizontal-engine.html', language: 'fr', family: 'horizontal' },
+  { file: 'fr/engine-parts.html', language: 'fr', family: 'parts' }
 ];
 
 const locales = {
@@ -446,11 +450,112 @@ const locales = {
       ]
     },
     paths: { products: '/ar/products', about: '/ar/about', contact: '/ar/contact', email: 'mailto:chixiangmotor@163.com' }
+  },
+  fr: {
+    labels: {
+      approvedHeading: 'Spécifications techniques approuvées', model: 'Modèle', nominal: 'Classe nominale',
+      actual: 'Cylindrée réelle', boreStroke: 'Alésage × course', maxPower: 'Puissance max.', maxTorque: 'Couple max.',
+      compression: 'Compression', netWeight: 'Poids net', grossWeight: 'Poids brut (colis)',
+      dimensions: 'Dimensions', packageDimensions: 'Dimensions colis', cooling: 'Refroidissement', start: 'Démarrage',
+      starterPosition: 'Position du démarreur électrique', clutch: 'Embrayage', gears: 'Transmission', options: 'Options complémentaires',
+      marketReference: 'Référence marché', applications: 'Applications', checklist: 'Informations requises pour le devis',
+      familyOptions: 'Architectures et configurations disponibles', parts: 'Catégories de pièces', category: 'Catégorie', examples: 'Exemples',
+      related: 'Liens produits et contact export', faq: 'Questions fréquentes (FAQ)', contact: 'Demander un devis', products: 'Catalogue complet',
+      about: 'À propos de l\'usine', email: 'Envoyer un email', carburetor: 'Carburateur',
+      hwHeading: 'Spécifications HW Water usage intensif (classes 200–350 cc)',
+      hwNote: 'Architecture monocylindre 4 temps verticale refroidie par eau avec ailettes de refroidissement, capacité d\'huile 1,5 L, embrayage à 20 rouleaux et magnéto CC à haut rendement. Lubrification sous pression et barbotage, allumage CDI, démarrage électrique / au kick, embrayage manuel multidisque à bain d\'huile. Boîte standard à 5 vitesses avant (compatible avec boîte de marche arrière externe).',
+      horizontalCatalogHeading: 'Spécifications catalogue et référence moteurs horizontaux (110–150 cm³)',
+      horizontalCatalogNote: 'Les données 110/125/130 cm³ reflètent le catalogue constructeur (4 temps incliné à 10° OHC, allumage CDI CA, embrayage automatique multidisque à bain d\'huile, boîte 4 vitesses ; CX152FMH-5B (130) désigne la version catalogue à alésage carré 54 × 54 mm et cylindrée réelle 123,67 ml). Les références 140 cm³ (CX1P56FMJ) et 150 cm³ (CX1P60FMJ) correspondent aux mesures standard de classe YX (embrayage manuel ou semi-automatique ; CX1P60FMJ intègre un circuit d\'huile interne dans la culasse sans radiateur externe).',
+      packingScopeHeading: 'Périmètre d\'emballage export et accessoires',
+      packingScopeBody: 'Chaque moteur complet est livré avec l\'ensemble moteur principal et le stator/rotor d\'origine usine. Les accessoires périphériques (kick de démarrage, sélecteur de vitesses, pipe d\'admission, carburateur PZ26/PZ27/PZ30, kit CDI/régulateur/relais et emballage carton renforcé ou palette de 12 moteurs) sont confirmés explicitement sur votre facture proforma (BOM) avant expédition.'
+    },
+    intro: {
+      cg: 'CHIXIANG MOTOR fabrique et exporte des moteurs CG à tiges de culbuteurs refroidis par air (125–250 cc) et refroidis par eau (CG150SB–CG250SB et série lourde HW200–HW350) pour distributeurs, assembleurs et flottes de tricycles cargo.',
+      cb: 'CHIXIANG MOTOR fournit des moteurs CB à arbre à cames en tête (distribution par chaîne) de 150 à 250 cc.',
+      horizontal: 'CHIXIANG MOTOR fournit des moteurs horizontaux CX compacts refroidis par air dans les classes nominales 110 à 150 cm³ pour motos de type Cub, applications Jakarta compatibles et projets d\'assemblage.',
+      parts: 'CHIXIANG MOTOR fournit des pièces de rechange moteur pour motos et tricycles cargo.'
+    },
+    values: {
+      air: 'Refroidissement par air', water: 'Refroidissement liquide (eau)', internalOil: 'Refroidissement par air avec circuit d\'huile interne dans la culasse (sans radiateur externe)',
+      electricKick: 'Démarrage électrique / au kick', kickElectric: 'Démarrage au kick ou électrique', upperLower: 'Démarreur supérieur ou inférieur (versions électriques)',
+      manualWet: 'Manuel multidisque à bain d\'huile', autoWet: 'Automatique multidisque à bain d\'huile', manualSemi: 'Manuel ou semi-automatique', manual: 'Embrayage manuel', five: '5 vitesses à prise constante', fiveRotaryReverse: '5 vitesses rotatives (marche arrière en option)',
+      four: '4 vitesses', fourConstant: '4 vitesses à prise constante', reverse: 'Marche arrière intégrée ou boîte 1+1 disponible sur demande'
+    },
+    applications: {
+      cg: ['Motos commerciales et moto-taxis (moteur complet CG150 / CG200)', 'Tricycle cargo et tricycle 250/300cc à eau selon configuration de charge', 'Commande mixte de plusieurs modèles et pièces de rechange pour distributeurs'],
+      cb: ['Motos routières et tout-terrain 150–250 cc'],
+      horizontal: ['Motos de type Cub et applications Jakarta compatibles (Jakarta 110 / 125)', 'Pièces moteur Jakarta, cyclomoteurs et véhicules utilitaires légers', 'Approvisionnement de gros dès 50 unités et lignes d\'assemblage'],
+      parts: ['Stock de pièces de rechange grossiste']
+    },
+    checklist: {
+      engine: ['Modèle cible ou cylindrée nominale', 'Quantité (MOQ 50 moteurs, commande mixte possible) et port de destination (Abidjan, Douala, Cotonou, Dakar)', 'Configuration : démarrage électrique / au kick, embrayage, boîte et marche arrière', 'Type de véhicule et exigences de montage / faisceau'],
+      parts: ['Code moteur et désignation de la pièce', 'Photo claire ou référence OEM à titre d\'identification', 'Quantité et port de destination']
+    },
+    marketNote: 'Les désignations YX sont des références de recherche marché. Ces moteurs CX sont fabriqués par CHIXIANG MOTOR ; YX n\'est ni la marque ni le fabricant.',
+    familyCards: [
+      ['Moteur CG avec arbre d\'équilibrage', 'Pour les motos routières et utilitaires, l\'arbre d\'équilibrage réduit les vibrations monocylindres et améliore la régularité de marche, avec boîte 5 vitesses internationale, rotative ou marche arrière intégrée selon le modèle.'],
+      ['Gamme Tsunami refroidie par eau', 'Architecture CG renforcée à double ailettes de refroidissement et carter d\'huile agrandi pour maintenir la stabilité thermique des tricycles cargo en service continu.'],
+      ['Série lourde HW Water (200–350 cc)', 'Version renforcée pour tricycle 250/300cc à eau : ailettes de cylindre, 1,5 L d\'huile, embrayage à 20 rouleaux, magnéto CC à haut rendement et boîte 5 vitesses avant compatible avec boîte de marche arrière externe.'],
+      ['Série à embrayage automatique refroidie par eau', 'Disponible uniquement en classes CG150 et CG175 avec embrayage centrifuge automatique, distincte des versions à marche arrière intégrée.']
+    ],
+    partsCategories: [
+      ['Kit cylindre-piston', 'Blocs cylindres, pistons, segments et pochettes de joints adaptés à chaque cylindrée'],
+      ['Culasse complète', 'Culasses assemblées avec soupapes, culbuteurs, conduits admission/échappement et sièges'],
+      ['Embrayage & disques', 'Disques garnis, disques acier, embrayage centrifuge 20 rouleaux (HW) et cloches renforcées'],
+      ['Stator & magnéto', 'Stators d\'allumage et charge CC à haut rendement et volants magnétiques'],
+      ['Soupapes', 'Soupapes d\'admission et d\'échappement appairées par culasse et modèle'],
+      ['Pompe à huile', 'Pompes à huile complètes et pignons d\'entraînement pour lubrification sous pression'],
+      ['Vilebrequin & bielle', 'Ensembles vilebrequin et bielle équilibrés aux cotes exactes de course et axe'],
+      ['Arbre de kick', 'Arbres de démarrage au kick, ressorts de rappel et rochets'],
+      ['Sélecteur de vitesses', 'Tambours sélecteurs, fourchettes et axes de sélection'],
+      ['Arbres de boîte & pignons', 'Arbres primaire/secondaire, trains fixes et pignons à prise constante 4/5 vitesses'],
+      ['Démarreur électrique', 'Démarreurs électriques (montage supérieur ou inférieur selon code moteur)'],
+      ['Roulements, bougies & pignons', 'Roulements de carter, bougies et pignons de distribution / transmission primaire'],
+      ['Électrique & allumage', 'Boîtiers CDI, régulateurs/redresseurs, bobines haute tension et relais de démarreur']
+    ],
+    partsMatrixHeading: 'Couverture des plateformes & liste de contrôle montage',
+    partsMatrixColumns: ['Famille moteur', 'Pièces d\'usure & révision fournies', 'Points à confirmer avant commande'],
+    partsMatrixRows: [
+      ['Horizontaux CX (110–150 cm³)', 'Kit cylindre-piston, culasse, disques d\'embrayage, stator magnéto, boîte 4 vitesses, CDI CA', 'Cylindrée réelle, alésage, embrayage manuel/auto/semi-auto, démarreur haut ou bas'],
+      ['CG Refroidissement Air (125–250 cc)', 'Kit cylindre-piston, culasse à tiges de culbuteurs, boîte 5 vitesses, vilebrequin, pompe à huile', 'Code exact (CG125–CG250), alésage × course, diamètre axe de piston, option arbre d\'équilibrage'],
+      ['CG Eau & HW200–350 (150–350 cc)', 'Kit de réfection moteur refroidi par eau, culasse, embrayage 20 rouleaux, magnéto CC, joints, PZ30', 'Série standard SB vs série lourde HW, cannelures arbre sortie, connecteur, marche arrière'],
+      ['Série CB OHC (150–250 cc)', 'Culasse OHC à distribution par chaîne, chaîne et tendeur, boîte 5 vitesses, vilebrequin, embrayage', 'Modèle exact (CB150 / CB200-C / CB250), cylindrée (149 / 197 / 223 cc), faisceau électrique']
+    ],
+    partsMatrixNote: 'Les pièces détachées se consolident en commande mixte de plusieurs modèles avec les moteurs complets (MOQ 50 moteurs complets pour la commande mixte, délai ~10 jours ouvrables, FOB Guangzhou vers Abidjan / Douala / Cotonou / Dakar, garantie 60 jours après arrivée).',
+    faq: {
+      cg: [
+        ['Quelle est la différence entre un moteur CG à tiges de culbuteurs et un moteur CB ?', 'Le moteur CG à tiges de culbuteurs privilégie le couple à bas régime, la simplicité mécanique et l\'entretien sur le terrain (moto commerciale et tricycle cargo), tandis que le moteur CB à arbre à cames en tête (distribution par chaîne) est destiné aux motos routières ou tout-terrain à plus haut régime.'],
+        ['Comment choisir entre CG250SB et HW300 pour un tricycle 250/300cc à eau ?', 'Le CG250SB (246,3 mL) offre 11,5 kW et 19,5 N·m en architecture standard à refroidissement liquide (eau), alors que le HW300 (classe 300cc, cylindrée réelle 275,3 mL) délivre 12,5 kW et 21 N·m avec carter 1,5 L, embrayage 20 rouleaux, boîte 5 vitesses avant compatible marche arrière externe et ~80 % de pièces communes avec le HW250.'],
+        ['Peut-on inclure des kits de réfection moteur refroidi par eau dans le même conteneur ?', 'Oui. La commande mixte de plusieurs modèles est acceptée dès 50 moteurs : vous pouvez combiner moteurs complets et pièces détachées dans un même conteneur (kit de réfection moteur refroidi par eau, joints, embrayage), expédiés FOB Guangzhou, Chine vers Abidjan, Douala, Cotonou ou Dakar (suivi BSC / BESC coordonné par votre transitaire).']
+      ],
+      horizontal: [
+        ['Ces moteurs horizontaux conviennent-ils aux motos de type Cub et applications Jakarta ?', 'Oui. Les CX152FMH-5B (106,7 ml) et CX152FMH-6 (107 ml) sont conçus pour les motos de type Cub et applications Jakarta compatibles (Jakarta 110 / 125), avec démarrage électrique / au kick, position démarreur supérieure ou inférieure et option boîte 4 vitesses ou 1+1 avec marche arrière.'],
+        ['Fournissez-vous aussi des pièces moteur Jakarta avec les moteurs complets ?', 'Oui. En commande mixte de plusieurs modèles dès 50 unités, nous fournissons moteurs complets et pièces détachées dans un même conteneur (cylindres-pistons, culasses, embrayages, stators, pochettes de joints), aux conditions FOB Guangzhou vers Abidjan, Douala, Cotonou ou Dakar.'],
+        ['Comment vérifier la compatibilité de montage avant expédition ?', 'Indiquez le modèle (CX152FMH-5B, CX152FMH-6, CX152FMH-5B (130), CX1P56FMJ ou CX1P60FMJ), la position du démarreur électrique (supérieure/inférieure), le type d\'embrayage et le schéma de vitesses. Chaque moteur passe un test au banc chaud/froid à 100 % avant expédition.']
+      ],
+      cb: [
+        ['En quoi le moteur CB à arbre à cames en tête diffère-t-il du CG en Afrique ?', 'Le moteur CB à arbre à cames en tête (distribution par chaîne) utilise une chaîne silencieuse et offre moins de vibrations à haut régime sur route que le moteur CG à tiges de culbuteurs, privilégié pour la charge lourde et les moto-taxis ruraux.'],
+        ['Quelles cylindrées CB sont approuvées pour l\'exportation B2B ?', 'Les plateformes CB150 (149 cc), CB200-C (197 cc, 10,2 kW) et CB250 (223 cc, 12 kW) sont disponibles à partir de 50 moteurs en commande mixte FOB Guangzhou.'],
+        ['Fournissez-vous les pièces d\'usure CB (chaîne de distribution, culasse, embrayage) ?', 'Oui, les culasses OHC, chaînes de distribution, tendeurs, disques d\'embrayage et kits cylindres peuvent être groupés avec vos moteurs complets.']
+      ],
+      engine: [],
+      parts: [
+        ['Comment identifier précisément les pièces détachées moteur sans erreur ?', 'Fournissez le code moteur (ou référence Chixiang / référence OEM à titre d\'identification), l\'alésage × course et le nombre de broches du faisceau électrique.'],
+        ['Peut-on grouper pièces HW200–HW350, pièces Jakarta et pièces adaptables Bajaj / TVS ?', 'Oui. En commande mixte de plusieurs modèles dès 50 moteurs ou en lots pièces dédiés, nous consolidons pièces CG/CB/HW et pièces adaptables Bajaj/TVS dans le même conteneur FOB Guangzhou.'],
+        ['Quels documents export et garantie s\'appliquent ?', 'Facture commerciale, liste de colisage et relevé de séries moteur fournis ; le suivi BSC / BESC est coordonné par votre transitaire. Garantie 60 jours après arrivée au port sur pièces validées.']
+      ]
+    },
+    paths: { products: '/fr/products', about: '/fr/about', contact: '/fr/contact', email: 'mailto:chixiangmotor@163.com' }
   }
 };
 
 const schemaOnlyRoutes = [
   { file: 'en/ac320-atv-engine.html', language: 'en', family: 'ac320' },
+  { file: 'fr/ac320-atv-engine.html', language: 'fr', family: 'ac320' },
+  { file: 'es/ac320-atv-engine.html', language: 'es', family: 'ac320' },
+  { file: 'pt/ac320-atv-engine.html', language: 'pt', family: 'ac320' },
+  { file: 'ru/ac320-atv-engine.html', language: 'ru', family: 'ac320' },
+  { file: 'ar/ac320-atv-engine.html', language: 'ar', family: 'ac320' },
   { file: 'zh-cn/cg-engine.html', language: 'zh-cn', family: 'cg' },
   { file: 'zh-cn/cb-engine.html', language: 'zh-cn', family: 'cb' },
   { file: 'zh-cn/horizontal-engine.html', language: 'zh-cn', family: 'horizontal' },

@@ -80,11 +80,23 @@
       });
     });
 
+    var docLang = (document.documentElement.lang || '').toLowerCase();
+    var langKey = docLang.indexOf('zh') === 0 ? 'zh' : docLang.slice(0, 2);
+
     if (!items.length) {
+      var FALLBACK_ENGINE_LABEL = {
+        zh: ' 整机总成',
+        fr: ' Moteur complet',
+        es: ' Motor completo',
+        pt: ' Motor completo',
+        ru: ' Двигатель в сборе',
+        ar: ' المحرك الكامل',
+        en: ' Complete Engine Assembly'
+      };
       items.push({
         brand: 'CHIXIANG MOTOR',
         model: model,
-        part: model + ' Complete Engine Assembly',
+        part: model + (FALLBACK_ENGINE_LABEL[langKey] || FALLBACK_ENGINE_LABEL.en),
         pn: bundleForm.getAttribute('data-engine-sku') || '',
         oem: ''
       });
@@ -106,6 +118,16 @@
     if (qty) params.set('quantity', qty);
     if (country) params.set('country', country);
 
-    window.location.href = '/en/contact?' + params.toString();
+    var CONTACT_PATHS = {
+      zh: '/zh-cn/contact',
+      fr: '/fr/contact',
+      es: '/es/contacto',
+      pt: '/pt/contato',
+      ru: '/ru/kontakty',
+      ar: '/ar/contact',
+      en: '/en/contact'
+    };
+    var contactPath = bundleForm.getAttribute('data-contact-path') || CONTACT_PATHS[langKey] || '/en/contact';
+    window.location.href = contactPath + '?' + params.toString();
   });
 })();

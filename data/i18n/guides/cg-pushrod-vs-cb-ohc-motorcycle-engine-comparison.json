@@ -1,0 +1,505 @@
+{
+  "slug": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+  "quoteInterest": "cb",
+  "waModel": "CG150 / CG200 / CB150 / CB250",
+  "figures": [
+    {
+      "src": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+      "alt": {
+        "en": "CHIXIANG MOTOR CG air-cooled pushrod OHV motorcycle engine",
+        "fr": "Moteur moto CHIXIANG CG refroidi par air à tiges de culbuteurs",
+        "es": "Motor varillero OHV CHIXIANG serie CG enfriado por aire",
+        "pt": "Motor de vareta OHV CHIXIANG série CG refrigerado a ar",
+        "ru": "Штанговый двигатель CHIXIANG серии CG воздушного охлаждения",
+        "ar": "موتور أسياخ CHIXIANG فئة CG تبريد هواء"
+      },
+      "caption": {
+        "fr": "<strong>Série CG (Tiges de culbuteurs OHV)</strong> : 124–229,5 cc refroidissement par air (31–32 kg, 380 &times; 355 &times; 500 mm).",
+        "es": "<strong>Serie CG (Motor Varillero OHV)</strong>: 124–229.5 cc enfriado por aire (31–32 kg, 380 &times; 355 &times; 500 mm).",
+        "pt": "<strong>Série CG (Motor de Vareta OHV)</strong>: 124–229,5 cc refrigerado a ar (31–32 kg, 380 &times; 355 &times; 500 mm).",
+        "ru": "<strong>Серия CG (Штанговый OHV)</strong>: 124–229,5 см³ воздушного охлаждения (31–32 кг, 380 &times; 355 &times; 500 мм).",
+        "ar": "<strong>فئة CG (موتور أسياخ OHV)</strong>: سعة 124–229.5 سي سي تبريد هواء (31–32 كجم، 380 &times; 355 &times; 500 مم)."
+      }
+    },
+    {
+      "src": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+      "alt": {
+        "en": "CHIXIANG MOTOR CB chain-driven OHC off-road motorcycle engine",
+        "fr": "Moteur moto CHIXIANG CB à arbre à cames en tête et chaîne OHC",
+        "es": "Motor cadenillero OHC CHIXIANG serie CB para todo terreno",
+        "pt": "Motor OHC com corrente de distribuição CHIXIANG série CB",
+        "ru": "Цепной верхневальный двигатель CHIXIANG серии CB OHC",
+        "ar": "موتور كاتينة CHIXIANG فئة CB عمود كامات علوي"
+      },
+      "caption": {
+        "fr": "<strong>Série CB (Distribution par chaîne OHC)</strong> : 149–223 cc arbre à cames en tête (29–31 kg, 385 &times; 355 &times; 452 mm).",
+        "es": "<strong>Serie CB (Motor Cadenillero OHC)</strong>: 149–223 cc árbol de levas en culata (29–31 kg, 385 &times; 355 &times; 452 mm).",
+        "pt": "<strong>Série CB (Corrente de Distribuição OHC)</strong>: 149–223 cc comando no cabeçote (29–31 kg, 385 &times; 355 &times; 452 mm).",
+        "ru": "<strong>Серия CB (Цепной верхневальный OHC)</strong>: 149–223 см³ цепь ГРМ (29–31 кг, 385 &times; 355 &times; 452 мм).",
+        "ar": "<strong>فئة CB (موتور كاتينة OHC)</strong>: سعة 149–223 سي سي عمود كامات علوي (29–31 كجم، 385 &times; 355 &times; 452 مم)."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "Moteur CG à tiges de culbuteurs vs CB à chaîne (OHC) 125–250 cm³ | CHIXIANG",
+      "description": "Comparatif technique pour importateurs : moteurs CG à tiges de culbuteurs (124–229,5 cc) vs CB à arbre à cames en tête par chaîne (149–223 cc) : puissance, couple, hauteur 500 vs 452 mm et entretien atelier.",
+      "h1": "Moteur CG à tiges de culbuteurs (OHV) vs moteur CB à chaîne (OHC) 125–250 cm³",
+      "metaLine": "Publié : Novembre 2026 · Guide Ingénierie & Approvisionnement B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Réponse rapide acheteur",
+      "verdictHtml": "Choisissez les moteurs <strong>CG à tiges de culbuteurs (OHV)</strong> (124–229,5 cc) pour les moto-taxis, trajets ruraux et ateliers privilégiant un démontage rapide de culasse et kit cylindre-piston sans calage de chaîne. Choisissez les moteurs <strong>CB à arbre à cames en tête / distribution par chaîne (OHC)</strong> (149–223 cc) pour les motos routières et tout-terrain exigeant un poids réduit (<strong>29–31 kg</strong>), une hauteur compacte (<strong>452 mm</strong>), moins de bruit mécanique et <strong>12 kW / 17,5 N·m</strong> sur le CB250.",
+      "sections": [
+        {
+          "heading": "1. Comparatif vérifié des spécifications : paliers 125, 150, 200 et 250 cm³",
+          "paragraphs": [
+            "Sur les marchés d'Afrique francophone (Abidjan, Douala, Cotonou, Dakar), les importateurs arbitrent régulièrement entre notre <a href=\"{cg}\">gamme CG à tiges de culbuteurs</a> et notre <a href=\"{cb}\">gamme CB OHC à chaîne</a>. Les deux architectures utilisent une boîte 5 vitesses à prise constante, mais diffèrent par leur courbe de couple, leur encombrement vertical et leur maintenance en atelier."
+          ],
+          "table": {
+            "headers": ["Palier", "Modèle & Architecture", "Cylindrée réelle & Cotes", "Puissance nominale", "Couple max.", "Rapport volumétrique", "Poids net & Carton"],
+            "rows": [
+              ["125 cc Entrée", "CG125 (Tiges OHV)", "124 cc (56,5 × 49,5 mm)", "7,5 kW @ 8 000 tr/min", "8,6 N·m @ 7 000 tr/min", "9,2:1", "31 kg (380 × 355 × 500 mm)"],
+              ["150 cc", "CG150 (Tiges OHV)", "149 cc (62 × 49,5 mm)", "8,5 kW @ 8 000 tr/min", "10 N·m @ 7 500 tr/min", "9,2:1", "31,05 kg (380 × 355 × 500 mm)"],
+              ["150 cc", "CB150 (Chaîne OHC)", "149 cc (Arbre à cames en tête)", "8,2 kW @ 8 500 tr/min", "10,5 N·m @ 7 000 tr/min", "Selon fiche modèle", "29 kg (385 × 355 × 452 mm)"],
+              ["200 cc", "CG200 (Tiges OHV)", "197 cc (63,5 × 62,2 mm)", "10 kW @ 7 500 tr/min", "13,5 N·m @ 6 500 tr/min", "8,5–9,3:1", "31,3 kg (380 × 355 × 500 mm)"],
+              ["200 cc", "CB200-C (Chaîne OHC)", "197 cc (Arbre à cames en tête)", "10,2 kW @ 7 000 tr/min", "13,5 N·m @ 6 000 tr/min", "Selon fiche modèle", "31 kg (385 × 355 × 452 mm)"],
+              ["250 cc", "CG250 (Tiges OHV)", "229,5 cc (67 × 65 mm)", "10,5 kW @ 7 000 tr/min", "16,5 N·m @ 5 000 tr/min", "8,7:1", "32 kg (380 × 355 × 500 mm)"],
+              ["250 cc", "CB250 (Chaîne OHC)", "223 cc (Arbre à cames en tête)", "12 kW @ 7 000 tr/min", "17,5 N·m @ 5 500 tr/min", "Selon fiche modèle", "31 kg (385 × 355 × 452 mm)"]
+            ]
+          },
+          "subheadings": [
+            {
+              "h3": "Analyse technique par cylindrée",
+              "bullets": [
+                "<strong>125 cc utilitaire</strong> : Le CG125 (124 cc, 7,5 kW, 8,6 N·m) reste la base des flottes à coût maîtrisé grâce à la simplicité de ses tiges de culbuteurs.",
+                "<strong>150 cc</strong> : À 149 cc identiques, le CG150 atteint 8,5 kW contre 8,2 kW pour le CB150, mais le CB150 pèse 2,05 kg de moins (29 kg vs 31,05 kg) avec 10,5 N·m de couple plus bas (7 000 tr/min).",
+                "<strong>200 cc</strong> : À 197 cc, CG200 et CB200-C délivrent 13,5 N·m, mais le CB200-C atteint sa puissance (10,2 kW) et son couple maxi 500 tr/min plus tôt sous une hauteur réduite (452 mm vs 500 mm).",
+                "<strong>250 cc</strong> : Bien que le CG250 cube 229,5 cc (16,5 N·m à 5 000 tr/min pour charge lourde), le CB250 (223 cc) profite de la culasse OHC pour sortir 12 kW et 17,5 N·m avec 1 kg de moins (31 kg)."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. Distribution par tiges vs chaîne OHC & option arbre d'équilibrage",
+          "bullets": [
+            "<strong>Architecture CG (tiges de culbuteurs OHV)</strong> : L'arbre à cames logé dans le carter actionne les soupapes via deux tiges rigides. Sans chaîne de distribution ni patin tendeur, le mécanicien ouvre et remonte une culasse complète ou un kit cylindre-piston avec un outillage basique, même lorsque les vidanges d'huile sont espacées.",
+            "<strong>Architecture CB (chaîne OHC)</strong> : L'arbre à cames en tête réduit l'inertie de distribution, évite l'affolement de soupapes à haut régime et limite le bruit mécanique. L'entretien porte sur la tension de chaîne et la propreté de l'huile.",
+            "<strong>Variantes à arbre d'équilibrage</strong> : Pour réduire les vibrations au guidon sur trajets interurbains, CHIXIANG propose des versions CG avec arbre d'équilibrage (disponibilité CB à confirmer selon code moteur). Toutes les pièces d'usure (culasse complète, kit cylindre-piston, vilebrequin, disques d'embrayage renforcés, pochettes de joints) sont disponibles dans notre <a href=\"{parts}\">catalogue de pièces moteur</a>."
+          ]
+        },
+        {
+          "heading": "3. Points châssis et conditions export à vérifier avant commande",
+          "bullets": [
+            "<strong>Hauteur et fixations châssis</strong> : Comparez l'encombrement carton (500 mm CG vs 452 mm CB), les pattes supérieures de culasse, l'entraxe des goujons carter et l'angle d'échappement sur vos cadres avant lancement.",
+            "<strong>Rapport volumétrique & essence locale</strong> : La gamme CG Air couvre 8,5–9,3:1 (CG200) à 9,2:1 (CG125/150) pour s'adapter aux indices d'octane locaux.",
+            "<strong>Boîte 5 vitesses & faisceau</strong> : Précisez sur votre BOM la séquence internationale (1-N-2-3-4-5) ou rotative, le pignon de sortie et les connecteurs du faisceau CDI.",
+            "<strong>Conditions d'usine vérifiées</strong> : Fabriqué à Hangu (Chongqing ; expérience depuis 2003, enregistré en 2007 ; capacité 10 000+ unités/mois) avec test au banc chaud/froid à 100 % et double laboratoire (<a href=\"{evidence}\">Centre de preuves</a>). MOQ 50 moteurs en commande mixte, délai ~10 jours ouvrables FOB Guangzhou, garantie 60 jours après arrivée."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Repères marché Afrique francophone (Adjamé · Akwa · Dantokpa)",
+        "items": [
+          "Dans les pôles grossistes comme <strong>Adjamé (Abidjan)</strong>, <strong>Akwa / Koumassi (Douala)</strong> et <strong>Dantokpa (Cotonou)</strong>, les moteurs type CG à tiges de culbuteurs dominent la rotation rapide en moto-taxi grâce au réglage immédiat des culbuteurs.",
+          "L'association dans un même conteneur mixte de moteurs CG150/CG200 complets et de pièces d'atelier (culasse complète, kit cylindre-piston, pochette de joints, disques d'embrayage renforcés) sécurise la marge revendeur et la coordination du bordereau <strong>BSC / BESC</strong> par votre transitaire."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Quand un distributeur doit-il privilégier un moteur CG à tiges plutôt qu'un CB à chaîne ?",
+          "a": "Choisissez le CG à tiges de culbuteurs (OHV) pour les moto-taxis ruraux et marchés où les mécaniciens veulent remplacer cylindre/piston sans calage de chaîne. Choisissez le CB OHC pour les motos routières et tout-terrain exigeant 29–31 kg, hauteur 452 mm et 12 kW sur le 250 cc."
+        },
+        {
+          "q": "Un moteur CB à chaîne se monte-t-il directement dans un cadre prévu pour CG ?",
+          "a": "Pas sans vérification préalable. Même avec une boîte 5 vitesses similaire, les pattes supérieures de culasse, l'entraxe carter, l'angle d'échappement et les broches du faisceau doivent être contrôlés sur plan avant commande."
+        },
+        {
+          "q": "Entre CG250 et CB250, lequel offre le meilleur rendement ?",
+          "a": "Le CB250 (223 cc, 31 kg) développe davantage de puissance (12 kW @ 7 000 tr/min) et de couple maxi (17,5 N·m @ 5 500 tr/min) pour la piste et la route. Le CG250 (229,5 cc, 32 kg) atteint ses 16,5 N·m dès 5 000 tr/min pour le transport utilitaire à bas régime."
+        },
+        {
+          "q": "Proposez-vous des versions avec arbre d'équilibrage et pièces détachées ?",
+          "a": "Oui. CHIXIANG fournit des variantes CG à arbre d'équilibrage en option ainsi que l'ensemble des pièces d'entretien (kits cylindre-piston, culasses, vilebrequins, embrayages, joints) en conteneur mixte."
+        },
+        {
+          "q": "Quels sont le MOQ, le délai et la garantie pour une commande mixte CG + CB ?",
+          "a": "MOQ standard de 50 moteurs complets (panachage CG/CB et pièces autorisé), délai régulier ~10 jours ouvrables FOB Guangzhou, et garantie 60 jours après arrivée au port sur numéro de série et preuve photo/vidéo avec pièces expédiées au conteneur suivant."
+        }
+      ],
+      "ctaCard": {
+        "title": "Demander les cotes d'installation ou un devis mixte CG / CB",
+        "body": "Indiquez vos cylindrées cibles, le type de cadre, la séquence de vitesses et votre port de destination (Abidjan, Douala, Cotonou, Dakar) pour recevoir une Proforma détaillée.",
+        "primaryBtn": "Configurer un devis mixte",
+        "secondaryBtn": "Voir les preuves usine"
+      }
+    },
+    "es": {
+      "title": "Motor CG Varillero (OHV) vs CB Cadenillero (OHC) 125–250 cc | CHIXIANG",
+      "description": "Comparativa técnica para Perú, Colombia y Latam: motor varillero CG (124–229.5 cc) vs motor cadenillero CB (149–223 cc): potencia, torque, altura 500 vs 452 mm y mantenimiento.",
+      "h1": "Motor CG Varillero (OHV) vs Motor CB Cadenillero (OHC) de 125 a 250 cc",
+      "metaLine": "Publicado: Noviembre 2026 · Guía de Ingeniería y Compras B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Veredicto rápido de compra",
+      "verdictHtml": "Elija motores <strong>varilleros CG (OHV)</strong> (124–229.5 cc) para trabajo diario, reparto urbano y rutas rurales donde el taller prefiere ajustar balancines sin cadenilla ni tensores. Elija motores <strong>cadenilleros CB (OHC)</strong> (149–223 cc) para motos doble propósito, todo terreno y calle que requieren menor peso (<strong>29–31 kg</strong>), altura compacta (<strong>452 mm</strong>), menor ruido y mayor potencia en 250 cc (<strong>12 kW, 17.5 N·m</strong>).",
+      "sections": [
+        {
+          "heading": "1. Comparativa verificada de especificaciones: 125, 150, 200 y 250 cc",
+          "paragraphs": [
+            "Al importar motores 4 tiempos enfriados por aire para ensamblaje o reposición en Perú y Colombia, los compradores comparan nuestra <a href=\"{cg}\">línea CG varillera</a> contra nuestra <a href=\"{cb}\">línea CB cadenillera</a>. Ambas usan caja de 5 velocidades, pero su tren de válvulas define el torque, el peso neto y la altura de montaje."
+          ],
+          "table": {
+            "headers": ["Cilindrada", "Modelo y Arquitectura", "Cilindrada real y Medidas", "Potencia nominal", "Torque máximo", "Compresión", "Peso neto y Embalaje"],
+            "rows": [
+              ["125 cc Entrada", "CG125 (Varillero OHV)", "124 cc (56.5 × 49.5 mm)", "7.5 kW @ 8,000 rpm", "8.6 N·m @ 7,000 rpm", "9.2:1", "31 kg (380 × 355 × 500 mm)"],
+              ["150 cc", "CG150 (Varillero OHV)", "149 cc (62 × 49.5 mm)", "8.5 kW @ 8,000 rpm", "10 N·m @ 7,500 rpm", "9.2:1", "31.05 kg (380 × 355 × 500 mm)"],
+              ["150 cc", "CB150 (Cadenillero OHC)", "149 cc (Árbol en culata)", "8.2 kW @ 8,500 rpm", "10.5 N·m @ 7,000 rpm", "Según ficha modelo", "29 kg (385 × 355 × 452 mm)"],
+              ["200 cc", "CG200 (Varillero OHV)", "197 cc (63.5 × 62.2 mm)", "10 kW @ 7,500 rpm", "13.5 N·m @ 6,500 rpm", "8.5–9.3:1", "31.3 kg (380 × 355 × 500 mm)"],
+              ["200 cc", "CB200-C (Cadenillero OHC)", "197 cc (Árbol en culata)", "10.2 kW @ 7,000 rpm", "13.5 N·m @ 6,000 rpm", "Según ficha modelo", "31 kg (385 × 355 × 452 mm)"],
+              ["250 cc", "CG250 (Varillero OHV)", "229.5 cc (67 × 65 mm)", "10.5 kW @ 7,000 rpm", "16.5 N·m @ 5,000 rpm", "8.7:1", "32 kg (380 × 355 × 500 mm)"],
+              ["250 cc", "CB250 (Cadenillero OHC)", "223 cc (Árbol en culata)", "12 kW @ 7,000 rpm", "17.5 N·m @ 5,500 rpm", "Según ficha modelo", "31 kg (385 × 355 × 452 mm)"]
+            ]
+          },
+          "subheadings": [
+            {
+              "h3": "Análisis técnico por nivel de cilindrada",
+              "bullets": [
+                "<strong>125 cc utilitario</strong>: El CG125 (124 cc, 7.5 kW, 8.6 N·m) domina flotas de trabajo donde prima el mantenimiento económico.",
+                "<strong>150 cc</strong>: Con 149 cc iguales, el CG150 entrega 8.5 kW frente a 8.2 kW del CB150, pero el CB150 pesa 2.05 kg menos (29 kg) y alcanza 10.5 N·m a menor régimen.",
+                "<strong>200 cc</strong>: Ambos entregan 13.5 N·m, pero el CB200-C logra pico de potencia (10.2 kW) y torque 500 rpm antes en un bloque más bajo (452 vs 500 mm).",
+                "<strong>250 cc</strong>: El CG250 (229.5 cc) entrega 16.5 N·m desde 5,000 rpm para carga utilitaria, mientras el CB250 (223 cc) alcanza 12 kW y 17.5 N·m con 1 kg menos."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. Mecánica de varillas vs cadenilla de distribución y eje balanceador",
+          "bullets": [
+            "<strong>Motor Varillero (CG OHV)</strong>: Elimina cadenilla, guías de caucho y tensor. Permite destapar culata, cilindro y pistón rápidamente en cualquier taller local sin sincronizar cadenilla.",
+            "<strong>Motor Cadenillero (CB OHC)</strong>: El árbol de levas en la culata reduce masas móviles, evita rebote de válvulas en altas revoluciones y ofrece marcha más silenciosa, requiriendo control periódico de tensión de cadenilla y aceite limpio.",
+            "<strong>Eje balanceador y repuestos</strong>: Ofrecemos variantes CG con eje balanceador para reducir vibraciones en ruta. Todos los repuestos de culata, cilindro, cigüeñal, embrague y empaques se consolidan desde nuestro <a href=\"{parts}\">catálogo de repuestos</a>."
+          ]
+        },
+        {
+          "heading": "3. Verificación de chasis y términos comerciales antes de ordenar",
+          "bullets": [
+            "<strong>Altura y anclajes del cuadro</strong>: Verifique 500 mm (CG) vs 452 mm (CB), soporte superior de culata, pernos inferiores y ángulo de escape.",
+            "<strong>Compresión y octanaje</strong>: Las relaciones CG (8.5–9.3:1 en CG200; 8.7:1 en CG250) se adaptan a gasolinas estándar regionales.",
+            "<strong>Caja y arnés</strong>: Confirme secuencia internacional (1-N-2-3-4-5) o rotativa, piñón de salida y pines de CDI en su Orden de Compra.",
+            "<strong>Respaldo fabril</strong>: Producido en Hangu, Chongqing (experiencia desde 2003, registrada en 2007; 10,000+ unidades/mes) con prueba 100 % en banco frío/caliente (<a href=\"{evidence}\">Centro de Evidencia</a>). MOQ 50 unidades mixtas, plazo ~10 días hábiles FOB Guangzhou y garantía de 60 días."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Enfoque de mercado Perú y Colombia (Varillero vs Cadenillero)",
+        "items": [
+          "En sierra y rutas rurales de Perú y Colombia, el <strong>motor varillero CG150/CG200</strong> sigue liderando en mantenimiento rápido porque no exige cambiar guías de caucho ni cadenilla.",
+          "En modelos doble propósito 200–250 cc urbanos y trocha, el <strong>CB200-C y CB250 cadenillero</strong> aportan mayor respuesta en altas y menor altura de bloque (452 mm). En aduana <strong>SUNAT / DIAN</strong> recuerde que solo se nacionalizan motores y repuestos 100 % nuevos con número de serie grabado."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Cuándo conviene importar motor varillero CG frente al cadenillero CB?",
+          "a": "Elija CG varillero para trabajo urbano/rural donde el mecánico prioriza reparar culata y cilindro sin sincronizar cadenilla. Elija CB cadenillero para motos de ruta y off-road que buscan 29–31 kg, altura de 452 mm y 12 kW en 250 cc."
+        },
+        {
+          "q": "¿Se puede montar un motor CB cadenillero directo en un chasis CG?",
+          "a": "No sin confirmar geometría antes: verifique soportes superiores de culata, distancia de pernos, ángulo del escape y conectores del arnés contra su chasis."
+        },
+        {
+          "q": "Entre CG250 y CB250, ¿cuál rinde más?",
+          "a": "El CB250 (223 cc, 31 kg) entrega mayor potencia (12 kW @ 7,000 rpm) y torque pico (17.5 N·m @ 5,500 rpm). El CG250 (229.5 cc, 32 kg) entrega sus 16.5 N·m 500 rpm antes (5,000 rpm) para trabajo pesado a baja velocidad."
+        },
+        {
+          "q": "¿Hay versiones con eje balanceador y repuestos en el mismo pedido?",
+          "a": "Sí. Fabricamos variantes CG con eje balanceador opcional y suministramos kits de cilindro, culatas, cigüeñales, embragues y empaques en el mismo contenedor mixto."
+        },
+        {
+          "q": "¿Cuál es el MOQ, plazo de entrega y garantía para pedidos mixtos?",
+          "a": "MOQ de 50 motores completos combinando CG, CB y repuestos; plazo habitual ~10 días hábiles FOB Guangzhou; garantía de 60 días tras arribo a puerto con reposición gratuita en el siguiente contenedor previa verificación por serie y foto/video."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar planos de montaje o cotización mixta CG / CB",
+        "body": "Envíenos sus cilindradas objetivo, tipo de chasis y puerto de destino (Callao, Buenaventura, Guayaquil, Manzanillo) para confirmar compatibilidad y emitir Proforma.",
+        "primaryBtn": "Cotizar pedido mixto",
+        "secondaryBtn": "Ver evidencias de fábrica"
+      }
+    },
+    "pt": {
+      "title": "Motor CG de Vareta (OHV) vs CB Corrente de Distribuição (OHC) | CHIXIANG",
+      "description": "Comparativo para distribuidores em Angola e Moçambique: motor de vareta CG (124–229,5 cc) vs CB OHC com corrente de comando (149–223 cc) — potência, torque, altura e manutenção.",
+      "h1": "Motor CG de Vareta (OHV) vs Motor CB Corrente de Distribuição (OHC) 125–250 cc",
+      "metaLine": "Publicado: Novembro 2026 · Guia Técnico e de Compras B2B — CHIXIANG MOTOR",
+      "verdictLabel": "Resumo direto para compra",
+      "verdictHtml": "Escolha motores <strong>CG de vareta (OHV)</strong> (124–229,5 cc) para frotas de kupapata, mototáxi e oficinas que preferem reparo simples de cabeçote sem corrente de comando. Escolha motores <strong>CB OHC com corrente de distribuição</strong> (149–223 cc) quando o chassi exige menor peso (<strong>29–31 kg</strong>), altura compacta (<strong>452 mm</strong>), funcionamento mais silencioso e <strong>12 kW / 17,5 N·m</strong> na classe 250 cc.",
+      "sections": [
+        {
+          "heading": "1. Comparação técnica verificada: faixas de 125, 150, 200 e 250 cc",
+          "paragraphs": [
+            "Ao importar motores 4 tempos refrigerados a ar, distribuidores comparam nossa <a href=\"{cg}\">linha CG de vareta</a> com a <a href=\"{cb}\">linha CB OHC</a>. Ambas utilizam câmbio de 5 marchas, mas a arquitetura do comando define peso, altura e entrega de torque."
+          ],
+          "table": {
+            "headers": ["Faixa", "Modelo & Arquitetura", "Cilindrada real & Medidas", "Potência", "Torque máx.", "Compressão", "Peso líquido & Caixa"],
+            "rows": [
+              ["125 cc Entrada", "CG125 (Vareta OHV)", "124 cc (56,5 × 49,5 mm)", "7,5 kW @ 8.000 rpm", "8,6 N·m @ 7.000 rpm", "9,2:1", "31 kg (380 × 355 × 500 mm)"],
+              ["150 cc", "CG150 (Vareta OHV)", "149 cc (62 × 49,5 mm)", "8,5 kW @ 8.000 rpm", "10 N·m @ 7.500 rpm", "9,2:1", "31,05 kg (380 × 355 × 500 mm)"],
+              ["150 cc", "CB150 (Corrente OHC)", "149 cc (Comando no cabeçote)", "8,2 kW @ 8.500 rpm", "10,5 N·m @ 7.000 rpm", "Conforme modelo", "29 kg (385 × 355 × 452 mm)"],
+              ["200 cc", "CG200 (Vareta OHV)", "197 cc (63,5 × 62,2 mm)", "10 kW @ 7.500 rpm", "13,5 N·m @ 6.500 rpm", "8,5–9,3:1", "31,3 kg (380 × 355 × 500 mm)"],
+              ["200 cc", "CB200-C (Corrente OHC)", "197 cc (Comando no cabeçote)", "10,2 kW @ 7.000 rpm", "13,5 N·m @ 6.000 rpm", "Conforme modelo", "31 kg (385 × 355 × 452 mm)"],
+              ["250 cc", "CG250 (Vareta OHV)", "229,5 cc (67 × 65 mm)", "10,5 kW @ 7.000 rpm", "16,5 N·m @ 5.000 rpm", "8,7:1", "32 kg (380 × 355 × 500 mm)"],
+              ["250 cc", "CB250 (Corrente OHC)", "223 cc (Comando no cabeçote)", "12 kW @ 7.000 rpm", "17,5 N·m @ 5.500 rpm", "Conforme modelo", "31 kg (385 × 355 × 452 mm)"]
+            ]
+          },
+          "subheadings": [
+            {
+              "h3": "Diferenças por cilindrada",
+              "bullets": [
+                "<strong>125 cc</strong>: CG125 (124 cc, 7,5 kW) atende frotas de baixo custo com manutenção rápida.",
+                "<strong>150 cc</strong>: CG150 entrega 8,5 kW contra 8,2 kW do CB150, enquanto o CB150 pesa 2,05 kg a menos (29 kg) com 10,5 N·m de torque.",
+                "<strong>200 cc</strong>: Ambos produzem 13,5 N·m, mas o CB200-C atinge pico de potência (10,2 kW) e torque 500 rpm mais cedo em bloco menor (452 vs 500 mm).",
+                "<strong>250 cc</strong>: CG250 (229,5 cc) entrega 16,5 N·m a 5.000 rpm para carga pesada; CB250 (223 cc) atinge 12 kW e 17,5 N·m com 1 kg a menos."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. Vareta OHV vs Corrente de Distribuição OHC & Eixo Balanceador",
+          "bullets": [
+            "<strong>Motor de Vareta (CG OHV)</strong>: Dispensa corrente de comando e tensor, evitando falhas por troca tardia de óleo e facilitando a abertura de cabeçote e kit cilindro em oficinas locais.",
+            "<strong>Motor Corrente de Comando (CB OHC)</strong>: Reduz ruído mecânico e vibração em alta rotação, garantindo maior eficiência volumétrica no CB250 (12 kW).",
+            "<strong>Eixo balanceador & peças</strong>: Versões CG com eixo balanceador opcional reduzem vibração no guidão; cabeçotes, kits de cilindro, virabrequins e juntas seguem no mesmo contêiner via <a href=\"{parts}\">catálogo de peças</a>."
+          ]
+        },
+        {
+          "heading": "3. Checklist de chassi e condições comerciais",
+          "bullets": [
+            "<strong>Geometria do quadro</strong>: Confirme altura da caixa (500 mm CG vs 452 mm CB), suportes superiores, furação inferior e ângulo do escapamento.",
+            "<strong>Combustível e transmissão</strong>: Verifique taxa de compressão (8,5–9,3:1 CG), sequência de marchas (1-N-2-3-4-5 ou rotativa), pinhão e pinagem do CDI.",
+            "<strong>Padrão industrial</strong>: Produzido em Chongqing (experiência desde 2003, registrada em 2007; 10.000+ unidades/mês) com bancada 100 % frio/quente (<a href=\"{evidence}\">Centro de Evidências</a>). MOQ 50 unidades mistas, ~10 dias úteis FOB Guangzhou, garantia de 60 dias pós-chegada."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Aplicação em Angola & Moçambique (Kupapata, Mototáxi & CNCA)",
+        "items": [
+          "Para operações de <strong>kupapata / mototáxi</strong> em vias de terra, o motor de vareta CG150/CG200 lidera pela facilidade de troca de juntas e kit cilindro sem ferramentas especiais de sincronismo.",
+          "Nos embarques marítimos para Luanda ou Maputo, fornecemos faturas e lista de números de série gravados para apoiar a emissão do certificado <strong>CNCA (ARCCLA)</strong> pelo importador e despachante."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Quando escolher motor CG de vareta em vez de CB com corrente de distribuição?",
+          "a": "Escolha CG de vareta para motos de serviço e kupapata que exigem manutenção simples sem ajuste de corrente de comando. Escolha CB OHC para motos de trilha e uso urbano buscando 29–31 kg, altura de 452 mm e 12 kW no 250 cc."
+        },
+        {
+          "q": "O motor CB cabe diretamente em um quadro projetado para CG?",
+          "a": "Não sem conferência prévia dos suportes superiores do cabeçote, furação do cárter, saída do escapamento e conectores elétricos."
+        },
+        {
+          "q": "Qual tem melhor desempenho: CG250 ou CB250?",
+          "a": "O CB250 (223 cc, 31 kg) tem mais potência (12 kW @ 7.000 rpm) e torque máximo (17,5 N·m @ 5.500 rpm). O CG250 (229,5 cc, 32 kg) atinge 16,5 N·m a 5.000 rpm para tração pesada."
+        },
+        {
+          "q": "Há versões com eixo balanceador e peças de reposição?",
+          "a": "Sim, fornecemos CG com eixo balanceador opcional e todas as peças de reposição (cilindros, cabeçotes, virabrequins, embreagens, juntas) em contêiner misto."
+        },
+        {
+          "q": "Qual o MOQ, prazo e garantia para pedidos mistos CG e CB?",
+          "a": "MOQ de 50 motores completos (modelos mistos e peças), prazo padrão ~10 dias úteis FOB Guangzhou e garantia de 60 dias após chegada ao porto mediante número de série e foto/vídeo."
+        }
+      ],
+      "ctaCard": {
+        "title": "Solicitar desenhos de montagem ou cotação mista CG / CB",
+        "body": "Informe cilindradas, padrão de marchas e porto de destino (Luanda, Maputo, Santos) para receber Proforma completa.",
+        "primaryBtn": "Cotar pedido misto",
+        "secondaryBtn": "Ver evidências de fábrica"
+      }
+    },
+    "ru": {
+      "title": "Штанговые двигатели CG (OHV) против цепных CB (OHC) 125–250 см³ | CHIXIANG",
+      "description": "Инженерное сравнение двигателей CG (штанги толкателей OHV, 124–229,5 см³) и цепных моторов CB (верхневальный ГРМ OHC, 149–223 см³): мощность, момент, высота 500 vs 452 мм и ремонт.",
+      "h1": "Штанговые двигатели CG (OHV) против цепных моторов CB (OHC) 125–250 см³",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Инженерно-закупочный гид — CHIXIANG MOTOR",
+      "verdictLabel": "Краткий вывод для закупщика",
+      "verdictHtml": "Выбирайте <strong>штанговые двигатели CG (OHV)</strong> (124–229,5 см³) для рабочих мотоциклов и регионов, где механики ценят быструю переборку ЦПГ и ГБЦ без возни с цепью ГРМ. Выбирайте <strong>цепные верхневальные двигатели CB (OHC)</strong> (149–223 см³) для эндуро, кросса и дорожных моделей с меньшей массой (<strong>29–31 кг</strong>), компактной высотой (<strong>452 мм</strong>), тихим ГРМ и мощностью до <strong>12 кВт / 17,5 Н·м</strong> на CB250.",
+      "sections": [
+        {
+          "heading": "1. Сравнение проверенных характеристик: 125, 150, 200 и 250 см³",
+          "paragraphs": [
+            "При оптовых заказах моторов воздушного охлаждения дистрибьюторы РФ и СНГ сравнивают <a href=\"{cg}\">штанговую серию CG</a> и <a href=\"{cb}\">цепную серию CB OHC</a>. Обе серии оснащены 5-ступенчатой КПП, но привод клапанов задаёт разные кривые момента, вес и габариты."
+          ],
+          "table": {
+            "headers": ["Класс", "Модель и привод ГРМ", "Факт. объём и ЦПГ", "Мощность", "Крутящий момент", "Степень сжатия", "Масса и упаковка"],
+            "rows": [
+              ["125 см³", "CG125 (Штанговый OHV)", "124 см³ (56,5 × 49,5 мм)", "7,5 кВт @ 8 000 об/мин", "8,6 Н·м @ 7 000 об/мин", "9,2:1", "31 кг (380 × 355 × 500 мм)"],
+              ["150 см³", "CG150 (Штанговый OHV)", "149 см³ (62 × 49,5 мм)", "8,5 кВт @ 8 000 об/мин", "10 Н·м @ 7 500 об/мин", "9,2:1", "31,05 кг (380 × 355 × 500 мм)"],
+              ["150 см³", "CB150 (Цепной OHC)", "149 см³ (верхний распредвал)", "8,2 кВт @ 8 500 об/мин", "10,5 Н·м @ 7 000 об/мин", "По спецификации", "29 кг (385 × 355 × 452 мм)"],
+              ["200 см³", "CG200 (Штанговый OHV)", "197 см³ (63,5 × 62,2 мм)", "10 кВт @ 7 500 об/мин", "13,5 Н·м @ 6 500 об/мин", "8,5–9,3:1", "31,3 кг (380 × 355 × 500 мм)"],
+              ["200 см³", "CB200-C (Цепной OHC)", "197 см³ (верхний распредвал)", "10,2 кВт @ 7 000 об/мин", "13,5 Н·м @ 6 000 об/мин", "По спецификации", "31 кг (385 × 355 × 452 мм)"],
+              ["250 см³", "CG250 (Штанговый OHV)", "229,5 см³ (67 × 65 мм)", "10,5 кВт @ 7 000 об/мин", "16,5 Н·м @ 5 000 об/мин", "8,7:1", "32 кг (380 × 355 × 500 мм)"],
+              ["250 см³", "CB250 (Цепной OHC)", "223 см³ (верхний распредвал)", "12 кВт @ 7 000 об/мин", "17,5 Н·м @ 5 500 об/мин", "По спецификации", "31 кг (385 × 355 × 452 мм)"]
+            ]
+          },
+          "subheadings": [
+            {
+              "h3": "Разбор по кубатурам",
+              "bullets": [
+                "<strong>125 см³</strong>: CG125 (124 см³, 7,5 кВт) — простейший рабочий мотор для коммерческой эксплуатации.",
+                "<strong>150 см³</strong>: Оба мотора по 149 см³; CG150 выдаёт 8,5 кВт, а CB150 легче на 2,05 кг (29 кг) и выдаёт 10,5 Н·м.",
+                "<strong>200 см³</strong>: Оба развивают 13,5 Н·м, но CB200-C выходит на пик мощности (10,2 кВт) и момента на 500 об/мин раньше при высоте 452 мм.",
+                "<strong>250 см³</strong>: CG250 (229,5 см³) даёт тяговые 16,5 Н·м уже при 5 000 об/мин, а CB250 (223 см³) за счёт OHC ГБЦ развивает 12 кВт и 17,5 Н·м при весе 31 кг."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. Штанги толкателей (OHV) против цепи ГРМ (OHC) и баланс-вал",
+          "bullets": [
+            "<strong>Штанговый CG (OHV)</strong>: Нижний распредвал и жёсткие штанги исключают растяжение цепи ГРМ и износ башмаков при нерегулярной замене масла; снятие ГБЦ и ЦПГ занимает минимум времени.",
+            "<strong>Цепной CB (OHC)</strong>: Верхний распредвал снижает инерцию клапанного механизма, работает тише и даёт лучшую отдачу на высоких оборотах (12 кВт на CB250).",
+            "<strong>Баланс-вал и запчасти</strong>: Для снижения вибраций доступны версии CG с балансирным валом; все комплекты ЦПГ, ГБЦ, КШМ, сцепление и прокладки заказываются через <a href=\"{parts}\">каталог запчастей</a>."
+          ]
+        },
+        {
+          "heading": "3. Что проверить по раме и контракту перед заказом",
+          "bullets": [
+            "<strong>Посадка в раму</strong>: Учтите разницу по высоте короба (500 мм CG против 452 мм CB), верхние уши крепления ГБЦ, нижние кронштейны и угол выхлопа.",
+            "<strong>Степень сжатия и КПП</strong>: Степень сжатия CG (8,5–9,3:1) адаптирована под разное качество бензина; согласуйте схему КПП (1-N-2-3-4-5 или круговая) и шлиц ведущей звезды.",
+            "<strong>Условия завода</strong>: Производство в Ханьгу, Чунцин (опыт с 2003 г., регистрация 2007 г., 10 000+ шт./мес) со 100 % холодной/горячей обкаткой (<a href=\"{evidence}\">Центр доказательств</a>). MOQ 50 моторов, срок ~10 раб. дней FOB Гуанчжоу, гарантия 60 дней после порта."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Практика рынка РФ и СНГ (запчасти ЦПГ/ГБЦ и таможня)",
+        "items": [
+          "Штанговые CG150/CG200 лидируют в сельской местности и коммерческом парке благодаря простому ремонту ЦПГ и отсутствию цепи ГРМ.",
+          "В одном смешанном контейнере (MOQ 50 шт.) удобно сочетать комплектные моторы CG/CB, горизонтальные 152FMH/1P56FMJ для Альфа/Дельта и ходовые запчасти (ЦПГ, ГБЦ, коленвалы) с реестром серийных номеров картера для оформления в ЕАЭС."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "Когда дистрибьютору выгоднее брать штанговый CG, а когда цепной CB?",
+          "a": "CG (OHV) берут для коммерческих и сельских мотоциклов, где важен быстрый ремонт без выставления фаз цепи ГРМ. CB (OHC) берут для эндуро, питбайк/кросса и дорожных моделей из-за веса 29–31 кг, высоты 452 мм и 12 кВт на CB250."
+        },
+        {
+          "q": "Встаёт ли цепной мотор CB напрямую в раму от CG?",
+          "a": "Только после сверки чертежей: необходимо проверить верхнее крепление головки цилиндра, расстояние между болтами картера, выход глушителя и разъёмы проводки."
+        },
+        {
+          "q": "Что мощнее: CG250 или CB250?",
+          "a": "CB250 (223 см³, 31 кг) выдаёт больше мощности (12 кВт @ 7 000) и момента (17,5 Н·м @ 5 500). CG250 (229,5 см³, 32 кг) выдаёт 16,5 Н·м раньше (5 000 об/мин), что удобно для неспешной грузовой езды."
+        },
+        {
+          "q": "Доступны ли версии с баланс-валом и запчасти?",
+          "a": "Да, на отдельных моделях CG устанавливается балансирный вал, а расходники ЦПГ, ГБЦ, сцепление и прокладки поставляются в том же контейнере."
+        },
+        {
+          "q": "Каковы MOQ, сроки и гарантия на смешанный заказ CG + CB?",
+          "a": "MOQ 50 комплектных двигателей (возможен микс CG, CB и запчастей), срок готовности ~10 рабочих дней FOB Гуанчжоу, гарантия 60 дней после прибытия в порт по фото/видео и серийному номеру."
+        }
+      ],
+      "ctaCard": {
+        "title": "Запросить габаритные чертежи или расчёт микс-контейнера CG / CB",
+        "body": "Укажите нужные кубатуры, схему переключения КПП и порт назначения — подготовим инвойс FOB Гуанчжоу.",
+        "primaryBtn": "Запросить расчёт",
+        "secondaryBtn": "Проверить заводские отчёты"
+      }
+    },
+    "ar": {
+      "title": "مقارنة موتور الأسياخ CG (OHV) وموتور الكاتينة CB (OHC) من 125 إلى 250 سي سي | CHIXIANG",
+      "description": "دليل المقارنة الهندسية لمستوردي مصر والشرق الأوسط: موتور أسياخ CG (124–229.5 سي سي) مقابل موتور كاتينة CB (149–223 سي سي) في القدرة والعزم والارتفاع وسهولة الصيانة.",
+      "h1": "موتور الأسياخ CG (OHV) مقابل موتور الكاتينة CB (OHC) من 125 إلى 250 سي سي",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل الهندسة والمشتريات B2B — CHIXIANG MOTOR",
+      "verdictLabel": "الخلاصة السريعة للمستورد",
+      "verdictHtml": "اختر محركات <strong>الأسياخ CG (OHV)</strong> (124–229.5 سي سي) للدراجات اليومية وأساطيل الشغل حيث تفضل الورش صيانة سريعة للسلندر ووش السلندر دون فك جنزير كاتينة أو شدادات. واختر محركات <strong>الكاتينة CB (OHC)</strong> (149–223 سي سي) لدراجات الطرق والصحراء التي تتطلب وزناً أخف (<strong>29–31 كجم</strong>) وارتفاعاً مدمجاً (<strong>452 مم</strong>) وصوتاً أهدأ وقدرة أعلى تصل إلى <strong>12 كيلوواط و17.5 نيوتن·متر</strong> في CB250.",
+      "sections": [
+        {
+          "heading": "1. مقارنة المواصفات المعتمدة: فئات 125 و150 و200 و250 سي سي",
+          "paragraphs": [
+            "عند استيراد محركات 4 أشواط تبريد هواء، يقارن تجار التوفيقية والشرق الأوسط بين <a href=\"{cg}\">فئة الأسياخ CG</a> و<a href=\"{cb}\">فئة الكاتينة CB OHC</a>. تعتمد الفئتان على ناقل حركة 5 سرعات، لكن نظام الصبابات يحدد منحنى العزم والوزن وارتفاع المحرك."
+          ],
+          "table": {
+            "headers": ["الفئة", "الطراز والنظام", "السعة الفعلية والأبعاد", "القدرة المقننة", "أقصى عزم", "نسبة الانضغاط", "الوزن الصافي وأبعاد الكرتون"],
+            "rows": [
+              ["125 سي سي", "CG125 (أسياخ OHV)", "124 سي سي (56.5 × 49.5 مم)", "7.5 كيلوواط @ 8,000 لفة", "8.6 نيوتن·متر @ 7,000 لفة", "9.2:1", "31 كجم (380 × 355 × 500 مم)"],
+              ["150 سي سي", "CG150 (أسياخ OHV)", "149 سي سي (62 × 49.5 مم)", "8.5 كيلوواط @ 8,000 لفة", "10 نيوتن·متر @ 7,500 لفة", "9.2:1", "31.05 كجم (380 × 355 × 500 مم)"],
+              ["150 سي سي", "CB150 (كاتينة OHC)", "149 سي سي (كامات علوي)", "8.2 كيلوواط @ 8,500 لفة", "10.5 نيوتن·متر @ 7,000 لفة", "حسب الطراز", "29 كجم (385 × 355 × 452 مم)"],
+              ["200 سي سي", "CG200 (أسياخ OHV)", "197 سي سي (63.5 × 62.2 مم)", "10 كيلوواط @ 7,500 لفة", "13.5 نيوتن·متر @ 6,500 لفة", "8.5–9.3:1", "31.3 كجم (380 × 355 × 500 مم)"],
+              ["200 سي سي", "CB200-C (كاتينة OHC)", "197 سي سي (كامات علوي)", "10.2 كيلوواط @ 7,000 لفة", "13.5 نيوتن·متر @ 6,000 لفة", "حسب الطراز", "31 كجم (385 × 355 × 452 مم)"],
+              ["250 سي سي", "CG250 (أسياخ OHV)", "229.5 سي سي (67 × 65 مم)", "10.5 كيلوواط @ 7,000 لفة", "16.5 نيوتن·متر @ 5,000 لفة", "8.7:1", "32 كجم (380 × 355 × 500 مم)"],
+              ["250 سي سي", "CB250 (كاتينة OHC)", "223 سي سي (كامات علوي)", "12 كيلوواط @ 7,000 لفة", "17.5 نيوتن·متر @ 5,500 لفة", "حسب الطراز", "31 كجم (385 × 355 × 452 مم)"]
+            ]
+          },
+          "subheadings": [
+            {
+              "h3": "تحليل الأداء حسب السعة",
+              "bullets": [
+                "<strong>125 سي سي</strong>: محرك CG125 (124 سي سي) خيار اقتصادي عملي لورش الصيانة السريعة.",
+                "<strong>150 سي سي</strong>: يتقارب CG150 و CB150 عند 149 سي سي، مع تفوق CB150 بخفة الوزن (29 مقابل 31.05 كجم) وعزم 10.5 نيوتن·متر.",
+                "<strong>200 سي سي</strong>: ينتج الطرازان 13.5 نيوتن·متر، بينما يصل CB200-C إلى 10.2 كيلوواط وعزم الذروة أبكر بـ 500 لفة في ارتفاع 452 مم.",
+                "<strong>250 سي سي</strong>: يمنح CG250 (229.5 سي سي) عزماً مبكراً 16.5 نيوتن·متر عند 5,000 لفة للجر، بينما ينتج CB250 (223 سي سي) قدرة 12 كيلوواط و17.5 نيوتن·متر."
+              ]
+            }
+          ]
+        },
+        {
+          "heading": "2. ميكانيكا الأسياخ مقابل جنزير الكاتينة وخيار عمود التوازن",
+          "bullets": [
+            "<strong>نظام الأسياخ CG (OHV)</strong>: وجود الأسياخ الصلبة بدلاً من جنزير الكاتينة والشدادات يمنع أعطال ارتخاء الجنزير عند تأخير تغيير الزيت ويسهّل فك السلندر والشنابر في الورش الشعبية.",
+            "<strong>نظام الكاتينة CB (OHC)</strong>: يقلل الضوضاء الميكانيكية في السرعات العالية ويرفع كفاءة السحب في طراز CB250.",
+            "<strong>عمود التوازن وقطع الغيار</strong>: نوفر إصدارات CG بعمود توازن لتقليل الاهتزازات، مع توفر جميع قطع الصيانة (سلندرات، شنابر، وش سلندر، جوانات، جنزير كاتينة، شدادات) عبر <a href=\"{parts}\">كتالوج قطع الغيار</a>."
+          ]
+        },
+        {
+          "heading": "3. قائمة فحص الشاسيه وشروط التصدير قبل التأكيد",
+          "bullets": [
+            "<strong>الأبعاد وقواعد التثبيت</strong>: تأكد من الارتفاع (500 مم للـ CG مقابل 452 مم للـ CB) وقواعد وش السلندر وزاوية الشكمان قبل التصنيع.",
+            "<strong>نسبة الانضغاط ونوع الوقود</strong>: نسب انضغاط CG (8.5–9.3:1) تناسب تفاوت درجات البنزين المحلية.",
+            "<strong>الجير والضفيرة</strong>: حدد نظام النقل (1-N-2-3-4-5 أو دوّار) ومقاس الترس وفيش CDI في الفاتورة.",
+            "<strong>معايير المصنع</strong>: إنتاج هانغو، تشونغتشينغ (خبرة منذ 2003، مسجلة 2007، +10,000 وحدة/شهر) مع اختبار 100% بارد وساخن (<a href=\"{evidence}\">مركز الأدلة</a>). حد أدنى 50 وحدة مختلطة، تجهيز ~10 أيام عمل FOB قوانغتشو، ضمان 60 يوماً بعد الوصول."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "ملاحظات سوق التوفيقية والرصيف باء بمصر والشرق الأوسط",
+        "items": [
+          "يفضل أصحاب الورش في <strong>التوفيقية والرصيف باء</strong> موتور الأسياخ CG150/CG200 لسرعة صيانته وقلة مكوناته مقارنة بضبط جنزير الكاتينة والشدادات وتروس التوقيت.",
+          "يمكن دمج محركات CG و CB وقطع الغيار (السلندر، الشنبر، جوان وش السلندر) في حاوية واحدة مع إعداد المستندات الإلكترونية عبر بوابة <strong>CargoX / ACID</strong> بواسطة المستورد والمصنع."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "متى يفضل المستورد اختيار موتور الأسياخ CG على موتور الكاتينة CB؟",
+          "a": "يفضل موتور الأسياخ CG للعمل التجاري والورش التي تعتمد على صيانة سريعة دون ضبط توقيت الكاتينة، بينما يفضل موتور الكاتينة CB للدراجات السريعة والصحراوية الباحثة عن وزن 29–31 كجم وارتفاع 452 مم وقدرة 12 كيلوواط."
+        },
+        {
+          "q": "هل يركب موتور الكاتينة CB مباشرة مكان موتور CG في نفس الشاسيه؟",
+          "a": "يجب مراجعة قواعد التثبيت العلوية ومسامير الكارتيرة وزاوية الشكمان وفيش الضفيرة أولاً قبل اعتماد الطلب."
+        },
+        {
+          "q": "أيهما أقوى أداءً: CG250 أم CB250؟",
+          "a": "ينتج CB250 (223 سي سي، 31 كجم) قدرة أعلى (12 كيلوواط) وعزماً أعلى (17.5 نيوتن·متر)، بينما يحقق CG250 (229.5 سي سي، 32 كجم) أقصى عزم 16.5 نيوتن·متر أبكر عند 5,000 لفة."
+        },
+        {
+          "q": "هل تتوفر نسخ بعمود توازن وقطع غيار مطابقة؟",
+          "a": "نعم، تتوفر نسخ عمود التوازن لفئة CG بالإضافة إلى كامل قطع الغيار (سلندرات، شنابر، جوانات، كلتش، كاتينة) داخل نفس الحاوية المختلطة."
+        },
+        {
+          "q": "ما هي شروط الحد الأدنى ومدة التجهيز والضمان لطلبات CG و CB المختلطة؟",
+          "a": "الحد الأدنى 50 محركاً كاملاً (مع إمكانية خلط الفئات وقطع الغيار)، التجهيز نحو 10 أيام عمل FOB قوانغتشو، والضمان 60 يوماً بعد الوصول للميناء عبر الرقم التسلسلي والصور أو الفيديو."
+        }
+      ],
+      "ctaCard": {
+        "title": "اطلب رسومات التثبيت أو عرض سعر حاوية مختلطة CG / CB",
+        "body": "أرسل السعات المطلوبة ومواصفات الشاسيه وميناء الوصول لتأكيد المطابقة وإصدار فاتورة مبدئية.",
+        "primaryBtn": "اطلب عرض سعر مختلط",
+        "secondaryBtn": "تصفح ملفات الأدلة"
+      }
+    }
+  }
+}

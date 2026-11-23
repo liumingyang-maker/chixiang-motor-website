@@ -1,0 +1,439 @@
+{
+  "slug": "air-cooled-vs-water-cooled-motorcycle-engine",
+  "datePublished": "2026-11-19",
+  "ogImage": "https://chixiangmotor.com/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+  "quoteInterest": "cg",
+  "waModel": "Air-Cooled CG / Water-Cooled HW & CG",
+  "figures": [
+    {
+      "src": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+      "alt": {
+        "en": "Air-cooled CG motorcycle engine",
+        "fr": "Moteur moto refroidi par air CHIXIANG CG",
+        "es": "Motor de motocicleta enfriado por aire CHIXIANG CG",
+        "pt": "Motor de motocicleta refrigerado a ar CHIXIANG CG",
+        "ru": "Мотоциклетный двигатель воздушного охлаждения CHIXIANG CG",
+        "ar": "محرك دراجة نارية تبريد هواء CHIXIANG CG"
+      },
+      "caption": {
+        "fr": "<strong>Refroidissement par air (CG125–CG250)</strong> : maintenance atelier simple sans radiateur ni pompe à eau pour motos quotidiennes.",
+        "es": "<strong>Enfriamiento por aire (CG125–CG250)</strong>: mantenimiento sencillo sin radiador ni bomba de agua para motocicletas diarias.",
+        "pt": "<strong>Refrigeração a ar (CG125–CG250)</strong>: manutenção simples sem radiador ou bomba d'água para motos de trabalho diário.",
+        "ru": "<strong>Воздушное охлаждение (CG125–CG250)</strong>: простое обслуживание без радиатора и помпы для ежедневных мотоциклов.",
+        "ar": "<strong>تبريد الهواء (CG125–CG250)</strong>: صيانة بسيطة بدون ريداتير أو طلمبة مياه للدراجات اليومية."
+      }
+    },
+    {
+      "src": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+      "alt": {
+        "en": "Water-cooled cargo tricycle engine",
+        "fr": "Moteur tricycle cargo refroidi par eau CHIXIANG",
+        "es": "Motor carguero enfriado por agua CHIXIANG",
+        "pt": "Motor refrigerado a água para triciclo de carga CHIXIANG",
+        "ru": "Двигатель водяного охлаждения для грузового трицикла CHIXIANG",
+        "ar": "محرك تروسيكل تبريد مياه CHIXIANG"
+      },
+      "caption": {
+        "fr": "<strong>Refroidissement liquide (CG Water & HW200–HW350)</strong> : stabilité thermique en forte chaleur et transport lourd moto-cargo.",
+        "es": "<strong>Enfriamiento por agua (CG Water y HW200–HW350)</strong>: control térmico bajo carga pesada y rutas de montaña.",
+        "pt": "<strong>Refrigeração a água (CG Water e HW200–HW350)</strong>: estabilidade térmica sob carga pesada e clima quente.",
+        "ru": "<strong>Водяное охлаждение (CG Water и HW200–HW350)</strong>: стабильная температура при длительной работе под нагрузкой.",
+        "ar": "<strong>التبريد المائي (CG Water و HW200–HW350)</strong>: ثبات حراري للتروسيكلات الثقيلة والمناخ الحار."
+      }
+    }
+  ],
+  "locales": {
+    "fr": {
+      "title": "Moteur moto refroidi par air ou refroidi par eau : que choisir ? | CHIXIANG",
+      "description": "Comparatif B2B air vs refroidissement liquide (eau) pour motos utilitaires et tricycles moto-cargo : CG125–CG250, CG150SB–CG250SB et HW200–HW350.",
+      "h1": "Moteur refroidi par air ou refroidi par eau : lequel choisir pour votre marché ?",
+      "metaLine": "Publié : Novembre 2026 · Guide Acheteur Importateur — CHIXIANG MOTOR",
+      "verdictLabel": "Réponse rapide",
+      "verdictHtml": "Choisissez les moteurs <strong>refroidis par air</strong> (124–229,5 cc) pour les motos quotidiennes, un prix d'achat plus accessible et une maintenance de brousse sans radiateur. Choisissez les séries <strong>refroidies par eau</strong> CG150SB–CG250SB ou <strong>HW200–HW350</strong> (149,5–300,3 mL, 8,5–13,0 kW) pour les tricycles <strong>moto-cargo / tchktchk</strong>, les fortes charges et les zones très chaudes.",
+      "sections": [
+        {
+          "heading": "1. Comment fonctionnent l'air et le refroidissement liquide en service réel",
+          "paragraphs": [
+            "Un moteur refroidi par air dissipe la chaleur grâce aux ailettes du cylindre balayées par l'air de roulage : aucune pompe à eau, aucun radiateur ni vase d'expansion à surveiller. À l'inverse, un <strong>tricycle à eau</strong> fait circuler le liquide de refroidissement via pompe à eau et radiateur ventilé pour stabiliser la température lorsque le véhicule roule lentement en pleine charge."
+          ],
+          "bullets": [
+            "<strong>Avantages du refroidissement par air</strong> : Moins de pièces susceptibles de fuir, coût unitaire inférieur, mécanique immédiatement maîtrisée par tous les ateliers locaux sur <a href=\"{cg}\">CG125 à CG250</a>.",
+            "<strong>Avantages du refroidissement liquide</strong> : Meilleure tenue thermique en embouteillage, transport de matériaux, pentes prolongées et climats chauds sur CG Water et <a href=\"{hw-series}\">HW Water</a>."
+          ]
+        },
+        {
+          "heading": "2. Moto utilitaire vs tricycle moto-cargo : tableau repère usine",
+          "paragraphs": [
+            "Plutôt que d'opposer les deux technologies, la majorité des grossistes d'Afrique de l'Ouest et Centrale commandent les deux familles en conteneur mixte selon l'usage final :"
+          ],
+          "table": {
+            "headers": ["Série CHIXIANG", "Cylindrée réelle", "Puissance & Couple repère", "Embrayage & Boîte", "Usage conseillé"],
+            "rows": [
+              ["CG Air (CG125–CG250)", "124–229,5 cc", "7,5–10,5 kW · 8,6–16,5 N·m", "Multidisque manuel · 5 vitesses", "Motos-taxis, transport quotidien, marchés sensibles au prix"],
+              ["CG Eau (CG150SB–CG250SB)", "149,5–246,3 cc", "8,5–11,5 kW · 10,0–19,5 N·m", "5 vitesses (150SB/175SB rotative option marche arrière ; 200SB/250SB prise constante)", "Tricycles charge moyenne, climat chaud"],
+              ["HW Eau Lourd (HW200–HW350)", "197–300,3 mL", "10,5–13,0 kW · 15,0–22,5 N·m", "Roue libre 20 rouleaux · Carter 1,5 L · PZ30 · 5 vitesses avant (marche arrière externe)", "Tricycles moto-cargo lourds, pentes raides, service intensif"]
+            ]
+          }
+        },
+        {
+          "heading": "3. 6 critères avant de valider votre mix conteneur",
+          "bullets": [
+            "<strong>État des routes</strong> : Pistes poussiéreuses, routes de terre ou montagnes nécessitent de protéger le radiateur et les durites.",
+            "<strong>Charge utile</strong> : Une moto 2 roues n'a pas la même contrainte thermique qu'un tricycle chargé de sacs ou matériaux.",
+            "<strong>Climat local</strong> : Chaleur ambiante élevée + faible vitesse = avantage net au refroidissement liquide.",
+            "<strong>Niveau d'équipement des ateliers</strong> : Le CG Air limite les retours sous garantie quand les pièces d'eau manquent localement.",
+            "<strong>Prix cible & pièces de rechange</strong> : Associez toujours joints de culasse, pompes à eau, vases d'expansion et kits cylindre-piston à vos moteurs complets."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Stratégie d'importation Afrique francophone",
+        "items": [
+          "Les distributeurs performants panachent souvent 60–70 % de moteurs CG refroidis par air (CG150/CG200) et 30–40 % de moteurs <strong>tricycle à eau</strong> (CG250SB / HW300) dans un conteneur mixte dès 50 unités.",
+          "Livraison FOB Guangzhou (~10 jours ouvrables) avec test au banc chaud/froid à 100 % et relevé de numéros de série pour votre transitaire (BSC/BESC)."
+        ]
+      },
+      "faqTitle": "Questions fréquentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Les moteurs refroidis par air sont-ils suffisamment fiables ?",
+          "a": "Oui, pour les motos quotidiennes, le transport rural et la rechange rapide, leur architecture éprouvée reste très fiable et simple à entretenir."
+        },
+        {
+          "q": "Le refroidissement par eau est-il toujours supérieur au refroidissement par air ?",
+          "a": "Il offre un meilleur contrôle thermique sous forte charge et climat chaud, mais coûte plus cher et exige un suivi du radiateur et du liquide ; il n'est pas indispensable sur une moto légère de ville."
+        },
+        {
+          "q": "Quel moteur privilégier pour un tricycle cargo ?",
+          "a": "Pour les tricycles transportant de lourdes charges pendant de longues heures, un moteur refroidi par eau (CG250SB ou HW250/HW300) est recommandé pour éviter la surchauffe."
+        },
+        {
+          "q": "CHIXIANG fournit-il les deux technologies en commande mixte ?",
+          "a": "Oui, vous pouvez combiner moteurs CG air, CG eau, série HW eau, CB OHC et pièces détachées dans le même conteneur dès 50 moteurs."
+        },
+        {
+          "q": "Quelles données envoyer pour obtenir un devis ?",
+          "a": "Précisez la famille (air/eau), la cylindrée, le véhicule visé, la quantité et votre port de destination (Abidjan, Douala, Cotonou, Dakar)."
+        }
+      ],
+      "ctaCard": {
+        "title": "Besoin d'aide pour arbitrer entre moteurs Air et Eau ?",
+        "body": "Indiquez votre véhicule, le climat local et votre quantité cible pour recevoir une recommandation technique et un devis FOB Guangzhou.",
+        "primaryBtn": "Demander un devis",
+        "secondaryBtn": "Centre de preuves usine"
+      }
+    },
+    "es": {
+      "title": "Motores Enfriados por Aire vs Agua: Cuál Conviene Elegir | CHIXIANG",
+      "description": "Compare motores enfriados por aire (CG125–CG250) y enfriados por agua (CG150SB–CG250SB y HW200–HW350) para motocicletas de trabajo y triciclos cargueros.",
+      "h1": "Motores Enfriados por Aire vs Agua: ¿Cuál Deben Elegir los Compradores?",
+      "metaLine": "Publicado: Noviembre 2026 · Guía para Importadores y Ensambladoras — CHIXIANG MOTOR",
+      "verdictLabel": "Respuesta rápida",
+      "verdictHtml": "Elija <strong>motores enfriados por aire</strong> (124–229.5 cc) para motocicletas de trabajo diario, menor costo inicial y reparación sencilla en taller; elija <strong>motores enfriados por agua</strong> CG150SB–CG250SB o <strong>HW200–HW350</strong> (149.5–300.3 mL, 8.5–13.0 kW) para <strong>cargueros / motocarros</strong> de carga pesada, cuestas pronunciadas y climas cálidos.",
+      "sections": [
+        {
+          "heading": "1. Diferencia práctica entre enfriamiento por aire y por líquido",
+          "paragraphs": [
+            "El motor enfriado por aire disipa calor por sus aletas sin bomba de agua ni radiador, reduciendo costo y fallas por fugas de mangueras. El motor enfriado por agua hace circular refrigerante por camisa y radiador con electroventilador, manteniendo temperatura estable cuando el vehículo trabaja lento bajo carga máxima."
+          ],
+          "bullets": [
+            "<strong>Ventajas del aire</strong>: Menor precio de compra, estructura <a href=\"{cg}\">varillera CG</a> conocida por cualquier mecánico y cero mantenimiento de radiador.",
+            "<strong>Ventajas del agua</strong>: Mejor disipación térmica en climas tropicales, tráfico urbano lento y cargueros en subida usando líneas CG Water y <a href=\"{hw-series}\">HW Water</a>."
+          ]
+        },
+        {
+          "heading": "2. Referencia de fábrica: Aire vs CG Agua y Serie Pesada HW",
+          "paragraphs": [
+            "Tabla comparativa de especificaciones verificadas para planificar su línea de productos:"
+          ],
+          "table": {
+            "headers": ["Serie", "Cilindrada real", "Potencia y Torque", "Embrague y Caja", "Aplicación recomendada"],
+            "rows": [
+              ["CG Aire (CG125–CG250)", "124–229.5 cc", "7.5–10.5 kW · 8.6–16.5 N·m", "Multidisco manual · 5 velocidades", "Motos de trabajo diario, mensajería y mercado sensible al precio"],
+              ["CG Agua (CG150SB–CG250SB)", "149.5–246.3 cc", "8.5–11.5 kW · 10.0–19.5 N·m", "5 velocidades (150SB/175SB rotativa reversa opcional; 200SB/250SB constante)", "Cargueros de trabajo medio y zonas calurosas"],
+              ["HW Agua Pesado (HW200–HW350)", "197–300.3 mL", "10.5–13.0 kW · 15.0–22.5 N·m", "20 rodillos · Cárter 1.5 L · PZ30 · 5 adelante (reversa externa)", "Cargueros pesados, pendientes fuertes y uso comercial continuo"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Seis factores antes de cerrar su pedido de importación",
+          "bullets": [
+            "<strong>Topografía y ruta</strong>: Pendientes largas y caminos de tierra demandan mayor control térmico y protección del radiador.",
+            "<strong>Carga útil diaria</strong>: No use la misma especificación para una moto de 1 pasajero que para un carguero agrícola.",
+            "<strong>Clima y altura</strong>: Regiones muy cálidas favorecen agua; talleres rurales básicos favorecen varillero por aire.",
+            "<strong>Stock de repuestos</strong>: Consolide empaques de culata, bombas de agua, mangueras y kits de cilindro junto con los motores."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Estrategia para distribuidores de Perú, Colombia y Ecuador",
+        "items": [
+          "Combine en un solo contenedor mixto (MOQ 50 unidades) motores CG150/CG200 enfriados por aire para calle con cargueros <strong>HW250 / HW300</strong> enfriados por agua para carga pesada.",
+          "Todos los motores salen con prueba 100 % en banco frío y caliente desde Chongqing en ~10 días hábiles FOB Guangzhou."
+        ]
+      },
+      "faqTitle": "Preguntas frecuentes (FAQ)",
+      "faqs": [
+        {
+          "q": "¿Son confiables los motores enfriados por aire?",
+          "a": "Sí, especialmente en motos de trabajo diario y transporte rural donde su estructura simple facilita cualquier reparación."
+        },
+        {
+          "q": "¿Siempre es mejor un motor enfriado por agua?",
+          "a": "Controla mejor la temperatura bajo carga pesada y clima cálido, pero tiene mayor costo y mantenimiento; para motos ligeras suele convenir el motor por aire."
+        },
+        {
+          "q": "¿Qué motor conviene más para triciclos cargueros?",
+          "a": "Para cargueros de uso diario intensivo y cuestas se recomienda enfriamiento por agua (CG250SB o HW250/HW300)."
+        },
+        {
+          "q": "¿Chixiang Motor suministra motores por aire y agua en un mismo pedido?",
+          "a": "Sí, apoyamos carga mixta desde 50 unidades con soporte OEM/ODM y repuestos."
+        },
+        {
+          "q": "¿Qué datos debo enviar para cotizar?",
+          "a": "Envíe tipo de enfriamiento, cilindrada, vehículo destino, cantidad y puerto de llegada."
+        }
+      ],
+      "ctaCard": {
+        "title": "¿Necesita asesoría entre motores por aire o agua?",
+        "body": "Compártanos el tipo de vehículo, clima y cantidad estimada para recomendarle el modelo ideal FOB Guangzhou.",
+        "primaryBtn": "Solicitar cotización",
+        "secondaryBtn": "Ver evidencias de fábrica"
+      }
+    },
+    "pt": {
+      "title": "Motores Refrigerados a Ar vs Água: Qual Escolher? | CHIXIANG",
+      "description": "Compare motores a ar (CG125–CG250) e refrigerados a água (CG150SB–CG250SB e HW200–HW350) para motos de trabalho, kupapata e triciclos de carga.",
+      "h1": "Motores Refrigerados a Ar vs Água: Qual Opção Escolher para Seu Mercado?",
+      "metaLine": "Publicado: Novembro 2026 · Guia Técnico para Importadores — CHIXIANG MOTOR",
+      "verdictLabel": "Resposta rápida",
+      "verdictHtml": "Escolha <strong>motores refrigerados a ar</strong> (124–229,5 cc) para motocicletas diárias, frotas de kupapata, menor custo inicial e manutenção simples; escolha <strong>motores refrigerados a água</strong> CG150SB–CG250SB ou <strong>HW200–HW350</strong> (149,5–300,3 mL, 8,5–13,0 kW) para <strong>triciclos de carga</strong> pesados, subidas e regiões muito quentes.",
+      "sections": [
+        {
+          "heading": "1. Diferenças práticas entre refrigeração a ar e a água",
+          "paragraphs": [
+            "Motores a ar dissipam calor diretamente pelas aletas do cilindro sem bomba d'água nem radiador. Já os motores refrigerados a água mantêm temperatura estável sob baixa velocidade e alta carga contínua."
+          ],
+          "bullets": [
+            "<strong>Vantagens do ar</strong>: Menos componentes, custo de aquisição menor e manutenção imediata da linha <a href=\"{cg}\">CG de vareta</a> em qualquer oficina.",
+            "<strong>Vantagens da água</strong>: Controle térmico superior em climas quentes, trânsito lento e transporte pesado nas linhas CG Water e <a href=\"{hw-series}\">HW Water</a>."
+          ]
+        },
+        {
+          "heading": "2. Referência de fábrica: Ar vs CG Água & Série HW",
+          "paragraphs": [
+            "Comparativo oficial de faixas de potência e transmissão:"
+          ],
+          "table": {
+            "headers": ["Série", "Cilindrada real", "Potência & Torque", "Embreagem & Câmbio", "Melhor aplicação"],
+            "rows": [
+              ["CG Ar (CG125–CG250)", "124–229,5 cc", "7,5–10,5 kW · 8,6–16,5 N·m", "Multidisco manual · 5 marchas", "Motos diárias, kupapata e reposição econômica"],
+              ["CG Água (CG150SB–CG250SB)", "149,5–246,3 cc", "8,5–11,5 kW · 10,0–19,5 N·m", "5 marchas (150SB/175SB rotativa ré opcional; 200SB/250SB constante)", "Triciclos médios e clima quente"],
+              ["HW Água Pesado (HW200–HW350)", "197–300,3 mL", "10,5–13,0 kW · 15,0–22,5 N·m", "20 roletes · Cárter 1,5 L · PZ30 · 5 à frente (ré externa)", "Triciclos de carga pesados e ladeiras"]
+            ]
+          }
+        },
+        {
+          "heading": "3. Fatores para definir o mix do contêiner",
+          "bullets": [
+            "<strong>Estrada e carga</strong>: Triciclos carregados em subidas exigem arrefecimento líquido.",
+            "<strong>Clima e oficina local</strong>: Onde faltam peças de radiador, motores CG a ar reduzem tempo parado.",
+            "<strong>Peças junto ao pedido</strong>: Inclua juntas de cabeçote, bombas d'água e kits de cilindro para pós-venda."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Estratégia em Angola e Moçambique",
+        "items": [
+          "Combine motores CG150/CG200 a ar para mototáxi (kupapata) com triciclos a água <strong>HW250 / HW300</strong> no mesmo contêiner misto (MOQ 50 unidades FOB Guangzhou).",
+          "Despacho marítimo com listagem de números de série para coordenação de <strong>CNCA / ARCCLA</strong> pelo importador."
+        ]
+      },
+      "faqTitle": "Perguntas frequentes (FAQ)",
+      "faqs": [
+        {
+          "q": "Motores refrigerados a ar são confiáveis?",
+          "a": "Sim, oferecem alta durabilidade em motos urbanas e rurais com manutenção muito simples."
+        },
+        {
+          "q": "Motor a água é sempre melhor que motor a ar?",
+          "a": "Controla melhor o calor em trabalho pesado, mas custa mais e exige cuidado com radiador e bomba d'água; motos leves não precisam dele."
+        },
+        {
+          "q": "Qual o melhor motor para triciclos de carga?",
+          "a": "Para carga pesada e jornadas longas, recomenda-se motor refrigerado a água (CG250SB ou HW250/HW300)."
+        },
+        {
+          "q": "A Chixiang fornece motores a ar e água no mesmo pedido?",
+          "a": "Sim, permitimos pedidos mistos a partir de 50 unidades com suporte OEM/ODM."
+        },
+        {
+          "q": "Quais dados enviar para cotação?",
+          "a": "Informe refrigeração, cilindrada, veículo, quantidade e porto de destino."
+        }
+      ],
+      "ctaCard": {
+        "title": "Precisa de ajuda para escolher entre Ar e Água?",
+        "body": "Envie a aplicação, clima da região e volume para recomendarmos os modelos ideais FOB Guangzhou.",
+        "primaryBtn": "Solicitar cotação",
+        "secondaryBtn": "Ver Centro de Evidências"
+      }
+    },
+    "ru": {
+      "title": "Воздушное или водяное охлаждение двигателя мотоцикла: что выбрать? | CHIXIANG",
+      "description": "Сравнение воздушных моторов CG125–CG250 и водяных серий CG150SB–CG250SB и HW200–HW350 для коммерческих мотоциклов и грузовых трициклов.",
+      "h1": "Воздушное или водяное охлаждение мотоциклетного двигателя: что выбрать оптовику?",
+      "metaLine": "Опубликовано: Ноябрь 2026 · Руководство для импортёров — CHIXIANG MOTOR",
+      "verdictLabel": "Краткий ответ",
+      "verdictHtml": "Выбирайте двигатели <strong>воздушного охлаждения</strong> (124–229,5 см³) для дорожных мотоциклов, меньшей цены закупки и простого ремонта в полевых условиях; выбирайте моторы <strong>водяного охлаждения</strong> CG150SB–CG250SB или <strong>HW200–HW350</strong> (149,5–300,3 мл, 8,5–13,0 кВт) для <strong>грузовых трициклов</strong>, тяжёлых грузов, подъёмов и жаркого климата.",
+      "sections": [
+        {
+          "heading": "1. Как работают воздушное и жидкостное охлаждение под нагрузкой",
+          "paragraphs": [
+            "Воздушный двигатель охлаждается встречным потоком через рёбра цилиндра — без радиатора, помпы и шлангов. Водяное охлаждение отводит тепло через рубашку цилиндра и радиатор с вентилятором, сохраняя стабильность при медленной езде с грузом."
+          ],
+          "bullets": [
+            "<strong>Плюсы воздушного охлаждения</strong>: Ниже закупочная цена, минимум деталей и быстрый ремонт линейки <a href=\"{cg}\">CG125–CG250</a>.",
+            "<strong>Плюсы водяного охлаждения</strong>: Стабильная температура в жару и на затяжных подъёмах для трициклов CG Water и <a href=\"{hw-series}\">HW Water</a>."
+          ]
+        },
+        {
+          "heading": "2. Заводская матрица: Воздух против CG Вода и HW Вода",
+          "paragraphs": [
+            "Сводная таблица характеристик для планирования ассортимента:"
+          ],
+          "table": {
+            "headers": ["Серия", "Факт. объём", "Мощность и момент", "Сцепление и КПП", "Лучшее применение"],
+            "rows": [
+              ["CG Воздух (CG125–CG250)", "124–229,5 см³", "7,5–10,5 кВт · 8,6–16,5 Н·м", "Механическое в масле · 5 передач", "Повседневные мотоциклы и бюджетная замена"],
+              ["CG Вода (CG150SB–CG250SB)", "149,5–246,3 см³", "8,5–11,5 кВт · 10,0–19,5 Н·м", "5 передач (150SB/175SB опция реверс; 200SB/250SB)", "Средние грузовые трициклы, жаркий климат"],
+              ["HW Вода Тяжёлая (HW200–HW350)", "197–300,3 мл", "10,5–13,0 кВт · 15,0–22,5 Н·м", "Муфта 20 роликов · Картер 1,5 л · PZ30 · 5 вперёд (внешний реверс)", "Тяжёлые грузовые трициклы, подъёмы, коммерция"]
+            ]
+          }
+        },
+        {
+          "heading": "3. На что смотреть при выборе партии",
+          "bullets": [
+            "<strong>Дороги и нагрузка</strong>: Бездорожье и груз требуют водяного охлаждения и защиты радиатора.",
+            "<strong>Климат и сервис</strong>: На юге выгоднее водянка; там, где нет антифриза и помп, проще воздух.",
+            "<strong>Запчасти</strong>: Включайте ЦПГ, помпы, прокладки ГБЦ и шланги в тот же смешанный контейнер."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "Практика поставок в Россию, Казахстан и Узбекистан",
+        "items": [
+          "Оптовики часто комбинируют в одном контейнере (MOQ 50 шт.) воздушные CG150/CG200 + цепные горизонталки для Альфы/Дельты и <strong>водянки HW250 / HW300 под трицикл</strong>.",
+          "100 % холодная/горячая обкатка и полный реестр номеров картера на условиях FOB Гуанчжоу (~10 рабочих дней)."
+        ]
+      },
+      "faqTitle": "Частые вопросы (FAQ)",
+      "faqs": [
+        {
+          "q": "Надёжны ли двигатели воздушного охлаждения?",
+          "a": "Да, при отработанной конструкции они отлично служат на дорожных мотоциклах и просты в ремонте."
+        },
+        {
+          "q": "Водяное охлаждение всегда лучше воздушного?",
+          "a": "Оно лучше держит тепло под грузом, но дороже и требует ухода за радиатором; для лёгкого мотоцикла оно не обязательно."
+        },
+        {
+          "q": "Какой мотор лучше поставить на грузовой трицикл?",
+          "a": "Для тяжёлого трицикла рекомендуются двигатели с водяным охлаждением (CG250SB или HW250/HW300)."
+        },
+        {
+          "q": "Поставляет ли завод обе серии в одном заказе?",
+          "a": "Да, минимальный заказ 50 моторов позволяет смешивать воздушные, водяные двигатели и запчасти."
+        },
+        {
+          "q": "Что указать в запросе на расчёт?",
+          "a": "Тип охлаждения, кубатуру, технику, количество и страну/порт назначения."
+        }
+      ],
+      "ctaCard": {
+        "title": "Подобрать баланс воздушных и водяных двигателей",
+        "body": "Пришлите тип техники, климат региона и объём партии для подбора моделей и расчёта FOB Гуанчжоу.",
+        "primaryBtn": "Запросить расчёт",
+        "secondaryBtn": "Смотреть доказательства"
+      }
+    },
+    "ar": {
+      "title": "محركات تبريد الهواء مقابل التبريد المائي: أيهما أنسب لسوقك؟ | CHIXIANG",
+      "description": "مقارنة بين محركات تبريد الهواء (CG125–CG250) ومحركات التبريد المائي (CG150SB–CG250SB و HW200–HW350) للدراجات اليومية وتروسيكلات الشحن.",
+      "h1": "محرك تبريد الهواء مقابل التبريد المائي (الريداتير): أيهما يجب على المستورد اختياره؟",
+      "metaLine": "نُشر: نوفمبر 2026 · دليل المشتري B2B — CHIXIANG MOTOR",
+      "verdictLabel": "الإجابة السريعة",
+      "verdictHtml": "اختر <strong>محركات تبريد الهواء</strong> (124–229.5 سي سي) للدراجات اليومية وتقليل تكلفة الشراء وسهولة الصيانة دون ريداتير؛ واختر <strong>محركات التبريد المائي</strong> CG150SB–CG250SB أو <strong>HW200–HW350</strong> (149.5–300.3 مل، 8.5–13.0 كيلوواط) لتروسيكلات الشحن الثقيلة والمناخ الحار وساعات التشغيل الطويلة.",
+      "sections": [
+        {
+          "heading": "1. الفرق العملي بين تبريد الهواء والريداتير",
+          "paragraphs": [
+            "يعتمد تبريد الهواء على زعانف السلندر دون طلمبة مياه أو قِرب أو خراطيم، ما يقلل الأعطال في الدراجات العادية. أما <strong>التبريد المائي</strong> فيدور سائل التبريد عبر طلمبة والريداتير للحفاظ على حرارة مستقرة أثناء بطء السرعة والحمل الثقيل."
+          ],
+          "bullets": [
+            "<strong>مزايا تبريد الهواء</strong>: سعر أقل، بساطة الصيانة في أي ورشة عبر فئة <a href=\"{cg}\">CG125 إلى CG250</a>.",
+            "<strong>مزايا التبريد المائي</strong>: تحكم حراري أعلى في الصيف والحمولات الثقيلة مع فئتي CG Water و <a href=\"{hw-series}\">HW Water</a>."
+          ]
+        },
+        {
+          "heading": "2. جدول مقارنة المصنع: الهواء مقابل المياه القياسي و HW",
+          "paragraphs": [
+            "مقارنة الفئات المتاحة لدمجها داخل طلبية واحدة:"
+          ],
+          "table": {
+            "headers": ["الفئة", "السعة الفعلية", "القدرة والعزم", "الكلتش والجيربوكس", "أفضل استخدام"],
+            "rows": [
+              ["CG هواء (CG125–CG250)", "124–229.5 سي سي", "7.5–10.5 كيلوواط · 8.6–16.5 نيوتن·متر", "كلتش مبلل يدوي · 5 سرعات", "دراجات النقل اليومي والاستبدال الاقتصادي"],
+              ["CG مياه (CG150SB–CG250SB)", "149.5–246.3 سي سي", "8.5–11.5 كيلوواط · 10.0–19.5 نيوتن·متر", "5 سرعات (خيار رجوع لـ 150SB/175SB)", "تروسيكلات متوسطة ومناخ حار"],
+              ["HW مياه ثقيل (HW200–HW350)", "197–300.3 مل", "10.5–13.0 كيلوواط · 15.0–22.5 نيوتن·متر", "كلتش 20 بكرة · زيت 1.5 لتر · 5 أمامي + رجوع خارجي", "تروسيكلات الشحن الثقيلة والمطالع"]
+            ]
+          }
+        },
+        {
+          "heading": "3. عوامل الاختيار قبل تأكيد الحاوية",
+          "bullets": [
+            "<strong>طبيعة الطريق والحمولة</strong>: نقل البضائع ومواد البناء يتطلب تبريداً مائياً.",
+            "<strong>المناخ وقطع الغيار</strong>: أضف دائماً طلمبة مياه وقِرب مياه وجوان وش سلندر وخراطيم لقطع التبريد المائي."
+          ]
+        }
+      ],
+      "regionalFieldBox": {
+        "title": "توصيات أسواق مصر والسودان والمنطقة العربية",
+        "items": [
+          "يجمع التجار في سوق <strong>التوفيقية</strong> بين محركات CG150/CG200 هواء للدراجات وتروسيكلات <strong>HW250 / HW300 تبريد مياه</strong> في حاوية مختلطة واحدة (من 50 وحدة FOB قوانغتشو).",
+          "جميع المحركات تخضع لاختبار 100% بارد وساخن مع توثيق الرقم التسلسلي لملفات ACID/CargoX."
+        ]
+      },
+      "faqTitle": "الأسئلة الشائعة (FAQ)",
+      "faqs": [
+        {
+          "q": "هل محركات تبريد الهواء موثوقة للاستخدام اليومي؟",
+          "a": "نعم، خاصة في الدراجات العادية والنقل الخفيف لبساطة تركيبها وسهولة إصلاحها."
+        },
+        {
+          "q": "هل التبريد المائي أفضل دائماً من تبريد الهواء؟",
+          "a": "يتفوق التبريد المائي تحت الأحمال الثقيلة والحرارة العالية، لكنه أعلى كلفة ويحتاج صيانة للريداتير والطلمبة."
+        },
+        {
+          "q": "ما الأنسب لتروسيكلات الشحن؟",
+          "a": "نوصي بالتبريد المائي (CG250SB أو HW250/HW300) لتجنب ارتفاع الحرارة أثناء العمل المستمر."
+        },
+        {
+          "q": "هل توفر CHIXIANG النوعين في طلبية واحدة؟",
+          "a": "نعم، يمكن مزج محركات الهواء والماء وقطع الغيار من حد أدنى 50 محركاً."
+        },
+        {
+          "q": "ما المعلومات المطلوبة لعرض السعر؟",
+          "a": "نوع التبريد، السعة، التطبيق، الكمية وميناء الوصول."
+        }
+      ],
+      "ctaCard": {
+        "title": "اطلب توصية هندسية بين تبريد الهواء والمياه",
+        "body": "أرسل طبيعة الاستخدام والسعة المطلوبة وميناء الوصول للحصول على عرض سعر FOB قوانغتشو.",
+        "primaryBtn": "اطلب عرض سعر",
+        "secondaryBtn": "مركز الأدلة والاختبار"
+      }
+    }
+  }
+}

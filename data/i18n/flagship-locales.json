@@ -1,0 +1,1532 @@
+{
+  "ui": {
+    "fr": {
+      "breadcrumbCg": "Moteurs CG & Tricycle",
+      "anchors": {
+        "overview": "Aperçu",
+        "specifications": "Spécifications & Configs",
+        "mounting": "Montage & Interfaces",
+        "comparison": "Comparatif série",
+        "bundle": "Devis Moteur + Kits",
+        "quality": "Qualité & Export Afrique",
+        "faq": "FAQ"
+      },
+      "verdictLabel": "Synthèse d'ingénierie & sélection grossiste",
+      "specLabels": {
+        "model": "Modèle",
+        "nominal": "Classe nominale",
+        "actual": "Cylindrée réelle",
+        "boreStroke": "Alésage × course",
+        "power": "Puissance max.",
+        "torque": "Couple max.",
+        "compression": "Taux de compression",
+        "cooling": "Refroidissement",
+        "transmission": "Boîte de vitesses",
+        "starting": "Démarrage",
+        "clutch": "Embrayage",
+        "ignition": "Allumage",
+        "dimWeight": "Dimensions & Poids",
+        "oil": "Capacité d'huile",
+        "carb": "Carburateur",
+        "coolingClutch": "Refroidissement & Embrayage"
+      },
+      "ctaQuote": "Demander un devis gros",
+      "moqNote": "Conditions grossistes : MOQ standard de 50 moteurs (commande mixte de plusieurs modèles et moteurs complets et pièces détachées dans un même conteneur) · Délai ~10 jours ouvrables · FOB Guangzhou, Chine (autres ports négociables) · Ports Afrique : Abidjan, Douala, Cotonou, Dakar (BSC / BESC coordonné par l'importateur et son transitaire).",
+      "specsTitle": "Spécifications techniques & périmètre standard vs options",
+      "paramHeader": "Paramètre",
+      "valueHeader": "Spécification vérifiée",
+      "scopeTitle": "Périmètre de livraison standard vs configurations en option",
+      "scopeHeaders": ["Élément de configuration", "Fourniture standard usine", "Option / Confirmé sur facture proforma"],
+      "mountingTitle": "Liste de contrôle montage & interfaces châssis",
+      "mountingSub": "Vérifiez les entraxes de fixation et les connecteurs électriques sur votre châssis avant lancement en série. Les plans d'encombrement usine sont fournis avec le devis.",
+      "compTitle": "Comparatif des modèles de la même série",
+      "compHeaders": ["Modèle", "Classe nominale", "Cylindrée réelle", "Alésage × Course", "Puissance max.", "Couple max.", "Poids", "Dimensions"],
+      "compBtn": "Voir toute la matrice de la série",
+      "bundleTitle": "Devis groupé : Moteur complet + Kits d'entretien dans un même conteneur",
+      "bundleSub": "Cochez le moteur complet et les kits de pièces détachées correspondants pour pré-remplir votre demande FOB Guangzhou.",
+      "bundleQtyLabel": "Quantité estimée (moteurs + kits)",
+      "bundleQtyVal": "50 moteurs",
+      "bundleQtyPh": "ex. 50 moteurs + 15 kits d'entretien",
+      "bundleCountryLabel": "Pays & Port de destination",
+      "bundleCountryPh": "ex. Côte d'Ivoire (Abidjan), Cameroun (Douala), Bénin (Cotonou)",
+      "bundleBtn": "Pré-remplir le formulaire de devis →",
+      "hwPartsBtn": "Parcourir le catalogue complet pièces HW200–HW350 →",
+      "qaTitle": "Contrôle qualité usine, exportation Afrique & garantie",
+      "qaCards": [
+        ["Test au banc chaud/froid à 100 %", "Chaque moteur subit un essai à froid et à chaud avant expédition, appuyé par nos deux laboratoires (dynamomètre, gaz d'échappement et métallurgie) à Chongqing.", "Consulter le Centre de preuves →", "/fr/evidence"],
+        ["FOB Guangzhou & Ports Afrique", "Commande mixte dès 50 unités vers Abidjan, Douala, Cotonou ou Dakar (transit Mali/Burkina/Niger à préciser). Facture, colisage et numéros de série moteur fournis ; BSC / BESC géré par votre transitaire.", "Conditions & Formulaire export →", "/fr/contact"],
+        ["Garantie 60 jours après arrivée", "En cas de défaut de fabrication ou d'assemblage vérifié par numéro de série et photos/vidéos sous 60 jours après arrivée au port, expédition gratuite des pièces dans votre prochain conteneur."]
+      ],
+      "guidesTitle": "Guides techniques et fiches associées",
+      "faqTitle": "Questions fréquentes —",
+      "currentSuffix": "(Cette page)",
+      "completeSuffix": "Moteur complet",
+      "pnPrefix": "Réf."
+    },
+    "es": {
+      "breadcrumbCg": "Motores CG (Varilleros y Agua)",
+      "anchors": {
+        "overview": "Resumen",
+        "specifications": "Especificaciones",
+        "mounting": "Montaje y Chasis",
+        "comparison": "Comparativa",
+        "bundle": "Cotizar Motor + Kits",
+        "quality": "Calidad y Exportación",
+        "faq": "FAQ"
+      },
+      "verdictLabel": "Resumen de ingeniería y compra mayorista",
+      "specLabels": {
+        "model": "Modelo",
+        "nominal": "Clase nominal",
+        "actual": "Cilindrada real",
+        "boreStroke": "Diámetro × carrera",
+        "power": "Potencia máx.",
+        "torque": "Torque máx.",
+        "compression": "Compresión",
+        "cooling": "Refrigeración",
+        "transmission": "Transmisión",
+        "starting": "Arranque",
+        "clutch": "Embrague",
+        "ignition": "Encendido",
+        "dimWeight": "Dimensiones y Peso",
+        "oil": "Capacidad de aceite",
+        "carb": "Carburador",
+        "coolingClutch": "Refrigeración y Embrague"
+      },
+      "ctaQuote": "Solicitar cotización FOB",
+      "moqNote": "Condiciones mayoristas: MOQ estándar de 50 unidades (contenedor mixto con varios modelos y repuestos) · Plazo ~10 días hábiles · FOB Guangzhou (Callao, Buenaventura, Manzanillo, Guayaquil, Arica/Iquique) · Lista de números de serie grabados para aduana.",
+      "specsTitle": "Especificaciones técnicas y alcance estándar vs. opcional",
+      "paramHeader": "Parámetro",
+      "valueHeader": "Especificación verificada",
+      "scopeTitle": "Alcance estándar de fábrica vs. opciones por pedido",
+      "scopeHeaders": ["Elemento de configuración", "Suministro estándar", "Opcional / Confirmado en Proforma"],
+      "mountingTitle": "Verificación de anclajes e interfaces de chasis",
+      "mountingSub": "Confirme puntos de sujeción en el cuadro, estrías del piñón de salida y conectores eléctricos antes de producción. Entregamos planos dimensionales de fábrica con su cotización.",
+      "compTitle": "Comparativa de modelos de la misma serie",
+      "compHeaders": ["Modelo", "Clase nominal", "Cilindrada real", "Diámetro × Carrera", "Potencia máx.", "Torque máx.", "Peso", "Dimensiones"],
+      "compBtn": "Ver matriz completa de la serie",
+      "bundleTitle": "Cotización combinada: Motor completo + Kits de reparación",
+      "bundleSub": "Seleccione el motor completo y sus kits de servicio para prellenar una solicitud de contenedor mixto.",
+      "bundleQtyLabel": "Cantidad estimada (motores + kits)",
+      "bundleQtyVal": "50 unidades",
+      "bundleQtyPh": "ej. 50 motores + 15 kits de reparación",
+      "bundleCountryLabel": "País y Puerto de destino",
+      "bundleCountryPh": "ej. Perú (Callao), Colombia (Buenaventura), México (Manzanillo)",
+      "bundleBtn": "Ir al formulario prellenado →",
+      "hwPartsBtn": "Ver catálogo completo de repuestos HW200–HW350 →",
+      "qaTitle": "Control de calidad en fábrica y logística Latam",
+      "qaCards": [
+        ["Prueba en banco frío y caliente al 100 %", "Cada motor supera pruebas en frío y caliente en Chongqing con respaldo de dos laboratorios de dinamómetro, gases y metalurgia.", "Ver Centro de Evidencia →", "/es/evidence"],
+        ["Embalaje export y contenedor mixto", "MOQ de 50 motores con carga mixta de modelos y kits de repuestos (~10 días hábiles, FOB Guangzhou). Entregamos relación de números de serie grabados para despacho aduanero (DAM/DUA).", "Condiciones y formulario →", "/es/contacto"],
+        ["Garantía de 60 días tras llegada", "Ante defectos de fabricación o montaje verificados con número de serie y foto/video dentro de los 60 días posteriores al arribo al puerto, reponemos piezas sin costo en su siguiente contenedor."]
+      ],
+      "guidesTitle": "Fichas y guías relacionadas",
+      "faqTitle": "Preguntas frecuentes —",
+      "currentSuffix": "(Esta página)",
+      "completeSuffix": "Motor completo",
+      "pnPrefix": "Cód."
+    },
+    "pt": {
+      "breadcrumbCg": "Motores CG (Vareta e Água)",
+      "anchors": {
+        "overview": "Visão Geral",
+        "specifications": "Especificações",
+        "mounting": "Fixação e Chassi",
+        "comparison": "Comparativo",
+        "bundle": "Cotar Motor + Kits",
+        "quality": "Qualidade e Exportação",
+        "faq": "FAQ"
+      },
+      "verdictLabel": "Resumo de engenharia e fornecimento B2B",
+      "specLabels": {
+        "model": "Modelo",
+        "nominal": "Classe nominal",
+        "actual": "Cilindrada real",
+        "boreStroke": "Diâmetro × curso",
+        "power": "Potência máx.",
+        "torque": "Torque máx.",
+        "compression": "Taxa de compressão",
+        "cooling": "Refrigeração",
+        "transmission": "Transmissão",
+        "starting": "Partida",
+        "clutch": "Embreagem",
+        "ignition": "Ignição",
+        "dimWeight": "Dimensões e Peso",
+        "oil": "Capacidade de óleo",
+        "carb": "Carburador",
+        "coolingClutch": "Refrigeração e Embreagem"
+      },
+      "ctaQuote": "Solicitar cotação FOB",
+      "moqNote": "Condições atacado: MOQ padrão de 50 unidades (pedido misto com vários modelos e peças no mesmo contêiner) · Prazo ~10 dias úteis · FOB Guangzhou (Luanda, Maputo, Santos; certificado CNCA / ARCCLA coordenado pelo importador/despachante).",
+      "specsTitle": "Especificações técnicas e escopo padrão vs. opcional",
+      "paramHeader": "Parâmetro",
+      "valueHeader": "Especificação verificada",
+      "scopeTitle": "Escopo padrão de fábrica vs. configurações opcionais",
+      "scopeHeaders": ["Item de configuração", "Padrão de fábrica", "Opcional / Confirmado na Proforma"],
+      "mountingTitle": "Checklist de fixação no chassi e interfaces",
+      "mountingSub": "Confira espaçamento dos suportes, estrias do eixo de saída e conectores elétricos com seu chassi antes da produção em lote. Desenhos dimensionais são enviados com a cotação.",
+      "compTitle": "Comparativo entre modelos da mesma série",
+      "compHeaders": ["Modelo", "Classe nominal", "Cilindrada real", "Diâmetro × Curso", "Potência máx.", "Torque máx.", "Peso", "Dimensões"],
+      "compBtn": "Ver matriz completa da série",
+      "bundleTitle": "Cotação consolidada: Motor completo + Kits de revisão",
+      "bundleSub": "Selecione o motor completo e os kits de peças compatíveis para preencher sua solicitação de contêiner misto.",
+      "bundleQtyLabel": "Quantidade estimada (motores + kits)",
+      "bundleQtyVal": "50 unidades",
+      "bundleQtyPh": "ex. 50 motores + 15 kits de retífica",
+      "bundleCountryLabel": "País e Porto de destino",
+      "bundleCountryPh": "ex. Angola (Luanda), Moçambique (Maputo), Brasil (Santos)",
+      "bundleBtn": "Ir para o formulário preenchido →",
+      "hwPartsBtn": "Ver catálogo completo de peças HW200–HW350 →",
+      "qaTitle": "Controle de qualidade de fábrica e termos FOB",
+      "qaCards": [
+        ["Teste em bancada frio e quente 100 %", "Cada motor passa por teste a frio e a quente em Chongqing, apoiado por dois laboratórios de dinamômetro, emissões e metalurgia.", "Ver Centro de Evidências →", "/pt/evidence"],
+        ["Embarque misto e portos Angola / Brasil", "MOQ de 50 motores com peças no mesmo contêiner (~10 dias úteis, FOB Guangzhou). Documentação comercial e números de série do motor para suporte ao CNCA / ARCCLA (coordenado pelo importador).", "Condições e formulário →", "/pt/contato"],
+        ["Garantia de 60 dias pós-chegada", "Para defeitos comprovados de fabricação ou montagem dentro de 60 dias após a chegada ao porto, enviamos peças de reposição gratuitas no seu próximo contêiner mediante número de série e fotos/vídeos."]
+      ],
+      "guidesTitle": "Guias e páginas relacionadas",
+      "faqTitle": "Perguntas frequentes —",
+      "currentSuffix": "(Esta página)",
+      "completeSuffix": "Conjunto completo",
+      "pnPrefix": "Ref."
+    },
+    "ru": {
+      "breadcrumbCg": "Двигатели CG (штанговые и водяные)",
+      "anchors": {
+        "overview": "Обзор",
+        "specifications": "Характеристики",
+        "mounting": "Крепление и валы",
+        "comparison": "Сравнение серии",
+        "bundle": "Двигатель + Ремкомплект",
+        "quality": "Качество и Экспорт",
+        "faq": "FAQ"
+      },
+      "verdictLabel": "Инженерное резюме для оптовых закупок",
+      "specLabels": {
+        "model": "Модель",
+        "nominal": "Номинальный класс",
+        "actual": "Фактический объём",
+        "boreStroke": "Диаметр × ход",
+        "power": "Макс. мощность",
+        "torque": "Макс. момент",
+        "compression": "Степень сжатия",
+        "cooling": "Охлаждение",
+        "transmission": "Коробка передач",
+        "starting": "Запуск",
+        "clutch": "Сцепление",
+        "ignition": "Зажигание",
+        "dimWeight": "Габариты и вес",
+        "oil": "Объём масла",
+        "carb": "Карбюратор",
+        "coolingClutch": "Охлаждение и сцепление"
+      },
+      "ctaQuote": "Запросить оптовую цену",
+      "moqNote": "Условия опта: минимальный заказ (MOQ) от 50 двигателей (смешанный контейнер с запчастями) · Срок ~10 рабочих дней · FOB Гуанчжоу (передача карго/ЖД для РФ, Узбекистана, Казахстана, Кыргызстана) · Реестр серийных номеров.",
+      "specsTitle": "Технические характеристики и базовая / опциональная комплектация",
+      "paramHeader": "Параметр",
+      "valueHeader": "Подтверждённое значение",
+      "scopeTitle": "Стандартная поставка с завода vs. опции по заказу",
+      "scopeHeaders": ["Узел / Опция", "Базовая поставка", "По заказу (указывается в PI)"],
+      "mountingTitle": "Карта проверки посадочных мест и интерфейсов",
+      "mountingSub": "Сверьте точки крепления к раме, шлицы выходного вала и разъёмы проводки до запуска серии. Установочные чертежи предоставляются вместе с коммерческим предложением.",
+      "compTitle": "Сравнение моделей в одной линейке",
+      "compHeaders": ["Модель", "Номинальный класс", "Фактический объём", "Диаметр × Ход", "Макс. мощность", "Макс. момент", "Вес", "Габариты"],
+      "compBtn": "Открыть всю матрицу серии",
+      "bundleTitle": "Сборный запрос: Двигатель в сборе + Ремкомплекты в одном контейнере",
+      "bundleSub": "Отметьте двигатель и подходящие комплекты для капремонта, чтобы предзаполнить заявку на смешанную загрузку.",
+      "bundleQtyLabel": "Планируемое количество (двигатели + комплекты)",
+      "bundleQtyVal": "50 шт.",
+      "bundleQtyPh": "напр. 50 двигателей + 15 ремкомплектов",
+      "bundleCountryLabel": "Страна и город доставки",
+      "bundleCountryPh": "напр. Узбекистан (Ташкент), Казахстан (Алматы), Россия",
+      "bundleBtn": "Перейти к заполненной форме →",
+      "hwPartsBtn": "Открыть полный каталог запчастей HW200–HW350 →",
+      "qaTitle": "Контроль качества на заводе и логистика в СНГ / РФ",
+      "qaCards": [
+        ["100 % горячая и холодная обкатка", "Каждый двигатель проходит холодный и горячий стендовый прогон в Чунцине; две собственные лаборатории проверяют мощность, выхлоп и твёрдость металла.", "Центр доказательств →", "/ru/evidence"],
+        ["Смешанный контейнер и ЖД/море", "MOQ от 50 двигателей с запчастями (~10 рабочих дней, FOB Гуанчжоу). Передаём реестр заводских серийных номеров для таможенного оформления в РФ и Центральной Азии.", "Условия и форма заявки →", "/ru/kontakty"],
+        ["Гарантия 60 дней после прибытия", "При подтверждённом производственном браке в течение 60 дней с даты прибытия в порт назначения бесплатно отгружаем замену деталей со следующим плановым контейнером."]
+      ],
+      "guidesTitle": "Связанные разделы и каталоги",
+      "faqTitle": "Частые вопросы —",
+      "currentSuffix": "(Эта страница)",
+      "completeSuffix": "Двигатель в сборе",
+      "pnPrefix": "Арт."
+    },
+    "ar": {
+      "breadcrumbCg": "محركات CG (أسياخ وتبريد مياه)",
+      "anchors": {
+        "overview": "نظرة عامة",
+        "specifications": "المواصفات",
+        "mounting": "التثبيت والوصلات",
+        "comparison": "مقارنة السلسلة",
+        "bundle": "تسعير محرك + أطقم",
+        "quality": "الجودة والتصدير",
+        "faq": "الأسئلة الشائعة"
+      },
+      "verdictLabel": "الخلاصة الهندسية وتوصية الجملة",
+      "specLabels": {
+        "model": "الطراز",
+        "nominal": "الفئة الاسمية",
+        "actual": "السعة الفعلية",
+        "boreStroke": "القطر × الشوط",
+        "power": "أقصى قدرة",
+        "torque": "أقصى عزم",
+        "compression": "نسبة الانضغاط",
+        "cooling": "نظام التبريد",
+        "transmission": "ناقل الحركة",
+        "starting": "نظام التشغيل",
+        "clutch": "القابض (الدبرياج)",
+        "ignition": "الإشعال",
+        "dimWeight": "الأبعاد والوزن",
+        "oil": "سعة الزيت",
+        "carb": "المكربن (الكربراتير)",
+        "coolingClutch": "التبريد والقابض"
+      },
+      "ctaQuote": "اطلب عرض سعر جملة",
+      "moqNote": "شروط الجملة: الحد الأدنى للطلب 50 محركاً (حاوية مختلطة مع قطع الغيار) · مدة التجهيز ~10 أيام عمل · FOB قوانغتشو (دعم الإسكندرية / الجزائر / الدار البيضاء / بورتسودان ومطابقة بيانات ACID / CargoX).",
+      "specsTitle": "المواصفات الفنية المعتمدة والنطاق القياسي مقابل الخيارات",
+      "paramHeader": "المعيار",
+      "valueHeader": "المواصفة المعتمدة",
+      "scopeTitle": "نطاق التوريد القياسي بالمصنع مقابل الخيارات الإضافية",
+      "scopeHeaders": ["بند التكوين", "النطاق القياسي بالمصنع", "اختياري / يُثبت في الفاتورة المبدئية"],
+      "mountingTitle": "قائمة التحقق من نقاط التثبيت والوصلات",
+      "mountingSub": "راجع مسافة حوامل المحرك وأسنان عمود الخرج ومقابس الضفيرة الكهربائية قبل الإنتاج الكمي. تُرفق الرسومات الهندسية للأبعاد مع عرض السعر.",
+      "compTitle": "مقارنة طرازات نفس الفئة",
+      "compHeaders": ["الطراز", "الفئة الاسمية", "السعة الفعلية", "القطر × الشوط", "أقصى قدرة", "أقصى عزم", "الوزن", "الأبعاد"],
+      "compBtn": "عرض مصفوفة السلسلة الكاملة",
+      "bundleTitle": "عرض سعر مجمّع: المحرك الكامل + أطقم العمرة وقطع الغيار",
+      "bundleSub": "اختر المحرك الكامل وأطقم القطع المطابقة لتعبئة طلب حاوية مختلطة تلقائياً.",
+      "bundleQtyLabel": "الكمية المقدرة (محركات + أطقم)",
+      "bundleQtyVal": "50 محركاً",
+      "bundleQtyPh": "مثال: 50 محركاً + 15 طقم عمرة كاملة",
+      "bundleCountryLabel": "بلد وميناء الوجهة",
+      "bundleCountryPh": "مثال: مصر (الإسكندرية)، الجزائر، المغرب، السودان",
+      "bundleBtn": "الانتقال إلى نموذج التسعير المعبأ ←",
+      "hwPartsBtn": "تصفح كتالوج قطع غيار HW200–HW350 بالكامل ←",
+      "qaTitle": "اختبار الجودة بالمصنع وشروط التصدير",
+      "qaCards": [
+        ["اختبار بارد وساخن بنسبة 100%", "يخضع كل محرك لاختبار تشغيلي بارد وساخن قبل الشحن مدعوماً بمختبرين لقياس العزم والانبعاثات وصلابة المعادن في تشونغتشينغ.", "زيارة مركز الأدلة ←", "/ar/evidence"],
+        ["تغليف التصدير وحاوية مختلطة", "حد أدنى 50 وحدة (متاح خلط الموديلات والقطع، مدة تجهيز ~10 أيام عمل، FOB قوانغتشو) مع كشف الأرقام التسلسلية المحفورة للمحركات لمتطلبات الجمارك وACID / CargoX.", "الشروط ونموذج الطلب ←", "/ar/contact"],
+        ["ضمان 60 يوماً بعد الوصول للميناء", "تُشحن قطع الغيار البديلة مجاناً مع الحاوية التالية لعيوب التصنيع أو التجميع المؤكدة بالرقم التسلسلي والصور أو الفيديو خلال 60 يوماً من الوصول."]
+      ],
+      "guidesTitle": "أقسام ومواصفات ذات صلة",
+      "faqTitle": "الأسئلة الشائعة حول",
+      "currentSuffix": "(هذه الصفحة)",
+      "completeSuffix": "محرك كامل",
+      "pnPrefix": "مرجع"
+    },
+    "zh-cn": {
+      "breadcrumbCg": "CG 风冷/水冷系列",
+      "anchors": {
+        "overview": "机型概览",
+        "specifications": "参数与配置",
+        "mounting": "装车接口核对",
+        "comparison": "同系对比",
+        "bundle": "整机+配件打包询价",
+        "quality": "质检与出口条款",
+        "faq": "常见问题"
+      },
+      "verdictLabel": "工程选型结论 · 主机厂配套与外贸混柜指南",
+      "specLabels": {
+        "model": "型号",
+        "nominal": "标称级",
+        "actual": "实际排量",
+        "boreStroke": "缸径 × 行程",
+        "power": "最大功率",
+        "torque": "最大扭矩",
+        "compression": "压缩比",
+        "cooling": "冷却方式",
+        "transmission": "变速箱",
+        "starting": "启动方式",
+        "clutch": "离合器",
+        "ignition": "点火方式",
+        "dimWeight": "尺寸与重量",
+        "oil": "机油容量",
+        "carb": "化油器规格",
+        "coolingClutch": "冷却与离合架构"
+      },
+      "ctaQuote": "立即获取批量报价",
+      "moqNote": "标准批发条款：整机 50 台起订（支持跨系列混装与随柜维修件配货）· 常规交期约 10 个工作日 · 默认 FOB 广州（支持中国其他主要港口及国内物流）。",
+      "specsTitle": "核定工程参数与标准/选配范围",
+      "paramHeader": "参数项",
+      "valueHeader": "实测核定规格",
+      "scopeTitle": "出厂标准配置 vs. 按单选配项目",
+      "scopeHeaders": ["配置项目", "工厂标准出货配置", "按单选配（在 PI / BOM 确认）"],
+      "mountingTitle": "整车装机与外围接口核对清单",
+      "mountingSub": "批量投产前请对照车架挂耳孔距、输出花键及接插件脚位；正式报价时随附工厂安装尺寸图纸。",
+      "compTitle": "同系列机型横向参数对比",
+      "compHeaders": ["型号", "标称级", "实际排量", "缸径 × 行程", "最大功率", "最大扭矩", "重量", "外形尺寸"],
+      "compBtn": "查看全系列参数矩阵",
+      "bundleTitle": "整机 + 原厂随柜大修包一键组合询价",
+      "bundleSub": "勾选所需整机及配套维修套件，自动带入采购清单并跳转至询价单。",
+      "bundleQtyLabel": "预计采购数量（整机 + 配件）",
+      "bundleQtyVal": "50 台",
+      "bundleQtyPh": "例：50 台整机 + 15 套原厂大修包",
+      "bundleCountryLabel": "收货国家 / 国内省市 / 目的港",
+      "bundleCountryPh": "例：FOB广州转非洲 / 河南洛阳三轮厂",
+      "bundleBtn": "带入清单前往询价 →",
+      "hwPartsBtn": "浏览 HW200–HW350 重载水冷全套配件目录 →",
+      "qaTitle": "工厂出厂全检与售后质保条款",
+      "qaCards": [
+        ["100% 冷热机台架全检", "每台出厂整机均执行冷热机试车全检，并由重庆双实验室提供测功机、尾气及关键件金相/硬度抽检。", "查看公开证据中心 →", "/zh-cn/evidence"],
+        ["50 台起混柜出口 & 国内直供", "支持各排量整机与大修配件同柜混装（常规约 10 个工作日交货，FOB 广州/国内物流），随货附带出厂发动机序列号清单。", "前往采购咨询 →", "/zh-cn/contact"],
+        ["到港后 60 天质量保障", "凭发动机序列号及图文核实确属制造/装配不良，到目的港后 60 天内随下一柜免费补发对应配件。"]
+      ],
+      "guidesTitle": "关联产品矩阵与选型指南",
+      "faqTitle": "常见工程与采购问题 —",
+      "currentSuffix": "（当前页面）",
+      "completeSuffix": "整机总成",
+      "pnPrefix": "料号"
+    }
+  },
+  "engines": {
+    "cg200-air-cooled-engine": {
+      "fr": {
+        "family": "Série CG Refroidie par Air",
+        "seo": {
+          "title": "Moteur complet CG200 (CX163FML) 197 cc refroidi par air en gros | CHIXIANG MOTOR",
+          "description": "Moteur complet CG200 à tiges de culbuteurs (CX163FML, 197,0 cc) : 63,5 × 62,2 mm, 10 kW @ 7 500 rpm, 13,5 N·m @ 6 500 rpm, 31,3 kg. Vente en gros dès 50 moteurs, commande mixte FOB Guangzhou.",
+          "h1": "Moteur complet CG200 (CX163FML) 197,0 cc refroidi par air"
+        },
+        "vehicle_context": "Moteur complet CG200 (CX163FML) 197,0 cc pour moto commerciale et utilitaire",
+        "quick_verdict": "Le moteur CG à tiges de culbuteurs CHIXIANG CG200 (CX163FML) développe une cylindrée réelle de 197,0 cc (63,5 × 62,2 mm) avec 10 kW @ 7 500 rpm et 13,5 N·m @ 6 500 rpm pour 31,3 kg (380 × 355 × 500 mm). Conçu pour les motos commerciales, moto-taxis et utilitaires en Afrique de l'Ouest et Centrale dès 50 unités en commande mixte.",
+        "cooling": "Refroidissement naturel par air",
+        "cooling_clutch": "Refroidissement par air · Embrayage manuel multidisque à bain d'huile",
+        "transmission": "Boîte 5 vitesses à prise constante",
+        "starting": "Démarrage électrique / au kick",
+        "clutch": "Embrayage manuel multidisque à bain d'huile",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Ensemble moteur & magnéto", "standard": "Moteur complet assemblé avec stator/rotor d'usine", "optional": "Bobinage stator CC/CA adapté au faisceau local selon BOM" },
+          { "item": "Démarrage", "standard": "Démarrage électrique + démarrage au kick", "optional": "Kick seul ou démarreur renforcé sur commande" },
+          { "item": "Boîte & Marche arrière", "standard": "5 vitesses avant à prise constante", "optional": "Grille internationale ou rotative ; marche arrière intégrée selon version" },
+          { "item": "Arbre d'équilibrage", "standard": "Architecture CG200 standard sans arbre d'équilibrage", "optional": "Version avec arbre d'équilibrage pour réduire les vibrations" },
+          { "item": "Carburateur & pipe", "standard": "Confirmés selon nomenclature (BOM / facture proforma)", "optional": "Carburateur PZ30 / PZ27 et pipe d'admission assortie" },
+          { "item": "Emballage export Afrique", "standard": "Carton renforcé 380 × 355 × 500 mm ou palette de 12 unités", "optional": "Commande mixte de plusieurs modèles et pièces détachées dans un même conteneur" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Points d'ancrage cadre", "detail": "Fixation verticale standard CG à tiges de culbuteurs. Vérifiez les entraxes avant, arrière et tirant supérieur de culasse." },
+          { "label": "Arbre de sortie & pignon", "detail": "Confirmez les cannelures de l'arbre secondaire et le pas de chaîne (428 / 520) selon votre transmission." },
+          { "label": "Faisceau électrique", "detail": "Vérifiez le code couleur du stator et la fiche CDI / régulateur par rapport à votre moto." },
+          { "label": "Plans d'installation usine", "detail": "Les plans cotés de montage sont joints au devis officiel et à la confirmation de commande." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG200-TOP", "name": "Kit cylindre-piston CG200 (Alésage 63,5 mm)", "spec": "Cylindre, piston, segments, axe et clips pour CG200 197,0 cc", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-GSK", "name": "Pochette complète de joints et spi moteur CG200", "spec": "Joints de culasse, embase, carters et bagues d'étanchéité", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-CLT", "name": "Kit embrayage multidisque à bain d'huile CG200", "spec": "Disques garnis, disques lisses, plateau presseur et ressorts", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-ELC", "name": "Pack allumage : stator, CDI et régulateur CG200", "spec": "Stator magnéto, boîtier CDI, redresseur-régulateur et relais", "fitment": "CG200 (CX163FML)" }
+        ],
+        "related_guides": [
+          { "title": "Gamme complète CG125 à CG250 (Air & Eau)", "url": "/fr/cg-engine", "description": "Comparer tous les modèles CG refroidis par air et par eau." },
+          { "title": "HW300 Tricycle Cargo 275,3 mL à eau", "url": "/fr/cg-engine/hw300-water-cooled-engine", "description": "Passer à l'architecture lourde refroidie par eau pour tricycle cargo." },
+          { "title": "Moteurs & Pièces adaptables Bajaj / TVS", "url": "/fr/bajaj-tvs-engines-parts", "description": "Consolider des moteurs Boxer BM150 ou TVS HLX150 dans le même conteneur." },
+          { "title": "Centre de preuves qualité & banc d'essai", "url": "/fr/evidence", "description": "Vérifier le test au banc chaud/froid à 100 % et les laboratoires de Chongqing." }
+        ],
+        "faqs": [
+          { "q": "Quelles sont les caractéristiques exactes du moteur complet CG200 (CX163FML) ?", "a": "Cylindrée réelle de 197,0 cc (alésage × course 63,5 × 62,2 mm), puissance de 10 kW @ 7 500 rpm, couple maximal de 13,5 N·m @ 6 500 rpm, compression 8,5–9,3 : 1 et poids net de 31,3 kg." },
+          { "q": "Quelle différence entre le CG200 à air et le CG200SB à eau ?", "a": "Tous deux mesurent 63,5 × 62,2 mm (197,0 cc), mais le CG200 adopte le refroidissement naturel par air (31,3 kg, 380 × 355 × 500 mm) pour moto routière/moto-taxi, tandis que le CG200SB utilise le refroidissement liquide (eau) (425 × 385 × 530 mm, 10,5 kW / 15,0 N·m) pour tricycle cargo." },
+          { "q": "Proposez-vous un arbre d'équilibrage sur le CG200 ?", "a": "Oui. La version standard est sans arbre d'équilibrage, et l'option avec arbre d'équilibrage ou boîte rotative peut être précisée dans la facture proforma dès 50 unités." },
+          { "q": "Quel est le MOQ et comment charger moteurs et pièces vers l'Afrique ?", "a": "Le MOQ standard est de 50 moteurs. Vous pouvez réaliser une commande mixte de plusieurs modèles (CG150, CG200, HW300, BM150) et pièces détachées dans un même conteneur, FOB Guangzhou vers Abidjan, Douala, Cotonou ou Dakar." },
+          { "q": "Les numéros de série et le suivi BSC / BESC sont-ils pris en charge ?", "a": "Nous fournissons facture, liste de colisage et liste des numéros de série moteur gravés ; le bordereau BSC / BESC est coordonné par l'importateur et son transitaire selon les règles du port de destination." }
+        ]
+      },
+      "es": {
+        "family": "Serie CG Varillero Enfriado por Aire",
+        "seo": {
+          "title": "Motor varillero CG200 (CX163FML) 197 cc enfriado por aire al por mayor | CHIXIANG MOTOR",
+          "description": "Motor varillero completo CG200 (CX163FML, 197.0 cc): 63.5 × 62.2 mm, 10 kW @ 7,500 rpm, 13.5 N·m @ 6,500 rpm, 31.3 kg. MOQ 50 unidades en contenedor mixto, FOB Guangzhou.",
+          "h1": "Motor varillero CG200 (CX163FML) 197.0 cc enfriado por aire"
+        },
+        "vehicle_context": "Motor varillero CG200 (CX163FML) 197.0 cc para moto de trabajo y mototaxi",
+        "quick_verdict": "El motor varillero OHV CHIXIANG CG200 (CX163FML) entrega 197.0 cc reales (63.5 × 62.2 mm) con 10 kW @ 7,500 rpm y 13.5 N·m @ 6,500 rpm en 31.3 kg (380 × 355 × 500 mm). Diseñado para motos de trabajo, mensajería y mototaxis en Latinoamérica bajo pedido mínimo de 50 unidades en contenedor mixto.",
+        "cooling": "Enfriado por aire natural",
+        "cooling_clutch": "Aire natural · Embrague manual multidisco húmedo",
+        "transmission": "5 velocidades de engrane constante",
+        "starting": "Arranque eléctrico y pedal (kick)",
+        "clutch": "Manual multidisco en baño de aceite",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Motor base y magneto", "standard": "Motor completo ensamblado con estator/rotor de fábrica", "optional": "Bobinado CC o CA según arnés eléctrico del mercado" },
+          { "item": "Sistema de arranque", "standard": "Eléctrico + pedal de arranque", "optional": "Solo pedal o motor de arranque reforzado según pedido" },
+          { "item": "Caja y reversa", "standard": "5 velocidades hacia adelante", "optional": "Patrón internacional o rotativo; reversa integrada según modelo" },
+          { "item": "Eje balanceador", "standard": "Arquitectura varillera CG200 estándar", "optional": "Versión con eje balanceador para menor vibración en calle" },
+          { "item": "Carburador y admisión", "standard": "Confirmado en BOM y Proforma Invoice", "optional": "Carburador PZ30 / PZ27 con pipa de admisión" },
+          { "item": "Empaque de exportación", "standard": "Caja 380 × 355 × 500 mm o palet de 12 unidades", "optional": "Contenedor mixto con CG150, cargueros HW300 y kits de repuestos" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Soportes al chasis", "detail": "Patrón vertical varillero OHV. Verifique distancia de anclajes delantero, trasero y tirante superior de culata." },
+          { "label": "Eje de salida y paso", "detail": "Confirme estrías del eje secundario y paso de cadena (428 / 520) de su moto de trabajo o mototaxi." },
+          { "label": "Conectores eléctricos", "detail": "Valide colores de cables del estator y conectores de CDI / regulador antes de producción." },
+          { "label": "Planos de fábrica", "detail": "Entregamos planos dimensionales de montaje junto con su cotización formal." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG200-TOP", "name": "Kit cilindro y pistón CG200 (63.5 mm)", "spec": "Cilindro, pistón, anillos, pasador y seguros para 197.0 cc", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-GSK", "name": "Juego completo de empaquetaduras y retenes CG200", "spec": "Empaques de culata, base, cárter y tapas + retenes de aceite", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-CLT", "name": "Kit de embrague multidisco húmedo CG200", "spec": "Discos de fricción, separadores de acero, prensa y resortes", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-ELC", "name": "Paquete eléctrico: estator, CDI y regulador CG200", "spec": "Bobina de magneto, unidad CDI, rectificador y relé de arranque", "fitment": "CG200 (CX163FML)" }
+        ],
+        "related_guides": [
+          { "title": "Serie completa de motores varilleros CG", "url": "/es/motor-cg", "description": "Compare todos los CG por aire y por agua lado a lado." },
+          { "title": "Motor carguero HW300 275.3 mL enfriado por agua", "url": "/es/cg-engine/hw300-water-cooled-engine", "description": "Potencia pesada para trimoto de carga y motocarro." },
+          { "title": "Motores y repuestos Bajaj / Torito / TVS", "url": "/es/bajaj-tvs-engines-parts", "description": "Combine motores Boxer BM150 o RE 4S en el mismo embarque." },
+          { "title": "Guía técnica: ¿Qué es un motor varillero CG?", "url": "/es/guia/que-es-un-motor-cg/", "description": "Comparativa de mantenimiento y torque frente a motores cadenilleros CB." }
+        ],
+        "faqs": [
+          { "q": "¿Cuál es la cilindrada real, potencia y torque del motor varillero CG200?", "a": "El CG200 (CX163FML) tiene 197.0 cc reales (diámetro × carrera 63.5 × 62.2 mm), entrega 10 kW @ 7,500 rpm y 13.5 N·m @ 6,500 rpm, con compresión 8.5–9.3 : 1 y peso neto de 31.3 kg." },
+          { "q": "¿En qué se diferencia el CG200 por aire del CG200SB enfriado por agua?", "a": "Ambos comparten 63.5 × 62.2 mm (197.0 cc), pero el CG200 es enfriado por aire (31.3 kg, 380 × 355 × 500 mm) ideal para moto de trabajo, mientras que el CG200SB usa agua (425 × 385 × 530 mm, 10.5 kW / 15.0 N·m) para carguero." },
+          { "q": "¿Puedo pedir el CG200 con eje balanceador?", "a": "Sí. La base es varillera estándar sin balanceador y bajo pedido se fabrica con eje balanceador o caja rotativa para disminuir vibraciones." },
+          { "q": "¿Cuál es el MOQ y qué documentos entregan para aduana en Latinoamérica?", "a": "Pedido mínimo de 50 motores (se admite carga mixta con CG150, HW300 y kits de repuestos), plazo ~10 días hábiles FOB Guangzhou. Emitimos factura, packing list y lista de números de serie grabados en el cárter." },
+          { "q": "¿Qué garantía tienen los motores?", "a": "Cada unidad pasa prueba en banco en frío y caliente al 100 % y cuenta con garantía de 60 días desde el arribo al puerto de destino para defectos verificados de fabricación." }
+        ]
+      },
+      "pt": {
+        "family": "Série CG Vareta Refrigerada a Ar",
+        "seo": {
+          "title": "Motor vareta CG200 (CX163FML) 197 cc refrigerado a ar atacado | CHIXIANG MOTOR",
+          "description": "Motor completo vareta CG200 (CX163FML, 197.0 cc): 63.5 × 62.2 mm, 10 kW @ 7,500 rpm, 13.5 N·m @ 6,500 rpm, 31.3 kg. MOQ 50 unidades em pedido misto, FOB Guangzhou.",
+          "h1": "Motor vareta CG200 (CX163FML) 197.0 cc refrigerado a ar"
+        },
+        "vehicle_context": "Motor vareta CG200 (CX163FML) 197.0 cc para moto de trabalho e mototáxi (kupapata)",
+        "quick_verdict": "O motor vareta (OHV) CHIXIANG CG200 (CX163FML) entrega 197.0 cc reais (63.5 × 62.2 mm) com 10 kW @ 7,500 rpm e 13.5 N·m @ 6,500 rpm em 31.3 kg (380 × 355 × 500 mm). Projetado para motos de trabalho, entregas e mototáxi (kupapata) com MOQ de 50 unidades em contêiner misto.",
+        "cooling": "Refrigeração natural a ar",
+        "cooling_clutch": "A ar · Embreagem manual multidisco úmida",
+        "transmission": "Câmbio 5 marchas engrenamento constante",
+        "starting": "Partida elétrica / pedal",
+        "clutch": "Manual multidisco em banho de óleo",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Conjunto motor e magneto", "standard": "Motor completo montado com estator/rotor de fábrica", "optional": "Bobina CC ou CA conforme chicote elétrico do mercado" },
+          { "item": "Sistema de partida", "standard": "Partida elétrica + pedal", "optional": "Somente pedal ou motor de partida reforçado" },
+          { "item": "Câmbio e ré", "standard": "5 marchas à frente", "optional": "Padrão internacional ou rotativo; marcha à ré integrada por modelo" },
+          { "item": "Eixo balanceiro", "standard": "Arquitetura vareta CG200 padrão", "optional": "Configuração com eixo balanceiro para menor vibração" },
+          { "item": "Carburador e coletor", "standard": "Confirmado na lista de pedido / Proforma", "optional": "Carburador PZ30 / PZ27 e coletor de admissão" },
+          { "item": "Embalagem exportação", "standard": "Caixa 380 × 355 × 500 mm ou palete com 12 unidades", "optional": "Pedido misto com CG150, HW300 e kits de peças" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Pontos de fixação no quadro", "detail": "Padrão vertical vareta OHV. Confira suportes dianteiro, traseiro e superior do cabeçote." },
+          { "label": "Eixo de saída e pinhão", "detail": "Confirme estrias do eixo secundário e passo da corrente (428 / 520)." },
+          { "label": "Chicote elétrico", "detail": "Verifique cores dos fios do estator e plugue do CDI / retificador." },
+          { "label": "Desenhos dimensionais", "detail": "Fornecemos os desenhos técnicos de montagem junto à cotação formal." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG200-TOP", "name": "Kit cilindro e pistão CG200 (63,5 mm)", "spec": "Cilindro, pistão, anéis, pino e travas para 197.0 cc", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-GSK", "name": "Jogo completo de juntas e retentores CG200", "spec": "Juntas de cabeçote, base, carcaça e tampas laterais + retentores", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-CLT", "name": "Kit embreagem multidisco úmida CG200", "spec": "Discos de fricção, separadores de aço, platô e molas", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-ELC", "name": "Kit elétrico: estator, CDI e regulador CG200", "spec": "Estator do magneto, unidade CDI, retificador e relé", "fitment": "CG200 (CX163FML)" }
+        ],
+        "related_guides": [
+          { "title": "Matriz completa de motores vareta CG", "url": "/pt/motor-cg", "description": "Compare todos os modelos CG a ar e refrigerados a água." },
+          { "title": "Motor HW300 275.3 mL refrigerado a água", "url": "/pt/cg-engine/hw300-water-cooled-engine", "description": "Para triciclo de carga pesado e motocarro." },
+          { "title": "Motores e peças Bajaj Boxer / TVS HLX", "url": "/pt/bajaj-tvs-engines-parts", "description": "Consolide peças Bajaj e TVS no mesmo contêiner." },
+          { "title": "Centro de Evidências e Laboratórios", "url": "/pt/evidence", "description": "Confira teste 100 % em bancada e controle metalúrgico." }
+        ],
+        "faqs": [
+          { "q": "Quais são a cilindrada real, potência e torque do motor vareta CG200?", "a": "O CG200 (CX163FML) possui 197.0 cc reais (63.5 × 62.2 mm), potência máxima de 10 kW @ 7,500 rpm, torque de 13.5 N·m @ 6,500 rpm, taxa 8.5–9.3 : 1 e 31.3 kg." },
+          { "q": "Qual a diferença entre o CG200 a ar e o CG200SB a água?", "a": "Ambos usam 63.5 × 62.2 mm (197.0 cc), mas o CG200 é refrigerado a ar (31.3 kg) para motos urbanas/mototáxi, enquanto o CG200SB usa refrigeração líquida (425 × 385 × 530 mm, 10.5 kW / 15.0 N·m) para triciclo de carga." },
+          { "q": "Há opção com eixo balanceiro no CG200?", "a": "Sim. Podemos fornecer com eixo balanceiro e câmbio rotativo ou internacional mediante confirmação na Proforma." },
+          { "q": "Qual o pedido mínimo e suporte para embarque a Angola, Moçambique ou Brasil?", "a": "MOQ de 50 motores com carregamento misto de modelos e peças no mesmo contêiner (~10 dias úteis, FOB Guangzhou). A listagem de números de série apoia o importador e despachante no processo CNCA / ARCCLA." },
+          { "q": "Como funciona a garantia?", "a": "Teste 100 % em bancada antes do embarque e garantia de 60 dias após chegada ao porto de destino para defeitos comprovados de fabricação." }
+        ]
+      },
+      "ru": {
+        "family": "Серия CG воздушного охлаждения (штанговые)",
+        "seo": {
+          "title": "Двигатель CG200 (CX163FML) 197 куб. см воздушного охлаждения оптом | CHIXIANG MOTOR",
+          "description": "Нижневальный штанговый двигатель CG200 (CX163FML, 197.0 cc): 63.5 × 62.2 мм, 10 кВт @ 7500 об/мин, 13.5 Н·м @ 6500 об/мин, вес 31.3 кг. MOQ 50 шт., сборный контейнер FOB Гуанчжоу.",
+          "h1": "Штанговый двигатель CG200 (CX163FML) 197.0 cc с воздушным охлаждением"
+        },
+        "vehicle_context": "Двигатель CG200 (CX163FML) 197.0 cc для коммерческих и дорожных мотоциклов",
+        "quick_verdict": "Нижневальный двигатель со штанговыми толкателями CHIXIANG CG200 (CX163FML) имеет фактический объём 197.0 cc (63.5 × 62.2 мм), мощность 10 kW @ 7,500 rpm и момент 13.5 N·m @ 6,500 rpm при весе 31.3 кг (380 × 355 × 500 мм). Надёжное решение для коммерческих мотоциклов в РФ и странах Центральной Азии при оптовом заказе от 50 штук.",
+        "cooling": "Естественное воздушное охлаждение",
+        "cooling_clutch": "Воздушное · Ручное многодисковое в масляной ванне",
+        "transmission": "5-ступенчатая постоянного зацепления",
+        "starting": "Электростартер / кикстартер",
+        "clutch": "Ручное многодисковое в масляной ванне",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Базовый двигатель и магнето", "standard": "Двигатель в сборе со штатным статором и ротором", "optional": "Обмотка статора DC/AC под местную проводку" },
+          { "item": "Система запуска", "standard": "Электростартер + кикстартер", "optional": "Только кикстартер или усиленный стартер" },
+          { "item": "КПП и реверс", "standard": "5 передач переднего хода", "optional": "Международная или круговая схема; опция встроенного реверса" },
+          { "item": "Балансирный вал", "standard": "Классическая штанговая схема CG200", "optional": "Исполнение с балансирным валом для снижения вибрации" },
+          { "item": "Карбюратор и патрубок", "standard": "Согласовывается в спецификации заказа (PI)", "optional": "Карбюратор PZ30 / PZ27 и впускной коллектор" },
+          { "item": "Экспортная упаковка", "standard": "Короб 380 × 355 × 500 мм или паллета по 12 шт.", "optional": "Сборный контейнер с CG150, HW300 и запчастями" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Точки крепления к раме", "detail": "Вертикальный штанговый картер. Сверьте передние, задние крепления и верхнюю косынку ГБЦ с рамой." },
+          { "label": "Выходной вал и звезда", "detail": "Уточните число шлицов вторичного вала и шаг цепи (428 / 520)." },
+          { "label": "Разъёмы проводки", "detail": "Сверьте распиновку проводов статора и разъёма CDI / регулятора напряжения." },
+          { "label": "Заводские чертежи", "detail": "Габаритные и посадочные чертежи предоставляются вместе с официальным расчётом." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG200-TOP", "name": "ЦПГ (цилиндр + поршень) CG200 (63.5 мм)", "spec": "Цилиндр, поршень, кольца, палец и стопоры на 197.0 cc", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-GSK", "name": "Полный комплект прокладок и сальников CG200", "spec": "Прокладки ГБЦ, цилиндра, картера, крышек и сальники валов", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-CLT", "name": "Комплект сцепления в масляной ванне CG200", "spec": "Фрикционные и стальные диски, корзина/прижим, пружины", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-ELC", "name": "Электрокомплект: статор, CDI и реле-регулятор CG200", "spec": "Катушки магнето, блок CDI, стабилизатор и реле стартера", "fitment": "CG200 (CX163FML)" }
+        ],
+        "related_guides": [
+          { "title": "Вся линейка двигателей CG (воздух / вода)", "url": "/ru/dvigatel-cg", "description": "Сравнение всех моделей CG воздушного и водяного охлаждения." },
+          { "title": "Тяжёлый двигатель HW300 275.3 мл для трициклов", "url": "/ru/cg-engine/hw300-water-cooled-engine", "description": "Водяное охлаждение для грузового трицикла / муравья." },
+          { "title": "Двигатели и запчасти Bajaj / TVS", "url": "/ru/bajaj-tvs-engines-parts", "description": "Добавьте моторы и ЦПГ Bajaj Boxer BM150 в тот же контейнер." },
+          { "title": "Центр доказательств и стендовые испытания", "url": "/ru/evidence", "description": "Проверка 100 % обкатки, динамометров и лаборатории материалов." }
+        ],
+        "faqs": [
+          { "q": "Каковы точные параметры штангового двигателя CG200 (CX163FML)?", "a": "Фактический объём 197.0 cc при диаметре × ходе 63.5 × 62.2 мм, мощность 10 kW @ 7,500 rpm, крутящий момент 13.5 N·m @ 6,500 rpm, степень сжатия 8.5–9.3 : 1, вес нетто 31.3 кг." },
+          { "q": "Чем воздушный CG200 отличается от водяного CG200SB?", "a": "Оба имеют геометрию 63.5 × 62.2 мм (197.0 cc), но CG200 использует воздушное охлаждение (31.3 кг) для лёгких и рабочих мотоциклов, а CG200SB — водяное охлаждение (425 × 385 × 530 мм, 10.5 кВт / 15.0 Н·м) для грузовых трициклов." },
+          { "q": "Доступна ли версия CG200 с балансирным валом?", "a": "Да. Базовая модификация без балансира, но при заказе можно указать балансирный вал или круговую КПП." },
+          { "q": "Какой минимальный заказ и как организована доставка в РФ и Центральную Азию?", "a": "MOQ 50 двигателей с возможностью смешивания моделей и ремкомплектов (~10 рабочих дней, FOB Гуанчжоу или передача на ЖД/карго в КНР). Предоставляем реестр серийных номеров для таможни." },
+          { "q": "Какие испытания и гарантия действуют?", "a": "Каждый мотор проходит 100 % холодную и горячую стендовую обкатку в Чунцине; гарантия 60 дней после прибытия в порт назначения при предоставлении серийного номера и фото/видео." }
+        ]
+      },
+      "ar": {
+        "family": "فئة CG أسياخ تبريد بالهواء",
+        "seo": {
+          "title": "محرك CG200 أسياخ (CX163FML) سعة 197 سم³ تبريد هواء بالجملة | CHIXIANG MOTOR",
+          "description": "محرك سي جي أسياخ كامل CG200 (CX163FML، سعة 197.0 cc): قطر × شوط 63.5 × 62.2 مم، 10 kW، 13.5 N·m، وزن 31.3 كجم. حد أدنى 50 وحدة تحميل مختلط FOB قوانغتشو.",
+          "h1": "محرك سي جي أسياخ CG200 (CX163FML) سعة 197.0 cc تبريد بالهواء"
+        },
+        "vehicle_context": "محرك CG200 (CX163FML) سعة 197.0 cc للدراجات النارية العملية ودراجات العمل",
+        "quick_verdict": "يقدم محرك سي جي أسياخ CHIXIANG CG200 (CX163FML) سعة فعلية 197.0 cc (قطر × شوط 63.5 × 62.2 مم) بقدرة 10 kW @ 7,500 rpm وعزم 13.5 N·m @ 6,500 rpm وبوزن 31.3 كجم وأبعاد 380 × 355 × 500 مم. مثالي لدراجات العمل والتوصيل مع إمكانية خلط الموديلات والقطع من حد أدنى 50 وحدة.",
+        "cooling": "تبريد طبيعي بالهواء",
+        "cooling_clutch": "تبريد بالهواء · قابض يدوي متعدد الأقراص رطب",
+        "transmission": "5 سرعات بتعشيق ثابت",
+        "starting": "تشغيل كهربائي وبالقدم",
+        "clutch": "يدوي متعدد الأقراص في حمام زيت",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "المحرك الأساسي والمغناطيس", "standard": "محرك كامل مجمّع بملف ثابت ودوار مصنعي", "optional": "لف ملفات DC/AC حسب ضفيرة السوق المستهدف" },
+          { "item": "نظام التشغيل", "standard": "مارش كهربائي + منافلة قدم", "optional": "منافة فقط أو مارش مقوى حسب الطلب" },
+          { "item": "ناقل الحركة والرجوع", "standard": "5 سرعات أمامية", "optional": "تعشيق دولي أو دائري؛ ترس رجوع مدمج حسب الطراز" },
+          { "item": "عمود الاتزان (الحدافة)", "standard": "موتور أسياخ CG200 قياسي بدون عمود اتزان", "optional": "نسخة بعمود اتزان لتقليل الاهتزاز" },
+          { "item": "المكربن ووصلة السحب", "standard": "يُؤكد في قائمة الطلب والفاتورة المبدئية", "optional": "كربراتير PZ30 / PZ27 مع كوع السحب المطابق" },
+          { "item": "التغليف للتصدير", "standard": "كرتون تصدير 380 × 355 × 500 مم أو طبلية 12 محركاً", "optional": "حاوية مختلطة مع CG150 و HW300 وقطع الغيار" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "حوامل الشاسيه", "detail": "تصميم أسياخ عمودي قياسي؛ تأكد من أبعاد حوامل التثبيت الأمامية والخلفية والعلوية." },
+          { "label": "عمود الخرج والجنزير", "detail": "تأكد من عدد أسنان الترس الأمامي ومقاس الجنزير (428 / 520)." },
+          { "label": "الضفيرة الكهربائية", "detail": "طابق ألوان أسلاك الملف ومقابس الـ CDI ومنظم الشحن مع ضفيرة الدراجة." },
+          { "label": "الرسومات الهندسية", "detail": "نرفق رسومات الأبعاد التفصيلية للمصنع مع عرض السعر الرسمي." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG200-TOP", "name": "طقم سلندر وبستم CG200 (قطر 63.5 مم)", "spec": "شميز وبستم وشنبر وبنز لسعة 197.0 cc", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-GSK", "name": "طقم جوانات وأولسيهات عمرة كاملة CG200", "spec": "جوان وش سلندر وقواعد وفخذتين وغطاء دبرياج وأولسيهات", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-CLT", "name": "طقم ورق دبرياج وحلة CG200", "spec": "أقراص احتكاك وفولاذ ونوابض للعمل الشاق", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-ELC", "name": "طقم كهرباء: ملف ستاتور وCDI ومنظم CG200", "spec": "ملف شحن، وحدة إشعال CDI، بلاطة شحن وكتاوت", "fitment": "CG200 (CX163FML)" }
+        ],
+        "related_guides": [
+          { "title": "سلسلة محركات CG الكاملة (هواء ومياه)", "url": "/ar/cg-engine", "description": "قارن جميع محركات CG المبردة بالهواء والماء." },
+          { "title": "محرك تروسيكل HW300 سعة 275.3 مل تبريد مياه", "url": "/ar/cg-engine/hw300-water-cooled-engine", "description": "للخدمة الشاقة في التروسيكلات والتريبورتور." },
+          { "title": "محركات وقطع غيار Bajaj Boxer / TVS", "url": "/ar/bajaj-tvs-engines-parts", "description": "اجمع محركات بوكسر وتوك توك في نفس الحاوية." },
+          { "title": "مركز الأدلة واختبارات المصنع", "url": "/ar/evidence", "description": "مراجعة اختبار 100% وفحوص المعادن والدينامومتر." }
+        ],
+        "faqs": [
+          { "q": "ما السعة الفعلية والقدرة الدقيقة لمحرك CG200 أسياخ؟", "a": "السعة الفعلية 197.0 cc بقطر × شوط 63.5 × 62.2 مم، القدرة 10 kW @ 7,500 rpm، العزم 13.5 N·m @ 6,500 rpm، نسبة الانضغاط 8.5–9.3 : 1 والوزن الصافي 31.3 كجم." },
+          { "q": "ما الفرق بين CG200 تبريد هواء و CG200SB تبريد مياه؟", "a": "كلاهما بمقاس 63.5 × 62.2 مم (197.0 cc)، لكن CG200 بتبريد هواء (31.3 كجم) للدراجات العملية، أما CG200SB فبتبريد مياه (425 × 385 × 530 مم، 10.5 kW / 15.0 N·m) لدراجات الشحن ثلاثية العجلات." },
+          { "q": "هل يتوفر خيار عمود الاتزان (حدافة الاتزان) لـ CG200؟", "a": "نعم، يمكن طلبه مع عمود اتزان لتقليل الاهتزاز وفق تأكيد الفاتورة المبدئية." },
+          { "q": "ما الحد الأدنى للطلب ووثائق الشحن لمصر والجزائر والمغرب والسودان؟", "a": "الحد الأدنى 50 محركاً مع إمكانية خلط الموديلات والقطع (~10 أيام عمل، FOB قوانغتشو) مع تزويد المستورد بقائمة الأرقام التسلسلية المحفورة لدعم إجراءات الجمارك وACID / CargoX." },
+          { "q": "ما هي مدة الاختبار والضمان؟", "a": "فحص بارد وساخن 100% في تشونغتشينغ وضمان 60 يوماً بعد الوصول للميناء لعيوب التصنيع المؤكدة." }
+        ]
+      },
+      "zh-cn": {
+        "family": "CG 风冷顶杆机系列",
+        "seo": {
+          "title": "CG200 (CX163FML) 197.0 cc 风冷整机工厂批发 | 重庆驰翔",
+          "description": "重庆驰翔 CG200（CX163FML）197.0 cc 风冷顶杆机：缸径行程 63.5 × 62.2 mm，10 kW @ 7,500 rpm，13.5 N·m @ 6,500 rpm，净重 31.3 kg。50 台起混柜出口 FOB 广州。",
+          "h1": "CG200 (CX163FML) 197.0 cc 风冷顶杆摩托车发动机"
+        },
+        "vehicle_context": "CG200 (CX163FML) 197.0 cc 风冷顶杆两轮/轻载摩托动力",
+        "quick_verdict": "驰翔 CG200 (CX163FML) 风冷顶杆机实际排量 197.0 cc（63.5 × 62.2 mm），最大功率 10 kW @ 7,500 rpm，最大扭矩 13.5 N·m @ 6,500 rpm，整机净重 31.3 kg（外形 380 × 355 × 500 mm）。结构皮实、维修便利，支持 50 台起混装出口与原厂随柜维修套包。",
+        "cooling": "自然风冷",
+        "cooling_clutch": "自然风冷 · 手动湿式多片离合",
+        "transmission": "国际 5 挡常啮合",
+        "starting": "电启动 / 脚启动",
+        "clutch": "手动湿式多片离合器",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "基础整机与磁电机", "standard": "整机出厂装配原厂定子/转子磁电机", "optional": "可按外贸目标市场灯具载荷定制 AC/DC 线圈绕组" },
+          { "item": "启动方式", "standard": "电启动 + 脚启动双配置", "optional": "可选单脚启动或加强型电启动电机" },
+          { "item": "变速与倒挡", "standard": "5 挡前进常啮合", "optional": "可选国际挡/循环挡及部分型号自带倒挡" },
+          { "item": "平衡轴", "standard": "标准无平衡轴 CG200 架构", "optional": "可选配内置平衡轴降振版本" },
+          { "item": "化油器与进气管", "standard": "在采购订单 BOM 与形式发票中列明", "optional": "可选配 PZ30 / PZ27 化油器及进气弯管" },
+          { "item": "出口包装方式", "standard": "380 × 355 × 500 mm 出口纸箱或 12 台托盘", "optional": "支持与 CG150、HW300 及大修包同柜混装" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "车架悬挂吊耳孔距", "detail": "立式顶杆机标准吊装形式，投产前请对照车架前/后/上缸头拉杆孔距尺寸图。" },
+          { "label": "输出花键与链轮节距", "detail": "确认副轴花键齿型以及整车链条规格（428 / 520）。" },
+          { "label": "磁电机插头线序", "detail": "确认定子出线颜色与整车 CDI/稳压整流器插头定义。" },
+          { "label": "随附工厂安装图纸", "detail": "正式报价与确认 PI 时随附工厂安装外形尺寸图。" }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG200-TOP", "name": "CG200 原厂套缸活塞组件（63.5 mm 缸径）", "spec": "63.5 mm 缸体、活塞、环、销及卡簧", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-GSK", "name": "CG200 全机大修垫片与油封套装", "spec": "缸垫、中箱垫、左右盖垫片及曲轴/输出油封", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-CLT", "name": "CG200 湿式多片离合器总成套装", "spec": "耐磨摩擦片、钢片、压盘及弹簧组", "fitment": "CG200 (CX163FML)" },
+          { "pn": "CX-CG200-ELC", "name": "CG200 磁电机线圈、CDI 及整流器套包", "spec": "定子总成、CDI 点火器、稳压整流器及继电器", "fitment": "CG200 (CX163FML)" }
+        ],
+        "related_guides": [
+          { "title": "CG 风冷与水冷发动机全系矩阵", "url": "/zh-cn/cg-engine", "description": "横向对比 CG125–CG250 风冷及 SB/HW 水冷系列。" },
+          { "title": "HW300 重载水冷三轮发动机（275.3 mL）", "url": "/zh-cn/cg-engine/hw300-water-cooled-engine", "description": "了解 1.5 L 大油底壳与 20 滚子离合器重载三轮动力。" },
+          { "title": "Bajaj / TVS 替换整机与核心配件", "url": "/zh-cn/bajaj-tvs-engines-parts", "description": "外贸混柜搭配印系 Boxer / TVS HLX 整机与边盖箱体。" },
+          { "title": "重庆驰翔公开证据与实验室能力", "url": "/zh-cn/evidence", "description": "核验企业资质、冷热台架全检与双实验室检验记录。" }
+        ],
+        "faqs": [
+          { "q": "CG200 (CX163FML) 的核定排量、功率与扭矩是多少？", "a": "实际排量 197.0 cc（缸径×行程 63.5 × 62.2 mm），最大功率 10 kW @ 7,500 rpm，最大扭矩 13.5 N·m @ 6,500 rpm，压缩比 8.5–9.3 : 1，净重 31.3 kg。" },
+          { "q": "风冷 CG200 与水冷 CG200SB 有何区别？", "a": "两者缸径行程同为 63.5 × 62.2 mm，CG200 为自然风冷（净重 31.3 kg，380 × 355 × 500 mm），更适合两轮商用车；CG200SB 为水冷三轮结构（425 × 385 × 530 mm，10.5 kW / 15.0 N·m），适合高热负荷货运三轮。" },
+          { "q": "是否支持选配平衡轴版本？", "a": "支持。标准配置为无平衡轴架构，批量订单可在确认 PI 前指定加装 CG 内置平衡轴或循环挡。" },
+          { "q": "最低起订量与混柜交货条款是什么？", "a": "标准整机 MOQ 为 50 台，支持与 CG150、HW300、CB 及原厂维修套件同柜混装；常规交期约 10 个工作日，默认 FOB 广州或国内主机厂直发。" },
+          { "q": "出厂检测与售后质保如何执行？", "a": "每台均经 100% 出厂前冷热机台架全检，并享受目的港到港后 60 天质量保障（凭序列号与图文核实后随下一柜免费补发对应配件）。" }
+        ]
+      }
+    },
+    "hw300-water-cooled-engine": {
+      "fr": {
+        "family": "Série Lourde HW Water pour Tricycle Cargo",
+        "seo": {
+          "title": "Moteur tricycle 300cc à eau HW300 (275,3 mL) en gros | CHIXIANG MOTOR",
+          "description": "Moteur tricycle cargo HW300 (classe 300cc, cylindrée réelle 275,3 mL) refroidi par eau avec ailettes : 12,5 kW, 21 N·m, carter 1,5 L, embrayage 20 rouleaux, ~80 % pièces communes HW250/HW300.",
+          "h1": "Moteur HW300 refroidi par eau pour tricycle cargo (classe 300cc · 275,3 mL)"
+        },
+        "vehicle_context": "HW300 (classe 300cc · 275,3 mL) Moteur lourd refroidi par eau pour tricycle cargo",
+        "quick_verdict": "Le CHIXIANG HW300 (classe 300cc, cylindrée réelle exacte 275,3 mL, 74 × 64 mm) développe 12,5 kW @ 6 500 rpm et 21 N·m @ 4 500 rpm dans un bloc de 39 kg (425 × 385 × 530 mm) à refroidissement liquide (eau) avec ailettes. Doté d'un carter d'huile 1,5 L, d'un embrayage à 20 rouleaux et d'une magnéto CC haut rendement, il partage ~80 % de ses pièces avec le HW250.",
+        "cooling": "Refroidissement liquide (eau) avec ailettes de cylindre",
+        "cooling_clutch": "Refroidissement liquide (eau) · Embrayage à 20 rouleaux",
+        "transmission": "Boîte 5 vitesses avant standard (compatible avec boîte de marche arrière externe)",
+        "starting": "Démarrage électrique / au kick",
+        "clutch": "Roue libre à 20 rouleaux + embrayage manuel multidisque à bain d'huile",
+        "ignition": "CDI · Magnéto CC à haut rendement",
+        "standard_vs_optional_configs": [
+          { "item": "Architecture carter & lubrification", "standard": "Bloc lourd à refroidissement liquide (eau) avec ailettes et carter 1,5 L", "optional": "Demi-carters gauche/droite de rechange (~80 % communs HW250/HW300)" },
+          { "item": "Embrayage & roue libre", "standard": "Roue libre à 20 rouleaux + embrayage multidisque renforcé", "optional": "Kit de réfection moteur refroidi par eau (embrayage/disques) dans le même conteneur" },
+          { "item": "Magnéto & allumage", "standard": "Magnéto CC à haut rendement + allumage CDI", "optional": "Pack complet CDI, redresseur-régulateur et relais de démarrage" },
+          { "item": "Boîte & Marche arrière", "standard": "Boîte standard à 5 vitesses avant à prise constante", "optional": "Compatible avec boîte de marche arrière externe (préciser cannelures)" },
+          { "item": "Carburateur & circuit eau", "standard": "Interface PZ30 et pompe à eau intégrée sur moteur", "optional": "Carburateur PZ30, radiateur, ventilateur et kit durites selon BOM" },
+          { "item": "Emballage export Afrique", "standard": "Carton renforcé 425 × 385 × 530 mm ou palette 12 unités", "optional": "Commande mixte de plusieurs modèles avec HW200/HW250/CG200 et pièces détachées" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Berceau tricycle cargo", "detail": "Encombrement 425 × 385 × 530 mm (39 kg). Confirmez l'entraxe du berceau de tricycle cargo et les axes avant/arrière." },
+          { "label": "Boîte de marche arrière externe", "detail": "Le HW300 utilise une boîte 5 vitesses avant sans marche arrière interne ; vérifiez le nombre de cannelures pour votre boîte de marche arrière externe." },
+          { "label": "Pompe à eau & radiateur", "detail": "Contrôlez les diamètres de durites d'entrée/sortie et la connectique du ventilateur." },
+          { "label": "Plans & table de correspondance", "detail": "Plans d'installation usine et liste de correspondance pièces HW250/HW300 joints à l'offre." }
+        ],
+        "related_guides": [
+          { "title": "Catalogue complet pièces HW200–HW350 & kits de réfection", "url": "/fr/engine-parts/hw-series", "description": "8 sous-ensembles et kits d'entretien pré-appairés usine." },
+          { "title": "Matrice CG150–CG250 & HW200–HW350", "url": "/fr/cg-engine#hw-water-specifications", "description": "Comparer CG250SB et la gamme lourde HW Water." },
+          { "title": "Moteur complet CG200 refroidi par air", "url": "/fr/cg-engine/cg200-air-cooled-engine", "description": "Compléter votre conteneur avec des moteurs deux-roues 200cc." },
+          { "title": "Centre de preuves & tests au banc 100 %", "url": "/fr/evidence", "description": "Vérifier le contrôle qualité et les capacités à Chongqing." }
+        ],
+        "faqs": [
+          { "q": "Quelle est la cylindrée réelle exacte du HW300 ?", "a": "Le HW300 (classe 300cc) mesure 74 × 64 mm, soit une cylindrée géométrique réelle de 275,3 mL. Il délivre 12,5 kW @ 6 500 rpm et 21 N·m @ 4 500 rpm (compression 10,4 : 1)." },
+          { "q": "Pourquoi choisir un HW300 pour un tricycle 250/300cc à eau plutôt qu'un CG250SB ?", "a": "Le HW300 ajoute des ailettes de cylindre, un carter de 1,5 L d'huile, une roue libre renforcée à 20 rouleaux et une magnéto CC haut rendement pour les côtes et charges lourdes continues." },
+          { "q": "Quelles pièces sont communes entre HW250 et HW300 ?", "a": "Environ 80 % des ensembles majeurs (carters gauche/droite, roue libre 20 rouleaux, arbres 5 vitesses, pompe à eau, magnéto) sont communs entre HW250 et HW300, allégeant le stock du grossiste." },
+          { "q": "Le HW300 inclut-il une marche arrière intégrée ?", "a": "Non. Il dispose d'une boîte standard 5 vitesses avant conçue pour s'accoupler à une boîte de marche arrière externe." },
+          { "q": "Puis-je commander moteurs complets et kit de réfection moteur refroidi par eau dans un même conteneur ?", "a": "Oui. La commande mixte de plusieurs modèles est possible dès 50 moteurs FOB Guangzhou (Abidjan, Douala, Cotonou, Dakar ; suivi BSC / BESC par votre transitaire), avec délai ~10 jours ouvrables et garantie 60 jours après arrivée." }
+        ]
+      },
+      "es": {
+        "family": "Serie Pesada HW Water para Trimoto de Carga",
+        "seo": {
+          "title": "Motor carguero HW300 (275.3 mL) enfriado por agua | CHIXIANG MOTOR",
+          "description": "Motor HW300 (clase 300cc, cilindrada real 275.3 mL) enfriado por agua con aletas para trimoto de carga / motocarro: 12.5 kW, 21 N·m, cárter 1.5 L, embrague 20 rodillos.",
+          "h1": "Motor carguero HW300 enfriado por agua (clase 300cc · 275.3 mL)"
+        },
+        "vehicle_context": "Motor pesado HW300 (275.3 mL) enfriado por agua para trimoto de carga / motocarro",
+        "quick_verdict": "El CHIXIANG HW300 (clase 300cc, cilindrada real exacta 275.3 mL, 74 × 64 mm) desarrolla 12.5 kW @ 6,500 rpm y 21 N·m @ 4,500 rpm en 39 kg (425 × 385 × 530 mm), refrigerado por agua con aletas en el cilindro. Incorpora cárter de 1.5 L, embrague de arranque reforzado de 20 rodillos, magneto CC de alta salida y ~80 % de piezas compatibles con HW250.",
+        "cooling": "Enfriado por agua con aletas de enfriamiento",
+        "cooling_clutch": "Agua con aletas · Embrague 20 rodillos",
+        "transmission": "5 velocidades adelante (compatible con caja de reversa externa)",
+        "starting": "Arranque eléctrico / pedal",
+        "clutch": "Embrague unidireccional de 20 rodillos + multidisco húmedo manual",
+        "ignition": "CDI · Magneto CC de alta salida",
+        "standard_vs_optional_configs": [
+          { "item": "Cárter y lubricación", "standard": "Bloque pesado refrigerado por agua con aletas y cárter de 1.5 L", "optional": "Cárteres izquierdo/derecho de repuesto (~80 % común HW250/HW300)" },
+          { "item": "Embrague y arranque", "standard": "Bendix de 20 rodillos + embrague reforzado multidisco", "optional": "Kits de reparación y discos en el mismo contenedor" },
+          { "item": "Magneto y eléctrico", "standard": "Magneto CC de alta salida con CDI", "optional": "Juego de CDI, regulador y relé de arranque" },
+          { "item": "Transmisión y reversa", "standard": "5 velocidades adelante de engrane constante", "optional": "Compatible con caja de reversa externa (indicar estrías)" },
+          { "item": "Carburador y enfriamiento", "standard": "Interfaz PZ30 y bomba de agua integrada en motor", "optional": "Carburador PZ30, radiador, electroventilador y mangueras" },
+          { "item": "Empaque exportación", "standard": "Caja 425 × 385 × 530 mm o palet de 12 unidades", "optional": "Contenedor mixto con HW250, CG250SB y repuestos" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Cuna de motocarro / carguero", "detail": "Dimensiones 425 × 385 × 530 mm (39 kg). Verifique ancho de cuna y pernos de soporte en su trimoto." },
+          { "label": "Caja de reversa externa", "detail": "Transmisión de 5 velocidades adelante diseñada para acoplar con caja de retroceso externa; confirme número de estrías." },
+          { "label": "Conexiones de radiador", "detail": "Confirme diámetro de mangueras de bomba de agua y ficha del ventilador." },
+          { "label": "Planos y lista de repuestos", "detail": "Planos de montaje y tabla cruzada HW250/HW300 entregados con la cotización." }
+        ],
+        "related_guides": [
+          { "title": "Catálogo completo de repuestos HW200–HW350", "url": "/es/engine-parts/hw-series", "description": "Kits de reparación emparejados en fábrica y 8 sistemas completos." },
+          { "title": "Motores CG varilleros y agua 125–350 cc", "url": "/es/motor-cg#hw-water-specifications", "description": "Compare CG250SB vs. HW200–HW350." },
+          { "title": "Motor CG250SB enfriado por agua (246.3 cc)", "url": "/es/cg-engine/cg250sb-water-cooled-engine", "description": "Alternativa estándar 250cc de menor peso." },
+          { "title": "Centro de Evidencia y Banco de Pruebas", "url": "/es/evidence", "description": "Verifique prueba 100 % en banco y laboratorios de Chongqing." }
+        ],
+        "faqs": [
+          { "q": "¿Cuál es la cilindrada real exacta del HW300?", "a": "El HW300 (clase 300cc) tiene diámetro × carrera de 74 × 64 mm, equivalentes a 275.3 mL reales. Rinde 12.5 kW @ 6,500 rpm y 21 N·m @ 4,500 rpm con compresión 10.4 : 1." },
+          { "q": "¿Qué ventajas tiene el HW300 frente al CG250SB en cargueros?", "a": "Cuenta con aletas adicionales en el cilindro, cárter de 1.5 L, embrague reforzado de 20 rodillos y magneto de alta salida, ideales para pendientes andinas y carga continua." },
+          { "q": "¿Qué repuestos comparten HW250 y HW300?", "a": "Cerca del 80 % de sus conjuntos (cárteres, bendix de 20 rodillos, ejes de 5 marchas, bomba de agua y magneto) son intercambiables, reduciendo el capital inmovilizado en inventario." },
+          { "q": "¿Trae reversa interna el HW300?", "a": "No. Emplea caja de 5 marchas hacia adelante estándar compatible con cajas de reversa externas de cardán." },
+          { "q": "¿Puedo mezclar motores HW300 con kits de reparación en un pedido?", "a": "Sí. MOQ de 50 motores en contenedor mixto (~10 días hábiles, FOB Guangzhou) con garantía de 60 días desde arribo a puerto." }
+        ]
+      },
+      "pt": {
+        "family": "Série Pesada HW Water para Triciclo de Carga",
+        "seo": {
+          "title": "Motor triciclo de carga HW300 (275.3 mL) refrigerado a água | CHIXIANG MOTOR",
+          "description": "Motor pesado HW300 (classe 300cc, cilindrada real 275.3 mL) refrigerado a água com aletas para triciclo de carga: 12.5 kW, 21 N·m, cárter 1.5 L, placa 20 roletes.",
+          "h1": "Motor pesado HW300 refrigerado a água para triciclo de carga (classe 300cc · 275.3 mL)"
+        },
+        "vehicle_context": "Motor HW300 (275.3 mL) refrigerado a água para triciclo de carga e motocarro",
+        "quick_verdict": "O CHIXIANG HW300 (classe 300cc, cilindrada real exata de 275.3 mL, 74 × 64 mm) entrega 12.5 kW @ 6,500 rpm e 21 N·m @ 4,500 rpm em 39 kg (425 × 385 × 530 mm), com refrigeração a água e aletas no cilindro. Traz cárter de 1.5 L, embreagem de partida de 20 roletes, magneto CC de alta saída e ~80 % de peças compartilhadas com o HW250.",
+        "cooling": "Refrigerado a água com aletas de arrefecimento",
+        "cooling_clutch": "Água com aletas · Placa 20 roletes",
+        "transmission": "5 marchas à frente (compatível com caixa de ré externa)",
+        "starting": "Partida elétrica / pedal",
+        "clutch": "Embreagem unidirecional de 20 roletes + multidisco úmida manual",
+        "ignition": "CDI · Magneto CC de alta saída",
+        "standard_vs_optional_configs": [
+          { "item": "Carcaça e lubrificação", "standard": "Bloco pesado refrigerado a água com aletas e cárter de 1.5 L", "optional": "Carcaças esquerda/direita avulsas (~80 % comuns HW250/HW300)" },
+          { "item": "Embreagem e partida", "standard": "Placa de partida 20 roletes + embreagem multidisco reforçada", "optional": "Kits de retífica e revisão completa no mesmo contêiner" },
+          { "item": "Magneto e elétrica", "standard": "Magneto CC de alta saída com ignição CDI", "optional": "Kit completo de CDI, regulador e relé" },
+          { "item": "Transmissão e marcha à ré", "standard": "Câmbio padrão de 5 marchas à frente", "optional": "Compatível com caixa de ré externa (informar estrias)" },
+          { "item": "Carburador e arrefecimento", "standard": "Interface PZ30 e bomba d'água no motor", "optional": "Carburador PZ30, radiador, ventoinha e mangueiras" },
+          { "item": "Embalagem exportação", "standard": "Caixa 425 × 385 × 530 mm ou palete com 12 unidades", "optional": "Pedido misto com HW250, CG250SB e peças" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Berço do triciclo de carga", "detail": "Dimensões 425 × 385 × 530 mm (39 kg). Confirme o espaçamento dos coxins no chassi." },
+          { "label": "Caixa de marcha à ré externa", "detail": "Câmbio de 5 marchas à frente projetado para caixa de ré externa; confira dentes/estrias de saída." },
+          { "label": "Radiador e mangueiras", "detail": "Verifique diâmetro das conexões da bomba d'água e chicote da ventoinha." },
+          { "label": "Desenhos e lista BOM", "detail": "Desenhos de montagem e lista cruzada HW250/HW300 enviados com a cotação." }
+        ],
+        "related_guides": [
+          { "title": "Catálogo completo de peças HW200–HW350", "url": "/pt/engine-parts/hw-series", "description": "Kits de revisão de fábrica e 8 sistemas completos." },
+          { "title": "Linha CG vareta e água 125–350 cc", "url": "/pt/motor-cg#hw-water-specifications", "description": "Compare CG250SB vs. série pesada HW." },
+          { "title": "Motor CG250SB refrigerado a água", "url": "/pt/cg-engine/cg250sb-water-cooled-engine", "description": "Opção padrão de 246.3 cc para triciclos." },
+          { "title": "Centro de Evidências e Testes", "url": "/pt/evidence", "description": "Teste 100 % em bancada e laboratórios em Chongqing." }
+        ],
+        "faqs": [
+          { "q": "Qual é a cilindrada real exata do HW300?", "a": "O HW300 (classe 300cc) mede 74 × 64 mm, resultando em 275.3 mL reais. Entrega 12.5 kW @ 6,500 rpm e 21 N·m @ 4,500 rpm (taxa 10.4 : 1)." },
+          { "q": "Qual a diferença do HW300 para o CG250SB em triciclo de carga?", "a": "O HW300 conta com aletas no cilindro, cárter de 1.5 L, placa de partida de 20 roletes e magneto de alta saída para trabalho pesado contínuo." },
+          { "q": "Quais peças são compartilhadas entre HW250 e HW300?", "a": "Cerca de 80 % dos conjuntos principais (carcaças, embreagem 20 roletes, eixos de 5 marchas, bomba d'água e magneto) são intercambiáveis entre HW250 e HW300." },
+          { "q": "O HW300 tem marcha à ré interna?", "a": "Não. Possui transmissão padrão de 5 marchas à frente compatível com caixas de ré externas." },
+          { "q": "Posso consolidar HW300 com kits de peças para Luanda ou Maputo?", "a": "Sim. MOQ de 50 motores em carregamento misto (~10 dias úteis, FOB Guangzhou) com suporte documental para CNCA / ARCCLA e garantia de 60 dias após chegada." }
+        ]
+      },
+      "ru": {
+        "family": "Тяжёлая серия HW Water для грузовых трициклов",
+        "seo": {
+          "title": "Двигатель HW300 (275.3 мл) водяного охлаждения для трицикла | CHIXIANG MOTOR",
+          "description": "Тяжёлый двигатель HW300 (класс 300cc, реальный объём 275.3 мл) с водяным охлаждением и оребрением для грузового трицикла: 12.5 кВт, 21 Н·м, картер 1.5 л, муфта 20 роликов.",
+          "h1": "Двигатель HW300 с водяным охлаждением для грузовых трициклов (класс 300cc · 275.3 мл)"
+        },
+        "vehicle_context": "HW300 (275.3 мл) тяжёлый двигатель водяного охлаждения для грузового трицикла / муравья",
+        "quick_verdict": "CHIXIANG HW300 (класс 300cc, точный объём 275.3 мл при 74 × 64 мм) развивает 12.5 kW @ 6,500 rpm и 21 N·m @ 4,500 rpm при весе 39 кг (425 × 385 × 530 мм). Оснащён цилиндром с рёбрами и водяным охлаждением, увеличенным картером на 1.5 л, усиленной муфтой на 20 роликов и разделяет ~80 % запчастей с HW250.",
+        "cooling": "Водяное охлаждение с оребрением цилиндра",
+        "cooling_clutch": "Водяное с оребрением · 20 роликов",
+        "transmission": "Стандартная 5-ст. КПП вперёд (под внешний редуктор реверса)",
+        "starting": "Электростартер / кикстартер",
+        "clutch": "20-роликовая обгонная муфта + ручное многодисковое сцепление",
+        "ignition": "CDI · Магнето DC повышенной мощности",
+        "standard_vs_optional_configs": [
+          { "item": "Картер и смазка", "standard": "Усиленный блок водяного охлаждения с оребрением и картером 1.5 л", "optional": "Левая/правая половинки картера в запас (~80 % совместимость с HW250)" },
+          { "item": "Сцепление и обгонная муфта", "standard": "20-роликовая обгонная муфта + усиленные диски сцепления", "optional": "Заводские ремкомплекты сцепления и КПП в одном контейнере" },
+          { "item": "Магнето и зажигание", "standard": "Магнето DC повышенной мощности и блок CDI", "optional": "Комплект CDI, регулятор напряжения и реле стартера" },
+          { "item": "КПП и реверс", "standard": "5-ступенчатая коробка переднего хода постоянного зацепления", "optional": "Совместимость с внешним редуктором реверса (указать шлицы)" },
+          { "item": "Карбюратор и контур ОЖ", "standard": "Посадка под PZ30 и встроенная помпа охлаждения", "optional": "Карбюратор PZ30, радиатор, электровентилятор и патрубки" },
+          { "item": "Экспортная упаковка", "standard": "Короб 425 × 385 × 530 мм или паллета на 12 шт.", "optional": "Смешанный заказ с HW250, CG250SB и запчастями" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Рама грузового трицикла", "detail": "Габариты 425 × 385 × 530 мм (39 кг). Сверьте посадочное место подрамника и болты крепления." },
+          { "label": "Внешний редуктор реверса", "detail": "В HW300 стоит 5-ст. КПП без встроенного заднего хода — уточните количество шлицов под ваш кардан/редуктор реверса." },
+          { "label": "Патрубки охлаждения", "detail": "Проверьте диаметр штуцеров водяного насоса и разъём вентилятора радиатора." },
+          { "label": "Чертежи и кросс-таблицы", "detail": "Установочные чертежи и перечень взаимозаменяемых узлов HW250/HW300 выдаются при расчёте." }
+        ],
+        "related_guides": [
+          { "title": "Полный каталог запчастей и ремкомплектов HW200–HW350", "url": "/ru/engine-parts/hw-series", "description": "8 базовых узлов и ~80 % унификации HW250/HW300." },
+          { "title": "Линейка двигателей CG и HW Water", "url": "/ru/dvigatel-cg#hw-water-specifications", "description": "Сравнение CG250SB, HW200, HW250, HW300 и HW350." },
+          { "title": "Водяной двигатель CG250SB (246.3 cc)", "url": "/ru/cg-engine/cg250sb-water-cooled-engine", "description": "Стандартная серия 250cc для трициклов." },
+          { "title": "Центр доказательств качества", "url": "/ru/evidence", "description": "100 % стендовая обкатка и испытания в Чунцине." }
+        ],
+        "faqs": [
+          { "q": "Какой реальный рабочий объём у двигателя HW300?", "a": "При обозначении класса 300cc геометрия 74 × 64 мм даёт точный объём 275.3 мл. Мощность 12.5 kW @ 6,500 rpm, крутящий момент 21 N·m @ 4,500 rpm, степень сжатия 10.4 : 1." },
+          { "q": "Чем HW300 превосходит обычный водяной CG250SB?", "a": "Серия HW Water имеет оребрение цилиндра, объём масла 1.5 л, усиленную 20-роликовую муфту и мощный DC-генератор для работы с перегрузом и на затяжных подъёмах." },
+          { "q": "Какие детали взаимозаменяемы между HW250 и HW300?", "a": "Около 80 % деталей: половинки картера, 20-роликовая муфта, валы 5-ст. КПП, помпа охлаждения и магнето подходят как на HW250, так и на HW300." },
+          { "q": "Есть ли в HW300 встроенный задний ход?", "a": "Нет. Используется стандартная 5-ступенчатая коробка переднего хода под внешний редуктор реверса." },
+          { "q": "Можно ли включить двигатели HW300 и ремкомплекты для Узбекистана / РФ в один контейнер?", "a": "Да. Минимальный заказ от 50 двигателей разных моделей с запчастями (~10 рабочих дней, FOB Гуанчжоу), с реестром серийных номеров и гарантией 60 дней после прибытия." }
+        ]
+      },
+      "ar": {
+        "family": "فئة HW Water للخدمة الشاقة للتروسيكلات",
+        "seo": {
+          "title": "محرك تروسيكل HW300 تبريد مياه (275.3 مل) للخدمة الشاقة | CHIXIANG MOTOR",
+          "description": "محرك تروسيكل شحن HW300 (فئة 300cc، السعة الفعلية 275.3 مل) تبريد مياه مع زعانف: 12.5 kW، 21 N·m، كارتيرة زيت 1.5 لتر، بلي مارش 20 بكرة، ~80% قطع مشتركة مع HW250.",
+          "h1": "محرك تروسيكل شحن HW300 تبريد مياه للخدمة الشاقة (فئة 300cc · 275.3 مل)"
+        },
+        "vehicle_context": "محرك HW300 (فئة 300cc · 275.3 مل) للتروسيكلات الثقيلة والتريبورتور",
+        "quick_verdict": "يقدم محرك CHIXIANG HW300 (فئة 300cc بسعة فعلية دقيقة 275.3 مل ومقاس 74 × 64 مم) قدرة 12.5 kW @ 6,500 rpm وعزم 21 N·m @ 4,500 rpm بوزن 39 كجم (425 × 385 × 530 مم). مزود بأسطوانة تبريد مياه مع زعانف، وكارتيرة زيت 1.5 لتر، وبلي مارش مقوى 20 بكرة، ويشترك في ~80% من القطع الأساسية مع HW250.",
+        "cooling": "تبريد مياه مع زعانف تبريد بالأسطوانة",
+        "cooling_clutch": "تبريد مياه بزعانف · دبرياج 20 بكرة",
+        "transmission": "5 سرعات أمامية قياسية (متوافق مع كرونة/فتيس الرجوع الخارجي)",
+        "starting": "تشغيل كهربائي / بالقدم",
+        "clutch": "بلي مارش 20 بكرة + دبرياج يدوي متعدد الأقراص",
+        "ignition": "CDI · مغناطيس تيار مستمر عالي الخرج",
+        "standard_vs_optional_configs": [
+          { "item": "الكارتيرة والتزييت", "standard": "بنية ثقيلة تبريد مياه مع زعانف وكارتيرة زيت 1.5 لتر", "optional": "فخذتين كارتيرة يمين وشمال احتياطية (~80% توافق HW250/HW300)" },
+          { "item": "الدبرياج وبلي المارش", "standard": "بلي مارش 20 بكرة + مجموعة دبرياج ثقيلة", "optional": "طقم عمرة كاملة للمحرك المبرد بالماء في نفس الحاوية" },
+          { "item": "المغناطيس والإشعال", "standard": "مغناطيس DC عالي الخرج مع وحدة CDI", "optional": "طقم كامل من CDI ومنظم الجهد وكتاوت المارش" },
+          { "item": "الجير والرجوع للخلف", "standard": "5 سرعات أمامية بتعشيق ثابت", "optional": "متوافق مع علبة تروس الرجوع الخارجية (حدد عدد الأسنان)" },
+          { "item": "الكربراتير ودائرة المياه", "standard": "مقاس PZ30 وطرمبة مياه مدمجة بالمحرك", "optional": "كربراتير PZ30، ريداتير، مروحة وخراطيم حسب الطلب" },
+          { "item": "التغليف للتصدير", "standard": "كرتون 425 × 385 × 530 مم أو طبلية 12 وحدة", "optional": "شحن حاوية مختلطة مع HW250 و CG250SB وقطع الغيار" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "شاسيه التروسيكل", "detail": "الأبعاد الكلية 425 × 385 × 530 مم (39 كجم)؛ طابق مسافة قواعد المحرك مع حوامل التروسيكل." },
+          { "label": "علبة الرجوع الخارجية", "detail": "ناقل 5 سرعات أمامية بدون رجوع داخلي، ومصمم للعمل مع كرونة/فتيس الرجوع الخارجي؛ تأكد من أسنان عمود الخرج." },
+          { "label": "طرمبة المياه والريداتير", "detail": "راجع مقاس فتحات دخول وخروج المياه ومقبس مروحة التبريد." },
+          { "label": "الرسومات وقوائم القطع", "detail": "تُرسل رسومات الأبعاد وجدول توافق قطع HW250/HW300 مع العرض الرسمي." }
+        ],
+        "related_guides": [
+          { "title": "كتالوج قطع غيار HW200–HW350 وأطقم العمرة", "url": "/ar/engine-parts/hw-series", "description": "8 أنظمة أساسية وأطقم عمرة مطابقة بالمصنع." },
+          { "title": "جدول محركات CG و HW الكاملة", "url": "/ar/cg-engine#hw-water-specifications", "description": "قارن بين CG250SB و HW200–HW350." },
+          { "title": "محرك التروسيكل CG250SB سعة 246.3 cc", "url": "/ar/cg-engine/cg250sb-water-cooled-engine", "description": "الفئة القياسية المبردة بالماء 250cc." },
+          { "title": "مركز الأدلة والفحص بالمصنع", "url": "/ar/evidence", "description": "تفاصيل اختبار 100% ومختبرات تشونغتشينغ." }
+        ],
+        "faqs": [
+          { "q": "ما هي السعة الحقيقية لمحرك التروسيكل HW300؟", "a": "ينتمي لفئة 300cc بمقاس 74 × 64 مم وسعة فعلية دقيقة 275.3 مل، مع قدرة 12.5 kW @ 6,500 rpm وعزم 21 N·m @ 4,500 rpm ونسبة انضغاط 10.4 : 1." },
+          { "q": "ما الفرق بين HW300 و CG250SB لتروسيكلات الشحن؟", "a": "يتميز HW300 بوجود زعانف تبريد على الأسطوانة وكارتيرة زيت 1.5 لتر وبلي مارش مقوى 20 بكرة ومغناطيس عالي الخرج لتحمل الأحمال الشاقة المتواصلة." },
+          { "q": "ما القطع المشتركة بين HW250 و HW300؟", "a": "نحو 80% من الأجزاء الرئيسية مشتركة (الكارتيرة، بلي المارش 20 بكرة، أعمدة الـ 5 سرعات، طرمبة المياه، والمغناطيس)، مما يقلل تكلفة مخزون قطع الغيار." },
+          { "q": "هل يحتوي HW300 على ترس رجوع مدمج؟", "a": "لا، يأتي بناقل 5 سرعات أمامية قياسي ويتوافق مباشرة مع علب تروس الرجوع الخارجية للتروسيكلات." },
+          { "q": "هل يمكن شحن محركات HW300 مع أطقم العمرة في حاوية واحدة؟", "a": "نعم، بدءاً من 50 محركاً في حاوية مختلطة (~10 أيام عمل، FOB قوانغتشو) مع كشف الأرقام التسلسلية وضمان 60 يوماً بعد الوصول للميناء." }
+        ]
+      },
+      "zh-cn": {
+        "family": "HW 捍卫重载水冷三轮动力系列",
+        "seo": {
+          "title": "HW300 300cc 级重载水冷三轮车发动机 (275.3 mL) | 重庆驰翔",
+          "description": "重庆驰翔 HW300（300cc 级，实际排量 275.3 mL）带散热片水冷三轮发动机：74 × 64 mm，12.5 kW，21 N·m，1.5 L 大油底壳，20 滚子离合，HW250/HW300 约 80% 配件通用。",
+          "h1": "HW300 重载水冷三轮车发动机（300cc 级 · 275.3 mL）"
+        },
+        "vehicle_context": "HW300 (300cc 级 · 275.3 mL) 重载水冷货运三轮车发动机",
+        "quick_verdict": "驰翔 HW300（标称 300cc 级，74 × 64 mm 实际排量 275.3 mL）最大功率 12.5 kW @ 6,500 rpm、最大扭矩 21 N·m @ 4,500 rpm，净重 39 kg（外形 425 × 385 × 530 mm）。标配带散热片水冷缸体、1.5 L 大油底壳、20 滚子超越离合器与高输出直流磁电机，与 HW250 核心件通用率约 80%。",
+        "cooling": "水冷（缸体带散热片设计）",
+        "cooling_clutch": "带散热片水冷 · 20 滚子超越离合",
+        "transmission": "标准 5 挡前进（可匹配外置三轮倒挡箱）",
+        "starting": "电启动 / 脚启动",
+        "clutch": "20 滚子超越离合器 + 手动湿式多片离合",
+        "ignition": "CDI · 高输出直流磁电机",
+        "standard_vs_optional_configs": [
+          { "item": "箱体与大油底壳", "standard": "重载带散热片水冷架构，1.5 L 机油容量", "optional": "可配随柜备用左右曲轴箱（HW250/HW300 高度通用）" },
+          { "item": "离合与超越总成", "standard": "20 滚子超越离合器 + 重载湿式多片离合", "optional": "原厂随柜离合/变速维修包打包出货" },
+          { "item": "磁电机与点火", "standard": "高输出直流磁电机 + CDI 点火", "optional": "全套 CDI、稳压整流器、启动继电器配件包" },
+          { "item": "变速箱与外置倒挡", "standard": "标准 5 挡前进常啮合传动", "optional": "适配外置三轮倒挡箱（按副轴花键确认）" },
+          { "item": "化油器与水冷回路", "standard": "PZ30 化油器接口及自带水泵进出水口", "optional": "可配 PZ30 化油器、水箱散热器与风扇管路套件" },
+          { "item": "出口与国内包装", "standard": "425 × 385 × 530 mm 加固纸箱或 12 台托盘", "optional": "支持与 HW200/HW250/CG250SB 及配件同柜混装" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "货运三轮车架吊装", "detail": "外形 425 × 385 × 530 mm（39 kg），请核对三轮副车架摇篮宽度与前/后吊耳孔距。" },
+          { "label": "外置倒挡箱花键匹配", "detail": "HW300 为标准 5 挡前进无内置倒挡结构，配外置倒挡箱/传动轴时请确认输出轴花键齿数。" },
+          { "label": "水泵管路与散热风扇", "detail": "核对进出水管内径及整车散热风扇温控线束插头。" },
+          { "label": "安装图纸与配件互换清单", "detail": "报价同步提供工厂外形安装图与 HW250/HW300 通用配件 BOM 核对表。" }
+        ],
+        "related_guides": [
+          { "title": "HW200–HW350 重载水冷全套配件与大修包目录", "url": "/zh-cn/engine-parts/hw-series", "description": "8 大总成与 4 套原厂配套维修包清单。" },
+          { "title": "CG 水冷与 HW 重载全系列参数对比表", "url": "/zh-cn/cg-engine#hw-water-specifications", "description": "横向对比 CG250SB 与 HW200–HW350。" },
+          { "title": "CG250SB 标准水冷三轮发动机 (246.3 cc)", "url": "/zh-cn/cg-engine/cg250sb-water-cooled-engine", "description": "轻量化常规水冷三轮主力机型。" },
+          { "title": "货运三轮车动力专页", "url": "/zh-cn/cargo-tricycle-engine", "description": "查看国内与出口三轮配套核对清单。" }
+        ],
+        "faqs": [
+          { "q": "HW300 的实际排量和功率扭矩参数是多少？", "a": "HW300 属于 300cc 级，缸径×行程 74 × 64 mm，实际排量 275.3 mL（严禁虚标为 300 mL）。最大功率 12.5 kW @ 6,500 rpm，最大扭矩 21 N·m @ 4,500 rpm，压缩比 10.4 : 1。" },
+          { "q": "HW300 与标准 CG250SB 水冷机相比强在哪里？", "a": "HW 系列在缸体增加了辅助散热片，将油底壳扩大至 1.5 L，采用 20 滚子加强超越离合器与高输出直流磁电机，连续重载爬坡热稳定性更好。" },
+          { "q": "HW250 与 HW300 哪些核心配件可以通用？", "a": "两者在左右曲轴箱体、20 滚子超越离合、5 挡主副轴齿轮、水泵总成、高输出磁电机及全机紧固件上共有约 80% 通用率，显著降低渠道与修理厂备件成本。" },
+          { "q": "HW300 是否自带内置倒挡？", "a": "不带内置倒挡。HW300 采用标准 5 挡前进输出架构，专门搭配三轮车架上的外置倒挡器使用。" },
+          { "q": "能否将 HW300 整机与原厂随柜大修包同柜混装采购？", "a": "可以。标准 MOQ 50 台起支持跨车型与 HW 配件套件同柜混装（常规约 10 个工作日交货，FOB 广州/国内发货），享受 100% 冷热全检及到港后 60 天质保。" }
+        ]
+      }
+    },
+    "cg150-air-cooled-engine": {
+      "fr": {
+        "family": "Série CG Refroidie par Air",
+        "seo": {
+          "title": "Moteur complet CG150 (CX162FMJ) 149 cc refroidi par air en gros | CHIXIANG MOTOR",
+          "description": "Moteur CG à tiges de culbuteurs CG150 (CX162FMJ, 149 cc) : 62 × 49,5 mm, 8,5 kW @ 8 000 rpm, 10 N·m @ 7 500 rpm, 31,05 kg. Vente en gros dès 50 moteurs FOB Guangzhou.",
+          "h1": "Moteur complet CG150 (CX162FMJ) 149 cc refroidi par air"
+        },
+        "vehicle_context": "Moteur complet CG150 (CX162FMJ) 149 cc pour moto-taxi et flotte utilitaire",
+        "quick_verdict": "Le moteur CG à tiges de culbuteurs CHIXIANG CG150 (CX162FMJ) offre 149 cc réels (62 × 49,5 mm) pour 8,5 kW @ 8 000 rpm et 10 N·m @ 7 500 rpm (31,05 kg, 380 × 355 × 500 mm). Modèle de volume idéal pour moto-taxis et flottes utilitaires en commande mixte dès 50 unités.",
+        "cooling": "Refroidissement naturel par air",
+        "cooling_clutch": "Refroidissement par air · Embrayage manuel multidisque à bain d'huile",
+        "transmission": "Boîte 5 vitesses à prise constante",
+        "starting": "Démarrage électrique / au kick",
+        "clutch": "Embrayage manuel multidisque à bain d'huile",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Ensemble moteur & magnéto", "standard": "Moteur complet avec stator/rotor monté d'usine", "optional": "Stator renforcé adapté à l'éclairage de moto-taxi" },
+          { "item": "Démarrage", "standard": "Démarrage électrique + démarrage au kick", "optional": "Kick seul ou démarreur renforcé sur commande" },
+          { "item": "Boîte de vitesses", "standard": "5 vitesses avant à prise constante", "optional": "Grille internationale ou rotative ; marche arrière selon modèle" },
+          { "item": "Arbre d'équilibrage", "standard": "Architecture CG150 à tiges de culbuteurs standard", "optional": "Version avec arbre d'équilibrage sur demande" },
+          { "item": "Carburateur & admission", "standard": "Confirmés sur facture proforma (BOM)", "optional": "Carburateur PZ26 / PZ27 et pipe d'admission" },
+          { "item": "Emballage export Afrique", "standard": "Carton 380 × 355 × 500 mm ou palette 12 moteurs", "optional": "Commande mixte avec CG200, HW300 et pièces détachées" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Ancrages châssis", "detail": "Fixation verticale CG standard ; vérifiez les pattes avant, arrière et tirant supérieur de culasse." },
+          { "label": "Sortie de boîte", "detail": "Confirmez les cannelures de sortie et la chaîne 428/520 avant production." },
+          { "label": "Carburateur & connectique", "detail": "Précisez PZ26/PZ27 et la prise faisceau CDI/régulateur." },
+          { "label": "Plans usine", "detail": "Plans cotés fournis avec le devis FOB Guangzhou." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG150-TOP", "name": "Kit cylindre-piston CG150 (Alésage 62,0 mm)", "spec": "Cylindre, piston, segments et axe pour 149 cc CG150", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-GSK", "name": "Pochette complète de joints et spi moteur CG150", "spec": "Joints haut/bas moteur et bagues d'étanchéité", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-CLT", "name": "Kit embrayage multidisque à bain d'huile CG150", "spec": "Disques garnis, disques lisses et ressorts", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-ELC", "name": "Pack stator, CDI et régulateur CG150", "spec": "Stator magnéto, boîtier CDI, redresseur et relais", "fitment": "CG150 (CX162FMJ)" }
+        ],
+        "related_guides": [
+          { "title": "Gamme complète CG125 à CG250 (Air & Eau)", "url": "/fr/cg-engine", "description": "Comparer CG125, CG150, CG200 et versions à eau." },
+          { "title": "Moteurs CB à arbre à cames en tête", "url": "/fr/cb-engine", "description": "Comparer la distribution par chaîne CB150 face au CG150 à tiges." },
+          { "title": "Moteur complet CG200 (CX163FML)", "url": "/fr/cg-engine/cg200-air-cooled-engine", "description": "Version 197,0 cc (10 kW / 13,5 N·m) pour charge accrue." },
+          { "title": "Centre de preuves qualité", "url": "/fr/evidence", "description": "Test au banc chaud/froid 100 % avant expédition." }
+        ],
+        "faqs": [
+          { "q": "Quelles sont les données exactes du CG150 (CX162FMJ) ?", "a": "Cylindrée réelle 149 cc (62 × 49,5 mm), puissance 8,5 kW @ 8 000 rpm, couple 10 N·m @ 7 500 rpm, compression 9,2 : 1 et poids net 31,05 kg." },
+          { "q": "Peut-on commander le CG150 avec carburateur PZ26 ou PZ27 ?", "a": "Oui, le modèle de carburateur (PZ26/PZ27) et le bobinage stator sont confirmés dans votre BOM et facture proforma." },
+          { "q": "Existe-t-il un CG150 avec arbre d'équilibrage ?", "a": "Oui, l'option arbre d'équilibrage est disponible pour réduire les vibrations sur les motos urbaines." },
+          { "q": "CG150 à tiges de culbuteurs ou CB150 à chaîne : lequel choisir ?", "a": "Le CG150 à tiges (8,5 kW / 31,05 kg) facilite l'entretien mécanique de terrain, tandis que le CB150 à distribution par chaîne (8,2 kW / 29 kg) vise les motos routières plus légères." },
+          { "q": "Quel est le MOQ pour l'Afrique de l'Ouest et Centrale ?", "a": "50 moteurs minimum en commande mixte de plusieurs modèles, FOB Guangzhou vers Abidjan, Douala, Cotonou ou Dakar (~10 jours ouvrables, garantie 60 jours)." }
+        ]
+      },
+      "es": {
+        "family": "Serie CG Varillero Enfriado por Aire",
+        "seo": {
+          "title": "Motor varillero CG150 (CX162FMJ) 149 cc enfriado por aire | CHIXIANG MOTOR",
+          "description": "Motor varillero CG150 (CX162FMJ, 149 cc): 62 × 49.5 mm, 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, 31.05 kg. MOQ 50 unidades carga mixta FOB Guangzhou.",
+          "h1": "Motor varillero CG150 (CX162FMJ) 149 cc enfriado por aire"
+        },
+        "vehicle_context": "Motor varillero CG150 (CX162FMJ) 149 cc para moto de trabajo y mototaxi",
+        "quick_verdict": "El motor varillero OHV CHIXIANG CG150 (CX162FMJ) rinde 149 cc reales (62 × 49.5 mm), 8.5 kW @ 8,000 rpm y 10 N·m @ 7,500 rpm en 31.05 kg (380 × 355 × 500 mm). Es la plataforma más solicitada para motos de trabajo, reparto y flotas en Latinoamérica desde 50 unidades.",
+        "cooling": "Enfriado por aire natural",
+        "cooling_clutch": "Aire natural · Embrague manual multidisco húmedo",
+        "transmission": "5 velocidades de engrane constante",
+        "starting": "Arranque eléctrico / pedal",
+        "clutch": "Manual multidisco en baño de aceite",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Motor base y magneto", "standard": "Motor completo ensamblado con estator/rotor", "optional": "Estator reforzado para mayor carga de luces" },
+          { "item": "Arranque", "standard": "Eléctrico + pedal de arranque", "optional": "Solo pedal o arranque reforzado por pedido" },
+          { "item": "Transmisión", "standard": "5 velocidades hacia adelante", "optional": "Internacional o rotativa; reversa opcional según modelo" },
+          { "item": "Eje balanceador", "standard": "Arquitectura varillera estándar CG150", "optional": "Versión con eje balanceador para menor vibración" },
+          { "item": "Carburador y admisión", "standard": "Confirmado en BOM y Proforma Invoice", "optional": "Carburador PZ26 / PZ27 y pipa de admisión" },
+          { "item": "Empaque export", "standard": "Caja 380 × 355 × 500 mm o palet de 12 unidades", "optional": "Contenedor mixto con CG200, HW300 y kits" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Anclajes de cuadro", "detail": "Patrón vertical CG OHV; confirme orejas delanteras, traseras y tirante de culata." },
+          { "label": "Piñón de salida", "detail": "Confirme estrías de salida y cadena 428/520." },
+          { "label": "Carburador y estator", "detail": "Indique PZ26/PZ27 y tipo de ficha eléctrica CDI." },
+          { "label": "Planos de fábrica", "detail": "Planos dimensionales entregados con cotización oficial." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG150-TOP", "name": "Kit cilindro y pistón CG150 (62.0 mm)", "spec": "Cilindro, pistón, anillos y pasador para 149 cc", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-GSK", "name": "Juego completo de empaquetaduras CG150", "spec": "Empaques de motor completo y retenes", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-CLT", "name": "Kit de embrague multidisco húmedo CG150", "spec": "Discos de fricción, acero y resortes", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-ELC", "name": "Paquete estator, CDI y regulador CG150", "spec": "Bobina de magneto, CDI, regulador y relé", "fitment": "CG150 (CX162FMJ)" }
+        ],
+        "related_guides": [
+          { "title": "Matriz completa de motores varilleros CG", "url": "/es/motor-cg", "description": "Compare CG125, CG150, CG175, CG200 y CG250." },
+          { "title": "Motor cadenillero CB150–CB250", "url": "/es/motor-cb", "description": "Compare varillero CG150 vs. cadenillero CB150." },
+          { "title": "Motor varillero CG200 (CX163FML)", "url": "/es/cg-engine/cg200-air-cooled-engine", "description": "Suba a 197.0 cc y 13.5 N·m para mayor carga." },
+          { "title": "Centro de Evidencia", "url": "/es/evidence", "description": "Prueba en banco al 100 % antes de despacho." }
+        ],
+        "faqs": [
+          { "q": "¿Cuáles son los datos verificados del motor varillero CG150?", "a": "Cilindrada real 149 cc (62 × 49.5 mm), 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, compresión 9.2 : 1 y peso neto 31.05 kg." },
+          { "q": "¿Puedo pedirlo con carburador PZ26 o PZ27?", "a": "Sí, se especifica en su lista de pedido (BOM) y Factura Proforma." },
+          { "q": "¿Hay versión con eje balanceador?", "a": "Sí, ofrecemos configuración con eje balanceador para motos urbanas." },
+          { "q": "¿CG150 varillero o CB150 cadenillero para flotas?", "a": "El CG150 varillero (8.5 kW / 31.05 kg) destaca por su mantenimiento simple en taller; el CB150 cadenillero (8.2 kW / 29 kg) aporta menor peso y régimen más alto." },
+          { "q": "¿Cuál es el pedido mínimo?", "a": "MOQ de 50 unidades en contenedor mixto (~10 días hábiles, FOB Guangzhou, 60 días de garantía)." }
+        ]
+      },
+      "pt": {
+        "family": "Série CG Vareta Refrigerada a Ar",
+        "seo": {
+          "title": "Motor vareta CG150 (CX162FMJ) 149 cc refrigerado a ar | CHIXIANG MOTOR",
+          "description": "Motor completo vareta CG150 (CX162FMJ, 149 cc): 62 × 49.5 mm, 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, 31.05 kg. MOQ 50 unidades pedido misto FOB Guangzhou.",
+          "h1": "Motor vareta CG150 (CX162FMJ) 149 cc refrigerado a ar"
+        },
+        "vehicle_context": "Motor vareta CG150 (CX162FMJ) 149 cc para moto de trabalho e mototáxi",
+        "quick_verdict": "O motor vareta (OHV) CHIXIANG CG150 (CX162FMJ) entrega 149 cc reais (62 × 49.5 mm), 8.5 kW @ 8,000 rpm e 10 N·m @ 7,500 rpm em 31.05 kg (380 × 355 × 500 mm). Base comercial ideal para frotas de mototáxi e entregas a partir de 50 unidades.",
+        "cooling": "Refrigeração natural a ar",
+        "cooling_clutch": "A ar · Embreagem manual multidisco úmida",
+        "transmission": "5 marchas de engrenamento constante",
+        "starting": "Partida elétrica / pedal",
+        "clutch": "Manual multidisco em banho de óleo",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Motor base e magneto", "standard": "Conjunto completo com estator/rotor de fábrica", "optional": "Estator de maior capacidade conforme pedido" },
+          { "item": "Partida", "standard": "Partida elétrica + pedal", "optional": "Somente pedal ou partida reforçada" },
+          { "item": "Câmbio", "standard": "5 marchas à frente", "optional": "Internacional ou rotativo; ré opcional por modelo" },
+          { "item": "Eixo balanceiro", "standard": "Arquitetura vareta padrão CG150", "optional": "Configuração com eixo balanceiro" },
+          { "item": "Carburador e coletor", "standard": "Confirmado na Proforma Invoice", "optional": "Carburador PZ26 / PZ27 com coletor" },
+          { "item": "Embalagem exportação", "standard": "Caixa 380 × 355 × 500 mm ou palete 12 un.", "optional": "Contêiner misto com CG200, HW300 e peças" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Fixação no quadro", "detail": "Padrão vertical CG vareta; confira suportes dianteiro, traseiro e superior." },
+          { "label": "Eixo de saída", "detail": "Confirme estrias e passo de corrente 428/520." },
+          { "label": "Carburador e chicote", "detail": "Especifique PZ26/PZ27 e pinagem do chicote CDI." },
+          { "label": "Desenhos dimensionais", "detail": "Enviados junto com a cotação formal." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG150-TOP", "name": "Kit cilindro e pistão CG150 (62,0 mm)", "spec": "Cilindro, pistão, anéis e pino para 149 cc", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-GSK", "name": "Jogo completo de juntas CG150", "spec": "Juntas do motor completo e retentores", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-CLT", "name": "Kit embreagem multidisco CG150", "spec": "Discos de fricção, aço e molas", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-ELC", "name": "Kit estator, CDI e regulador CG150", "spec": "Estator, módulo CDI, retificador e relé", "fitment": "CG150 (CX162FMJ)" }
+        ],
+        "related_guides": [
+          { "title": "Matriz completa de motores vareta CG", "url": "/pt/motor-cg", "description": "Compare toda a linha CG a ar e água." },
+          { "title": "Motores CB corrente de comando", "url": "/pt/motor-cb", "description": "Compare CG150 vareta com CB150 OHC." },
+          { "title": "Motor vareta CG200 (CX163FML)", "url": "/pt/cg-engine/cg200-air-cooled-engine", "description": "Versão 197.0 cc para maior torque." },
+          { "title": "Centro de Evidências", "url": "/pt/evidence", "description": "Teste 100 % em bancada em Chongqing." }
+        ],
+        "faqs": [
+          { "q": "Quais os dados exatos do CG150 (CX162FMJ)?", "a": "149 cc reais (62 × 49.5 mm), 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, compressão 9.2 : 1 e 31.05 kg." },
+          { "q": "Posso escolher carburador PZ26 ou PZ27?", "a": "Sim, especificado na lista BOM e Proforma antes da montagem." },
+          { "q": "Tem opção com eixo balanceiro?", "a": "Sim, disponível para reduzir vibração em uso urbano." },
+          { "q": "CG150 vareta ou CB150 corrente de comando?", "a": "O CG150 vareta (8.5 kW / 31.05 kg) prioriza manutenção simples em oficina; o CB150 OHC (8.2 kW / 29 kg) entrega menor peso." },
+          { "q": "Qual o pedido mínimo?", "a": "MOQ de 50 unidades em carregamento misto (~10 dias úteis, FOB Guangzhou, garantia de 60 dias)." }
+        ]
+      },
+      "ru": {
+        "family": "Серия CG воздушного охлаждения (штанговые)",
+        "seo": {
+          "title": "Двигатель CG150 (CX162FMJ) 149 куб. см оптом | CHIXIANG MOTOR",
+          "description": "Штанговый двигатель CG150 (CX162FMJ, 149 cc): 62 × 49.5 мм, 8.5 кВт @ 8000 об/мин, 10 Н·м @ 7500 об/мин, 31.05 кг. MOQ 50 шт. FOB Гуанчжоу.",
+          "h1": "Штанговый двигатель CG150 (CX162FMJ) 149 cc воздушного охлаждения"
+        },
+        "vehicle_context": "Двигатель CG150 (CX162FMJ) 149 cc для рабочих и дорожных мотоциклов",
+        "quick_verdict": "Нижневальный штанговый двигатель CHIXIANG CG150 (CX162FMJ) объёмом 149 cc (62 × 49.5 мм) выдаёт 8.5 kW @ 8,000 rpm и 10 N·m @ 7,500 rpm при весе 31.05 кг (380 × 355 × 500 мм). Популярная база для коммерческих мотоциклов при заказе от 50 штук.",
+        "cooling": "Естественное воздушное охлаждение",
+        "cooling_clutch": "Воздушное · Ручное многодисковое в масляной ванне",
+        "transmission": "5-ступенчатая постоянного зацепления",
+        "starting": "Электростартер / кикстартер",
+        "clutch": "Ручное многодисковое в масляной ванне",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Двигатель и генератор", "standard": "Двигатель в сборе со штатным статором/ротором", "optional": "Усиленная катушка статора под нагрузку оптики" },
+          { "item": "Запуск", "standard": "Электростартер + кикстартер", "optional": "Только кикстартер или усиленный стартер" },
+          { "item": "КПП", "standard": "5 передач вперёд", "optional": "Международная или круговая; опция реверса по модели" },
+          { "item": "Балансирный вал", "standard": "Классическая штанговая схема CG150", "optional": "Модификация с балансирным валом" },
+          { "item": "Карбюратор", "standard": "Фиксируется в спецификации PI", "optional": "PZ26 / PZ27 и впускной коллектор" },
+          { "item": "Упаковка", "standard": "Короб 380 × 355 × 500 мм или паллета 12 шт.", "optional": "Смешанная погрузка с CG200, HW300 и запчастями" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Точки крепления", "detail": "Вертикальная база CG OHV; сверьте передние/задние крепления и верхнее крепление ГБЦ." },
+          { "label": "Выходной вал", "detail": "Уточните шлицы и шаг цепи 428/520." },
+          { "label": "Карбюратор и проводка", "detail": "Укажите PZ26/PZ27 и тип фишки CDI." },
+          { "label": "Чертежи", "detail": "Посадочные чертежи прилагаются к официальному расчёту." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG150-TOP", "name": "ЦПГ (цилиндр + поршень) CG150 (62.0 мм)", "spec": "Цилиндр, поршень, кольца и палец на 149 cc", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-GSK", "name": "Полный комплект прокладок и сальников CG150", "spec": "Прокладки двигателя и сальники", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-CLT", "name": "Комплект сцепления CG150", "spec": "Фрикционные/стальные диски и пружины", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-ELC", "name": "Статор, CDI и реле-регулятор CG150", "spec": "Катушка магнето, коммутатор CDI, регулятор и реле", "fitment": "CG150 (CX162FMJ)" }
+        ],
+        "related_guides": [
+          { "title": "Вся серия двигателей CG", "url": "/ru/dvigatel-cg", "description": "Сравнение моделей CG125–CG250 и водяных серий." },
+          { "title": "Цепные двигатели CB150–CB250 (OHC)", "url": "/ru/dvigatel-cb", "description": "Сравнение штангового CG150 и цепного CB150." },
+          { "title": "Штанговый двигатель CG200 (CX163FML)", "url": "/ru/cg-engine/cg200-air-cooled-engine", "description": "Версия 197.0 cc с повышенным крутящим моментом." },
+          { "title": "Центр доказательств", "url": "/ru/evidence", "description": "100 % стендовые испытания в Чунцине." }
+        ],
+        "faqs": [
+          { "q": "Каковы подтверждённые характеристики CG150 (CX162FMJ)?", "a": "149 cc (62 × 49.5 мм), 8.5 kW @ 8,000 rpm, 10 N·m @ 7,500 rpm, степень сжатия 9.2 : 1, вес 31.05 кг." },
+          { "q": "Можно ли укомплектовать карбюратором PZ26 или PZ27?", "a": "Да, тип карбюратора и параметры статора фиксируются в спецификации до сборки." },
+          { "q": "Есть ли вариант с балансирным валом?", "a": "Да, возможна поставка с балансирным валом для снижения вибрации." },
+          { "q": "Чем штанговый CG150 отличается от цепного CB150?", "a": "CG150 (8.5 кВт / 31.05 кг) проще в ремонте в полевых условиях; верхневальный CB150 (8.2 кВт / 29 кг) легче и ориентирован на дорожную динамику." },
+          { "label": "Каков MOQ и условия отгрузки?", "q": "Каков минимальный заказ и условия отгрузки?", "a": "MOQ 50 двигателей разных моделей и запчастей (~10 рабочих дней, FOB Гуанчжоу, гарантия 60 дней)." }
+        ]
+      },
+      "ar": {
+        "family": "فئة CG أسياخ تبريد بالهواء",
+        "seo": {
+          "title": "محرك CG150 أسياخ (CX162FMJ) سعة 149 cc تبريد هواء بالجملة | CHIXIANG MOTOR",
+          "description": "محرك سي جي أسياخ CG150 (CX162FMJ، سعة 149 cc): قطر × شوط 62 × 49.5 مم، 8.5 kW، 10 N·m، وزن 31.05 كجم. حد أدنى 50 وحدة FOB قوانغتشو.",
+          "h1": "محرك سي جي أسياخ CG150 (CX162FMJ) سعة 149 cc تبريد بالهواء"
+        },
+        "vehicle_context": "محرك CG150 (CX162FMJ) سعة 149 cc للدراجات النارية التجارية والعملية",
+        "quick_verdict": "يوفر محرك سي جي أسياخ CHIXIANG CG150 (CX162FMJ) سعة 149 cc (قطر × شوط 62 × 49.5 مم) بقدرة 8.5 kW @ 8,000 rpm وعزم 10 N·m @ 7,500 rpm ووزن 31.05 كجم (380 × 355 × 500 مم)، وهو الاختيار التجاري الأكثر شيوعاً للدراجات النارية بحد أدنى 50 وحدة.",
+        "cooling": "تبريد طبيعي بالهواء",
+        "cooling_clutch": "تبريد بالهواء · قابض يدوي متعدد الأقراص رطب",
+        "transmission": "5 سرعات بتعشيق ثابت",
+        "starting": "تشغيل كهربائي / بالقدم",
+        "clutch": "يدوي متعدد الأقراص في حمام زيت",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "المحرك والمغناطيس", "standard": "محرك كامل مع ملف ستاتور ودوار المصنع", "optional": "ملف شحن عالي القدرة حسب طلب السوق" },
+          { "item": "نظام التشغيل", "standard": "مارش كهربائي + منافلة", "optional": "منافلة فقط أو مارش مقوى" },
+          { "item": "ناقل الحركة", "standard": "5 سرعات أمامية", "optional": "تعشيق دولي أو دائري؛ ترس رجوع حسب الطراز" },
+          { "item": "عمود الاتزان", "standard": "تصميم أسياخ CG150 قياسي", "optional": "نسخة بعمود اتزان (حدافة)" },
+          { "item": "الكربراتير", "standard": "يؤكد في الفاتورة المبدئية", "optional": "كربراتير PZ26 / PZ27 وكوع السحب" },
+          { "item": "التغليف التصديري", "standard": "كرتون 380 × 355 × 500 مم أو طبلية 12 وحدة", "optional": "شحن مختلط مع CG200 و HW300 وقطع الغيار" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "حوامل الشاسيه", "detail": "تصميم أسياخ عمودي قياسي؛ طابق نقاط التثبيت الأمامية والخلفية والعلوية." },
+          { "label": "ترس الخرج", "detail": "تأكد من أسنان عمود الخرج والجنزير 428/520." },
+          { "label": "الكربراتير والضفيرة", "detail": "حدد PZ26/PZ27 ومقابس أسلاك الـ CDI." },
+          { "label": "رسومات المصنع", "detail": "تُرسل رسومات الأبعاد مع عرض السعر." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG150-TOP", "name": "طقم سلندر وبستم CG150 (قطر 62.0 مم)", "spec": "سلندر وبستم وشنبر وبنز لسعة 149 cc", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-GSK", "name": "طقم جوانات عمرة كاملة CG150", "spec": "جوانات وأولسيهات المحرك الكامل", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-CLT", "name": "طقم دبرياج متعدد الأقراص CG150", "spec": "أقراص احتكاك وفولاذ ونوابض", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-ELC", "name": "طقم ملف وCDI ومنظم CG150", "spec": "ستاتور، وحدة CDI، بلاطة شحن وكتاوت", "fitment": "CG150 (CX162FMJ)" }
+        ],
+        "related_guides": [
+          { "title": "مصفوفة محركات CG الكاملة", "url": "/ar/cg-engine", "description": "قارن بين فئات CG125–CG250 والتبريد المائي." },
+          { "title": "محركات CB كاتينة OHC", "url": "/ar/cb-engine", "description": "قارن أسياخ CG150 مقابل كاتينة CB150." },
+          { "title": "محرك CG200 أسياخ (CX163FML)", "url": "/ar/cg-engine/cg200-air-cooled-engine", "description": "سعة 197.0 cc وعزم أكبر." },
+          { "title": "مركز الأدلة", "url": "/ar/evidence", "description": "اختبار 100% قبل الشحن من تشونغتشينغ." }
+        ],
+        "faqs": [
+          { "q": "ما السعة والقدرة المؤكدة لمحرك CG150 (CX162FMJ)؟", "a": "149 cc (62 × 49.5 مم)، قدرة 8.5 kW @ 8,000 rpm، عزم 10 N·m @ 7,500 rpm، انضغاط 9.2 : 1 ووزن صافي 31.05 كجم." },
+          { "q": "هل يمكن طلب كربراتير PZ26 أو PZ27؟", "a": "نعم، يتم تثبيت مواصفات الكربراتير والملف في الفاتورة المبدئية قبل التجميع." },
+          { "q": "هل يتوفر بعمود اتزان (حدافة)؟", "a": "نعم، تتوفر نسخة بعمود اتزان لتقليل الاهتزاز." },
+          { "q": "أسياخ CG150 أم كاتينة CB150: أيهما أنسب؟", "a": "CG150 أسياخ (8.5 kW / 31.05 كجم) يتميز بسهولة الصيانة الميدانية، بينما CB150 كاتينة (8.2 kW / 29 كجم) أخف وزناً للسرعات الأعلى." },
+          { "q": "ما الحد الأدنى للطلب وشروط الشحن؟", "a": "50 محركاً في حاوية مختلطة (~10 أيام عمل، FOB قوانغتشو، ضمان 60 يوماً بعد الوصول)." }
+        ]
+      },
+      "zh-cn": {
+        "family": "CG 风冷顶杆机系列",
+        "seo": {
+          "title": "CG150 (CX162FMJ) 149 cc 风冷整机工厂批发 | 重庆驰翔",
+          "description": "重庆驰翔 CG150（CX162FMJ）149 cc 风冷顶杆机：缸径行程 62 × 49.5 mm，8.5 kW @ 8,000 rpm，10 N·m @ 7,500 rpm，净重 31.05 kg。50 台起混柜出口 FOB 广州。",
+          "h1": "CG150 (CX162FMJ) 149 cc 风冷顶杆摩托车发动机"
+        },
+        "vehicle_context": "CG150 (CX162FMJ) 149 cc 风冷顶杆两轮商用主力动力",
+        "quick_verdict": "驰翔 CG150 (CX162FMJ) 风冷顶杆机实际排量 149 cc（62 × 49.5 mm），最大功率 8.5 kW @ 8,000 rpm，最大扭矩 10 N·m @ 7,500 rpm，净重 31.05 kg（外形 380 × 355 × 500 mm）。结构成熟稳定，适合亚非拉大批量两轮通勤与商用整车装配及售后替换市场。",
+        "cooling": "自然风冷",
+        "cooling_clutch": "自然风冷 · 手动湿式多片离合",
+        "transmission": "国际 5 挡常啮合",
+        "starting": "电启动 / 脚启动",
+        "clutch": "手动湿式多片离合器",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "基础整机与磁电机", "standard": "整机出厂装配原厂定子/转子磁电机", "optional": "可选配高输出线圈以适配整车大灯负载" },
+          { "item": "启动方式", "standard": "电启动 + 脚启动双配置", "optional": "可选单脚启动或加强型电启动电机" },
+          { "item": "变速与换挡", "standard": "5 挡前进常啮合", "optional": "国际挡/循环挡，部分型号可选倒挡" },
+          { "item": "平衡轴", "standard": "标准无平衡轴 CG150 架构", "optional": "可选内置平衡轴减振配置" },
+          { "item": "化油器与进气管", "standard": "在采购订单 BOM 与形式发票中确认", "optional": "PZ26 / PZ27 化油器及进气管" },
+          { "item": "包装与混柜", "standard": "380 × 355 × 500 mm 纸箱或 12 台托盘", "optional": "支持与 CG200、HW300 及大修套件混装" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "车架挂耳接口", "detail": "立式顶杆机标准悬挂孔位，下单前请核对前后及上缸头拉杆孔距。" },
+          { "label": "输出链轮规格", "detail": "确认副轴花键与 428/520 链条匹配关系。" },
+          { "label": "化油器与插头", "detail": "在 BOM 中明确 PZ26/PZ27 及磁电机接插件定义。" },
+          { "label": "安装外形图纸", "detail": "随正式报价提供完整三维或二维安装尺寸图。" }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG150-TOP", "name": "CG150 原厂套缸活塞组件（62.0 mm）", "spec": "62.0 mm 缸体、活塞、环与活塞销", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-GSK", "name": "CG150 全机大修垫片与油封包", "spec": "全套垫片与油封组", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-CLT", "name": "CG150 湿式多片离合器套件", "spec": "摩擦片、钢片与压盘弹簧", "fitment": "CG150 (CX162FMJ)" },
+          { "pn": "CX-CG150-ELC", "name": "CG150 线圈、CDI 与整流器套装", "spec": "高输出定子线圈、CDI、整流器及继电器", "fitment": "CG150 (CX162FMJ)" }
+        ],
+        "related_guides": [
+          { "title": "CG 风冷与水冷发动机全系矩阵", "url": "/zh-cn/cg-engine", "description": "查看 CG125–CG250 全系对比参数。" },
+          { "title": "CB 顶置凸轮轴链条机系列", "url": "/zh-cn/cb-engine", "description": "对比 CG150 顶杆与 CB150 链条机差异。" },
+          { "title": "CG200 (CX163FML) 风冷发动机", "url": "/zh-cn/cg-engine/cg200-air-cooled-engine", "description": "升级 197.0 cc（10 kW / 13.5 N·m）商用动力。" },
+          { "title": "公开证据中心", "url": "/zh-cn/evidence", "description": "查看 100% 冷热全检及实验室数据。" }
+        ],
+        "faqs": [
+          { "q": "CG150 (CX162FMJ) 的核心参数是多少？", "a": "实际排量 149 cc（62 × 49.5 mm），最大功率 8.5 kW @ 8,000 rpm，最大扭矩 10 N·m @ 7,500 rpm，压缩比 9.2 : 1，净重 31.05 kg。" },
+          { "q": "是否支持选配 PZ26 或 PZ27 化油器与高输出磁电机？", "a": "支持。装配前在订单 BOM 及形式发票（PI）中书面确认即可。" },
+          { "q": "CG150 是否有内置平衡轴版本？", "a": "有，常规出货为无平衡轴顶杆版，如两轮街车需要低振动体验可指定平衡轴版本。" },
+          { "q": "CG150 与 CB150 在商用车队选型上如何取舍？", "a": "CG150 顶杆机（8.5 kW / 31.05 kg）皮实耐造且路边修理工极易上手；CB150 链条机（8.2 kW / 29 kg）自重更轻、高转速延展性更好。" },
+          { "q": "起订量与交货条款如何规定？", "a": "50 台起批支持混柜，常规约 10 个工作日发货（FOB 广州/国内发货），到港后享受 60 天质量保障。" }
+        ]
+      }
+    },
+    "cg250sb-water-cooled-engine": {
+      "fr": {
+        "family": "Série CG Refroidie par Eau",
+        "seo": {
+          "title": "Moteur tricycle CG250SB (246,3 cc) refroidi par eau en gros | CHIXIANG MOTOR",
+          "description": "Moteur CG250SB refroidi liquide (eau) 246,3 cc pour tricycle cargo : 70 × 64 mm, 11,5 kW @ 7 000 rpm (±5%), 19,5 N·m @ 5 000 rpm (±5%), colis 32,9 kg. MOQ 50 FOB Guangzhou.",
+          "h1": "Moteur tricycle cargo CG250SB (246,3 cc) à refroidissement liquide (eau)"
+        },
+        "vehicle_context": "Moteur CG250SB 246,3 cc refroidi par eau pour tricycle cargo",
+        "quick_verdict": "Le CHIXIANG CG250SB délivre 246,3 cc réels (70 × 64 mm) avec 11,5 kW @ 7 000 rpm (±5%) et 19,5 N·m @ 5 000 rpm (±5%) dans un colis de 425 × 385 × 530 mm pour 32,9 kg brut—conçu pour le tricycle 250/300cc à eau privilégiant légèreté et compétitivité dès 50 unités.",
+        "cooling": "Refroidissement liquide (eau)",
+        "cooling_clutch": "Refroidissement liquide (eau) · Embrayage manuel multidisque",
+        "transmission": "Boîte 5 vitesses à prise constante",
+        "starting": "Démarrage électrique / au kick",
+        "clutch": "Embrayage manuel multidisque à bain d'huile",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Base refroidie par eau", "standard": "Moteur vertical CG250SB (70 × 64 mm, 246,3 cc)", "optional": "Évolution possible vers série lourde HW250 / HW300 (carter 1,5 L)" },
+          { "item": "Boîte & Marche arrière", "standard": "5 vitesses avant à prise constante", "optional": "Version marche arrière intégrée ou externe confirmée par modèle et commande" },
+          { "item": "Démarrage & Embrayage", "standard": "Électrique / kick · Embrayage manuel multidisque", "optional": "Kit disques renforcés dans le même conteneur" },
+          { "item": "Circuit de refroidissement", "standard": "Pompe à eau sur moteur et raccords entrée/sortie", "optional": "Radiateur, ventilateur et kit durites selon BOM" },
+          { "item": "Carburateur & Électrique", "standard": "Confirmés sur facture proforma (BOM)", "optional": "Carburateur PZ30, CDI, régulateur et relais" },
+          { "item": "Emballage export Afrique", "standard": "Carton 425 × 385 × 530 mm (32,9 kg brut) ou palette 12 unités", "optional": "Commande mixte avec CG200, HW250, HW300 et kits d'entretien" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Berceau tricycle cargo", "detail": "Encombrement 425 × 385 × 530 mm ; vérifiez l'écartement du berceau et les supports moteur." },
+          { "label": "Configuration marche arrière", "detail": "La marche arrière (intégrée ou externe) dépend de la référence exacte ; précisez vos cannelures." },
+          { "label": "Raccordement radiateur", "detail": "Contrôlez les diamètres de durites et le circuit de dérivation." },
+          { "label": "Plans cotés usine", "detail": "Plans d'installation joints à votre devis FOB Guangzhou." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG250SB-TOP", "name": "Kit cylindre-piston eau CG250SB (70,0 mm)", "spec": "Cylindre à eau, piston, segments et axe pour 246,3 cc", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-GSK", "name": "Kit de réfection moteur refroidi par eau (joints CG250SB)", "spec": "Joint de culasse, embase, pompe à eau et carters", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-WPK", "name": "Kit turbine de pompe à eau & garniture CG250SB", "spec": "Axe de turbine, roulement et joint mécanique d'étanchéité", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-CLT", "name": "Kit embrayage multidisque CG250SB", "spec": "Disques renforcés et ressorts pour tricycle cargo", "fitment": "CG250SB" }
+        ],
+        "related_guides": [
+          { "title": "HW300 Tricycle Cargo 275,3 mL à eau", "url": "/fr/cg-engine/hw300-water-cooled-engine", "description": "Comparer CG250SB (32,9 kg colis) face au HW300 lourd (1,5 L, 20 rouleaux)." },
+          { "title": "Gamme complète CG & HW à eau", "url": "/fr/cg-engine#cg-water-cooled", "description": "Comparer CG150SB, CG175SB, CG200SB et CG250SB." },
+          { "title": "Catalogue pièces HW200–HW350", "url": "/fr/engine-parts/hw-series", "description": "Pièces et kits de réfection moteur refroidi par eau." },
+          { "title": "Devis & Export Afrique (Abidjan/Douala/Cotonou/Dakar)", "url": "/fr/contact", "description": "Consolider moteurs et pièces détachées dans un même conteneur." }
+        ],
+        "faqs": [
+          { "q": "Quelle différence entre le CG250SB à eau (246,3 cc) et le CG250 à air (229,5 cc) ?", "a": "Le CG250SB mesure 70 × 64 mm (246,3 cc, refroidissement liquide (eau), 11,5 kW, 19,5 N·m), alors que le CG250 à air mesure 67 × 65 mm (229,5 cc, 10,5 kW, 16,5 N·m). Précisez toujours le code exact." },
+          { "q": "Quand choisir CG250SB plutôt que HW250 ou HW300 ?", "a": "Choisissez CG250SB (colis 32,9 kg) pour un tricycle cargo standard privilégiant poids réduit et coût unitaire ; optez pour HW250/HW300 pour les très fortes charges avec carter 1,5 L et embrayage 20 rouleaux." },
+          { "q": "La marche arrière est-elle de série sur CG250SB ?", "a": "Non, elle n'est pas systématique sur tous les modèles ; la marche arrière intégrée ou compatible boîte externe doit être précisée dans la commande." },
+          { "q": "Quelles sont les dimensions colis du CG250SB ?", "a": "425 × 385 × 530 mm pour 32,9 kg brut en carton renforcé, ou sur palettes export de 12 unités." },
+          { "q": "Quel est le MOQ et la garantie vers l'Afrique ?", "a": "MOQ 50 moteurs en commande mixte, délai ~10 jours ouvrables FOB Guangzhou, test au banc à 100 % et garantie 60 jours après arrivée au port." }
+        ]
+      },
+      "es": {
+        "family": "Serie CG Enfriada por Agua",
+        "seo": {
+          "title": "Motor carguero CG250SB (246.3 cc) enfriado por agua | CHIXIANG MOTOR",
+          "description": "Motor CG250SB enfriado por agua de 246.3 cc para trimoto de carga / motocarro: 70 × 64 mm, 11.5 kW @ 7,000 rpm (±5%), 19.5 N·m (±5%), caja 32.9 kg. MOQ 50 FOB Guangzhou.",
+          "h1": "Motor carguero CG250SB (246.3 cc) enfriado por agua"
+        },
+        "vehicle_context": "Motor CG250SB 246.3 cc enfriado por agua para trimoto de carga / motocarro",
+        "quick_verdict": "El CHIXIANG CG250SB ofrece 246.3 cc reales (70 × 64 mm) con 11.5 kW @ 7,000 rpm (±5%) y 19.5 N·m @ 5,000 rpm (±5%) en empaque de 425 × 385 × 530 mm (32.9 kg bruto)—ideal para motocarros y cargueros 250cc que buscan menor peso y costo eficiente desde 50 unidades.",
+        "cooling": "Enfriado por agua",
+        "cooling_clutch": "Enfriado por agua · Embrague manual multidisco húmedo",
+        "transmission": "5 velocidades de engrane constante",
+        "starting": "Arranque eléctrico / pedal",
+        "clutch": "Manual multidisco en baño de aceite",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Base enfriada por agua", "standard": "Motor vertical CG250SB (70 × 64 mm, 246.3 cc)", "optional": "Opción de escalar a serie pesada HW250/HW300 (cárter 1.5 L)" },
+          { "item": "Transmisión y reversa", "standard": "5 velocidades hacia adelante", "optional": "Reversa integrada o externa confirmada según modelo" },
+          { "item": "Arranque y embrague", "standard": "Eléctrico/pedal · Embrague manual húmedo", "optional": "Kit de discos reforzados en el mismo embarque" },
+          { "item": "Circuito de enfriamiento", "standard": "Bomba de agua en motor y tomas de refrigerante", "optional": "Radiador, ventilador y mangueras según BOM" },
+          { "item": "Carburador y eléctrico", "standard": "Confirmado en BOM y Proforma Invoice", "optional": "Carburador PZ30, CDI, regulador y relé" },
+          { "item": "Empaque export", "standard": "Caja 425 × 385 × 530 mm (32.9 kg bruto) o palet 12 un.", "optional": "Contenedor mixto con CG200, HW300 y kits" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Cuna de carguero", "detail": "Dimensiones 425 × 385 × 530 mm; confirme anclajes en el chasis del motocarro." },
+          { "label": "Configuración de reversa", "detail": "Reversa interna o externa según código; confirme estrías del cardán/eje." },
+          { "label": "Radiador y mangueras", "detail": "Verifique diámetros de mangueras de agua y derivación." },
+          { "label": "Planos de fábrica", "detail": "Entregados junto con la cotización formal." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG250SB-TOP", "name": "Kit cilindro de agua y pistón CG250SB (70.0 mm)", "spec": "Cilindro de agua, pistón, anillos y pasador 246.3 cc", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-GSK", "name": "Juego completo de empaques de agua CG250SB", "spec": "Empaques de culata, base, bomba y cárter", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-WPK", "name": "Kit de bomba de agua y sello mecánico CG250SB", "spec": "Eje impulsor, rodamiento y retén de agua", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-CLT", "name": "Kit de embrague multidisco CG250SB", "spec": "Discos reforzados y resortes para carga", "fitment": "CG250SB" }
+        ],
+        "related_guides": [
+          { "title": "Motor pesado HW300 (275.3 mL) enfriado por agua", "url": "/es/cg-engine/hw300-water-cooled-engine", "description": "Compare CG250SB contra la serie pesada HW300." },
+          { "title": "Matriz CG aire y agua completa", "url": "/es/motor-cg#cg-water-cooled", "description": "Revise CG150SB, CG175SB, CG200SB y CG250SB." },
+          { "title": "Catálogo de repuestos HW200–HW350", "url": "/es/engine-parts/hw-series", "description": "Explore kits de reparación y 8 sistemas de agua." },
+          { "title": "Cotización B2B FOB Guangzhou", "url": "/es/contacto", "description": "Solicite mezcla de motores y repuestos." }
+        ],
+        "faqs": [
+          { "q": "¿Qué diferencia hay entre CG250SB (246.3 cc) y CG250 por aire (229.5 cc)?", "a": "CG250SB es enfriado por agua con 70 × 64 mm (246.3 cc, 11.5 kW, 19.5 N·m), mientras el CG250 por aire es 67 × 65 mm (229.5 cc, 10.5 kW, 16.5 N·m)." },
+          { "q": "¿Cuándo elegir CG250SB frente a HW250 o HW300?", "a": "Elija CG250SB (32.9 kg bruto) para cargueros estándar que priorizan menor peso y costo; elija HW250/HW300 para carga pesada extrema con cárter 1.5 L y embrague de 20 rodillos." },
+          { "q": "¿La reversa es estándar en CG250SB?", "a": "No. La reversa integrada o externa depende del modelo confirmado en su orden BOM." },
+          { "q": "¿Qué tamaño de caja y peso tiene el CG250SB?", "a": "Caja de exportación de 425 × 385 × 530 mm y 32.9 kg peso bruto (o palet de 12 unidades)." },
+          { "q": "¿Cuál es el MOQ y garantía?", "a": "50 unidades en contenedor mixto (~10 días hábiles, FOB Guangzhou), prueba al 100 % y garantía de 60 días tras llegada a puerto." }
+        ]
+      },
+      "pt": {
+        "family": "Série CG Refrigerada a Água",
+        "seo": {
+          "title": "Motor triciclo CG250SB (246.3 cc) refrigerado a água | CHIXIANG MOTOR",
+          "description": "Motor CG250SB refrigerado a água de 246.3 cc para triciclo de carga: 70 × 64 mm, 11.5 kW @ 7,000 rpm (±5%), 19.5 N·m (±5%), caixa 32.9 kg. MOQ 50 FOB Guangzhou.",
+          "h1": "Motor para triciclo de carga CG250SB (246.3 cc) refrigerado a água"
+        },
+        "vehicle_context": "Motor CG250SB 246.3 cc refrigerado a água para triciclo de carga / motocarro",
+        "quick_verdict": "O CHIXIANG CG250SB entrega 246.3 cc reais (70 × 64 mm) com 11.5 kW @ 7,000 rpm (±5%) e 19.5 N·m @ 5,000 rpm (±5%) em embalagem de 425 × 385 × 530 mm (32.9 kg bruto)—projetado para triciclos de carga que priorizam menor peso e ótimo custo-benefício a partir de 50 unidades.",
+        "cooling": "Refrigerado a água",
+        "cooling_clutch": "Refrigerado a água · Embreagem manual multidisco",
+        "transmission": "5 marchas de engrenamento constante",
+        "starting": "Partida elétrica / pedal",
+        "clutch": "Manual multidisco em banho de óleo",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "Base refrigerada a água", "standard": "Motor vertical CG250SB (70 × 64 mm, 246.3 cc)", "optional": "Evolução para linha pesada HW250/HW300 (cárter 1.5 L)" },
+          { "item": "Transmissão e ré", "standard": "5 marchas à frente", "optional": "Ré integrada ou caixa externa confirmada no pedido" },
+          { "item": "Partida e embreagem", "standard": "Elétrica/pedal · Embreagem manual úmida", "optional": "Kit de discos reforçados no mesmo embarque" },
+          { "item": "Arrefecimento", "standard": "Bomba d'água no motor e saídas", "optional": "Radiador, ventoinha e mangueiras por BOM" },
+          { "item": "Carburador e elétrica", "standard": "Confirmado na Proforma", "optional": "PZ30, CDI, regulador e relé" },
+          { "item": "Embalagem", "standard": "Caixa 425 × 385 × 530 mm (32.9 kg bruto) ou palete 12 un.", "optional": "Pedido misto com CG200, HW300 e kits" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Berço do triciclo", "detail": "Medidas 425 × 385 × 530 mm; confirme coxins no quadro." },
+          { "label": "Configuração de marcha à ré", "detail": "Ré interna ou externa varia por código; informe estrias de saída." },
+          { "label": "Conexões do radiador", "detail": "Verifique diâmetro das mangueiras de água." },
+          { "label": "Desenhos técnicos", "detail": "Fornecidos com a cotação formal." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG250SB-TOP", "name": "Kit cilindro a água e pistão CG250SB (70,0 mm)", "spec": "Cilindro, pistão, anéis e pino 246.3 cc", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-GSK", "name": "Jogo completo de juntas a água CG250SB", "spec": "Juntas de cabeçote, base, bomba e carcaça", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-WPK", "name": "Kit bomba d'água e selo mecânico CG250SB", "spec": "Eixo rotor, rolamento e selo", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-CLT", "name": "Kit embreagem multidisco CG250SB", "spec": "Discos e molas reforçadas", "fitment": "CG250SB" }
+        ],
+        "related_guides": [
+          { "title": "Motor pesado HW300 (275.3 mL)", "url": "/pt/cg-engine/hw300-water-cooled-engine", "description": "Compare CG250SB com a linha HW300." },
+          { "title": "Linha CG vareta e água", "url": "/pt/motor-cg#cg-water-cooled", "description": "Veja CG150SB–CG250SB." },
+          { "title": "Catálogo de peças HW200–HW350", "url": "/pt/engine-parts/hw-series", "description": "Kits de revisão e 8 sistemas completos." },
+          { "title": "Cotação B2B Angola / Brasil", "url": "/pt/contato", "description": "Solicite orçamento FOB Guangzhou." }
+        ],
+        "faqs": [
+          { "q": "Qual a diferença entre CG250SB (246.3 cc) e CG250 a ar (229.5 cc)?", "a": "O CG250SB é refrigerado a água 70 × 64 mm (246.3 cc, 11.5 kW, 19.5 N·m), enquanto o CG250 a ar usa 67 × 65 mm (229.5 cc, 10.5 kW, 16.5 N·m)." },
+          { "q": "Quando optar por CG250SB ou HW250 / HW300?", "a": "CG250SB (32.9 kg bruto) prioriza menor peso e custo competitivo; HW250/HW300 focam em carga pesada extrema com cárter 1.5 L e placa de 20 roletes." },
+          { "q": "A marcha à ré é padrão no CG250SB?", "a": "Não. A ré integrada ou externa deve ser especificada no pedido." },
+          { "q": "Qual a embalagem e peso bruto do CG250SB?", "a": "Caixa 425 × 385 × 530 mm com 32.9 kg de peso bruto." },
+          { "q": "Qual o pedido mínimo e garantia?", "a": "MOQ de 50 unidades em contêiner misto (~10 dias úteis, FOB Guangzhou) e garantia de 60 dias pós-chegada." }
+        ]
+      },
+      "ru": {
+        "family": "Серия CG водяного охлаждения",
+        "seo": {
+          "title": "Двигатель CG250SB (246.3 cc) водяного охлаждения для трицикла | CHIXIANG MOTOR",
+          "description": "Двигатель CG250SB водяного охлаждения 246.3 cc для грузового трицикла: 70 × 64 мм, 11.5 кВт @ 7000 об/мин (±5%), 19.5 Н·м (±5%), вес брутто 32.9 кг. MOQ 50 FOB Гуанчжоу.",
+          "h1": "Двигатель водяного охлаждения CG250SB (246.3 cc) для трициклов"
+        },
+        "vehicle_context": "Двигатель CG250SB 246.3 cc водяного охлаждения для грузового трицикла",
+        "quick_verdict": "CHIXIANG CG250SB обладает реальным объёмом 246.3 cc (70 × 64 мм), мощностью 11.5 kW @ 7,000 rpm (±5%) и крутящим моментом 19.5 N·m @ 5,000 rpm (±5%) в упаковке 425 × 385 × 530 мм (32.9 кг брутто). Оптимальный выбор для серийных грузовых трициклов от 50 штук.",
+        "cooling": "Водяное охлаждение",
+        "cooling_clutch": "Водяное · Ручное многодисковое сцепление",
+        "transmission": "5-ступенчатая постоянного зацепления",
+        "starting": "Электростартер / кикстартер",
+        "clutch": "Ручное многодисковое в масляной ванне",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "База водяного охлаждения", "standard": "Вертикальный двигатель CG250SB (70 × 64 мм, 246.3 cc)", "optional": "Переход на тяжёлую серию HW250/HW300 (картер 1.5 л)" },
+          { "item": "КПП и реверс", "standard": "5 передач вперёд", "optional": "Встроенный или внешний реверс подтверждается по модели" },
+          { "item": "Запуск и сцепление", "standard": "Электро/кик · Ручное сцепление", "optional": "Комплект усиленных дисков в том же заказе" },
+          { "item": "Охлаждение", "standard": "Водяная помпа и патрубки на двигателе", "optional": "Радиатор, вентилятор и шланги по BOM" },
+          { "item": "Карбюратор и электрика", "standard": "Подтверждается в PI", "optional": "PZ30, CDI, регулятор и реле" },
+          { "item": "Упаковка", "standard": "Короб 425 × 385 × 530 мм (32.9 кг брутто) или паллета 12 шт.", "optional": "Смешанный контейнер с CG200, HW300 и запчастями" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "Крепление к раме трицикла", "detail": "Габариты 425 × 385 × 530 мм; проверьте ширину подрамника." },
+          { "label": "Конфигурация реверса", "detail": "Наличие встроенного/внешнего реверса зависит от модификации; уточните шлицы." },
+          { "label": "Радиатор и помпа", "detail": "Сверьте диаметры водяных патрубков." },
+          { "label": "Заводские чертежи", "detail": "Прилагаются к официальному предложению." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG250SB-TOP", "name": "Водяная ЦПГ CG250SB (70.0 мм)", "spec": "Водяной цилиндр, поршень, кольца и палец 246.3 cc", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-GSK", "name": "Полный комплект прокладок воды CG250SB", "spec": "Прокладки ГБЦ, цилиндра, помпы и картера", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-WPK", "name": "Ремкомплект водяной помпы CG250SB", "spec": "Крыльчатка, подшипник и сальник помпы", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-CLT", "name": "Комплект сцепления CG250SB", "spec": "Усиленные диски и пружины для трицикла", "fitment": "CG250SB" }
+        ],
+        "related_guides": [
+          { "title": "Тяжёлый двигатель HW300 (275.3 мл)", "url": "/ru/cg-engine/hw300-water-cooled-engine", "description": "Сравнение CG250SB с серией HW Water." },
+          { "title": "Матрица CG воздушные и водяные", "url": "/ru/dvigatel-cg#cg-water-cooled", "description": "Сводная таблица CG150SB–CG250SB." },
+          { "title": "Каталог запчастей HW200–HW350", "url": "/ru/engine-parts/hw-series", "description": "Ремкомплекты и 8 узлов водяной серии." },
+          { "title": "Отправить заявку в экспортный отдел", "url": "/ru/kontakty", "description": "Расчёт смешанного контейнера FOB Гуанчжоу." }
+        ],
+        "faqs": [
+          { "q": "Чем водяной CG250SB (246.3 cc) отличается от воздушного CG250 (229.5 cc)?", "a": "CG250SB имеет водяное охлаждение 70 × 64 мм (246.3 cc, 11.5 кВт, 19.5 Н·м), а воздушный CG250 — 67 × 65 мм (229.5 cc, 10.5 кВт, 16.5 Н·м)." },
+          { "q": "Когда выбирать CG250SB, а когда HW250 / HW300?", "a": "CG250SB (32.9 кг брутто) подходит для стандартных грузовых трициклов с фокусом на меньший вес и цену; HW250/HW300 — для предельных нагрузок с картером 1.5 л и 20-роликовой муфтой." },
+          { "q": "Включён ли задний ход в стандарт CG250SB?", "a": "Нет. Встроенный или внешний реверс указывается отдельно в спецификации заказа." },
+          { "q": "Какие габариты и вес коробки CG250SB?", "a": "425 × 385 × 530 мм, вес брутто 32.9 кг (или паллеты по 12 шт.)." },
+          { "q": "Каков MOQ и гарантия?", "a": "От 50 двигателей в смешанном контейнере (~10 рабочих дней, FOB Гуанчжоу), 100 % обкатка и гарантия 60 дней после прибытия." }
+        ]
+      },
+      "ar": {
+        "family": "فئة CG تبريد مياه",
+        "seo": {
+          "title": "محرك تروسيكل CG250SB (246.3 cc) تبريد مياه بالجملة | CHIXIANG MOTOR",
+          "description": "محرك تروسيكل شحن CG250SB تبريد مياه سعة 246.3 cc: 70 × 64 مم، 11.5 kW (±5%)، 19.5 N·m (±5%)، وزن إجمالي بالتغليف 32.9 كجم. حد أدنى 50 وحدة FOB قوانغتشو.",
+          "h1": "محرك تروسيكل شحن CG250SB (246.3 cc) تبريد مياه"
+        },
+        "vehicle_context": "محرك CG250SB سعة 246.3 cc تبريد مياه للتروسيكلات والتريبورتور",
+        "quick_verdict": "يقدم محرك CHIXIANG CG250SB سعة فعلية 246.3 cc (70 × 64 مم) بقدرة 11.5 kW @ 7,000 rpm (±5%) وعزم 19.5 N·m @ 5,000 rpm (±5%) في عبوة 425 × 385 × 530 مم بوزن إجمالي 32.9 كجم—مثالي لتروسيكلات الشحن الباحثة عن خفة الوزن والكفاءة السعرية من حد أدنى 50 وحدة.",
+        "cooling": "تبريد مياه",
+        "cooling_clutch": "تبريد مياه · دبرياج يدوي متعدد الأقراص",
+        "transmission": "5 سرعات بتعشيق ثابت",
+        "starting": "تشغيل كهربائي / بالقدم",
+        "clutch": "يدوي متعدد الأقراص في حمام زيت",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "بنية التبريد المائي", "standard": "محرك عمودي CG250SB (70 × 64 مم، 246.3 cc)", "optional": "خيار الترقية إلى سلسلة HW250/HW300 الثقيلة (كارتيرة 1.5 لتر)" },
+          { "item": "ناقل الحركة والرجوع", "standard": "5 سرعات أمامية", "optional": "ترس رجوع مدمج أو خارجي يثبت بالطلب" },
+          { "item": "التشغيل والدبرياج", "standard": "كهربائي/قدم · دبرياج يدوي رطب", "optional": "طقم ورق دبرياج ثقيل في نفس الحاوية" },
+          { "item": "دائرة التبريد", "standard": "طرمبة مياه ومخارج التبريد على المحرك", "optional": "ريداتير ومروحة وخراطيم حسب BOM" },
+          { "item": "الكربراتير والكهرباء", "standard": "يؤكد في الفاتورة المبدئية", "optional": "كربراتير PZ30 وCDI ومنظم وكتاوت" },
+          { "item": "التغليف التصديري", "standard": "كرتون 425 × 385 × 530 مم (32.9 كجم) أو طبلية 12 وحدة", "optional": "حاوية مختلطة مع CG200 و HW300 والأطقم" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "شاسيه التروسيكل", "detail": "أبعاد 425 × 385 × 530 مم؛ طابق قواعد الشاسيه." },
+          { "label": "مواصفات الرجوع", "detail": "الرجوع الداخلي أو الخارجي يعتمد على الطراز المطلوب." },
+          { "label": "توصيل الريداتير", "detail": "تحقق من أقطار خراطيم المياه." },
+          { "label": "الرسومات الهندسية", "detail": "تُرسل مع عرض السعر الرسمي." }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG250SB-TOP", "name": "طقم سلندر مياه وبستم CG250SB (70.0 مم)", "spec": "سلندر تبريد مياه وبستم وشنبر 246.3 cc", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-GSK", "name": "طقم جوانات عمرة مياه CG250SB", "spec": "جوان وش سلندر وقواعد وطرمبة وكارتيرة", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-WPK", "name": "طقم طرمبة مياه وأولسيه حراري CG250SB", "spec": "مروحة طرمبة وعمود ورولمان بلي وسيل ميكانيكي", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-CLT", "name": "طقم دبرياج متعدد الأقراص CG250SB", "spec": "أقراص ونوابض مقواة للخدمة الشاقة", "fitment": "CG250SB" }
+        ],
+        "related_guides": [
+          { "title": "محرك التروسيكل الثقيل HW300 (275.3 مل)", "url": "/ar/cg-engine/hw300-water-cooled-engine", "description": "قارن CG250SB مقابل سلسلة HW الشاقة." },
+          { "title": "مصفوفة CG الهواء والمياه", "url": "/ar/cg-engine#cg-water-cooled", "description": "مواصفات CG150SB إلى CG250SB." },
+          { "title": "كتالوج قطع غيار HW200–HW350", "url": "/ar/engine-parts/hw-series", "description": "أطقم عمرة وقطع التبريد المائي." },
+          { "title": "طلب تسعير B2B", "url": "/ar/contact", "description": "حاويات مختلطة FOB قوانغتشو." }
+        ],
+        "faqs": [
+          { "q": "ما الفرق بين CG250SB المبرد بالماء (246.3 cc) و CG250 بالهواء (229.5 cc)؟", "a": "CG250SB تبريد مياه بمقاس 70 × 64 مم (246.3 cc، 11.5 kW، 19.5 N·m)، بينما CG250 بالهواء 67 × 65 مم (229.5 cc، 10.5 kW، 16.5 N·m)." },
+          { "q": "متى أختار CG250SB بدلاً من HW250 أو HW300؟", "a": "اختر CG250SB (وزن إجمالي 32.9 كجم) للتروسيكلات القياسية ذات الكلفة الأقل؛ واختر HW250/HW300 للأحمال القصوى بكارتيرة 1.5 لتر وبلي مارش 20 بكرة." },
+          { "q": "هل ترس الرجوع للخلف قياسي في CG250SB؟", "a": "لا، يُحدد خيار الرجوع الداخلي أو الخارجي بوضوح في قائمة الطلب." },
+          { "q": "ما مقاس ووزن كرتون الشحن لـ CG250SB؟", "a": "425 × 385 × 530 مم بوزن إجمالي 32.9 كجم." },
+          { "q": "ما الحد الأدنى للطلب والضمان؟", "a": "50 محركاً في حاوية مختلطة (~10 أيام عمل، FOB قوانغتشو) وضمان 60 يوماً بعد الوصول للميناء." }
+        ]
+      },
+      "zh-cn": {
+        "family": "CG 标准水冷三轮系列",
+        "seo": {
+          "title": "CG250SB 246.3 cc 水冷货运三轮车发动机 | 重庆驰翔",
+          "description": "重庆驰翔 CG250SB（246.3 cc）水冷三轮车发动机：70 × 64 mm，11.5 kW @ 7,000 rpm（±5%），19.5 N·m @ 5,000 rpm（±5%），包装毛重 32.9 kg。50 台起混柜出口 FOB 广州。",
+          "h1": "CG250SB (246.3 cc) 标准水冷货运三轮车发动机"
+        },
+        "vehicle_context": "CG250SB 246.3 cc 标准水冷货运三轮车发动机",
+        "quick_verdict": "驰翔 CG250SB 实际排量 246.3 cc（70 × 64 mm），最大功率 11.5 kW @ 7,000 rpm（±5%），最大扭矩 19.5 N·m @ 5,000 rpm（±5%），包装尺寸 425 × 385 × 530 mm，包装毛重 32.9 kg，专为常规 250cc 货运三轮车打造高性价比水冷热稳定性动力。",
+        "cooling": "水冷",
+        "cooling_clutch": "水冷 · 手动湿式多片离合",
+        "transmission": "5 挡常啮合",
+        "starting": "电启动 / 脚启动",
+        "clutch": "手动湿式多片离合器",
+        "ignition": "CDI",
+        "standard_vs_optional_configs": [
+          { "item": "基础水冷架构", "standard": "CG250SB 立式水冷总成（70 × 64 mm，246.3 cc）", "optional": "重载工况可升级至 HW250 / HW300 系列（1.5 L 油底壳）" },
+          { "item": "变速与倒挡", "standard": "5 挡常啮合前进挡", "optional": "按具体型号与订单选配内置倒挡或外置倒挡接口" },
+          { "item": "启动与离合", "standard": "电/脚启动 · 手动湿式多片离合", "optional": "同柜选配加重型离合器摩擦片服务包" },
+          { "item": "水冷循环附件", "standard": "机带水泵体及进出水接口", "optional": "按订单 BOM 配套水箱散热器、风扇及胶管套件" },
+          { "item": "化油器与电器", "standard": "在采购订单 BOM 及形式发票确认", "optional": "PZ30 化油器、CDI、整流器与继电器套装" },
+          { "item": "包装与混装", "standard": "425 × 385 × 530 mm 纸箱（32.9 kg 毛重）或 12 台托盘", "optional": "支持与 CG200、HW250、HW300 及套件同柜混装" }
+        ],
+        "mounting_interface_notes": [
+          { "label": "包装与三轮车架匹配", "detail": "外形 425 × 385 × 530 mm，批量订购前请核对三轮副车架挂耳间距。" },
+          { "label": "倒挡配置核对", "detail": "内置或外置倒挡非全系默认标配，确认 PI 时请写明输出轴花键齿数。" },
+          { "label": "水箱与胶管连接", "detail": "确认水泵胶管口径及回流旁通管路走向。" },
+          { "label": "工厂尺寸图纸", "detail": "随正式报价提供安装外形及孔距图纸。" }
+        ],
+        "bundled_kits": [
+          { "pn": "CX-CG250SB-TOP", "name": "CG250SB 水冷中缸活塞组件（70.0 mm）", "spec": "70.0 mm 水冷缸体、活塞、环与销（246.3 cc）", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-GSK", "name": "CG250SB 全车水冷大修垫片包", "spec": "缸头垫、缸底垫、水泵垫及箱体油封垫", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-WPK", "name": "CG250SB 水泵叶轮与水封维修包", "spec": "叶轮轴、轴承、机械水封及盖垫", "fitment": "CG250SB" },
+          { "pn": "CX-CG250SB-CLT", "name": "CG250SB 湿式多片离合器维修包", "spec": "三轮重负荷摩擦片、钢片与弹簧组", "fitment": "CG250SB" }
+        ],
+        "related_guides": [
+          { "title": "HW300 (275.3 mL) 重载水冷三轮发动机", "url": "/zh-cn/cg-engine/hw300-water-cooled-engine", "description": "对比标准 CG250SB 与重载 HW250/HW300 差异。" },
+          { "title": "CG 水冷全系列规格矩阵", "url": "/zh-cn/cg-engine#cg-water-cooled", "description": "查看 CG150SB、CG175SB、CG200SB、CG250SB 全表。" },
+          { "title": "HW200–HW350 水冷配件目录", "url": "/zh-cn/engine-parts/hw-series", "description": "浏览原厂大修包与 8 大总成件。" },
+          { "title": "联系重庆驰翔报价", "url": "/zh-cn/contact", "description": "提交整机与随柜配件混装需求。" }
+        ],
+        "faqs": [
+          { "q": "水冷 CG250SB (246.3 cc) 与风冷 CG250 (229.5 cc) 有何不同？", "a": "CG250SB 为水冷 70 × 64 mm（实际 246.3 cc，11.5 kW，19.5 N·m）；风冷 CG250 为 67 × 65 mm（实际 229.5 cc，10.5 kW，16.5 N·m），订购请务必注明完整型号代码。" },
+          { "q": "什么场景选 CG250SB，什么场景升级 HW250 / HW300？", "a": "注重轻量化与常规性价比的 250cc 货运三轮选 CG250SB（32.9 kg 毛重）；长期山区重载、需要 1.5 L 大油底壳与 20 滚子离合选 HW250 或 HW300。" },
+          { "q": "CG250SB 是否全系标配倒挡？", "a": "不是。内置倒挡或外置倒挡接口按具体子型号在订单 BOM 中书面确认。" },
+          { "q": "包装尺寸和毛重是多少？", "a": "出口纸箱尺寸 425 × 385 × 530 mm，含包装毛重 32.9 kg（可选 12 台木/钢托盘）。" },
+          { "q": "起订量、交期和质保政策如何？", "a": "50 台起批支持混装，常规约 10 个工作日交货，100% 冷热台架全检，到港后 60 天质量保障。" }
+        ]
+      }
+    }
+  }
+}

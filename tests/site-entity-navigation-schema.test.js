@@ -50,22 +50,19 @@ function schemaTypes(nodes) {
 }
 
 function pageRole(page) {
-  if (/^\/(?:en|es|pt|ru|ar|zh-cn)\/$/.test(page.pathname)) return 'home';
+  if (/^\/(?:en|es|pt|ru|ar|fr)\/$/.test(page.pathname)) return 'home';
   if (/\/(?:about)$/.test(page.pathname)) return 'about';
-  if (page.pathname === '/en/evidence') return 'about';
+  if (/^\/(?:en|fr|es|pt|ru|ar)\/evidence$/.test(page.pathname)) return 'about';
   if (/\/(?:products)$/.test(page.pathname)) return 'products';
   if (/\/(?:contact|contacto|contato|kontakty)$/.test(page.pathname)) return 'contact';
   if (/\/news$/.test(page.pathname)) return 'news';
-  if (/^\/en\/(?:air-cooled-vs-water-cooled-motorcycle-engine|bajaj-tvs-replacement-engine-fitment-checklist|cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison|chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty|horizontal-motorcycle-engine-110cc-150cc-selection-guide|how-to-choose-motorcycle-engine-manufacturer-china|hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine|motorcycle-engine-export-packaging-moq-50-mixed-loading-guide)$/.test(page.pathname)) return 'article';
+  if (/^\/(?:en|fr|es|pt|ru|ar)\/(?:air-cooled-vs-water-cooled-motorcycle-engine|bajaj-tvs-replacement-engine-fitment-checklist|cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison|chongqing-motorcycle-engine-factory-qa-dyno-testing-warranty|horizontal-motorcycle-engine-110cc-150cc-selection-guide|how-to-choose-motorcycle-engine-manufacturer-china|hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine|motorcycle-engine-export-packaging-moq-50-mixed-loading-guide)$/.test(page.pathname)) return 'article';
   if (page.pathname === '/es/guia/que-es-un-motor-cg/') return 'article';
-  if (/^\/zh-cn\/guides\/?$/.test(page.pathname)) return 'about';
-  if (/^\/zh-cn\/guides\//.test(page.pathname)) return 'article';
-  if (/^\/zh-cn\/(?:factory|evidence|domestic-wholesale)$/.test(page.pathname)) return 'about';
   if (/^\/(?:ru\/(?:russia|central-asia)|es\/(?:peru|colombia))\/$/.test(page.pathname)) return 'market';
-  if (page.pathname === '/en/engine-parts/hw-series') return 'hw-hub';
+  if (/^\/(?:en|fr|es|pt|ru|ar)\/engine-parts\/hw-series$/.test(page.pathname)) return 'hw-hub';
   if (/^\/en\/engine-parts\/hw-series\/.+/.test(page.pathname)) return 'hw-detail';
-  if (/^\/(?:en|zh-cn)\/bajaj-tvs-engines-parts\/.+/.test(page.pathname)) return 'btv-detail';
-  if (/^\/en\/cg-engine\/.+/.test(page.pathname)) return 'flagship-engine';
+  if (/^\/(?:en|fr|es|pt|ru|ar)\/bajaj-tvs-engines-parts\/.+/.test(page.pathname)) return 'btv-detail';
+  if (/^\/(?:en|fr|es|pt|ru|ar)\/cg-engine\/.+/.test(page.pathname)) return 'flagship-engine';
   return 'family';
 }
 
@@ -86,6 +83,15 @@ function expectedPageType(role) {
   }[role];
 }
 
+const localizedPartsPaths = {
+  en: '/en/engine-parts', fr: '/fr/engine-parts', es: '/es/repuestos-motor',
+  pt: '/pt/pecas-de-motor', ru: '/ru/zapchasti-dvigatelya', ar: '/ar/engine-parts', 'zh-cn': '/zh-cn/engine-parts'
+};
+const localizedCgPaths = {
+  en: '/en/cg-engine', fr: '/fr/cg-engine', es: '/es/motor-cg',
+  pt: '/pt/motor-cg', ru: '/ru/dvigatel-cg', ar: '/ar/cg-engine', 'zh-cn': '/zh-cn/cg-engine'
+};
+
 function expectedTrail(page) {
   const role = pageRole(page);
   if (role === 'home') return [];
@@ -94,13 +100,15 @@ function expectedTrail(page) {
     trail.push(`${origin}/${page.language}/products`);
   }
   if (role === 'hw-hub' || role === 'hw-detail') {
-    trail.push(`${origin}/${page.language}/engine-parts`);
+    trail.push(`${origin}${localizedPartsPaths[page.language] || `/${page.language}/engine-parts`}`);
   }
   if (role === 'hw-detail') {
     trail.push(`${origin}/${page.language}/engine-parts/hw-series`);
   }
   if (role === 'btv-detail') trail.push(`${origin}/${page.language}/bajaj-tvs-engines-parts`);
-  if (role === 'flagship-engine') trail.push(`${origin}/${page.language}/cg-engine`);
+  if (role === 'flagship-engine') {
+    trail.push(`${origin}${localizedCgPaths[page.language] || `/${page.language}/cg-engine`}`);
+  }
   if (role === 'article') {
     trail.push(page.language === 'zh-cn' ? `${origin}/zh-cn/guides/` : `${origin}/${page.language}/news`);
   }
@@ -128,7 +136,7 @@ function breadcrumbUrls(node) {
 const expectedPublicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter(p => p && p.public === true).length;
 const expectedFlagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter(p => p && p.is_flagship_page === true).length;
 const expectedFlagshipEngineCount = (JSON.parse(read('data/flagship-engines.json')).engines || []).filter(e => e && e.published === true).length;
-const expectedCanonicalTotal = 85 + 2 * expectedPublicBtvCount + expectedFlagshipHwCount + expectedFlagshipEngineCount;
+const expectedCanonicalTotal = 143 + 6 * expectedPublicBtvCount + expectedFlagshipHwCount + 6 * expectedFlagshipEngineCount;
 
 test('sitemap manifest contains exactly the expected canonical source pages', () => {
   const pages = sitemapPages();

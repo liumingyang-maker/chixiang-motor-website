@@ -43,17 +43,20 @@ function renderInput(route, l, name, required, type = 'text') {
 
 function renderOwnerLinks(language, l) {
   return `<nav class="contact-owner-links" aria-label="${escapeHtml(l.productLinksLabel)}">
-          ${products.filter(product => product.owner).map(product =>
-            `<a href="${product.owner[language]}">${escapeHtml(l.products[product.value])}</a>`
+          ${products.filter(product => product.owner && product.owner[language]).map(product =>
+            `<a href="${product.owner[language]}">${escapeHtml((l.ownerLinkLabels && l.ownerLinkLabels[product.value]) || l.products[product.value])}</a>`
           ).join('\n          ')}
         </nav>`;
 }
 
 function renderChannels(l) {
+  const waText = l.home === 'Accueil'
+    ? 'https://wa.me/8619008225410?text=' + encodeURIComponent('Bonjour, je suis importateur / grossiste en [pays]. Je souhaite un devis FOB Guangzhou pour : Modèle : CG150 / CG200 / HW300 / BM150 | Quantité : [nombre] | Pièces détachées : [oui/non] | Port : [Abidjan / Douala / Cotonou / Dakar].')
+    : 'https://wa.me/8619008225410';
   const channelHtml = {
     email: `<a data-contact-channel="email" href="mailto:chixiangmotor@163.com"><strong>${escapeHtml(l.channels.email)}</strong><span>chixiangmotor@163.com</span></a>`,
     wechat: `<div class="contact-channel" data-contact-channel="wechat"><strong>${escapeHtml(l.channels.wechat)}</strong><img src="../images/contact-channels/wechat-qr.webp" alt="${escapeHtml(l.wechatQrAlt)}" width="90" height="90" loading="lazy" decoding="async"></div>`,
-    whatsapp: `<a data-contact-channel="whatsapp" href="https://wa.me/8619008225410" target="_blank" rel="noopener"><strong>${escapeHtml(l.channels.whatsapp)}</strong><span>+86 19008225410</span></a>`,
+    whatsapp: `<a data-contact-channel="whatsapp" href="${waText}" target="_blank" rel="noopener"><strong>${escapeHtml(l.channels.whatsapp)}</strong><span>+86 19008225410</span></a>`,
     phone: `<a data-contact-channel="phone" href="tel:+8619008225410"><strong>${escapeHtml(l.channels.phone)}</strong><span>+86 19008225410</span></a>`
   };
   return l.channelOrder.map(channel => channelHtml[channel]).join('\n          ');
@@ -188,6 +191,9 @@ function updatePage(before, route, l) {
     /<meta\s+property=["']og:description["']\s+content=["'][^"']*["']\s*\/?>/i,
     `<meta property="og:description" content="${escapeHtml(l.description)}">`
   );
+  if (!/btv-inquiry-prefill\.js/.test(after)) {
+    after = after.replace(/<\/body>/i, '  <script src="/js/btv-inquiry-prefill.js" defer></script>\n</body>');
+  }
   return after.replace(/\r?\n/g, newline);
 }
 

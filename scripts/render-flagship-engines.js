@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Render CHIXIANG MOTOR Flagship Engine Product Pages V1
- * from data/flagship-engines.json.
+ * Render CHIXIANG MOTOR Flagship Engine Product Pages across all 7 languages
+ * (en, fr, es, pt, ru, ar, zh-cn) from data/flagship-engines.json + data/i18n/flagship-locales.json.
  *
  * Outputs:
- *   - en/cg-engine/{slug}.html (/en/cg-engine/{slug}) for published === true
+ *   - {lang}/cg-engine/{slug}.html (/{lang}/cg-engine/{slug}) for published === true
  *   - Syncs sitemap.xml cleanly without exposing .html suffixes
  *
  * Usage:
@@ -14,6 +14,24 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
+const { applyToHtml } = require('./apply-site-entity-schema');
+const {
+  ORIGIN,
+  ORG_ID,
+  WEBSITE_ID,
+  LANGS,
+  HREFLANG_MAP,
+  LOCALE_CHROME,
+  escapeHtml,
+  escapeAttr,
+  rolePath,
+  roleUrl,
+  hreflangTagsHtml,
+  waHref,
+  renderMobileNav,
+  renderNavbar,
+  renderFooter
+} = require('./i18n-matrix');
 
 const root = process.env.FLAGSHIP_ROOT
   ? path.resolve(process.env.FLAGSHIP_ROOT)
@@ -21,23 +39,13 @@ const root = process.env.FLAGSHIP_ROOT
 const dataFile = process.env.FLAGSHIP_DATA
   ? path.resolve(process.env.FLAGSHIP_DATA)
   : path.join(root, 'data', 'flagship-engines.json');
+const localesFile = path.join(__dirname, '..', 'data', 'i18n', 'flagship-locales.json');
 const checkOnly = process.argv.includes('--check');
 
-const ORIGIN = 'https://chixiangmotor.com';
-const ORG_ID = `${ORIGIN}/#organization`;
-const WEBSITE_ID = `${ORIGIN}/#website`;
-const DETAIL_DIR = path.join('en', 'cg-engine');
+const TARGET_LANGS = process.env.FLAGSHIP_ROOT ? ['en'] : LANGS;
 const GENERATED_MARKER = '<!-- FLAGSHIP ENGINE GENERATED -->';
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const SAFE_IMAGE_RE = /^images\/[A-Za-z0-9][A-Za-z0-9_\-./]*\.(?:webp|png|jpg|jpeg)$/i;
-
-function escapeHtml(value) {
-  return String(value ?? '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -92,15 +100,16 @@ function publishedEngines(data) {
   return (data.engines || []).filter(e => e && e.published === true);
 }
 
-function detailRelPath(engine) {
-  return path.join(DETAIL_DIR, `${engine.slug}.html`);
+function detailRelPath(engine, lang = 'en') {
+  return path.join(lang, 'cg-engine', `${engine.slug}.html`);
 }
 
-function canonicalUrl(engine) {
-  return `${ORIGIN}/en/cg-engine/${engine.slug}`;
+function canonicalUrl(engine, lang = 'en') {
+  return `${ORIGIN}/${lang}/cg-engine/${engine.slug}`;
 }
 
-function resolveBundledParts(engine) {
+function resolveBundledParts(engine, lang, hwLocales) {
+  const loc = lang !== 'en' && hwLocales && hwLocales[lang];
   if (!engine.linked_parts_source) {
     return (engine.bundled_kits || []).map(item => ({
       pn: item.pn,
@@ -116,9 +125,10 @@ function resolveBundledParts(engine) {
     if (!compat) continue;
     const isKit = part.assembly_id === 'factory-matched-kits';
     if (isKit || items.length < 8) {
+      const localName = (loc && loc.parts && loc.parts[part.slug]) || (lang === 'zh-cn' && part.product_name_zh) || part.product_name_en;
       items.push({
         pn: part.sku || part.part_number || '',
-        name: part.product_name_en,
+        name: localName,
         spec: part.specifications && part.specifications.key_spec ? part.specifications.key_spec : '',
         oem: part.oem_ref || ''
       });
@@ -127,9 +137,28 @@ function resolveBundledParts(engine) {
   return items.slice(0, 8);
 }
 
-function renderSharedHead(engine) {
-  const url = canonicalUrl(engine);
-  const pageName = engine.seo.h1;
+function localizeCompUrl(url, lang) {
+  if (lang === 'en') return url;
+  if (url === '/en/cg-engine') return rolePath('cg', lang);
+  if (url.startsWith('/en/cg-engine#')) return `${rolePath('cg', lang)}#${url.split('#')[1]}`;
+  if (url.startsWith('/en/cg-engine/')) return `/${lang}/cg-engine/${url.slice('/en/cg-engine/'.length)}`;
+  return url;
+}
+
+function localizedEngineData(engine, lang, flagshipLocales) {
+  if (lang === 'en') return null;
+  const ui = flagshipLocales.ui[lang];
+  const ov = (flagshipLocales.engines[engine.slug] && flagshipLocales.engines[engine.slug][lang]) || {};
+  return { ui, ov };
+}
+
+function renderSharedHead(engine, lang, seo, quickVerdict, familyName, faqs, specProps) {
+  const url = canonicalUrl(engine, lang);
+  const pageName = seo.h1;
+  const chrome = LOCALE_CHROME[lang] || LOCALE_CHROME.en;
+  const homeName = chrome.nav.home;
+  const cgSeriesName = (lang === 'en') ? 'CG Engine Series' : (flagshipUiCache[lang]?.breadcrumbCg || 'CG Engine Series');
+
   const orgSchema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -142,7 +171,9 @@ function renderSharedHead(engine) {
         url: `${ORIGIN}/`,
         logo: `${ORIGIN}/images/logo.webp`,
         foundingDate: '2007',
-        description: 'Motorcycle and cargo-tricycle engine manufacturer in Chongqing, China, with industry experience since 2003.',
+        description: lang === 'zh-cn'
+          ? '重庆驰翔摩托车制造有限公司，始于2003年摩托车及三轮车发动机制造经验。'
+          : 'Motorcycle and cargo-tricycle engine manufacturer in Chongqing, China, with industry experience since 2003.',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China',
@@ -154,46 +185,26 @@ function renderSharedHead(engine) {
     ]
   };
 
-  const additionalProperty = [
-    { '@type': 'PropertyValue', name: 'Nominal Class', value: engine.nominal_class },
-    { '@type': 'PropertyValue', name: 'Actual Displacement', value: engine.actual_displacement },
-    { '@type': 'PropertyValue', name: 'Bore × Stroke', value: engine.bore_stroke },
-    { '@type': 'PropertyValue', name: 'Max Power', value: engine.power },
-    { '@type': 'PropertyValue', name: 'Max Torque', value: engine.torque },
-    { '@type': 'PropertyValue', name: 'Compression Ratio', value: engine.compression },
-    { '@type': 'PropertyValue', name: 'Cooling System', value: engine.cooling },
-    { '@type': 'PropertyValue', name: 'Transmission', value: engine.transmission },
-    { '@type': 'PropertyValue', name: 'Starting Method', value: engine.starting },
-    { '@type': 'PropertyValue', name: 'Clutch Type', value: engine.clutch },
-    { '@type': 'PropertyValue', name: 'Dimensions & Weight', value: engine.dimensions_weight }
-  ];
-  if (engine.oil_capacity) {
-    additionalProperty.push({ '@type': 'PropertyValue', name: 'Oil Capacity', value: engine.oil_capacity });
-  }
-  if (engine.carburetor) {
-    additionalProperty.push({ '@type': 'PropertyValue', name: 'Carburetor', value: engine.carburetor });
-  }
-
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     '@id': `${url}#product`,
-    name: engine.seo.h1,
+    name: pageName,
     sku: engine.sku,
     model: engine.model,
-    category: engine.family,
-    description: engine.quick_verdict,
+    category: familyName,
+    description: quickVerdict,
     image: engine.gallery_images.map(img => `${ORIGIN}/${img.src}`),
     url,
     brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
     manufacturer: { '@id': ORG_ID },
-    additionalProperty
+    additionalProperty: specProps
   };
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: (engine.faqs || []).map(item => ({
+    mainEntity: faqs.map(item => ({
       '@type': 'Question',
       name: item.q,
       acceptedAnswer: { '@type': 'Answer', text: item.a }
@@ -210,8 +221,8 @@ function renderSharedHead(engine) {
         name: pageName,
         isPartOf: { '@id': WEBSITE_ID },
         publisher: { '@id': ORG_ID },
-        inLanguage: 'en',
-        description: engine.seo.description,
+        inLanguage: lang,
+        description: seo.description,
         breadcrumb: { '@id': `${url}#breadcrumb` },
         mainEntity: { '@id': `${url}#product` }
       },
@@ -219,16 +230,21 @@ function renderSharedHead(engine) {
         '@type': 'BreadcrumbList',
         '@id': `${url}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/en/` },
-          { '@type': 'ListItem', position: 2, name: 'CG Engine Series', item: `${ORIGIN}/en/cg-engine` },
+          { '@type': 'ListItem', position: 1, name: homeName, item: roleUrl('home', lang) },
+          { '@type': 'ListItem', position: 2, name: cgSeriesName, item: roleUrl('cg', lang) },
           { '@type': 'ListItem', position: 3, name: pageName, item: url }
         ]
       }
     ]
   };
 
+  const dirAttr = chrome.dir === 'rtl' ? ' dir="rtl"' : '';
+  const hreflangs = TARGET_LANGS.length === 1
+    ? `  <link rel="alternate" hreflang="en" href="${escapeAttr(url)}">\n  <link rel="alternate" hreflang="x-default" href="${escapeAttr(url)}">`
+    : hreflangTagsHtml(engine.slug);
+
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${HREFLANG_MAP[lang]}"${dirAttr}>
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16777656395"></script>
   <script>
@@ -238,13 +254,21 @@ function renderSharedHead(engine) {
     gtag('config', 'AW-16777656395');
   </script>
   <meta charset="UTF-8">
+  <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109483511,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109483511" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(engine.seo.title)}</title>
-  <meta name="description" content="${escapeHtml(engine.seo.description)}">
+  <title>${escapeHtml(seo.title)}</title>
+  <meta name="description" content="${escapeAttr(seo.description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="${escapeHtml(url)}">
-  <link rel="alternate" hreflang="en" href="${escapeHtml(url)}">
-  <link rel="alternate" hreflang="x-default" href="${escapeHtml(url)}">
+  <link rel="canonical" href="${escapeAttr(url)}">
+${hreflangs}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CHIXIANG MOTOR">
+  <meta property="og:title" content="${escapeAttr(seo.title)}">
+  <meta property="og:description" content="${escapeAttr(seo.description)}">
+  <meta property="og:url" content="${escapeAttr(url)}">
+  <meta property="og:image" content="${escapeAttr(`${ORIGIN}/${engine.gallery_images[0].src}`)}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/css/style.css?v=20261119-flagship">
   <style>
     .flagship-page section[id] { scroll-margin-top: 124px; }
@@ -274,113 +298,29 @@ ${JSON.stringify(entityGraph, null, 2)}
 </head>`;
 }
 
-function renderNav(quoteHref) {
-  return `  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-      <div class="mobile-nav-brand">
-        <div class="mobile-nav-logo">CHIXIANG MOTOR</div>
-        <div class="mobile-nav-tagline">Professional Motorcycle Engine Manufacturer</div>
-      </div>
-      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <ul class="mobile-nav-list">
-      <li><a href="/en/">Home<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/products">Products<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/cg-engine">CG Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/cb-engine">CB Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/horizontal-engine">Horizontal Engine Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/engine-parts">Engine Parts Series<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/engine-parts/hw-series">HW200–HW350 Parts<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/bajaj-tvs-engines-parts">Bajaj / TVS Engines &amp; Parts<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/evidence">Evidence Center<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/about">About Us<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/news">News<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="/en/contact">Contact Us<span class="mnav-arrow">&rsaquo;</span></a></li>
-      <li><a href="${escapeHtml(quoteHref)}" class="mnav-accent">Get a Quote<span class="mnav-arrow">&rsaquo;</span></a></li>
-    </ul>
-  </div>
-  <nav class="navbar">
-    <div class="container">
-      <a href="/en/" class="nav-logo"><span class="logo-icon"><img src="/images/logo.webp" alt="CHIXIANG MOTOR" width="36" height="36" decoding="async"></span><span class="logo-text">CHIXIANG MOTOR</span></a>
-      <ul class="nav-links" role="navigation" aria-label="Main navigation">
-        <li><a href="/en/">Home</a></li>
-        <li><a href="/en/products" class="active">Products</a></li>
-        <li class="nav-item-dropdown">
-          <a href="/en/engine-parts">Engine Parts <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
-          <ul class="nav-dropdown">
-            <li><a href="/en/engine-parts">All Engine Parts</a></li>
-            <li><a href="/en/engine-parts/hw-series">HW200–HW350 Kits &amp; Parts</a></li>
-            <li><a href="/en/bajaj-tvs-engines-parts">Bajaj / TVS Engines &amp; Parts</a></li>
-          </ul>
-        </li>
-        <li><a href="/en/evidence">Evidence</a></li>
-        <li><a href="/en/about">About Us</a></li>
-        <li><a href="/en/news">News</a></li>
-        <li><a href="/en/contact">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <a href="${escapeHtml(quoteHref)}" class="btn btn-accent btn-sm">Get a Quote</a>
-        <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </nav>`;
-}
+let flagshipUiCache = {};
 
-function renderFooter(quoteHref) {
-  return `  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Chongqing Chixiang Motorcycle Manufacturing Co., Ltd.</h4>
-          <p>CHIXIANG MOTOR &middot; Motorcycle engine industry experience since 2003. Company registered in 2007.</p>
-          <p style="margin-top:0.5rem;">No. 1-2, Building 7, No. 1000 Gaoteng Avenue, Hangu Town, Jiulongpo District, Chongqing, China</p>
-        </div>
-        <div class="footer-col">
-          <h4>Quick Links</h4>
-          <a href="/en/products">Products</a><br>
-          <a href="/en/cg-engine">CG Engine Series</a><br>
-          <a href="/en/cg-engine/cg150-air-cooled-engine">CG150 Flagship Engine</a><br>
-          <a href="/en/cg-engine/cg200-air-cooled-engine">CG200 Flagship Engine</a><br>
-          <a href="/en/cg-engine/cg250sb-water-cooled-engine">CG250SB Flagship Engine</a><br>
-          <a href="/en/cg-engine/hw300-water-cooled-engine">HW300 Flagship Engine</a><br>
-          <a href="/en/engine-parts/hw-series">HW Series Parts Catalog</a><br>
-          <a href="/en/contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <p>Tel: +86 19008225410</p>
-          <p>WhatsApp: +86 19008225410</p>
-          <p style="margin-top:0.5rem;">Email: chixiangmotor@163.com</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Chongqing Chixiang Motorcycle Manufacturing Co., Ltd. (CHIXIANG MOTOR) &middot; Export documentation and logistics are executed through Chixiang's designated export division.</span>
-        <span>Chongqing, China</span>
-      </div>
-    </div>
-  </footer>
-  <a href="https://wa.me/8619008225410" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 10.65 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-  </a>
-  <div class="mobile-cta-bar">
-    <a href="https://wa.me/8619008225410" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="${escapeHtml(quoteHref)}" class="btn btn-quote">Get a Quote</a>
-  </div>
-  <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Engine photo zoom">
-    <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Close image preview">&times;</button>
-    <img id="flagshipLightboxImg" src="" alt="">
-  </div>
-  <script src="/js/main.js" defer></script>
-  <script src="/js/core-menu-accessibility.js" defer></script>
-  <script src="/js/flagship-engine-page.js" defer></script>`;
-}
+function renderEnEnginePage(engine, hwLocales) {
+  const seo = engine.seo;
+  const specProps = [
+    { '@type': 'PropertyValue', name: 'Nominal Class', value: engine.nominal_class },
+    { '@type': 'PropertyValue', name: 'Actual Displacement', value: engine.actual_displacement },
+    { '@type': 'PropertyValue', name: 'Bore × Stroke', value: engine.bore_stroke },
+    { '@type': 'PropertyValue', name: 'Max Power', value: engine.power },
+    { '@type': 'PropertyValue', name: 'Max Torque', value: engine.torque },
+    { '@type': 'PropertyValue', name: 'Compression Ratio', value: engine.compression },
+    { '@type': 'PropertyValue', name: 'Cooling System', value: engine.cooling },
+    { '@type': 'PropertyValue', name: 'Transmission', value: engine.transmission },
+    { '@type': 'PropertyValue', name: 'Starting Method', value: engine.starting },
+    { '@type': 'PropertyValue', name: 'Clutch Type', value: engine.clutch },
+    { '@type': 'PropertyValue', name: 'Dimensions & Weight', value: engine.dimensions_weight }
+  ];
+  if (engine.oil_capacity) specProps.push({ '@type': 'PropertyValue', name: 'Oil Capacity', value: engine.oil_capacity });
+  if (engine.carburetor) specProps.push({ '@type': 'PropertyValue', name: 'Carburetor', value: engine.carburetor });
 
-function renderEnginePage(engine) {
   const quoteHref = `/en/contact?product_interest=cg&source_form=flagship-engine-page&source_cta=hero-quote&engine_code=${encodeURIComponent(engine.model)}&vehicle=${encodeURIComponent(engine.vehicle_context)}&btv_pn=${encodeURIComponent(engine.sku)}`;
   const primaryImg = engine.gallery_images[0];
-  const bundledParts = resolveBundledParts(engine);
+  const bundledParts = resolveBundledParts(engine, 'en', hwLocales);
 
   const thumbsHtml = engine.gallery_images.map((img, idx) => `
             <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(img.src)}" data-alt="${escapeHtml(img.alt)}" data-caption="${escapeHtml(img.caption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="View photo ${idx + 1}: ${escapeHtml(img.caption)}">
@@ -406,22 +346,16 @@ function renderEnginePage(engine) {
   if (engine.carburetor) specRows.push(['Carburetor Specification', engine.carburetor]);
 
   const specTableRowsHtml = specRows.map(([k, v]) => `<tr><th scope="row">${escapeHtml(k)}</th><td>${escapeHtml(v)}</td></tr>`).join('\n            ');
-
   const configRowsHtml = (engine.standard_vs_optional_configs || []).map(row => `<tr><th scope="row">${escapeHtml(row.item)}</th><td>${escapeHtml(row.standard)}</td><td>${escapeHtml(row.optional)}</td></tr>`).join('\n            ');
-
   const mountingHtml = (engine.mounting_interface_notes || []).map(item => `
           <div class="feature-item" style="text-align:left;">
             <h3>${escapeHtml(item.label)}</h3>
             <p>${escapeHtml(item.detail)}</p>
           </div>`).join('');
-
   const comparisonRowsHtml = (engine.comparison_models || []).map(row => {
-    const modelCell = row.current
-      ? `<strong>${escapeHtml(row.model)}</strong>`
-      : `<a href="${escapeHtml(row.url)}">${escapeHtml(row.model)}</a>`;
+    const modelCell = row.current ? `<strong>${escapeHtml(row.model)}</strong>` : `<a href="${escapeHtml(row.url)}">${escapeHtml(row.model)}</a>`;
     return `<tr><th scope="row">${modelCell}</th><td>${escapeHtml(row.nominal)}</td><td>${escapeHtml(row.actual)}</td><td>${escapeHtml(row.bore_stroke)}</td><td>${escapeHtml(row.power)}</td><td>${escapeHtml(row.torque)}</td><td>${escapeHtml(row.weight)}</td><td>${escapeHtml(row.dimensions)}</td></tr>`;
   }).join('\n            ');
-
   const bundleItemsHtml = bundledParts.map((part, idx) => {
     const meta = [part.pn ? `PN: ${part.pn}` : '', part.spec || ''].filter(Boolean).join(' · ');
     return `
@@ -430,27 +364,26 @@ function renderEnginePage(engine) {
               <span><strong>${escapeHtml(part.name)}</strong>${meta ? `<br><span style="font-size:0.84rem;color:var(--text-secondary);">${escapeHtml(meta)}</span>` : ''}</span>
             </label>`;
   }).join('');
-
   const relatedGuidesHtml = (engine.related_guides || []).map(g => `
           <div class="feature-item" style="text-align:left;">
             <h3><a href="${escapeHtml(g.url)}">${escapeHtml(g.title)}</a></h3>
             <p>${escapeHtml(g.description)}</p>
           </div>`).join('');
-
   const faqsHtml = (engine.faqs || []).map(f => `
           <div class="feature-item" style="text-align:left;">
             <h3>${escapeHtml(f.q)}</h3>
             <p>${escapeHtml(f.a)}</p>
           </div>`).join('');
-
   const hwPartsLinkBlock = engine.linked_parts_source
     ? `<p style="margin-top:1rem;"><a href="/en/engine-parts/hw-series" class="btn btn-primary btn-sm">Browse Full HW200–HW350 Spare Parts Catalog &rarr;</a></p>`
     : '';
+  const waUrl = `https://wa.me/8619008225410?text=${encodeURIComponent(`Hello CHIXIANG MOTOR, I would like a wholesale quote for ${engine.model} (${engine.sku}).`)}`;
 
-  return `${renderSharedHead(engine)}
+  return `${renderSharedHead(engine, 'en', seo, engine.quick_verdict, engine.family, engine.faqs || [], specProps)}
 <body class="flagship-page">
   ${GENERATED_MARKER}
-${renderNav(quoteHref)}
+${renderMobileNav('en', engine.slug, quoteHref)}
+${renderNavbar('en', engine.slug, 'products', quoteHref)}
 
   <div class="flagship-anchor-bar">
     <div class="container">
@@ -500,7 +433,7 @@ ${renderNav(quoteHref)}
 
             <div class="cta-actions" style="justify-content:flex-start;">
               <a href="${escapeHtml(quoteHref)}" class="btn btn-accent">Request Wholesale Quote</a>
-              <a href="https://wa.me/8619008225410?text=${encodeURIComponent(`Hello CHIXIANG MOTOR, I would like a wholesale quote for ${engine.model} (${engine.sku}).`)}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+              <a href="${escapeAttr(waUrl)}" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
             </div>
             <p class="flagship-moq-note"><strong>Wholesale Terms:</strong> 50-unit standard MOQ (mixed models and matching spare parts supported) · ~10 working days regular lead time · FOB Guangzhou (other major Chinese ports by arrangement).</p>
           </div>
@@ -560,7 +493,7 @@ ${renderNav(quoteHref)}
       <div class="container">
         <h2 class="section-title">Complete Engine + Service Kit Consolidation Quote</h2>
         <p class="section-subtitle">Select the complete ${escapeHtml(engine.model)} engine and matching spare-parts kits to prefill a consolidated mixed-container inquiry.</p>
-        <form id="flagshipBundleForm" class="flagship-bundle-card" data-model="${escapeHtml(engine.model)}" data-engine-code="${escapeHtml(engine.model)}" data-vehicle="${escapeHtml(engine.vehicle_context)}" data-engine-sku="${escapeHtml(engine.sku)}" data-product-interest="cg">
+        <form id="flagshipBundleForm" class="flagship-bundle-card" data-model="${escapeHtml(engine.model)}" data-engine-code="${escapeHtml(engine.model)}" data-vehicle="${escapeHtml(engine.vehicle_context)}" data-engine-sku="${escapeHtml(engine.sku)}" data-product-interest="cg" data-contact-path="/en/contact">
           <div class="flagship-bundle-grid">
             <div class="flagship-bundle-field">
               <label for="flagshipBundleQty">Estimated Quantity (Units / Mixed Lot)</label>
@@ -618,37 +551,341 @@ ${renderNav(quoteHref)}
     </section>
   </main>
 
-${renderFooter(quoteHref)}
+${renderFooter('en', waUrl, quoteHref, ['/js/flagship-engine-page.js'])}
+  <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Engine photo zoom">
+    <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Close image preview">&times;</button>
+    <img id="flagshipLightboxImg" src="" alt="">
+  </div>
+</body>
+</html>
+`;
+}
+
+function renderLocalizedEnginePage(engine, lang, flagshipLocales, hwLocales) {
+  const { ui, ov } = localizedEngineData(engine, lang, flagshipLocales);
+  const chrome = LOCALE_CHROME[lang];
+  const seo = ov.seo || engine.seo;
+  const familyName = ov.family || engine.family;
+  const quickVerdict = ov.quick_verdict || engine.quick_verdict;
+  const vehicleCtx = ov.vehicle_context || engine.vehicle_context;
+  const cooling = ov.cooling || engine.cooling;
+  const coolingClutch = ov.cooling_clutch || engine.cooling_clutch || `${cooling} · ${ov.clutch || engine.clutch}`;
+  const transmission = ov.transmission || engine.transmission;
+  const starting = ov.starting || engine.starting;
+  const clutch = ov.clutch || engine.clutch;
+  const ignition = ov.ignition || engine.ignition;
+  const configs = ov.standard_vs_optional_configs || engine.standard_vs_optional_configs || [];
+  const mountingNotes = ov.mounting_interface_notes || engine.mounting_interface_notes || [];
+  const faqs = ov.faqs || engine.faqs || [];
+  const relatedGuides = ov.related_guides || (engine.related_guides || []).map(g => ({ ...g, url: localizeCompUrl(g.url, lang) }));
+  const bundledParts = ov.bundled_kits
+    ? ov.bundled_kits.map(k => ({ pn: k.pn, name: k.name, spec: k.spec, oem: k.fitment || '' }))
+    : resolveBundledParts(engine, lang, hwLocales);
+
+  const sl = ui.specLabels;
+  const specProps = [
+    { '@type': 'PropertyValue', name: sl.nominal, value: engine.nominal_class },
+    { '@type': 'PropertyValue', name: sl.actual, value: engine.actual_displacement },
+    { '@type': 'PropertyValue', name: sl.boreStroke, value: engine.bore_stroke },
+    { '@type': 'PropertyValue', name: sl.power, value: engine.power },
+    { '@type': 'PropertyValue', name: sl.torque, value: engine.torque },
+    { '@type': 'PropertyValue', name: sl.compression, value: engine.compression },
+    { '@type': 'PropertyValue', name: sl.cooling, value: cooling },
+    { '@type': 'PropertyValue', name: sl.transmission, value: transmission },
+    { '@type': 'PropertyValue', name: sl.starting, value: starting },
+    { '@type': 'PropertyValue', name: sl.clutch, value: clutch },
+    { '@type': 'PropertyValue', name: sl.dimWeight, value: engine.dimensions_weight }
+  ];
+  if (engine.oil_capacity) specProps.push({ '@type': 'PropertyValue', name: sl.oil, value: engine.oil_capacity });
+  if (engine.carburetor) specProps.push({ '@type': 'PropertyValue', name: sl.carb, value: engine.carburetor });
+
+  const contactPath = rolePath('contact', lang);
+  const quoteHref = `${contactPath}?product_interest=cg&source_form=flagship-engine-page&source_cta=hero-quote&engine_code=${encodeURIComponent(engine.model)}&vehicle=${encodeURIComponent(vehicleCtx)}&btv_pn=${encodeURIComponent(engine.sku)}`;
+  const waModelLabel = lang === 'fr' && engine.model === 'HW300'
+    ? 'HW300 300cc à eau'
+    : (lang === 'fr' && engine.model === 'CG200' ? 'CG200 refroidi par air' : `${engine.model} (${engine.actual_displacement})`);
+  const waUrl = waHref(lang, waModelLabel);
+
+  const primaryImg = engine.gallery_images[0];
+  const thumbsHtml = engine.gallery_images.map((img, idx) => `
+            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeAttr(img.src)}" data-alt="${escapeAttr(`${engine.model} - ${img.caption}`)}" data-caption="${escapeAttr(img.caption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="${escapeAttr(`${engine.model} #${idx + 1}`)}">
+              <img src="/${escapeAttr(img.src)}" alt="${escapeAttr(`${engine.model} - ${img.caption}`)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120">
+            </button>`).join('');
+
+  const specRows = [
+    [sl.model, engine.alias ? `${engine.model} (${engine.alias})` : engine.model],
+    [sl.nominal, engine.nominal_class],
+    [sl.actual, engine.actual_displacement],
+    [sl.boreStroke, engine.bore_stroke],
+    [sl.power, engine.power],
+    [sl.torque, engine.torque],
+    [sl.compression, engine.compression],
+    [sl.cooling, cooling],
+    [sl.transmission, transmission],
+    [sl.starting, starting],
+    [sl.clutch, clutch],
+    [sl.ignition, ignition],
+    [sl.dimWeight, engine.dimensions_weight]
+  ];
+  if (engine.oil_capacity) specRows.push([sl.oil, engine.oil_capacity]);
+  if (engine.carburetor) specRows.push([sl.carb, engine.carburetor]);
+
+  const specTableRowsHtml = specRows.map(([k, v]) => `<tr><th scope="row">${escapeHtml(k)}</th><td>${escapeHtml(v)}</td></tr>`).join('\n            ');
+  const configRowsHtml = configs.map(row => `<tr><th scope="row">${escapeHtml(row.item)}</th><td>${escapeHtml(row.standard)}</td><td>${escapeHtml(row.optional)}</td></tr>`).join('\n            ');
+  const mountingHtml = mountingNotes.map(item => `
+          <div class="feature-item" style="text-align:left;">
+            <h3>${escapeHtml(item.label)}</h3>
+            <p>${escapeHtml(item.detail)}</p>
+          </div>`).join('');
+
+  const comparisonRowsHtml = (engine.comparison_models || []).map(row => {
+    const cleanModel = row.model.replace(' (This Page)', ` ${ui.currentSuffix}`);
+    const modelCell = row.current
+      ? `<strong>${escapeHtml(cleanModel)}</strong>`
+      : `<a href="${escapeAttr(localizeCompUrl(row.url, lang))}">${escapeHtml(cleanModel)}</a>`;
+    return `<tr><th scope="row">${modelCell}</th><td>${escapeHtml(row.nominal)}</td><td>${escapeHtml(row.actual)}</td><td>${escapeHtml(row.bore_stroke)}</td><td>${escapeHtml(row.power)}</td><td>${escapeHtml(row.torque)}</td><td>${escapeHtml(row.weight)}</td><td>${escapeHtml(row.dimensions)}</td></tr>`;
+  }).join('\n            ');
+
+  const bundleItemsHtml = bundledParts.map((part, idx) => {
+    const meta = [part.pn ? `${ui.pnPrefix}: ${part.pn}` : '', part.spec || ''].filter(Boolean).join(' · ');
+    return `
+            <label class="flagship-bundle-item">
+              <input type="checkbox" data-bundle-item data-part-name="${escapeAttr(part.name)}" data-part-pn="${escapeAttr(part.pn)}" data-part-oem="${escapeAttr(part.oem)}" ${idx < 2 ? 'checked' : ''}>
+              <span><strong>${escapeHtml(part.name)}</strong>${meta ? `<br><span style="font-size:0.84rem;color:var(--text-secondary);">${escapeHtml(meta)}</span>` : ''}</span>
+            </label>`;
+  }).join('');
+
+  const relatedGuidesHtml = relatedGuides.map(g => `
+          <div class="feature-item" style="text-align:left;">
+            <h3><a href="${escapeAttr(g.url)}">${escapeHtml(g.title)}</a></h3>
+            <p>${escapeHtml(g.description)}</p>
+          </div>`).join('');
+
+  const faqsHtml = faqs.map(f => `
+          <div class="feature-item" style="text-align:left;">
+            <h3>${escapeHtml(f.q)}</h3>
+            <p>${escapeHtml(f.a)}</p>
+          </div>`).join('');
+
+  const hwPartsLinkBlock = engine.linked_parts_source
+    ? `<p style="margin-top:1rem;"><a href="${rolePath('hw-series', lang)}" class="btn btn-primary btn-sm">${escapeHtml(ui.hwPartsBtn)}</a></p>`
+    : '';
+
+  const qaCardsHtml = ui.qaCards.map(card => {
+    const [heading, text, linkLabel, linkHref] = card;
+    const linkPart = linkHref ? ` <a href="${escapeAttr(linkHref)}">${escapeHtml(linkLabel)}</a>` : '';
+    return `          <div class="feature-item" style="text-align:left;">
+            <h3>${escapeHtml(heading)}</h3>
+            <p>${escapeHtml(text)}${linkPart}</p>
+          </div>`;
+  }).join('\n');
+
+  const familyHref = localizeCompUrl(engine.family_url, lang);
+
+  return `${renderSharedHead(engine, lang, seo, quickVerdict, familyName, faqs, specProps)}
+<body class="flagship-page${lang === 'zh-cn' ? ' zh-cn-page' : ''}">
+  ${GENERATED_MARKER}
+${renderMobileNav(lang, engine.slug, quoteHref)}
+${renderNavbar(lang, engine.slug, 'products', quoteHref)}
+
+  <div class="flagship-anchor-bar">
+    <div class="container">
+      <nav class="flagship-anchor-nav" aria-label="Section navigation">
+        <a href="#overview">${escapeHtml(ui.anchors.overview)}</a>
+        <a href="#specifications">${escapeHtml(ui.anchors.specifications)}</a>
+        <a href="#mounting">${escapeHtml(ui.anchors.mounting)}</a>
+        <a href="#comparison">${escapeHtml(ui.anchors.comparison)}</a>
+        <a href="#bundle-quote">${escapeHtml(ui.anchors.bundle)}</a>
+        <a href="#quality-export">${escapeHtml(ui.anchors.quality)}</a>
+        <a href="#faq">${escapeHtml(ui.anchors.faq)}</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <nav class="breadcrumb entity-breadcrumb entity-breadcrumb--standalone" aria-label="Breadcrumb"><a href="${rolePath('home', lang)}">${escapeHtml(chrome.nav.home)}</a><span aria-hidden="true">/</span><a href="${rolePath('cg', lang)}">${escapeHtml(ui.breadcrumbCg)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(seo.h1)}</span></nav>
+    <section class="section" id="overview" style="padding-top:1.75rem;">
+      <div class="container">
+        <div class="flagship-hero-grid">
+          <div class="flagship-gallery">
+            <div class="flagship-gallery-main">
+              <img id="flagshipMainImg" src="/${escapeAttr(primaryImg.src)}" alt="${escapeAttr(`${engine.model} - ${primaryImg.caption}`)}" width="800" height="600" loading="eager">
+              <div class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(primaryImg.caption)}</div>
+            </div>
+            <div class="flagship-thumbs" role="group" aria-label="Gallery">${thumbsHtml}
+            </div>
+          </div>
+
+          <div class="flagship-summary">
+            <p style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--primary-color);margin:0 0 0.4rem;">${escapeHtml(familyName)} · SKU ${escapeHtml(engine.sku)}</p>
+            <h1 style="margin-top:0;">${escapeHtml(seo.h1)}</h1>
+
+            <div class="flagship-verdict">
+              <p class="flagship-verdict__label">${escapeHtml(ui.verdictLabel)}</p>
+              <p style="margin:0;color:var(--text-primary);line-height:1.65;">${escapeHtml(quickVerdict)}</p>
+            </div>
+
+            <dl class="flagship-spec-grid">
+              <div class="flagship-spec-card"><dt>${escapeHtml(sl.actual)}</dt><dd>${escapeHtml(engine.actual_displacement)} (${escapeHtml(engine.nominal_class)})</dd></div>
+              <div class="flagship-spec-card"><dt>${escapeHtml(sl.boreStroke)}</dt><dd>${escapeHtml(engine.bore_stroke)}</dd></div>
+              <div class="flagship-spec-card"><dt>${escapeHtml(sl.power)}</dt><dd>${escapeHtml(engine.power)}</dd></div>
+              <div class="flagship-spec-card"><dt>${escapeHtml(sl.torque)}</dt><dd>${escapeHtml(engine.torque)}</dd></div>
+              <div class="flagship-spec-card"><dt>${escapeHtml(sl.coolingClutch)}</dt><dd>${escapeHtml(coolingClutch)}</dd></div>
+              <div class="flagship-spec-card"><dt>${escapeHtml(sl.dimWeight)}</dt><dd>${escapeHtml(engine.dimensions_weight)}</dd></div>
+            </dl>
+
+            <div class="cta-actions" style="justify-content:flex-start;">
+              <a href="${escapeAttr(quoteHref)}" class="btn btn-accent">${escapeHtml(ui.ctaQuote)}</a>
+              <a href="${escapeAttr(waUrl)}" class="btn btn-outline" target="_blank" rel="noopener">${escapeHtml(chrome.waLabel)}</a>
+            </div>
+            <p class="flagship-moq-note">${escapeHtml(ui.moqNote)}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="specifications" style="background:var(--bg-surface,#f8fafc);">
+      <div class="container">
+        <h2 class="section-title">${escapeHtml(ui.specsTitle)}</h2>
+        <div class="responsive-table-wrap" tabindex="0" style="margin-top:1.5rem;">
+          <table class="specs-table catalog-spec-table">
+            <thead><tr><th>${escapeHtml(ui.paramHeader)}</th><th>${escapeHtml(ui.valueHeader)}</th></tr></thead>
+            <tbody>
+            ${specTableRowsHtml}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin-top:2.25rem;">${escapeHtml(ui.scopeTitle)}</h3>
+        <div class="responsive-table-wrap" tabindex="0" style="margin-top:1rem;">
+          <table class="specs-table catalog-spec-table">
+            <thead><tr><th>${escapeHtml(ui.scopeHeaders[0])}</th><th>${escapeHtml(ui.scopeHeaders[1])}</th><th>${escapeHtml(ui.scopeHeaders[2])}</th></tr></thead>
+            <tbody>
+            ${configRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mounting">
+      <div class="container">
+        <h2 class="section-title">${escapeHtml(ui.mountingTitle)}</h2>
+        <p class="section-subtitle">${escapeHtml(ui.mountingSub)}</p>
+        <div class="features-grid" style="margin-top:1.5rem;">${mountingHtml}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="comparison" style="background:var(--bg-surface,#f8fafc);">
+      <div class="container">
+        <h2 class="section-title">${escapeHtml(ui.compTitle)}</h2>
+        <div class="responsive-table-wrap" tabindex="0" style="margin-top:1.5rem;">
+          <table class="specs-table catalog-spec-table">
+            <thead><tr>${ui.compHeaders.map(h => `<th>${escapeHtml(h)}</th>`).join('')}</tr></thead>
+            <tbody>
+            ${comparisonRowsHtml}
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:1rem;"><a href="${escapeAttr(familyHref)}" class="btn btn-primary btn-sm">${escapeHtml(ui.compBtn)} (${escapeHtml(familyName)}) &rarr;</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="bundle-quote">
+      <div class="container">
+        <h2 class="section-title">${escapeHtml(ui.bundleTitle)}</h2>
+        <p class="section-subtitle">${escapeHtml(ui.bundleSub)}</p>
+        <form id="flagshipBundleForm" class="flagship-bundle-card" data-contact-path="${contactPath}" data-model="${escapeAttr(engine.model)}" data-engine-code="${escapeAttr(engine.model)}" data-vehicle="${escapeAttr(vehicleCtx)}" data-engine-sku="${escapeAttr(engine.sku)}" data-product-interest="cg">
+          <div class="flagship-bundle-grid">
+            <div class="flagship-bundle-field">
+              <label for="flagshipBundleQty">${escapeHtml(ui.bundleQtyLabel)}</label>
+              <input type="text" id="flagshipBundleQty" placeholder="${escapeAttr(ui.bundleQtyPh)}" value="${escapeAttr(ui.bundleQtyVal)}">
+            </div>
+            <div class="flagship-bundle-field">
+              <label for="flagshipBundleCountry">${escapeHtml(ui.bundleCountryLabel)}</label>
+              <input type="text" id="flagshipBundleCountry" placeholder="${escapeAttr(ui.bundleCountryPh)}">
+            </div>
+          </div>
+          <div class="flagship-bundle-list">
+            <label class="flagship-bundle-item">
+              <input type="checkbox" data-bundle-item data-part-name="${escapeAttr(`${engine.model} ${ui.completeSuffix} (${engine.actual_displacement})`)}" data-part-pn="${escapeAttr(engine.sku)}" data-part-oem="${escapeAttr(engine.alias || engine.model)}" checked>
+              <span><strong>${escapeHtml(`${engine.model} ${ui.completeSuffix}`)}</strong><br><span style="font-size:0.84rem;color:var(--text-secondary);">SKU: ${escapeHtml(engine.sku)} · ${escapeHtml(engine.bore_stroke)}</span></span>
+            </label>
+            ${bundleItemsHtml}
+          </div>
+          <div class="cta-actions" style="justify-content:flex-start;">
+            <button type="submit" class="btn btn-accent">${escapeHtml(ui.bundleBtn)}</button>
+          </div>
+        </form>
+        ${hwPartsLinkBlock}
+      </div>
+    </section>
+
+    <section class="section" id="quality-export" style="background:var(--bg-surface,#f8fafc);">
+      <div class="container">
+        <h2 class="section-title">${escapeHtml(ui.qaTitle)}</h2>
+        <div class="features-grid" style="margin-top:1.5rem;">
+${qaCardsHtml}
+        </div>
+        <h3 style="margin-top:2rem;">${escapeHtml(ui.guidesTitle)}</h3>
+        <div class="features-grid" style="margin-top:1rem;">${relatedGuidesHtml}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title">${escapeHtml(ui.faqTitle)} ${escapeHtml(engine.model)}</h2>
+        <div class="features-grid" style="margin-top:1.5rem;">${faqsHtml}
+        </div>
+      </div>
+    </section>
+  </main>
+
+${renderFooter(lang, waUrl, quoteHref, ['/js/flagship-engine-page.js'])}
+  <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Close">&times;</button>
+    <img id="flagshipLightboxImg" src="" alt="">
+  </div>
 </body>
 </html>
 `;
 }
 
 function listOwnedFiles() {
-  const dir = path.join(root, DETAIL_DIR);
-  if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir, { withFileTypes: true })
-    .filter(d => d.isFile() && d.name.endsWith('.html'))
-    .map(d => {
+  const results = [];
+  for (const lang of TARGET_LANGS) {
+    const dir = path.join(root, lang, 'cg-engine');
+    if (!fs.existsSync(dir)) continue;
+    for (const d of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!d.isFile() || !d.name.endsWith('.html')) continue;
       const abs = path.join(dir, d.name);
       const content = fs.readFileSync(abs, 'utf8');
-      return {
-        rel: path.join(DETAIL_DIR, d.name),
+      results.push({
+        rel: path.join(lang, 'cg-engine', d.name),
         abs,
         managed: content.includes(GENERATED_MARKER)
-      };
-    });
+      });
+    }
+  }
+  return results;
 }
 
 function syncSitemap(engines) {
   const sitemapPath = path.join(root, 'sitemap.xml');
   const xml = fs.readFileSync(sitemapPath, 'utf8');
-  const want = new Set(engines.map(canonicalUrl));
+  const want = new Set();
+  for (const lang of TARGET_LANGS) {
+    for (const engine of engines) {
+      want.add(canonicalUrl(engine, lang));
+    }
+  }
   const seen = new Set();
   let removed = 0;
 
   let out = xml.replace(
-    / {0,2}<url>\s*<loc>(https:\/\/chixiangmotor\.com\/en\/cg-engine\/[^<]+)<\/loc>[\s\S]*?<\/url>\r?\n/g,
+    / {0,2}<url>\s*<loc>(https:\/\/chixiangmotor\.com\/(?:en|fr|es|pt|ru|ar|zh-cn)\/cg-engine\/[^<]+)<\/loc>[\s\S]*?<\/url>\r?\n/g,
     (block, url) => {
       if (want.has(url)) {
         seen.add(url);
@@ -682,21 +919,34 @@ function main() {
     process.exit(2);
   }
 
+  const flagshipLocales = fs.existsSync(localesFile) ? readJson(localesFile) : { ui: {}, engines: {} };
+  flagshipUiCache = flagshipLocales.ui || {};
+  const hwLocalesPath = path.join(__dirname, '..', 'data', 'i18n', 'hw-parts-locales.json');
+  const hwLocales = fs.existsSync(hwLocalesPath) ? readJson(hwLocalesPath) : {};
+
   const active = publishedEngines(data);
   const expectedSet = new Set();
   const changes = [];
 
-  for (const engine of active) {
-    const rel = detailRelPath(engine);
-    expectedSet.add(rel);
-    const abs = path.join(root, rel);
-    const html = renderEnginePage(engine).replace(/\r?\n/g, '\r\n');
-    const current = fs.existsSync(abs) ? fs.readFileSync(abs, 'utf8') : '';
-    if (current !== html) {
-      changes.push({ file: rel, stale: true });
-      if (!checkOnly) {
-        fs.mkdirSync(path.dirname(abs), { recursive: true });
-        fs.writeFileSync(abs, html, 'utf8');
+  for (const lang of TARGET_LANGS) {
+    for (const engine of active) {
+      const rel = detailRelPath(engine, lang);
+      expectedSet.add(rel);
+      const abs = path.join(root, rel);
+      const rawHtml = lang === 'en'
+        ? renderEnEnginePage(engine, hwLocales)
+        : renderLocalizedEnginePage(engine, lang, flagshipLocales, hwLocales);
+      const alignedHtml = process.env.FLAGSHIP_ROOT
+        ? rawHtml
+        : applyToHtml(rawHtml, canonicalUrl(engine, lang));
+      const html = alignedHtml.replace(/\r?\n/g, '\r\n');
+      const current = fs.existsSync(abs) ? fs.readFileSync(abs, 'utf8') : '';
+      if (current !== html) {
+        changes.push({ file: rel, stale: true });
+        if (!checkOnly) {
+          fs.mkdirSync(path.dirname(abs), { recursive: true });
+          fs.writeFileSync(abs, html, 'utf8');
+        }
       }
     }
   }

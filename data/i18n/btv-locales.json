@@ -1,0 +1,692 @@
+{
+  "fr": {
+    "hub": {
+      "title": "Moteurs et pièces adaptables Bajaj Boxer BM150 / TVS HLX & King | CHIXIANG",
+      "description": "Moteurs complets et pièces de rechange adaptables (culasse complète, kit cylindre-piston, vilebrequin, demi-carters, pochettes de joints) pour Bajaj Boxer, RE 4S, TVS HLX et King. Commande mixte dès 50 unités FOB Guangzhou.",
+      "h1": "Moteurs complets et pièces de rechange adaptables Bajaj et TVS",
+      "lead": "Moteurs complets adaptables, demi-carters moteur gauche et droit, culasse complète, kit cylindre-piston, ensemble vilebrequin et bielle et pochette complète de joints moteur pour flottes commerciales, avec commande mixte de plusieurs modèles dans un même conteneur.",
+      "viewBrandCta": "Voir moteurs & pièces",
+      "brandHeading": "Parcourir par marque compatible",
+      "brandDescTpl": "Moteurs complets adaptables et pièces de rechange pour motos et tricycles {brand} (références OEM à titre d'identification uniquement).",
+      "procHeading": "Approvisionnement B2B Afrique & commande mixte",
+      "procItems": [
+        "<strong>Commande mixte flexible :</strong> combinez moteurs complets et pièces détachées dans un même conteneur (MOQ 50 moteurs pour les complets) avec vos gammes CG, CB et tricycles à eau.",
+        "<strong>Nomenclature Afrique vérifiée :</strong> Bajaj Boxer CT100 / BM100, Bajaj Boxer BM150 (moto-taxi), Bajaj RE 4S 200 (tricycle), TVS HLX 125 / 150 et TVS King 200.",
+        "<strong>Transparence OEM :</strong> pièces de rechange adaptables usinées aux cotes constructeur ; références OEM citées uniquement à titre d'identification technique."
+      ]
+    },
+    "bajajBrand": {
+      "title": "Moteurs et pièces adaptables Bajaj Boxer CT100, BM150 & RE 4S | CHIXIANG",
+      "description": "Moteurs complets de remplacement, demi-carters 36PF0004/36PF0005, couvercles 36PF0008, kits cylindre-piston et pochettes de joints pour Bajaj Boxer CT100/BM100, BM150 et RE 4S 200.",
+      "h1": "Moteurs complets et pièces adaptables Bajaj Boxer & RE 4S"
+    },
+    "tvsBrand": {
+      "title": "Moteurs et pièces adaptables TVS HLX 150 / 125 & TVS King 200 | CHIXIANG",
+      "description": "Moteurs complets de remplacement, demi-carters, culasse complète, kit cylindre-piston, vilebrequin et pochettes de joints pour TVS Star HLX 125/150 et TVS King 200.",
+      "h1": "Moteurs complets et pièces adaptables TVS HLX & King 200"
+    },
+    "ui": {
+      "delivery": { "casting": "Brut de fonderie", "machined": "Usiné CNC", "assembly": "Sous-ensemble / Complet" },
+      "partNo": "Réf. Chixiang",
+      "oemRef": "Réf. OEM (identification)",
+      "deliveryLabel": "Livraison",
+      "engineCode": "Code moteur",
+      "specEyebrow": "CHIXIANG MOTOR · Moteur adaptable",
+      "specNote": "Construit aux cotes de fixation et cannelures OEM",
+      "viewDetails": "Voir la fiche technique",
+      "quote": "Devis FOB",
+      "subcats": "Sous-catégories :",
+      "hubSectionTitle": "Pièces agrégées par modèle & références OEM d'identification",
+      "hubSectionSub": "Filtrez par modèle ou recherchez une référence OEM à titre d'identification. Cochez plusieurs lignes pour un devis groupé en conteneur mixte.",
+      "filterModel": "Filtrer par modèle",
+      "allModels": "Tous les modèles",
+      "filterCat": "Filtrer par catégorie",
+      "allCats": "Toutes les catégories",
+      "filterSearch": "Rechercher Réf. Chixiang, OEM ou pièce",
+      "searchPh": "ex. 36PF0004, JA541212, culasse...",
+      "scopeEngine": "Moteur complet + Pièces clés",
+      "scopeParts": "Pièces de rechange cœur",
+      "viewCompleteBtn": "Voir photos & comparatif complet du moteur →",
+      "swipeHint": "← Glissez horizontalement pour voir les références OEM et cocher les pièces →",
+      "thPick": "Choix",
+      "thPart": "Pièce clé",
+      "thCat": "Catégorie",
+      "thPn": "Réf. Chixiang",
+      "thOem": "Réf. OEM",
+      "thSpec": "Matériau / Spécification",
+      "thAction": "Devis",
+      "pickRow": "Choisir",
+      "selectedLabel": "Pièces sélectionnées pour devis",
+      "clearBtn": "Vider",
+      "batchBtn": "Devis groupé →",
+      "displacementLbl": "Cylindrée :",
+      "detailSpecsTitle": "Spécifications techniques & interfaces",
+      "detailPhotosTitle": "Photos réelles & vues de montage",
+      "detailCtaTitle": "Demander un devis avec vos références et quantités",
+      "detailCtaDesc": "Chargement possible en commande mixte de plusieurs modèles avec moteurs CG, CB, horizontaux et à eau. Normes d'essai et laboratoire détaillées au Centre de preuves.",
+      "evidenceLink": "Voir le Centre de preuves",
+      "includedAcc": "Accessoires inclus :",
+      "contactProc": "Demander un devis export",
+      "backHub": "Catalogue Bajaj & TVS",
+      "termsLine": "MOQ standard : 50 moteurs complets (commande mixte moteurs complets et pièces détachées dans un même conteneur) · Délai ~10 jours ouvrables · FOB Guangzhou (Abidjan, Douala, Cotonou, Dakar ; BSC / BESC coordonné par transitaire) · Garantie 60 jours après arrivée.",
+      "disclaimer": "Mentions légales : Les marques et désignations (Bajaj®, TVS®) ainsi que les références OEM sont mentionnées uniquement à titre d'identification et de compatibilité mécanique. CHIXIANG MOTOR fournit des moteurs et pièces adaptables indépendants.",
+      "verdictLabel": "Synthèse d'ingénierie · Pièce adaptable indépendante",
+      "versionTitle": "Différences 4 vitesses / 5 vitesses & points de contrôle montage",
+      "versionHeaders": ["Configuration BM150", "Application flotte", "Vérification avant commande"],
+      "specVsOemTitle": "Spécification CHIXIANG vs Référence OEM d'identification",
+      "specVsOemHeaders": ["Composant", "Réf. Chixiang", "Spécification réelle fournie", "Réf. OEM (identification)"],
+      "bundleTitle": "Devis groupé : Moteur BM150 + Pièces de rechange cœur",
+      "bundleSub": "Cochez le moteur complet et les demi-carters moteur gauche et droit, culasse complète, kit cylindre-piston ou embrayage pour votre devis FOB Guangzhou.",
+      "bundleQty": "Quantité estimée (moteurs + pièces)",
+      "bundleCountry": "Pays & port de destination",
+      "bundleCountryPh": "ex. Côte d'Ivoire (Abidjan), Cameroun (Douala), Sénégal (Dakar)",
+      "bundleBtn": "Pré-remplir la demande de devis →",
+      "faqTitle": "Questions fréquentes — Bajaj Boxer BM150 adaptable"
+    },
+    "categories": {
+      "complete-engines": ["Moteurs complets adaptables", "Ensembles moteurs complets de remplacement aux cotes et cannelures OEM pour flottes de moto-taxis et tricycles."],
+      "crankcases": ["Demi-carters moteur gauche et droit", "Demi-carters moteur gauche et droit en aluminium ADC12 usinés CNC pour portées de roulements et plans de joint précis."],
+      "engine-covers": ["Couvercles d'embrayage & magnéto", "Couvercles latéraux droits et gauches conformes aux interfaces et hublots d'huile OEM."],
+      "cylinder-head-kits": ["Culasse complète & kit cylindre-piston", "Culasse complète avec soupapes/culbuteurs et kit cylindre-piston alésé avec précision aux cylindrées d'origine."],
+      "crankshaft-timing": ["Ensemble vilebrequin et bielle & distribution", "Ensemble vilebrequin et bielle forgé, chaînes de distribution silencieuses et tendeurs."],
+      "clutch-transmission": ["Embrayage & boîte / marche arrière", "Cloches, disques d'embrayage, arbres primaire/secondaire et pignons de marche arrière 3 roues."],
+      "overhaul-seals": ["Pochette complète de joints moteur & spi", "Pochette complète de joints moteur et jeux de bagues d'étanchéité pour grande révision atelier."]
+    },
+    "products": {
+      "bajaj-boxer-ct100-bm100-complete-engine": "Moteur complet de remplacement adaptable Bajaj Boxer CT100 / BM100 (99,27 cc OHC)",
+      "bajaj-boxer-bm150-complete-engine": "Moteur complet de remplacement adaptable Bajaj Boxer BM150 (144,8 cc)",
+      "bajaj-re-4s-200-complete-engine": "Moteur complet adaptable tricycle Bajaj RE 4S / Compact (198,88 cc 4F+1R)",
+      "tvs-hlx-150-complete-engine": "Moteur complet adaptable TVS HLX 150 / HLX 125 (147,49 cc Ecothrust)",
+      "tvs-king-200-complete-engine": "Moteur complet adaptable tricycle TVS King Deluxe / GS 200 (199,26 cc 4F+1R)"
+    },
+    "bm150": {
+      "quick_verdict": "CHIXIANG CX-BJ-BM150-ENG est un moteur complet adaptable indépendant construit aux tolérances de fixation et de sortie 144,8 cc SOHC (56,0 × 58,8 mm) pour flottes Bajaj Boxer BM150, en version 4 ou 5 vitesses dès 50 unités en commande mixte. Les références OEM figurent uniquement à titre d'identification technique.",
+      "version_differences": [
+        { "variant": "Boîte 4 vitesses internationale", "application": "Flottes Boxer BM150 utilitaires et moto-taxis première génération", "key_check": "Confirmer tambour sélecteur 4 vitesses et préfixe moteur" },
+        { "variant": "Boîte 5 vitesses internationale", "application": "Boxer BM150 / BM150X routier et transport intensif", "key_check": "Confirmer démultiplication 5 vitesses et carters ES/KS" },
+        { "variant": "Allumage simple vs double bougie", "application": "Selon année et faisceau local", "key_check": "Vérifier broches CDI et culasse 1 ou 2 bougies avant facture proforma" }
+      ],
+      "fitment_checklist": [
+        { "step": "1. Préfixe moteur & carter", "detail": "Relevez le préfixe gravé (série 36PF / JA) pour aligner les pattes de fixation des demi-carters moteur gauche et droit." },
+        { "step": "2. Boîte 4 ou 5 vitesses", "detail": "Précisez 4 ou 5 vitesses internationales dans votre bon de commande avant assemblage." },
+        { "step": "3. Culasse & faisceau d'allumage", "detail": "Confirmez simple ou double allumage et la prise stator de votre flotte." },
+        { "step": "4. Couvercle & pignon 428", "detail": "Contrôlez la géométrie du carter kick/démarreur et le pas de chaîne 428." },
+        { "step": "5. Pièces d'entretien en lot", "detail": "Ajoutez demi-carters moteur gauche et droit, culasse complète, kit cylindre-piston, ensemble vilebrequin et bielle et pochette complète de joints moteur dans le même conteneur." }
+      ],
+      "spec_vs_oem_rows": [
+        { "component": "Moteur complet de remplacement", "chixiang_pn": "CX-BJ-BM150-ENG", "chixiang_spec": "144,8 cc SOHC · 56,0 × 58,8 mm · 4/5 vitesses · Kick & Électrique", "oem_ref": "36PF0004 / 36PF0005 (id.)" },
+        { "component": "Demi-carter moteur gauche (LH)", "chixiang_pn": "CX-BJ-BM150-LH", "chixiang_spec": "Aluminium ADC12 · Alésages roulements CNC", "oem_ref": "36PF0004" },
+        { "component": "Demi-carter moteur droit (RH)", "chixiang_pn": "CX-BJ-BM150-RH", "chixiang_spec": "Aluminium ADC12 · Plans de joint usinés CNC", "oem_ref": "36PF0005" },
+        { "component": "Couvercle d'embrayage droit", "chixiang_pn": "CX-BJ-BM150-CC", "chixiang_spec": "Aluminium injecté usiné (réf. joint : JA541212)", "oem_ref": "36PF0008" },
+        { "component": "Kit cylindre-piston (56,0 mm)", "chixiang_pn": "CX-BJ-BM150-CY", "chixiang_spec": "Chemise résistante à l'usure + piston 56,0 mm, segments et axe", "oem_ref": "36PF0002" },
+        { "component": "Kit disques d'embrayage & pignons", "chixiang_pn": "CX-BJ-BM150-TR", "chixiang_spec": "Pignons acier 20CrMnTi + disques garnis (joint JA541212)", "oem_ref": "36PF0009 (Disques)" }
+      ],
+      "bundle_items": [
+        { "pn": "CX-BJ-BM150-LH", "oem": "36PF0004", "name": "Demi-carter moteur gauche (LH)", "spec": "Aluminium ADC12 · Alésages CNC" },
+        { "pn": "CX-BJ-BM150-RH", "oem": "36PF0005", "name": "Demi-carter moteur droit (RH)", "spec": "Aluminium ADC12 · Plans CNC" },
+        { "pn": "CX-BJ-BM150-CC", "oem": "36PF0008", "name": "Couvercle d'embrayage & pochette complète de joints moteur", "spec": "Usiné CNC · Réf. joint JA541212" },
+        { "pn": "CX-BJ-BM150-CY", "oem": "36PF0002", "name": "Kit cylindre-piston (56,0 mm) & culasse complète", "spec": "144,8 cc · Chemise + piston + culasse" },
+        { "pn": "CX-BJ-BM150-TR", "oem": "36PF0009", "name": "Kit embrayage, ensemble vilebrequin et bielle & pignons", "spec": "Acier 20CrMnTi + disques renforcés" }
+      ],
+      "faqs": [
+        { "q": "CX-BJ-BM150-ENG est-il une pièce constructeur Bajaj ou un moteur adaptable ?", "a": "CX-BJ-BM150-ENG est un moteur de remplacement adaptable fabriqué par CHIXIANG MOTOR aux dimensions 144,8 cc (56,0 × 58,8 mm). Les références OEM figurent uniquement à titre d'identification technique." },
+        { "q": "Comment choisir entre BM150 4 vitesses et 5 vitesses ?", "a": "Vérifiez la boîte de votre parc existant et le préfixe 36PF/JA, puis précisez 4 ou 5 vitesses et simple/double allumage sur la facture proforma." },
+        { "q": "Fournissez-vous culasse complète, vilebrequin et pochettes de joints BM150 ?", "a": "Oui : demi-carters moteur gauche et droit (36PF0004/36PF0005), kit cylindre-piston (36PF0002), culasse complète, ensemble vilebrequin et bielle et pochette complète de joints moteur." },
+        { "q": "Puis-je combiner moteurs BM150 avec CG150/CG200 et HW300 ?", "a": "Oui, dès 50 moteurs en commande mixte de plusieurs modèles, FOB Guangzhou vers Abidjan, Douala, Cotonou ou Dakar." },
+        { "q": "Quels tests et garantie couvrent le BM150 ?", "a": "Test au banc chaud/froid à 100 % à Chongqing (~10 jours ouvrables) et garantie 60 jours après arrivée au port." }
+      ]
+    }
+  },
+  "es": {
+    "hub": {
+      "title": "Motores y repuestos tipo original Bajaj Boxer / Torito RE / TVS HLX & King | CHIXIANG",
+      "description": "Motores completos de reemplazo y repuestos aftermarket (culata completa, kit de cilindro y pistón, cigüeñal con biela, cárteres y empaquetaduras) para Bajaj Boxer BM150, Torito Bajaj RE 4S, TVS HLX y TVS King 200. Contenedor mixto FOB Guangzhou.",
+      "h1": "Motores de reemplazo y catálogo de repuestos Bajaj y TVS",
+      "lead": "Motores completos de reemplazo, cárteres izquierdo/derecho, culata completa, kit de cilindro y pistón, cigüeñal con biela y juego completo de empaquetaduras para flotas mototaxi y reparto, listos para contenedor mixto junto con motores CG varilleros y cargueros.",
+      "viewBrandCta": "Ver catálogo de la marca",
+      "brandHeading": "Explorar por marca compatible",
+      "brandDescTpl": "Motores completos de reemplazo y repuestos aftermarket para motos y mototaxis {brand} (códigos OEM solo como referencia de identificación).",
+      "procHeading": "Suministro mayorista Latam y carga mixta",
+      "procItems": [
+        "<strong>Contenedor mixto desde 50 unidades :</strong> mezcle motores completos Boxer/Torito/TVS con motores varilleros CG150/CG200 y cargueros HW300 más kits de repuestos.",
+        "<strong>Cobertura líder en Latinoamérica :</strong> Bajaj Boxer CT100/BM100, Boxer BM150, mototaxi Torito Bajaj RE 4S 200, TVS HLX 150 y TVS King 200.",
+        "<strong>Claridad técnica :</strong> repuestos independientes tipo original fabricados según tolerancias OEM; códigos OEM citados únicamente como guía de identificación."
+      ]
+    },
+    "bajajBrand": {
+      "title": "Motores y repuestos Bajaj Boxer CT100, BM150 y Torito RE 4S 200 | CHIXIANG",
+      "description": "Motores completos de reemplazo, cárteres 36PF0004/36PF0005, tapas 36PF0008, kits de cilindro y pistón y empaquetaduras para Bajaj Boxer y mototaxi Torito RE 4S 200.",
+      "h1": "Motores de reemplazo y repuestos Bajaj Boxer & Torito RE 4S"
+    },
+    "tvsBrand": {
+      "title": "Motores y repuestos TVS HLX 150 / 125 y TVS King 200 | CHIXIANG",
+      "description": "Motores completos de reemplazo, cárteres ADC12, culatas, kits de cilindro y empaquetaduras para motocicletas TVS HLX 150/125 y mototaxis TVS King Deluxe 200.",
+      "h1": "Motores de reemplazo y repuestos TVS HLX 150 & King 200"
+    },
+    "ui": {
+      "delivery": { "casting": "Fundición", "machined": "Mecanizado CNC", "assembly": "Conjunto completo" },
+      "partNo": "SKU Chixiang",
+      "oemRef": "Ref. OEM (identificación)",
+      "deliveryLabel": "Formato",
+      "engineCode": "Código motor",
+      "specEyebrow": "CHIXIANG MOTOR · Motor de reemplazo",
+      "specNote": "Fabricado según anclajes y estrías OEM",
+      "viewDetails": "Ver ficha técnica",
+      "quote": "Cotizar FOB",
+      "subcats": "Subcategorías:",
+      "hubSectionTitle": "Repuestos por modelo y tabla cruzada de códigos OEM",
+      "hubSectionSub": "Filtre por modelo o busque por código OEM. Marque varias filas para solicitar cotización consolidada en contenedor mixto.",
+      "filterModel": "Filtrar por modelo",
+      "allModels": "Todos los modelos",
+      "filterCat": "Filtrar por categoría",
+      "allCats": "Todas las categorías",
+      "filterSearch": "Buscar SKU Chixiang, OEM o pieza",
+      "searchPh": "ej. 36PF0004, JA541212, culata...",
+      "scopeEngine": "Motor completo + Repuestos clave",
+      "scopeParts": "Repuestos principales de rotación",
+      "viewCompleteBtn": "Ver fotos y especificaciones del motor completo →",
+      "swipeHint": "← Deslice horizontalmente para ver códigos OEM y marcar repuestos →",
+      "thPick": "Sel.",
+      "thPart": "Repuesto clave",
+      "thCat": "Categoría",
+      "thPn": "SKU Chixiang",
+      "thOem": "Ref. OEM",
+      "thSpec": "Material / Especificación",
+      "thAction": "Cotizar",
+      "pickRow": "Seleccionar",
+      "selectedLabel": "Repuestos seleccionados para cotizar",
+      "clearBtn": "Limpiar",
+      "batchBtn": "Cotizar lote →",
+      "displacementLbl": "Cilindrada:",
+      "detailSpecsTitle": "Especificaciones técnicas y compatibilidad",
+      "detailPhotosTitle": "Fotos reales y vistas de acoplamiento",
+      "detailCtaTitle": "Envíe sus códigos y cantidades para cotizar",
+      "detailCtaDesc": "Disponible en contenedor mixto junto con motores CG varilleros, CB cadenilleros, horizontales y cargueros. Pruebas en banco detalladas en Evidencia.",
+      "evidenceLink": "Ver Centro de Evidencia",
+      "includedAcc": "Accesorios incluidos:",
+      "contactProc": "Solicitar cotización B2B",
+      "backHub": "Catálogo Bajaj & TVS",
+      "termsLine": "MOQ estándar: 50 motores (carga mixta con repuestos) · Plazo ~10 días hábiles · FOB Guangzhou (Callao, Buenaventura, Manzanillo, Guayaquil, Arica/Iquique) · Lista de números de serie grabados · Garantía 60 días.",
+      "disclaimer": "Nota legal: Las marcas y nombres de modelo (Bajaj®, TVS®) y códigos OEM se utilizan únicamente como referencia de identificación y compatibilidad mecánica. CHIXIANG MOTOR suministra motores y repuestos aftermarket independientes.",
+      "verdictLabel": "Veredicto técnico · Reemplazo aftermarket independiente",
+      "versionTitle": "Diferencias entre 4 y 5 velocidades y lista de 5 puntos de montaje",
+      "versionHeaders": ["Configuración BM150", "Uso en flota", "Verificación antes de ordenar"],
+      "specVsOemTitle": "Especificación suministrada CHIXIANG vs. Referencia OEM",
+      "specVsOemHeaders": ["Componente", "SKU Chixiang", "Especificación real", "Ref. OEM (identificación)"],
+      "bundleTitle": "Cotización combinada: Motor BM150 + Repuestos de alta rotación",
+      "bundleSub": "Seleccione el motor completo junto con cárteres, tapa de embrague, kit de cilindro o discos para prellenar su solicitud FOB Guangzhou.",
+      "bundleQty": "Cantidad estimada (motores + kits)",
+      "bundleCountry": "País y puerto de destino",
+      "bundleCountryPh": "ej. Colombia (Buenaventura), Perú (Callao), Guatemala",
+      "bundleBtn": "Ir al formulario prellenado →",
+      "faqTitle": "Preguntas frecuentes sobre Bajaj Boxer BM150"
+    },
+    "categories": {
+      "complete-engines": ["Motores completos de reemplazo", "Ensambles de motor completo fabricados según dimensiones de chasis, eje y cigüeñal OEM."],
+      "crankcases": ["Cárteres izquierdo y derecho", "Cárter izquierdo y derecho en aluminio ADC12 con alojamientos de rodamientos mecanizados por CNC."],
+      "engine-covers": ["Tapas de embrague y magneto", "Tapas laterales verificadas contra las caras de sellado y mirillas de aceite OEM."],
+      "cylinder-head-kits": ["Culata completa y kit de cilindro", "Kits de cilindro y pistón rectificados con precisión y culatas completas con válvulas y balancines."],
+      "crankshaft-timing": ["Cigüeñal con biela y distribución", "Cigüeñales forjados con biela, cadenas de distribución silenciosas y tensores."],
+      "clutch-transmission": ["Embrague y caja / reversa 3 ruedas", "Conjuntos de embrague, discos, ejes primario/secundario y piñones de reversa para mototaxi."],
+      "overhaul-seals": ["Empaquetadura completa y retenes", "Juegos completos de juntas de motor y retenes de aceite para reparación mayor en taller."]
+    },
+    "products": {
+      "bajaj-boxer-ct100-bm100-complete-engine": "Motor completo de reemplazo para Bajaj Boxer CT100 / BM100 (99.27 cc OHC)",
+      "bajaj-boxer-bm150-complete-engine": "Motor completo de reemplazo para Bajaj Boxer BM150 (144.8 cc)",
+      "bajaj-re-4s-200-complete-engine": "Motor completo de reemplazo para Torito Bajaj RE 4S / Compact (198.88 cc 4F+1R)",
+      "tvs-hlx-150-complete-engine": "Motor completo de reemplazo para TVS HLX 150 / HLX 125 (147.49 cc Ecothrust)",
+      "tvs-king-200-complete-engine": "Motor completo de reemplazo para mototaxi TVS King Deluxe / GS 200 (199.26 cc 4F+1R)"
+    },
+    "bm150": {
+      "quick_verdict": "CHIXIANG CX-BJ-BM150-ENG es un motor completo de reemplazo aftermarket de 144.8 cc (56.0 × 58.8 mm) SOHC para flotas Bajaj Boxer BM150, disponible en 4 o 5 velocidades desde 50 unidades en contenedor mixto. Códigos OEM citados solo como referencia de montaje.",
+      "version_differences": [
+        { "variant": "Caja 4 velocidades internacional", "application": "Flotas Boxer BM150 de trabajo y mensajería", "key_check": "Confirmar tambor selector de 4 cambios y prefijo de cárter" },
+        { "variant": "Caja 5 velocidades internacional", "application": "Boxer BM150 / BM150X ruta y carga continua", "key_check": "Confirmar relación de 5 marchas y tapa arranque" },
+        { "variant": "1 bujía vs. doble bujía (DTS-i)", "application": "Según año y arnés local", "key_check": "Verificar clavija de CDI y culata antes de confirmar Proforma" }
+      ],
+      "fitment_checklist": [
+        { "step": "1. Prefijo de motor y cárter", "detail": "Verifique el prefijo estampado (referencia 36PF / JA) para alinear orejas de montaje y conductos de aceite." },
+        { "step": "2. Caja de 4 o 5 velocidades", "detail": "Indique 4 o 5 marchas en su pedido BOM antes del ensamblaje." },
+        { "step": "3. Encendido y estator", "detail": "Confirme culata de 1 o 2 bujías y ficha del estator respecto al ramal eléctrico." },
+        { "step": "4. Tapa y piñón 428", "detail": "Revise geometría de tapa derecha/izquierda y paso de cadena 428." },
+        { "step": "5. Repuestos de alta rotación", "detail": "Consolide cárter izquierdo/derecho, tapa de embrague, kit de cilindro y empaquetaduras en el mismo embarque." }
+      ],
+      "spec_vs_oem_rows": [
+        { "component": "Motor completo de reemplazo", "chixiang_pn": "CX-BJ-BM150-ENG", "chixiang_spec": "144.8 cc SOHC · 56.0 × 58.8 mm · 4/5 Vel. · Arranque eléctrico/pedal", "oem_ref": "36PF0004 / 36PF0005 Ref." },
+        { "component": "Cárter izquierdo (LH)", "chixiang_pn": "CX-BJ-BM150-LH", "chixiang_spec": "Aluminio ADC12 · Alojamientos CNC", "oem_ref": "36PF0004" },
+        { "component": "Cárter derecho (RH)", "chixiang_pn": "CX-BJ-BM150-RH", "chixiang_spec": "Aluminio ADC12 · Caras rectificadas CNC", "oem_ref": "36PF0005" },
+        { "component": "Tapa de embrague (Derecha)", "chixiang_pn": "CX-BJ-BM150-CC", "chixiang_spec": "Aluminio inyectado mecanizado (empaque ref. JA541212)", "oem_ref": "36PF0008" },
+        { "component": "Kit de cilindro y pistón (56.0 mm)", "chixiang_pn": "CX-BJ-BM150-CY", "chixiang_spec": "Cilindro alta resistencia + pistón 56.0 mm, anillos y pasador", "oem_ref": "36PF0002" },
+        { "component": "Discos de embrague y piñones", "chixiang_pn": "CX-BJ-BM150-TR", "chixiang_spec": "Engranajes 20CrMnTi + discos de fricción (junta JA541212)", "oem_ref": "36PF0009 (Discos)" }
+      ],
+      "bundle_items": [
+        { "pn": "CX-BJ-BM150-LH", "oem": "36PF0004", "name": "Cárter izquierdo (LH)", "spec": "Aluminio ADC12 · Alojamientos CNC" },
+        { "pn": "CX-BJ-BM150-RH", "oem": "36PF0005", "name": "Cárter derecho (RH)", "spec": "Aluminio ADC12 · Caras CNC" },
+        { "pn": "CX-BJ-BM150-CC", "oem": "36PF0008", "name": "Tapa de embrague y juego completo de juntas", "spec": "Mecanizado CNC · Junta ref. JA541212" },
+        { "pn": "CX-BJ-BM150-CY", "oem": "36PF0002", "name": "Kit cilindro y pistón (56.0 mm) + culata completa", "spec": "144.8 cc · Bloque, pistón y anillos" },
+        { "pn": "CX-BJ-BM150-TR", "oem": "36PF0009", "name": "Kit embrague, cigüeñal con biela y engranajes", "spec": "Acero 20CrMnTi + discos reforzados" }
+      ],
+      "faqs": [
+        { "q": "¿CX-BJ-BM150-ENG es original Bajaj o motor de reemplazo aftermarket?", "a": "Es un motor de reemplazo aftermarket fabricado por CHIXIANG MOTOR bajo medidas de 144.8 cc (56.0 × 58.8 mm). Las referencias Bajaj® y OEM se muestran solo para identificación mecánica." },
+        { "q": "¿Cómo confirmo si necesito versión de 4 o 5 velocidades?", "a": "Revise el patrón de cambios de su flota y el código 36PF/JA antes del pedido, indicando 4 o 5 marchas y 1 o 2 bujías en la Proforma." },
+        { "q": "¿Suministran cárteres, culata, cigüeñal y empaquetaduras BM150?", "a": "Sí: cárteres 36PF0004/36PF0005, tapa 36PF0008, kit cilindro 36PF0002, discos 36PF0009, cigüeñal y empaquetadura completa." },
+        { "q": "¿Puedo combinar motores BM150 con CG150/CG200 y cargueros HW300?", "a": "Sí, desde 50 unidades en contenedor mixto FOB Guangzhou." },
+        { "q": "¿Qué control de calidad y garantía incluyen?", "a": "Prueba al 100 % en banco frío/caliente en Chongqing (~10 días hábiles) y garantía de 60 días desde arribo a puerto." }
+      ]
+    }
+  },
+  "pt": {
+    "hub": {
+      "title": "Motores e peças paralelas padrão OEM Bajaj Boxer / TVS HLX & King | CHIXIANG",
+      "description": "Motores completos de reposição e peças compatíveis (cabeçote completo, kit cilindro/pistão, virabrequim com biela, carcaças e jogos de juntas) para Bajaj Boxer BM150, RE 4S, TVS HLX e King 200. Contêiner misto FOB Guangzhou.",
+      "h1": "Motores de reposição e catálogo de peças compatíveis Bajaj e TVS",
+      "lead": "Motores completos de reposição, carcaça esquerda/direita, cabeçote completo, kit cilindro/pistão, virabrequim com biela e jogo completo de juntas para frotas de mototáxi (kupapata) e triciclos, com embarque em pedido misto no mesmo contêiner.",
+      "viewBrandCta": "Ver catálogo da marca",
+      "brandHeading": "Navegar por marca compatível",
+      "brandDescTpl": "Motores completos de reposição e peças compatíveis para motos e triciclos {brand} (referências OEM apenas para identificação técnica).",
+      "procHeading": "Fornecimento atacado Angola, Moçambique & Brasil",
+      "procItems": [
+        "<strong>Pedido misto no mesmo contêiner :</strong> combine motores Boxer / TVS com motores vareta CG150/CG200 e triciclos HW300 a partir de 50 unidades.",
+        "<strong>Frotas de alta demanda :</strong> Bajaj Boxer CT100/BM100, BM150 (mototáxi), RE 4S 200 (triciclo), TVS Star HLX 125/150 e TVS King 200.",
+        "<strong>Qualidade e clareza OEM :</strong> peças paralelas independentes fabricadas nas tolerâncias OEM; códigos OEM citados somente para identificação."
+      ]
+    },
+    "bajajBrand": {
+      "title": "Motores e peças Bajaj Boxer CT100, BM150 e RE 4S 200 | CHIXIANG",
+      "description": "Motores completos de reposição, carcaças 36PF0004/36PF0005, tampas 36PF0008, kits cilindro/pistão e juntas para Bajaj Boxer e triciclo RE 4S 200.",
+      "h1": "Motores de reposição e peças Bajaj Boxer & RE 4S"
+    },
+    "tvsBrand": {
+      "title": "Motores e peças TVS HLX 150 / 125 e TVS King 200 | CHIXIANG",
+      "description": "Motores completos de reposição, carcaças ADC12, cabeçotes, virabrequins e juntas para motos TVS HLX 125/150 e triciclos TVS King 200.",
+      "h1": "Motores de reposição e peças TVS HLX 150 & King 200"
+    },
+    "ui": {
+      "delivery": { "casting": "Fundido bruto", "machined": "Usinado CNC", "assembly": "Conjunto completo" },
+      "partNo": "Ref. Chixiang",
+      "oemRef": "Ref. OEM (identificação)",
+      "deliveryLabel": "Entrega",
+      "engineCode": "Código motor",
+      "specEyebrow": "CHIXIANG MOTOR · Motor de reposição",
+      "specNote": "Construído nas medidas e estrias OEM",
+      "viewDetails": "Ver ficha técnica",
+      "quote": "Cotar FOB",
+      "subcats": "Subcategorias:",
+      "hubSectionTitle": "Peças agrupadas por modelo e códigos OEM de referência",
+      "hubSectionSub": "Filtre por modelo ou pesquise código OEM. Marque vários itens para cotação consolidada em contêiner misto.",
+      "filterModel": "Filtrar por modelo",
+      "allModels": "Todos os modelos",
+      "filterCat": "Filtrar por categoria",
+      "allCats": "Todas as categorias",
+      "filterSearch": "Buscar Ref. Chixiang, OEM ou peça",
+      "searchPh": "ex. 36PF0004, JA541212, cabeçote...",
+      "scopeEngine": "Motor completo + Peças chave",
+      "scopeParts": "Peças de reposição principais",
+      "viewCompleteBtn": "Ver fotos e especificações completas do motor →",
+      "swipeHint": "← Deslize horizontalmente para ver códigos OEM e marcar peças →",
+      "thPick": "Sel.",
+      "thPart": "Peça principal",
+      "thCat": "Categoria",
+      "thPn": "Ref. Chixiang",
+      "thOem": "Ref. OEM",
+      "thSpec": "Material / Especificação",
+      "thAction": "Cotar",
+      "pickRow": "Selecionar",
+      "selectedLabel": "Peças selecionadas para cotação",
+      "clearBtn": "Limpar",
+      "batchBtn": "Cotação em lote →",
+      "displacementLbl": "Cilindrada:",
+      "detailSpecsTitle": "Especificações técnicas e encaixe",
+      "detailPhotosTitle": "Fotos reais e interfaces",
+      "detailCtaTitle": "Envie códigos e quantidades para receber cotação",
+      "detailCtaDesc": "Embarque disponível em contêiner misto junto com motores CG vareta, CB, horizontais e linha a água. Padrões de teste detalhados em Evidências.",
+      "evidenceLink": "Ver Centro de Evidências",
+      "includedAcc": "Acessórios inclusos:",
+      "contactProc": "Solicitar cotação B2B",
+      "backHub": "Catálogo Bajaj & TVS",
+      "termsLine": "MOQ padrão: 50 motores (pedido misto com peças) · Prazo ~10 dias úteis · FOB Guangzhou (Luanda, Maputo, Santos; CNCA / ARCCLA via importador) · Garantia 60 dias pós-chegada.",
+      "disclaimer": "Nota legal: Marcas e modelos (Bajaj®, TVS®) e números OEM são citados apenas para identificação técnica e compatibilidade mecânica. A CHIXIANG MOTOR fornece motores e peças de reposição independentes.",
+      "verdictLabel": "Resumo técnico · Reposição aftermarket independente",
+      "versionTitle": "Diferenças 4 marchas vs. 5 marchas e checklist de 5 pontos",
+      "versionHeaders": ["Configuração BM150", "Aplicação em frota", "Verificação antes do pedido"],
+      "specVsOemTitle": "Especificação CHIXIANG vs. Referência OEM",
+      "specVsOemHeaders": ["Componente", "Ref. Chixiang", "Especificação fornecida", "Ref. OEM (identificação)"],
+      "bundleTitle": "Cotação consolidada: Motor BM150 + Peças de alta demanda",
+      "bundleSub": "Selecione o motor completo e carcaças, tampa de embreagem, kit cilindro ou discos para preencher seu orçamento FOB Guangzhou.",
+      "bundleQty": "Quantidade estimada (motores + peças)",
+      "bundleCountry": "País e porto de destino",
+      "bundleCountryPh": "ex. Angola (Luanda), Moçambique (Maputo), Brasil",
+      "bundleBtn": "Ir para o formulário preenchido →",
+      "faqTitle": "Perguntas frequentes — Bajaj Boxer BM150"
+    },
+    "categories": {
+      "complete-engines": ["Motores completos de reposição", "Conjuntos de motor completo fabricados nas dimensões de fixação e eixo OEM."],
+      "crankcases": ["Carcaça esquerda e direita", "Carcaças do motor em alumínio ADC12 com sedes de rolamentos usinadas em CNC."],
+      "engine-covers": ["Tampas de embreagem e magneto", "Tampas laterais com faces de vedação retificadas e visor de óleo padrão OEM."],
+      "cylinder-head-kits": ["Cabeçote completo e kit cilindro", "Kits cilindro, pistão e anéis e cabeçotes completos com válvulas e balancins."],
+      "crankshaft-timing": ["Virabrequim com biela e comando", "Virabrequins forjados com biela, correntes de comando silenciosas e tensores."],
+      "clutch-transmission": ["Embreagem e câmbio / ré 3 rodas", "Conjuntos de embreagem, discos, eixos de câmbio e engrenagens de ré para triciclos."],
+      "overhaul-seals": ["Jogo completo de juntas e retentores", "Kits completos de juntas de motor e retentores para retífica e manutenção."]
+    },
+    "products": {
+      "bajaj-boxer-ct100-bm100-complete-engine": "Motor completo de reposição para Bajaj Boxer CT100 / BM100 (99.27 cc OHC)",
+      "bajaj-boxer-bm150-complete-engine": "Motor completo de reposição para Bajaj Boxer BM150 (144.8 cc)",
+      "bajaj-re-4s-200-complete-engine": "Motor completo de reposição para triciclo Bajaj RE 4S / Compact (198.88 cc 4F+1R)",
+      "tvs-hlx-150-complete-engine": "Motor completo de reposição para TVS HLX 150 / HLX 125 (147.49 cc Ecothrust)",
+      "tvs-king-200-complete-engine": "Motor completo de reposição para triciclo TVS King Deluxe / GS 200 (199.26 cc 4F+1R)"
+    },
+    "bm150": {
+      "quick_verdict": "CHIXIANG CX-BJ-BM150-ENG é um motor de reposição aftermarket de 144.8 cc (56.0 × 58.8 mm) SOHC para frotas Bajaj Boxer BM150, com opções de 4 ou 5 marchas a partir de 50 unidades em contêiner misto. Códigos OEM citados apenas como identificação técnica.",
+      "version_differences": [
+        { "variant": "Câmbio 4 marchas internacional", "application": "Frotas Boxer BM150 urbanas e mototáxi (kupapata)", "key_check": "Confirmar tambor de 4 marchas e prefixo de carcaça" },
+        { "variant": "Câmbio 5 marchas internacional", "application": "Boxer BM150 / BM150X rodoviário e carga", "key_check": "Confirmar relação de 5 marchas e tampa elétrica/pedal" },
+        { "variant": "1 vela vs. 2 velas (DTS-i)", "application": "Conforme ano e chicote local", "key_check": "Conferir plugue do CDI e cabeçote antes da Proforma" }
+      ],
+      "fitment_checklist": [
+        { "step": "1. Prefixo do motor e carcaça", "detail": "Verifique o código gravado (ref. 36PF / JA) para alinhar suportes de carcaça e galerias." },
+        { "step": "2. Câmbio de 4 ou 5 marchas", "detail": "Especifique 4 ou 5 marchas internacionais no pedido antes da montagem." },
+        { "step": "3. Ignição e estator", "detail": "Confirme cabeçote 1 ou 2 velas e pinagem do estator com o chicote da frota." },
+        { "step": "4. Tampa e pinhão 428", "detail": "Confira geometria da tampa e passo de corrente 428." },
+        { "step": "5. Peças para estoque de oficina", "detail": "Inclua carcaças esquerda/direita, tampa de embreagem, kit cilindro e jogo de juntas no mesmo contêiner." }
+      ],
+      "spec_vs_oem_rows": [
+        { "component": "Motor completo de reposição", "chixiang_pn": "CX-BJ-BM150-ENG", "chixiang_spec": "144.8 cc SOHC · 56.0 × 58.8 mm · 4/5 Marchas · Partida elétrica/pedal", "oem_ref": "36PF0004 / 36PF0005 Ref." },
+        { "component": "Carcaça esquerda (LH)", "chixiang_pn": "CX-BJ-BM150-LH", "chixiang_spec": "Alumínio ADC12 · Sedes CNC", "oem_ref": "36PF0004" },
+        { "component": "Carcaça direita (RH)", "chixiang_pn": "CX-BJ-BM150-RH", "chixiang_spec": "Alumínio ADC12 · Faces retificadas CNC", "oem_ref": "36PF0005" },
+        { "component": "Tampa de embreagem (Direita)", "chixiang_pn": "CX-BJ-BM150-CC", "chixiang_spec": "Alumínio fundido usinado (junta ref. JA541212)", "oem_ref": "36PF0008" },
+        { "component": "Kit cilindro, pistão e anéis (56.0 mm)", "chixiang_pn": "CX-BJ-BM150-CY", "chixiang_spec": "Camisa resistente + pistão 56.0 mm, anéis e pino", "oem_ref": "36PF0002" },
+        { "component": "Discos de embreagem e engrenagens", "chixiang_pn": "CX-BJ-BM150-TR", "chixiang_spec": "Engrenagens 20CrMnTi + discos (junta JA541212)", "oem_ref": "36PF0009 (Discos)" }
+      ],
+      "bundle_items": [
+        { "pn": "CX-BJ-BM150-LH", "oem": "36PF0004", "name": "Carcaça esquerda (LH)", "spec": "Alumínio ADC12 · Sedes CNC" },
+        { "pn": "CX-BJ-BM150-RH", "oem": "36PF0005", "name": "Carcaça direita (RH)", "spec": "Alumínio ADC12 · Faces CNC" },
+        { "pn": "CX-BJ-BM150-CC", "oem": "36PF0008", "name": "Tampa de embreagem & jogo completo de juntas", "spec": "Usinagem CNC · Junta JA541212" },
+        { "pn": "CX-BJ-BM150-CY", "oem": "36PF0002", "name": "Kit cilindro/pistão (56.0 mm) & cabeçote completo", "spec": "144.8 cc · Camisa, pistão e anéis" },
+        { "pn": "CX-BJ-BM150-TR", "oem": "36PF0009", "name": "Kit embreagem, virabrequim com biela e engrenagens", "spec": "Aço 20CrMnTi + discos reforçados" }
+      ],
+      "faqs": [
+        { "q": "CX-BJ-BM150-ENG é original Bajaj ou motor paralelo de reposição?", "a": "É um motor de reposição independente fabricado pela CHIXIANG MOTOR nas medidas 144.8 cc (56.0 × 58.8 mm). Códigos OEM servem apenas para identificação técnica." },
+        { "q": "Como escolher entre 4 e 5 marchas no BM150?", "a": "Verifique o câmbio e prefixo 36PF/JA da sua frota antes do pedido e confirme 4 ou 5 marchas e 1 ou 2 velas na Proforma." },
+        { "q": "Fornecem cabeçote, carcaças, virabrequim e juntas BM150?", "a": "Sim: carcaças 36PF0004/36PF0005, tampa 36PF0008, kit cilindro 36PF0002, discos 36PF0009, virabrequim e jogo completo de juntas." },
+        { "q": "Posso misturar BM150 com CG150/CG200 e HW300 para Luanda ou Maputo?", "a": "Sim, MOQ de 50 unidades em contêiner misto FOB Guangzhou, com listagem de números de série para apoio ao CNCA / ARCCLA." },
+        { "q": "Qual o teste e garantia?", "a": "Teste 100 % em bancada a frio/quente em Chongqing (~10 dias úteis) e garantia de 60 dias pós-chegada." }
+      ]
+    }
+  },
+  "ru": {
+    "hub": {
+      "title": "Двигатели в сборе и запчасти (аналоги OEM) для Bajaj Boxer / RE / TVS HLX и King | CHIXIANG",
+      "description": "Двигатели в сборе и запчасти (ГБЦ в сборе, ЦПГ, коленвал с шатуном, половинки картера, полные комплекты прокладок) для Bajaj Boxer BM150, CT100, RE 4S, TVS HLX и King 200. Смешанная погрузка от 50 шт. FOB Гуанчжоу.",
+      "h1": "Двигатели в сборе и запчасти для Bajaj и TVS",
+      "lead": "Двигатели в сборе, левые/правые половинки картера, ГБЦ в сборе, ЦПГ (цилиндр-поршень), коленвалы с шатуном и полные комплекты прокладок для оптовых дистрибьюторов в РФ и Центральной Азии в одном смешанном контейнере с двигателями CG и HW.",
+      "viewBrandCta": "Смотреть каталог марки",
+      "brandHeading": "Выбор по марке техники",
+      "brandDescTpl": "Независимые двигатели-аналоги в сборе и запчасти для мотоциклов и трициклов {brand} (OEM-номера указаны только для идентификации).",
+      "procHeading": "Условия опта для РФ и стран СНГ",
+      "procItems": [
+        "<strong>Смешанный контейнер от 50 моторов :</strong> объединяйте двигатели Boxer / TVS со штанговыми CG, водяными HW300 и ремкомплектами.",
+        "<strong>Популярные платформы СНГ и РФ :</strong> Bajaj Boxer CT100 / BM100, Bajaj Boxer BM150, трёхколёсные Bajaj RE 4S 200, TVS HLX 150 и TVS King 200.",
+        "<strong>Инженерная точность :</strong> изготовление по посадочным размерам и допускам OEM; номера OEM приводятся исключительно для технической сверки."
+      ]
+    },
+    "bajajBrand": {
+      "title": "Двигатели и запчасти Bajaj Boxer CT100, BM150 и RE 4S 200 | CHIXIANG",
+      "description": "Двигатели в сборе, картеры 36PF0004/36PF0005, крышки 36PF0008, ЦПГ и комплекты прокладок для Bajaj Boxer CT100/BM100, BM150 и RE 4S 200.",
+      "h1": "Двигатели и запчасти для Bajaj Boxer и RE 4S 200"
+    },
+    "tvsBrand": {
+      "title": "Двигатели и запчасти TVS HLX 150 / 125 и TVS King 200 | CHIXIANG",
+      "description": "Двигатели в сборе, половинки картера ADC12, ГБЦ, коленвалы и прокладки для мотоциклов TVS HLX 125/150 и трициклов TVS King 200.",
+      "h1": "Двигатели и запчасти для TVS HLX 150 и King 200"
+    },
+    "ui": {
+      "delivery": { "casting": "Литьё", "machined": "ЧПУ-обработка", "assembly": "В сборе" },
+      "partNo": "Арт. Chixiang",
+      "oemRef": "OEM-ref (справка)",
+      "deliveryLabel": "Поставка",
+      "engineCode": "Код мотора",
+      "specEyebrow": "CHIXIANG MOTOR · Двигатель в сборе",
+      "specNote": "По посадочным местам и шлицам OEM",
+      "viewDetails": "Подробнее",
+      "quote": "Запросить цену",
+      "subcats": "Подкатегории:",
+      "hubSectionTitle": "Запчасти по моделям и таблица OEM-соответствия",
+      "hubSectionSub": "Фильтруйте по модели или ищите по номеру OEM. Отмечайте позиции для пакетного расчёта смешанного контейнера.",
+      "filterModel": "Фильтр по модели",
+      "allModels": "Все модели",
+      "filterCat": "Фильтр по узлу",
+      "allCats": "Все категории",
+      "filterSearch": "Поиск артикула Chixiang, OEM или детали",
+      "searchPh": "напр. 36PF0004, JA541212, картер...",
+      "scopeEngine": "Двигатель в сборе + Основные детали",
+      "scopeParts": "Ключевые запчасти",
+      "viewCompleteBtn": "Фото и полная спецификация двигателя →",
+      "swipeHint": "← Листайте таблицу вбок для просмотра OEM-номеров и выбора позиций →",
+      "thPick": "Выбор",
+      "thPart": "Ключевая деталь",
+      "thCat": "Категория",
+      "thPn": "Арт. Chixiang",
+      "thOem": "OEM-ref",
+      "thSpec": "Материал / Характеристика",
+      "thAction": "Запрос",
+      "pickRow": "Выбрать",
+      "selectedLabel": "Выбранные позиции для расчёта",
+      "clearBtn": "Очистить",
+      "batchBtn": "Пакетный запрос →",
+      "displacementLbl": "Объём:",
+      "detailSpecsTitle": "Технические характеристики и посадка",
+      "detailPhotosTitle": "Фотографии и интерфейсы",
+      "detailCtaTitle": "Отправьте артикулы и количество для расчёта",
+      "detailCtaDesc": "Возможна смешанная погрузка в один контейнер с моторами CG, CB, горизонтальными и водяными. Стандарты испытаний подтверждены в Центре доказательств.",
+      "evidenceLink": "Центр доказательств",
+      "includedAcc": "Комплектация:",
+      "contactProc": "Отправить заявку в отдел экспорта",
+      "backHub": "Каталог Bajaj и TVS",
+      "termsLine": "MOQ от 50 моторов (смешанный контейнер с запчастями) · Срок ~10 рабочих дней · FOB Гуанчжоу (реестр серийных номеров для таможни СНГ/РФ) · Гарантия 60 дней.",
+      "disclaimer": "Примечание: Торговые марки (Bajaj®, TVS®) и номера OEM указаны исключительно для идентификации совместимости. CHIXIANG MOTOR производит независимые сменные двигатели и запчасти.",
+      "verdictLabel": "Инженерное резюме · Независимый аналог",
+      "versionTitle": "Отличия 4-ст. и 5-ст. КПП и 5 точек проверки перед заказом",
+      "versionHeaders": ["Модификация BM150", "Применение", "Что сверить перед заказом"],
+      "specVsOemTitle": "Фактическая поставка CHIXIANG vs. OEM-справка",
+      "specVsOemHeaders": ["Узел / Деталь", "Арт. Chixiang", "Фактическая спецификация", "OEM-ref (справка)"],
+      "bundleTitle": "Пакетный запрос: Двигатель BM150 + Картеры, ЦПГ и сцепление",
+      "bundleSub": "Отметьте двигатель в сборе и нужные узлы (половинки картера, крышку, ЦПГ, сцепление) для расчёта смешанного контейнера.",
+      "bundleQty": "Планируемое количество (моторы + запчасти)",
+      "bundleCountry": "Страна и направление доставки",
+      "bundleCountryPh": "напр. Россия, Казахстан (Алматы), Узбекистан (Ташкент)",
+      "bundleBtn": "Перейти к заполненной форме →",
+      "faqTitle": "Частые вопросы — Bajaj Boxer BM150"
+    },
+    "categories": {
+      "complete-engines": ["Двигатели в сборе", "Готовые сменные силовые агрегаты под штатные крепления и шлицы OEM."],
+      "crankcases": ["Левая и правая половинки картера", "Половинки картера из сплава ADC12 с ЧПУ-обработкой посадочных мест подшипников."],
+      "engine-covers": ["Крышки сцепления и магнето", "Правые и левые боковые крышки двигателя с точными плоскостями разъёма."],
+      "cylinder-head-kits": ["ГБЦ в сборе и ЦПГ", "Цилиндро-поршневые группы (цилиндр, поршень, кольца) и головки блока с клапанами."],
+      "crankshaft-timing": ["Коленвал с шатуном и привод ГРМ", "Кованые коленвалы в сборе с шатуном, цепи ГРМ и натяжители."],
+      "clutch-transmission": ["Сцепление и КПП / реверс", "Корзины, диски сцепления, первичные/вторичные валы и шестерни реверса."],
+      "overhaul-seals": ["Полные комплекты прокладок и сальников", "Наборы прокладок двигателя и сальников для капитального ремонта."]
+    },
+    "products": {
+      "bajaj-boxer-ct100-bm100-complete-engine": "Двигатель в сборе (аналог) для Bajaj Boxer CT100 / BM100 (99.27 cc OHC)",
+      "bajaj-boxer-bm150-complete-engine": "Двигатель в сборе (аналог) для Bajaj Boxer BM150 (144.8 cc)",
+      "bajaj-re-4s-200-complete-engine": "Двигатель в сборе (аналог) для трицикла Bajaj RE 4S / Compact (198.88 cc 4F+1R)",
+      "tvs-hlx-150-complete-engine": "Двигатель в сборе (аналог) для TVS HLX 150 / HLX 125 (147.49 cc Ecothrust)",
+      "tvs-king-200-complete-engine": "Двигатель в сборе (аналог) для трицикла TVS King Deluxe / GS 200 (199.26 cc 4F+1R)"
+    },
+    "bm150": {
+      "quick_verdict": "CHIXIANG CX-BJ-BM150-ENG — независимый сменный двигатель 144.8 cc (56.0 × 58.8 мм) SOHC для парков Bajaj Boxer BM150 с выбором 4- или 5-ст. КПП от 50 штук в сборном контейнере. OEM-коды указаны только для сверки посадки.",
+      "version_differences": [
+        { "variant": "4-ст. международная КПП", "application": "Коммерческие и сельские версии Boxer BM150", "key_check": "Подтвердить 4-ст. копирный вал и индекс картера" },
+        { "variant": "5-ст. международная КПП", "application": "Дорожные Boxer BM150 / BM150X", "key_check": "Уточнить передаточные числа 5-ст. КПП" },
+        { "variant": "1 свеча vs. 2 свечи (DTS-i)", "application": "Зависит от года выпуска и проводки", "key_check": "Сверить разъём CDI и головку блока до выставления PI" }
+      ],
+      "fitment_checklist": [
+        { "step": "1. Префикс мотора и картер", "detail": "Проверьте индекс (серия 36PF / JA) для совпадения проушин крепления половинок картера." },
+        { "step": "2. 4 или 5 передач", "detail": "Укажите требуемую КПП в заявке до запуска сборки." },
+        { "step": "3. Зажигание и статор", "detail": "Подтвердите 1- или 2-свечную ГБЦ и фишку генератора." },
+        { "step": "4. Крышки и звезда 428", "detail": "Сверьте геометрию крышки стартера/кикстартера и шаг цепи 428." },
+        { "step": "5. Запчасти в запас", "detail": "Добавьте левую/правую половинки картера, крышку сцепления, ЦПГ и полный комплект прокладок." }
+      ],
+      "spec_vs_oem_rows": [
+        { "component": "Двигатель в сборе", "chixiang_pn": "CX-BJ-BM150-ENG", "chixiang_spec": "144.8 cc SOHC · 56.0 × 58.8 мм · 4/5 передач · Электро/кик", "oem_ref": "36PF0004 / 36PF0005 Ref." },
+        { "component": "Левая половинка картера (LH)", "chixiang_pn": "CX-BJ-BM150-LH", "chixiang_spec": "Сплав ADC12 · ЧПУ-обработка постелей", "oem_ref": "36PF0004" },
+        { "component": "Правая половинка картера (RH)", "chixiang_pn": "CX-BJ-BM150-RH", "chixiang_spec": "Сплав ADC12 · ЧПУ плоскостей стыка", "oem_ref": "36PF0005" },
+        { "component": "Крышка сцепления (Правая)", "chixiang_pn": "CX-BJ-BM150-CC", "chixiang_spec": "Литьё под давлением (прокладка JA541212)", "oem_ref": "36PF0008" },
+        { "component": "ЦПГ: цилиндр и поршень (56.0 мм)", "chixiang_pn": "CX-BJ-BM150-CY", "chixiang_spec": "Износостойкая гильза + поршень 56.0 мм, кольца и палец", "oem_ref": "36PF0002" },
+        { "component": "Диски сцепления и шестерни КПП", "chixiang_pn": "CX-BJ-BM150-TR", "chixiang_spec": "Сталь 20CrMnTi + фрикционы (прокладка JA541212)", "oem_ref": "36PF0009 (Диски)" }
+      ],
+      "bundle_items": [
+        { "pn": "CX-BJ-BM150-LH", "oem": "36PF0004", "name": "Левая половинка картера (LH)", "spec": "Сплав ADC12 · ЧПУ" },
+        { "pn": "CX-BJ-BM150-RH", "oem": "36PF0005", "name": "Правая половинка картера (RH)", "spec": "Сплав ADC12 · ЧПУ" },
+        { "pn": "CX-BJ-BM150-CC", "oem": "36PF0008", "name": "Крышка сцепления и полный комплект прокладок", "spec": "ЧПУ · Прокладка JA541212" },
+        { "pn": "CX-BJ-BM150-CY", "oem": "36PF0002", "name": "ЦПГ (56.0 мм) и ГБЦ в сборе", "spec": "144.8 cc · Цилиндр + поршень" },
+        { "pn": "CX-BJ-BM150-TR", "oem": "36PF0009", "name": "Сцепление, коленвал с шатуном и шестерни", "spec": "Сталь 20CrMnTi + диски" }
+      ],
+      "faqs": [
+        { "q": "CX-BJ-BM150-ENG — это заводской оригинал Bajaj или аналог?", "a": "Это независимый сменный двигатель производства CHIXIANG MOTOR по размерам 144.8 cc (56.0 × 58.8 мм). Названия Bajaj® и OEM-номера приведены только для идентификации совместимости." },
+        { "q": "Как выбрать между 4- и 5-ступенчатой версией BM150?", "a": "Уточните схему переключения и код 36PF/JA вашего парка и укажите 4 или 5 передач и число свечей при заказе." },
+        { "q": "Поставляются ли половинки картера, ГБЦ, коленвал и прокладки BM150?", "a": "Да: картеры 36PF0004/36PF0005, крышка 36PF0008, ЦПГ 36PF0002, диски 36PF0009, коленвал и полные комплекты прокладок." },
+        { "q": "Можно ли скомбинировать BM150 с CG150/CG200 и HW300?", "a": "Да, от 50 двигателей в одном смешанном контейнере FOB Гуанчжоу с реестром серийных номеров." },
+        { "q": "Какие испытания и гарантия действуют?", "a": "100 % горячая и холодная стендовая обкатка в Чунцине (~10 рабочих дней) и гарантия 60 дней после прибытия в порт назначения." }
+      ]
+    }
+  },
+  "ar": {
+    "hub": {
+      "title": "محركات وقطع غيار بديلة مطابقة للمواصفات Bajaj Boxer / RE / TVS | CHIXIANG",
+      "description": "محركات كاملة بديلة وقطع غيار (وش سلندر كامل، طقم شميز وبستم، عمود كرنك بالبييل، فخذتين كارتيرة، طقم جوانات كامل) لـ باجاج بوكسر BM150 وتوك توك RE 4S و TVS HLX و King 200. حاوية مختلطة FOB قوانغتشو.",
+      "h1": "محركات كاملة بديلة وقطع غيار مطابقة لـ Bajaj و TVS",
+      "lead": "محركات كاملة بديلة، فخذتين كارتيرة يمين وشمال، وش سلندر كامل، طقم شميز وبستم، عمود كرنك بالبييل، وطقم جوانات كامل لأساطيل البوكسر والتوك توك، مع شحن حاوية مختلطة جنباً إلى جنب مع محركات CG والتروسيكلات.",
+      "viewBrandCta": "استعرض منتجات العلامة",
+      "brandHeading": "التصفح حسب الماركة المتوافقة",
+      "brandDescTpl": "محركات كاملة بديلة وقطع غيار مطابقة لدراجات وتوك توك {brand} (أرقام OEM للمرجعية والمطابقة الفنية فقط وليست قطعاً أصلية).",
+      "procHeading": "التوريد بالجملة للشرق الأوسط وشمال أفريقيا",
+      "procItems": [
+        "<strong>حاوية مختلطة من 50 محركاً :</strong> اجمع محركات باجاج بوكسر وتوك توك وTVS مع محركات CG وHW300 وقطع الغيار في حاوية واحدة.",
+        "<strong>تغطية الموديلات الأكثر طلباً :</strong> باجاج بوكسر CT100/BM100 وبوكسر BM150 وتوك توك باجاج RE 4S 200 وTVS HLX 150 وTVS King 200.",
+        "<strong>وضوح فني وقانوني :</strong> قطع غيار بديلة مستقلة مصنّعة وفق الأبعاد القياسية؛ وتُذكر أرقام OEM فقط للمطابقة الهندسية."
+      ]
+    },
+    "bajajBrand": {
+      "title": "محركات وقطع باجاج بوكسر CT100 و BM150 وتوك توك RE 4S 200 | CHIXIANG",
+      "description": "محركات كاملة بديلة، فخذتين كارتيرة 36PF0004/36PF0005، غطاء دبرياج 36PF0008، طقم شميز وبستم وطقم جوانات لباجاج بوكسر وتوك توك RE 4S.",
+      "h1": "محركات وقطع غيار بديلة لـ باجاج بوكسر وتوك توك RE 4S"
+    },
+    "tvsBrand": {
+      "title": "محركات وقطع TVS HLX 150 / 125 و TVS King 200 | CHIXIANG",
+      "description": "محركات كاملة بديلة، كارتيرة ADC12، وش سلندر، عمود كرنك وطقم جوانات لدراجات TVS HLX وتوك توك TVS King 200.",
+      "h1": "محركات وقطع غيار بديلة لـ TVS HLX 150 و King 200"
+    },
+    "ui": {
+      "delivery": { "casting": "سباكة أولية", "machined": "خراطة CNC", "assembly": "مجموعة كاملة" },
+      "partNo": "مرجع Chixiang",
+      "oemRef": "مرجع OEM (للمطابقة)",
+      "deliveryLabel": "التوريد",
+      "engineCode": "رمز المحرك",
+      "specEyebrow": "CHIXIANG MOTOR · محرك بديل كامل",
+      "specNote": "مطابق لمسافات التثبيت وأسنان الخرج القياسية",
+      "viewDetails": "عرض التفاصيل",
+      "quote": "طلب عرض سعر",
+      "subcats": "الفئات الفرعية:",
+      "hubSectionTitle": "القطع المجمّعة حسب الطراز وجدول مطابقة أرقام OEM",
+      "hubSectionSub": "قم بالتصفية حسب الموديل أو البحث برقم OEM المرجعي، وحدد عدة قطع لتسعير حاوية مختلطة.",
+      "filterModel": "تصفية حسب الموديل",
+      "allModels": "كل الموديلات",
+      "filterCat": "تصفية حسب الفئة",
+      "allCats": "كل الفئات",
+      "filterSearch": "بحث برقم Chixiang أو OEM أو القطعة",
+      "searchPh": "مثال: 36PF0004، JA541212، وش سلندر...",
+      "scopeEngine": "محرك كامل + القطع الأساسية",
+      "scopeParts": "قطع الغيار الأساسية",
+      "viewCompleteBtn": "عرض الصور ومواصفات المحرك الكامل ←",
+      "swipeHint": "→ اسحب الجدول أفقياً لمراجعة أرقام OEM وتحديد القطع ←",
+      "thPick": "اختر",
+      "thPart": "القطعة الأساسية",
+      "thCat": "الفئة",
+      "thPn": "مرجع Chixiang",
+      "thOem": "مرجع OEM",
+      "thSpec": "الخامة / المواصفة",
+      "thAction": "تسعير",
+      "pickRow": "تحديد",
+      "selectedLabel": "القطع المختارة للتسعير",
+      "clearBtn": "مسح",
+      "batchBtn": "تسعير مجمّع ←",
+      "displacementLbl": "السعة:",
+      "detailSpecsTitle": "المواصفات الهندسية والتوافق",
+      "detailPhotosTitle": "الصور الواقعية وواجهات التركيب",
+      "detailCtaTitle": "أرسل الأرقام المرجعية والكميات لعرض السعر",
+      "detailCtaDesc": "متاح الشحن في حاوية مختلطة مع محركات CG أسياخ وCB كاتينة والأفقية والتبريد المائي. معايير الاختبار موثقة في مركز الأدلة.",
+      "evidenceLink": "زيارة مركز الأدلة",
+      "includedAcc": "الملحقات المرفقة:",
+      "contactProc": "التواصل مع المشتريات",
+      "backHub": "كتالوج Bajaj و TVS",
+      "termsLine": "الحد الأدنى: 50 محركاً (حاوية مختلطة مع قطع الغيار) · مدة التجهيز ~10 أيام عمل · FOB قوانغتشو (دعم الإسكندرية / الجزائر / الدار البيضاء / بورتسودان وACID/CargoX) · ضمان 60 يوماً.",
+      "disclaimer": "ملاحظة قانونية: أسماء الماركات والموديلات (Bajaj®، TVS®) وأرقام OEM تُذكر للمرجعية والمطابقة الهندسية فقط. تورد CHIXIANG MOTOR محركات وقطع غيار بديلة مستقلة وليست قطعاً أصلية من الشركة الأم.",
+      "verdictLabel": "الخلاصة الفنية · محرك بديل مستقل",
+      "versionTitle": "فروق ناقل 4 سرعات و 5 سرعات وقائمة التحقق الخماسية",
+      "versionHeaders": ["تكوين BM150", "استخدام الأسطول", "التحقق قبل الطلب"],
+      "specVsOemTitle": "مواصفة التوريد الفعلية CHIXIANG مقابل مرجع OEM",
+      "specVsOemHeaders": ["المكون", "مرجع Chixiang", "المواصفة الفعلية الموردة", "مرجع OEM (للمطابقة)"],
+      "bundleTitle": "تسعير مجمّع: محرك بوكسر BM150 + قطع العمرة الأساسية",
+      "bundleSub": "حدد المحرك الكامل مع فخذتين الكارتيرة وغطاء الدبرياج أو طقم الشميز لتعبئة طلب التسعير تلقائياً.",
+      "bundleQty": "الكمية المقدرة (محركات + قطع)",
+      "bundleCountry": "البلد وميناء الوجهة",
+      "bundleCountryPh": "مثال: مصر (الإسكندرية)، السودان (بورتسودان)، الجزائر",
+      "bundleBtn": "الانتقال إلى نموذج التسعير المعبأ ←",
+      "faqTitle": "الأسئلة الشائعة — محرك باجاج بوكسر BM150 البديل"
+    },
+    "categories": {
+      "complete-engines": ["محركات كاملة بديلة", "محركات كاملة مصنعة وفق أبعاد التثبيت وأعمدة النقل القياسية لأساطيل الموتوسيكلات والتوك توك."],
+      "crankcases": ["فخذتين كارتيرة يمين وشمال", "فخذتين الكارتيرة من ألمنيوم ADC12 بتشغيل CNC دقيق لقواعد الرولمان بلي."],
+      "engine-covers": ["غطاء الدبرياج وغطاء المغناطيس", "الأغطية الجانبية اليمنى واليسرى مطابقة لأسطح التلامس وزجاجة فحص الزيت."],
+      "cylinder-head-kits": ["وش سلندر كامل وطقم شميز وبستم", "أطقم شميز وبستم وشنابر ورؤوس أسطوانات كاملة بالصمامات والعصافير."],
+      "crankshaft-timing": ["عمود كرنك بالبييل وجنزير التقسيمة", "أعمدة كرنك مطروقة مع البييل وجنازير التوقيت والشدادات."],
+      "clutch-transmission": ["الدبرياج والجير وترس الرجوع للخلف", "مجموعات الدبرياج والأعمدة الرئيسية وتروس الرجوع للتوك توك."],
+      "overhaul-seals": ["طقم جوانات كامل والأولسيهات", "أطقم جوانات عمرة كاملة وأولسيهات للمحرك."]
+    },
+    "products": {
+      "bajaj-boxer-ct100-bm100-complete-engine": "محرك كامل بديل متوافق مع Bajaj Boxer CT100 / BM100 (99.27 cc OHC)",
+      "bajaj-boxer-bm150-complete-engine": "محرك كامل بديل متوافق مع Bajaj Boxer BM150 (144.8 cc)",
+      "bajaj-re-4s-200-complete-engine": "محرك كامل بديل متوافق مع توك توك Bajaj RE 4S / Compact (198.88 cc 4F+1R)",
+      "tvs-hlx-150-complete-engine": "محرك كامل بديل متوافق مع TVS HLX 150 / HLX 125 (147.49 cc Ecothrust)",
+      "tvs-king-200-complete-engine": "محرك كامل بديل متوافق مع توك توك TVS King Deluxe / GS 200 (199.26 cc 4F+1R)"
+    },
+    "bm150": {
+      "quick_verdict": "CHIXIANG CX-BJ-BM150-ENG هو محرك بديل مستقل بسعة 144.8 cc (56.0 × 58.8 مم) SOHC لأساطيل باجاج بوكسر BM150، يتوفر بناقل 4 أو 5 سرعات من حد أدنى 50 وحدة في حاوية مختلطة. أرقام OEM للمطابقة الهندسية فقط.",
+      "version_differences": [
+        { "variant": "ناقل 4 سرعات دولي", "application": "أساطيل بوكسر BM150 العملية", "key_check": "تأكيد طبلة الغيارات 4 سرعات ورمز الكارتيرة" },
+        { "variant": "ناقل 5 سرعات دولي", "application": "بوكسر BM150 / BM150X للعمل الشاق والطرق", "key_check": "تأكيد نسب الـ 5 سرعات وغطاء التشغيل" },
+        { "variant": "بوجيه واحد مقابل بوجيهين (DTS-i)", "application": "حسب الموديل والضفيرة", "key_check": "مراجعة مقبس CDI ووش السلندر قبل تأكيد الفاتورة" }
+      ],
+      "fitment_checklist": [
+        { "step": "1. رمز المحرك والكارتيرة", "detail": "تحقق من الكود المحفور (مرجع 36PF / JA) لمطابقة نقاط تثبيت فخذتين الكارتيرة." },
+        { "step": "2. جير 4 أو 5 سرعات", "detail": "حدد 4 أو 5 سرعات في الفاتورة المبدئية قبل التجميع." },
+        { "step": "3. الإشعال والستاتور", "detail": "تأكد من بوجيه واحد أو بوجيهين ومقبس ضفيرة الأسلاك." },
+        { "step": "4. الغطاء وترس الجنزير 428", "detail": "راجع شكل الغطاء الجانبي ومقاس الجنزير 428." },
+        { "step": "5. قطع العمرة المصاحبة", "detail": "أضف فخذتين الكارتيرة، غطاء الدبرياج، طقم الشميز والبستم، وطقم الجوانات الكامل في نفس الحاوية." }
+      ],
+      "spec_vs_oem_rows": [
+        { "component": "المحرك الكامل البديل", "chixiang_pn": "CX-BJ-BM150-ENG", "chixiang_spec": "144.8 cc SOHC · 56.0 × 58.8 مم · 4/5 سرعات · مارش ومنافلة", "oem_ref": "36PF0004 / 36PF0005 Ref." },
+        { "component": "فخذة كارتيرة شمال (LH)", "chixiang_pn": "CX-BJ-BM150-LH", "chixiang_spec": "ألمنيوم ADC12 · قواعد رولمان بلي CNC", "oem_ref": "36PF0004" },
+        { "component": "فخذة كارتيرة يمين (RH)", "chixiang_pn": "CX-BJ-BM150-RH", "chixiang_spec": "ألمنيوم ADC12 · أوجه مطابقة CNC", "oem_ref": "36PF0005" },
+        { "component": "غطاء دبرياج يمين", "chixiang_pn": "CX-BJ-BM150-CC", "chixiang_spec": "ألمنيوم مسبوك بدقة (مرجع الجوان JA541212)", "oem_ref": "36PF0008" },
+        { "component": "طقم شميز وبستم (56.0 مم)", "chixiang_pn": "CX-BJ-BM150-CY", "chixiang_spec": "شميز مقاوم للتآكل + بستم 56.0 مم وشنبر وبنز", "oem_ref": "36PF0002" },
+        { "component": "طقم ورق دبرياج وتروس الجير", "chixiang_pn": "CX-BJ-BM150-TR", "chixiang_spec": "تروس 20CrMnTi + ورق دبرياج (جوان JA541212)", "oem_ref": "36PF0009 (ورق الدبرياج)" }
+      ],
+      "bundle_items": [
+        { "pn": "CX-BJ-BM150-LH", "oem": "36PF0004", "name": "فخذة كارتيرة شمال (LH)", "spec": "ألمنيوم ADC12 · تشغيل CNC" },
+        { "pn": "CX-BJ-BM150-RH", "oem": "36PF0005", "name": "فخذة كارتيرة يمين (RH)", "spec": "ألمنيوم ADC12 · تشغيل CNC" },
+        { "pn": "CX-BJ-BM150-CC", "oem": "36PF0008", "name": "غطاء دبرياج وطقم جوانات كامل", "spec": "تشغيل CNC · جوان JA541212" },
+        { "pn": "CX-BJ-BM150-CY", "oem": "36PF0002", "name": "طقم شميز وبستم (56.0 مم) ووش سلندر كامل", "spec": "144.8 cc · شميز وبستم وشنبر" },
+        { "pn": "CX-BJ-BM150-TR", "oem": "36PF0009", "name": "طقم دبرياج، عمود كرنك بالبييل وتروس الجير", "spec": "فولاذ 20CrMnTi + ورق مقوى" }
+      ],
+      "faqs": [
+        { "q": "هل المحرك CX-BJ-BM150-ENG قطعة أصلية من Bajaj أم بديل مطابق؟", "a": "هو محرك بديل مستقل تصنعه CHIXIANG MOTOR بمقاسات 144.8 cc (56.0 × 58.8 مم)، وأرقام OEM للمطابقة الهندسية فقط." },
+        { "q": "كيف أختار بين نسخة 4 سرعات و 5 سرعات لـ BM150؟", "a": "راجع ناقل الحركة في أسطولك وكود 36PF/JA ثم حدد 4 أو 5 سرعات وبوجيه واحد أو اثنين عند الطلب." },
+        { "q": "هل تتوفر فخذتين الكارتيرة ووش السلندر والكرنك والجوانات لـ BM150؟", "a": "نعم: فخذتي الكارتيرة 36PF0004/36PF0005 والغطاء 36PF0008 والشميز 36PF0002 وورق الدبرياج 36PF0009 والكرنك وطقم الجوانات الكامل." },
+        { "q": "هل يمكن دمج محركات BM150 مع محركات CG و HW300؟", "a": "نعم، حد أدنى 50 وحدة في حاوية مختلطة FOB قوانغتشو مع كشف الأرقام التسلسلية." },
+        { "q": "ما الاختبارات والضمان؟", "a": "اختبار بارد وساخن 100% في تشونغتشينغ (~10 أيام عمل) وضمان 60 يوماً بعد الوصول للميناء." }
+      ]
+    }
+  }
+}

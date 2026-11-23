@@ -6,7 +6,7 @@ const { pathToFileURL } = require('node:url');
 
 const root = path.join(__dirname, '..');
 const canonicalOrigin = 'https://chixiangmotor.com';
-const languageDirectories = ['ar', 'en', 'es', 'pt', 'ru'];
+const languageDirectories = ['ar', 'en', 'es', 'fr', 'pt', 'ru'];
 
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 

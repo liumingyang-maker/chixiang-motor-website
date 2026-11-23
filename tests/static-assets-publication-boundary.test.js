@@ -55,7 +55,7 @@ function listFiles(dir) {
 }
 
 const INTERNAL_DIRS = ['docs', 'research', 'scripts', 'tests', 'workers'];
-const PUBLIC_DIRS = ['ar', 'css', 'en', 'es', 'images', 'js', 'pdf', 'pt', 'ru'];
+const PUBLIC_DIRS = ['ar', 'css', 'en', 'es', 'fr', 'images', 'js', 'pdf', 'pt', 'ru'];
 /* Exact-file carve-outs that are deliberately withheld from the upload even though
  * they live under an otherwise public directory. Broad directory rules are forbidden. */
 const PUBLIC_CARVE_OUTS = ['pdf/extracted.txt'];
@@ -71,7 +71,7 @@ const EXPECTED_RULES = [
   'wrangler.toml', 'package.json', 'package-lock.json',
   'pdf/extracted.txt',
   'docs/', 'docs/**', 'research/', 'research/**', 'scripts/', 'scripts/**',
-  'tests/', 'tests/**', 'workers/', 'workers/**'
+  'tests/', 'tests/**', 'workers/', 'workers/**', 'zh-cn/', 'zh-cn/**'
 ];
 
 test('.assetsignore contains exactly the reviewed rule set and no broad pattern', () => {
@@ -163,13 +163,12 @@ test('this hardening touches no governed Foundation file', () => {
   const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
   const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter((p) => p && p.is_flagship_page === true).length;
   const flagshipEngineCount = (JSON.parse(read('data/flagship-engines.json')).engines || []).filter((e) => e && e.published === true).length;
-  const expectedCanonical = 85 + 2 * publicBtvCount + flagshipHwCount + flagshipEngineCount;
-  // 53 baseline + 21 approved zh-cn + /en/evidence + 3 EN Bajaj/TVS + /en/engine-parts/hw-series + dynamic flagship/detail pages
-  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches baseline + approved zh-cn, evidence, Bajaj/TVS, and HW parts pages');
+  const expectedCanonical = 143 + 6 * publicBtvCount + flagshipHwCount + 6 * flagshipEngineCount;
+  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches full 6-language matrix + regional guides');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
   assert.ok(!/ads/.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);
-  assert.equal(manifest.length, expectedCanonical, 'manifest page set matches baseline + approved zh-cn, evidence, and Bajaj/TVS pages');
+  assert.equal(manifest.length, expectedCanonical, 'manifest page set matches full 6-language matrix + regional guides');
 });
 
 test('the pdf directory stays public while the extracted text artifact is withheld', () => {

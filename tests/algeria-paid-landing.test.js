@@ -89,7 +89,7 @@ test('the paid page stays outside the SEO Foundation contract', () => {
   const publicBtvCount = (JSON.parse(read('data/bajaj-tvs-catalog.json')).products || []).filter((p) => p && p.public === true).length;
   const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter((p) => p && p.is_flagship_page === true).length;
   const flagshipEngineCount = (JSON.parse(read('data/flagship-engines.json')).engines || []).filter((e) => e && e.published === true).length;
-  assert.equal(manifest.length, 85 + 2 * publicBtvCount + flagshipHwCount + flagshipEngineCount, 'the governed sitemap set matches baseline + public Bajaj/TVS + HW parts + flagship engine pages');
+  assert.equal(manifest.length, 143 + 6 * publicBtvCount + flagshipHwCount + 6 * flagshipEngineCount, 'the governed sitemap set matches full 6-language matrix + regional guides');
 });
 
 test('no organic page links to the paid page yet', () => {
