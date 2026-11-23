@@ -719,7 +719,7 @@ ${hreflangTagsHtml(page.role, '  ')}
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${ORIGIN}/images/parts.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/css/style.css?v=20261119-flagship">
+  <link rel="stylesheet" href="/css/style.css?v=20261123-matrix">
   <script type="application/ld+json">
 ${JSON.stringify(orgGraph, null, 2)}
   </script>
@@ -1165,7 +1165,7 @@ ${hreflangsHtml}
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${escapeAttr(ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/css/style.css?v=20261119-hero">
+  <link rel="stylesheet" href="/css/style.css?v=20261123-matrix">
   <script type="application/ld+json">
 ${JSON.stringify(productGraph, null, 2)}
   </script>${faqSchema ? `\n  <script type="application/ld+json">\n${JSON.stringify(faqSchema, null, 2)}\n  </script>` : ''}

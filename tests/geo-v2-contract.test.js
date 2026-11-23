@@ -145,7 +145,7 @@ test('all 6-locale engine family pages publish Product + PropertyValue engineeri
 test('all six active language homepages synchronize Hero CSS cache version and full 6-locale WebSite inLanguage list', () => {
   for (const file of ['en/index.html', 'fr/index.html', 'es/index.html', 'pt/index.html', 'ru/index.html', 'ar/index.html', 'en/ac320-atv-engine.html']) {
     const html = read(file);
-    assert.match(html, /href=["'](?:\.\.|)\/css\/style\.css\?v=20261119-hero["']/, `${file}: outdated style.css cache version`);
+    assert.match(html, /href=["'](?:\.\.|)\/css\/style\.css\?v=20261123-matrix["']/, `${file}: outdated style.css cache version`);
   }
 
   for (const file of ['en/index.html', 'fr/index.html', 'es/index.html', 'pt/index.html', 'ru/index.html', 'ar/index.html']) {

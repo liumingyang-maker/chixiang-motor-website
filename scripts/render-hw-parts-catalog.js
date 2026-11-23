@@ -245,7 +245,7 @@ ${altHtml}
   <meta property="og:url" content="${escapeAttr(canonical)}">
   <meta property="og:image" content="${escapeAttr(ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/css/style.css?v=20261119-hero">
+  <link rel="stylesheet" href="/css/style.css?v=20261123-matrix">
   <script type="application/ld+json">
 ${JSON.stringify(organizationSchema(), null, 2)}
   </script>

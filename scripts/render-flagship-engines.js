@@ -269,7 +269,7 @@ ${hreflangs}
   <meta property="og:url" content="${escapeAttr(url)}">
   <meta property="og:image" content="${escapeAttr(`${ORIGIN}/${engine.gallery_images[0].src}`)}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/css/style.css?v=20261119-flagship">
+  <link rel="stylesheet" href="/css/style.css?v=20261123-matrix">
   <style>
     .flagship-page section[id] { scroll-margin-top: 124px; }
     .flagship-anchor-bar { margin-top: var(--nav-height, 72px); position: sticky; top: var(--nav-height, 72px); z-index: 900; }

@@ -225,7 +225,7 @@ ${hreflangTagsHtml(slug, '  ')}
   <meta property="og:url" content="${canonical}">
   <meta property="og:image" content="${escapeAttr(guide.ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/css/style.css?v=20261119-hero">${rtlCss}
+  <link rel="stylesheet" href="/css/style.css?v=20261123-matrix">${rtlCss}
   <script type="application/ld+json">
 ${JSON.stringify(articleLd, null, 2)}
   </script>${faqLdHtml}

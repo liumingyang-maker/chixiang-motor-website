@@ -20,7 +20,7 @@ const checkOnly = process.argv.includes('--check');
 
 const ORIGIN = 'https://chixiangmotor.com';
 const ORG_ID = `${ORIGIN}/#organization`;
-const CSS_HREF = '/css/style.css?v=20261119-flagship';
+const CSS_HREF = '/css/style.css?v=20261123-matrix';
 const FR_MARKER = '<!-- FR AFRICA GENERATED -->';
 
 const FR_PAGES = [
