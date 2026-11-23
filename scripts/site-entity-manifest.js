@@ -215,12 +215,14 @@ function entryForHtml(html, url) {
 
 function loadManifest(root) {
   const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
-  return [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => {
-    const url = match[1];
-    const file = sourceFileForUrl(url);
-    const html = fs.readFileSync(path.join(root, file), 'utf8');
-    return entryForHtml(html, url);
-  });
+  return [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map(match => match[1])
+    .filter(url => !url.endsWith('.pdf'))
+    .map(url => {
+      const file = sourceFileForUrl(url);
+      const html = fs.readFileSync(path.join(root, file), 'utf8');
+      return entryForHtml(html, url);
+    });
 }
 
 module.exports = {

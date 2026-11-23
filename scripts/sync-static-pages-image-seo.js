@@ -31,16 +31,18 @@ function escapeAttr(val) {
 
 function getCanonicalUrls() {
   const sm = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
-  return [...sm.matchAll(/<loc>(https:\/\/chixiangmotor\.com\/[^<]*)<\/loc>/g)].map((m) => {
-    const u = m[1];
-    const rel = u.slice(ORIGIN.length + 1);
-    if (!rel) return { url: u, file: 'index.html' };
-    if (rel.endsWith('/')) return { url: u, file: `${rel}index.html` };
-    if (!rel.endsWith('.html') && fs.existsSync(path.join(ROOT, `${rel}.html`))) {
-      return { url: u, file: `${rel}.html` };
-    }
-    return { url: u, file: rel };
-  });
+  return [...sm.matchAll(/<loc>(https:\/\/chixiangmotor\.com\/[^<]*)<\/loc>/g)]
+    .map((m) => m[1])
+    .filter((u) => !u.endsWith('.pdf'))
+    .map((u) => {
+      const rel = u.slice(ORIGIN.length + 1);
+      if (!rel) return { url: u, file: 'index.html' };
+      if (rel.endsWith('/')) return { url: u, file: `${rel}index.html` };
+      if (!rel.endsWith('.html') && fs.existsSync(path.join(ROOT, `${rel}.html`))) {
+        return { url: u, file: `${rel}.html` };
+      }
+      return { url: u, file: rel };
+    });
 }
 
 function defaultOgImageForFile(file) {
@@ -75,6 +77,9 @@ function transformHtml(file, rawHtml) {
       html = html.split(oldRel).join(newRel);
     }
   }
+
+  // 1b. Clean up any malformed inline-style residue left after prior background-image stripping
+  html = html.replace(/(class=["'][^"']*\b(?:product-img|card-img)\b[^"']*["'])(?:\.\.\/|\/)?images\/[^>"]+">/gi, '$1>');
 
   // 2. Convert background-image product-img / card-img / about-hero-img elements into native <img>
   const relPrefixForAttr = (bgUrl) => {

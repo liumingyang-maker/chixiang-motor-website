@@ -149,3 +149,12 @@ All 32 core, product-family, flagship-engine (`cg150`, `cg200`, `cg250sb`, `hw30
 - **Portuguese Lusophone (`/pt/`)**: 32 canonical pages; `motor de vareta`, `triciclo de carga`, `kupapata / mototáxi`, ports `Luanda`, `Maputo`, `Santos`, `CNCA / ARCCLA` importer-coordinated notice.
 - **Russian / CIS (`/ru/`)**: 34 canonical pages (32 matrix + `/ru/russia/`, `/ru/central-asia/`); `штанговый двигатель`, `цепной OHC`, `Альфа / Дельта / Актив / Питбайк`, `водянка под трицикл`, engine serial registry for EAEU/CIS customs.
 - **Arabic MENA (`/ar/`, RTL `dir="rtl"`)**: 32 canonical pages; `موتور أسياخ`, `موتور كاتينة`, `تروسيكل تبريد مياه`, `التوفيقية`, `بوكسر BM150 / توك توك RE 4S / TVS`, `ACID / CargoX` importer-coordinated notice.
+
+## 10. Downloadable 6-Language B2B Technical Engine Catalogs (PDF)
+
+- **English (EN)**: https://chixiangmotor.com/pdf/chixiang-motorcycle-engine-catalog-en.pdf
+- **French (FR)**: https://chixiangmotor.com/pdf/chixiang-catalogue-moteurs-moto-fr.pdf
+- **Spanish (ES)**: https://chixiangmotor.com/pdf/chixiang-catalogo-motores-moto-es.pdf
+- **Portuguese (PT)**: https://chixiangmotor.com/pdf/chixiang-catalogo-motores-moto-pt.pdf
+- **Russian (RU)**: https://chixiangmotor.com/pdf/chixiang-katalog-dvigatelej-moto-ru.pdf
+- **Arabic (AR)**: https://chixiangmotor.com/pdf/chixiang-motorcycle-engine-catalog-ar.pdf

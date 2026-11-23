@@ -33,7 +33,9 @@ function around(value, marker, length = 2200) {
   return value.slice(from, from + length);
 }
 
-const sitemapUrls = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+const sitemapUrls = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)]
+  .map(match => match[1])
+  .filter(url => !url.endsWith('.pdf'));
 const publicFiles = sitemapUrls.map(sourceFileForUrl);
 const publicSource = decodeNumericEntities([
   ...publicFiles.map(read),

@@ -22,16 +22,18 @@ function walkFiles(dirRel, extFilter) {
 
 function getCanonicalEntries() {
   const sm = read('sitemap.xml');
-  return [...sm.matchAll(/<loc>(https:\/\/chixiangmotor\.com\/[^<]*)<\/loc>/g)].map((m) => {
-    const url = m[1];
-    const rel = url.slice(ORIGIN.length + 1);
-    let file = rel;
-    if (!rel) file = 'index.html';
-    else if (rel.endsWith('/')) file = `${rel}index.html`;
-    else if (!rel.endsWith('.html') && fs.existsSync(path.join(root, `${rel}.html`))) file = `${rel}.html`;
-    const langMatch = url.match(/^https:\/\/chixiangmotor\.com\/(en|fr|es|pt|ru|ar)\//);
-    return { url, file, lang: langMatch ? langMatch[1] : 'en' };
-  });
+  return [...sm.matchAll(/<loc>(https:\/\/chixiangmotor\.com\/[^<]*)<\/loc>/g)]
+    .map((m) => m[1])
+    .filter((url) => !url.endsWith('.pdf'))
+    .map((url) => {
+      const rel = url.slice(ORIGIN.length + 1);
+      let file = rel;
+      if (!rel) file = 'index.html';
+      else if (rel.endsWith('/')) file = `${rel}index.html`;
+      else if (!rel.endsWith('.html') && fs.existsSync(path.join(root, `${rel}.html`))) file = `${rel}.html`;
+      const langMatch = url.match(/^https:\/\/chixiangmotor\.com\/(en|fr|es|pt|ru|ar)\//);
+      return { url, file, lang: langMatch ? langMatch[1] : 'en' };
+    });
 }
 
 test('all disk image assets are WebP, <= 180 KB, and match manifest entries', () => {

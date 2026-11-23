@@ -39,7 +39,9 @@ function parseCsv(text) {
   return records.map(values => Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ''])));
 }
 
-const sitemapUrls = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+const sitemapUrls = [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)]
+  .map(match => match[1])
+  .filter(url => !url.endsWith('.pdf'));
 const allowedClasses = new Set(['FACT_FIX', 'OWNER_ENHANCEMENT', 'TRANSLATION_SYNC', 'VERIFY_ONLY']);
 
 test('page matrix covers every canonical sitemap URL exactly once', () => {

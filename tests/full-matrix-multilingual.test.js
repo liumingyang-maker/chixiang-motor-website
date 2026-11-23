@@ -30,9 +30,12 @@ function toDiskPath(pathname, fromRel = '') {
 
 test('all 32 standard roles x 6 languages = 192 matrix pages exist on disk and in sitemap.xml', () => {
   const sitemap = read('sitemap.xml');
-  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
-  assert.equal(locs.length, 197, 'total sitemap.xml canonical URLs');
-  assert.ok(!locs.some((u) => u.includes('/zh-cn')), 'sitemap.xml must exclude hidden /zh-cn routes');
+  const allLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const locs = allLocs.filter((u) => !u.endsWith('.pdf'));
+  const pdfLocs = allLocs.filter((u) => u.endsWith('.pdf'));
+  assert.equal(locs.length, 197, 'total sitemap.xml canonical HTML URLs');
+  assert.equal(pdfLocs.length, 6, 'total sitemap.xml multilingual PDF catalog URLs');
+  assert.ok(!allLocs.some((u) => u.includes('/zh-cn')), 'sitemap.xml must exclude hidden /zh-cn routes');
 
   let checked = 0;
   for (const [role, group] of Object.entries(ROUTE_GROUPS)) {
@@ -128,7 +131,7 @@ test('all 6 contact pages wire prefill/main.js form handlers, _redirects exclude
 
   // Full 197-page bidirectional hreflang return-tag verification
   const sitemap = read('sitemap.xml');
-  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]).filter((u) => !u.endsWith('.pdf'));
   const altsByUrl = new Map();
   for (const url of locs) {
     const pathname = new URL(url).pathname;

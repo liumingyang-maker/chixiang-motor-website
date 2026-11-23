@@ -89,6 +89,11 @@ test('sitemap contains only unique, clean, canonical, indexable document URLs', 
     const response = await router.fetch(new Request(location), env);
     assert.equal(response.status, 200, `sitemap URL must not redirect: ${location}`);
 
+    if (url.pathname.endsWith('.pdf')) {
+      assert.ok(fs.existsSync(path.join(root, url.pathname.slice(1))), `missing PDF document for ${location}`);
+      continue;
+    }
+
     const source = sourceFileForUrl(location);
     assert.ok(fs.existsSync(path.join(root, source)), `missing source document for ${location}`);
     const html = read(source);

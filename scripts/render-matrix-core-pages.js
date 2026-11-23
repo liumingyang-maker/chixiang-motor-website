@@ -38,6 +38,33 @@ const locales = JSON.parse(fs.readFileSync(path.join(root, 'data', 'i18n', 'core
 const checkOnly = process.argv.includes('--check');
 const TODAY = '2026-11-23';
 
+const PDF_CATALOGS = {
+  en: {
+    path: '/pdf/chixiang-motorcycle-engine-catalog-en.pdf',
+    label: 'Download Technical PDF Catalog (EN)'
+  },
+  fr: {
+    path: '/pdf/chixiang-catalogue-moteurs-moto-fr.pdf',
+    label: 'Télécharger le catalogue PDF (FR)'
+  },
+  es: {
+    path: '/pdf/chixiang-catalogo-motores-moto-es.pdf',
+    label: 'Descargar Catálogo Técnico PDF (ES)'
+  },
+  pt: {
+    path: '/pdf/chixiang-catalogo-motores-moto-pt.pdf',
+    label: 'Baixar Catálogo Técnico em PDF (PT)'
+  },
+  ru: {
+    path: '/pdf/chixiang-katalog-dvigatelej-moto-ru.pdf',
+    label: 'Скачать технический каталог PDF (RU)'
+  },
+  ar: {
+    path: '/pdf/chixiang-motorcycle-engine-catalog-ar.pdf',
+    label: 'تحميل الكتالوج الفني PDF (AR)'
+  }
+};
+
 function orgSchemaNode() {
   return {
     '@type': 'Organization',
@@ -257,6 +284,7 @@ ${exportHtml}
         <div class="cta-actions" style="justify-content:center;margin-top:2rem;">
           <a href="${rolePath('evidence', lang)}" class="btn btn-primary btn-lg">${escapeHtml(ui.homeEvidenceBtn)}</a>
           <a href="${rolePath('news', lang)}" class="btn btn-outline btn-lg">${escapeHtml(ui.homeGuidesBtn)}</a>
+          <a href="${PDF_CATALOGS[lang].path}" class="btn btn-outline btn-lg" target="_blank" rel="noopener" download>${escapeHtml(PDF_CATALOGS[lang].label)}</a>
           <a href="${quoteHref}" class="btn btn-accent btn-lg">${escapeHtml(d.ctaSecondary)}</a>
         </div>${lang === 'es' ? '\n        <div class="cta-actions" style="justify-content:center;margin-top:1rem;"><a href="/es/peru/" class="btn btn-outline btn-sm">Motores en Perú (SUNAT)</a></div>' : lang === 'ru' ? '\n        <div class="cta-actions" style="justify-content:center;margin-top:1rem;"><a href="/ru/russia/" class="btn btn-outline btn-sm">Поставки в Россию</a><a href="/ru/central-asia/" class="btn btn-outline btn-sm">Казахстан и Узбекистан</a></div>' : ''}
       </div>
@@ -326,6 +354,7 @@ ${sectionsHtml}
         <p style="color:var(--text-secondary);max-width:660px;margin:0 auto 1.25rem;">${escapeHtml(ui.productsCtaBody)}</p>
         <div class="cta-actions">
           <a href="${quoteHref}" class="btn btn-accent btn-lg">${escapeHtml(ui.productsCtaQuote)}</a>
+          <a href="${PDF_CATALOGS[lang].path}" class="btn btn-outline btn-lg" target="_blank" rel="noopener" download>${escapeHtml(PDF_CATALOGS[lang].label)}</a>
           <a href="${escapeAttr(waUrl)}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">${escapeHtml(chrome.waLabel)}</a>
         </div>
       </div>
@@ -961,6 +990,9 @@ function main() {
     for (const lang of LANGS) {
       if (group[lang]) urlsToEnsure.push([`${ORIGIN}${group[lang]}`, prio]);
     }
+  }
+  for (const lang of LANGS) {
+    if (PDF_CATALOGS[lang]) urlsToEnsure.push([`${ORIGIN}${PDF_CATALOGS[lang].path}`, '0.7']);
   }
   const sm = syncSitemapAll(urlsToEnsure);
   if (sm.changed) {

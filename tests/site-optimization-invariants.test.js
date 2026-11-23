@@ -77,6 +77,7 @@ function ownerMarker(html) {
 
 function sourceFileForUrl(rawUrl) {
   const { pathname } = new URL(rawUrl);
+  if (pathname.endsWith('.pdf')) return pathname.slice(1);
   return pathname.endsWith('/') ? `${pathname.slice(1)}index.html` : `${pathname.slice(1)}.html`;
 }
 

@@ -11,12 +11,14 @@ const websiteId = `${origin}/#website`;
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
 function sitemapPages() {
-  return [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => {
-    const url = match[1];
-    const pathname = new URL(url).pathname;
-    const file = pathname.endsWith('/') ? `${pathname.slice(1)}index.html` : `${pathname.slice(1)}.html`;
-    return { url, pathname, file, language: pathname.split('/')[1] };
-  });
+  return [...read('sitemap.xml').matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map(match => match[1])
+    .filter(url => !url.endsWith('.pdf'))
+    .map(url => {
+      const pathname = new URL(url).pathname;
+      const file = pathname.endsWith('/') ? `${pathname.slice(1)}index.html` : `${pathname.slice(1)}.html`;
+      return { url, pathname, file, language: pathname.split('/')[1] };
+    });
 }
 
 function jsonLdBlocks(html, file) {

@@ -89,6 +89,7 @@ function main() {
     if (!locM) return block;
     const url = locM[1];
     const cleanBlock = block.replace(/\s*<image:image>[\s\S]*?<\/image:image>/g, '');
+    if (url.endsWith('.pdf')) return cleanBlock;
     const file = fileFromUrl(url);
     const abs = path.join(ROOT, file);
     if (!fs.existsSync(abs)) return cleanBlock;

@@ -101,7 +101,7 @@ test('llms.txt and llms-full.txt stay synchronized with SSOT facts and live site
     const urls = [...new Set(content.match(/https:\/\/chixiangmotor\.com\/[^\s)\]]*/g) || [])];
     assert.ok(urls.length >= 5, `${file}: expected live site URLs`);
     for (const url of urls) {
-      const target = sourceFileForUrl(url);
+      const target = url.endsWith('.pdf') ? new URL(url).pathname.slice(1) : sourceFileForUrl(url);
       assert.ok(fs.existsSync(path.join(root, target)), `${file}: broken URL ${url} -> ${target}`);
     }
   }

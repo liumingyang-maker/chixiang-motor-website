@@ -164,7 +164,11 @@ test('this hardening touches no governed Foundation file', () => {
   const flagshipHwCount = (JSON.parse(read('data/hw-parts-catalog.json')).parts || []).filter((p) => p && p.is_flagship_page === true).length;
   const flagshipEngineCount = (JSON.parse(read('data/flagship-engines.json')).engines || []).filter((e) => e && e.published === true).length;
   const expectedCanonical = 143 + 6 * publicBtvCount + flagshipHwCount + 6 * flagshipEngineCount;
-  assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches full 6-language matrix + regional guides');
+  const allLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const htmlLocs = allLocs.filter((u) => !u.endsWith('.pdf'));
+  const pdfLocs = allLocs.filter((u) => u.endsWith('.pdf'));
+  assert.equal(htmlLocs.length, expectedCanonical, 'sitemap HTML entity set matches full 6-language matrix + regional guides');
+  assert.equal(pdfLocs.length, 6, 'sitemap includes all 6 multilingual PDF catalogs');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
   assert.ok(!/<loc>[^<]*\/ads\b/i.test(sitemap) && !/https:\/\/chixiangmotor\.com\/ads\b/i.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);
