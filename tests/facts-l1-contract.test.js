@@ -108,9 +108,10 @@ test('catalog omits absolute and unapproved commercial claims', () => {
 
 test('AC320 catalog CTA label matches contact destination', () => {
   const html = read('en/products.html');
-  const i = html.indexOf('AC320');
-  assert.ok(i !== -1);
-  const window = html.slice(i, i + 900);
+  const i = html.indexOf('<h3>');
+  const idx = html.indexOf('AC320', i !== -1 ? i : 0);
+  assert.ok(idx !== -1);
+  const window = html.slice(idx, idx + 1200);
   assert.ok(window.includes('View Specs'), 'CTA should say View Specs');
   assert.ok(window.includes('href="/en/ac320-atv-engine"'), 'CTA should link AC320 page');
   assert.ok(!window.includes('17kW'));

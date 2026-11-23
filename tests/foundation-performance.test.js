@@ -15,7 +15,7 @@ const optimizedAssets = [
   'images/central-asia-hero-products/cg-heavy.webp'
 ];
 
-test('ships a bounded WebP hero set while retaining source PNG files', () => {
+test('ships a bounded WebP hero set with legacy source PNGs cleaned up', () => {
   for (const file of optimizedAssets) {
     assert.ok(fs.existsSync(path.join(root, file)), `${file} must exist`);
   }
@@ -29,8 +29,8 @@ test('ships a bounded WebP hero set while retaining source PNG files', () => {
     'combined hero transfer must be at most 1 MB'
   );
 
-  assert.ok(fs.existsSync(path.join(root, 'images/central-asia-hero-bg-v2.png')));
-  assert.ok(fs.existsSync(path.join(root, 'images/central-asia-hero-products/cg-air.png')));
+  assert.ok(!fs.existsSync(path.join(root, 'images/central-asia-hero-bg-v2.png')));
+  assert.ok(!fs.existsSync(path.join(root, 'images/central-asia-hero-products/cg-air.png')));
 });
 
 test('Peru preloads the optimized scene and keeps its compact WebP engine set', () => {

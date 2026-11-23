@@ -1,12 +1,12 @@
 {
   "slug": "hw250-hw300-vs-cg250-water-cooled-cargo-tricycle-engine",
   "datePublished": "2026-11-19",
-  "ogImage": "https://chixiangmotor.com/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+  "ogImage": "https://chixiangmotor.com/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
   "quoteInterest": "cg",
   "waModel": "CG250SB / HW250 / HW300 Water-Cooled",
   "figures": [
     {
-      "src": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+      "src": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
       "alt": {
         "en": "CHIXIANG HW Water heavy-duty water-cooled cargo-tricycle engine",
         "fr": "Moteur tricycle cargo lourd CHIXIANG HW refroidi par eau",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "src": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+      "src": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp",
       "alt": {
         "en": "CHIXIANG CG250SB standard water-cooled engine",
         "fr": "Moteur standard CHIXIANG CG250SB refroidi par eau",

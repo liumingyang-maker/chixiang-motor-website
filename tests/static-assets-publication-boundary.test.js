@@ -166,7 +166,7 @@ test('this hardening touches no governed Foundation file', () => {
   const expectedCanonical = 143 + 6 * publicBtvCount + flagshipHwCount + 6 * flagshipEngineCount;
   assert.equal((sitemap.match(/<loc>/g) || []).length, expectedCanonical, 'sitemap entity set matches full 6-language matrix + regional guides');
   assert.match(read('robots.txt'), /^Sitemap: https:\/\/chixiangmotor\.com\/sitemap\.xml$/m);
-  assert.ok(!/ads/.test(sitemap), 'the paid page must stay out of the sitemap');
+  assert.ok(!/<loc>[^<]*\/ads\b/i.test(sitemap) && !/https:\/\/chixiangmotor\.com\/ads\b/i.test(sitemap), 'the paid page must stay out of the sitemap');
   const manifest = require('../scripts/site-entity-manifest.js').loadManifest(root);
   assert.equal(manifest.length, expectedCanonical, 'manifest page set matches full 6-language matrix + regional guides');
 });
@@ -199,7 +199,7 @@ test('the pdf directory stays public while the extracted text artifact is withhe
   for (const sample of ['ads/algerie/index.html', 'ar/cg-engine.html', 'en/cg-engine.html',
     'es/motor-cg.html', 'pt/motor-cg.html', 'ru/dvigatel-cg.html', 'css/style.css',
     'css/algeria-landing.css', 'js/main.js', 'js/algeria-landing.js', 'images/logo.webp',
-    'images/cb-offroad/chixiang-cb-offroad-engine-01.webp']) {
+    'images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp']) {
     assert.equal(isUploaded(sample), true, 'public path must stay uploadable: ' + sample);
   }
   // (6) public root files

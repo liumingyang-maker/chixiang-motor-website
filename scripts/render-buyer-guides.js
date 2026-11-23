@@ -12,6 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
 const { applyToHtml } = require('./apply-site-entity-schema');
+const imgSeo = require('./lib/image-seo-helper');
 const {
   ORIGIN,
   LANGS,
@@ -97,8 +98,14 @@ function renderGuideHtml(guide, lang) {
     ? '\n  <style>\n    body { direction: rtl; }\n    .navbar .container, .nav-logo, .nav-links, .nav-right, .hero-cta, .cta-actions, .footer-bottom { direction: rtl; }\n    .lang-dropdown { left: 0; right: auto; text-align: right; }\n  </style>'
     : '';
 
-  const articleImages = (guide.figures || []).map((f) => `${ORIGIN}${f.src}`);
-  if (!articleImages.length) articleImages.push(guide.ogImage);
+  const articleImages = (guide.figures || []).map((f, idx) => imgSeo.imageObjectNode(f.src, lang, {
+    representativeOfPage: idx === 0,
+    alt: (f.alt && (f.alt[lang] || f.alt.en)) || loc.h1,
+    caption: (f.caption && (f.caption[lang] || f.caption.en)) || (f.alt && (f.alt[lang] || f.alt.en)) || loc.h1
+  }));
+  if (!articleImages.length) {
+    articleImages.push(imgSeo.imageObjectNode(guide.ogImage, lang, { representativeOfPage: true, name: loc.h1 }));
+  }
 
   const articleLd = {
     '@context': 'https://schema.org',
@@ -134,7 +141,11 @@ function renderGuideHtml(guide, lang) {
     : '';
 
   const figuresHtml = (guide.figures || []).length
-    ? `\n        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin:0 0 2rem;">\n${guide.figures.map((fig, idx) => `          <figure style="margin:0;background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;overflow:hidden;">\n            <img src="${escapeAttr(fig.src)}" alt="${escapeAttr(fig.alt[lang] || fig.alt.en)}" loading="${idx === 0 ? 'eager' : 'lazy'}" style="width:100%;aspect-ratio:4/3;object-fit:${fig.cover ? 'cover' : 'contain'};background:#f4f6f8;display:block;">\n            <figcaption style="padding:0.85rem 1rem;font-size:0.9rem;color:var(--text-secondary);">${expandLinks(fig.caption[lang], lang)}</figcaption>\n          </figure>`).join('\n')}\n        </div>`
+    ? `\n        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin:0 0 2rem;">\n${guide.figures.map((fig, idx) => {
+      const dims = imgSeo.getDims(fig.src, 1200, 900);
+      const figSrc = '/' + imgSeo.resolveFile(fig.src);
+      return `          <figure style="margin:0;background:var(--bg-card);border:1px solid var(--border-color);border-radius:10px;overflow:hidden;">\n            <img src="${escapeAttr(figSrc)}" alt="${escapeAttr(fig.alt[lang] || fig.alt.en)}" width="${dims.width}" height="${dims.height}" loading="${idx === 0 ? 'eager' : 'lazy'}"${idx === 0 ? ' fetchpriority="high"' : ''} decoding="async" style="width:100%;aspect-ratio:4/3;object-fit:${fig.cover ? 'cover' : 'contain'};background:#f4f6f8;display:block;">\n            <figcaption style="padding:0.85rem 1rem;font-size:0.9rem;color:var(--text-secondary);">${expandLinks(fig.caption[lang], lang)}</figcaption>\n          </figure>`;
+    }).join('\n')}\n        </div>`
     : '';
 
   const sectionsHtml = (loc.sections || []).map((sec) => {
@@ -265,7 +276,8 @@ ${renderFooter(lang, waUrl, quoteHref)}
   return applyToHtml(rawHtml, canonical).replace(/\r?\n/g, '\r\n');
 }
 
-function syncEnglishGuidePage(slug) {
+function syncEnglishGuidePage(guide) {
+  const slug = guide.slug;
   const filePath = path.join(root, 'en', `${slug}.html`);
   const raw = fs.readFileSync(filePath, 'utf8');
   const nl = raw.includes('\r\n') ? '\r\n' : '\n';
@@ -278,6 +290,59 @@ function syncEnglishGuidePage(slug) {
     .map((l) => `<a href="${ROUTE_GROUPS[slug][l]}" hreflang="${HREFLANG_MAP[l]}">${LANG_DISPLAY_NAMES[l]}</a>`)
     .join('');
   next = next.replace(/(<div class="mobile-nav-langs">)[\s\S]*?(<\/div>)/, `$1${mobileLangLinks}$2`);
+  // Resolve legacy image paths, inject width/height/decoding/fetchpriority on EN guide imgs, and upgrade Article.image to ImageObject[]
+  for (const [oldRel, newRel] of Object.entries(imgSeo.loadManifest().legacyPathMap || {})) {
+    next = next.split(oldRel).join(newRel);
+  }
+  let enImgIdx = 0;
+  next = next.replace(/<img\b([^>]*)>/gi, (full, attrs) => {
+    const srcM = attrs.match(/\bsrc=["']([^"']+)["']/i);
+    if (!srcM || /mc\.yandex\.ru/i.test(srcM[1])) return full;
+    if (/images\/logo\.webp/i.test(srcM[1])) {
+      let a = attrs;
+      if (!/\bwidth=/i.test(a)) a += ' width="36" height="36"';
+      if (!/\bdecoding=/i.test(a)) a += ' decoding="async"';
+      return `<img${a}>`;
+    }
+    const dims = imgSeo.getDims(srcM[1], 1200, 900);
+    let a = attrs;
+    if (!/\bwidth=/i.test(a)) a += ` width="${dims.width}" height="${dims.height}"`;
+    if (!/\bdecoding=/i.test(a)) a += ' decoding="async"';
+    if (enImgIdx === 0 && !/\bfetchpriority=/i.test(a)) a += ' fetchpriority="high"';
+    enImgIdx += 1;
+    return `<img${a}>`;
+  });
+  // Upgrade EN Article JSON-LD image field to ImageObject[]
+  next = next.replace(/<script\b([^>]*)type=["']application\/ld\+json["']([^>]*)>([\s\S]*?)<\/script>/gi, (full, a1, a2, body) => {
+    if (/data-site-entity-graph/i.test(a1 + a2)) return full;
+    try {
+      const parsed = JSON.parse(body);
+      const upgradeNode = (node) => {
+        if (!node || !node['@type']) return false;
+        const types = Array.isArray(node['@type']) ? node['@type'] : [node['@type']];
+        if (!types.includes('Article') && !types.includes('TechArticle')) return false;
+        const imgs = (guide.figures || []).map((f, idx) => imgSeo.imageObjectNode(f.src, 'en', {
+          representativeOfPage: idx === 0,
+          alt: (f.alt && f.alt.en) || node.headline,
+          caption: (f.caption && f.caption.en) || (f.alt && f.alt.en) || node.headline
+        }));
+        if (imgs.length) node.image = imgs;
+        else if (typeof node.image === 'string' || (Array.isArray(node.image) && typeof node.image[0] === 'string')) {
+          const list = Array.isArray(node.image) ? node.image : [node.image];
+          node.image = list.map((u, idx) => imgSeo.imageObjectNode(u, 'en', { representativeOfPage: idx === 0, name: node.headline }));
+        }
+        return true;
+      };
+      let changed = upgradeNode(parsed);
+      if (Array.isArray(parsed['@graph'])) {
+        for (const n of parsed['@graph']) if (upgradeNode(n)) changed = true;
+      }
+      if (!changed) return full;
+      return `<script${a1}type="application/ld+json"${a2}>\n${JSON.stringify(parsed, null, 2)}\n  </script>`;
+    } catch {
+      return full;
+    }
+  });
   next = applyToHtml(next, `${ORIGIN}/en/${slug}`);
   return next.replace(/\r?\n/g, nl);
 }
@@ -288,7 +353,7 @@ function main() {
 
   for (const gf of guideFiles) {
     const guide = JSON.parse(fs.readFileSync(path.join(guidesDir, gf), 'utf8'));
-    const enNext = syncEnglishGuidePage(guide.slug);
+    const enNext = syncEnglishGuidePage(guide);
     const enAbs = path.join(root, 'en', `${guide.slug}.html`);
     const enCur = fs.readFileSync(enAbs, 'utf8');
     if (enCur !== enNext) {

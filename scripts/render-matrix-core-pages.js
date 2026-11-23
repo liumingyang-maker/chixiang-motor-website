@@ -14,6 +14,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
 const { applyToHtml } = require('./apply-site-entity-schema');
+const imgSeo = require('./lib/image-seo-helper');
 const {
   ORIGIN,
   LANGS,
@@ -166,7 +167,7 @@ function renderMatrixHome(lang) {
   const cardsHtml = d.cards.map((c) => {
     const links = c.links.map(([lbl, r], i) => `<a class="btn ${i === 0 ? 'btn-primary' : 'btn-outline'} btn-sm" href="${rolePath(r, lang)}">${escapeHtml(lbl)}</a>`).join('\n              ');
     return `        <article class="product-card">
-          <a class="product-img has-img" href="${rolePath(c.role, lang)}" style="background-image:url('..${escapeAttr(c.img)}');background-color:#f4f6f8;" role="img" aria-label="${escapeAttr(c.title)}"></a>
+          <a class="product-img has-img" href="${rolePath(c.role, lang)}">${imgSeo.renderCardImg(c.img, lang, { relPrefix: '../', alt: imgSeo.getAlt(c.img, lang, c.title) })}</a>
           <div class="product-info">
             <span class="product-badge">${escapeHtml(c.badge)}</span>
             <h3><a href="${rolePath(c.role, lang)}">${escapeHtml(c.title)}</a></h3>
@@ -188,19 +189,19 @@ function renderMatrixHome(lang) {
           <p>${escapeHtml(v)}</p>
         </div>`).join('\n');
 
-  const homePreload = '\n  <link rel="preload" href="/images/factory-showcase/factory-5.webp" as="image" fetchpriority="high">';
+  const homePreload = '\n  <link rel="preload" href="/images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp" as="image" fetchpriority="high">';
 
   return `<!DOCTYPE html>
 <html lang="${lang}"${dirAttr}>
 <head>
-${trackingHeadHtml(d.title, d.description, canonical, 'home', `${ORIGIN}/images/factory-showcase/factory-5.webp`, `${homePreload}${rtlHeadCss(lang)}`)}
+${trackingHeadHtml(d.title, d.description, canonical, 'home', `${ORIGIN}/images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp`, `${homePreload}${rtlHeadCss(lang)}`)}
 </head>
 <body>
 ${renderMobileNav(lang, 'home', quoteHref)}
 ${renderNavbar(lang, 'home', 'home', quoteHref)}
   <main>
     <section class="hero" id="home">
-      <div class="hero-bg" style="background-image: url('../images/factory-showcase/factory-5.webp');"></div>
+      <div class="hero-bg" style="background-image: url('../images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp');"></div>
       <div class="hero-overlay"></div>
       <div class="hero-brand">
         <div class="hero-brand-line"></div>
@@ -279,7 +280,7 @@ function renderMatrixProducts(lang) {
   const sectionsHtml = d.sections.map((sec, idx) => {
     const bg = idx % 2 === 1 ? ' style="background:var(--bg-secondary);"' : '';
     const cards = sec.cards.map((c) => `        <article class="product-card">
-          <a class="product-img has-img" href="${rolePath(c.role, lang)}" style="background-image:url('..${escapeAttr(c.img)}');background-color:#f4f6f8;" role="img" aria-label="${escapeAttr(c.title)}"></a>
+          <a class="product-img has-img" href="${rolePath(c.role, lang)}">${imgSeo.renderCardImg(c.img, lang, { relPrefix: '../', alt: imgSeo.getAlt(c.img, lang, c.title) })}</a>
           <div class="product-info">
             <span class="product-badge">${escapeHtml(c.badge)}</span>
             <h3><a href="${rolePath(c.role, lang)}">${escapeHtml(c.title)}</a></h3>
@@ -302,7 +303,7 @@ ${cards}
   return `<!DOCTYPE html>
 <html lang="${lang}"${dirAttr}>
 <head>
-${trackingHeadHtml(d.title, d.description, canonical, 'products', `${ORIGIN}/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp`, rtlHeadCss(lang))}
+${trackingHeadHtml(d.title, d.description, canonical, 'products', `${ORIGIN}/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp`, rtlHeadCss(lang))}
 </head>
 <body>
 ${renderMobileNav(lang, 'products', quoteHref)}
@@ -350,7 +351,7 @@ function renderMatrixAbout(lang) {
   return `<!DOCTYPE html>
 <html lang="${lang}"${dirAttr}>
 <head>
-${trackingHeadHtml(d.title, d.description, canonical, 'about', `${ORIGIN}/images/factory-showcase/factory-2.webp`, rtlHeadCss(lang))}
+${trackingHeadHtml(d.title, d.description, canonical, 'about', `${ORIGIN}/images/factory-showcase/chixiang-chongqing-engine-assembly-facility.webp`, rtlHeadCss(lang))}
 </head>
 <body>
 ${renderMobileNav(lang, 'about', quoteHref)}
@@ -369,7 +370,7 @@ ${renderNavbar(lang, 'about', 'about', quoteHref)}
     <section class="section">
       <div class="container">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;align-items:center;margin-bottom:2rem;">
-          <img src="/images/factory-showcase/factory-2.webp" alt="${escapeAttr(ui.aboutImgAlt)}" width="640" height="420" style="width:100%;height:auto;border-radius:12px;">
+          <img src="/images/factory-showcase/chixiang-chongqing-engine-assembly-facility.webp" alt="${escapeAttr(ui.aboutImgAlt)}" width="1400" height="788" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;border-radius:12px;">
           <div>
             <h2>${escapeHtml(ui.aboutSubheading)}</h2>
             <p style="color:var(--text-secondary);line-height:1.75;margin-top:0.75rem;">${escapeHtml(ui.aboutSubbody)}</p>
@@ -416,7 +417,7 @@ function renderMatrixNews(lang) {
   return `<!DOCTYPE html>
 <html lang="${lang}"${dirAttr}>
 <head>
-${trackingHeadHtml(d.title, d.description, canonical, 'news', `${ORIGIN}/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp`, rtlHeadCss(lang))}
+${trackingHeadHtml(d.title, d.description, canonical, 'news', `${ORIGIN}/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp`, rtlHeadCss(lang))}
 </head>
 <body>
 ${renderMobileNav(lang, 'news', quoteHref)}
@@ -503,14 +504,17 @@ function renderFrFamilyShell(role, activeKey) {
               <a href="/fr/cg-engine" class="btn btn-outline btn-lg">Comparer avec les moteurs CG</a>
             </div>
           </div>
-          <div class="about-hero-img" style="background-image:url('/images/cb-offroad/chixiang-cb-offroad-engine-01.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+          <div class="about-hero-img">${imgSeo.renderCardImg('images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp', 'fr', { eager: true, fit: 'contain' })}</div>
         </div>
       </div>
     </section>`;
+  const shellOg = role === 'cb'
+    ? `${ORIGIN}/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp`
+    : `${ORIGIN}/images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp`;
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>
-${trackingHeadHtml(shell.title, shell.description, canonical, role, `${ORIGIN}/images/parts.webp`, `${preservedFaq}${preservedFamilySchema}`)}
+${trackingHeadHtml(shell.title, shell.description, canonical, role, shellOg, `${preservedFaq}${preservedFamilySchema}`)}
 </head>
 <body>
 ${renderMobileNav('fr', role, quoteHref)}
@@ -567,7 +571,7 @@ function renderEvidencePage(lang) {
   return `<!DOCTYPE html>
 <html lang="${lang}"${dirAttr}>
 <head>
-${trackingHeadHtml(d.title, d.description, canonical, 'evidence', `${ORIGIN}/images/factory-showcase/factory-2.webp`, rtlHeadCss(lang))}
+${trackingHeadHtml(d.title, d.description, canonical, 'evidence', `${ORIGIN}/images/factory-showcase/chixiang-chongqing-engine-assembly-facility.webp`, rtlHeadCss(lang))}
 </head>
 <body>
 ${renderMobileNav(lang, 'evidence', quoteHref)}
@@ -638,6 +642,7 @@ function renderAc320Page(lang) {
   const waUrl = waHref(lang, d.waModel);
   const dirAttr = chrome.dir === 'rtl' ? ' dir="rtl"' : '';
 
+  const ac320MainImg = 'images/atv/chixiang-ac320-atv-engine-01.webp';
   const productSchema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -648,7 +653,7 @@ function renderAc320Page(lang) {
         name: d.name,
         description: d.description,
         url: canonical,
-        image: `${ORIGIN}/images/atv/chixiang-ac320-atv-engine-01.webp`,
+        image: [imgSeo.imageObjectNode(ac320MainImg, lang, { representativeOfPage: true, name: d.name })],
         brand: { '@id': `${ORIGIN}/#organization` },
         manufacturer: { '@id': `${ORIGIN}/#organization` },
         sku: 'AC320-175MN',
@@ -687,9 +692,10 @@ ${renderNavbar(lang, 'ac320', 'products', quoteHref)}
     <section class="section">
       <div class="container">
         <div class="product-detail-layout" style="margin-top:1rem;">
-          <div>
-            <img class="product-img" src="/images/atv/chixiang-ac320-atv-engine-01.webp" alt="${escapeAttr(d.name)}" width="640" height="480" style="width:100%;height:auto;object-fit:contain;background:#f4f6f8;border-radius:12px;">
-          </div>
+          <figure style="margin:0;">
+            <img class="product-img" src="/images/atv/chixiang-ac320-atv-engine-01.webp" alt="${escapeAttr(imgSeo.getAlt(ac320MainImg, lang, d.name))}" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async" style="width:100%;height:auto;object-fit:contain;background:#f4f6f8;border-radius:12px;">
+            <figcaption style="margin-top:0.5rem;font-size:0.88rem;color:var(--text-secondary);">${escapeHtml(imgSeo.getCaption(ac320MainImg, lang, d.name))}</figcaption>
+          </figure>
           <div>
             <p style="color:var(--text-secondary);margin:0 0 1rem;line-height:1.7;">${escapeHtml(d.lead)}</p>
             <div style="display:flex;gap:0.65rem;flex-wrap:wrap;margin-bottom:1.25rem;">

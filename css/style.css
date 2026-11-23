@@ -992,7 +992,7 @@ h4 { font-size: 1.1rem; }
   align-items: center;
   overflow: hidden;
   color: #fff;
-  background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/factory-1.webp');
+  background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/chixiang-chongqing-engine-production-workshop.webp');
   background-size: cover;
   background-position: center;
   border-bottom: 0;
@@ -1288,18 +1288,37 @@ body:has(.about-page-header) .section-subtitle {
   line-height: 1.4;
 }
 
+.product-card .product-img > img,
+.category-card .card-img > img,
+.about-hero-img > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.img-fit-contain {
+  object-fit: contain;
+  background-color: #f4f6f8;
+}
+
+.img-fit-cover {
+  object-fit: cover;
+}
+
 .product-card .product-img[style*="background-image"],
 .product-card .product-img.has-img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #f4f6f8;
+  overflow: hidden;
 }
 
 .product-card .product-badge {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  z-index: 3;
   padding: 0.3rem 0.75rem;
   font-size: 0.75rem;
   border-radius: 100px;
@@ -1543,6 +1562,12 @@ body:has(.about-page-header) .section-subtitle {
   height: 100%;
   display: block;
   object-fit: cover;
+}
+
+.about-hero-img > img.img-fit-contain,
+.landing-product-image > img {
+  object-fit: contain;
+  background: #f4f6f8;
 }
 
 .about-hero-img figcaption {
@@ -2436,7 +2461,7 @@ body:has(.about-page-header) .section-subtitle {
   }
 
   .hero-bg {
-    background-image: url('../images/factory-showcase/factory-5.webp') !important;
+    background-image: url('../images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp') !important;
     background-position: center center;
     background-size: cover;
   }
@@ -3658,7 +3683,7 @@ body:has(.about-page-header) .section-subtitle {
     min-height: 420px;
     padding-top: calc(56px + 2rem);
     padding-bottom: 2rem;
-    background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.92) 0%, rgba(6, 18, 35, 0.72) 70%, rgba(6, 18, 35, 0.4) 100%), url('../images/factory-showcase/factory-1.webp');
+    background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.92) 0%, rgba(6, 18, 35, 0.72) 70%, rgba(6, 18, 35, 0.4) 100%), url('../images/factory-showcase/chixiang-chongqing-engine-production-workshop.webp');
     background-position: center;
   }
 
@@ -3907,7 +3932,7 @@ body:has(.about-page-header) .section-subtitle {
 /* About page factory hero must override the late light-theme page-header rule. */
 .page-header.about-page-header {
   border-bottom: 0;
-  background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/factory-1.webp');
+  background-image: linear-gradient(90deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/chixiang-chongqing-engine-production-workshop.webp');
   background-size: cover;
   background-position: center;
 }
@@ -4414,7 +4439,7 @@ body:has(.about-page-header) .section-subtitle {
 /* RTL Layout Safeguards for Arabic Full Matrix */
 [dir="rtl"] .page-header.about-page-header {
   text-align: right;
-  background-image: linear-gradient(270deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/factory-1.webp');
+  background-image: linear-gradient(270deg, rgba(6, 18, 35, 0.88) 0%, rgba(6, 18, 35, 0.58) 56%, rgba(6, 18, 35, 0.2) 100%), url('../images/factory-showcase/chixiang-chongqing-engine-production-workshop.webp');
 }
 [dir="rtl"] .about-page-header .eyebrow {
   unicode-bidi: plaintext;

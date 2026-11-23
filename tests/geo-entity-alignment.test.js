@@ -221,11 +221,11 @@ test('all horizontal owner pages use the existing WebP hero asset', () => {
     'pt/motor-horizontal.html',
     'ar/horizontal-engine.html'
   ];
-  const asset = 'images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp';
+  const asset = 'images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp';
   assert.ok(fs.existsSync(path.join(root, asset)), `${asset}:missing`);
   for (const file of pages) {
     const html = read(file);
-    assert.match(html, /chixiang-horizontal-electric-start-02\.webp/i, `${file}:webp`);
+    assert.match(html, /chixiang-cx-horizontal-110-125-electric-start-engine-02\.webp/i, `${file}:webp`);
     assert.doesNotMatch(html, /chixiang-horizontal-electric-start-02\.png/i, `${file}:missing-png`);
   }
 });

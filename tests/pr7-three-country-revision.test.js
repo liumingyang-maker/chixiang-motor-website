@@ -50,8 +50,8 @@ test('Peru sells the approved four product groups with confirmed order totals', 
   assert.match(products, /CG150SB \/ CG175SB \/ CG200SB \/ CG250SB/);
   assert.match(products, /Sin reversa interna/);
   assert.match(products, /magneto de alta salida/);
-  assert.match(products, /images\/standard-water-cooled\/chixiang-standard-water-cooled-01\.webp/);
-  assert.match(products, /images\/hw-water-heavy-duty\/chixiang-hw-water-heavy-duty-01\.webp/);
+  assert.match(products, /images\/cg-water-cooled\/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view\.webp/);
+  assert.match(products, /images\/hw-water-cooled\/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view\.webp/);
   assertCommercialThresholds(html, 'es');
   assertInquiryForm(html, 'Peru');
   assert.doesNotMatch(html + data + products, internalTerms);
@@ -77,7 +77,7 @@ test('Russia market page leads with CB off-road then horizontal 110-150 and spar
   ['110','125','140','150'].forEach(cc => assert.ok(html.includes(cc), `displacement ${cc} present`));
   assert.match(html, /id="cb-offroad"/);
   assert.match(html, /id="horizontal-engines"/);
-  assert.match(html, /\.\.\/\.\.\/images\/cb-offroad\/chixiang-cb-offroad-engine-01\.webp/);
+  assert.match(html, /\.\.\/\.\.\/images\/cb-ohc\/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view\.webp/);
   assert.match(html, /href="\/en\/product-detail\?series=cb-offroad"/);
   assert.doesNotMatch(html, /href="\/ru\/dvigatel-140\/"/);
   assertCommercialThresholds(html, 'ru');

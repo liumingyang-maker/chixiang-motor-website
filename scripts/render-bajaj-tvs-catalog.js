@@ -11,6 +11,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
 const { applyToHtml } = require('./apply-site-entity-schema');
+const imgSeo = require('./lib/image-seo-helper');
 const {
   ORIGIN,
   LANGS,
@@ -381,7 +382,7 @@ function productCard(product, lang, detailSet) {
   const eyebrow = isZh ? 'CHIXIANG MOTOR · 整机规格卡' : (ui ? ui.specEyebrow : 'CHIXIANG MOTOR · Complete Engine');
   const note = isZh ? '支持按原厂接口配置定制与混装发运' : (ui ? ui.specNote : 'Built to OEM mounting & shaft specs');
   const imgHtml = photo && photo.src
-    ? `          <a class="product-img has-img" href="${href}" style="background-image:url('/${escapeAttr(photo.src)}')" role="img" aria-label="${escapeAttr(isZh ? (photo.alt_zh || name) : name)}"></a>`
+    ? `          <a class="product-img has-img" href="${href}">${imgSeo.renderCardImg(photo.src, mLang(lang), { alt: isZh ? (photo.alt_zh || name) : (lang === 'en' ? (photo.alt_en || name) : imgSeo.getAlt(photo.src, mLang(lang), name)) })}</a>`
     : `          <a class="btv-spec-banner" href="${href}"><span class="btv-spec-banner__eyebrow">${escapeHtml(eyebrow)}</span><span class="btv-spec-banner__code">${escapeHtml(specBadgeText)}</span><span class="btv-spec-banner__note">${escapeHtml(note)}</span></a>`;
   const quoteLabel = isZh ? '询价' : (ui ? ui.quote : 'Request a Quote');
   const detailLabel = isZh ? '查看详情' : (ui ? ui.viewDetails : 'View Details');
@@ -653,18 +654,22 @@ function fullHubBrandHtml(catalog, page, detailSet) {
     '@type': 'ItemList',
     name: metaBlock.h1,
     numberOfItems: visibleProducts.length,
-    itemListElement: visibleProducts.map((p, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      item: {
-        '@type': 'Product',
-        name: productName(p, lang),
-        sku: p.part_number || p.id,
-        brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
-        manufacturer: { '@id': `${ORIGIN}/#organization` },
-        url: `${ORIGIN}${detailHref(p, lang)}`
-      }
-    }))
+    itemListElement: visibleProducts.map((p, idx) => {
+      const firstPhoto = (p.photos || []).find((ph) => ph && ph.src);
+      return {
+        '@type': 'ListItem',
+        position: idx + 1,
+        item: {
+          '@type': 'Product',
+          name: productName(p, lang),
+          sku: p.part_number || p.id,
+          ...(firstPhoto ? { image: imgSeo.imageObjectNode(firstPhoto.src, lang, { representativeOfPage: idx === 0, name: productName(p, lang) }) } : {}),
+          brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
+          manufacturer: { '@id': `${ORIGIN}/#organization` },
+          url: `${ORIGIN}${detailHref(p, lang)}`
+        }
+      };
+    })
   };
   const orgGraph = {
     '@context': 'https://schema.org',
@@ -692,6 +697,7 @@ function fullHubBrandHtml(catalog, page, detailSet) {
     ? `<a href="${rolePath('home', lang)}">${escapeHtml(chrome.nav.home)}</a><span aria-hidden="true">/</span><a href="${rolePath('products', lang)}">${escapeHtml(chrome.nav.products)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(metaBlock.h1)}</span>`
     : `<a href="${rolePath('home', lang)}">${escapeHtml(chrome.nav.home)}</a><span aria-hidden="true">/</span><a href="${rolePath('products', lang)}">${escapeHtml(chrome.nav.products)}</a><span aria-hidden="true">/</span><a href="${rolePath('btv-hub', lang)}">${escapeHtml(ui.backHub)}</a><span aria-hidden="true">/</span><span aria-current="page">${escapeHtml(metaBlock.h1)}</span>`;
 
+  const ogImage = (visibleProducts.find((p) => p.photos && p.photos[0] && p.photos[0].src)?.photos[0].src) || 'images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp';
   return `<!DOCTYPE html>
 <html lang="${lang}"${dirAttr}>
 <head>
@@ -717,7 +723,7 @@ ${hreflangTagsHtml(page.role, '  ')}
   <meta property="og:title" content="${escapeAttr(metaBlock.title)}">
   <meta property="og:description" content="${escapeAttr(metaBlock.description)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${ORIGIN}/images/parts.webp">
+  <meta property="og:image" content="${ORIGIN}/${imgSeo.resolveFile(ogImage)}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/css/style.css?v=20261123-matrix">
   <script type="application/ld+json">
@@ -860,7 +866,11 @@ function detailPageHtml(catalog, product, lang) {
   const photosTitle = isZh ? '产品照片' : (ui ? ui.detailPhotosTitle : 'Product photos');
   const photosHtml = (product.photos || []).length
     ? `<section class="section" style="background:var(--bg-secondary);"><div class="container"><h2 class="section-title">${escapeHtml(photosTitle)}</h2>
-      <div class="products-grid">${(product.photos || []).map((photo) => `<div class="product-card"><div class="product-img has-img" style="background-image:url('/${escapeAttr(photo.src)}')" role="img" aria-label="${escapeAttr(isZh ? (photo.alt_zh || name) : name)}"></div><div class="product-info"><p>${escapeHtml(isZh ? (photo.alt_zh || '') : (lang === 'en' ? (photo.alt_en || '') : name))}</p></div></div>`).join('')}</div></div></section>`
+      <div class="products-grid">${(product.photos || []).map((photo) => {
+        const alt = isZh ? (photo.alt_zh || name) : (lang === 'en' ? (photo.alt_en || name) : imgSeo.getAlt(photo.src, matrixCode, name));
+        const cap = isZh ? (photo.alt_zh || '') : (lang === 'en' ? (photo.alt_en || alt) : imgSeo.getCaption(photo.src, matrixCode, alt));
+        return `<figure class="product-card" style="margin:0;"><div class="product-img has-img">${imgSeo.renderCardImg(photo.src, matrixCode, { alt })}</div><figcaption class="product-info"><p>${escapeHtml(cap)}</p></figcaption></figure>`;
+      }).join('')}</div></div></section>`
     : '';
 
   const accessoriesHtml = (product.included_accessories || []).length
@@ -882,9 +892,14 @@ function detailPageHtml(catalog, product, lang) {
     }
     : null;
 
-  const photoUrls = (product.photos || [])
+  const photoObjects = (product.photos || [])
     .filter((ph) => ph && ph.src)
-    .map((ph) => `${ORIGIN}/${ph.src}`);
+    .map((ph, idx) => imgSeo.imageObjectNode(ph.src, mLang(lang), {
+      representativeOfPage: idx === 0,
+      name: isZh ? (ph.alt_zh || name) : (lang === 'en' ? (ph.alt_en || name) : imgSeo.getAlt(ph.src, mLang(lang), name)),
+      alt: isZh ? (ph.alt_zh || name) : (lang === 'en' ? (ph.alt_en || name) : imgSeo.getAlt(ph.src, mLang(lang), name)),
+      caption: isZh ? (ph.alt_zh || name) : (lang === 'en' ? (ph.alt_en || name) : imgSeo.getCaption(ph.src, mLang(lang), name))
+    }));
   const productNode = {
     '@type': 'Product',
     '@id': `${canonical}#product`,
@@ -894,7 +909,7 @@ function detailPageHtml(catalog, product, lang) {
     brand: { '@id': `${ORIGIN}/#organization` },
     manufacturer: { '@id': `${ORIGIN}/#organization` },
     ...(product.part_number ? { sku: product.part_number, mpn: product.part_number } : {}),
-    ...(photoUrls.length ? { image: photoUrls } : {}),
+    ...(photoObjects.length ? { image: photoObjects } : {}),
     ...(specRows.length ? {
       additionalProperty: specRows.map(([k, v]) => ({
         '@type': 'PropertyValue',
@@ -1052,8 +1067,8 @@ function detailPageHtml(catalog, product, lang) {
   }
 
   const ogImage = (product.photos || [])[0] && (product.photos || [])[0].src
-    ? `${ORIGIN}/${product.photos[0].src}`
-    : `${ORIGIN}/images/parts.webp`;
+    ? `${ORIGIN}/${imgSeo.resolveFile(product.photos[0].src)}`
+    : `${ORIGIN}/${imgSeo.resolveFile('images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp')}`;
   const detailTitle = `${escapeHtml(name)}${isZh ? '｜Bajaj / TVS 发动机与配件｜CHIXIANG MOTOR' : ` | ${escapeHtml(hubLabel)} | CHIXIANG MOTOR`}`;
   const evidenceHref = isZh ? '/zh-cn/evidence' : (IS_ISOLATED ? '/en/evidence' : rolePath('evidence', matrixCode));
   const otherLangUrl = isZh

@@ -141,7 +141,8 @@ test('approved product facts are published and unapproved ones are absent', () =
   assert.match(page, /110 \/ 125 \/ 125 \/ 140 \/ 150/, 'horizontal nominal classes are published as nominal only');
   assert.doesNotMatch(page, /50\s?cc|50\u2013125|50 \u00e0 125/i, 'no 50cc horizontal range');
   assert.doesNotMatch(page, /couple (fort|\u00e9lev\u00e9)|vibration (faible|riduite)|strong torque|low vibration|puissance maximale|vitesse maximale|\d+\s*(kW|ch|Nm)\b/i, 'no unapproved performance claim');
-  assert.doesNotMatch(page, /OHV|OHC|varillas|pushrod|arbre \u00e0 cames/i, 'no valve-train comparison');
+  const visibleCopy = page.replace(/https?:\/\/[^"'\s]+|\/images\/[^"'\s]+/gi, '');
+  assert.doesNotMatch(visibleCopy, /OHV|OHC|varillas|pushrod|arbre \u00e0 cames/i, 'no valve-train comparison');
   assert.doesNotMatch(page, /chevaux|d\u00e9bit maximal/i, 'no invented performance numbers');
 });
 

@@ -20,17 +20,23 @@ function futureCard(html) {
   return match[0];
 }
 
-test('Products page inline background images resolve to existing local assets', () => {
+test('Products page product card images and inline assets resolve to existing local WebP files', () => {
   const html = read('en/products.html');
-  const imageUrls = [...html.matchAll(/background-image\s*:\s*url\((['"]?)([^)'"]+)\1\)/gi)]
+  const imgUrls = [...html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi)]
+    .map(match => match[1])
+    .filter(url => !/^(?:data:|https?:)/i.test(url));
+  const bgUrls = [...html.matchAll(/background-image\s*:\s*url\((['"]?)([^)'"]+)\1\)/gi)]
     .map(match => match[2])
     .filter(url => !/^(?:data:|https?:)/i.test(url));
 
-  assert.ok(imageUrls.length > 0, 'expected inline product background images');
+  assert.ok(imgUrls.length >= 15, 'expected semantic <img> tags for all product cards on en/products.html');
+  assert.equal(bgUrls.length, 0, 'product cards must not use CSS background-image instead of <img>');
 
-  for (const imageUrl of imageUrls) {
+  for (const imageUrl of [...imgUrls, ...bgUrls]) {
     const cleanPath = decodeURIComponent(imageUrl.split(/[?#]/, 1)[0]);
-    const assetPath = path.resolve(root, 'en', cleanPath);
+    const assetPath = cleanPath.startsWith('/')
+      ? path.resolve(root, cleanPath.slice(1))
+      : path.resolve(root, 'en', cleanPath);
     assert.ok(fs.existsSync(assetPath), `${imageUrl}: local image asset is missing`);
   }
 });

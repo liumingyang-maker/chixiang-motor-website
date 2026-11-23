@@ -1,12 +1,12 @@
 {
   "slug": "air-cooled-vs-water-cooled-motorcycle-engine",
   "datePublished": "2026-11-19",
-  "ogImage": "https://chixiangmotor.com/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+  "ogImage": "https://chixiangmotor.com/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp",
   "quoteInterest": "cg",
   "waModel": "Air-Cooled CG / Water-Cooled HW & CG",
   "figures": [
     {
-      "src": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+      "src": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
       "alt": {
         "en": "Air-cooled CG motorcycle engine",
         "fr": "Moteur moto refroidi par air CHIXIANG CG",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "src": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp",
+      "src": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp",
       "alt": {
         "en": "Water-cooled cargo tricycle engine",
         "fr": "Moteur tricycle cargo refroidi par eau CHIXIANG",

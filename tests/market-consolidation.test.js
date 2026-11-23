@@ -11,9 +11,9 @@ const internalTerms = /NOT APPROVED|INPUT REQUIRED|Phase 5|Research only|Confide
 test('homepage Horizontal Engines card uses an existing local image (not the broken png)', () => {
   const html = read('en/index.html');
   const encodedDir = 'horizontal-electric-start';
-  assert.ok(html.includes(encodedDir + '/chixiang-horizontal-electric-start-02.webp'), 'horizontal card references the webp image');
+  assert.ok(html.includes(encodedDir + '/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp'), 'horizontal card references the webp image');
   assert.ok(!html.includes(encodedDir + '/chixiang-horizontal-electric-start-02.png'), 'broken png reference removed');
-  assert.ok(exists('images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp'), 'webp image file exists on disk');
+  assert.ok(exists('images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp'), 'webp image file exists on disk');
 });
 
 test('homepage Horizontal Engines copy uses the 110-150cc range', () => {

@@ -84,7 +84,7 @@ test('lifecycle: publish generates EN/ZH details, links, images and inquiry cont
     part_number: 'T-001',
     category: 'engine-covers',
     vehicle_brands: ['bajaj'],
-    photos: [{ src: 'images/parts.webp', alt_en: 'Cover', alt_zh: '盖件' }],
+    photos: [{ src: 'images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp', alt_en: 'Cover', alt_zh: '盖件' }],
     public: true
   }]);
   const result = runGenerator({ root, catalog });
@@ -99,7 +99,7 @@ test('lifecycle: publish generates EN/ZH details, links, images and inquiry cont
   assert.ok(enHub.includes('/en/bajaj-tvs-engines-parts/test-cover-01'), 'hub card links to detail');
   assert.ok(enHub.includes('View Details'), 'detail entry label');
   assert.ok(enHub.includes('/en/contact?product_interest=parts'), 'quote link kept separate');
-  assert.ok(enHub.includes("url('/images/parts.webp')"), 'root-relative product image');
+  assert.ok(enHub.includes('src="/images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp"'), 'root-relative product image');
 
   const detail = fs.readFileSync(enDetail, 'utf8');
   assert.ok(detail.includes('mobileNav'), 'mobile menu');

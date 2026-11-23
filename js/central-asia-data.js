@@ -28,11 +28,11 @@
           'Подбор под мотоцикл или трицикл'
         ],
         gallery: [
-          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp',
-          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-02.webp',
-          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-03.webp',
-          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-04.webp',
-          'images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-05.webp'
+          'images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp',
+          'images/cg-air-cooled/chixiang-cg-ohv-air-cooled-left-magneto-sprocket-side.webp',
+          'images/cg-air-cooled/chixiang-cg-ohv-air-cooled-right-clutch-kickstart-side.webp',
+          'images/cg-air-cooled/chixiang-cg-ohv-air-cooled-cylinder-head-fins-detail.webp',
+          'images/cg-air-cooled/chixiang-cg-ohv-air-cooled-starter-rear-mount-detail.webp'
         ]
       },
       {
@@ -50,11 +50,11 @@
           'Комплектация под рабочую нагрузку'
         ],
         gallery: [
-          'images/standard-water-cooled/chixiang-standard-water-cooled-01.webp',
-          'images/standard-water-cooled/chixiang-standard-water-cooled-02.webp',
-          'images/standard-water-cooled/chixiang-standard-water-cooled-03.webp',
-          'images/standard-water-cooled/chixiang-standard-water-cooled-04.webp',
-          'images/standard-water-cooled/chixiang-standard-water-cooled-05.webp'
+          'images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp',
+          'images/cg-water-cooled/chixiang-cg250sb-right-clutch-water-pump-side.webp',
+          'images/cg-water-cooled/chixiang-cg250sb-left-magneto-output-shaft-side.webp',
+          'images/cg-water-cooled/chixiang-cg250sb-water-cooled-cylinder-jacket-ports.webp',
+          'images/cg-water-cooled/chixiang-cg250sb-starter-rear-mounting-lugs.webp'
         ]
       },
       {
@@ -77,11 +77,11 @@
           { value: '1,5 л', label: 'объём масла' }
         ],
         gallery: [
-          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp',
-          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-02.webp',
-          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-03.webp',
-          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-04.webp',
-          'images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-05.webp'
+          'images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp',
+          'images/hw-water-cooled/chixiang-hw300-finned-water-cooled-cylinder-sump-detail.webp',
+          'images/hw-water-cooled/chixiang-hw300-crankcase-20-roller-clutch-side.webp',
+          'images/hw-water-cooled/chixiang-hw300-water-pump-coolant-ports-detail.webp',
+          'images/hw-water-cooled/chixiang-hw300-output-shaft-external-reverse-interface.webp'
         ]
       }
     ],
@@ -107,17 +107,17 @@
     ],
     factoryImages: [
       {
-        src: 'images/factory-showcase/factory-2.webp',
+        src: 'images/factory-showcase/chixiang-chongqing-engine-assembly-facility.webp',
         alt: 'Сборочная линия двигателей Chixiang Motor',
         label: 'Сборка'
       },
       {
-        src: 'images/factory-showcase/factory-3.webp',
+        src: 'images/factory-showcase/chixiang-engine-machining-production-equipment.webp',
         alt: 'Производственная линия двигателей Chixiang Motor',
         label: 'Производство'
       },
       {
-        src: 'images/factory-showcase/factory-1.webp',
+        src: 'images/factory-showcase/chixiang-chongqing-engine-production-workshop.webp',
         alt: 'Погрузка экспортной партии у завода Chixiang Motor',
         label: 'Отгрузка'
       }

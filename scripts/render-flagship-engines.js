@@ -15,6 +15,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
 const { applyToHtml } = require('./apply-site-entity-schema');
+const imgSeo = require('./lib/image-seo-helper');
 const {
   ORIGIN,
   ORG_ID,
@@ -194,7 +195,11 @@ function renderSharedHead(engine, lang, seo, quickVerdict, familyName, faqs, spe
     model: engine.model,
     category: familyName,
     description: quickVerdict,
-    image: engine.gallery_images.map(img => `${ORIGIN}/${img.src}`),
+    image: engine.gallery_images.map((img, idx) => {
+      const alt = lang === 'en' ? imgSeo.getAlt(img.src, 'en', img.alt) : imgSeo.getAlt(img.src, lang, `${engine.model} - ${img.caption}`);
+      const caption = lang === 'en' ? imgSeo.getCaption(img.src, 'en', img.caption) : imgSeo.getCaption(img.src, lang, img.caption);
+      return imgSeo.imageObjectNode(img.src, lang, { representativeOfPage: idx === 0, name: alt, alt, caption });
+    }),
     url,
     brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
     manufacturer: { '@id': ORG_ID },
@@ -322,10 +327,14 @@ function renderEnEnginePage(engine, hwLocales) {
   const primaryImg = engine.gallery_images[0];
   const bundledParts = resolveBundledParts(engine, 'en', hwLocales);
 
-  const thumbsHtml = engine.gallery_images.map((img, idx) => `
-            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(img.src)}" data-alt="${escapeHtml(img.alt)}" data-caption="${escapeHtml(img.caption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="View photo ${idx + 1}: ${escapeHtml(img.caption)}">
-              <img src="/${escapeHtml(img.src)}" alt="${escapeHtml(img.alt)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120">
-            </button>`).join('');
+  const thumbsHtml = engine.gallery_images.map((img, idx) => {
+    const thumbAlt = imgSeo.getAlt(img.src, 'en', img.alt);
+    const thumbCaption = imgSeo.getCaption(img.src, 'en', img.caption);
+    return `
+            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(imgSeo.resolveFile(img.src))}" data-alt="${escapeHtml(thumbAlt)}" data-caption="${escapeHtml(thumbCaption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="View photo ${idx + 1}: ${escapeHtml(thumbCaption)}">
+              <img src="/${escapeHtml(imgSeo.resolveFile(img.src))}" alt="${escapeHtml(thumbAlt)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120" decoding="async">
+            </button>`;
+  }).join('');
 
   const specRows = [
     ['Engine Model', engine.alias ? `${engine.model} (${engine.alias})` : engine.model],
@@ -405,10 +414,10 @@ ${renderNavbar('en', engine.slug, 'products', quoteHref)}
       <div class="container">
         <div class="flagship-hero-grid">
           <div class="flagship-gallery">
-            <div class="flagship-gallery-main">
-              <img id="flagshipMainImg" src="/${escapeHtml(primaryImg.src)}" alt="${escapeHtml(primaryImg.alt)}" width="800" height="600" loading="eager">
-              <div class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(primaryImg.caption)}</div>
-            </div>
+            <figure class="flagship-gallery-main" style="margin:0;">
+              <img id="flagshipMainImg" src="/${escapeHtml(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeHtml(imgSeo.getAlt(primaryImg.src, 'en', primaryImg.alt))}" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async">
+              <figcaption class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(imgSeo.getCaption(primaryImg.src, 'en', primaryImg.caption))}</figcaption>
+            </figure>
             <div class="flagship-thumbs" role="group" aria-label="Engine gallery thumbnails">${thumbsHtml}
             </div>
           </div>
@@ -554,7 +563,7 @@ ${renderNavbar('en', engine.slug, 'products', quoteHref)}
 ${renderFooter('en', waUrl, quoteHref, ['/js/flagship-engine-page.js'])}
   <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Engine photo zoom">
     <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Close image preview">&times;</button>
-    <img id="flagshipLightboxImg" src="" alt="">
+    <img id="flagshipLightboxImg" src="/${escapeAttr(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeAttr(imgSeo.getAlt(primaryImg.src, 'en', primaryImg.alt))}" width="1200" height="1200" loading="lazy" decoding="async">
   </div>
 </body>
 </html>
@@ -607,10 +616,14 @@ function renderLocalizedEnginePage(engine, lang, flagshipLocales, hwLocales) {
   const waUrl = waHref(lang, waModelLabel);
 
   const primaryImg = engine.gallery_images[0];
-  const thumbsHtml = engine.gallery_images.map((img, idx) => `
-            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeAttr(img.src)}" data-alt="${escapeAttr(`${engine.model} - ${img.caption}`)}" data-caption="${escapeAttr(img.caption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="${escapeAttr(`${engine.model} #${idx + 1}`)}">
-              <img src="/${escapeAttr(img.src)}" alt="${escapeAttr(`${engine.model} - ${img.caption}`)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120">
-            </button>`).join('');
+  const thumbsHtml = engine.gallery_images.map((img, idx) => {
+    const thumbAlt = imgSeo.getAlt(img.src, lang, `${engine.model} - ${img.caption}`);
+    const thumbCaption = imgSeo.getCaption(img.src, lang, img.caption);
+    return `
+            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeAttr(imgSeo.resolveFile(img.src))}" data-alt="${escapeAttr(thumbAlt)}" data-caption="${escapeAttr(thumbCaption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="${escapeAttr(`${engine.model} #${idx + 1}`)}">
+              <img src="/${escapeAttr(imgSeo.resolveFile(img.src))}" alt="${escapeAttr(thumbAlt)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120" decoding="async">
+            </button>`;
+  }).join('');
 
   const specRows = [
     [sl.model, engine.alias ? `${engine.model} (${engine.alias})` : engine.model],
@@ -708,10 +721,10 @@ ${renderNavbar(lang, engine.slug, 'products', quoteHref)}
       <div class="container">
         <div class="flagship-hero-grid">
           <div class="flagship-gallery">
-            <div class="flagship-gallery-main">
-              <img id="flagshipMainImg" src="/${escapeAttr(primaryImg.src)}" alt="${escapeAttr(`${engine.model} - ${primaryImg.caption}`)}" width="800" height="600" loading="eager">
-              <div class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(primaryImg.caption)}</div>
-            </div>
+            <figure class="flagship-gallery-main" style="margin:0;">
+              <img id="flagshipMainImg" src="/${escapeAttr(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeAttr(imgSeo.getAlt(primaryImg.src, lang, `${engine.model} - ${primaryImg.caption}`))}" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async">
+              <figcaption class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(imgSeo.getCaption(primaryImg.src, lang, primaryImg.caption))}</figcaption>
+            </figure>
             <div class="flagship-thumbs" role="group" aria-label="Gallery">${thumbsHtml}
             </div>
           </div>
@@ -846,7 +859,7 @@ ${qaCardsHtml}
 ${renderFooter(lang, waUrl, quoteHref, ['/js/flagship-engine-page.js'])}
   <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
     <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Close">&times;</button>
-    <img id="flagshipLightboxImg" src="" alt="">
+    <img id="flagshipLightboxImg" src="/${escapeAttr(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeAttr(imgSeo.getAlt(primaryImg.src, lang, `${engine.model} - ${primaryImg.caption}`))}" width="1200" height="1200" loading="lazy" decoding="async">
   </div>
 </body>
 </html>

@@ -76,11 +76,11 @@ test('isolated lifecycle: flipping is_flagship_page generates flagship detail pa
   try {
     fs.mkdirSync(path.join(tmp, 'data'), { recursive: true });
     fs.mkdirSync(path.join(tmp, 'en', 'engine-parts', 'hw-series'), { recursive: true });
-    fs.mkdirSync(path.join(tmp, 'images', 'hw-water-heavy-duty'), { recursive: true });
+    fs.mkdirSync(path.join(tmp, 'images', 'hw-water-cooled'), { recursive: true });
     fs.copyFileSync(path.join(root, 'sitemap.xml'), path.join(tmp, 'sitemap.xml'));
     fs.copyFileSync(
-      path.join(root, 'images', 'hw-water-heavy-duty', 'chixiang-hw-water-heavy-duty-01.webp'),
-      path.join(tmp, 'images', 'hw-water-heavy-duty', 'chixiang-hw-water-heavy-duty-01.webp')
+      path.join(root, 'images', 'hw-water-cooled', 'chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp'),
+      path.join(tmp, 'images', 'hw-water-cooled', 'chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp')
     );
 
     const catalog = JSON.parse(read('data/hw-parts-catalog.json'));
@@ -88,7 +88,7 @@ test('isolated lifecycle: flipping is_flagship_page generates flagship detail pa
     const target = catalog.parts.find(p => p.slug === flagshipSlug);
     assert.ok(target);
     target.is_flagship_page = true;
-    target.images = ['images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp'];
+    target.images = ['images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp'];
 
     const catalogPath = path.join(tmp, 'data', 'hw-parts-catalog.json');
     fs.writeFileSync(catalogPath, JSON.stringify(catalog, null, 2), 'utf8');

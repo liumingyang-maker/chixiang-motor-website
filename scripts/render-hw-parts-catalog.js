@@ -12,6 +12,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
 const { applyToHtml } = require('./apply-site-entity-schema');
+const imgSeo = require('./lib/image-seo-helper');
 const {
   ORIGIN,
   ORG_ID,
@@ -424,7 +425,7 @@ function hubPageHtml(catalog, lang, hwLocales) {
     title,
     description,
     canonical,
-    ogImage: `${ORIGIN}/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp`,
+    ogImage: `${ORIGIN}/${imgSeo.resolveFile('images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp')}`,
     graphNodes,
     extraSchemas: [itemListSchema, faqSchema],
     hreflangBlock
@@ -537,7 +538,7 @@ function flagshipDetailHtml(part, catalog) {
   const assembly = (catalog.assemblies || []).find(a => a.id === part.assembly_id);
   const firstImg = (part.images || [])[0];
   const imgSrc = typeof firstImg === 'string' ? firstImg : firstImg && firstImg.src;
-  const ogImage = imgSrc ? `${ORIGIN}/${imgSrc}` : `${ORIGIN}/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp`;
+  const ogImage = imgSrc ? `${ORIGIN}/${imgSeo.resolveFile(imgSrc)}` : `${ORIGIN}/${imgSeo.resolveFile('images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp')}`;
 
   const graphNodes = [
     {
@@ -578,7 +579,7 @@ function flagshipDetailHtml(part, catalog) {
       <div class="products-grid">${part.images.map(img => {
         const src = typeof img === 'string' ? img : img.src;
         const alt = (typeof img === 'object' && img.alt) || part.product_name_en;
-        return `<div class="product-card"><div class="product-img has-img" style="background-image:url('/${escapeHtml(src)}')" role="img" aria-label="${escapeHtml(alt)}"></div><div class="product-info"><p>${escapeHtml(alt)}</p></div></div>`;
+        return `<figure class="product-card" style="margin:0;"><div class="product-img has-img">${imgSeo.renderCardImg(src, 'en', { alt })}</div><figcaption class="product-info"><p>${escapeHtml(alt)}</p></figcaption></figure>`;
       }).join('')}</div></div></section>`
     : '';
 

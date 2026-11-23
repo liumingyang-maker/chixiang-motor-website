@@ -1,12 +1,12 @@
 {
   "slug": "cg-pushrod-vs-cb-ohc-motorcycle-engine-comparison",
   "datePublished": "2026-11-19",
-  "ogImage": "https://chixiangmotor.com/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+  "ogImage": "https://chixiangmotor.com/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
   "quoteInterest": "cb",
   "waModel": "CG150 / CG200 / CB150 / CB250",
   "figures": [
     {
-      "src": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+      "src": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
       "alt": {
         "en": "CHIXIANG MOTOR CG air-cooled pushrod OHV motorcycle engine",
         "fr": "Moteur moto CHIXIANG CG refroidi par air à tiges de culbuteurs",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "src": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+      "src": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
       "alt": {
         "en": "CHIXIANG MOTOR CB chain-driven OHC off-road motorcycle engine",
         "fr": "Moteur moto CHIXIANG CB à arbre à cames en tête et chaîne OHC",

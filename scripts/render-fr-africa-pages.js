@@ -14,6 +14,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { officialSameAs } = require('./site-entity-manifest');
+const imgSeo = require('./lib/image-seo-helper');
 
 const root = path.join(__dirname, '..');
 const checkOnly = process.argv.includes('--check');
@@ -166,7 +167,7 @@ function renderHead({ title, description, frPath, enPath, ogImage, extraHead = '
   <meta property="og:title" content="${escapeAttr(title)}">
   <meta property="og:description" content="${escapeAttr(description)}">
   <meta property="og:url" content="${escapeAttr(frUrl)}">
-  <meta property="og:image" content="${escapeAttr(ogImage || `${ORIGIN}/images/factory-showcase/factory-5.webp`)}">
+  <meta property="og:image" content="${escapeAttr(ogImage || `${ORIGIN}/images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp`)}">
   <meta name="twitter:card" content="summary_large_image">
   ${preloadImage ? `<link rel="preload" href="${escapeHtml(preloadImage)}" as="image" fetchpriority="high">\n  ` : ''}<link rel="stylesheet" href="${CSS_HREF}">
 ${extraHead ? `${extraHead}\n` : ''}${orgSchemaBlock(withContactPoint)}
@@ -401,7 +402,7 @@ function renderFrHome(facts) {
 ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
   <section class="hero" id="home">
-    <div class="hero-bg" style="background-image: url('/images/factory-showcase/factory-5.webp');"></div>
+    <div class="hero-bg" style="background-image: url('/images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-brand">
       <div class="hero-brand-line"></div>
@@ -423,7 +424,7 @@ ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
         <div class="category-card" data-animate>
           <a href="/fr/cg-engine" class="card-main">
-            <div class="card-img" style="background-image:url('/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+            <div class="card-img">${imgSeo.renderCardImg('images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp', 'fr')}</div>
             <div class="card-info">
               <h3>Moteurs CG125–CG250 (Air &amp; Eau)</h3>
               <p class="series-list">Moteur CG à tiges de culbuteurs · Arbre d'équilibrage en option · Démarrage électrique / au kick<br>Pour motos commerciales et tricycles cargo</p>
@@ -434,7 +435,7 @@ ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
         <div class="category-card" data-animate>
           <a href="/fr/cg-engine/hw300-water-cooled-engine" class="card-main">
-            <div class="card-img" style="background-image:url('/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+            <div class="card-img">${imgSeo.renderCardImg('images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp', 'fr')}</div>
             <div class="card-info">
               <h3>HW300 Tricycle Cargo à Eau</h3>
               <p class="series-list">Classe 300cc (275,3 mL réels) · Refroidissement liquide (eau) · Carter 1,5 L · Embrayage 20 rouleaux<br>Compatible boîte de marche arrière externe</p>
@@ -445,7 +446,7 @@ ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
         <div class="category-card" data-animate>
           <a href="/fr/horizontal-engine" class="card-main">
-            <div class="card-img" style="background-image:url('/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+            <div class="card-img">${imgSeo.renderCardImg('images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp', 'fr')}</div>
             <div class="card-info">
               <h3>Moteurs Horizontaux 110–150 cm³</h3>
               <p class="series-list">CX152FMH-5B (106,7 ml) à CX1P60FMJ (149,8 ml) · Boîte 4 vitesses<br>Pour motos de type Cub et applications Jakarta compatibles</p>
@@ -456,7 +457,7 @@ ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
         <div class="category-card" data-animate>
           <a href="/fr/bajaj-tvs-engines-parts" class="card-main">
-            <div class="card-img" style="background-image:url('/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+            <div class="card-img">${imgSeo.renderCardImg('images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp', 'fr')}</div>
             <div class="card-info">
               <h3>Moteurs &amp; Pièces Bajaj / TVS</h3>
               <p class="series-list">Bajaj Boxer BM150, CT100, RE 4S et TVS HLX 125/150 &amp; King 200 (adaptables)<br>Moteurs complets et pièces détachées à références OEM d'identification</p>
@@ -467,7 +468,7 @@ ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
         <div class="category-card" data-animate>
           <a href="/fr/cg-engine/cg200-air-cooled-engine" class="card-main">
-            <div class="card-img" style="background-image:url('/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-02.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+            <div class="card-img">${imgSeo.renderCardImg('images/cg-air-cooled/chixiang-cg-ohv-air-cooled-left-magneto-sprocket-side.webp', 'fr')}</div>
             <div class="card-info">
               <h3>Moteur Complet CG200 (CX163FML)</h3>
               <p class="series-list">197,0 cc (63,5 × 62,2 mm) · 10 kW @ 7 500 rpm · 13,5 N·m @ 6 500 rpm<br>Moteur moto-taxi et utilitaire à fort kilométrage</p>
@@ -478,7 +479,7 @@ ${renderNav({ activeHref: '/fr/', quoteHref: '/fr/contact', langLinks })}
 
         <div class="category-card" data-animate>
           <a href="/fr/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine" class="card-main">
-            <div class="card-img" style="background-image:url('/images/parts.webp');background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#f4f6f8;"></div>
+            <div class="card-img">${imgSeo.renderCardImg('images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp', 'fr')}</div>
             <div class="card-info">
               <h3>Bajaj Boxer BM150 (144,8 cc)</h3>
               <p class="series-list">Moteur de remplacement adaptable 56,0 × 58,8 mm · 4/5 vitesses<br>Demi-carters, culasse complète, kit cylindre-piston &amp; joints</p>
@@ -555,7 +556,7 @@ function renderFrCgShell() {
     description: 'Moteurs CG à tiges de culbuteurs (CG125 à CG250 air, CG150SB–CG250SB et HW200–HW350 refroidis par eau) pour motos et tricycles cargo. MOQ 50, FOB Guangzhou.',
     frPath: '/fr/cg-engine',
     enPath: '/en/cg-engine',
-    ogImage: `${ORIGIN}/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp`,
+    ogImage: `${ORIGIN}/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp`,
     schemas: [emptyFaqSchema]
   })}
 <body>
@@ -580,7 +581,7 @@ ${renderNav({ activeHref: '/fr/cg-engine', quoteHref: '/fr/contact?product_inter
             <a href="${escapeHtml(waHref(waModel))}" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
-        <div class="about-hero-img landing-product-image" style="background-image:url('/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp');"></div>
+        <div class="about-hero-img landing-product-image">${imgSeo.renderCardImg('images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp', 'fr', { eager: true, fit: 'contain' })}</div>
       </div>
     </div>
   </section>
@@ -608,7 +609,7 @@ function renderFrHorizontalShell() {
     description: 'Moteurs horizontaux 110/125 cm³ CX152FMH-5B, CX152FMH-6 jusqu\'à 150 cm³ pour motos de type Cub et applications Jakarta compatibles. Pièces moteur Jakarta en conteneur mixte.',
     frPath: '/fr/horizontal-engine',
     enPath: '/en/horizontal-engine',
-    ogImage: `${ORIGIN}/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp`,
+    ogImage: `${ORIGIN}/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp`,
     schemas: [emptyFaqSchema]
   })}
 <body>
@@ -632,7 +633,7 @@ ${renderNav({ activeHref: '/fr/horizontal-engine', quoteHref: '/fr/contact?produ
             <a href="${escapeHtml(waHref(waModel))}" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
-        <div class="about-hero-img landing-product-image" style="background-image:url('/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp');"></div>
+        <div class="about-hero-img landing-product-image">${imgSeo.renderCardImg('images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp', 'fr', { eager: true, fit: 'contain' })}</div>
       </div>
     </div>
   </section>
@@ -683,7 +684,7 @@ function renderFrBtvHub(catalog) {
     const badgeCode = dispSpec && dispSpec.value ? dispSpec.value.split('(')[0].trim() : (product.part_number || 'Adaptable');
     const imgHref = isBm150 ? detailHref : quoteHref;
     const imgHtml = photo && photo.src
-      ? `          <a class="product-img has-img" href="${escapeHtml(imgHref)}" style="background-image:url('/${escapeHtml(photo.src)}')" role="img" aria-label="${escapeAttr(frNames[product.id] || product.name_en)}"></a>`
+      ? `          <a class="product-img has-img" href="${escapeHtml(imgHref)}">${imgSeo.renderCardImg(photo.src, 'fr', { alt: frNames[product.id] || imgSeo.getAlt(photo.src, 'fr', product.name_en) })}</a>`
       : `          <a class="btv-spec-banner" href="${escapeHtml(imgHref)}"><span class="btv-spec-banner__eyebrow">CHIXIANG MOTOR · Moteur de remplacement adaptable</span><span class="btv-spec-banner__code">${escapeHtml(badgeCode)}</span><span class="btv-spec-banner__note">Cotes et interfaces d'identification OEM</span></a>`;
 
     const titleFr = frNames[product.id] || product.name_en;
@@ -832,7 +833,7 @@ ${imgHtml}
     description: 'Moteurs complets et pièces de rechange adaptables Bajaj Boxer BM150, CT100, RE 4S et TVS HLX 125/150 : culasse complète, kit cylindre-piston, demi-carters moteur gauche et droit, pochette de joints. Références OEM à titre d\'identification.',
     frPath: '/fr/bajaj-tvs-engines-parts',
     enPath: '/en/bajaj-tvs-engines-parts',
-    ogImage: `${ORIGIN}/images/parts.webp`,
+    ogImage: `${ORIGIN}/images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp`,
     schemas: [itemListSchema, faqSchema]
   })}
 <body class="btv-page">
@@ -987,7 +988,7 @@ function renderFrHw300(enginesData, hwPartsData) {
     model: engine.model,
     category: 'Moteurs tricycle cargo refroidis par eau (Série HW Water)',
     description: `Moteur HW300 classe 300cc à cylindrée réelle ${engine.actual_displacement} (${engine.bore_stroke}) : ${engine.power}, ${engine.torque}, capacité d'huile ${engine.oil_capacity}, embrayage à 20 rouleaux et magnéto CC à haut rendement pour tricycle cargo. ~80 % de pièces communes avec le HW250.`,
-    image: engine.gallery_images.map(img => `${ORIGIN}/${img.src}`),
+    image: engine.gallery_images.map((img, idx) => imgSeo.imageObjectNode(img.src, 'fr', { representativeOfPage: idx === 0 })),
     url: frUrl,
     brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
     manufacturer: { '@id': ORG_ID },
@@ -1040,10 +1041,14 @@ function renderFrHw300(enginesData, hwPartsData) {
   </style>`;
 
   const primaryImg = engine.gallery_images[0];
-  const thumbsHtml = engine.gallery_images.map((img, idx) => `
-            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(img.src)}" data-alt="Moteur tricycle HW300 refroidi par eau vue ${idx + 1}" data-caption="HW300 classe 300cc (${escapeHtml(engine.actual_displacement)}) — vue ${idx + 1}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="Voir photo ${idx + 1}">
-              <img src="/${escapeHtml(img.src)}" alt="Moteur tricycle HW300 refroidi par eau vue ${idx + 1}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120">
-            </button>`).join('');
+  const thumbsHtml = engine.gallery_images.map((img, idx) => {
+    const thumbAlt = imgSeo.getAlt(img.src, 'fr', `Moteur tricycle HW300 refroidi par eau vue ${idx + 1}`);
+    const thumbCaption = imgSeo.getCaption(img.src, 'fr', `HW300 classe 300cc (${engine.actual_displacement}) — vue ${idx + 1}`);
+    return `
+            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(imgSeo.resolveFile(img.src))}" data-alt="${escapeHtml(thumbAlt)}" data-caption="${escapeHtml(thumbCaption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="Voir photo ${idx + 1}">
+              <img src="/${escapeHtml(imgSeo.resolveFile(img.src))}" alt="${escapeHtml(thumbAlt)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120" decoding="async">
+            </button>`;
+  }).join('');
 
   const specRows = [
     ['Modèle moteur', `${engine.model} (Série HW Water)`],
@@ -1104,10 +1109,10 @@ ${renderNav({ activeHref: '/fr/cg-engine/hw300-water-cooled-engine', quoteHref, 
       <div class="container">
         <div class="flagship-hero-grid">
           <div class="flagship-gallery">
-            <div class="flagship-gallery-main">
-              <img id="flagshipMainImg" src="/${escapeHtml(primaryImg.src)}" alt="Moteur complet HW300 refroidi par eau pour tricycle cargo" width="800" height="600" loading="eager">
-              <div class="flagship-gallery-caption" id="flagshipMainCaption">HW300 (classe 300cc · ${escapeHtml(engine.actual_displacement)} réels) — Refroidissement liquide (eau)</div>
-            </div>
+            <figure class="flagship-gallery-main" style="margin:0;">
+              <img id="flagshipMainImg" src="/${escapeHtml(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeHtml(imgSeo.getAlt(primaryImg.src, 'fr', 'Moteur complet HW300 refroidi par eau pour tricycle cargo'))}" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async">
+              <figcaption class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(imgSeo.getCaption(primaryImg.src, 'fr', `HW300 (classe 300cc · ${engine.actual_displacement} réels) — Refroidissement liquide (eau)`))}</figcaption>
+            </figure>
             <div class="flagship-thumbs" role="group" aria-label="Vignettes moteur HW300">${thumbsHtml}
             </div>
           </div>
@@ -1215,7 +1220,7 @@ ${renderAfricaExportSection(waModel)}
 
   <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Zoom photo moteur">
     <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Fermer">&times;</button>
-    <img id="flagshipLightboxImg" src="" alt="">
+    <img id="flagshipLightboxImg" src="/${escapeHtml(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeHtml(imgSeo.getAlt(primaryImg.src, 'fr', 'Moteur complet HW300 refroidi par eau pour tricycle cargo'))}" width="1200" height="1200" loading="lazy" decoding="async">
   </div>
 ${renderFooter({ waModel, quoteHref, extraScripts: ['/js/flagship-engine-page.js'] })}
 `;
@@ -1242,7 +1247,7 @@ function renderFrCg200(enginesData) {
     model: engine.model,
     category: 'Moteurs CG à tiges de culbuteurs refroidis par air',
     description: `Moteur complet CG200 (CX163FML) à cylindrée réelle ${engine.actual_displacement} (${engine.bore_stroke}), ${engine.power}, ${engine.torque}, poids net ${engine.weight}. Commande mixte dès 50 unités, FOB Guangzhou.`,
-    image: engine.gallery_images.map(img => `${ORIGIN}/${img.src}`),
+    image: engine.gallery_images.map((img, idx) => imgSeo.imageObjectNode(img.src, 'fr', { representativeOfPage: idx === 0 })),
     url: frUrl,
     brand: { '@type': 'Brand', name: 'CHIXIANG MOTOR' },
     manufacturer: { '@id': ORG_ID },
@@ -1293,10 +1298,14 @@ function renderFrCg200(enginesData) {
   </style>`;
 
   const primaryImg = engine.gallery_images[0];
-  const thumbsHtml = engine.gallery_images.map((img, idx) => `
-            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(img.src)}" data-alt="Moteur complet CG200 refroidi par air vue ${idx + 1}" data-caption="CG200 (${escapeHtml(engine.alias)}) — vue ${idx + 1}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="Voir photo ${idx + 1}">
-              <img src="/${escapeHtml(img.src)}" alt="Moteur complet CG200 refroidi par air vue ${idx + 1}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120">
-            </button>`).join('');
+  const thumbsHtml = engine.gallery_images.map((img, idx) => {
+    const thumbAlt = imgSeo.getAlt(img.src, 'fr', `Moteur complet CG200 refroidi par air vue ${idx + 1}`);
+    const thumbCaption = imgSeo.getCaption(img.src, 'fr', `CG200 (${engine.alias}) — vue ${idx + 1}`);
+    return `
+            <button type="button" class="flagship-thumb" data-flagship-thumb data-src="/${escapeHtml(imgSeo.resolveFile(img.src))}" data-alt="${escapeHtml(thumbAlt)}" data-caption="${escapeHtml(thumbCaption)}" aria-pressed="${idx === 0 ? 'true' : 'false'}" aria-label="Voir photo ${idx + 1}">
+              <img src="/${escapeHtml(imgSeo.resolveFile(img.src))}" alt="${escapeHtml(thumbAlt)}" loading="${idx === 0 ? 'eager' : 'lazy'}" width="160" height="120" decoding="async">
+            </button>`;
+  }).join('');
 
   const specRows = [
     ['Modèle moteur', `${engine.model} (${engine.alias})`],
@@ -1357,10 +1366,10 @@ ${renderNav({ activeHref: '/fr/cg-engine/cg200-air-cooled-engine', quoteHref, la
       <div class="container">
         <div class="flagship-hero-grid">
           <div class="flagship-gallery">
-            <div class="flagship-gallery-main">
-              <img id="flagshipMainImg" src="/${escapeHtml(primaryImg.src)}" alt="Moteur complet CG200 refroidi par air CHIXIANG MOTOR" width="800" height="600" loading="eager">
-              <div class="flagship-gallery-caption" id="flagshipMainCaption">CG200 (${escapeHtml(engine.alias)}) — Moteur CG à tiges de culbuteurs refroidi par air</div>
-            </div>
+            <figure class="flagship-gallery-main" style="margin:0;">
+              <img id="flagshipMainImg" src="/${escapeHtml(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeHtml(imgSeo.getAlt(primaryImg.src, 'fr', 'Moteur complet CG200 refroidi par air CHIXIANG MOTOR'))}" width="1200" height="1200" loading="eager" fetchpriority="high" decoding="async">
+              <figcaption class="flagship-gallery-caption" id="flagshipMainCaption">${escapeHtml(imgSeo.getCaption(primaryImg.src, 'fr', `CG200 (${engine.alias}) — Moteur CG à tiges de culbuteurs refroidi par air`))}</figcaption>
+            </figure>
             <div class="flagship-thumbs" role="group" aria-label="Vignettes moteur CG200">${thumbsHtml}
             </div>
           </div>
@@ -1465,7 +1474,7 @@ ${renderAfricaExportSection(waModel)}
 
   <div class="flagship-lightbox" id="flagshipLightbox" aria-hidden="true" role="dialog" aria-label="Zoom photo moteur">
     <button type="button" class="flagship-lightbox-close" id="flagshipLightboxClose" aria-label="Fermer">&times;</button>
-    <img id="flagshipLightboxImg" src="" alt="">
+    <img id="flagshipLightboxImg" src="/${escapeHtml(imgSeo.resolveFile(primaryImg.src))}" alt="${escapeHtml(imgSeo.getAlt(primaryImg.src, 'fr', 'Moteur complet HW300 refroidi par eau pour tricycle cargo'))}" width="1200" height="1200" loading="lazy" decoding="async">
   </div>
 ${renderFooter({ waModel, quoteHref, extraScripts: ['/js/flagship-engine-page.js'] })}
 `;
@@ -1551,7 +1560,7 @@ function renderFrBm150(catalog) {
     description: 'Moteur complet de remplacement adaptable Bajaj Boxer BM150 (144,8 cc, 56,0 × 58,8 mm) et pièces détachées (demi-carters moteur gauche et droit, culasse complète, kit cylindre-piston, vilebrequin, pochette de joints). Références OEM à titre d\'identification.',
     frPath: '/fr/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine',
     enPath: '/en/bajaj-tvs-engines-parts/bajaj-boxer-bm150-complete-engine',
-    ogImage: `${ORIGIN}/images/parts.webp`,
+    ogImage: `${ORIGIN}/images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp`,
     schemas: [productSchema, faqSchema]
   })}
 <body class="btv-page">
@@ -1661,7 +1670,7 @@ function renderFrContactShell() {
     description: 'Envoyez une demande de devis B2B FOB Guangzhou pour moteurs CG, tricycles à eau HW300, moteurs horizontaux et moteurs/pièces adaptables Bajaj & TVS.',
     frPath: '/fr/contact',
     enPath: '/en/contact',
-    ogImage: `${ORIGIN}/images/factory-showcase/factory-5.webp`
+    ogImage: `${ORIGIN}/images/factory-showcase/chixiang-engine-hot-cold-bench-testing.webp`
   })}
 <body>
   ${FR_MARKER}

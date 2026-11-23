@@ -15,7 +15,7 @@ test('About keeps one quality-credentials section with three cards', () => {
   assert.match(html, /Technology &amp; Engineering Capability/);
   assert.match(html, /CCC — Applicable Engine Models/);
   assert.ok(!html.includes('cert-grid-compact'), 'old four-item overview removed');
-  assert.ok(!html.includes('certification-2.webp'), 'unverified collage removed');
+  assert.ok(!html.includes('certification-2.webp') && !html.includes('chixiang-factory-quality-certification-document.webp'), 'unverified collage removed');
   assert.match(html, /Request Certification or Inspection Documents/);
   assert.match(html, /href="\/en\/contact"/);
 });

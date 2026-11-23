@@ -165,9 +165,9 @@ test('separates start method from electric-starter position and keeps reverse su
   assert.match(html, /110 \/ 125 \/ 140 \/ 150 cc/);
   assert.match(html, /Встроенный реверс/);
   assert.match(html, /1\+1/);
-  assert.match(html, /chixiang-horizontal-kick-start-125-07\.webp/);
-  assert.match(html, /chixiang-horizontal-kick-start-140-08\.webp/);
-  assert.match(html, /chixiang-builtin-reverse-render-06\.webp/);
+  assert.match(html, /chixiang-cx153fmi-125cc-horizontal-kick-start-engine\.webp/);
+  assert.match(html, /chixiang-cx1p56fmj-140cc-horizontal-kick-start-engine\.webp/);
+  assert.match(html, /chixiang-horizontal-engine-built-in-reverse-gearbox\.webp/);
   assert.doesNotMatch(html, /CX152FMH[\s\S]{0,700}Автоматическое сцепление/);
   assert.doesNotMatch(html, /Уточните крепления, запуск и разъёмы перед заказом/);
 });
@@ -200,7 +200,7 @@ test('uses the approved public factory and delivery facts', () => {
   }
   assert.match(html, /перевозчик|экспедитор/i);
   assert.match(html, /склад|адрес/i);
-  assert.match(html, /factory-showcase\/certification-2\.webp/);
+  assert.match(html, /factory-showcase\/chixiang-factory-quality-certification-document\.webp/);
   assert.doesNotMatch(html, /factory-showcase\/certification\.webp/);
   assert.doesNotMatch(html, /Доставка в Россию 15/i);
   assert.doesNotMatch(html, /Посредник/);

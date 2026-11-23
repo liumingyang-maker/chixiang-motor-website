@@ -99,7 +99,7 @@ test("no broken horizontal-card png reference remains in any HTML file", () => {
 
 test("the corresponding webp asset exists on disk", () => {
   assert.ok(
-    fs.existsSync(path.join(root, "images", "horizontal-electric-start", "chixiang-horizontal-electric-start-02.webp")),
+    fs.existsSync(path.join(root, "images", "horizontal-electric-start", "chixiang-cx-horizontal-110-125-electric-start-engine-02.webp")),
     "webp asset missing"
   );
 });

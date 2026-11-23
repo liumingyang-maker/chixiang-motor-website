@@ -20,7 +20,7 @@
       "cards": [
         {
           "role": "cg",
-          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
           "badge": "Best-seller Afrique · Tiges de culbuteurs",
           "title": "Moteurs CG125 à CG250 (Air & Eau)",
           "desc": "Moteurs complets à tiges de culbuteurs (CG125, CG150, CG200 10 kW / 13,5 N·m, CG250SB) et gammes tricycles à eau HW200–HW350 avec arbre d'équilibrage et démarreur électrique / au kick.",
@@ -32,7 +32,7 @@
         },
         {
           "role": "cb",
-          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
           "badge": "Distribution par chaîne (OHC)",
           "title": "Moteurs CB 125 à 250 cm³ (OHC)",
           "desc": "Moteur CB à arbre à cames en tête (distribution par chaîne) pour motos routières, utilitaires et tout-terrain à régime soutenu et vibrations réduites.",
@@ -42,7 +42,7 @@
         },
         {
           "role": "horizontal",
-          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
           "badge": "Cub & Jakarta compatibles",
           "title": "Moteurs Horizontaux 110–150 cm³",
           "desc": "Moteurs horizontaux pour motos de type Cub et applications Jakarta compatibles : CX152FMH-5B (106,7 ml), CX152FMH-5B (130) (123,67 ml), CX1P56FMJ (140 ml) et CX1P60FMJ (149,8 ml).",
@@ -63,7 +63,7 @@
         },
         {
           "role": "hw-series",
-          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
           "badge": "Tricycle cargo 250/300cc à eau",
           "title": "Kits de Réfection & Pièces HW200–HW350",
           "desc": "Kit de réfection moteur refroidi par eau, culasse, kit cylindre-piston, pompe à eau, boîte de marche arrière et ~80 % de pièces communes HW250 / HW300 (275,3 mL réels).",
@@ -126,21 +126,21 @@
           "title": "6 lignes principales d'usine",
           "cards": [
             {
-              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
               "badge": "CG125 – CG250 & Eau",
               "title": "Moteurs CG à tiges de culbuteurs & Tricycles à eau",
               "desc": "CG125, CG150, CG200 (10 kW / 13,5 N·m), CG250, CG150SB–CG250SB et série lourde HW200–HW350 (dont HW300 275,3 mL) avec option marche arrière.",
               "role": "cg"
             },
             {
-              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
               "badge": "CB125 – CB250 OHC",
               "title": "Moteurs CB à arbre à cames en tête (chaîne)",
               "desc": "Distribution par chaîne silencieuse, arbres d'équilibrage et prise de régime fluide pour motos routières et tout-terrain.",
               "role": "cb"
             },
             {
-              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
               "badge": "Cub & Jakarta 107–150",
               "title": "Moteurs Horizontaux (CX152FMH-5B à CX1P60FMJ)",
               "desc": "Pour motos de type Cub et applications Jakarta compatibles : 106,7 ml, 107 ml, 123,67 ml (série 130), 140 ml et 149,8 ml.",
@@ -161,7 +161,7 @@
               "role": "btv-hub"
             },
             {
-              "img": "/images/parts.webp",
+              "img": "/images/parts/chixiang-motorcycle-tricycle-engine-spare-parts-overview.webp",
               "badge": "Série HW & Composants OEM",
               "title": "Pièces moteur & kits de réfection HW200–HW350",
               "desc": "Sous-ensembles d'origine CHIXIANG pour révision complète de moteurs refroidis par eau, carters ADC12 et pignons de transmission.",
@@ -173,10 +173,10 @@
           "id": "flagships",
           "title": "Fiches techniques modèles phares & remplacement direct",
           "cards": [
-            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275,3 mL réels", "title": "HW300 Tricycle à Eau", "desc": "12,5 kW · 21 N·m · Carter 1,5 L · Roue libre 20 rouleaux · 5F + marche arrière externe.", "role": "hw300-water-cooled-engine" },
-            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246,3 mL", "title": "CG250SB Refroidi par Eau", "desc": "11,5 kW · 19,5 N·m · Plateforme CG refroidissement liquide pour tricycle standard.", "role": "cg250sb-water-cooled-engine" },
-            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197,0 cc · 10 kW", "title": "CG200 Refroidi par Air (CX163FML)", "desc": "10 kW @ 7 500 tr/min · 13,5 N·m @ 6 500 tr/min · Moto utilitaire et cargo léger.", "role": "cg200-air-cooled-engine" },
-            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149,5 cc", "title": "CG150 Air (Moto-Taxi)", "desc": "Tiges de culbuteurs éprouvées, maintenance atelier facile et haute rotation de pièces.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "275,3 mL réels", "title": "HW300 Tricycle à Eau", "desc": "12,5 kW · 21 N·m · Carter 1,5 L · Roue libre 20 rouleaux · 5F + marche arrière externe.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "246,3 mL", "title": "CG250SB Refroidi par Eau", "desc": "11,5 kW · 19,5 N·m · Plateforme CG refroidissement liquide pour tricycle standard.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-ohv-balance-shaft-black-engine-front-view.webp", "badge": "197,0 cc · 10 kW", "title": "CG200 Refroidi par Air (CX163FML)", "desc": "10 kW @ 7 500 tr/min · 13,5 N·m @ 6 500 tr/min · Moto utilitaire et cargo léger.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp", "badge": "149,5 cc", "title": "CG150 Air (Moto-Taxi)", "desc": "Tiges de culbuteurs éprouvées, maintenance atelier facile et haute rotation de pièces.", "role": "cg150-air-cooled-engine" },
             { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144,8 cc · 4/5 Vit.", "title": "Bajaj Boxer BM150 Adaptable", "desc": "Moteur complet adaptable + carters 36PF0004/36PF0005 et kit réfection atelier.", "role": "bajaj-boxer-bm150-complete-engine" },
             { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198,88 cc · 4F+1R", "title": "Bajaj RE 4S 200 Tricycle Adaptable", "desc": "Refroidissement par air forcé, marche arrière 4F+1R et pièces de carter associées.", "role": "bajaj-re-4s-200-complete-engine" }
           ]
@@ -284,7 +284,7 @@
       "cards": [
         {
           "role": "cg",
-          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
           "badge": "Motor Varillero OHV · Aire y Agua",
           "title": "Motores CG125 a CG250 y Cargueros HW",
           "desc": "Motores varilleros (CG125, CG150, CG200 10 kW / 13.5 N·m, CG250SB) y cargueros pesados HW200–HW350 con opción de eje balanceador y caja externa.",
@@ -296,7 +296,7 @@
         },
         {
           "role": "cb",
-          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
           "badge": "Motor Cadenillero (OHC)",
           "title": "Motores CB 150 a 250 cc (Cadenilla OHC)",
           "desc": "Motor cadenillero con árbol de levas en culata (149 / 197 / 223 cc: CB150, CB200-C, CB250 de 12 kW) para doble propósito, todo terreno y calle con menor altura (452 mm).",
@@ -306,7 +306,7 @@
         },
         {
           "role": "horizontal",
-          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
           "badge": "110–150 cc · CX152FMH a CX1P60FMJ",
           "title": "Motores Horizontales 110–150 cc",
           "desc": "Motores horizontales de 4 velocidades (106.7 ml, 107 ml, 123.67 ml serie 130, 140 ml y 149.8 ml CX1P60FMJ con circuito interno de aceite en culata).",
@@ -327,7 +327,7 @@
         },
         {
           "role": "hw-series",
-          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
           "badge": "Carguero pesado 250/300 cc",
           "title": "Kits y Repuestos HW200–HW350 (HW Water)",
           "desc": "Kits de reparación, bomba de agua, embrague unidireccional de 20 rodillos, magneto de alta salida, cárter de 1,5 L y ~80 % de piezas compartidas entre HW250 y HW300 (275.3 mL).",
@@ -390,21 +390,21 @@
           "title": "6 líneas principales de fabricación",
           "cards": [
             {
-              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
               "badge": "CG125–CG250 y Agua",
               "title": "Motores Varilleros CG (Aire y Agua)",
               "desc": "CG125, CG150, CG200 (10 kW / 13.5 N·m), CG250 y CG150SB–CG250SB enfriados por agua (con reversa integrada o caja externa según modelo confirmado en pedido).",
               "role": "cg"
             },
             {
-              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
               "badge": "CB150–CB250 OHC",
               "title": "Motores Cadenilleros CB (Árbol de levas en culata)",
               "desc": "Distribución por cadenilla silenciosa, altura compacta de 452 mm y entrega hasta 12 kW en CB250 para todo terreno y calle.",
               "role": "cb"
             },
             {
-              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
               "badge": "110–150 cc (CX152FMH–CX1P60FMJ)",
               "title": "Motores Horizontales 4 Velocidades",
               "desc": "Cilindradas verificadas: 106.7 ml, 107 ml, 123.67 ml (código 130), 140 ml y 149.8 ml (CX1P60FMJ con circuito interno de aceite en culata).",
@@ -425,7 +425,7 @@
               "role": "btv-hub"
             },
             {
-              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
               "badge": "HW Water Heavy-Duty",
               "title": "Motores y Kits HW Water (HW200–HW350)",
               "desc": "Arquitectura HW Water reforzada para cargueros: capacidad de aceite de 1,5 L, embrague unidireccional de 20 rodillos, magneto de alta salida, carburador PZ30 y caja de 5 velocidades compatible con cajas de reversa externas.",
@@ -437,10 +437,10 @@
           "id": "flagships",
           "title": "Fichas técnicas de modelos insignia y reemplazo directo",
           "cards": [
-            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275.3 mL reales", "title": "HW300 Carguero Enfriado por Agua", "desc": "12.5 kW · 21 N·m · Cárter 1.5 L · 20 rodillos · 5F + reversa externa.", "role": "hw300-water-cooled-engine" },
-            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246.3 cc", "title": "CG250SB Enfriado por Agua", "desc": "11.5 kW · 19.5 N·m · Plataforma CG estándar para carguero.", "role": "cg250sb-water-cooled-engine" },
-            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197.0 cc · 10 kW", "title": "CG200 Varillero Aire (CX163FML)", "desc": "10 kW @ 7,500 rpm · 13.5 N·m @ 6,500 rpm · Trabajo y transporte.", "role": "cg200-air-cooled-engine" },
-            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149.5 cc", "title": "CG150 Clásico Varillero", "desc": "Servicio sencillo en taller y alta disponibilidad de repuestos.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "275.3 mL reales", "title": "HW300 Carguero Enfriado por Agua", "desc": "12.5 kW · 21 N·m · Cárter 1.5 L · 20 rodillos · 5F + reversa externa.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "246.3 cc", "title": "CG250SB Enfriado por Agua", "desc": "11.5 kW · 19.5 N·m · Plataforma CG estándar para carguero.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-ohv-balance-shaft-black-engine-front-view.webp", "badge": "197.0 cc · 10 kW", "title": "CG200 Varillero Aire (CX163FML)", "desc": "10 kW @ 7,500 rpm · 13.5 N·m @ 6,500 rpm · Trabajo y transporte.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp", "badge": "149.5 cc", "title": "CG150 Clásico Varillero", "desc": "Servicio sencillo en taller y alta disponibilidad de repuestos.", "role": "cg150-air-cooled-engine" },
             { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144.8 cc · 4/5 Vel.", "title": "Reemplazo Bajaj Boxer BM150", "desc": "Motor completo equivalente + cárteres 36PF0004/36PF0005.", "role": "bajaj-boxer-bm150-complete-engine" },
             { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198.88 cc · 4F+1R", "title": "Reemplazo Bajaj RE 4S 200 Mototaxi", "desc": "Aire forzado, cámara de reversa 4F+1R y cárteres de reemplazo.", "role": "bajaj-re-4s-200-complete-engine" }
           ]
@@ -546,7 +546,7 @@
       "cards": [
         {
           "role": "cg",
-          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
           "badge": "Motor de Vareta OHV · Ar e Água",
           "title": "Motores CG125 a CG250 e Triciclos HW",
           "desc": "Motores de vareta (CG125, CG150, CG200 10 kW / 13,5 N·m, CG250SB) e linha pesada a água HW200–HW350 com opção de eixo balanceador.",
@@ -558,7 +558,7 @@
         },
         {
           "role": "cb",
-          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
           "badge": "Corrente de Distribuição (OHC)",
           "title": "Motores CB 150 a 250 cc (OHC)",
           "desc": "Comando no cabeçote com corrente de distribuição silenciosa (149 / 197 / 223 cc) para motos urbanas e trilha, altura compacta (452 mm) e até 12 kW no CB250.",
@@ -568,7 +568,7 @@
         },
         {
           "role": "horizontal",
-          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
           "badge": "110–150 cc · CX152FMH a CX1P60FMJ",
           "title": "Motores Horizontais 110–150 cc",
           "desc": "Motores horizontais de 4 marchas (106,7 ml, 107 ml, 123,67 ml série 130, 140 ml e 149,8 ml CX1P60FMJ com circuito de óleo interno no cabeçote).",
@@ -589,7 +589,7 @@
         },
         {
           "role": "hw-series",
-          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
           "badge": "Triciclo carga 250/300 cc a água",
           "title": "Kits e Peças HW200–HW350 (HW Water)",
           "desc": "Kits de revisão, bomba d'água, embreagem de 20 roletes, magneto de alta saída, cárter de 1,5 L e ~80 % de peças compartilhadas entre HW250 e HW300 (275,3 mL).",
@@ -652,21 +652,21 @@
           "title": "6 linhas principais de fábrica",
           "cards": [
             {
-              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
               "badge": "CG125–CG250 & Água",
               "title": "Motores CG de Vareta (Ar e Água)",
               "desc": "CG125, CG150, CG200 (10 kW / 13,5 N·m), CG250 e série CG150SB–CG250SB refrigerada a água para motos e triciclos utilitários.",
               "role": "cg"
             },
             {
-              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
               "badge": "CB150–CB250 OHC",
               "title": "Motores CB com Corrente de Comando",
               "desc": "Arquitetura OHC silenciosa, altura reduzida de 452 mm e até 12 kW no CB250 para motos urbanas e off-road.",
               "role": "cb"
             },
             {
-              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
               "badge": "110–150 cc (CX152FMH–CX1P60FMJ)",
               "title": "Motores Horizontais 4 Marchas",
               "desc": "Cilindradas reais divulgadas: 106,7 ml, 107 ml, 123,67 ml (código 130), 140 ml e 149,8 ml (CX1P60FMJ sem radiador externo de óleo).",
@@ -687,7 +687,7 @@
               "role": "btv-hub"
             },
             {
-              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
               "badge": "HW Water Heavy-Duty",
               "title": "Motores e Kits HW Water (HW200–HW350)",
               "desc": "Série HW Water para triciclo de carga: capacidade de óleo de 1,5 L, embreagem de 20 roletes, magneto de alta saída, carburador PZ30 e Transmissão padrão de 5 marchas à frente compatível com caixas de ré externas.",
@@ -699,10 +699,10 @@
           "id": "flagships",
           "title": "Fichas técnicas dos modelos principais",
           "cards": [
-            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275,3 mL reais", "title": "HW300 Triciclo a Água", "desc": "12,5 kW · 21 N·m · Cárter 1,5 L · 20 roletes · 5F + ré externa.", "role": "hw300-water-cooled-engine" },
-            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246,3 cc", "title": "CG250SB Refrigerado a Água", "desc": "11,5 kW · 19,5 N·m · Plataforma CG padrão para triciclos.", "role": "cg250sb-water-cooled-engine" },
-            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197,0 cc · 10 kW", "title": "CG200 Vareta Ar (CX163FML)", "desc": "10 kW @ 7.500 rpm · 13,5 N·m @ 6.500 rpm · Uso comercial.", "role": "cg200-air-cooled-engine" },
-            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149,5 cc", "title": "CG150 Vareta Clássico", "desc": "Manutenção simples e alta disponibilidade de kits de reposição.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "275,3 mL reais", "title": "HW300 Triciclo a Água", "desc": "12,5 kW · 21 N·m · Cárter 1,5 L · 20 roletes · 5F + ré externa.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "246,3 cc", "title": "CG250SB Refrigerado a Água", "desc": "11,5 kW · 19,5 N·m · Plataforma CG padrão para triciclos.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-ohv-balance-shaft-black-engine-front-view.webp", "badge": "197,0 cc · 10 kW", "title": "CG200 Vareta Ar (CX163FML)", "desc": "10 kW @ 7.500 rpm · 13,5 N·m @ 6.500 rpm · Uso comercial.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp", "badge": "149,5 cc", "title": "CG150 Vareta Clássico", "desc": "Manutenção simples e alta disponibilidade de kits de reposição.", "role": "cg150-air-cooled-engine" },
             { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144,8 cc · 4/5 Marchas", "title": "Reposição Bajaj Boxer BM150", "desc": "Motor completo equivalente + carcaças 36PF0004/36PF0005.", "role": "bajaj-boxer-bm150-complete-engine" },
             { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198,88 cc · 4F+1R", "title": "Reposição Bajaj RE 4S 200", "desc": "Ar forçado, câmara de ré 4F+1R e carcaças compatíveis.", "role": "bajaj-re-4s-200-complete-engine" }
           ]
@@ -800,7 +800,7 @@
       "cards": [
         {
           "role": "cg",
-          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
           "badge": "Штанговые CG и водянка HW",
           "title": "Двигатели CG125–CG250 и водяные HW под трицикл",
           "desc": "Штанговые моторы (CG125, CG150, CG200 10 кВт / 13,5 Н·м, CG250SB) и серия водяного охлаждения HW200–HW350 под внешний реверс-редуктор.",
@@ -812,7 +812,7 @@
         },
         {
           "role": "cb",
-          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
           "badge": "Цепные OHC (верхневальные)",
           "title": "Цепные двигатели CB 150–250 см³ (ГРМ)",
           "desc": "Верхневальная цепь ГРМ, меньший вес (29–31 кг) и высота 452 мм — до 12 кВт на CB250 для эндуро, кросса и дорожных мотоциклов.",
@@ -822,7 +822,7 @@
         },
         {
           "role": "horizontal",
-          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
           "badge": "110cc-150cc · Альфа / Дельта / Актив / Питбайк",
           "title": "Горизонтальные моторы 110–150 см³",
           "desc": "CX152FMH-5B (106,7 мл), CX152FMH-6 (107 мл), CX152FMH-5B 130 (123,67 мл), CX1P56FMJ (140 мл) и CX1P60FMJ (149,8 мл): механика или полуавтомат.",
@@ -843,7 +843,7 @@
         },
         {
           "role": "hw-series",
-          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
           "badge": "Трициклы 250/300 см³ с водянкой",
           "title": "Запчасти и ремкомплекты HW200–HW350 (HW Water)",
           "desc": "Поршневые группы (ЦПГ), помпы, обгонная муфта на 20 роликов, картер 1,5 л, ~80 % общих деталей между HW250 и HW300 (275,3 мл).",
@@ -906,21 +906,21 @@
           "title": "6 основных производственных линеек",
           "cards": [
             {
-              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
               "badge": "CG125–CG250 и Вода",
               "title": "Штанговые двигатели CG (воздух / вода)",
               "desc": "CG125, CG150, CG200 (10 кВт / 13,5 Н·м), CG250 и водяные CG150SB–CG250SB для мотоциклов и лёгких трициклов.",
               "role": "cg"
             },
             {
-              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
               "badge": "CB150–CB250 OHC",
               "title": "Цепные двигатели CB (верхневальный ГРМ)",
               "desc": "Тихая цепь ГРМ, высота 452 мм, 29–31 кг и отдача до 12 кВт на CB250 для эндуро и дорожных мотоциклов.",
               "role": "cb"
             },
             {
-              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
               "badge": "Альфа / Дельта / Питбайк 110–150",
               "title": "Горизонтальные моторы CX (4 КПП)",
               "desc": "Точные кубатуры: 106,7 мл, 107 мл, 123,67 мл (код 130), 140 мл (YX140 ориентир) и 149,8 мл (CX1P60FMJ со встроенным маслоканалом ГБЦ), механика или полуавтомат.",
@@ -941,7 +941,7 @@
               "role": "btv-hub"
             },
             {
-              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
               "badge": "HW Water Heavy-Duty",
               "title": "Серия HW Water для трициклов и запчасти",
               "desc": "Тяжёлая серия HW Water под грузовые трициклы: объём масла 1,5 л, с 20-роликовой обгонной муфтой, магнето повышенной мощности, карбюратор PZ30 и совместимость с внешними редукторами реверса.",
@@ -953,10 +953,10 @@
           "id": "flagships",
           "title": "Карточки флагманских моделей и прямых аналогов",
           "cards": [
-            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275,3 мл факт", "title": "HW300 Водяной трицикл", "desc": "12,5 кВт · 21 Н·м · Картер 1,5 л · 20 роликов · под реверс-редуктор.", "role": "hw300-water-cooled-engine" },
-            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246,3 см³", "title": "CG250SB Водяное охлаждение", "desc": "11,5 кВт · 19,5 Н·м · Стандартная платформа CG для трициклов.", "role": "cg250sb-water-cooled-engine" },
-            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197,0 см³ · 10 кВт", "title": "CG200 Воздушный (CX163FML)", "desc": "10 кВт при 7 500 об/мин · 13,5 Н·м при 6 500 об/мин · с баланс-валом или без.", "role": "cg200-air-cooled-engine" },
-            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149,5 см³", "title": "CG150 Штанговый воздух", "desc": "Надёжная базовая модель для дорожных и коммерческих мотоциклов.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "275,3 мл факт", "title": "HW300 Водяной трицикл", "desc": "12,5 кВт · 21 Н·м · Картер 1,5 л · 20 роликов · под реверс-редуктор.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "246,3 см³", "title": "CG250SB Водяное охлаждение", "desc": "11,5 кВт · 19,5 Н·м · Стандартная платформа CG для трициклов.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-ohv-balance-shaft-black-engine-front-view.webp", "badge": "197,0 см³ · 10 кВт", "title": "CG200 Воздушный (CX163FML)", "desc": "10 кВт при 7 500 об/мин · 13,5 Н·м при 6 500 об/мин · с баланс-валом или без.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp", "badge": "149,5 см³", "title": "CG150 Штанговый воздух", "desc": "Надёжная базовая модель для дорожных и коммерческих мотоциклов.", "role": "cg150-air-cooled-engine" },
             { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144,8 см³ · 4/5 КПП", "title": "Аналог Bajaj Boxer BM150", "desc": "Двигатель в сборе + картеры 36PF0004/36PF0005 и ЦПГ.", "role": "bajaj-boxer-bm150-complete-engine" },
             { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198,88 см³ · 4F+1R", "title": "Аналог Bajaj RE 4S 200", "desc": "Принудительное воздушное охлаждение и встроенный реверс 4F+1R.", "role": "bajaj-re-4s-200-complete-engine" }
           ]
@@ -1054,7 +1054,7 @@
       "cards": [
         {
           "role": "cg",
-          "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+          "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
           "badge": "موتور أسياخ OHV · هواء وماء",
           "title": "محركات CG125 إلى CG250 وتروسيكلات HW",
           "desc": "محركات أسياخ عملية (CG125، CG150، CG200 بقدرة 10 كيلوواط / 13.5 نيوتن·متر، CG250SB) وسلسلة التبريد المائي الثقيلة HW200–HW350 مع خيار عمود التوازن.",
@@ -1066,7 +1066,7 @@
         },
         {
           "role": "cb",
-          "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+          "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
           "badge": "موتور كاتينة (OHC)",
           "title": "محركات كاتينة CB من 150 إلى 250 سي سي",
           "desc": "عمود كامات علوي بجنزير كاتينة هادئ (125cc إلى 250cc)، ارتفاع مدمج 452 مم، وعزم أعلى لدراجات الطرق والصحراء حتى 12 كيلوواط في طراز CB250.",
@@ -1076,7 +1076,7 @@
         },
         {
           "role": "horizontal",
-          "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+          "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
           "badge": "110cc إلى 150cc · CX152FMH إلى CX1P60FMJ",
           "title": "المحركات الأفقية 110–150 سي سي",
           "desc": "سعات فعلية دقيقة: 106.7 مل، 107 مل، 123.67 مل (فئة 130)، 140 مل و149.8 مل (CX1P60FMJ بدائرة زيت داخلية بالسلندر دون مبرد خارجي).",
@@ -1097,7 +1097,7 @@
         },
         {
           "role": "hw-series",
-          "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+          "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
           "badge": "تروسيكل تبريد مياه 250/300 سي سي",
           "title": "أطقم وقطع صيانة HW200–HW350 (HW Water)",
           "desc": "سلندرات تبريد مياه، طلمبة مياه، كلتش حر 20 بكرة، كارتيرة زيت 1.5 لتر وتشابه قطع بنحو 80% بين طرازي HW250 و HW300 (سعة 275.3 مل).",
@@ -1160,21 +1160,21 @@
           "title": "6 خطوط إنتاج رئيسية في المصنع",
           "cards": [
             {
-              "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp",
+              "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp",
               "badge": "CG125–CG250 هواء وماء",
               "title": "محركات الأسياخ CG والتروسيكلات المائية",
               "desc": "CG125 و CG150 و CG200 (10 كيلوواط / 13.5 نيوتن·متر) و CG250، إضافة إلى فئة CG150SB–CG250SB بتبريد المياه.",
               "role": "cg"
             },
             {
-              "img": "/images/cb-offroad/chixiang-cb-offroad-engine-01.webp",
+              "img": "/images/cb-ohc/chixiang-cb150-cb200-cb250-ohc-chain-offroad-engine-front-view.webp",
               "badge": "CB150–CB250 OHC",
               "title": "محركات الكاتينة CB (جنزير كاتينة علوي)",
               "desc": "عمود كامات علوي هادئ الأداء وارتفاع 452 مم مع قدرة تصل إلى 12 كيلوواط في طراز CB250 للدراجات الرياضية والطرق.",
               "role": "cb"
             },
             {
-              "img": "/images/horizontal-electric-start/chixiang-horizontal-electric-start-02.webp",
+              "img": "/images/horizontal-electric-start/chixiang-cx-horizontal-110-125-electric-start-engine-02.webp",
               "badge": "110–150 سي سي",
               "title": "المحركات الأفقية CX152FMH إلى CX1P60FMJ",
               "desc": "سعات فعلية دقيقة: 106.7 مل، 107 مل، 123.67 مل (فئة 130)، 140 مل و149.8 مل (دائرة زيت داخلية بالسلندر في CX1P60FMJ).",
@@ -1195,7 +1195,7 @@
               "role": "btv-hub"
             },
             {
-              "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp",
+              "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp",
               "badge": "HW Water للخدمة الشاقة",
               "title": "سلسلة HW Water للتروسيكلات وقطع الغيار",
               "desc": "محركات HW Water الثقيلة للتروسيكلات: سعة زيت 1.5 لتر، قابض أحادي الاتجاه بـ 20 بكرة، ماغنيتو عالي الخرج، كاربوراتير PZ30، وناقل 5 سرعات أمامية متوافق مع صناديق الرجوع الخارجية.",
@@ -1207,10 +1207,10 @@
           "id": "flagships",
           "title": "مواصفات الموديلات الرئيسية والبدائل المباشرة",
           "cards": [
-            { "img": "/images/hw-water-heavy-duty/chixiang-hw-water-heavy-duty-01.webp", "badge": "275.3 مل فعلي", "title": "HW300 تروسيكل تبريد مياه", "desc": "12.5 كيلوواط · 21 نيوتن·متر · زيت 1.5 لتر · 20 بكرة · صندوق رجوع خارجي.", "role": "hw300-water-cooled-engine" },
-            { "img": "/images/standard-water-cooled/chixiang-standard-water-cooled-01.webp", "badge": "246.3 سي سي", "title": "CG250SB تبريد مائي", "desc": "11.5 كيلوواط · 19.5 نيوتن·متر · منصة CG القياسية للتروسيكلات.", "role": "cg250sb-water-cooled-engine" },
-            { "img": "/images/cg-balance-shaft/chixiang-cg-balance-shaft-black-engine-closeup-03.webp", "badge": "197.0 سي سي · 10 كيلوواط", "title": "CG200 أسياخ تبريد هواء", "desc": "10 كيلوواط عند 7,500 لفة · 13.5 نيوتن·متر عند 6,500 لفة · للاستخدام اليومي.", "role": "cg200-air-cooled-engine" },
-            { "img": "/images/cg-air-cooled-silver/chixiang-cg-air-cooled-silver-01.webp", "badge": "149.5 سي سي", "title": "CG150 أسياخ كلاسيك", "desc": "سهولة الصيانة ووفرة قطع الغيار في الورش.", "role": "cg150-air-cooled-engine" },
+            { "img": "/images/hw-water-cooled/chixiang-hw300-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "275.3 مل فعلي", "title": "HW300 تروسيكل تبريد مياه", "desc": "12.5 كيلوواط · 21 نيوتن·متر · زيت 1.5 لتر · 20 بكرة · صندوق رجوع خارجي.", "role": "hw300-water-cooled-engine" },
+            { "img": "/images/cg-water-cooled/chixiang-cg250sb-water-cooled-cargo-tricycle-engine-front-view.webp", "badge": "246.3 سي سي", "title": "CG250SB تبريد مائي", "desc": "11.5 كيلوواط · 19.5 نيوتن·متر · منصة CG القياسية للتروسيكلات.", "role": "cg250sb-water-cooled-engine" },
+            { "img": "/images/cg-balance-shaft/chixiang-cg-ohv-balance-shaft-black-engine-front-view.webp", "badge": "197.0 سي سي · 10 كيلوواط", "title": "CG200 أسياخ تبريد هواء", "desc": "10 كيلوواط عند 7,500 لفة · 13.5 نيوتن·متر عند 6,500 لفة · للاستخدام اليومي.", "role": "cg200-air-cooled-engine" },
+            { "img": "/images/cg-air-cooled/chixiang-cg150-cg200-ohv-air-cooled-engine-front-view.webp", "badge": "149.5 سي سي", "title": "CG150 أسياخ كلاسيك", "desc": "سهولة الصيانة ووفرة قطع الغيار في الورش.", "role": "cg150-air-cooled-engine" },
             { "img": "/images/bajaj-tvs/bajaj-boxer-ct100-bm100-clutch-side.webp", "badge": "144.8 سي سي · 4/5 سرعات", "title": "بديل باجاج بوكسر BM150", "desc": "محرك كامل مع فخذتين 36PF0004/36PF0005 وطقم سلندر وشنبر.", "role": "bajaj-boxer-bm150-complete-engine" },
             { "img": "/images/bajaj-tvs/bajaj-re-4s-200-starter-side.webp", "badge": "198.88 سي سي · 4F+1R", "title": "بديل باجاج RE 4S 200", "desc": "تبريد هواء قسري مع رجوع مدمج 4F+1R وقطع الكارتيرة.", "role": "bajaj-re-4s-200-complete-engine" }
           ]
